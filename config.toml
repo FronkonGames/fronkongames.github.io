@@ -45,10 +45,10 @@ name = "Home"
 URL = "hero-area"
 weight = 1
 
-#[[menu.main]]
-#name = "Unity Assets"
-#URL = "blog"
-#weight = 2
+[[menu.main]]
+name = "Assets"
+URL = "store"
+weight = 2
 
 #[[menu.main]]
 #name = "About Me"
@@ -66,9 +66,9 @@ weight = 1
 #weight = 5
 
 [[menu.main]]
-name = "Contact Me"
+name = "Contact"
 URL = "footer"
-weight = 2
+weight = 3
 
 
 #################### default parameters ################################
@@ -89,13 +89,17 @@ copyright = "Copyright &copy; 2022 Fronkon Games"
 enable = false
 preloader = "" # use .png , .svg or .gif format
 
+################################### Store ############################
+[params.store]
+enable = true
+
 ################################### Footer ############################
 [params.footer]
 enable = true
-contactInfoTitle = "CONTACT <span>INFO</span> "
+contactInfoTitle = "contact <span>me</span> "
 blogTitle = "LATEST <span>BLOG POSTS</span>"
 #galleryTitle = "PHOTO <span>STREAM</span>"
-socialTitle = "Follow <span>ME</span>"
+socialTitle = "it's <span>alive!</span>"
 
 ############################ footer contact item
 #[[params.footer.contactItem]]

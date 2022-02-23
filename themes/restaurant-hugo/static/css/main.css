@@ -4,6 +4,11 @@
   src: url(../fonts/ufonts.com_tw-cen-mt.ttf);
 }
 
+@font-face {
+  font-family: fronkonfont;
+  src: url(../fonts/thing-press.ttf);
+}
+
 /*--
     Common Css
 --*/
@@ -101,14 +106,16 @@ a, a:active, a:focus, a:active {
 .heading {
   text-align: center;
   font-weight: 500;
-  color: #2E2E2E;
+  font-family: fronkonfont;
+  font-size: 80px;
+  color: #ecf0f1;
   padding: 40px 0px;
   position: relative;
 }
 
 .heading span {
   font-size: 45px;
-  color: #ff530a;
+  color: #883136;
   font-weight: 600;
 }
 
@@ -133,7 +140,7 @@ a, a:active, a:focus, a:active {
 }
 
 .title span {
-  color: #FF5333;
+  color: #883136;
 }
 
 .before-border {
@@ -214,10 +221,11 @@ nav .block .navbar-default .navbar-nav {
 }
 
 nav .block .navbar-default .navbar-nav>li>a {
-  color: #2E2E2E;
+  color: #883136;
   padding: 10px 0px;
   margin: 0px 15px;
-  font-size: 15px;
+  font-family: fronkonfont;
+  font-size: 60px;
   text-transform: uppercase;
 }
 
@@ -708,7 +716,7 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 }
 
 #footer .block h3 span {
-  color: #FF4F02;
+  color: #883136;
 }
 
 #footer .block .blog ul,
@@ -728,7 +736,7 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 #footer .block .gallary ul li h4 {
   padding-bottom: 10px;
   display: block;
-  color: #FF4F02;
+  color: #883136;
 }
 
 #footer .block .blog ul li h4 i,
@@ -766,7 +774,7 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 }
 
 #footer .block .social-media-link h3 span {
-  color: #FF4F02;
+  color: #883136;
 }
 
 #footer .block .social-media-link ul li {
