@@ -280,18 +280,18 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 }
 
 /*--
-    about-us Start
+    about-me Start
 --*/
-#about-us {
+#about-me {
   padding: 100px 0px;
   background: #F6F6F6;
 }
 
-#about-us .block {
+#about-me .block {
   text-align: center;
 }
 
-#about-us .block p {
+#about-me .block p {
   color: #959595;
   font-size: 16px;
   line-height: 26px;
@@ -628,21 +628,21 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 }
 
 /*--
-    contact-us Start
+    contact-me Start
 --*/
-#contact-us {
+#contact-me {
   padding: 70px 0px;
 }
 
-#contact-us .block .title {
+#contact-me .block .title {
   padding: 20px 0;
 }
 
-#contact-us .block form {
+#contact-me .block form {
   padding-bottom: 20px;
 }
 
-#contact-us .block form input {
+#contact-me .block form input {
   height: 48px;
   border-radius: 0px;
   box-shadow: none;
@@ -651,11 +651,11 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
   transition: .3s all;
 }
 
-#contact-us .block form input:focus {
+#contact-me .block form input:focus {
   border: 1px solid #7EC3BB;
 }
 
-#contact-us .block form textarea {
+#contact-me .block form textarea {
   height: 140px;
   border-radius: 0px;
   box-shadow: none;
@@ -664,11 +664,11 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
   transition: .3s all;
 }
 
-#contact-us .block form textarea:focus {
+#contact-me .block form textarea:focus {
   border: 1px solid #7EC3BB;
 }
 
-#contact-us .block button {
+#contact-me .block button {
   background: #FF4F02;
   float: right;
   color: #fff;

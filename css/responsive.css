@@ -83,18 +83,18 @@ px      68    160    252    344    436    528    620    712    */
     text-align: left;
   }
   /*--
-    contact-us Start
+    contact-me Start
 --*/
-  #contact-us {
+  #contact-me {
     padding: 60px 0 0;
   }
-  #contact-us .block {
+  #contact-me .block {
     text-align: center;
   }
-  #contact-us .block .title {
+  #contact-me .block .title {
     text-align: left;
   }
-  #contact-us .block a {
+  #contact-me .block a {
     padding: 15px 80px;
     float: inherit;
   }
@@ -203,12 +203,12 @@ px      68    160    252    */
     padding-right: 0px;
   }
   /*--
-    about-us Start
+    about-me Start
 --*/
-  #about-us {
+  #about-me {
     padding: 70px 0;
   }
-  #about-us .block p {
+  #about-me .block p {
     padding: 40px 0px 0px;
   }
   /*--
@@ -322,12 +322,12 @@ px      68    160    252    */
     margin-top: 20px;
   }
   /*--
-    contact-us Start
+    contact-me Start
 --*/
-  #contact-us {
+  #contact-me {
     padding: 60px 0 0;
   }
-  #contact-us .block a {
+  #contact-me .block a {
     padding: 20px 80px;
     width: 100%;
     float: inherit;
