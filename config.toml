@@ -45,30 +45,30 @@ name = "Home"
 URL = "hero-area"
 weight = 1
 
+#[[menu.main]]
+#name = "Unity Assets"
+#URL = "blog"
+#weight = 2
+
+#[[menu.main]]
+#name = "About Me"
+#URL = "about-me"
+#weight = 3
+
+#[[menu.main]]
+#name = "Price"
+#URL = "price"
+#weight = 4
+
+#[[menu.main]]
+#name = "News"
+#URL = "subscribe"
+#weight = 5
+
 [[menu.main]]
-name = "About Us"
-URL = "about-us"
+name = "Contact Me"
+URL = "footer"
 weight = 2
-
-[[menu.main]]
-name = "Blog"
-URL = "blog"
-weight = 3
-
-[[menu.main]]
-name = "Price"
-URL = "price"
-weight = 4
-
-[[menu.main]]
-name = "News"
-URL = "subscribe"
-weight = 5
-
-[[menu.main]]
-name = "Contact Us"
-URL = "contact-us"
-weight = 6
 
 
 #################### default parameters ################################
@@ -76,7 +76,7 @@ weight = 6
 logo = "images/logo.png"
 # meta data
 author = "Themefisher"
-description = "This is meta description"
+description = "Indie game developer and asset publisher."
 # google analitycs ID
 google_analitycs_id = "Your ID"
 # mainSections
@@ -91,60 +91,64 @@ preloader = "" # use .png , .svg or .gif format
 
 ################################### Footer ############################
 [params.footer]
-enable = false
+enable = true
 contactInfoTitle = "CONTACT <span>INFO</span> "
 blogTitle = "LATEST <span>BLOG POSTS</span>"
-galleryTitle = "PHOTO <span>STREAM</span>"
-socialTitle = "Follow <span>US</span>"
+#galleryTitle = "PHOTO <span>STREAM</span>"
+socialTitle = "Follow <span>ME</span>"
 
 ############################ footer contact item
-[[params.footer.contactItem]]
-title = "Telephone"
-icon = "fa fa-phone"
-content = "016742 323313"
+#[[params.footer.contactItem]]
+#title = "Telephone"
+#icon = "fa fa-phone"
+#content = "016742 323313"
 
-[[params.footer.contactItem]]
-title = "Address"
-icon = "fa fa-map-marker"
-content = "2046 Blue Spruce Lane Laurel Canada"
+#[[params.footer.contactItem]]
+#title = "Address"
+#icon = "fa fa-map-marker"
+#content = "2046 Blue Spruce Lane Laurel Canada"
 
 [[params.footer.contactItem]]
 title = "E mail"
 icon = "fa fa-envelope"
-content = "rest@gmail.com - rest@mail.ru"
+content = "fronkongames@gmail.com"
 
 ######################### footer gallery
-[[params.footer.gallery]]
-image = "images/slider/slider-img-1.jpg"
+#[[params.footer.gallery]]
+#image = "images/slider/slider-img-1.jpg"
 
-[[params.footer.gallery]]
-image = "images/slider/slider-img-2.jpg"
+#[[params.footer.gallery]]
+#image = "images/slider/slider-img-2.jpg"
 
-[[params.footer.gallery]]
-image = "images/slider/slider-img-3.jpg"
+#[[params.footer.gallery]]
+#image = "images/slider/slider-img-3.jpg"
 
-[[params.footer.gallery]]
-image = "images/slider/slider-img-4.jpg"
+#[[params.footer.gallery]]
+#image = "images/slider/slider-img-4.jpg"
 
-[[params.footer.gallery]]
-image = "images/slider/slider-img-1.jpg"
+#[[params.footer.gallery]]
+#image = "images/slider/slider-img-1.jpg"
 
-[[params.footer.gallery]]
-image = "images/slider/slider-img-2.jpg"
+#[[params.footer.gallery]]
+#image = "images/slider/slider-img-2.jpg"
 
 ######################## Social Icon 
-[[params.footer.socialLink]]
-icon = "facebook"
-link = "https://fb.com/themefisher"
+#[[params.footer.socialLink]]
+#icon = "facebook"
+#link = "https://fb.com/themefisher"
 
 [[params.footer.socialLink]]
 icon = "twitter"
-link = "https://fb.com/themefisher"
+link = "https://twitter.com/fronkongames"
 
 [[params.footer.socialLink]]
-icon = "dribbble"
-link = "https://fb.com/themefisher"
+icon = "github"
+link = "https://github.com/FronkonGames"
 
-[[params.footer.socialLink]]
-icon = "instagram"
-link = "https://fb.com/themefisher"
+#[[params.footer.socialLink]]
+#icon = "dribbble"
+#link = "https://fb.com/themefisher"
+
+#[[params.footer.socialLink]]
+#icon = "instagram"
+#link = "https://fb.com/themefisher"
