@@ -82,7 +82,7 @@ google_analitycs_id = "Your ID"
 # mainSections
 main_sections = ["post"]
 # copyright
-copyright = "Copyright &copy; 2021 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
+copyright = "Copyright &copy; 2022 Fronkon Games"
 
 # Preloader
 [params.preloader]
@@ -91,7 +91,7 @@ preloader = "" # use .png , .svg or .gif format
 
 ################################### Footer ############################
 [params.footer]
-enable = true
+enable = false
 contactInfoTitle = "CONTACT <span>INFO</span> "
 blogTitle = "LATEST <span>BLOG POSTS</span>"
 galleryTitle = "PHOTO <span>STREAM</span>"
