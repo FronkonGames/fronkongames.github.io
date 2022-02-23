@@ -1,7 +1,7 @@
 ######################## default configuration ####################
-baseURL = "https://fronkongames.github.io/"
+baseURL = "https://demo.gethugothemes.com/restaurant/examplesite/"
 languageCode = "en-us"
-title = "Fronkon Games"
+title = "Restaurant Hugo"
 theme = "restaurant-hugo"
 summaryLength = "10"
 paginate = 4
