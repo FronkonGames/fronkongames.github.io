@@ -18,14 +18,17 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.92.2'
+          hugo-version: 'latest'
+          # extended: true
 
       - name: Build
         run: hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
           deploy_key: ${{ secrets.PRIVATE_KEY }}
-          external_repository: fronkongames/fronkongames.github.io
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          #external_repository: fronkongames/fronkongames.github.io
           publish_dir: ./public
