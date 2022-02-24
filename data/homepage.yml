@@ -11,6 +11,13 @@ store:
   bg_image : "images/store/store-bg.jpg"
   overlay : true
 
+################# Blog ######################
+blog:
+  enable : true
+  title : "<span>Blog</span>"
+  bg_image : "images/blog/blog-bg.jpg"
+  overlay : true
+
 ################### Gallery ###################
 gallery:
   enable : false
@@ -32,14 +39,6 @@ about:
   title : "Featured Your <span> Restaurant’s</span> Website Has To Look Good"
   description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat Ut enim ad minim veniam"
   
-################# Blog ######################
-blog:
-  enable : false
-  title : "Our Latest <span>Blog</span>"
-  bg_image : "images/blog/blog-bg.jpg"
-  overlay : true
-
-
 ################# food Menu ################
 pricing:
   enable : false

@@ -50,6 +50,11 @@ name = "Assets"
 URL = "store"
 weight = 2
 
+[[menu.main]]
+name = "Blog"
+URL = "blog"
+weight = 3
+
 #[[menu.main]]
 #name = "About Me"
 #URL = "about-me"
@@ -68,7 +73,7 @@ weight = 2
 [[menu.main]]
 name = "Contact"
 URL = "footer"
-weight = 3
+weight = 4
 
 
 #################### default parameters ################################
