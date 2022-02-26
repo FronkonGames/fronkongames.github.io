@@ -6,8 +6,7 @@
   <meta name="description" content="{{ .Title }} - {{ .Site.Params.description }}" />
   {{ else }}
   <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
-  <meta name="description"
-    content="{{ if .Params.desc }}{{ .Params.desc }}{{ else }}{{ .Title }} - {{ .Site.Params.description }}{{ end }}">
+  <meta name="description" content="{{ if .Params.desc }}{{ .Params.desc }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{ end }}
   <meta charset="utf-8" />
 
@@ -28,26 +27,37 @@
 
   <!-- Open Graph -->
   {{ if .IsHome }}
-    <meta property="og:title" content="{{ .Site.Title }} - {{ .Site.Params.description }}">
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta name="twitter:title" content="{{ .Site.Title }}">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="{{ .Title }} - {{ .Site.Params.description }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta name="twitter:description" content="{{ .Site.Params.description }}">
     <meta property="og:image" content="{{ absURL .Site.Params.featured }}">
+    <meta name="twitter:image" content="{{ absURL .Site.Params.featured }}">
+    <meta name="twitter:card" content="{{ absURL .Site.Params.featured }}">
     <meta property="og:url" content="{{ .Site.BaseURL }}" />
+    <meta property="twitter:url" content="{{ .Site.BaseURL }}" />
   {{ else }}
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="og:type" content="article">
     <meta property="og:description" content="{{ .Params.description }}">
+    <meta name="twitter:description" content="{{ .Params.description }}">
     <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="twitter:url" content="{{ .Permalink }}" />
   {{ if .Params.featured }}
     <meta property="og:image" content="{{ .Params.featured | absURL }}">
+    <meta name="twitter:image" content="{{ .Params.featured | absURL }}">
+    <meta name="twitter:card" content="{{ .Params.featured | absURL }}">
     <meta property="og:image:secure_url" content="{{ .Params.featured | absURL }}" />
   {{ else }}
     <meta property="og:image" content="{{ absURL .Site.Params.featured }}">
+    <meta name="twitter:image" content="{{ absURL .Site.Params.featured }}">
     <meta property="og:image:secure_url" content="{{ absURL .Site.Params.featured }}">
+    <meta name="twitter:card" content="{{ absURL .Site.Params.featured }}">
   {{ end }}
   {{ end }}
   <meta property="og:site_name" content="{{ .Site.Title }}" />
   <meta property="og:locale" content="en">
   <meta property="og:locale:alternate" content="es" />
-
 </head>
