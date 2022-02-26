@@ -48,7 +48,7 @@ From them you can add the blocks you need to make your game a true work of art o
 
 ## Types of patterns
 
-In this article we are going to analyze some design patterns specially useful for game development, specifically we will use C# as language and Unity as 3D engine. All the code and examples will be available in my [Github](https://github.com/Nephasto).
+In this article we are going to analyze some design patterns specially useful for game development, specifically we will use C# as language and Unity as 3D engine.
 
 The patterns we will see can be classified according to their purpose or level of abstraction in three groups:
 
