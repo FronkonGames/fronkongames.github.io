@@ -1,7 +1,7 @@
 ---
 title: "Design Patterns In Game Development"
-date: 2018-12-26T12:23:10+06:00
-image: images/blog/Design-Patterns-In-Game-Development/banner.jpg
+date: 2022-26-02
+image: /post/banner.jpg
 description: "Design patterns in game development"
 type: "post"
 ---
@@ -10,7 +10,7 @@ A design pattern proposes a solution to a recurring software design problem. The
 
 ## Some history
 
-{{< image src="/images/blog/Design-Patterns-In-Game-Development/book.png" alt="" align="right" style="margin:0px 50px" >}}
+{{< image src="/post/book.png" alt="" align="right" style="margin:0px 50px" >}}
 
 Design patterns emerge from the world of architecture when in 1979 architect and mathematician, [Christopher Alexander](https://es.wikipedia.org/wiki/Christopher_Alexander) publishes the book '*The Timeless Way of Building*'. In the author's words:
 
@@ -18,14 +18,14 @@ Design patterns emerge from the world of architecture when in 1979 architect and
 
 Inspired by the ancient medieval cities, he published with other colleagues his next book '*A Pattern Language*', where he formalizes the idea of a design pattern as a solution to a problem within a given context.
 
-{{< image src="/images/blog/Design-Patterns-In-Game-Development/squares.png" alt="" align="left" style="margin:0px 50px" >}}
+{{< image src="/post/squares.png" alt="" align="left" style="margin:0px 50px" >}}
 
 It describes methods for creating practical, safe and attractive designs regardless of the scale at which one works.
 Its principles are still used as building code in many cities.
 
 The leap into the programming world occurred in 1987 when [Ward Cunningham](https://en.wikipedia.org/wiki/Ward_Cunningham) and [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck) found parallels in Alexander's work and what a good architecture based on [object-oriented](https://en.wikipedia.org/wiki/Object-oriented_programming) should be. They developed five patterns and published a paper at the [OOPSLA](https://en.wikipedia.org/wiki/OOPSLA) conference in the same year under the name '[Using Pattern Languages for OO Programs](http://c2.com/doc/oopsla87.html)'.
 
-{{< image src="/images/blog/Design-Patterns-In-Game-Development/design-patterns-book.png" alt="" align="right" style="margin:0px 50px" >}}
+{{< image src="/post/design-patterns-book.png" alt="" align="right" style="margin:0px 50px" >}}
 
 But it was not until 1994 with the publication of the famous '[Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)' by the group called '[Gang of Four](http://wiki.c2.com/?GangOfFour)' (or simply '*GoF*') that the term and its use became popular. It sold over 500,000 copies in English and was translated into 13 other languages.
 
@@ -37,7 +37,7 @@ Because they can help us create robust software that is easy to understand and m
 
 Let's imagine you want to make toys out of plastic parts. You could make a mold for each new toy you need, but these toys could not be easily modified and you would not take advantage of any of the old molds.
 
-{{< imagecenter src="/images/blog/Design-Patterns-In-Game-Development/basic-bricks.png" >}}
+{{< imagecenter src="/post/basic-bricks.png" >}}
 
 Instead of building molds of complete toys, we could make molds of smaller pieces and build the toys with these blocks. In addition to being able to reuse them for other toys, owners could modify them and use blocks from other toys to build their own.
 
@@ -61,7 +61,7 @@ The patterns we will see can be classified according to their purpose or level o
 {{<id zone = "singleton">}}
 ## {{< fa dice-one >}} Singleton
 
-{{< image src="/images/blog/Design-Patterns-In-Game-Development/welcometo_singleton.jpg" alt="" align="right" style="margin:0px 50px" >}}
+{{< image src="/post/welcometo_singleton.jpg" alt="" align="right" style="margin:0px 50px" >}}
 
 The first design pattern we are going to see is possibly the most controversial and most/misused of all. Its simplicity when implementing it and its ease of use make it the design pattern that is usually learned first and, in some cases, the only pattern that many programmers know.
 

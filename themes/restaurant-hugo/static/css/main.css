@@ -394,8 +394,8 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
   bottom: 0;
   right: 0;
   top: 50%;
-  width: 30px;
-  height: 30px;
+  width: 0px;
+  height: 0px;
   margin-top: -15px;
   background: #fff;
   transform: rotate(45deg);

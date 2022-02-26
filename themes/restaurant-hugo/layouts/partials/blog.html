@@ -1,6 +1,4 @@
 {{ if site.Data.homepage.blog.enable}}
-{{ template "_internal/opengraph.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
 <script defer src="/static/css/fontawesome/fontawesome-all.js"></script>
 <section id="blog" {{ if site.Data.homepage.blog.overlay }} class="overlay" {{ end }}
   style="background-image: url('{{ site.Data.homepage.blog.bg_image | absURL }}');">
