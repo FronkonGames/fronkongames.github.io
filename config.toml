@@ -84,13 +84,18 @@ weight = 4
 [params]
 logo = "images/logo.png"
 featured = "images/featured.jpg"
+
 # meta data
 author = "Martin Bustos"
-description = "Indie game developer and asset publisher."
+description = "Indie game developer and asset publisher"
+keywords = "gamedev,unity,asset,store,unity3d,videogames,programmer"
+
 # google analitycs ID
 google_analitycs_id = "Your ID"
+
 # mainSections
 main_sections = ["post"]
+
 # copyright
 copyright = "Copyright &copy; 2022 Fronkon Games"
 
