@@ -1,6 +1,8 @@
 <!doctype html><html lang=en-us><head>
 <meta charset=utf-8>
-<title>Design Patterns In Game Development</title>
+<title>Design Patterns In Game Development - Fronkon Games</title>
+<meta name=description content="Design Patterns In Game Development - ">
+<meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta name=description content="Design patterns in game development">
 <meta name=author content="Themefisher">
@@ -14,6 +16,15 @@
 <link rel=stylesheet href=https://fronkongames.github.io/css/responsive.css>
 <link rel="shortcut icon" href=https://fronkongames.github.io/images/favicon.png type=image/x-icon>
 <link rel=icon href=https://fronkongames.github.io/images/favicon.png type=image/x-icon>
+<meta property="og:title" content="Design Patterns In Game Development - Fronkon Games">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Design Patterns In Game Development - ">
+<meta property="og:url" content="https://fronkongames.github.io/blog/design-patterns-in-game-development/">
+<meta property="og:image" content="https://fronkongames.github.io/blog/featured.jpg">
+<meta property="og:image:secure_url" content="https://fronkongames.github.io/blog/featured.jpg">
+<meta property="og:site_name" content="Fronkon Games">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="es">
 </head><body>
 <nav class=navigation>
 <div class=container>
@@ -44,42 +55,35 @@
 <br>
 </div>
 </div>
-</nav><meta property="og:title" content="Design Patterns In Game Development">
-<meta property="og:description" content="Design patterns in game development">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://fronkongames.github.io/post/design-patterns-in-game-development/"><meta property="article:section" content="post">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Design Patterns In Game Development">
-<meta name=twitter:description content="Design patterns in game development">
-<section class="section blog-single-page">
+</nav><section class="section blog-single-page">
 <div class=container>
 <div class=row>
 <div class="col-md-8 col-md-offset-2 text-center">
-<img class="img-responsive post-thumb d-inline-block" src=https://fronkongames.github.io/post/banner.jpg alt=blog-image>
 <br><br>
+<h1 class=post-title>Design Patterns In Game Development</h1>
 </div>
 <div class="col-md-8 col-md-offset-2">
 <div class=post-single-content>
 <p>A design pattern proposes a solution to a recurring software design problem. The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.</p>
 <h2 id=some-history>Some history</h2>
-<img src=/post/book.png alt align=right decoding=async style="margin:0 50px">
+<img src=/blog/book.png alt align=right decoding=async style="margin:0 50px">
 <p>Design patterns emerge from the world of architecture when in 1979 architect and mathematician, <a href=https://es.wikipedia.org/wiki/Christopher_Alexander>Christopher Alexander</a> publishes the book &lsquo;<em>The Timeless Way of Building</em>&rsquo;. In the author&rsquo;s words:</p>
 <blockquote>
 <p>Each pattern describes a problem that occurs an infinite number of times in our environment, as well as the solution to it, so that we can use this solution a million times later without having to rethink it again.</p>
 </blockquote>
 <p>Inspired by the ancient medieval cities, he published with other colleagues his next book &lsquo;<em>A Pattern Language</em>&rsquo;, where he formalizes the idea of a design pattern as a solution to a problem within a given context.</p>
-<img src=/post/squares.png alt align=left decoding=async style="margin:0 50px">
+<img src=/blog/squares.png alt align=left decoding=async style="margin:0 50px">
 <p>It describes methods for creating practical, safe and attractive designs regardless of the scale at which one works.
 Its principles are still used as building code in many cities.</p>
 <p>The leap into the programming world occurred in 1987 when <a href=https://en.wikipedia.org/wiki/Ward_Cunningham>Ward Cunningham</a> and <a href=https://en.wikipedia.org/wiki/Kent_Beck>Kent Beck</a> found parallels in Alexander&rsquo;s work and what a good architecture based on <a href=https://en.wikipedia.org/wiki/Object-oriented_programming>object-oriented</a> should be. They developed five patterns and published a paper at the <a href=https://en.wikipedia.org/wiki/OOPSLA>OOPSLA</a> conference in the same year under the name &lsquo;<a href=http://c2.com/doc/oopsla87.html>Using Pattern Languages for OO Programs</a>&rsquo;.</p>
-<img src=/post/design-patterns-book.png alt align=right decoding=async style="margin:0 50px">
+<img src=/blog/design-patterns-book.png alt align=right decoding=async style="margin:0 50px">
 <p>But it was not until 1994 with the publication of the famous &lsquo;<a href=https://en.wikipedia.org/wiki/Design_Patterns>Design Patterns: Elements of Reusable Object-Oriented Software</a>&rsquo; by the group called &lsquo;<a href=http://wiki.c2.com/?GangOfFour>Gang of Four</a>&rsquo; (or simply &lsquo;<em>GoF</em>') that the term and its use became popular. It sold over 500,000 copies in English and was translated into 13 other languages.</p>
 <p>In the book the authors lay the foundations of what we understand today as a design pattern and compile the first 23 patterns. Since then their number has continued to grow.</p>
 <h2 id=why-use-them>Why use them?</h2>
 <p>Because they can help us create robust software that is easy to understand and modify. In addition, it can provide you with a common vocabulary for planning or solving problems with other programmers.</p>
 <p>Let&rsquo;s imagine you want to make toys out of plastic parts. You could make a mold for each new toy you need, but these toys could not be easily modified and you would not take advantage of any of the old molds.</p>
 <div style=text-align:center>
-<img src=/post/basic-bricks.png alt decoding=async>
+<img src=/blog/basic-bricks.png alt decoding=async>
 </div>
 &nbsp;
 <p>Instead of building molds of complete toys, we could make molds of smaller pieces and build the toys with these blocks. In addition to being able to reuse them for other toys, owners could modify them and use blocks from other toys to build their own.</p>
@@ -103,7 +107,7 @@ Its principles are still used as building code in many cities.</p>
 <script defer src=/fontawesome-all.js></script>
 <i class="fas fa-dice-one"></i>
 Singleton</h2>
-<img src=/post/welcometo_singleton.jpg alt align=right decoding=async style="margin:0 50px">
+<img src=/blog/welcometo_singleton.jpg alt align=right decoding=async style="margin:0 50px">
 <p>The first design pattern we are going to see is possibly the most controversial and most/misused of all. Its simplicity when implementing it and its ease of use make it the design pattern that is usually learned first and, in some cases, the only pattern that many programmers know.</p>
 <p>The Singleton pattern can be summarized as:</p>
 <blockquote>
