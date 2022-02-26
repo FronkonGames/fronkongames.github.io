@@ -5,7 +5,10 @@ title = "Fronkon Games"
 theme = "restaurant-hugo"
 summaryLength = "10"
 paginate = 4
-featured = "images/featured.jpg"
+enableRobotsTXT = true
+enableEmoji = true
+relativeurls = true
+uglyurls = true
 
 ############################# Plugins ##############################
 
@@ -80,8 +83,9 @@ weight = 4
 #################### default parameters ################################
 [params]
 logo = "images/logo.png"
+featured = "images/featured.jpg"
 # meta data
-author = "Themefisher"
+author = "Martin Bustos"
 description = "Indie game developer and asset publisher."
 # google analitycs ID
 google_analitycs_id = "Your ID"
