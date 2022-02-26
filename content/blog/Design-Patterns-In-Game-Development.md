@@ -1,6 +1,7 @@
 ---
 title: "Design Patterns In Game Development"
 date: 2022-26-02
+image: /blog/banner.jpg
 featured: /blog/featured.jpg
 description: "Design patterns in game development"
 type: "post"
