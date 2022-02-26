@@ -1,1 +1,15 @@
 User-agent: *
+
+Disallow: /
+
+Disallow: /store/sprites-mojo-unity-store.html
+
+Disallow: /store.html
+
+Disallow: /blog.html
+
+Disallow: /categories.html
+
+Disallow: /blog/design-patterns-in-game-development.html
+
+Disallow: /tags.html
