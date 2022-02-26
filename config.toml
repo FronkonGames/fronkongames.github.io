@@ -5,6 +5,7 @@ title = "Fronkon Games"
 theme = "restaurant-hugo"
 summaryLength = "10"
 paginate = 4
+featured = "images/featured.jpg"
 
 ############################# Plugins ##############################
 
