@@ -234,9 +234,9 @@ nav {
 }
 
 nav .block {
-  margin-top: -85px;
+  margin-top: 0px;
   background: #fff;
-  padding: 25px 40px;
+  padding: 0px 40px;
   background: rgba(255, 255, 255, 0.89);
 }
 
@@ -466,6 +466,15 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+/*--
+    store Start
+--*/
+
+#store .block .heading {
+  color: #fff;
+  margin-bottom: 40px;
 }
 
 /*--
