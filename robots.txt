@@ -6,6 +6,8 @@ Disallow: /store/sprites-mojo-unity-store.html
 
 Disallow: /store.html
 
+Disallow: /blog/awesome-game-development.html
+
 Disallow: /blog.html
 
 Disallow: /categories.html
