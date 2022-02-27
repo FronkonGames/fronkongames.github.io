@@ -113,7 +113,6 @@ a, a:active, a:focus, a:active {
 }
 
 .section {
-  padding: 100px 0;
   background-color: gainsboro;
 }
 
@@ -225,7 +224,7 @@ a, a:active, a:focus, a:active {
 --*/
 .navigation {
   position: sticky;
-  top: 85px;
+  top: 0px;
 }
 
 nav {
