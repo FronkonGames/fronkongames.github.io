@@ -14,4 +14,6 @@ Disallow: /categories.html
 
 Disallow: /blog/design-patterns-in-game-development.html
 
+Disallow: /blog/go-weiqi-igo-baduk.html
+
 Disallow: /tags.html
