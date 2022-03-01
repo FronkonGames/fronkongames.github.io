@@ -1,5 +1,16 @@
 <head>
   {{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ end }}
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KJMP3ENQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5KJMP3ENQM');
+  </script>
+  
   <meta charset="utf-8">
   {{ if .IsHome }}
   <title>{{ .Title }}, {{ .Site.Params.description }}</title>
@@ -8,7 +19,6 @@
   <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
   <meta name="description" content="{{ if .Params.desc }}{{ .Params.desc }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{ end }}
-  <meta charset="utf-8" />
 
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
