@@ -2,19 +2,11 @@
 title: "Sprites Mojo"
 date: 2022-02-23T12:23:10+06:00
 image: /store/store-todo.jpg
+demo: https://fronkongames.github.io/store/demos/sprites-mojo/
+store: https://fronkongames.github.io/store/demos/sprites-mojo/
 description: "A collection of 2D effects to add more juice to your games."
 type: "store"
 ---
-
-{{< rawhtml >}}
-<!--
-    <div align="right">
-      <a href="https://nephasto-git.gitlab.io/work/unity-store/sprite-fx" class="button">🕹️ Demo</a>&nbsp;
-      <a href="https://assetstore.unity.com/packages/slug/213504?aid=1101l9zFC&utm_source=aff" class="button">🛒 Store</a>
-    </div>
--->
-<br>
-{{< /rawhtml >}}
 
 ## Editor
 
