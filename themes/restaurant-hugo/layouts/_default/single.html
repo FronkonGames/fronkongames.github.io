@@ -6,11 +6,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
+
+                <img class="img-responsive post-thumb d-inline-block" src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
 <!--
-                <img class="img-responsive post-thumb d-inline-block" src="{{ .Params.image | absURL }}" alt="blog-image">
+    <div align="right">
+      <a href="https://nephasto-git.gitlab.io/work/unity-store/sprite-fx" class="button">🕹️ Demo</a>&nbsp;
+      <a href="https://assetstore.unity.com/packages/slug/213504?aid=1101l9zFC&utm_source=aff" class="button">🛒 Store</a>
+    </div>
 -->
                 <br><br>
+                <h1 class="post-title">{{ .Description }}</h1>
+                <!--
                 <h1 class="post-title">{{ .Title }}</h1>
+                -->
                 <!--
                 <ul class="list-inline mb-50 post-meta">
                     <li class="list-inline-item">{{ .Params.author }}</li>
