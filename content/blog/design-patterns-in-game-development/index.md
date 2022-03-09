@@ -1,13 +1,13 @@
 ---
 title: "Design Patterns In Game Development"
-description: "A design pattern proposes a solution to a recurring software design problem..."
+description: "A design pattern proposes a solution to a problem."
 date: 2022-26-02
 image: blog/design-patterns-in-game-development/banner.jpg
 featured: blog/design-patterns-in-game-development/featured.jpg
 type: "post"
 ---
 
-A design pattern proposes a solution to a recurring software design problem. The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.
+The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.
 
 ## Some history
 

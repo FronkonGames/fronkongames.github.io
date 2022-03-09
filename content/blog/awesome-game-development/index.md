@@ -1,15 +1,13 @@
 ---
 title: "Awesome GameDev"
-description: "An curated collection of resources to design, develop and marketing games"
+description: "An curated collection of resources to gamedev."
 date: 2022-27-02
 image: blog/awesome-game-development/banner.jpg
 featured: blog/awesome-game-development/featured.jpg
 type: "post"
 ---
 {{<id zone = "contents">}}
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-
-An curated collection of resources to design, develop and marketing games. To add, remove or change things on the list, please send me a [email](mailto:fronkongames@gmail.com) with the request. Maintained by [@FronkonGames](https://twitter.com/fronkongames).
+To add, remove or change things on the list, please send me a [email](mailto:fronkongames@gmail.com) with the request. Maintained by [@FronkonGames](https://twitter.com/fronkongames).
 
 | {{< rawhtml >}}<img width=300/>{{< /rawhtml >}}| {{< rawhtml >}}<img width=300/>{{< /rawhtml >}} | {{< rawhtml >}}<img width=300/>{{< /rawhtml >}} |
 | :- | :- | :- |

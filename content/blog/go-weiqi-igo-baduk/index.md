@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Go"
-description: "A very old strategy game that consists of capturing pieces and winning territories."
+description: "The oldest board game still played today."
 date: 2022-28-01
 image: blog/go-weiqi-igo-baduk/banner.jpg
 featured: blog/go-weiqi-igo-baduk/featured.jpg

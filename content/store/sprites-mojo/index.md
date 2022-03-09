@@ -1,7 +1,8 @@
 ---
 title: "Sprites Mojo"
 date: 2022-02-23T12:23:10+06:00
-image: /store/store-todo.jpg
+image: /store/sprites-mojo/mini.png
+logo: /store/sprites-mojo/logo.png
 demo: https://fronkongames.github.io/store/demos/sprites-mojo/
 store: https://fronkongames.github.io/store/demos/sprites-mojo/
 description: "A collection of 2D effects to add more juice to your games."
@@ -14,11 +15,11 @@ From the editor you can create '__Sprites Mojo__' effects in two different ways:
 
 To create a sprite that uses one of the '__Sprites Mojo__' effects, right click on the '_Hierarchy_' window and select an effect from the list that will appear under '_2D Object > Sprites Mojo_'.
 
-{{< imagecenter src="sprite-fx/editor_0.jpg" >}}
+{{< imagecenter src="editor_0.jpg" >}}
 
 This will create an empty sprite with a '__Sprites Mojo__' material. When you assign a sprite (__1__) you will see the effect. '__Sprites Mojo__' is material based, so you will have to display its material (__2__) to see its parameters.
 
-{{< imagecenter src="sprite-fx/editor_1.jpg" >}}
+{{< imagecenter src="editor_1.jpg" >}}
 
 All effects have a layout similar to the example above. A first part (__3__) with the effect parameters. Another part that you can activate to adjust the color (__4__) and another part where you can adjust sprite values (__5__).
 
@@ -28,7 +29,7 @@ This is the easiest way to create sprites using '__Sprites Mojo__', but you must
 
 To create a material that uses a '__Sprites Mojo__' effect, just right click on the '_Project_' window and select one of the '_Create > Fronkon Games > Sprite FX_' effects. Once the material is created, you only have to assign it to the sprites you want to use it.
 
-{{< imagecenter src="sprite-fx/editor.gif" >}}
+{{< imagecenter src="editor.gif" >}}
 
 ## Effects
 
@@ -40,7 +41,7 @@ Desaturates the image by selecting the intensity for each color channel, the amo
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/blackandwhite.jpg" >}} | {{< video src="sprite-fx/BlackAndWhite.mp4">}} |
+| {{< imagecenter src="blackandwhite.jpg" >}} | {{< video src="BlackAndWhite.mp4">}} |
 
 ### Black Hole
 

@@ -6,20 +6,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
-
-                <img class="img-responsive post-thumb d-inline-block" src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                {{ if .Params.Logo }}
+                <br><br>
+                <img class="img-responsive post-thumb d-inline-block" src="{{ .Params.logo | absURL }}" alt="{{ .Title }}">
+                {{ end }}
                 <br><br>
                 <h1 class="post-title">{{ .Params.description }}</h1>
                 <!--
                 <h1 class="post-title">{{ .Title }}</h1>
                 -->
-
-<!--
-    <div align="right">
-      <a href="https://nephasto-git.gitlab.io/work/unity-store/sprite-fx" class="button">🕹️ Demo</a>&nbsp;
-      <a href="https://assetstore.unity.com/packages/slug/213504?aid=1101l9zFC&utm_source=aff" class="button">🛒 Store</a>
-    </div>
--->
 
                 <!--
                 <ul class="list-inline mb-50 post-meta">
@@ -27,10 +22,14 @@
                     <li class="list-inline-item">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
                 </ul>
                 -->
-          <div class="text-center">
-            <a href="{{ .Params.Demo }}" class="btn btn-default">🕹️ Demo</a>
-            <a href="{{ .Params.Store }}" class="btn btn-default">🛒 Store</a>
-          </div>
+
+            {{ if .Params.Demo }}
+            <div class="text-right">
+              <a href="{{ .Params.Demo }}" class="btn btn-default">🕹️ Demo</a>
+              <a href="{{ .Params.Store }}" class="btn btn-default">🛒 Store</a>
+            </div>
+            {{ end }}
+            <br><br>
 
             </div>
             <div class="col-md-8 col-md-offset-2">
