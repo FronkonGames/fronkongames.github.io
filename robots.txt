@@ -2,7 +2,7 @@ User-agent: *
 
 Disallow: /
 
-Disallow: /store/sprites-mojo-unity-store.html
+Disallow: /store/sprites-mojo.html
 
 Disallow: /store.html
 
