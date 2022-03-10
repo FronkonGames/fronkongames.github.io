@@ -4,7 +4,8 @@ date: 2022-02-23T12:23:10+06:00
 image: /store/sprites-mojo/mini.png
 logo: /store/sprites-mojo/logo.png
 demo: https://fronkongames.github.io/store/demos/sprites-mojo/
-store: https://fronkongames.github.io/store/demos/sprites-mojo/
+store: https://assetstore.unity.com/packages/slug/214468
+youtube: https://youtu.be/4eyGdIvJxko
 description: "A collection of 2D effects to add more juice to your games."
 type: "store"
 ---
@@ -15,11 +16,11 @@ From the editor you can create '__Sprites Mojo__' effects in two different ways:
 
 To create a sprite that uses one of the '__Sprites Mojo__' effects, right click on the '_Hierarchy_' window and select an effect from the list that will appear under '_2D Object > Sprites Mojo_'.
 
-{{< imagecenter src="editor_0.jpg" >}}
+{{< imagecenter src="/store/sprites-mojo/editor_0.jpg" >}}
 
 This will create an empty sprite with a '__Sprites Mojo__' material. When you assign a sprite (__1__) you will see the effect. '__Sprites Mojo__' is material based, so you will have to display its material (__2__) to see its parameters.
 
-{{< imagecenter src="editor_1.jpg" >}}
+{{< imagecenter src="/store/sprites-mojo/editor_1.jpg" >}}
 
 All effects have a layout similar to the example above. A first part (__3__) with the effect parameters. Another part that you can activate to adjust the color (__4__) and another part where you can adjust sprite values (__5__).
 
@@ -27,9 +28,9 @@ Finally, by clicking on '[doc]' (__6__) you can access the online documentation 
 
 This is the easiest way to create sprites using '__Sprites Mojo__', but you must keep in mind that it will create a new material for each sprite you create. If your sprites do not share textures between them, no problem. If your sprites share the same texture, the second way is more optimal: creating materials.
 
-To create a material that uses a '__Sprites Mojo__' effect, just right click on the '_Project_' window and select one of the '_Create > Fronkon Games > Sprite FX_' effects. Once the material is created, you only have to assign it to the sprites you want to use it.
+To create a material that uses a '__Sprites Mojo__' effect, just right click on the '_Project_' window and select one of the '_Create > Sprites Mojo_' effects. Once the material is created, you only have to assign it to the sprites you want to use it.
 
-{{< imagecenter src="editor.gif" >}}
+{{< imagecenter src="/store/sprites-mojo/editor.gif" >}}
 
 ## Effects
 
@@ -41,7 +42,7 @@ Desaturates the image by selecting the intensity for each color channel, the amo
 
 | | |
 | -: | :- |
-| {{< imagecenter src="blackandwhite.jpg" >}} | {{< video src="BlackAndWhite.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/blackandwhite.jpg" >}} | {{< video src="/store/sprites-mojo/BlackAndWhite.mp4">}} |
 
 ### Black Hole
 
@@ -49,11 +50,11 @@ Create a '_black hole_' inside the sprite. Use the alpha channel of '_Color_' to
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/blackhole.jpg" >}} | {{< video src="sprite-fx/BlackHole.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/blackhole.jpg" >}} | {{< video src="/store/sprites-mojo/BlackHole.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect modifies the outline of the sprite, in some cases you may notice some bugs in the edges. To fix it, make sure that in the sprite import options '__Mesh Type__' is set to '__Full Rect__'. This effect does not support [Sprite Atlas](https://docs.unity3d.com/Manual/class-SpriteAtlas.html).
-{{% /notice %}}
+{{< /notice >}}
 
 ### Blend
 
@@ -61,11 +62,11 @@ Use some of Photoshop's 25 blending modes.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/blend.jpg" >}} | {{< video src="sprite-fx/Blend.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/blend.jpg" >}} | {{< video src="/store/sprites-mojo/Blend.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 Since URP does not support '[Grab Pass](https://docs.unity3d.com/Manual/SL-GrabPass.html)' at the moment, this effect is only available for the Built-in Render Pipeline.
-{{% /notice %}}
+{{< /notice >}}
 
 ### Dissolve
 
@@ -75,11 +76,11 @@ This effect has a large list of built-in patterns you can use, but if you want t
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/dissolve.jpg" >}} | {{< video src="sprite-fx/Dissolve.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/dissolve.jpg" >}} | {{< video src="/store/sprites-mojo/Dissolve.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect does not support [Sprite Atlas](https://docs.unity3d.com/Manual/class-SpriteAtlas.html).
-{{% /notice %}}
+{{< /notice >}}
 
 ### Dither
 
@@ -87,7 +88,7 @@ Applies various algorithms to reduce the amount of colors. It also pixelizes the
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/dither.jpg" >}} | {{< video src="sprite-fx/Dither.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/dither.jpg" >}} | {{< video src="/store/sprites-mojo/Dither.mp4">}} |
 
 ### Duo Tone
 
@@ -95,7 +96,7 @@ It uses a two-color gradient based on the sprite's luminance. To adjust the brig
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/duotone.jpg" >}} | {{< video src="sprite-fx/DuoTone.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/duotone.jpg" >}} | {{< video src="/store/sprites-mojo/DuoTone.mp4">}} |
 
 ### Edge
 
@@ -103,7 +104,7 @@ Highlight sprite edges using different modes and algorithms.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/edge.jpg" >}} | {{< video src="sprite-fx/Edge.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/edge.jpg" >}} | {{< video src="/store/sprites-mojo/Edge.mp4">}} |
 
 ### Glass
 
@@ -111,11 +112,11 @@ Simulates a glass material, deforming the background.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/glass.jpg" >}} | {{< video src="sprite-fx/Glass.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/glass.jpg" >}} | {{< video src="/store/sprites-mojo/Glass.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 Since URP does not support '[Grab Pass](https://docs.unity3d.com/Manual/SL-GrabPass.html)' at the moment, this effect is only available for the Built-in Render Pipeline.
-{{% /notice %}}
+{{< /notice >}}
 
 ### Hologram
 
@@ -123,7 +124,7 @@ It simulates a hologram or projection.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/hologram.jpg" >}} | {{< video src="sprite-fx/Hologram.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/hologram.jpg" >}} | {{< video src="/store/sprites-mojo/Hologram.mp4">}} |
 
 ### Instagram
 
@@ -131,7 +132,7 @@ Apply one of the 15 most used filters on Instagram.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/instagram.jpg" >}} | {{< video src="sprite-fx/Instagram.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/instagram.jpg" >}} | {{< video src="/store/sprites-mojo/Instagram.mp4">}} |
 
 ### Masks
 
@@ -139,11 +140,11 @@ Applies blending effects, colors and textures to areas of a sprite defined by a 
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/masks.jpg" >}} | {{< video src="sprite-fx/Masks.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/masks.jpg" >}} | {{< video src="/store/sprites-mojo/Masks.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect does not support [Sprite Atlas](https://docs.unity3d.com/Manual/class-SpriteAtlas.html).
-{{% /notice %}}
+{{< /notice >}}
 
 ### Negative
 
@@ -151,7 +152,7 @@ Change each color by its opposite. You can define how each color channel is affe
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/negative.jpg" >}} | {{< video src="sprite-fx/Negative.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/negative.jpg" >}} | {{< video src="/store/sprites-mojo/Negative.mp4">}} |
 
 ### Outline
 
@@ -159,7 +160,7 @@ Creates a border around the sprite outline.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/outline.jpg" >}} | {{< video src="sprite-fx/Outline.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/outline.jpg" >}} | {{< video src="/store/sprites-mojo/Outline.mp4">}} |
 
 ### Pinch
 
@@ -167,11 +168,11 @@ Clamp the sprite in a certain area.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/pinch.jpg" >}} | {{< video src="sprite-fx/Pinch.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/pinch.jpg" >}} | {{< video src="/store/sprites-mojo/Pinch.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect modifies the outline of the sprite, in some cases you may notice some bugs in the edges. To fix it, make sure that in the sprite import options '__Mesh Type__' is set to '__Full Rect__'.
-{{% /notice %}}
+{{< /notice >}}
 
 ### Ramp
 
@@ -179,11 +180,11 @@ Replaces the sprite colors with a gradient of 5 colors based on luminance. To ad
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/ramp.jpg" >}} | {{< video src="sprite-fx/Ramp.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/ramp.jpg" >}} | {{< video src="/store/sprites-mojo/Ramp.mp4">}} |
 
 To easily find a gradient, click on '__search__' (__1__), to open the gradient search tool (internet connection required), or click on '__random__' (__2__) to get a random one.
 
-{{< imagecenter src="sprite-fx/ramptool.jpg" >}}
+{{< imagecenter src="/store/sprites-mojo/ramptool.jpg" >}}
 
 Clicking on '__sort__' (__3__) will sort the gradient colors from the darkest (in '_Color 1_') to the brightest (in '_Color 5_'). You can also '__copy__' '__paste__' (__4__) between sprites with the '__Ramp__' effect.
 
@@ -193,7 +194,7 @@ Emulates old devices such as: Gameboy, Commodore 64, ZX Spectrum, etc.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/retro.jpg" >}} | {{< video src="sprite-fx/Retro.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/retro.jpg" >}} | {{< video src="/store/sprites-mojo/Retro.mp4">}} |
 
 ### RGB Glitch
 
@@ -201,11 +202,11 @@ Simulates a failure in the RGB color channels.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/rgbglitch.jpg" >}} | {{< video src="sprite-fx/RGBGlitch.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/rgbglitch.jpg" >}} | {{< video src="/store/sprites-mojo/RGBGlitch.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect modifies the outline of the sprite, in some cases you may notice some bugs in the edges. To fix it, make sure that in the sprite import options '__Mesh Type__' is set to '__Full Rect__'.
-{{% /notice %}}
+{{< /notice >}}
 
 ### Shake
 
@@ -213,11 +214,11 @@ Shake the sprite.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/shake.jpg" >}} | {{< video src="sprite-fx/Shake.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/shake.jpg" >}} | {{< video src="/store/sprites-mojo/Shake.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect modifies the outline of the sprite, in some cases you may notice some bugs in the edges. To fix it, make sure that in the sprite import options '__Mesh Type__' is set to '__Full Rect__'.
-{{% /notice %}}
+{{< /notice >}}
 
 ### Shift
 
@@ -225,11 +226,11 @@ Shitfs the RGB color channels linearly or radially. Enable '__Noise__' to add no
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/shift.jpg" >}} | {{< video src="sprite-fx/Shift.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/shift.jpg" >}} | {{< video src="/store/sprites-mojo/Shift.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect modifies the outline of the sprite, in some cases you may notice some bugs in the edges. To fix it, make sure that in the sprite import options '__Mesh Type__' is set to '__Full Rect__'.
-{{% /notice %}}
+{{< /notice >}}
 
 ### Swirl
 
@@ -237,11 +238,11 @@ Twist a certain area of the sprite.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/swirl.jpg" >}} | {{< video src="sprite-fx/Swirl.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/swirl.jpg" >}} | {{< video src="/store/sprites-mojo/Swirl.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect modifies the outline of the sprite, in some cases you may notice some bugs in the edges. To fix it, make sure that in the sprite import options '__Mesh Type__' is set to '__Full Rect__'. This effect does not support [Sprite Atlas](https://docs.unity3d.com/Manual/class-SpriteAtlas.html).
-{{% /notice %}}
+{{< /notice >}}
 
 ### Tremor
 
@@ -249,11 +250,11 @@ Causes tremors in the sprite.
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/tremor.jpg" >}} | {{< video src="sprite-fx/Tremor.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/tremor.jpg" >}} | {{< video src="/store/sprites-mojo/Tremor.mp4">}} |
 
-{{% notice info %}}
+{{< notice note>}}
 This effect modifies the outline of the sprite, in some cases you may notice some bugs in the edges. To fix it, make sure that in the sprite import options '__Mesh Type__' is set to '__Full Rect__'.
-{{% /notice %}}
+{{< /notice >}}
 
 ### Trio Tone
 
@@ -261,7 +262,7 @@ It uses a three-color gradient based on the sprite's luminance. To adjust the lu
 
 | | |
 | -: | :- |
-| {{< imagecenter src="sprite-fx/triotone.jpg" >}} | {{< video src="sprite-fx/TrioTone.mp4">}} |
+| {{< imagecenter src="/store/sprites-mojo/triotone.jpg" >}} | {{< video src="/store/sprites-mojo/TrioTone.mp4">}} |
 
 <br>
 
@@ -269,30 +270,27 @@ It uses a three-color gradient based on the sprite's luminance. To adjust the lu
 
 All the code is inside the _namespace_ '__FronkonGames.SpritesMojo__'. The first thing to do is to import the _namespace_:
 
-```cs {linenos=true}
+{{< highlight cpp >}}
  using FronkonGames.SpritesMojo;
-```
-&nbsp;
+{{< /highlight >}}
 
 You can create sprites that use the effects of '__Sprites Mojo__' as follows (in this example '__Retro__'):
 
-```cs {linenos=true}
+{{< highlight cpp >}}
  GameObject gameObject = Retro.CreateSprite();
-```
-&nbsp;
+{{< /highlight >}}
 
 Remember that each sprite will have a new material. If you want several sprites to use the same material with an effect, you can create it that way and then assign it to the sprites you want:
 
-```cs {linenos=true}
+{{< highlight cpp >}}
  Material material = Retro.CreateMaterial();
-```
-&nbsp;
+{{< /highlight >}}
 
-Each effect has those two functions (_CreateSprite()_ and _CreateMaterial()_) to create its own sprites and materials. You can find them all in the '_Fronkon Games/SpriteFX/Runtime/FX_' folder.
+Each effect has those two functions (_CreateSprite()_ and _CreateMaterial()_) to create its own sprites and materials. You can find them all in the '_Fronkon Games/SpritesMojo/Runtime_' folder.
 
 Continuing with the previous example, if you wanted to modify or query any parameter of the '__Retro__' effect, you can do it like this:
 
-```cs {linenos=true}
+{{< highlight cpp >}}
  SpriteRenderer sprite = gameObject.GetComponent<SpriteRenderer>();
 
  // Changes the sprite emulation mode.
@@ -304,27 +302,24 @@ Continuing with the previous example, if you wanted to modify or query any param
  // You can also do it with the material.
  Retro.Mode.Set(material, Retro.Emulations.Gameboy);
  float luminance = Retro.Luminance.Get(material);
-```
-&nbsp;
+{{< /highlight >}}
 
 In addition, all effects have some common parameters that you can access through the '_SpritesMojo_' class that you can find in '_Fronkon Games/Sprites Mojo/Runtime_'. For example, let's enable '_ColorAdjust_' if it is disabled and modify some of its parameters:
 
-```cs {linenos=true}
-  if (SpriteFX.ColorAdjust.Get(sprite) == false)
+{{< highlight cpp >}}
+  if (SpriteMojo.ColorAdjust.Get(sprite) == false)
   {
-    SpriteFX.ColorAdjust.Set(sprite, true);
+    SpriteMojo.ColorAdjust.Set(sprite, true);
 
-    SpriteFX.Gamma.Set(sprite, 1.2f);
-    SpriteFX.Hue.Set(sprite, 0.25f);
+    SpriteMojo.Gamma.Set(sprite, 1.2f);
+    SpriteMojo.Hue.Set(sprite, 0.25f);
   }
-```
-&nbsp;
+{{< /highlight >}}
 
 All effect variables of type _IntVariable_, _FloatVariable_, _ColorVariable_ and _VectorVariable_ can be set to a value and you can specify how long (in seconds) you want the transition to last from the current value to the one you have set. For example, if you want to transition to a pixel size of 8 in 2 seconds:
 
-```cs {linenos=true}--
+{{< highlight cpp >}}
   Retro.Pixelation.Set(sprite, 8, 2.0f);
-```
-&nbsp;
+{{< /highlight >}}
 
 Check the class comments for more information.
