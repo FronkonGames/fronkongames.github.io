@@ -2,9 +2,11 @@ User-agent: *
 
 Disallow: /
 
-Disallow: /store/sprites-mojo.html
+Disallow: /store/one-bit.html
 
 Disallow: /store.html
+
+Disallow: /store/sprites-mojo.html
 
 Disallow: /blog/awesome-game-development.html
 

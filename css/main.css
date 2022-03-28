@@ -387,8 +387,9 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
   position: relative;
   flex-basis: 50%;
   text-align: center;
-  padding: 20px;
-}
+  padding-left: 20px;
+  padding-right: 20px;
+}}
 
 .post-content::before {
   content: "";
@@ -407,8 +408,8 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 
 .post-content h3 {
   padding: 0px 10px 20px;
-  margin-bottom: 20px;
-  line-height: 26px;
+  margin-bottom: 0px;
+  line-height: 30px;
   position: relative;
 }
 
