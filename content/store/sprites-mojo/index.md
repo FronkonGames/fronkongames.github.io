@@ -323,3 +323,12 @@ All effect variables of type _IntVariable_, _FloatVariable_, _ColorVariable_ and
 {{< /highlight >}}
 
 Check the class comments for more information.
+
+{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+## Support
+
+Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
+
+Remember that if you want to inform me of an error, I will help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
+
+{{< rawhtml >}}</br><center><b>Thank you for your interest in my asset!</b></center>{{< /rawhtml >}}
