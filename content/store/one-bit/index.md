@@ -10,8 +10,28 @@ description: "A hipster, original and versatile look using a dithering with blue
 type: "store"
 ---
 
-## BuiltIn
+## Configuration for Builtin
 
-## URP
+To use '**One Bit**' for Builtin render (Unity default render) you just have to add the '**One Bit (Builtin)**' component to the camera of your scene.
 
-## Editor
+{{< imagecenter src="/store/one-bit/editor_0.jpg" >}}
+
+## Configuration for URP
+
+To use '**One Bit**' with URP render (Universal Render Pipeline), the first thing you should do is install the '**Universal RP**' package version **10.8.1 or higher**. For more information on how to do this, you can follow [this official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.8/manual/InstallURPIntoAProject.html).
+
+Once the '**Universal RP**' package can be installed correctly, you can now install '**One Bit**'. Once installed, locate the file '**Universal Render Pipeline Asset**', you can find it in the window '**Project Settings**' > '**Graphics**':
+
+{{< imagecenter src="/store/one-bit/editor_1.jpg" >}}
+
+Select it and locate the file that appears in '**Render List**':
+
+{{< imagecenter src="/store/one-bit/editor_2.jpg" >}}
+
+Now you can add '**One Bit Urp**' by clicking on '**Add Renderer Feature**':
+
+{{< imagecenter src="/store/one-bit/editor_3.jpg" >}}
+
+## Use
+
+TODO.
