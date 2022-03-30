@@ -68,6 +68,6 @@ You just have to find the gradient and press on '**Use**' where you like the mos
 
 Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
-Remember that if you want to inform me of an error, I will help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
+Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}</br><center><b>Thank you for your interest in my asset!</b></center>{{< /rawhtml >}}
+{{< rawhtml >}}</br><center><b><h1>Thanks for your interest in my asset!</h1></b></center>{{< /rawhtml >}}
