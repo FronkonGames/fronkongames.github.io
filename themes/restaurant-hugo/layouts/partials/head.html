@@ -1,6 +1,10 @@
 <head>
   {{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ end }}
 
+  {{ if .Site.Params.GoogleAnalyticsID }}
+  {{ partial "analytics-gtag.html" . }}
+  {{ end }}
+
   {{ " <!-- Global Site Tag (gtag.js) - Google Tag Manager -->" | safeHTML }}
   {{ with .Site.Params.google_analytics_id}}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>

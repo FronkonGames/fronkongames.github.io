@@ -90,8 +90,8 @@ author = "Martin Bustos"
 description = "Indie game developer and asset publisher"
 keywords = "gamedev,unity,asset,store,unity3d,videogames,programmer"
 
-# google analitycs ID
-google_analitycs_id = "G-90Y4J5LX9J"
+# Google Analitycs 4 ID
+googleAnalyticsID = "G-90Y4J5LX9J"
 
 # mainSections
 main_sections = ["post"]
