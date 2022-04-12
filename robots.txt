@@ -1,6 +1,12 @@
 User-agent: *
 
+Disallow: /gamedev/awesome-game-development.html
+
 Disallow: /
+
+Disallow: /gamedev/gamework/foundation.html
+
+Disallow: /gamedev.html
 
 Disallow: /store/one-bit.html
 
@@ -8,15 +14,11 @@ Disallow: /store.html
 
 Disallow: /store/sprites-mojo.html
 
-Disallow: /gamedev/awesome-game-development.html
-
 Disallow: /blog.html
 
 Disallow: /categories.html
 
 Disallow: /gamedev/design-patterns-in-game-development.html
-
-Disallow: /gamedev.html
 
 Disallow: /blog/go-weiqi-igo-baduk.html
 
