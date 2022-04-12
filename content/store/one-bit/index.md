@@ -6,7 +6,7 @@ logo: /store/one-bit/logo.png
 demo: https://fronkongames.github.io/store/demos/one-bit/
 store: https://assetstore.unity.com/packages/slug/216000
 youtube: https://www.youtube.com/watch?v=WY10wS39GDw
-description: "A hipster, original and versatile look using a dithering with blue noise."
+description: "A hipster, original and versatile look using a dithering with blue noise"
 type: "store"
 ---
 

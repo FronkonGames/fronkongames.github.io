@@ -1,7 +1,7 @@
 ---
 title: "Awesome GameDev"
-description: "An curated collection of resources to gamedev."
-date: 2022-27-02
+description: "An curated collection of resources to gamedev"
+date: 2022-04-12
 image: gamedev/awesome-game-development/banner.jpg
 featured: gamedev/awesome-game-development/featured.jpg
 type: "gamedev"
@@ -25,7 +25,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 {{<id zone = "art">}}
 # 🎨 **Art**
-{{< content "gamedev/awesome-game-development/art.md" >}}
+{{< content "gamedev/awesome-game-development/art.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "design">}}
 
@@ -33,7 +33,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # ✏️ **Design**
-{{< content "gamedev/awesome-game-development/design.md" >}}
+{{< content "gamedev/awesome-game-development/design.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "code">}}
 
@@ -41,7 +41,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # ⌨️ **Code**
-{{< content "gamedev/awesome-game-development/code.md" >}}
+{{< content "gamedev/awesome-game-development/code.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "audio">}}
 
@@ -49,7 +49,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🎙️ **Audio**
-{{< content "gamedev/awesome-game-development/audio.md" >}}
+{{< content "gamedev/awesome-game-development/audio.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "organization">}}
 
@@ -57,7 +57,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🗄️ **Organization**
-{{< content "gamedev/awesome-game-development/organization.md" >}}
+{{< content "gamedev/awesome-game-development/organization.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "unity">}}
 
@@ -65,7 +65,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # ⚙️ **Unity**
-{{< content "gamedev/awesome-game-development/unity.md" >}}
+{{< content "gamedev/awesome-game-development/unity.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "unreal">}}
 
@@ -73,7 +73,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # ⚙️ **Unreal**
-{{< content "gamedev/awesome-game-development/unreal.md" >}}
+{{< content "gamedev/awesome-game-development/unreal.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "engines">}}
 
@@ -81,7 +81,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🧰 **Engines**
-{{< content "gamedev/awesome-game-development/engines.md" >}}
+{{< content "gamedev/awesome-game-development/engines.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "postmortems">}}
 
@@ -89,7 +89,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # ⚰️ **Postmortems**
-{{< content "gamedev/awesome-game-development/postmortems.md" >}}
+{{< content "gamedev/awesome-game-development/postmortems.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "web">}}
 
@@ -97,7 +97,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🌐 **Web**
-{{< content "gamedev/awesome-game-development/web.md" >}}
+{{< content "gamedev/awesome-game-development/web.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "resources">}}
 
@@ -105,7 +105,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🍪 **Resources**
-{{< content "gamedev/awesome-game-development/resources.md" >}}
+{{< content "gamedev/awesome-game-development/resources.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "tools">}}
 
@@ -113,7 +113,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🛠️ **Tools**
-{{< content "gamedev/awesome-game-development/tools.md" >}}
+{{< content "gamedev/awesome-game-development/tools.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "social">}}
 
@@ -121,7 +121,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🤝 **Social**
-{{< content "gamedev/awesome-game-development/social.md" >}}
+{{< content "gamedev/awesome-game-development/social.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "marketing">}}
 
@@ -129,7 +129,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 💸 **Marketing**
-{{< content "gamedev/awesome-game-development/marketing.md" >}}
+{{< content "gamedev/awesome-game-development/marketing.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "commercial">}}
 
@@ -137,7 +137,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🏧 **Commercial**
-{{< content "gamedev/awesome-game-development/commercial.md" >}}
+{{< content "gamedev/awesome-game-development/commercial.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "localization">}}
 
@@ -145,7 +145,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 📖 **Localization**
-{{< content "gamedev/awesome-game-development/localization.md" >}}
+{{< content "gamedev/awesome-game-development/localization.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "bureaucracy">}}
 
@@ -153,7 +153,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🏛️ **Bureaucracy**
-{{< content "gamedev/awesome-game-development/bureaucracy.md" >}}
+{{< content "gamedev/awesome-game-development/bureaucracy.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "hardware">}}
 
@@ -161,7 +161,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 💻 **Hardware**
-{{< content "gamedev/awesome-game-development/hardware.md" >}}
+{{< content "gamedev/awesome-game-development/hardware.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "testing">}}
 
@@ -169,7 +169,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🔬 **Testing**
-{{< content "gamedev/awesome-game-development/testing.md" >}}
+{{< content "gamedev/awesome-game-development/testing.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "misc">}}
 
@@ -177,7 +177,7 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 🤔 **Misc**
-{{< content "gamedev/awesome-game-development/misc.md" >}}
+{{< content "gamedev/awesome-game-development/misc.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
 {{<id zone = "fun">}}
 
@@ -185,5 +185,5 @@ To add, remove or change things on the list, please send me a [email](mailto:fro
 
 ---
 # 😄 **Fun**
-{{< content "gamedev/awesome-game-development/fun.md" >}}
+{{< content "gamedev/awesome-game-development/fun.txt" >}}
 {{< backto where="#contents" text="⬆ back to top ⬆" >}}
