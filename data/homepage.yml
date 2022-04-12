@@ -4,17 +4,24 @@ hero_area:
   bg_image : "images/header.jpg"
   overlay : true
 
-################# Store ######################
+################# Assets ######################
 store:
   enable : true
   title : "Assets"
   bg_image : "images/store/store-bg.jpg"
   overlay : true
 
+################# GameDev ######################
+gamedev:
+  enable : true
+  title : "Gamedev"
+  bg_image : "images/gamedev/gamedev-bg.jpg"
+  overlay : true
+
 ################# Blog ######################
 blog:
   enable : true
-  title : "<span>Blog</span>"
+  title : "Blog"
   bg_image : "images/blog/blog-bg.jpg"
   overlay : true
 

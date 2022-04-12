@@ -345,6 +345,134 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
 }
 
 /*--
+    gamedev Start
+--*/
+#gamedev {
+  padding-top: 75px;
+  padding-bottom: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+#blog .block .heading {
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.post {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.post:hover img {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.post-img {
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.post-img img {
+  transition: all 0.8s ease-out;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-content {
+  background-color: #fff;
+  position: relative;
+  flex-basis: 50%;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}}
+
+.post-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 50%;
+  width: 0px;
+  height: 0px;
+  margin-top: -15px;
+  background: #fff;
+  transform: rotate(45deg);
+  margin-left: -15px;
+}
+
+.post-content h3 {
+  padding: 0px 10px 20px;
+  margin-bottom: 0px;
+  line-height: 30px;
+  position: relative;
+}
+
+.post-content h3:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 90px;
+  height: 1px;
+  background: #CBC4B5;
+  margin-left: -45px;
+}
+
+.post-content h3 a {
+  color: #323232;
+  font-size: 30px;
+  display: block;
+}
+
+.post-content h3 a:hover {
+  color: #FF5333;
+}
+
+#blog .block .btn-more-info {
+  float: right;
+  padding: 28px 102.5px;
+  border-radius: 0px;
+  background: #ff530a;
+  color: #fff;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
+}
+
+#blog .block .btn-more-info:hover {
+  background: transparent;
+  color: #ff530a;
+  border: 1px solid #ff530a;
+}
+
+.blog-single-page .post-thumb {
+  margin-bottom: 10px;
+}
+
+.blog-single-page .post-title {
+  margin-bottom: 10px;
+}
+
+.blog-single-page .post-meta {
+  margin-bottom: 20px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--
     blog Start
 --*/
 #blog {
@@ -352,7 +480,6 @@ nav .block .navbar-default .navbar-nav>.active>a:hover:before {
   padding-bottom: 100px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   position: relative;
 }
 

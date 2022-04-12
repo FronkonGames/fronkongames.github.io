@@ -55,9 +55,14 @@ URL = "store"
 weight = 2
 
 [[menu.main]]
+name = "GAMEDEV"
+URL = "gamedev"
+weight = 3
+
+[[menu.main]]
 name = "Blog"
 URL = "blog"
-weight = 3
+weight = 4
 
 #[[menu.main]]
 #name = "About Me"
@@ -163,6 +168,10 @@ link = "https://twitter.com/fronkongames"
 [[params.footer.socialLink]]
 icon = "github"
 link = "https://github.com/FronkonGames"
+
+[[params.footer.socialLink]]
+icon = "linkedin"
+link = "https://www.linkedin.com/in/martinbr"
 
 #[[params.footer.socialLink]]
 #icon = "dribbble"

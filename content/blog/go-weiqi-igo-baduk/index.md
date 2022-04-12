@@ -4,7 +4,7 @@ description: "The oldest board game still played today."
 date: 2022-28-01
 image: blog/go-weiqi-igo-baduk/banner.jpg
 featured: blog/go-weiqi-igo-baduk/featured.jpg
-type: "post"
+type: "blog"
 ---
 
 [Go](https://en.wikipedia.org/wiki/Go_(game)) is a very old strategy game that consists of capturing pieces and winning territories. It is about 2,500 years old and was invented in China, although the exact location is unknown.
