@@ -1,8 +1,12 @@
 User-agent: *
 
-Disallow: /gamedev/awesome-game-development.html
+Disallow: /blog.html
 
 Disallow: /
+
+Disallow: /blog/ml-game-ideas/ml-game-ideas.html
+
+Disallow: /gamedev/awesome-game-development.html
 
 Disallow: /gamedev/gamework/foundation.html
 
@@ -13,8 +17,6 @@ Disallow: /store/one-bit.html
 Disallow: /store.html
 
 Disallow: /store/sprites-mojo.html
-
-Disallow: /blog.html
 
 Disallow: /categories.html
 
