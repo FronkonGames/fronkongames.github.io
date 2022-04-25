@@ -6,6 +6,8 @@ Disallow: /
 
 Disallow: /blog/ml-game-ideas/ml-game-ideas.html
 
+Disallow: /blog/steam-games-dataset/steam-games-dataset.html
+
 Disallow: /blog/steam-games-scraper/steam-games-scraper.html
 
 Disallow: /gamedev/awesome-game-development.html
