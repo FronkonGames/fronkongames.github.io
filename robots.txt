@@ -1,8 +1,12 @@
 User-agent: *
 
+Disallow: /gamedev/awesome-game-development/awesome-gamedev.html
+
 Disallow: /blog.html
 
 Disallow: /
+
+Disallow: /gamedev.html
 
 Disallow: /blog/ml-game-ideas/ml-game-ideas.html
 
@@ -10,11 +14,7 @@ Disallow: /blog/steam-games-dataset/steam-games-dataset.html
 
 Disallow: /blog/steam-games-scraper/steam-games-scraper.html
 
-Disallow: /gamedev/awesome-game-development.html
-
 Disallow: /gamedev/gamework/foundation.html
-
-Disallow: /gamedev.html
 
 Disallow: /store/one-bit.html
 
