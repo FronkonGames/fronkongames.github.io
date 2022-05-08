@@ -4,6 +4,8 @@ Disallow: /gamedev/awesome-game-development/awesome-gamedev.html
 
 Disallow: /blog.html
 
+Disallow: /gamedev/design-patterns-in-game-development.html
+
 Disallow: /
 
 Disallow: /gamedev.html
@@ -14,6 +16,8 @@ Disallow: /blog/steam-games-dataset/steam-games-dataset.html
 
 Disallow: /blog/steam-games-scraper/steam-games-scraper.html
 
+Disallow: /gamedev/gamework/core.html
+
 Disallow: /gamedev/gamework/foundation.html
 
 Disallow: /store/one-bit.html
@@ -23,8 +27,6 @@ Disallow: /store.html
 Disallow: /store/sprites-mojo.html
 
 Disallow: /categories.html
-
-Disallow: /gamedev/design-patterns-in-game-development.html
 
 Disallow: /blog/go-weiqi-igo-baduk.html
 
