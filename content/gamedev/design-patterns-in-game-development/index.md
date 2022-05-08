@@ -1,7 +1,7 @@
 ---
 title: "Design Patterns In Game Development"
 description: "A design pattern proposes a solution to a problem"
-date: 2022-26-02
+date: 2022-04-15
 image: gamedev/design-patterns-in-game-development/banner.jpg
 featured: gamedev/design-patterns-in-game-development/featured.jpg
 type: "gamedev"
