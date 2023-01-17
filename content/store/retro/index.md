@@ -248,7 +248,21 @@ This tool will show you all the monospaced fonts you have on your system. If you
 
 > All patterns start from the lowest luminosity, or density, to the highest. For example, a 10-character pattern represents 10 levels of brightness: " .:-=++*#%@".
 
-Finally, if you click on '**documentation**' (_20_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_21_). If you need to reset all the effect values, click on '**Reset**' (_22_).
+Once you have created the charsets you want and have it set in '**Charsets**' (_2_) we can continue with the following parameters. With '**Zoom**' (_3_) you can change the scale of each text block, the more you zoom the bigger the characters will appear.
+
+You can multiply with '**Boost**' (_4_) the brightness that is calculated to use one character or another. With very high values, you will see more characters from the end of the pattern used.
+
+If '**Block colour**' (_5_) is active, each block of each character will have a unique colour (result of pixelating that area). If it is not active, the original colours will be respected. This makes the shapes of the original image more distinguishable.
+
+{{< imagecenter src="/store/retro/ascii_2.png" >}}
+
+With '**Font**' (_6_) you can change how the color of each character is _mixed_ with the original pixels. These operations are very similar to the one you can find in _Photoshop_. You can also change their color. The same can be done with the background (_7_).
+
+> As this effect can generate a lot of black pixels, the final image can be darker than the original. Turn up the brightness of the "**Background**" color (_7_) a bit to avoid this.
+
+By default, there is no color gradient for the final image, but you can select several in '**Color gradient**' (_8_).
+
+Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Misc
