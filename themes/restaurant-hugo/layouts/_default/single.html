@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+{{- partial "header.html" . -}}
+
+<section class="section blog-single-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                {{ if .Params.Logo }}
+                <br>
+                <img class="img-responsive post-thumb d-inline-block" src="{{ .Params.logo | absURL }}" alt="{{ .Title }}">
+                {{ end }}
+                <br>
+
+                <div class="text-right">
+                  {{ if .Params.Demo }}
+                  <a href="{{ .Params.Demo }}" class="btn btn-default">🕹️ Demo</a>
+                  {{ end }}
+                  {{ if .Params.Youtube }}
+                  <a href="{{ .Params.Youtube }}" class="btn btn-default">🎞️ Youtube</a>
+                  {{ end }}
+                  {{ if .Params.Store }}
+                  <a href="{{ .Params.Store }}" class="btn btn-default">🛒 Store</a>
+                  {{ end }}
+                </div>
+
+                <h1 class="post-title">{{ .Params.description }}</h1>
+                <!--
+                <h1 class="post-title">{{ .Title }}</h1>
+                -->
+
+                <!--
+                <ul class="list-inline mb-50 post-meta">
+                    <li class="list-inline-item">{{ .Params.author }}</li>
+                    <li class="list-inline-item">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
+                </ul>
+                -->
+
+            <br><br>
+
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="post-single-content">
+                    {{ .Content }}
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ end }}

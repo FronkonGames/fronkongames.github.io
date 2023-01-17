@@ -1,0 +1,23 @@
+{{ define "main"}}
+
+{{ partial "hero-area.html" . }}
+
+{{- partial "header.html" . -}}
+
+<center>
+    <section id="body" style="margin-left:0px;">
+      <div id="overlay"></div>
+      <div id="chapter">
+        <div id="body-inner">
+          <h1>{{T "title-404"}}</h1>
+          <p>
+          </p>
+          <p>{{T "message-404"}}</p>
+          <p></p>
+          <p><img src='{{ "images/404.gif" | relURL }}' style="width:25%" alt="Page not found!"></p>
+        </div>
+      </div>
+    </section>
+</center>
+
+{{ end }}
