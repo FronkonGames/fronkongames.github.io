@@ -232,6 +232,20 @@ Finally, if you click on '**documentation**' (_20_) you will go to the online do
 </br>
 {{< /rawhtml >}}
 
+The ASCII render was an effect you could see in old [demoscene](https://en.wikipedia.org/wiki/Demoscene). It consists of replacing blocks of pixels with [ASCII](https://en.wikipedia.org/wiki/ASCII) characters according to their luminosity. The higher the luminosity, the 'denser' the character it was replaced with. Now it's back on steroids!
+
+Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+
+{{< imagecenter src="/store/retro/ascii_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+'**ASCII**' needs a texture with characters from a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font). To create one use the '**ASCII Charset Tool**' (by clicking on _9_ or in the menu _Window > Fronkon Games > Retro > ASCII > ASCII Charset Tool_). With this tool you can create the necessary file to set it to '**Charset**' (_2_).
+
+{{< imagecenter src="/store/retro/ascii_1.jpg" >}}
+
+Finally, if you click on '**documentation**' (_20_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_21_). If you need to reset all the effect values, click on '**Reset**' (_22_).
+
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Misc
 
