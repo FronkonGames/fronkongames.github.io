@@ -107,7 +107,7 @@ googleAnalyticsID = "G-90Y4J5LX9J"
 main_sections = ["post"]
 
 # copyright
-copyright = "Copyright &copy; 2022 Fronkon Games"
+copyright = "Copyright &copy; 2023 Fronkon Games"
 
 # Preloader
 [params.preloader]
@@ -182,6 +182,6 @@ link = "https://www.linkedin.com/in/martinbr"
 #icon = "dribbble"
 #link = "https://fb.com/themefisher"
 
-#[[params.footer.socialLink]]
-#icon = "instagram"
-#link = "https://fb.com/themefisher"
+[[params.footer.socialLink]]
+icon = "youtube"
+link = "https://www.youtube.com/@fronkongames4543"
