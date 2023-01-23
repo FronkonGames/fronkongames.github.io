@@ -17,6 +17,7 @@ type: "store"
 * [Old Films](#oldfilms), the best way to replicate the look of old movies.
 * [CRT TV](#crttv), the most configurable old TV effect you'll ever find.
 * [ASCII](#ascii), the old-school ASCII effect with steroids.
+* [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -263,6 +264,21 @@ With '**Font**' (_6_) you can change how the color of each character is _mixed_ 
 By default, there is no color gradient for the final image, but you can select several in '**Color gradient**' (_8_).
 
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
+
+# {#vintagefilters}
+{{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
+
+{{< imagecenter src="/store/retro/vintagefilters.jpg" >}}
+
+{{< rawhtml >}}
+<div class="text-center">
+    <a href="https://fronkongames.github.io/store/demos/vintagefilters/" class="btn btn-default">🕹️ Demo</a>
+    <a href="https://assetstore.unity.com/packages/slug/242600" class="btn btn-default">🛒 Store</a>
+</div>
+</br>
+{{< /rawhtml >}}
+
+A great collection of vintage filters inspired by photo Instagram effects.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Misc
