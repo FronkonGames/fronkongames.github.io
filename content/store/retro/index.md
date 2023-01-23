@@ -176,7 +176,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 {{< rawhtml >}}
 <div class="text-center">
     <a href="https://fronkongames.github.io/store/demos/crttv/" class="btn btn-default">🕹️ Demo</a>
-    <a href="https://assetstore.unity.com/packages/slug/241298" class="btn btn-default">🛒 Store</a>
+    <a href="https://assetstore.unity.com/packages/slug/241411" class="btn btn-default">🛒 Store</a>
 </div>
 </br>
 {{< /rawhtml >}}
