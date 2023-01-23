@@ -278,7 +278,19 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 </br>
 {{< /rawhtml >}}
 
-A great collection of vintage filters inspired by photo Instagram effects.
+A great collection of vintage filters inspired by photo Instagram effects. Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+
+{{< imagecenter src="/store/retro/vintagefilters_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+**Vintage Filters**', is very easy to use. Simply select the filter you want to use in '**Filter**' (_2_). Although most of them do not have them, in some filters you will see some options (_3_). In _4_ you will see a brief description of the selected filter.
+
+The filters '_70s_', '_Aden_', '_Crema_', '_Juno_', '_Kings_' and '_Slumber_' use [LUT](https://en.wikipedia.org/wiki/Lookup_table) 3D textures. If the device does not support 3D textures, a simplified 2D version is used automatically. **If you don't want to use 3D textures**, disable the '**Use 3D textures**' option in '**Advanced**'.
+
+{{< imagecenter src="/store/retro/vintagefilters_1.jpg" >}}
+
+Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Misc
