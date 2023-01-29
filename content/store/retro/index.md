@@ -279,7 +279,32 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 </br>
 {{< /rawhtml >}}
 
-A great collection of vintage filters inspired by photo Instagram effects. Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+A great collection of vintage filters inspired by photo Instagram effects:
+
+* 70s : looks like it's on a old 70's TV.
+* Aden : makes games look pastel shades.
+* Amaro : adds more light to the centre of the screen and darkens around the edges.
+* Brannan : this low-key effect brings out the grays and greens in your game.
+* Crema : makes games look creamy and smooth.
+* Earlybird : a retro 'Polaroid' feel with soft faded colors and a hint of yellow.
+* Hefe : slightly increases saturation and gives a warm fuzzy tone to your game.
+* Hudson : emphasizes light and gives your game a bluish, colder feel.
+* Inkwell : adds high contrast and also makes black and white.
+* Juno : tt tints cool tones green, amps up warm tones, and makes whites glow.
+* Lomofi : a dreamy, blurry effect and saturated colors.
+* LordKevin : a retro look by boosting the earth tones green, brown and orange and adds brightness.
+* Nashville : a warm retro fell and adds a soft purple-pink hue.
+* Reyes : desaturates your game, brightens it up, and gives it an old-time feel.
+* Rise : a nice glow and warmth by adding yellow tones.
+* Sierra : makes the game appear softer by adding bluish tones while emphasizing darks and yellows.
+* Slumber : desaturate the game and makes them hazy and dreamy look.
+* Sutro : gives you Sepia-like tones, with an emphasis on purple and brown.
+* Toaster : a burnt, aged look. It also adds a slight texture plus vignetting.
+* Valencia : a slight faded, 1980’s touch by adding a light brown and gray tint.
+* Walden : washed-out, bluish colors and adds a slight corner vignetting.
+* XProII : a warm vintage feeling and saturated tones.
+
+Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
 
 {{< imagecenter src="/store/retro/vintagefilters_0.jpg" >}}
 
@@ -328,7 +353,7 @@ Once installed, when you select your ‘Universal Renderer Data’, you will see
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-**Old Computers**', is very easy to use. Simply select the computer you want to emulate in '**Computer**' (_2_). Some systems have several modes of operation.
+'**Old Computers**', is very easy to use. Simply select the computer you want to emulate in '**Computer**' (_2_). Some systems have several modes of operation.
 
 By changing '**Pixelation**' (_3_) you can adjust the pixel size and with '**Dithering**' (_4_) you can change the intensity of the '_Bayer 2x2_' pattern used for color dithering.
 
