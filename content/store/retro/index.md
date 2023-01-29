@@ -281,28 +281,28 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 
 A great collection of vintage filters inspired by photo Instagram effects:
 
-* 70s : looks like it's on a old 70's TV.
-* Aden : makes games look pastel shades.
-* Amaro : adds more light to the centre of the screen and darkens around the edges.
-* Brannan : this low-key effect brings out the grays and greens in your game.
-* Crema : makes games look creamy and smooth.
-* Earlybird : a retro 'Polaroid' feel with soft faded colors and a hint of yellow.
-* Hefe : slightly increases saturation and gives a warm fuzzy tone to your game.
-* Hudson : emphasizes light and gives your game a bluish, colder feel.
-* Inkwell : adds high contrast and also makes black and white.
-* Juno : tt tints cool tones green, amps up warm tones, and makes whites glow.
-* Lomofi : a dreamy, blurry effect and saturated colors.
-* LordKevin : a retro look by boosting the earth tones green, brown and orange and adds brightness.
-* Nashville : a warm retro fell and adds a soft purple-pink hue.
-* Reyes : desaturates your game, brightens it up, and gives it an old-time feel.
-* Rise : a nice glow and warmth by adding yellow tones.
-* Sierra : makes the game appear softer by adding bluish tones while emphasizing darks and yellows.
-* Slumber : desaturate the game and makes them hazy and dreamy look.
-* Sutro : gives you Sepia-like tones, with an emphasis on purple and brown.
-* Toaster : a burnt, aged look. It also adds a slight texture plus vignetting.
-* Valencia : a slight faded, 1980’s touch by adding a light brown and gray tint.
-* Walden : washed-out, bluish colors and adds a slight corner vignetting.
-* XProII : a warm vintage feeling and saturated tones.
+* **70s**: looks like it's on a old 70's TV.
+* **Aden**: makes games look pastel shades.
+* **Amaro**: adds more light to the centre of the screen and darkens around the edges.
+* **Brannan**: this low-key effect brings out the grays and greens in your game.
+* **Crema**: makes games look creamy and smooth.
+* **Earlybird**: a retro 'Polaroid' feel with soft faded colors and a hint of yellow.
+* **Hefe**: slightly increases saturation and gives a warm fuzzy tone to your game.
+* **Hudson**: emphasizes light and gives your game a bluish, colder feel.
+* **Inkwell**: adds high contrast and also makes black and white.
+* **Juno**: it tints cool tones green, amps up warm tones, and makes whites glow.
+* **Lomofi**: a dreamy, blurry effect and saturated colors.
+* **LordKevin**: a retro look by boosting the earth tones green, brown and orange and adds brightness.
+* **Nashville**: a warm retro fell and adds a soft purple-pink hue.
+* **Reyes**: desaturates your game, brightens it up, and gives it an old-time feel.
+* **Rise**: a nice glow and warmth by adding yellow tones.
+* **Sierra**: makes the game appear softer by adding bluish tones while emphasizing darks and yellows.
+* **Slumber**: desaturate the game and makes them hazy and dreamy look.
+* **Sutro**: gives you Sepia-like tones, with an emphasis on purple and brown.
+* **Toaster**: a burnt, aged look. It also adds a slight texture plus vignetting.
+* **Valencia**: a slight faded, 1980’s touch by adding a light brown and gray tint.
+* **Walden**: washed-out, bluish colors and adds a slight corner vignetting.
+* **XProII**: a warm vintage feeling and saturated tones.
 
 Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
 
@@ -333,17 +333,17 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 
 Emulates the color palettes of old 8-bit and 16-bit computers. You can emulate all of these systems:
 
-* Apple ][: the first series of mass-produced microcomputers made by Apple (1977).
-* CGA: Color Graphics Adapter, marketed in 1981, was IBM's first color graphics card.
-* BBC Micro: affectionately known as the Beeb, was one of the first home computers in the UK (1981).
-* Commodore 64: an 8-bit home computer developed by Commodore in August 1982.
-* MSX: an 8-bit home microcomputer standard marketed during the 1980s.
-* Aquarius: a home computer released by Mattel Electronics in 1983.
-* Amstrad CPC: a series of 8-bit personal computers produced by Amstrad during the 1980s.
-* Atari ST: a line of home computers introduced by the Atari company, successor to the Atari 8-bit family.
-* EGA: stands for Enhanced Graphics Adapter, the IBM PC standard specification for graphics display (1987).
-* Mac II: a computer model of the Apple Macintosh series that appeared in 1987.
-* Game Boy: is a handheld game console developed Nintendo, first released in Japan and USA in 1989.
+* **Apple** ][: the first series of mass-produced microcomputers made by Apple (1977).
+* **CGA**: Color Graphics Adapter, marketed in 1981, was IBM's first color graphics card.
+* **BBC** Micro: affectionately known as the Beeb, was one of the first home computers in the UK (1981).
+* **Commodore** 64: an 8-bit home computer developed by Commodore in August 1982.
+* **MSX**: an 8-bit home microcomputer standard marketed during the 1980s.
+* **Aquarius**: a home computer released by Mattel Electronics in 1983.
+* **Amstrad CPC**: a series of 8-bit personal computers produced by Amstrad during the 1980s.
+* **Atari ST**: a line of home computers introduced by the Atari company, successor to the Atari 8-bit family.
+* **EGA**: stands for Enhanced Graphics Adapter, the IBM PC standard specification for graphics display (1987).
+* **Mac II**: a computer model of the Apple Macintosh series that appeared in 1987.
+* **Game Boy**: is a handheld game console developed Nintendo, first released in Japan and USA in 1989.
 
 You can also define the color palette you want to emulate!
 
@@ -355,7 +355,21 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 
 '**Old Computers**', is very easy to use. Simply select the computer you want to emulate in '**Computer**' (_2_). Some systems have several modes of operation.
 
+If you want to use your own color palette, select '**Custom**'.
+
+{{< imagecenter src="/store/retro/oldcomputers_1.jpg" >}}
+
+You can vary the number of colors you want to use with '**Colors**' (up to a maximum of 16). It doesn't matter in which order you put them, since the algorithm used selects the color in the palette based on the _distance_ from the original color. In this way, and with the default colors, all red tones would be replaced by color number 3.
+
 By changing '**Pixelation**' (_3_) you can adjust the pixel size and with '**Dithering**' (_4_) you can change the intensity of the '_Bayer 2x2_' pattern used for color dithering.
+
+Some palettes may have very dark colors that cause the final result to have too many black areas. You can correct the color range used with '**Remap colors**' (_5_). By discarding the lower parts, you would ignore the darker areas. With the upper part you would discard the brighter ones. 
+
+{{< imagecenter src="/store/retro/oldcomputers_2.jpg" >}}
+
+Discarding the darker range:
+
+{{< imagecenter src="/store/retro/oldcomputers_3.jpg" >}}
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
