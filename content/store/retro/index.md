@@ -18,6 +18,7 @@ type: "store"
 * [CRT TV](#crttv), the most configurable old TV effect you'll ever find.
 * [ASCII](#ascii), the old-school ASCII effect with steroids.
 * [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
+* [Old Computers](#oldcomputers), emulates the color palettes of old 8-bit and 16-bit computers.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -289,6 +290,47 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 The filters '_70s_', '_Aden_', '_Crema_', '_Juno_', '_Kings_' and '_Slumber_' use [LUT](https://en.wikipedia.org/wiki/Lookup_table) 3D textures. If the device does not support 3D textures, a simplified 2D version is used automatically. **If you don't want to use 3D textures**, disable the '**Use 3D textures**' option in '**Advanced**'.
 
 {{< imagecenter src="/store/retro/vintagefilters_1.jpg" >}}
+
+Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
+
+# {#oldcomputers}
+{{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
+
+{{< imagecenter src="/store/retro/oldcomputers.jpg" >}}
+
+{{< rawhtml >}}
+<div class="text-center">
+    <a href="https://fronkongames.github.io/store/demos/oldcomputers/" class="btn btn-default">🕹️ Demo</a>
+    <a href="https://assetstore.unity.com/packages/slug/243911" class="btn btn-default">🛒 Store</a>
+</div>
+</br>
+{{< /rawhtml >}}
+
+Emulates the color palettes of old 8-bit and 16-bit computers. You can emulate all of these systems:
+
+* Apple ][: the first series of mass-produced microcomputers made by Apple (1977).
+* CGA: Color Graphics Adapter, marketed in 1981, was IBM's first color graphics card.
+* BBC Micro: affectionately known as the Beeb, was one of the first home computers in the UK (1981).
+* Commodore 64: an 8-bit home computer developed by Commodore in August 1982.
+* MSX: an 8-bit home microcomputer standard marketed during the 1980s.
+* Aquarius: a home computer released by Mattel Electronics in 1983.
+* Amstrad CPC: a series of 8-bit personal computers produced by Amstrad during the 1980s.
+* Atari ST: a line of home computers introduced by the Atari company, successor to the Atari 8-bit family.
+* EGA: stands for Enhanced Graphics Adapter, the IBM PC standard specification for graphics display (1987).
+* Mac II: a computer model of the Apple Macintosh series that appeared in 1987.
+* Game Boy: is a handheld game console developed Nintendo, first released in Japan and USA in 1989.
+
+You can also define the color palette you want to emulate!
+
+Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+
+{{< imagecenter src="/store/retro/oldcomputers_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+**Old Computers**', is very easy to use. Simply select the computer you want to emulate in '**Computer**' (_2_). Some systems have several modes of operation.
+
+By changing '**Pixelation**' (_3_) you can adjust the pixel size and with '**Dithering**' (_4_) you can change the intensity of the '_Bayer 2x2_' pattern used for color dithering.
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
