@@ -19,6 +19,7 @@ type: "store"
 * [ASCII](#ascii), the old-school ASCII effect with steroids.
 * [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
 * [Old Computers](#oldcomputers), emulates the color palettes of old 8-bit and 16-bit computers.
+* [VHS](#vhs), mimic VHS as true as possible.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -370,6 +371,21 @@ Some palettes may have very dark colors that cause the final result to have too 
 Discarding the darker range:
 
 {{< imagecenter src="/store/retro/oldcomputers_3.jpg" >}}
+
+Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
+
+# {#vhs}
+{{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
+
+{{< imagecenter src="/store/retro/vhs.jpg" >}}
+
+{{< rawhtml >}}
+<div class="text-center">
+    <a href="https://fronkongames.github.io/store/demos/vhs/" class="btn btn-default">🕹️ Demo</a>
+    <a href="https://assetstore.unity.com/packages/slug/244944" class="btn btn-default">🛒 Store</a>
+</div>
+</br>
+{{< /rawhtml >}}
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
