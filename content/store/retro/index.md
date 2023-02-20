@@ -387,7 +387,35 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 </br>
 {{< /rawhtml >}}
 
-Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
+'VHS' mimic as true as possible. Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+
+{{< imagecenter src="/store/retro/vhs_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+The best quality of the effect is obtained with '**Quality**' (_2_) set to '**High Fidelity**', however on older mobile devices the performance may not be optimal. In that case you can select the '**Performant**' mode which is more suitable for older hardware. In the '**High Fidelity**' mode you can adjust the number of '**Samples**' that are used, the lower the number of samples the more optimal.
+
+A VHS/VHS-C tape has a resolution of 240 vertical lines. You can reduce the resolution with '**Resolution**' (_3_). Select '**Same**' to not reduce it.
+
+Internally, a VHS tape runs in [YIQ color space](https://en.wikipedia.org/wiki/YIQ), in '**YIQ color space**' (_4_) you can modify its components: _luma_, _in-phase_ and _quadrature_.
+
+Due to the chemical components of the ribbons, over time the dark colors could change and tend to purple. With '**Shadow tint**' (_5_) you can simulate this. You can also select the brightness range with '**Color levels**'.
+
+As a result of mechanical failures in the heads, some noise bands could appear and also modify the color. This effect can be controlled in '**Tape crease**' (_6_) and its parameters.
+
+**Color noise**' (_7_) adds a general noise to the color of the image.
+
+The information for color and luminance on a VHS tape was limited. With '**Chroma band**' (_8_) and '**Luma band**' (_9_) you can emulate this effect.
+
+With '**Tape noise high**' (_10_) you can add high frequency noise to the image (and with '**Low**' add low frequency noise).
+
+Another very common effect due to head alignment failures was bands that modified the brightness of the image. This effect can be emulated with '**AC beat**' (_11_).
+
+With '**Bottom warp**' (_12_) you can simulate the noise in the signal that was produced in the lower part of the image due to head tracking failures.
+
+Thanks to '**Vignette**' (_13_) you can adjust the shading effect on old CRT monitors.
+
+Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Misc
