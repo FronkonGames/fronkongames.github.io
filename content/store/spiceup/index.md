@@ -65,7 +65,14 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 
 {{< imagecenter src="/store/spiceup/damage.jpg" >}}
 
-# **Damage**
+{{< rawhtml >}}
+<div class="text-center">
+    <a href="https://fronkongames.github.io/store/demos/damage/" class="btn btn-default">🕹️ Demo</a>
+    🛒 Store (soon)
+    <!--<a href="https://assetstore.unity.com/packages/slug/244944" class="btn btn-default">🛒 Store</a>-->
+</div>
+</br>
+{{< /rawhtml >}}
 
 '**Damage**' is a visual indicator of the damage suffered by the player. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
