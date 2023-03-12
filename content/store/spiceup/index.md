@@ -63,6 +63,8 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 # {#damage}
 {{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
 
+{{< imagecenter src="/store/spiceup/damage.jpg" >}}
+
 # **Damage**
 
 '**Damage**' is a visual indicator of the damage suffered by the player. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
