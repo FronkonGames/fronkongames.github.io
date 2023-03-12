@@ -1,4 +1,5 @@
 {{- $type := .Get 0 -}}
+{{- $label := .Get 1 -}}
 {{- $inner := (markdownify .Inner) -}}
 
 {{- if not ($.Page.Scratch.Get "noticecount") }}
@@ -22,7 +23,7 @@
 
   .notice-body {
     margin-top: 12px;
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .notice-body p {
@@ -98,6 +99,7 @@
       <svg>
         <use href="#notice-icon-{{ $type }}" fill="white"></use>
       </svg>
+      &nbsp;<b>{{- $label -}}</b>
     </span>
     {{- i18n $type -}}
   </p>
