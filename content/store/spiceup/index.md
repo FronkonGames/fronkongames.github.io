@@ -9,7 +9,7 @@ type: "store"
 
 '**Spice Up**' is a large selection of effects to give juice to your FPS / VR games. It consists of the following assets:
 
-* [Damage](#damage), a visual damage indicator.
+* [Damage](#damage), a visual indicator of health and damage received.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -63,13 +63,13 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 # {#damage}
 {{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
 
-{{< imagecenter src="/store/spiceup/damage.jpg" >}}
+{{< youtube rChUFliVX_E >}}
 
 {{< rawhtml >}}
+<br>
 <div class="text-center">
     <a href="https://fronkongames.github.io/store/demos/damage/" class="btn btn-default">🕹️ Demo</a>
-    🛒 Store (soon)
-    <!--<a href="https://assetstore.unity.com/packages/slug/244944" class="btn btn-default">🛒 Store</a>-->
+    <a href="" class="btn btn-default">🛒 Store (soon)</a>
 </div>
 </br>
 {{< /rawhtml >}}
