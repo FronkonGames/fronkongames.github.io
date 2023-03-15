@@ -21,12 +21,15 @@ type: "store"
 * [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
 * [Handheld 8-Bit](#handheld8bit), imitates the graphics of the 8-bit handheld consoles of the late 1980s.
 
+{{< gallery-slider dir="/images/store/retro/gallery/" auto-slide="3000" width="100%" >}}
+
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 {{< notice note "SPECIAL OFFER" >}}
 You can obtain each effect separately (for only $5!), but if you want multiple effects, you might be interested in '[RETRO BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493)' where you can find them all at a special price!
 {{< /notice >}}
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
+
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Requirements
 
 All '**Retro**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP)', which means they will **not work** with Built-In, or HDRP.
