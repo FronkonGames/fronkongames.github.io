@@ -80,25 +80,30 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-{{< imagecenter src="/store/spiceup/damage_1.jpg" >}}
 
 The damage must be normalized, or in other words between 0 and 1 (inclusive). Being 0 a perfectly healthy player and 1 a perfectly dead one. You can adjust its value with '**Damage**' (_1_), although most commonly you will modify it via code.
 
 Let's say that '_DamageMax_' is a constant that indicates the maximum amount of damage the player can receive and '_damage_' is the variable with the damage received:
 
 {{< highlight csharp "linenos=false" >}}
-if (Damage.IsInRenderFeatures() == false)
-    Damage.GetSettings().damage = damage / DamageMax;
+Damage.GetSettings().damage = damage / DamageMax;
 {{< /highlight >}}
 </br>
 
 It can also be calculated from health:
 
 {{< highlight csharp "linenos=false" >}}
-if (Damage.IsInRenderFeatures() == false)
-    Damage.GetSettings().damage = (1.0f - (health / HealthMax));
+Damage.GetSettings().damage = 1.0f - (health / HealthMax);
 {{< /highlight >}}
 </br>
+
+Visually the damage is represented by three effects: _Liquid_, _Veins_ and _Drops_. You can configure how much they affect the final result using their sliders.
+
+* Liquid: is the liquid that expands from the edges of the screen.
+* Veins: simulates the capillary vessels of the human eye and add an extra 'gore'.
+* Drops: adds dynamic liquid drops. '_Range_' is the number of droplet layers, with each layer having droplets of similar sizes. With '_Scale_' you control their size and with '_Speed_' the speed at which they disappear.
+
+{{< imagecenter src="/store/spiceup/damage_1.jpg" >}}
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
