@@ -61,18 +61,11 @@ To modify any of the effect parameters, you must first request its __settings__.
 If you are using an effect other than '**Damage**' just change it to its name. Check the source code comments for more information.
 
 # {#damage}
-{{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube rChUFliVX_E >}}
 
-{{< rawhtml >}}
-<br>
-<div class="text-center">
-    <a href="https://fronkongames.github.io/store/demos/damage/" class="btn btn-default">🕹️ Demo</a>
-    <a href="" class="btn btn-default">🛒 Store (soon)</a>
-</div>
-</br>
-{{< /rawhtml >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/damage/" >}}
 
 '**Damage**' is a visual indicator of the damage suffered by the player. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 

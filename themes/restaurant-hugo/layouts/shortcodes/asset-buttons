@@ -1,0 +1,15 @@
+{{ $demo := .Get "demo" }}
+{{ $store := .Get "store" }}
+<br>
+<div style="text-align:right;">
+    {{- if .Get "demo" -}}    
+    <a href="{{ $demo }}" class="btn btn-default">🕹️ Demo</a>
+    {{- end }}
+    {{- if .Get "store" -}}    
+    &nbsp;&nbsp;
+    <a href="{{ $store }}" class="btn btn-default">🛒 Store</a>
+    {{- else }}
+    <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
+    {{- end }}
+</div>
+</br>
