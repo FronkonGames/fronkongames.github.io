@@ -110,7 +110,7 @@ To indicate impacts, and the direction they come from, you can use '**Impact str
 
 The time it stays on screen can be configured with: 'Rise time', 'Wait time' and 'Fall time'. You can also adjust its thickness and the smoothness of the edges.
 
-To get an idea of the effect, you can do it with 'Simulate impact'.
+To get an idea of the effect, you can do it with '**Simulate impact**' (_13_).
 
 {{< imagecenter src="/store/spiceup/damage_1.jpg" >}}
 
@@ -135,7 +135,32 @@ Damage.Impact(0.5f, zombie.transform);
 {{< notice tip >}}
 * Damage must be **normalized**, i.e. from 0 to 1.
 * The maximum number of hits with direction on the screen is **4**.
+* The plane in which the direction is calculated is the XZ.
 {{< /notice >}}
+
+You can change the color in '**Color gradient**'. From the gradient used (_4_), through the color and ending with how the effect blends with the screen.
+
+{{< notice tip >}}
+If the final result is too dark, or too bright, try one of the many Blend operations included.
+{{< /notice >}}
+
+To modify the definition of the edges, change '**Definition**' (_5_). The final brightness of the effect can be set with '**Brightness**' (_6_).
+
+To simulate a _more organic_ substance, a Vonoroi type noise can be applied to distort the effect. You can adjust its parameters in '**Noise**' (_7_).
+
+With '**Distortion**' (_9_) you can modify how much the effect distorts the screen.
+
+In some games you may have seen how they apply a _black and white_ effect as the player loses life. You can recreate it with '**Desaturation**' (_9_). This parameter is not modified according to '**Damage**' (_2_), so you will have to modify it manually.
+
+To simulate some _volume_ to the liquid, a slight shimmer effect is applied to the top edges. Modify this effect in '**Edge**' (_10_).
+
+Another effect you may have seen in other games, is how the player blinks, or loses peripheral vision. This effect can be adjusted with '**Blink**' (_11_). Like '**Desaturation**' (_9_), this effect must be adjusted manually.
+
+{{< notice warning >}}
+Very high values of '_Speed_' can create a **stroboscopic** effect that **may affect some users**.
+{{< /notice >}}
+
+Do values close to 1 of '**Damage**' (_2_) cause the screen not to display? Adjust the range with '**Remap damage**' (_12_). By lowering the upper range somewhat, you will make the 1 damage value actually lower.
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
