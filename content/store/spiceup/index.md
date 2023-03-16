@@ -80,7 +80,6 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-
 The damage must be normalized, or in other words between 0 and 1 (inclusive). Being 0 a perfectly healthy player and 1 a perfectly dead one. You can adjust its value with '**Damage**' (_1_), although most commonly you will modify it via code.
 
 Let's say that '_DamageMax_' is a constant that indicates the maximum amount of damage the player can receive and '_damage_' is the variable with the damage received:
@@ -99,11 +98,44 @@ Damage.GetSettings().damage = 1.0f - (health / HealthMax);
 
 Visually the damage is represented by three effects: _Liquid_, _Veins_ and _Drops_. You can configure how much they affect the final result using their sliders.
 
+{{< gallery-slider dir="/images/store/spiceup/damage/" auto-slide="3000" width="600px" height="400px" color="#ffff" >}}
+
 * Liquid: is the liquid that expands from the edges of the screen.
 * Veins: simulates the capillary vessels of the human eye and add an extra 'gore'.
 * Drops: adds dynamic liquid drops. '_Range_' is the number of droplet layers, with each layer having droplets of similar sizes. With '_Scale_' you control their size and with '_Speed_' the speed at which they disappear.
 
+To indicate impacts, and the direction they come from, you can use '**Impact strength**' (_3_). These impacts will be displayed on the edges of the screen and will indicate the direction from which the impact is coming, the top part being a frontal impact, and the bottom part a rear impact.
+
+{{< imagecenter src="/store/spiceup/damage_2.jpg" >}}
+
+The time it stays on screen can be configured with: 'Rise time', 'Wait time' and 'Fall time'. You can also adjust its thickness and the smoothness of the edges.
+
+To get an idea of the effect, you can do it with 'Simulate impact'.
+
 {{< imagecenter src="/store/spiceup/damage_1.jpg" >}}
+
+And how do I do it in the game? Very simple, 'Damage' takes care of everything. First it sets the target of the hits. The most typical case would be on the player. If 'player' is a GameObject that represents the player, it would be like this:
+
+{{< highlight csharp "linenos=false" >}}
+Damage.Target = player.transform;
+{{< /highlight >}}
+</br>
+
+Now you will only have to call the 'Impact' function every time the unfortunate player receives an impact. If you do not specify the origin of the hit, a flash effect (general damage) will be created. If you specify who caused the damage, an impact with direction will be created.
+
+{{< highlight csharp "linenos=false" >}}
+// Flash effect.
+Damage.Impact(0.25f);
+
+// Impact with direction.
+Damage.Impact(0.5f, zombie.transform);
+{{< /highlight >}}
+</br>
+
+{{< notice tip >}}
+* Damage must be **normalized**, i.e. from 0 to 1.
+* The maximum number of hits with direction on the screen is **4**.
+{{< /notice >}}
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 

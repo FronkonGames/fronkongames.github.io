@@ -21,7 +21,7 @@ type: "store"
 * [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
 * [Handheld 8-Bit](#handheld8bit), imitates the graphics of the 8-bit handheld consoles of the late 1980s.
 
-{{< gallery-slider dir="/images/store/retro/gallery/" auto-slide="3000" width="100%" >}}
+{{< gallery-slider dir="/images/store/retro/gallery/" auto-slide="3000" width="100%" top="75%" >}}
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 {{< notice note "SPECIAL OFFER" >}}
