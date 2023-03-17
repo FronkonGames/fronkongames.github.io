@@ -73,7 +73,7 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-The damage must be normalized, or in other words between 0 and 1 (inclusive). Being 0 a perfectly healthy player and 1 a perfectly dead one. You can adjust its value with '**Damage**' (_1_), although most commonly you will modify it via code.
+The damage must be **normalized**, or in other words between 0 and 1 (inclusive). Being 0 a perfectly healthy player and 1 a perfectly dead one. You can adjust its value with '**Damage**' (_1_), although most commonly you will modify it via code.
 
 Let's say that '_DamageMax_' is a constant that indicates the maximum amount of damage the player can receive and '_damage_' is the variable with the damage received:
 
@@ -101,7 +101,7 @@ To indicate impacts, and the direction they come from, you can use '**Impact str
 
 {{< imagecenter src="/store/spiceup/damage_2.jpg" >}}
 
-The time it stays on screen can be configured with: 'Rise time', 'Wait time' and 'Fall time'. You can also adjust its thickness and the smoothness of the edges.
+The time it stays on screen can be configured with: '_Rise time_', '_Wait time_' and '_Fall time_'. You can also adjust its thickness and the smoothness of the edges.
 
 To get an idea of the effect, you can do it with '**Simulate impact**' (_13_).
 
