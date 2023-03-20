@@ -10,6 +10,7 @@ type: "store"
 '**Spice Up**' is a large selection of effects to give juice to your FPS / VR games. It consists of the following assets:
 
 * [Damage](#damage), a visual indicator of health and damage received.
+* [Drunk](#drunk), simulates the effects of alcohol on the player.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -154,6 +155,27 @@ Very high values of '_Speed_' can create a **stroboscopic** effect that **may af
 {{< /notice >}}
 
 Do values close to 1 of '**Damage**' (_2_) cause the screen not to display? Adjust the range with '**Remap damage**' (_12_). By lowering the upper range somewhat, you will make the 1 damage value actually lower.
+
+Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
+
+# {#drunk}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube dQw4w9WgXcQ >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/drunk/" >}}
+
+With '**Drunk**' you can let players know that they are drinking too much.
+
+{{< notice warning >}}
+High values of this effect may cause dizziness. Use with caution.
+{{< /notice >}}
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/drunk_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
