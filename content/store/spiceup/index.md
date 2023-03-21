@@ -66,7 +66,7 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 
 {{< youtube rChUFliVX_E >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/damage/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/damage/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-damage-247019">}}
 
 '**Damage**' is a visual indicator of the damage suffered by the player. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
