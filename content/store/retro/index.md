@@ -151,7 +151,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 
 {{< youtube UFFvtpXdUBc >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/crttv/" store="https://assetstore.unity.com/packages/slug/241411" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/crttv/" demo2="https://fronkongames.github.io/store/demos/crttv_material/" store="https://assetstore.unity.com/packages/slug/241411" >}}
 
 '**CRT TV**' makes your game look like on an old television, those with the [glass tube](https://en.wikipedia.org/wiki/Cathode-ray_tube). With more than 40 parameters, it is possibly the most configurable effect in the store.
 
