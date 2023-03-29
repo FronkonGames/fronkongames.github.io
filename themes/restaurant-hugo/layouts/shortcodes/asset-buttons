@@ -7,10 +7,11 @@
     <a href="{{ $demo }}" class="btn btn-default">🕹️ Demo</a>
     {{- end }}
     {{- if .Get "demo2" -}}    
+    &nbsp;
     <a href="{{ $demo2 }}" class="btn btn-default">🕹️ Demo</a>
     {{- end }}
     {{- if .Get "store" -}}    
-    &nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
     <a href="{{ $store }}" class="btn btn-default">🛒 Store</a>
     {{- else }}
     <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
