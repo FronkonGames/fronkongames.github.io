@@ -169,11 +169,9 @@ This technique is known as '[Shadow mask](https://en.wikipedia.org/wiki/Shadow_m
 
 Although it doesn't affect the final result of the image too much, you can change the order of the red, green and blue channels of each grid cell. In '**Color offset**' you can move each channel. You can also vary the hardness of the horizontal and vertical spacing of each cell with '**Horizontal hardness**' and '**Vertical hardness**' respectively.
 
-Due to the curvature of the glass screen, the image on older televisions was distorted. In '**Fisheye**' (_3_) you can simulate this effect. Due to the geometry of the tube, the corners of the image are rounded. With '**Vignette smoothness**' (_4_) you can adjust the image deformation.
+Due to the curvature of the glass screen, the image on older televisions was distorted. In '**Fisheye**' (_3_) you can simulate this effect. Due to the geometry of the tube, the corners of the image are rounded. With '**Vignette smoothness**' (_4_) you can adjust the image deformation. If you want to adjust the borders of the screen, you can do it with '**Borders**' (one for each axis).
 
-{{< notice tip "Tip" >}}
-With '**Zoom**' you can simulate the switching on and off of the TV.
-{{< /notice >}}
+With '**Zoom**' you can adjust the screen size on each axis. By changing the values of '**Zoom**' with Tween functions, you can simulate the switching on and off of the TV.
 
 The reflection on the glass screen can be controlled with '**Shine**' (_5_).
 
