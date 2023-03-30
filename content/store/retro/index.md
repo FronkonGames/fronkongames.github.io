@@ -151,7 +151,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 
 {{< youtube UFFvtpXdUBc >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/crttv/" demo2="https://fronkongames.github.io/store/demos/crttv_material/" store="https://assetstore.unity.com/packages/slug/241411" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/crttv/" demo_label="Full-screen demo" demo2="https://fronkongames.github.io/store/demos/crttv_material/" demo2_label="Material demo" store="https://assetstore.unity.com/packages/slug/241411" >}}
 
 '**CRT TV**' makes your game look like on an old television, those with the [glass tube](https://en.wikipedia.org/wiki/Cathode-ray_tube). With more than 40 parameters, it is possibly the most configurable effect in the store.
 
@@ -192,6 +192,14 @@ The signal coming to the recorder was analog and could incorporate noise dependi
 In '**Flicker**' (_17_) you can adjust another very common defect in TV sets which is the fluctuation of the screen brightness.
 
 Finally, if you click on '**documentation**' (_20_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_21_). If you need to reset all the effect values, click on '**Reset**' (_22_).
+
+{{< imagecenter src="/store/retro/crttv_2.jpg" >}}
+
+You can also apply the effect on objects in the scene using the material found in '**Fronkon Games/Retro/CRT TV**'.
+
+ {{< video src="/store/retro/crttv_3.mp4" >}}
+
+You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material_Demo**'.
 
 # {#oldcomputers}
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
