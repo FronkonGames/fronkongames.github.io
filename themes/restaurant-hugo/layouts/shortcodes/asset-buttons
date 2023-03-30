@@ -15,7 +15,7 @@
     {{- if .Get "demo2" -}}    
     &nbsp;
     {{- if .Get "demo2_label" -}}
-    <a href="{{ $demo }}" class="btn btn-default">🕹️ {{ $demo2_label }}</a>
+    <a href="{{ $demo2 }}" class="btn btn-default">🕹️ {{ $demo2_label }}</a>
     {{- else }}
     <a href="{{ $demo2 }}" class="btn btn-default">🕹️ Demo</a>
     {{- end }}
