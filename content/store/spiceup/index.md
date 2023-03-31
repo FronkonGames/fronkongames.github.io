@@ -11,6 +11,7 @@ type: "store"
 
 * [Damage](#damage), a visual indicator of health and damage received.
 * [Drunk](#drunk), simulates the effects of alcohol on the player.
+* [Stoned](#stoned), imitates the impact or symptoms of feeling high or intoxicated.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -174,6 +175,23 @@ High values of this effect may cause dizziness. Use with caution.
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/drunk_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
+
+# {#stoned}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube 5f_TMTkHXM0 >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/stoned/" >}}
+
+Too many potions? With '**Stoned**' you can simulate the effect of drinking too many.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/stoned_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
