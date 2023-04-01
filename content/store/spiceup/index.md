@@ -155,7 +155,7 @@ Another effect you may have seen in other games, is how the player blinks, or lo
 Very high values of '_Speed_' can create a **stroboscopic** effect that **may affect some users**.
 {{< /notice >}}
 
-Do values close to 1 of '**Damage**' (_2_) cause the screen not to display? Adjust the range with '**Remap damage**' (_12_). By lowering the upper range somewhat, you will make the 1 damage value actually lower.
+Do values close to 1 of '**Damage**' (_2_) make the effect too intense? Adjust the range with '**Remap damage**' (_12_). By lowering the upper range somewhat, you will make very high values lower.
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
@@ -168,17 +168,27 @@ Finally, if you click on '**documentation**' (_14_) you will go to the online do
 
 With '**Drunk**' you can let players know that they are drinking too much.
 
-{{< notice warning >}}
-High values of this effect may cause dizziness. Use with caution.
-{{< /notice >}}
-
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/drunk_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
+With '**Drunkenness**' (_2_) you control the overall intensity of the effect. The higher the value, the more intense the result. You can also adjust the speed of the oscillations and their amplitude.
+
+{{< notice warning >}}
+High values of this effect may cause dizziness. Use with caution.
+{{< /notice >}}
+
+'**Swinging**' (_3_) causes the camera to swing. In addition to the intensity, you can control its speed.
+
+With '**Distortion**' you can modify how the image is distorted, you can also control the speed and frequency of the distortion. You can also add to the image distortion, a displacement of the color channels (RGB) with '**Aberration**' (_5_).
+
+'**Blink**' (_6_) adds to the effect a blinking of the eyes. You can also control with '**Eye**' (_7_) the point of the vision, being (0.5, 0.5) the center of the screen.
+
+Do values close to 1 of '**Drunkenness**' (_2_) make the effect too intense? Adjust the range with '**Remap damage**' (_8_). By lowering the upper range somewhat, you will make very high values lower.
+
+Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
 # {#stoned}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
