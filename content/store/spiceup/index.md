@@ -205,7 +205,33 @@ Once installed, when you select your '_Universal Renderer Data_', you will see s
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
+With '**Stoned**' (_2_) you control the overall intensity of the effect. The higher the value, the more intense the result.
+
+The first thing you can adjust is the speed of the effect with '**Speed**' (_3_). You can add some volume with '**Definition**' (_4_).
+
+With '**Displacement**' (_5_) you can adjust the screen deformation. You can increase the granularity with '**Noise**' (_6_).
+
+With '**Hue**' (_7_) you can shift the final color of the effect (is not the same control as the one in 'Color').
+
+{{< notice tip >}}
+If you cycle from 0 to 1 and back again, you can add extra psychedelia to the effect.
+{{< /notice >}}
+
+Adjust the strength of each color channel with '**Channel**' (_8_).
+
+Internally, the effect uses the YIQ color space (used by the analog NTSC TV). In '**Luma info**' you can adjust its parameters. See more information about the [YIQ color space here](https://en.wikipedia.org/wiki/YIQ).
+
+**Lines** (_10_) transforms the clouds of the effect into lines of intense color.
+
+{{< video src="/store/spiceup/stoned_1.mp4">}}
+
+{{< notice tip >}}
+If you use lines and add ['Bloom' postprocessing](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/post-processing-bloom.html), you can get a very interesting effect. Adjust the intensity of 'Bloom' well to avoid annoying flares.
+{{< /notice >}}
+
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
+
+With '**Tint**' (_11_) you can color the final result with the color of your choice. In '**Blend**' (_12_) you can select from a large list of color mixing functions. The selected function will be the one that blends the effect with the screen.
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
