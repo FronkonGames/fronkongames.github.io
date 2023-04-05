@@ -12,6 +12,7 @@ type: "store"
 * [Damage](#damage), a visual indicator of health and damage received.
 * [Drunk](#drunk), simulates the effects of alcohol on the player.
 * [Stoned](#stoned), imitates the impact or symptoms of feeling high or intoxicated.
+* [Frozen](#frozen), experience a realistic and immersive freezing effect.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -229,9 +230,26 @@ Internally, the effect uses the YIQ color space (used by the analog NTSC TV). In
 If you use lines and add ['Bloom' postprocessing](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/post-processing-bloom.html), you can get a very interesting effect. Adjust the intensity of 'Bloom' well to avoid annoying flares.
 {{< /notice >}}
 
+With '**Tint**' (_11_) you can color the final result with the color of your choice. In '**Blend**' (_12_) you can select from a large list of color mixing functions. The selected function will be the one that blends the effect with the screen.
+
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
-With '**Tint**' (_11_) you can color the final result with the color of your choice. In '**Blend**' (_12_) you can select from a large list of color mixing functions. The selected function will be the one that blends the effect with the screen.
+# {#frozen}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube Y-x0efG1seA >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/frozen/" >}}
+
+Experience a realistic and immersive freezing effect. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/frozen_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+With '**Frozen**' (_2_) you control the overall intensity of the effect. The higher the value, the more intense the result.
+
+Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
