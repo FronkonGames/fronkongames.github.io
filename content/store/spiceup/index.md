@@ -164,7 +164,7 @@ Finally, if you click on '**documentation**' (_14_) you will go to the online do
 
 {{< youtube L7agg4NP7XU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/drunk/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/drunk/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-drunk-247929">}}
 
 With '**Drunk**' you can let players know that they are drinking too much.
 
