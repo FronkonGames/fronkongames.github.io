@@ -13,6 +13,7 @@ type: "store"
 * [Drunk](#drunk), simulates the effects of alcohol on the player.
 * [Stoned](#stoned), imitates the impact or symptoms of feeling high or intoxicated.
 * [Frozen](#frozen), experience a realistic and immersive freezing effect.
+* [Speed Lines](#speedlines), anime speed lines.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -250,6 +251,21 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 With '**Frozen**' (_2_) you control the overall intensity of the effect. The higher the value, the more intense the result.
 
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
+
+# {#speedlines}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube Y-x0efG1seA >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/speedlines/" >}}
+
+Anime speed lines. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/speedlines_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
