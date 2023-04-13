@@ -14,6 +14,7 @@ type: "store"
 * [Stoned](#stoned), imitates the impact or symptoms of feeling high or intoxicated.
 * [Frozen](#frozen), experience a realistic and immersive freezing effect.
 * [Speed Lines](#speedlines), anime speed lines.
+* [Blurry](#blurry), blurred vision based on previous frames.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -266,6 +267,21 @@ Anime speed lines. Once installed, when you select your '_Universal Renderer Dat
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
+
+# {#blurry}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube KfDiwLYM6xw >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/blurry/" >}}
+
+Blurred vision based on previous frames. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/blurry_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
