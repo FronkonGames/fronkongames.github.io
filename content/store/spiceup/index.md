@@ -271,7 +271,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 # {#blurry}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube KfDiwLYM6xw >}}
+{{< youtube Y-x0efG1seA >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/blurry/" >}}
 
