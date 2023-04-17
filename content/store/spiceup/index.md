@@ -15,7 +15,7 @@ type: "store"
 * [Frozen](#frozen), experience a realistic and immersive freezing effect.
 * [Speed Lines](#speedlines), anime speed lines.
 * [Blurry](#blurry), blurred vision based on previous frames.
-* [Double Vision](#doublevision), .
+* [Double Vision](#doublevision), dual vision effect with steroids.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -287,11 +287,11 @@ Finally, if you click on '**documentation**' (_6_) you will go to the online doc
 # {#doublevision}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube izte-BmU-nw >}}
+{{< youtube FPELiWUmtw4 >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/doublevision/" >}}
 
-. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Dual vision effect with steroids. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/doublevision_0.jpg" >}}
 
