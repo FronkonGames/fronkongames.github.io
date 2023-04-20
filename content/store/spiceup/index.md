@@ -199,7 +199,7 @@ Finally, if you click on '**documentation**' (_9_) you will go to the online doc
 
 {{< youtube 5f_TMTkHXM0 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/stoned/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/stoned/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-stoned-248596">}}
 
 Too many potions? With '**Stoned**' you can simulate the effect of drinking too many.
 
