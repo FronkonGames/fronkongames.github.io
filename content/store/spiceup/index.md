@@ -242,7 +242,7 @@ Finally, if you click on '**documentation**' (_14_) you will go to the online do
 
 {{< youtube FPn7dk3fkG4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/frozen/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/frozen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-frozen-249207">}}
 
 Experience a realistic and immersive freezing effect. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
