@@ -324,6 +324,12 @@ Dual vision effect with steroids. Once installed, when you select your '_Univers
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
+With '**Strength**' (_2_) you control the intensity of its parameters. Adjust the intensity of the effect on each axis with '**X**' and '**Y**'. You can also control the speed of the effect with '**Speed**' (_3_), and its axes.
+
+You can also add a _color channel phase effect_ (_4_) and adjust its intensity on each color channel.
+
+With '**Blend strength**' (_5_) you can configure how the effect mixes with the screen and which operation is used to mix them.
+
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
 # {#rain}
