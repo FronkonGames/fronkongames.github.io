@@ -253,6 +253,14 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 
 With '**Frozen**' (_2_) you control the overall intensity of the effect. The higher the value, the more intense the result.
 
+The effect is created with two layers, you can configure them in '**Blend Layers**' (_3_). The first thing is how they are blended, if you have the slider set to 0 or 1, only one layer will be used ('**Layer 0**' or '**Layer 1**' respectively). If you leave it in the middle, both layers will be blended equally. You can also choose how the color of each layer is blended with the screen.
+
+To increase detail, or decrease smoothing, use '**Sharpness**' (_4_). You can also increase the granularity effect with '**Bump**' (_5_) and '**Volume**' (_6_).
+
+Modify the distortion that the effect produces on the screen with '**Distortion**' (_7_).
+
+With '**Vision tint**' (_8_) you can modify the color of the effect.
+
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
 # {#speedlines}
