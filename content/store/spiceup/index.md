@@ -303,6 +303,12 @@ Blurred vision based on previous frames. Once installed, when you select your '_
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
+With '**Strength**' (_2_) you control the intensity of its parameters.
+
+The number of frames the effect will use can be set in '**Frames**' (_3_). The more frames, the more blurriness you will get. You can also set in '**Step**' (_4_) if you want to skip frames.
+
+By default the frames used will have the same resolution as the screen. You can change this with '**Resolution**' (_5_) to make them smaller. This not only improves the performance of the effect, but also makes the image more blurred.
+
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
 # {#doublevision}
