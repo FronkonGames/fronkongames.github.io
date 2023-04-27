@@ -16,6 +16,7 @@ type: "store"
 * [Speed Lines](#speedlines), anime speed lines.
 * [Blurry](#blurry), blurred vision based on previous frames.
 * [Double Vision](#doublevision), dual vision effect with steroids.
+* [Rain](#rain), simulates the raindrops on the screen.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -298,6 +299,21 @@ Dual vision effect with steroids. Once installed, when you select your '_Univers
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
+
+# {#rain}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube DKMAa_LY7yU >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/rain/" >}}
+
+Simulates the raindrops on the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/rain_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
