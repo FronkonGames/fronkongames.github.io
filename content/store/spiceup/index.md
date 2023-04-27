@@ -276,6 +276,18 @@ Anime speed lines. Once installed, when you select your '_Universal Renderer Dat
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
+With '**Strength**' (_2_) you control the intensity of its parameters.
+
+The radius, or amplitude, of the effect can be modified with '**Radius**' (_3_), as well as the length of the _arrows_ with '**Length**' (_4_).
+
+The speed with which they move on the screen can be adjusted with '**Speed**' (_5_). You can also change how many arrows are displayed on the screen with '**Frequency**' (_6_), as well as the softness of the edges with '**Softness**' (_7_).
+
+With '**Noise**' (_8_) you can modify how different some _arrows_ are from others.
+
+The color of the effect can be adjusted in '**Color blend**' (_9_). From the type of operation used to blend with the background of the screen, to brightness, colors, etc.
+
+If you check '**Aspect ratio**' (_10_), the effect will not conform to the screen and will form a circle inside the screen instead of conforming to the edges of the screen.
+
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
 # {#blurry}
