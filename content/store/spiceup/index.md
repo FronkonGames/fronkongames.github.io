@@ -269,7 +269,7 @@ Finally, if you click on '**documentation**' (_9_) you will go to the online doc
 
 {{< youtube KfDiwLYM6xw >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/speedlines/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/speedlines/" store="https://assetstore.unity.com/packages/slug/250408">}}
 
 Anime speed lines. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
