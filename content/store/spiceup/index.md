@@ -18,6 +18,7 @@ type: "store"
 * [Double Vision](#doublevision), dual vision effect with steroids.
 * [Rain](#rain), simulates the raindrops on the screen.
 * [Ghost Vision](#ghostvision), the vision of strange creatures.
+* [Scanner](#scanner), cameras, monitors and robots.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -358,6 +359,21 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 The vision of strange creatures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/ghostvision_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
+
+# {#scanner}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube cudFCcHb_HY >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/scanner/" >}}
+
+Cameras, Monitors and Robots. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/scanner_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
