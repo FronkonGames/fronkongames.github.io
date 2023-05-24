@@ -318,7 +318,7 @@ Finally, if you click on '**documentation**' (_6_) you will go to the online doc
 
 {{< youtube FPELiWUmtw4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/doublevision/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/doublevision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-double-vision-252006">}}
 
 Dual vision effect with steroids. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
