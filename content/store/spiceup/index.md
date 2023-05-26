@@ -383,7 +383,7 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 # {#deathscreen}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube cudFCcHb_HY >}}
+{{< youtube ewXstV38FWc >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/deathscreen/" >}}
 
