@@ -355,7 +355,7 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 
 {{< youtube NyqkpzdqkNU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/ghostvision/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/ghostvision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-ghost-vision-252730">}}
 
 The vision of strange creatures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
