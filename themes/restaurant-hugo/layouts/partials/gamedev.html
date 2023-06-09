@@ -7,7 +7,7 @@
         <div class="block">
           <h1 class="heading">{{ site.Data.homepage.gamedev.title | markdownify }}</h1>
           {{ $paginator := .Paginate site.RegularPages }}
-          {{ range first 4 (where site.RegularPages "Type" "in" "gamedev") }}
+          {{ range first 6 (where site.RegularPages "Type" "in" "gamedev") }}
           {{ if .Params.Link }}
           <div class="col-lg-6">
             </br>
