@@ -348,6 +348,12 @@ Simulates the raindrops on the screen. Once installed, when you select your '_Un
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
+In the '**Droplets**' (_2_) section you can configure how the drops are: the amount, the size, their speed, their angle and finally how much they distort the background color.
+
+In the next section, '**Color**' (_3_) you can change its color. If you activate '**Tint trails**', the drops will also have a trail.
+
+With '**Layers**' (_4_) you can configure the drop layers. Three layers are available. The first, '**Static**', are droplets that do not move on the screen. The next two correspond to drops that do scroll on the screen.
+
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
 # {#ghostvision}
@@ -370,7 +376,7 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 
 {{< youtube cudFCcHb_HY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/scanner/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/scanner/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-scanner-253706" >}}
 
 Cameras, Monitors and Robots. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
