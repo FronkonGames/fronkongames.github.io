@@ -367,7 +367,13 @@ The vision of strange creatures. Once installed, when you select your '_Universa
 
 {{< imagecenter src="/store/spiceup/ghostvision_0.jpg" >}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. '**Strength**' (_2_) modulates the intensity of the rest of the parameters.
+
+By default the focus of the vision is positioned in the center of the screen (at 0, 0), if you want to modify it, you can use '**Focus**' (_3_). You can also modify its aperture (_4_) and zoom (_5_).
+
+With '**Speed**' (_6_) you can change the speed of the effect and by activating '**Aspect ratio**' (_7_) it will be adjusted to the resolution of the monitor.
+
+You can also modify the color of the central viewing area, '**Inner color**' (_8_), and the outer area, '**Outer color**' (_9_).
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
@@ -382,9 +388,19 @@ Cameras, Monitors and Robots. Once installed, when you select your '_Universal R
 
 {{< imagecenter src="/store/spiceup/scanner_0.jpg" >}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. '**Strength**' (_2_) modulates the intensity of the rest of the parameters.
 
-Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
+With '**Lines**' (_3_) you can adjust the number of lines, their color and how the line blends with the background color. In the spaces between lines you can also modify its color, '**Background**' (_4_) and the function used to mix its color.
+
+'**Scanline**' (_5_) is one line in a raster scanning pattern, such as a line of video on a cathode ray tube (CRT). Band noise' (_6_) is another similar effect that can also be found on older TV sets.
+
+The frame jumps, can be adjusted with '**Frame noise**' (_7_), the higher the values, the more the frame jumps. You can also add more noise to the signal with '**Signal noise**' (_8_), '**Interlace noise**' (_9_) and '**Bad signal**' (_10_).
+
+You can simulate the typical curvature of old monitors with '**Barrel**' (_11_). The higher your values, the more curved the image will appear. You can also change the color and size.
+
+To add a shadow effect on the edges you can use '**Vignette**' (_12_).
+
+Finally, if you click on '**documentation**' (_13_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_14_). If you need to reset all the effect values, click on '**Reset**' (_15_).
 
 # {#deathscreen}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
@@ -399,7 +415,13 @@ The last screen. Once installed, when you select your '_Universal Renderer Data_
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
+To move the effect, use '**Progress**' (_2_). If its value is 0, you will not see any effect. As it reaches 1, it will scroll across the screen.
+
+To adjust the color, use '**Blood**' (_3_). You can also change the formula used to blend the effect with the background (_4_) and the glow effect on the edges (_5_). To change the shape of the border use '**Wave seed**' (_6_).
+
+If you want to modify the color of the areas where the effect does not act, use '**Not blood**' (_7_).
+
+Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
