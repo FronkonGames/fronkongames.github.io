@@ -75,6 +75,28 @@ Once installed, when you select your '_Universal Renderer Data_', you will see s
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
+'**Edges**' (_2_) makes it remarked more the edges and '**Noise**' (_2_) affects the amount of noise that will appear on the screen. You can change the random seed used to generate the noise with '**Seed**'.
+
+'**Blend**' (_4_), specifies the formula used to mix the original color of the screen with the effect. They are very similar to those you can find in '_Photoshop_'. With '**Color**' you can change the way a color (or several) effects the final result. The simplest is '**Solid**' and its '**Color**' parameter tints the image. Other modes are '**Horizontal**', '**Vertical**' and '**Circular**' and use two colors in a gradient in different directions.
+
+{{< imagecenter src="/store/artistic/onebit_1.jpg" >}}
+
+'**Ramp**' is another mode that uses the brightness of the original pixel to replace it in a color gradient. So the leftmost colors of the gradient would be used for the darker areas of the image and the rightmost colors would be used for the brighter areas. Click on the gradient to modify it to your liking. If the gradient you use does not have dark colors, the result may be too bright, and vice versa. You can modify the brightness range used with '**Luminance**'.
+
+Click on '**search**' to open the color palette search tool.
+
+{{< imagecenter src="/store/artistic/onebit_2.jpg" >}}
+
+Just find a palette you like and click the '**Use**' button.
+
+{{< notice note "" >}}
+This tool requires an Internet connection.
+{{< /notice >}}
+
+In _6_, _7_ and _8_ you can modify the color range in each channel. Small values in these fields can create a '_retro_' effect.
+
+When '**Invert**' (_9_) is activated, the color is inverted.
+
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
