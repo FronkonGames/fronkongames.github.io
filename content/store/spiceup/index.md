@@ -20,6 +20,7 @@ type: "store"
 * [Ghost Vision](#ghostvision), the vision of strange creatures.
 * [Scanner](#scanner), cameras, monitors and robots.
 * [Death Screeen](#deathscreen), the last screen.
+* [Purkinje](#purkinje), human eye perception under dim light condition.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -422,6 +423,21 @@ To adjust the color, use '**Blood**' (_3_). You can also change the formula used
 If you want to modify the color of the areas where the effect does not act, use '**Not blood**' (_7_).
 
 Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
+
+# {#purkinje}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube ewXstV38FWc >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/purkinje/" >}}
+
+Simulate human eye perception under dim light condition. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/purkinje_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
