@@ -431,11 +431,19 @@ Finally, if you click on '**documentation**' (_8_) you will go to the online doc
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/purkinje/" >}}
 
-Simulate human eye perception under dim light condition. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+When the level of luminance drops below a certain threshold, the stimuli from rod cells supersedes that of cone cells. Due to the rod cells' minimal sensitivity to red light and heightened sensitivity to blue-green light, it leads to the perception of blue images during nighttime. This asset attempts to correct colour by simulating the above effect. 
+
+{{< imagecenter src="/store/spiceup/purkinje_1.jpg" >}}
+
+With '[Purkinje](https://en.wikipedia.org/wiki/Purkinje_cell)' you can create night scenes that really feel nocturnal, not just darker.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/purkinje_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Puedes modificar el tono con '**Tint**' (_2_) y la ajustar la oscuridad de la imagen con '**Darkness**' (_3_).
 
 Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
 
