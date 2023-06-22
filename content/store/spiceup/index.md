@@ -451,11 +451,11 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 # {#brokenscreen}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube FGC6LDY1RGg >}}
+{{< youtube 49H5o9N7w-k >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/brokenscreen/" >}}
 
-Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Real-time glass fractures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/brokenscreen_0.jpg" >}}
 
