@@ -21,6 +21,7 @@ type: "store"
 * [Scanner](#scanner), cameras, monitors and robots.
 * [Death Screeen](#deathscreen), the last screen.
 * [Purkinje](#purkinje), human eye perception under dim light condition.
+* [Broken Screen](#brokenscreen), simulated...
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -443,7 +444,22 @@ Once installed, when you select your '_Universal Renderer Data_', you will see s
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Puedes modificar el tono con '**Tint**' (_2_) y la ajustar la oscuridad de la imagen con '**Darkness**' (_3_).
+You can modify the hue with '**Tint**' (_2_) and adjust the darkness of the image with '**Darkness**' (_3_).
+
+Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
+
+# {#brokenscreen}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube FGC6LDY1RGg >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/brokenscreen/" >}}
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/brokenscreen_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
 
