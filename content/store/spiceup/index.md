@@ -22,6 +22,7 @@ type: "store"
 * [Death Screeen](#deathscreen), the last screen.
 * [Purkinje](#purkinje), human eye perception under dim light condition.
 * [Broken Screen](#brokenscreen), simulated...
+* [Pulse](#pulse), focus on one point on the screen.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -462,6 +463,21 @@ Real-time glass fractures. Once installed, when you select your '_Universal Rend
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
+
+# {#pulse}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube eqaPjR1KYPg >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/pulse/" >}}
+
+Focus on one point on the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/pulse_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
