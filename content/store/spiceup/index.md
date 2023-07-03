@@ -11,7 +11,7 @@ type: "store"
 
 * [Damage](#damage), a visual indicator of health and damage received.
 * [Drunk](#drunk), simulates the effects of alcohol on the player.
-* [Stoned](#stoned), imitates the impact or symptoms of feeling high or intoxicated.
+* [Stoned](#stoned), imitates the symptoms of feeling high or intoxicated.
 * [Frozen](#frozen), experience a realistic and immersive freezing effect.
 * [Speed Lines](#speedlines), anime speed lines.
 * [Blurry](#blurry), blurred vision based on previous frames.
@@ -467,7 +467,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 # {#pulse}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube eqaPjR1KYPg >}}
+{{< youtube 63-RWxded2A >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/pulse/" >}}
 
