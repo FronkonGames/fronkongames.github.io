@@ -483,7 +483,7 @@ Finally, if you click on '**documentation**' (_9_) you will go to the online doc
 # {#shake}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube 63-RWxded2A >}}
+{{< youtube 5Zc_0_BYOVw >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/shake/" >}}
 
@@ -493,7 +493,7 @@ Shakes like in an earthquake! Once installed, when you select your '_Universal R
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
+Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
