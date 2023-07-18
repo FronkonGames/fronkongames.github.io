@@ -432,7 +432,7 @@ Finally, if you click on '**documentation**' (_8_) you will go to the online doc
 
 {{< youtube FGC6LDY1RGg >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/purkinje/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/purkinje/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-purkinje-255525" >}}
 
 When the level of luminance drops below a certain threshold, the stimuli from rod cells supersedes that of cone cells. Due to the rod cells' minimal sensitivity to red light and heightened sensitivity to blue-green light, it leads to the perception of blue images during nighttime. This asset attempts to correct colour by simulating the above effect. 
 
@@ -455,13 +455,21 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 
 {{< youtube eqaPjR1KYPg >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/brokenscreen/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/brokenscreen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-broken-screen-256124">}}
 
 Real-time glass fractures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/brokenscreen_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Adjust the fracture center with '**Impact**' (_2_), the number of branches with '**Splits**' (_3_) and its thickness with '**Width**' (_4_).
+
+The operation used to blend the color of the fracture with the background can be modified with '**Blend**' (_5_), as well as its tint with '**Color**' (_6_). Modify '**Threashold**' (_7_) to limit the zones where color operations are applied.
+
+Add distortion effects to the background image and its colors with '**Distortion**' (_8_) and '**Aberration**' (_9_).
+
+With '**Seed**' (_10_) you can change the random seed used to generate the fractures. The same random seed will generate the same shapes in the fractures.
 
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
