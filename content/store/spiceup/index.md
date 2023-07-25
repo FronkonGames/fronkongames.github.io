@@ -74,6 +74,7 @@ To modify any of the effect parameters, you must first request its __settings__.
 
 If you are using an effect other than '**Damage**' just change it to its name. Check the source code comments for more information.
 
+---
 # {#damage}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -171,6 +172,7 @@ Do values close to 1 of '**Damage**' (_2_) make the effect too intense? Adjust t
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
+---
 # {#drunk}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -202,6 +204,7 @@ Do values close to 1 of '**Drunkenness**' (_2_) make the effect too intense? Adj
 
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
+---
 # {#stoned}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -245,6 +248,7 @@ With '**Tint**' (_11_) you can color the final result with the color of your cho
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
+---
 # {#frozen}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -270,6 +274,7 @@ With '**Vision tint**' (_8_) you can modify the color of the effect.
 
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
+---
 # {#speedlines}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -297,6 +302,7 @@ If you check '**Aspect ratio**' (_10_), the effect will not conform to the scree
 
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
+---
 # {#blurry}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -318,6 +324,7 @@ By default the frames used will have the same resolution as the screen. You can 
 
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
+---
 # {#doublevision}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -339,6 +346,7 @@ With '**Blend strength**' (_5_) you can configure how the effect mixes with the 
 
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
+---
 # {#rain}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -360,6 +368,7 @@ With '**Layers**' (_4_) you can configure the drop layers. Three layers are avai
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
+---
 # {#ghostvision}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -381,6 +390,7 @@ You can also modify the color of the central viewing area, '**Inner color**' (_8
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
+---
 # {#scanner}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -406,6 +416,7 @@ To add a shadow effect on the edges you can use '**Vignette**' (_12_).
 
 Finally, if you click on '**documentation**' (_13_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_14_). If you need to reset all the effect values, click on '**Reset**' (_15_).
 
+---
 # {#deathscreen}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -427,6 +438,7 @@ If you want to modify the color of the areas where the effect does not act, use 
 
 Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
+---
 # {#purkinje}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -450,6 +462,7 @@ You can modify the hue with '**Tint**' (_2_) and adjust the darkness of the imag
 
 Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
 
+---
 # {#brokenscreen}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
@@ -473,12 +486,13 @@ With '**Seed**' (_10_) you can change the random seed used to generate the fract
 
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
+---
 # {#pulse}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube 63-RWxded2A >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/pulse/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/pulse/" store="https://assetstore.unity.com/packages/slug/257920" >}}
 
 Focus on one point on the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -486,8 +500,31 @@ Focus on one point on the screen. Once installed, when you select your '_Univers
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
+Set the origin of the pulse with '**Center**' (_2_), the coordinates (0.5, 0.5) being the center of the screen. With '**Duration**' (_3_) you can set the duration of the pulse.
+
+Each pulse is created with one frame scaling from a center. '**Alpha**' (_4_) is the transparency of that frame. With '**Scale**' (_5_) you control how much the frame is scaled.
+
+You can change the color with '**Tint**' (_6_) and the operation that will be used to mix the frame color with the background color (_7_).
+
+To see the result in the editor, press '**Test**' (_8_).
+
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
+Creating a new pulse with code is very simple. As always the first thing to do is to include the namespace:
+
+{{< highlight csharp "linenos=false" >}}
+using FronkonGames.SpiceUp.Pulse;
+{{< /highlight >}}
+</br>
+
+Now, when you want to create a new pulse, simply do:
+
+{{< highlight csharp "linenos=false" >}}
+Pulse.Start();
+{{< /highlight >}}
+</br>
+
+---
 # {#shake}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 

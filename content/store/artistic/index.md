@@ -60,6 +60,7 @@ To modify any of the effect parameters, you must first request its __settings__.
 
 If you are using an effect other than '**OneBit**' just change it to its name. Check the source code comments for more information.
 
+---
 # {#onebit}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 

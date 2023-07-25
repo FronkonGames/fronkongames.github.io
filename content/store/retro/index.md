@@ -78,6 +78,7 @@ To modify any of the effect parameters, you must first request its __settings__.
 
 If you are using an effect other than '**Spectrum**' just change it to its name. Check the source code comments for more information.
 
+---
 # {#vhs}
 {{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
 
@@ -115,6 +116,7 @@ Thanks to '**Vignette**' (_13_) you can adjust the shading effect on old CRT mon
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
 
+---
 # {#oldfilms}
 {{< rawhtml >}}</br></br></br>{{< /rawhtml >}}
 
@@ -146,6 +148,7 @@ Something you can also see in old films are small scratches. You can simulate th
 
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
+---
 # {#crttv}
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
 
@@ -199,6 +202,7 @@ You can also apply the effect on objects in the scene using the material found i
 
 You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material_Demo**'.
 
+---
 # {#oldcomputers}
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
 
@@ -248,6 +252,7 @@ Discarding the darker range:
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
+---
 # {#ascii}
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
 
@@ -291,6 +296,7 @@ By default, there is no color gradient for the final image, but you can select s
 
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
 
+---
 # {#spectrum}
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
 
@@ -316,6 +322,7 @@ To change the pixel size, use '**Pixel size**' (_3_) and to adjust the pattern s
 
 Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
+---
 # {#vintagefilters}
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
 
@@ -362,6 +369,7 @@ The filters '_70s_', '_Aden_', '_Crema_', '_Juno_', '_Kings_' and '_Slumber_' us
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
+---
 # {#handheld8bit}
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
 
