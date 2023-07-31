@@ -25,6 +25,7 @@ type: "store"
 * [Pulse](#pulse), focus on one point on the screen.
 * [Shake](#shake), like in an earthquake!
 * [Night Vision](#nightvision), the most versatile solution for night vision.
+* [BodyCam](#bodycam), body camera (BWC) or wearable camera.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -556,6 +557,20 @@ The most versatile solution for night vision. Once installed, when you select yo
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 {{< imagecenter src="/store/spiceup/nightvision_1.jpg" >}}
+
+Finally, if you click on '**documentation**' (_18_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_19_). If you need to reset all the effect values, click on '**Reset**' (_20_).
+
+---
+# {#bodycam}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/bodycam/" >}}
+
+Body camera (BWC) or wearable camera. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/bodycam_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_18_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_19_). If you need to reset all the effect values, click on '**Reset**' (_20_).
 
