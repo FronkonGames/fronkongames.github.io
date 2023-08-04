@@ -577,6 +577,7 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
+---
 ## Misc
 
 All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
