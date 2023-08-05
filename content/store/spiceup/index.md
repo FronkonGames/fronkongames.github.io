@@ -564,7 +564,7 @@ Finally, if you click on '**documentation**' (_18_) you will go to the online do
 # {#bodycam}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube yiU_W5RV48I >}}
+{{< youtube pBp_WXNzlTY >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/bodycam/" >}}
 
@@ -574,7 +574,9 @@ Body camera (BWC) or wearable camera. Once installed, when you select your '_Uni
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
+{{< imagecenter src="/store/spiceup/bodycam_1.jpg" >}}
+
+Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ---
