@@ -532,13 +532,21 @@ Pulse.Start();
 
 {{< youtube 5Zc_0_BYOVw >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/shake/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/shake/" store="https://assetstore.unity.com/packages/slug/258721" >}}
 
 Shakes like in an earthquake! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/shake_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+The direction of the impact can be controlled using '**Direction**' (_2_), the default value (0, 1) being an impact at the top center of the screen. The duration of the effect can be adjusted with '**Duration**' (_3_).
+
+For small impacts use a small '**Zoom**' (_4_) value. As you increase this value, the feeling will be of stronger jolts. Something similar happens with '**Shake**' (_5_). You can also set the frequency of the shaking with '**Frequency**'. It adds an extra to the shaking sensation by adding image distortion and chromatic aberration.
+
+To add even more chaos, if you want, '**Noise**' (_6_) adds some noise to all the above values.
+
+To check the results in the Editor, you can use the '**Test**' button (_7_).
 
 Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
@@ -578,8 +586,8 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
 
 All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
@@ -594,7 +602,8 @@ Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied
 
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Support
 
 Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
