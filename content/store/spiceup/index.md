@@ -26,6 +26,7 @@ type: "store"
 * [Shake](#shake), like in an earthquake!
 * [Night Vision](#nightvision), the most versatile solution for night vision.
 * [BodyCam](#bodycam), body camera (BWC) or wearable camera.
+* [Lens Flare](#lensflare), a.k.a. JJ Abrams' illumination.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -406,6 +407,10 @@ Cameras, Monitors and Robots. Once installed, when you select your '_Universal R
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. '**Strength**' (_2_) modulates the intensity of the rest of the parameters.
 
+{{< notice tip >}}
+'**Intensity**' and '**Strength**' must be greater than 0 to activate the effect.
+{{< /notice >}}
+
 With '**Lines**' (_3_) you can adjust the number of lines, their color and how the line blends with the background color. In the spaces between lines you can also modify its color, '**Background**' (_4_) and the function used to mix its color.
 
 '**Scanline**' (_5_) is one line in a raster scanning pattern, such as a line of video on a cathode ray tube (CRT). Band noise' (_6_) is another similar effect that can also be found on older TV sets.
@@ -556,7 +561,7 @@ Finally, if you click on '**documentation**' (_8_) you will go to the online doc
 
 {{< youtube 7Dam3W04TzU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/nightvision/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/nightvision/" store="https://assetstore.unity.com/packages/slug/259563">}}
 
 The most versatile solution for night vision. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -564,9 +569,48 @@ The most versatile solution for night vision. Once installed, when you select yo
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-{{< imagecenter src="/store/spiceup/nightvision_1.jpg" >}}
+You can decrease the resolution with '**Resolution**' (_2_). Doing this will make the effect faster and the image blurred. You can also do this by modifying '**Blur**' (_3_) and add a '**Glow**' effect (_4_).
+
+You can select a wide variety of color gradients. First set the gradient strength (_5_) and then select one of those shown in '**Tint**'. You can use your own gradient if you select '_Custom_'.
+
+Gradients work by calculating the brightness of the original pixel and replacing it with the corresponding color in the gradient. If the scale is too dark (or too bright), you can modify the brightness range in '**Luminance**'.
+
+'**Exposure**' (_6_), '**Brightness**' (_7_), '**Contrast**' (_9_) and '**Saturation**' (_10_) change the **original** color, **do not** confuse them with the controls in the 'Color' section that modify the **final** color.
+
+With '**RGB offset**' (_10_) you can shift the black and white range.
+
+You can add an effect that defines the edges with '**Edge**' (_11_), add noises (_12_ and _14_). With '**Distortion**' (_13_) you can curve the image and add chromatic aberration.
+
+'**UI**' (_16_) adds some interface elements such as a grid of points, crosses, etc.
+
+With '**Vignette**' (_17_) you can select a shading on the edges of the screen, binoculars or monoculars.
 
 Finally, if you click on '**documentation**' (_18_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_19_). If you need to reset all the effect values, click on '**Reset**' (_20_).
+
+{{< imagecenter src="/store/spiceup/nightvision_1.jpg" >}}
+
+To create a convincing night vision effect, a light is usually added in the direction of the camera. This is not done by the effect and you can do it on your own, but I have added the '**Night Vision Manager**' component to make this task easier for you.
+
+Add it to the camera you are going to use. Set the on (_1_) and off (_2_) time of the effect.
+
+{{< notice tip >}}
+If you are going to use sounds, it is a good idea to match the time to the length of the audios.
+{{< /notice >}}
+
+In '**Light intensity**' (_3_) you can configure the light that will be added to the camera.
+
+If you want the other lights in the scene to be automatically turned off when the effect is activated, activate '**Light management**'. You can add to the '**Light to ignore**' list the lights you want to be ignored.
+
+To turn the effect on and off using '**Night Vision Manager**' just do this:
+
+{{< highlight csharp "linenos=false" >}}
+// Turn on.
+nightVisionManager.On = true;
+
+// Turn off.
+nightVisionManager.On = false;
+{{< /highlight >}}
+</br>
 
 ---
 # {#bodycam}
@@ -583,6 +627,22 @@ Body camera (BWC) or wearable camera. Once installed, when you select your '_Uni
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 {{< imagecenter src="/store/spiceup/bodycam_1.jpg" >}}
+
+Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
+
+---
+# {#lensflare}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube 9Z6wVV6XXPk >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/lensflare/" >}}
+
+Body camera (BWC) or wearable camera. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/spiceup/lensflare_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
