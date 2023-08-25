@@ -55,13 +55,13 @@ URL = "games"
 weight = 2
 
 [[menu.main]]
-name = "Gamedev"
-URL = "gamedev"
+name = "Assets"
+URL = "store"
 weight = 3
 
 [[menu.main]]
-name = "Assets"
-URL = "store"
+name = "Gamedev"
+URL = "gamedev"
 weight = 4
 
 [[menu.main]]
@@ -184,4 +184,4 @@ link = "https://www.linkedin.com/in/martinbr"
 
 [[params.footer.socialLink]]
 icon = "youtube"
-link = "https://www.youtube.com/@fronkongames4543"
+link = "https://www.youtube.com/@fronkongames"
