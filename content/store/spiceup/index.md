@@ -630,7 +630,7 @@ nightVisionManager.On = false;
 
 {{< youtube pBp_WXNzlTY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/bodycam/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/bodycam/" store="https://assetstore.unity.com/packages/slug/260035">}}
 
 Body camera (BWC) or wearable camera. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -672,11 +672,19 @@ Note that this component is designed for objects that move in the XZ plane, and 
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/lensflare/" >}}
 
-Body camera (BWC) or wearable camera. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Lens flare effect, intended for scenes with high brightness contrast (e.g. night scenes with lights). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/spiceup/lensflare_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+The number of '**Iterations**' (_2_) will define the quality of the effect. Note that the higher the number, the better the effect but the worse the performance. You can achieve a good balance by adjusting '**Scale**' (_3_) to reduce the number of iterations.
+
+With '**Threshold**' (_4_) you can filter the brightness threshold used to calculate the flares.
+
+Add a cinematic touch with '**ACES**' (_5_), a tonemapper widely used in the film industry, '**Grain**' (_6_) and '**Bands**' (_8_).
+
+You can change the operation used to blend the color of the flares with the original image with '**Blend**' (_7_), as well as their color and gamma.
 
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
 
