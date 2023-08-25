@@ -241,8 +241,6 @@ Internally, the effect uses the YIQ color space (used by the analog NTSC TV). In
 
 **Lines** (_10_) transforms the clouds of the effect into lines of intense color.
 
-{{< video src="/store/spiceup/stoned_1.mp4">}}
-
 {{< notice tip >}}
 If you use lines and add ['Bloom' postprocessing](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/post-processing-bloom.html), you can get a very interesting effect. Adjust the intensity of 'Bloom' well to avoid annoying flares.
 {{< /notice >}}
@@ -555,6 +553,20 @@ To check the results in the Editor, you can use the '**Test**' button (_7_).
 
 Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
+Creating a new shake with code is very simple. As always the first thing to do is to include the namespace:
+
+{{< highlight csharp "linenos=false" >}}
+using FronkonGames.SpiceUp.Shake;
+{{< /highlight >}}
+</br>
+
+Now, when you want to create a new shake, simply do:
+
+{{< highlight csharp "linenos=false" >}}
+Shake.Start();
+{{< /highlight >}}
+</br>
+
 ---
 # {#nightvision}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
@@ -626,9 +638,31 @@ Body camera (BWC) or wearable camera. Once installed, when you select your '_Uni
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-{{< imagecenter src="/store/spiceup/bodycam_1.jpg" >}}
+With '**Fish Eye**' (_2_) you can control the deformation typical of cameras with small lenses or a very large focus. Softness**' and 'Abberation**' are effects that define the edge of the camera.
+
+Add a '**Blur**' effect (_3_), setting its quality with '**Samples**'. Remember that the higher the number of samples, the higher the quality of the effect, but the worse the performance.
+
+You can simulate a reflection of a light with '**Flare**' (_4_). You can manually change its '**Angle**', or you can synchronize it with the Y axis of your character's rotation:
+
+{{< highlight csharp "linenos=false" >}}
+settings.flareAngle = this.transform.eulerAngles.y;
+{{< /highlight >}}
+</br>
+
+With '**Chroma band**' (_5_) and '**Luma band**' (_6_) you can simulate the defects that some poor quality cameras have. Add some '**Noise**' (_8_) for extra reality.
+
+By default dark colors tend to a blue, change it in '**Shadow tint**' (_7_) and adjust its White / Black balance.
 
 Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
+
+If you look at the demo, and the video, the center of the effect seems to move with some inertia depending on the rotation of the player. This can be easily achieved by adding the '**Body Cam Roll**' component to the camera.
+
+{{< imagecenter src="/store/spiceup/bodycam_1.jpg" >}}
+
+In this simple component you can adjust the '**Strength**' (_1_) and '**Speed**' (_2_) of the inertia.
+
+Note that this component is designed for objects that move in the XZ plane, and therefore rotate on the Y axis (as in the vast majority of FPS). If in your game the displacement planes are different, you will have to modify the code.
+
 
 ---
 # {#lensflare}
