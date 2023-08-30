@@ -84,7 +84,7 @@ If you are using an effect other than '**Spectrum**' just change it to its name.
 
 {{< youtube LH9KDnOq0dg >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/vhs/" store="https://assetstore.unity.com/packages/slug/244944" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/vhs/" demo_label="Full-screen demo" demo2="https://fronkongames.github.io/store/demos/vhs_material/" demo2_label="Material demo" store="https://assetstore.unity.com/packages/slug/244944" >}}
 
 'VHS' mimic as true as possible. Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
 
@@ -115,6 +115,20 @@ With '**Bottom warp**' (_12_) you can simulate the noise in the signal that was 
 Thanks to '**Vignette**' (_13_) you can adjust the shading effect on old CRT monitors.
 
 Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
+
+You can also apply the effect on objects in the scene using the material found in '**Fronkon Games/Retro/VHS**'.
+
+{{< imagecenter src="/store/retro/vhs_1.jpg" >}}
+
+Simply create a '**Fronkon Games/Retro/VHS**' material and apply it to the object you want.
+
+{{< video src="/store/retro/vhs_2.mp4" >}}
+
+Remember that the object to which you apply the material **must have UV coordinates**. In the example they are like this:
+
+{{< imagecenter src="/store/retro/tv_uv.jpg" >}}
+
+You have an example in the scene '**FronkonGames/Retro/VHS/Demo/VHS_Material_Demo**'.
 
 ---
 # {#oldfilms}
@@ -194,11 +208,17 @@ In '**Flicker**' (_17_) you can adjust another very common defect in TV sets whi
 
 Finally, if you click on '**documentation**' (_20_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_21_). If you need to reset all the effect values, click on '**Reset**' (_22_).
 
-{{< imagecenter src="/store/retro/crttv_2.jpg" >}}
-
 You can also apply the effect on objects in the scene using the material found in '**Fronkon Games/Retro/CRT TV**'.
 
- {{< video src="/store/retro/crttv_3.mp4" >}}
+{{< imagecenter src="/store/retro/crttv_2.jpg" >}}
+
+Simply create a '**Fronkon Games/Retro/CRT TV**' material and apply it to the object you want.
+
+{{< video src="/store/retro/crttv_3.mp4" >}}
+
+Remember that the object to which you apply the material **must have UV coordinates**. In the example they are like this:
+
+{{< imagecenter src="/store/retro/tv_uv.jpg" >}}
 
 You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material_Demo**'.
 
