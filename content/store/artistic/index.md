@@ -107,7 +107,7 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 
 {{< youtube Yz9j7iXuDhY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/oilpaint/"}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/oilpaint/" >}}
 
 Transform your games into pieces of art in a very simple way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
