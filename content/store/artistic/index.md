@@ -10,6 +10,7 @@ type: "store"
 '**Artistic**' contains the following assets:
 
 * [One Bit](#onebit), a hipster, original and versatile look using a dithering with blue noise.
+* [Oil Paint](#oilpaint), transform your games into pieces of art.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -97,6 +98,22 @@ This tool requires an Internet connection.
 In _6_, _7_ and _8_ you can modify the color range in each channel. Small values in these fields can create a '_retro_' effect.
 
 When '**Invert**' (_9_) is activated, the color is inverted.
+
+Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
+
+---
+# {#oilpaint}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube Yz9j7iXuDhY >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/oilpaint/"}}
+
+Transform your games into pieces of art in a very simple way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/artistic/oilpaint_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
 
