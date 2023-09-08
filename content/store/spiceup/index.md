@@ -670,7 +670,7 @@ Note that this component is designed for objects that move in the XZ plane, and 
 
 {{< youtube 9Z6wVV6XXPk >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/lensflare/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/lensflare/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-lens-flare-261769">}}
 
 Lens flare effect, intended for scenes with high brightness contrast (e.g. night scenes with lights). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
