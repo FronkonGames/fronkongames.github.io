@@ -105,11 +105,11 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 # {#oilpaint}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube Yz9j7iXuDhY >}}
+{{< youtube A9jtFpXo02Q >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/store/demos/oilpaint/" >}}
 
-Transform your games into pieces of art in a very simple way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Transform your games into pieces of art in a very easy way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/artistic/oilpaint_0.jpg" >}}
 
