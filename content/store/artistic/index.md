@@ -11,6 +11,7 @@ type: "store"
 
 * [One Bit](#onebit), a hipster, original and versatile look using a dithering with blue noise.
 * [Oil Paint](#oilpaint), transform your games into pieces of art.
+* [Tilt Shift](#tiltshift), used to simulate a miniature scene.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -116,6 +117,22 @@ Transform your games into pieces of art in a very easy way. Once installed, when
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
+
+---
+# {#tiltshift}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube ixqjMNnUSus >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/store/demos/tiltshift/" >}}
+
+Used to simulate a miniature scene. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/artistic/tiltshift_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
