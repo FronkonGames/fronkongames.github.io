@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fronkon Games</title>
+    <link>https://fronkongames.github.io/</link>
+    <description>Recent content on Fronkon Games</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Feb 2023 12:23:10 +0600</lastBuildDate><atom:link href="https://fronkongames.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artistic</title>
+      <link>https://fronkongames.github.io/store/artistic.html</link>
+      <pubDate>Wed, 22 Feb 2023 12:23:10 +0600</pubDate>
+      
+      <guid>https://fronkongames.github.io/store/artistic.html</guid>
+      <description>&amp;lsquo;Artistic&amp;rsquo; contains the following assets:
+One Bit, a hipster, original and versatile look using a dithering with blue noise.</description>
+    </item>
+    
+    <item>
+      <title>Spice Up</title>
+      <link>https://fronkongames.github.io/store/spiceup.html</link>
+      <pubDate>Wed, 22 Feb 2023 12:23:10 +0600</pubDate>
+      
+      <guid>https://fronkongames.github.io/store/spiceup.html</guid>
+      <description>&amp;lsquo;Spice Up&amp;rsquo; is a large selection of effects to give juice to your FPS / VR games.</description>
+    </item>
+    
+    <item>
+      <title>Retro</title>
+      <link>https://fronkongames.github.io/store/retro.html</link>
+      <pubDate>Wed, 23 Nov 2022 12:23:10 +0600</pubDate>
+      
+      <guid>https://fronkongames.github.io/store/retro.html</guid>
+      <description>&amp;lsquo;Retro&amp;rsquo; is a great collection of retro effects, simple to use and with many configuration options.</description>
+    </item>
+    
+    <item>
+      <title>Dawn Of The Cards</title>
+      <link>https://fronkongames.github.io/games/dawn-of-the-cards.html</link>
+      <pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/games/dawn-of-the-cards.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Awesome Gamedev</title>
+      <link>https://fronkongames.github.io/gamedev/awesome-game-development/awesome-gamedev.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/gamedev/awesome-game-development/awesome-gamedev.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design Patterns In Game Development</title>
+      <link>https://fronkongames.github.io/gamedev/design-patterns-in-game-development.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/gamedev/design-patterns-in-game-development.html</guid>
+      <description>The solution is reusable and can be used to solve similar problems.</description>
+    </item>
+    
+    <item>
+      <title>ML Game Ideas</title>
+      <link>https://fronkongames.github.io/blog/ml-game-ideas/ml-game-ideas.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/ml-game-ideas/ml-game-ideas.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steam Games Dataset</title>
+      <link>https://fronkongames.github.io/blog/steam-games-dataset/steam-games-dataset.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/steam-games-dataset/steam-games-dataset.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steam Games Scraper</title>
+      <link>https://fronkongames.github.io/blog/steam-games-scraper/steam-games-scraper.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/steam-games-scraper/steam-games-scraper.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Game:Work Core</title>
+      <link>https://fronkongames.github.io/gamedev/gamework/core.html</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/gamedev/gamework/core.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Game:Work Foundation</title>
+      <link>https://fronkongames.github.io/gamedev/gamework/foundation.html</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/gamedev/gamework/foundation.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sprites Mojo</title>
+      <link>https://fronkongames.github.io/store/sprites-mojo.html</link>
+      <pubDate>Wed, 23 Feb 2022 12:23:10 +0600</pubDate>
+      
+      <guid>https://fronkongames.github.io/store/sprites-mojo.html</guid>
+      <description>Editor From the editor you can create &amp;lsquo;Sprites Mojo&amp;rsquo; effects in two different ways: creating sprites and creating materials.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Go</title>
+      <link>https://fronkongames.github.io/blog/go-weiqi-igo-baduk.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/go-weiqi-igo-baduk.html</guid>
+      <description>Go is a very old strategy game that consists of capturing pieces and winning territories.</description>
+    </item>
+    
+  </channel>
+</rss>

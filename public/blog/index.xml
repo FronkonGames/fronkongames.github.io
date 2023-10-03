@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Fronkon Games</title>
+    <link>https://fronkongames.github.io/blog.html</link>
+    <description>Recent content in Blogs on Fronkon Games</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fronkongames.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML Game Ideas</title>
+      <link>https://fronkongames.github.io/blog/ml-game-ideas/ml-game-ideas.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/ml-game-ideas/ml-game-ideas.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steam Games Dataset</title>
+      <link>https://fronkongames.github.io/blog/steam-games-dataset/steam-games-dataset.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/steam-games-dataset/steam-games-dataset.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steam Games Scraper</title>
+      <link>https://fronkongames.github.io/blog/steam-games-scraper/steam-games-scraper.html</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/steam-games-scraper/steam-games-scraper.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Introduction to Go</title>
+      <link>https://fronkongames.github.io/blog/go-weiqi-igo-baduk.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fronkongames.github.io/blog/go-weiqi-igo-baduk.html</guid>
+      <description>Go is a very old strategy game that consists of capturing pieces and winning territories.</description>
+    </item>
+    
+  </channel>
+</rss>

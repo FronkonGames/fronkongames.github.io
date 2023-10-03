@@ -1,0 +1,41 @@
+User-agent: *
+
+Disallow: /store/artistic.html
+
+Disallow: /
+
+Disallow: /store/spiceup.html
+
+Disallow: /store.html
+
+Disallow: /store/retro.html
+
+Disallow: /games/dawn-of-the-cards.html
+
+Disallow: /games.html
+
+Disallow: /gamedev/awesome-game-development/awesome-gamedev.html
+
+Disallow: /blog.html
+
+Disallow: /gamedev/design-patterns-in-game-development.html
+
+Disallow: /gamedev.html
+
+Disallow: /blog/ml-game-ideas/ml-game-ideas.html
+
+Disallow: /blog/steam-games-dataset/steam-games-dataset.html
+
+Disallow: /blog/steam-games-scraper/steam-games-scraper.html
+
+Disallow: /gamedev/gamework/core.html
+
+Disallow: /gamedev/gamework/foundation.html
+
+Disallow: /store/sprites-mojo.html
+
+Disallow: /categories.html
+
+Disallow: /blog/go-weiqi-igo-baduk.html
+
+Disallow: /tags.html
