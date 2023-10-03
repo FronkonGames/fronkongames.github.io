@@ -9,7 +9,7 @@ enableRobotsTXT = true
 enableEmoji = true
 relativeurls = true
 uglyurls = true
-
+publishDir = "/docs"
 ############################# Plugins ##############################
 
 # CSS Plugins
