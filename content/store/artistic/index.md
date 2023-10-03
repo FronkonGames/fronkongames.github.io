@@ -117,7 +117,36 @@ Transform your games into pieces of art in a very easy way. Once installed, when
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
+Oil Paint provides you with a wide variety of algorithms (__2__) to choose from to best suit your needs. They are as follows:
+
+* **Kuwahara Basic**: the simplest and fastest based on the algorithm created by [Michiyoshi Kuwahara](https://en.wikipedia.org/wiki/Kuwahara_filter).
+* **Kuwahara Generalized**: a version that fixes some problems of the previous one, based on the work of [Acerola](https://www.youtube.com/@Acerola_t).
+* **Kuwahara Directional**: a Sobel filter is added to improve the denoising process.
+* **Kuwahara Anisotropic**: improves the quality in the smallest details, based on the paper '[Image and Video Abstraction by Anisotropic Kuwahara Filtering](https://www.researchgate.net/publication/220507613_Image_and_Video_Abstraction_by_Anisotropic_Kuwahara_Filtering)'.
+* **Tomita-Tsuji**: a steroid version of Kuwahara's algorithm, with the best visual results but with a performance decrease.
+* **Symmetric Nearest Neighbour**: another smoothing algorithm designed to preserve image edges. Much more efficient than the previous ones.
+
+Depending on the selected algorithm, you will see different parameters although all of them have '**Passes**'. This parameter specifies the number of passes of the algorithm to be performed. If it is 1, the algorithm will only run once per pixel.
+
+If you increase the value, the effect will be greatly enhanced but you will multiply the cost of the effect. I only recommend that the value be greater than 1 if you are going to use it on powerful hardware (consoles and PC).
+
+You can add an extra algorithm to better define details with '**Improve details**' (__3__): Emboss and Sharpen. Note that adding this algorithm creates an additional pass and therefore lower performance.
+
+Still not enough? Raise the value of '**Water Color**' (__4__) to add an water color paint effect to the image.
+
+If you need more control, activate '**Process depth**' (__5__).
+
+{{< imagecenter src="/store/artistic/oilpaint_1.jpg" >}}
+
+With '**Depth curve**' (__1__) you can adjust the intensity of the effect depending on the depth. In the values of the example you can see that the effect would have the maximum intensity except in the farthest areas it would tend to 0. With this you can avoid that small details in the background of the scene disappear because of the effect. You can also adjust the intensity of the curve with '**Depth power**' (__2__).
+
+Adjusting these two parameters can be complicated by not being able to see clearly how the curve varies. Activate '**View depth curve**' (__4__) and you will see that the areas with the most intense effect are warmer and the areas with the least are cooler.
+
+{{< video src="/store/artistic/oilpaint_2.mp4" >}}
+
+Don't want the effect to be applied to the sky? Disable '**Sample sky**' (__3__).
+
+Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
 ---
 # {#tiltshift}
