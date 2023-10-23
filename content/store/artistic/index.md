@@ -69,7 +69,7 @@ If you are using an effect other than '**OneBit**' just change it to its name. C
 
 {{< youtube Yz9j7iXuDhY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/onebit/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/onebit/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000">}}
 
 Get a distinctive look with '**One Bit**', an original and versatile effect that uses a special type of dithering algorithm based on Blue Noise, similar to that used at the award-winning '_Return of the Obra Dinn_'.
 
@@ -109,7 +109,7 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 
 {{< youtube A9jtFpXo02Q >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/oilpaint/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/oilpaint/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" >}}
 
 Transform your games into pieces of art in a very easy way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -154,13 +154,21 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 
 {{< youtube ixqjMNnUSus >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/tiltshift/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tiltshift/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tilt-shift-265465" >}}
 
-Used to simulate a miniature scene. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Used to simulate a miniature scene, something very used in cinema as in the [race scene](https://www.youtube.com/watch?v=QetnuKbo1XI) of '_The Social Network_'. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/artistic/tiltshift_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+You can modify the angle (_2_), aperture (_3_) and offset (_4_) of the effect. Also the blur intensity (_5_) and distortion (_6_).
+
+You can also modify certain color parameters in the 'focused' (_7_) area (where the effect is not applied) and in the 'unfocus' (_8_) area.
+
+{{< imagecenter src="/store/artistic/tiltshift_1.jpg" >}}
+
+In order to better adjust these parameters, you can activate '**Debug**' (_9_) to better see how the effect is applied. With this parameter activated, the areas with more intensity of the effect will be tinted red, and those with less intensity will be tinted blue.
 
 Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
 
@@ -170,7 +178,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 
 {{< youtube XfHdKU1qTF4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/colorisolation/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/colorisolation/" >}}
 
 Isolates areas by color and applies effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 

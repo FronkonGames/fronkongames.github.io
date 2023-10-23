@@ -83,7 +83,7 @@ If you are using an effect other than '**Damage**' just change it to its name. C
 
 {{< youtube rChUFliVX_E >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/damage/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-damage-247019">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/damage/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-damage-247019">}}
 
 '**Damage**' is a visual indicator of the damage suffered by the player. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -181,7 +181,7 @@ Finally, if you click on '**documentation**' (_14_) you will go to the online do
 
 {{< youtube L7agg4NP7XU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/drunk/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-drunk-247929">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/drunk/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-drunk-247929">}}
 
 With '**Drunk**' you can let players know that they are drinking too much.
 
@@ -213,7 +213,7 @@ Finally, if you click on '**documentation**' (_9_) you will go to the online doc
 
 {{< youtube 5f_TMTkHXM0 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/stoned/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-stoned-248596">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/stoned/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-stoned-248596">}}
 
 Too many potions? With '**Stoned**' you can simulate the effect of drinking too many.
 
@@ -255,7 +255,7 @@ Finally, if you click on '**documentation**' (_14_) you will go to the online do
 
 {{< youtube FPn7dk3fkG4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/frozen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-frozen-249207">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/frozen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-frozen-249207">}}
 
 Experience a realistic and immersive freezing effect. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -281,7 +281,7 @@ Finally, if you click on '**documentation**' (_9_) you will go to the online doc
 
 {{< youtube KfDiwLYM6xw >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/speedlines/" store="https://assetstore.unity.com/packages/slug/250408">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/speedlines/" store="https://assetstore.unity.com/packages/slug/250408">}}
 
 Anime speed lines. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -309,7 +309,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 
 {{< youtube izte-BmU-nw >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/blurry/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-blurry-251642">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/blurry/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-blurry-251642">}}
 
 Blurred vision based on previous frames. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -331,7 +331,7 @@ Finally, if you click on '**documentation**' (_6_) you will go to the online doc
 
 {{< youtube FPELiWUmtw4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/doublevision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-double-vision-252006">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/doublevision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-double-vision-252006">}}
 
 Dual vision effect with steroids. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -353,7 +353,7 @@ Finally, if you click on '**documentation**' (_6_) you will go to the online doc
 
 {{< youtube DKMAa_LY7yU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/rain/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-rain-252460" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/rain/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-rain-252460" >}}
 
 Simulates the raindrops on the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -375,7 +375,7 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 
 {{< youtube NyqkpzdqkNU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/ghostvision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-ghost-vision-252730">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/ghostvision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-ghost-vision-252730">}}
 
 The vision of strange creatures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -397,7 +397,7 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 
 {{< youtube cudFCcHb_HY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/scanner/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-scanner-253706" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/scanner/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-scanner-253706" >}}
 
 Cameras, Monitors and Robots. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -427,7 +427,7 @@ Finally, if you click on '**documentation**' (_13_) you will go to the online do
 
 {{< youtube ewXstV38FWc >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/deathscreen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-death-screen-254360" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/deathscreen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-death-screen-254360" >}}
 
 The last screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -449,7 +449,7 @@ Finally, if you click on '**documentation**' (_8_) you will go to the online doc
 
 {{< youtube FGC6LDY1RGg >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/purkinje/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-purkinje-255525" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/purkinje/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-purkinje-255525" >}}
 
 When the level of luminance drops below a certain threshold, the stimuli from rod cells supersedes that of cone cells. Due to the rod cells' minimal sensitivity to red light and heightened sensitivity to blue-green light, it leads to the perception of blue images during nighttime. This asset attempts to correct colour by simulating the above effect. 
 
@@ -473,7 +473,7 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 
 {{< youtube eqaPjR1KYPg >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/brokenscreen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-broken-screen-256124">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/brokenscreen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-broken-screen-256124">}}
 
 Real-time glass fractures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -497,7 +497,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 
 {{< youtube 63-RWxded2A >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/pulse/" store="https://assetstore.unity.com/packages/slug/257920" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/pulse/" store="https://assetstore.unity.com/packages/slug/257920" >}}
 
 Focus on one point on the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -535,7 +535,7 @@ Pulse.Start();
 
 {{< youtube 5Zc_0_BYOVw >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/shake/" store="https://assetstore.unity.com/packages/slug/258721" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/shake/" store="https://assetstore.unity.com/packages/slug/258721" >}}
 
 Shakes like in an earthquake! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -573,7 +573,7 @@ Shake.Start();
 
 {{< youtube 7Dam3W04TzU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/nightvision/" store="https://assetstore.unity.com/packages/slug/259563">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/nightvision/" store="https://assetstore.unity.com/packages/slug/259563">}}
 
 The most versatile solution for night vision. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -630,7 +630,7 @@ nightVisionManager.On = false;
 
 {{< youtube pBp_WXNzlTY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/bodycam/" store="https://assetstore.unity.com/packages/slug/260035">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/bodycam/" store="https://assetstore.unity.com/packages/slug/260035">}}
 
 Body camera (BWC) or wearable camera. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -670,7 +670,7 @@ Note that this component is designed for objects that move in the XZ plane, and 
 
 {{< youtube 9Z6wVV6XXPk >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/lensflare/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-lens-flare-261769">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/lensflare/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-lens-flare-261769">}}
 
 Lens flare effect, intended for scenes with high brightness contrast (e.g. night scenes with lights). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 

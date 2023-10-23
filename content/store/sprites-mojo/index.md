@@ -3,7 +3,7 @@ title: "Sprites Mojo"
 date: 2022-02-23T12:23:10+06:00
 image: /store/sprites-mojo/mini.png
 logo: /store/sprites-mojo/logo.png
-demo: https://fronkongames.github.io/store/demos/sprites-mojo/
+demo: https://fronkongames.github.io/demos-artistic/sprites-mojo/
 store: https://assetstore.unity.com/packages/slug/214468
 youtube: https://youtu.be/4eyGdIvJxko
 description: "A collection of 2D effects to add more juice to your games"

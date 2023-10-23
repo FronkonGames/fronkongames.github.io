@@ -3,7 +3,7 @@ title: "Retro"
 date: 2022-11-23T12:23:10+06:00
 image: /store/retro/mini.png
 logo: /store/retro/logo.png
-#demo: https://fronkongames.github.io/store/demos/one-bit/
+#demo: https://fronkongames.github.io/demos-retro/one-bit/
 #store: https://assetstore.unity.com/packages/slug/216000
 #youtube: https://www.youtube.com/watch?v=WY10wS39GDw
 description: "A collection of retro effects for your games"
@@ -84,7 +84,7 @@ If you are using an effect other than '**Spectrum**' just change it to its name.
 
 {{< youtube LH9KDnOq0dg >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/vhs/" demo_label="Full-screen demo" demo2="https://fronkongames.github.io/store/demos/vhs_material/" demo2_label="Material demo" store="https://assetstore.unity.com/packages/slug/244944" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/vhs/" demo_label="Full-screen demo" demo2="https://fronkongames.github.io/demos-retro/vhs_material/" demo2_label="Material demo" store="https://assetstore.unity.com/packages/slug/244944" >}}
 
 'VHS' mimic as true as possible. Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
 
@@ -136,7 +136,7 @@ You have an example in the scene '**FronkonGames/Retro/VHS/Demo/VHS_Material_Dem
 
 {{< youtube zBwXR_i6_gw >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/oldfilms/" store="https://assetstore.unity.com/packages/slug/241298" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/oldfilms/" store="https://assetstore.unity.com/packages/slug/241298" >}}
 
 '**Old Films**' is the best way to simulate the look of any old movie.
 
@@ -168,7 +168,7 @@ Finally, if you click on '**documentation**' (_11_) you will go to the online do
 
 {{< youtube UFFvtpXdUBc >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/crttv/" demo_label="Full-screen demo" demo2="https://fronkongames.github.io/store/demos/crttv_material/" demo2_label="Material demo" store="https://assetstore.unity.com/packages/slug/241411" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/crttv/" demo_label="Full-screen demo" demo2="https://fronkongames.github.io/demos-retro/crttv_material/" demo2_label="Material demo" store="https://assetstore.unity.com/packages/slug/241411" >}}
 
 '**CRT TV**' makes your game look like on an old television, those with the [glass tube](https://en.wikipedia.org/wiki/Cathode-ray_tube). With more than 40 parameters, it is possibly the most configurable effect in the store.
 
@@ -228,7 +228,7 @@ You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material
 
 {{< youtube _gADYOdLbL4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/oldcomputers/" store="https://assetstore.unity.com/packages/slug/243911" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/oldcomputers/" store="https://assetstore.unity.com/packages/slug/243911" >}}
 
 Emulates the color palettes of old 8-bit and 16-bit computers. You can emulate all of these systems:
 
@@ -278,7 +278,7 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 
 {{< youtube shQxDDe8Aw4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/ascii/" store="https://assetstore.unity.com/packages/slug/241924" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/ascii/" store="https://assetstore.unity.com/packages/slug/241924" >}}
 
 The ASCII render was an effect you could see in old [demoscene](https://en.wikipedia.org/wiki/Demoscene). It consists of replacing blocks of pixels with [ASCII](https://en.wikipedia.org/wiki/ASCII) characters according to their luminosity. The higher the luminosity, the 'denser' the character it was replaced with. Now it's back on steroids!
 
@@ -322,7 +322,7 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 
 {{< youtube d66etIztDjs >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/spectrum/" store="https://assetstore.unity.com/packages/slug/239827" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/spectrum/" store="https://assetstore.unity.com/packages/slug/239827" >}}
 
 '**Spectrum**' simulates the graphical style of old games of the mythical 8-bit microcomputer [Sinclair ZX Spectrum](https://en.wikipedia.org/wiki/ZX_Spectrum) from 1982.
 
@@ -348,7 +348,7 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 
 {{< youtube YXMNQn7cu8I >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/vintagefilters/" store="https://assetstore.unity.com/packages/slug/242600" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/vintagefilters/" store="https://assetstore.unity.com/packages/slug/242600" >}}
 
 A great collection of vintage filters inspired by photo Instagram effects:
 
@@ -395,7 +395,7 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 
 {{< youtube muFs-_hRCVc >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/store/demos/handheld8bit/" store="https://assetstore.unity.com/packages/slug/239924" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-retro/handheld8bit/" store="https://assetstore.unity.com/packages/slug/239924" >}}
 
 With '**Handheld 8-Bit**' you will get the look of the famous handheld console [Nintendo Game Boy](https://en.wikipedia.org/wiki/Game_Boy), introduced in Japan in 1989 and a year later in the rest of the world.
 
