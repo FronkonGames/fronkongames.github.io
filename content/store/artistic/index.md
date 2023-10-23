@@ -191,7 +191,7 @@ The first thing to do is to set the color you want to isolate, using '_Isolated 
 
 '**Color Isolation**' translates the image into the [CIELAB color space](https://en.wikipedia.org/wiki/CIELAB_color_space), in order to more accurately differentiate colors. You can adjust the parameters that are used:
 
-* L*, luminosidad.
+* L*, luminosity.
 * a*, green-magenta axis.
 * b*, blue-yellow axis.
 
