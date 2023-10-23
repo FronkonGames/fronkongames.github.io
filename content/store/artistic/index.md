@@ -170,7 +170,7 @@ You can also modify certain color parameters in the 'focused' (_7_) area (where 
 
 In order to better adjust these parameters, you can activate '**Debug**' (_9_) to better see how the effect is applied. With this parameter activated, the areas with more intensity of the effect will be tinted red, and those with less intensity will be tinted blue.
 
-Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
+Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
 
 ---
 # {#colorisolation}
@@ -186,7 +186,17 @@ Isolates areas by color and applies effects. Once installed, when you select you
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
+The first thing to do is to set the color you want to isolate, using '_Isolated color_' (_2_). You can adjust the sensitivity with '**Threshold**', to be more or less strict when filtering colors.
+
+'**Color Isolation**' translates the image into the [CIELAB color space](https://en.wikipedia.org/wiki/CIELAB_color_space), in order to more accurately differentiate colors. You can adjust the parameters that are used:
+
+* L*, luminosidad.
+* a*, green-magenta axis.
+* b*, blue-yellow axis.
+
+Una vez aislado el color que quieras, puedes aplicar distintos efectos tanto a la '**Isolated zone**' (_3_) como a la '**Not isolated zone**' (_4_).
+
+Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
