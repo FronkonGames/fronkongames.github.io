@@ -148,6 +148,7 @@
 <li><a href="#oilpaint">Oil Paint</a>, transform your games into pieces of art.</li>
 <li><a href="#tiltshift">Tilt Shift</a>, used to simulate a miniature scene.</li>
 <li><a href="#colorisolation">Color Isolation</a>, isolates areas by color and applies effects.</li>
+<li><a href="#sharpen">Sharpen</a>, enhances image details.</li>
 </ul>
 </br>
 <h2 id="requirements">Requirements</h2>
@@ -494,8 +495,54 @@
 <li>a*, green-magenta axis.</li>
 <li>b*, blue-yellow axis.</li>
 </ul>
-<p>Una vez aislado el color que quieras, puedes aplicar distintos efectos tanto a la &lsquo;<strong>Isolated zone</strong>&rsquo; (<em>3</em>) como a la &lsquo;<strong>Not isolated zone</strong>&rsquo; (<em>4</em>).</p>
+<p>Once you have isolated the color you want, you can apply different effects to both the &lsquo;<strong>Isolated zone</strong>&rsquo; (<em>3</em>) and the &lsquo;<strong>Not isolated zone</strong>&rsquo; (<em>4</em>).</p>
 <p>Finally, if you click on &lsquo;<strong>documentation</strong>&rsquo; (<em>5</em>) you will go to the online documentation. If you need support, you can send me an email to &lsquo;<em>frokongames@gmail.com</em>&rsquo; or you can click on &lsquo;<strong>support</strong>&rsquo; (<em>6</em>). If you need to reset all the effect values, click on &lsquo;<strong>Reset</strong>&rsquo; (<em>7</em>).</p>
+<hr>
+<h1 id="sharpen"></h1>
+<br><br>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Xjax-orCmVY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+
+
+
+<br>
+<div style="text-align:right;">
+    <a href="https://fronkongames.github.io/demos-artistic/sharpen/" class="btn btn-default">🕹️ Demo</a>
+    <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
+</div>
+</br>
+
+<p>Enhances image details using different algorithms. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+
+
+
+<div style="text-align: center">
+  <img src="../store/artistic/sharpen_0.jpg" alt="" decoding="async" />
+</div>
+&nbsp;
+
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
+<p>The first thing is to select the algorithm (<em>2</em>) that gives you the best result. They are as follows:</p>
+<ul>
+<li><strong>Luma</strong>, it applies a blurring effect to the original pixel by incorporating the neighboring pixels, and subsequently, it subtracts this blur to enhance the image&rsquo;s sharpness. Is similar to using Unsharp Mask in Photoshop.</li>
+<li><strong>Contrast Adaptive</strong>, dynamically regulates the sharpening intensity on a per-pixel basis to achieve a uniform level of sharpness throughout the entire image.</li>
+</ul>
+<p>From the first algorithm, &lsquo;<strong>Luma</strong>&rsquo;, you can choose between different patterns:</p>
+<ul>
+<li>Fast, only two texture fetches. Faster but slightly lower quality.</li>
+<li>Normal, four texture fetches.</li>
+<li>Wider, four texture fetches, less sensitive to noise but also to fine details.</li>
+<li>Pyramid, four texture fetches, diamond-shaped. A slightly more aggresive look</li>
+</ul>
+<p>Once you have chosen the algorithm that best suits your needs, you can adjust the intensity of the effect with &lsquo;<strong>Sharpeness</strong>&rsquo; (<em>3</em>) and the radius of each sample pattern (<em>4</em>).</p>
+<p>You can also increase the contrast of the colors with &lsquo;<strong>Vibrance</strong>&rsquo; (<em>5</em>).</p>
+<p>To view in which areas of the image the effect is applied, activate &lsquo;<strong>Debug view</strong>&rsquo; (<em>6</em>).</p>
+<p>Finally, if you click on &lsquo;<strong>documentation</strong>&rsquo; (<em>7</em>) you will go to the online documentation. If you need support, you can send me an email to &lsquo;<em>frokongames@gmail.com</em>&rsquo; or you can click on &lsquo;<strong>support</strong>&rsquo; (<em>8</em>). If you need to reset all the effect values, click on &lsquo;<strong>Reset</strong>&rsquo; (<em>9</em>).</p>
 <br><br>
 <h2 id="misc">Misc</h2>
 <p>All &lsquo;<strong>Artistic</strong>&rsquo; effects have a panel, &lsquo;<strong>Color</strong>&rsquo;, in which you can modify the final color of the effect.</p>

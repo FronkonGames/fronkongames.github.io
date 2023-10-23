@@ -13,6 +13,7 @@ type: "store"
 * [Oil Paint](#oilpaint), transform your games into pieces of art.
 * [Tilt Shift](#tiltshift), used to simulate a miniature scene.
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
+* [Sharpen](#sharpen), enhances image details.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -194,9 +195,43 @@ The first thing to do is to set the color you want to isolate, using '_Isolated 
 * a*, green-magenta axis.
 * b*, blue-yellow axis.
 
-Una vez aislado el color que quieras, puedes aplicar distintos efectos tanto a la '**Isolated zone**' (_3_) como a la '**Not isolated zone**' (_4_).
+Once you have isolated the color you want, you can apply different effects to both the '**Isolated zone**' (_3_) and the '**Not isolated zone**' (_4_).
 
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
+
+---
+# {#sharpen}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube Xjax-orCmVY >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/sharpen/" >}}
+
+Enhances image details using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/artistic/sharpen_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+The first thing is to select the algorithm (_2_) that gives you the best result. They are as follows:
+
+* **Luma**, it applies a blurring effect to the original pixel by incorporating the neighboring pixels, and subsequently, it subtracts this blur to enhance the image's sharpness. Is similar to using Unsharp Mask in Photoshop.
+* **Contrast Adaptive**, dynamically regulates the sharpening intensity on a per-pixel basis to achieve a uniform level of sharpness throughout the entire image.
+
+From the first algorithm, '**Luma**', you can choose between different patterns:
+
+* Fast, only two texture fetches. Faster but slightly lower quality.
+* Normal, four texture fetches.
+* Wider, four texture fetches, less sensitive to noise but also to fine details.
+* Pyramid, four texture fetches, diamond-shaped. A slightly more aggresive look
+
+Once you have chosen the algorithm that best suits your needs, you can adjust the intensity of the effect with '**Sharpeness**' (_3_) and the radius of each sample pattern (_4_).
+
+You can also increase the contrast of the colors with '**Vibrance**' (_5_).
+
+To view in which areas of the image the effect is applied, activate '**Debug view**' (_6_).
+
+Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
