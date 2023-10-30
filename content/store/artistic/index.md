@@ -179,7 +179,7 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 
 {{< youtube XfHdKU1qTF4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/colorisolation/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/colorisolation/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-color-isolation-266086">}}
 
 Isolates areas by color and applies effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
