@@ -14,6 +14,7 @@ type: "store"
 * [Tilt Shift](#tiltshift), used to simulate a miniature scene.
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
 * [Sharpen](#sharpen), enhances image details.
+* [Tonemmaper](#tonemmaper), maps HDR into LDR using different algorithms.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -233,6 +234,23 @@ To view in which areas of the image the effect is applied, activate '**Debug vie
 
 Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
+---
+# {#tonemapper}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube XcLXlvqG5yU >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tonemapper/" >}}
+
+Maps wide range colors (HDR) into low dynamic range (LDR) using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/artistic/tonemapper_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
+
+---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
 
