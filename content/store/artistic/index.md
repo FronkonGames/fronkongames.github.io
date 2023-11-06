@@ -14,7 +14,7 @@ type: "store"
 * [Tilt Shift](#tiltshift), used to simulate a miniature scene.
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
 * [Sharpen](#sharpen), enhances image details.
-* [Tonemmaper](#tonemmaper), maps HDR into LDR using different algorithms.
+* [Tonemapper](#tonemapper), maps HDR into LDR using different algorithms.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
