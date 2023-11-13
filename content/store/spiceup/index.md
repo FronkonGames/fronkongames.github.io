@@ -29,6 +29,11 @@ type: "store"
 * [Lens Flare](#lensflare), a.k.a. JJ Abrams' illumination.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< notice note "SPECIAL OFFER" >}}
+You can obtain each effect separately (for only $8!), but if you want multiple effects, you might be interested in '[SPICE UP BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333)' where you can find them all at a special price!
+{{< /notice >}}
+
+{{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
 
 All '**Spice Up**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
