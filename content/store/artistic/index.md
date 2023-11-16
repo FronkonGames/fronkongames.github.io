@@ -15,6 +15,7 @@ type: "store"
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
 * [Sharpen](#sharpen), enhances image details.
 * [Tonemapper](#tonemapper), maps HDR into LDR using different algorithms.
+* [Comic](#comic), simulates the printing technique used in comics and newspapers.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -249,6 +250,22 @@ Maps wide range colors (HDR) into low dynamic range (LDR) using different algori
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
+
+---
+# {#comic}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube n0VYyeMYUS4 >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" >}}
+
+Simulates the printing technique used in comics and newspapers. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/artistic/comic_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
