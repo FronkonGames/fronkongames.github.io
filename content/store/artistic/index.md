@@ -255,7 +255,7 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 # {#comic}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube n0VYyeMYUS4 >}}
+{{< youtube W4t0Cnk1Q0U >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" >}}
 
@@ -265,7 +265,7 @@ Simulates the printing technique used in comics and newspapers. Once installed, 
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
+Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
