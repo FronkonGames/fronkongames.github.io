@@ -536,10 +536,10 @@
 </ul>
 <p>From the first algorithm, &lsquo;<strong>Luma</strong>&rsquo;, you can choose between different patterns:</p>
 <ul>
-<li>Fast, only two texture fetches. Faster but slightly lower quality.</li>
-<li>Normal, four texture fetches.</li>
-<li>Wider, four texture fetches, less sensitive to noise but also to fine details.</li>
-<li>Pyramid, four texture fetches, diamond-shaped. A slightly more aggresive look</li>
+<li><strong>Fast</strong>, only two texture fetches. Faster but slightly lower quality.</li>
+<li><strong>Normal</strong>, four texture fetches.</li>
+<li><strong>Wider</strong>, four texture fetches, less sensitive to noise but also to fine details.</li>
+<li><strong>Pyramid</strong>, four texture fetches, diamond-shaped. A slightly more aggresive look</li>
 </ul>
 <p>Once you have chosen the algorithm that best suits your needs, you can adjust the intensity of the effect with &lsquo;<strong>Sharpeness</strong>&rsquo; (<em>3</em>) and the radius of each sample pattern (<em>4</em>).</p>
 <p>You can also increase the contrast of the colors with &lsquo;<strong>Vibrance</strong>&rsquo; (<em>5</em>).</p>
@@ -574,7 +574,35 @@
 </div>
 &nbsp;
 
-<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active. These are the operators (<em>2</em>) included:</p>
+<ul>
+<li><strong>Linear</strong>: Good old linear.</li>
+<li><strong>Logarithmic</strong>: logarithmic mapping</li>
+<li><strong>Exponential</strong>: exponential mapping.</li>
+<li><strong>Simple Reinhard</strong>: simple and fast Reinhard.</li>
+<li><strong>Luma Reinhard</strong>: Reinhard based on luminance from &ldquo;Photographic Tone Reproduction for Digital Images&rdquo;.</li>
+<li><strong>Luma Inverted Reinhard</strong>: Reinhard based on inverted luminance, by Brian Karis.</li>
+<li><strong>White Luma Reinhard</strong>: Reinhard based on luminance, but white preserving.</li>
+<li><strong>Hejl 2015</strong>: ACES-liked, by Jim Hejl.</li>
+<li><strong>Filmic</strong>: filmic tonemapping.</li>
+<li><strong>Filmic Aldridge</strong>: variation of the Hejl and Burgess-Dawson filmic curve by Graham Aldridge.</li>
+<li><strong>ACES</strong>: From &lsquo;ACES Filmic Tone Mapping Curve&rsquo; by Narkowicz.</li>
+<li><strong>ACES Oscars</strong>: Pastel hue function, designed to provide a pleasing albedo.</li>
+<li><strong>ACES Hill</strong>: ACES curve fit by Stephen Hill (@self_shadow).</li>
+<li><strong>Lottes</strong>: From &ldquo;Advanced Techniques and Optimization of HDR Color Pipelines&rdquo; by Timothy Lottes.</li>
+<li><strong>Uchimura</strong>: Used in Gran Turismo. From &ldquo;HDR theory and practice&rdquo; by Uchimura.</li>
+<li><strong>Unreal</strong>: Adapted to be close to ACES curve by Romain Guy. Used in Unreal Engine 3 up to 4.14.</li>
+<li><strong>Uncharted 2</strong>: Created by John Hable for &lsquo;Uncharted 2&rsquo; (based on Haarm-Pieter Duiker&rsquo;s works in 2006 for EA).</li>
+<li><strong>Watch Dogs</strong>: Used in &lsquo;Watch Dogs&rsquo; by Ubisoft.</li>
+<li><strong>Piece-Wise</strong>: &lsquo;Piece-Wise Power Curve&rsquo; by John Hable at Epic Games.</li>
+<li><strong>RomBin Da House</strong>: By tech art Roman Galashov (@RomanGalashov).</li>
+<li><strong>Oklab</strong>: Oklab-based.</li>
+<li><strong>Clamping</strong>: Clamps everything above a given luminance threshold to 1, by Schlick.</li>
+<li><strong>Max 3</strong>: From &lsquo;Optimized Reversible Tonemapper for Resolve&rsquo;, by Timothy Lottes.</li>
+<li><strong>Max 3 Inverted</strong>: Inverted luminance.</li>
+</ul>
+<p>Each operator can also have some extra parameters that will appear under it.</p>
+<p>You can also modify the final color with the parameters offered by &lsquo;<strong>Color filter</strong>&rsquo; (<em>3</em>) and its &lsquo;<strong>Lift</strong>&rsquo; (<em>4</em>), &lsquo;<strong>Midtones</strong>&rsquo; (<em>5</em>) and &lsquo;<strong>Gain</strong>&rsquo; (<em>6</em>).</p>
 <p>Finally, if you click on &lsquo;<strong>documentation</strong>&rsquo; (<em>7</em>) you will go to the online documentation. If you need support, you can send me an email to &lsquo;<em>frokongames@gmail.com</em>&rsquo; or you can click on &lsquo;<strong>support</strong>&rsquo; (<em>8</em>). If you need to reset all the effect values, click on &lsquo;<strong>Reset</strong>&rsquo; (<em>9</em>).</p>
 <hr>
 <h1 id="comic"></h1>

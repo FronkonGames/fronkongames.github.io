@@ -222,10 +222,10 @@ The first thing is to select the algorithm (_2_) that gives you the best result.
 
 From the first algorithm, '**Luma**', you can choose between different patterns:
 
-* Fast, only two texture fetches. Faster but slightly lower quality.
-* Normal, four texture fetches.
-* Wider, four texture fetches, less sensitive to noise but also to fine details.
-* Pyramid, four texture fetches, diamond-shaped. A slightly more aggresive look
+* **Fast**, only two texture fetches. Faster but slightly lower quality.
+* **Normal**, four texture fetches.
+* **Wider**, four texture fetches, less sensitive to noise but also to fine details.
+* **Pyramid**, four texture fetches, diamond-shaped. A slightly more aggresive look
 
 Once you have chosen the algorithm that best suits your needs, you can adjust the intensity of the effect with '**Sharpeness**' (_3_) and the radius of each sample pattern (_4_).
 
@@ -247,7 +247,36 @@ Maps wide range colors (HDR) into low dynamic range (LDR) using different algori
 
 {{< imagecenter src="/store/artistic/tonemapper_0.jpg" >}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. These are the operators (_2_) included:
+
+* **Linear**: Good old linear.
+* **Logarithmic**: logarithmic mapping
+* **Exponential**: exponential mapping.
+* **Simple Reinhard**: simple and fast Reinhard.
+* **Luma Reinhard**: Reinhard based on luminance from "Photographic Tone Reproduction for Digital Images".
+* **Luma Inverted Reinhard**: Reinhard based on inverted luminance, by Brian Karis.
+* **White Luma Reinhard**: Reinhard based on luminance, but white preserving.
+* **Hejl 2015**: ACES-liked, by Jim Hejl.
+* **Filmic**: filmic tonemapping.
+* **Filmic Aldridge**: variation of the Hejl and Burgess-Dawson filmic curve by Graham Aldridge.
+* **ACES**: From 'ACES Filmic Tone Mapping Curve' by Narkowicz.
+* **ACES Oscars**: Pastel hue function, designed to provide a pleasing albedo.
+* **ACES Hill**: ACES curve fit by Stephen Hill (@self_shadow).
+* **Lottes**: From "Advanced Techniques and Optimization of HDR Color Pipelines" by Timothy Lottes.
+* **Uchimura**: Used in Gran Turismo. From "HDR theory and practice" by Uchimura.
+* **Unreal**: Adapted to be close to ACES curve by Romain Guy. Used in Unreal Engine 3 up to 4.14.
+* **Uncharted 2**: Created by John Hable for 'Uncharted 2' (based on Haarm-Pieter Duiker's works in 2006 for EA).
+* **Watch Dogs**: Used in 'Watch Dogs' by Ubisoft.
+* **Piece-Wise**: 'Piece-Wise Power Curve' by John Hable at Epic Games.
+* **RomBin Da House**: By tech art Roman Galashov (@RomanGalashov).
+* **Oklab**: Oklab-based.
+* **Clamping**: Clamps everything above a given luminance threshold to 1, by Schlick.
+* **Max 3**: From 'Optimized Reversible Tonemapper for Resolve', by Timothy Lottes.
+* **Max 3 Inverted**: Inverted luminance.
+
+Each operator can also have some extra parameters that will appear under it.
+
+You can also modify the final color with the parameters offered by '**Color filter**' (_3_) and its '**Lift**' (_4_), '**Midtones**' (_5_) and '**Gain**' (_6_).
 
 Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
