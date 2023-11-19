@@ -288,11 +288,17 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" >}}
 
-Simulates the printing technique used in comics and newspapers. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Simulates the printing technique used in comics and newspapers: [halftone](https://en.wikipedia.org/wiki/Halftone). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/artistic/comic_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+The scale of the points can be modified with '**Scale**' (_2_). The operation used to blend the color of these points with the original image can be adjusted with '**Color blend**' (_3_).
+
+To increase the feeling of seeing a comic book, you can add a stroke effect with '**Edge**' (_4_).
+
+If you want to finely adjust the angle of each color point, you can modify it with '**CMYK pattern**' (_5_).
 
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
