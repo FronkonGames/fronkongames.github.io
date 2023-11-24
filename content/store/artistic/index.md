@@ -241,7 +241,7 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 
 {{< youtube XcLXlvqG5yU >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tonemapper/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tonemapper/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" >}}
 
 Maps wide range colors (HDR) into low dynamic range (LDR) using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -286,7 +286,7 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 
 {{< youtube W4t0Cnk1Q0U >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-comic-269586" >}}
 
 Simulates the printing technique used in comics and newspapers: [halftone](https://en.wikipedia.org/wiki/Halftone). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
