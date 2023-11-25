@@ -16,6 +16,7 @@ type: "store"
 * [Sharpen](#sharpen), enhances image details.
 * [Tonemapper](#tonemapper), maps HDR into LDR using different algorithms.
 * [Comic](#comic), simulates the printing technique used in comics and newspapers.
+* [Neon](#neon), synthwave effect.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -301,6 +302,28 @@ To increase the feeling of seeing a comic book, you can add a stroke effect with
 If you want to finely adjust the angle of each color point, you can modify it with '**CMYK pattern**' (_5_).
 
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
+
+---
+# {#neon}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+{{< youtube nNVYDesYfF8 >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/neon/" >}}
+
+Neon synthwave effect highlighting the edges of the image with cycling colors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/artistic/neon_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. You can control the edge strength with '**Strength**' (_2_). The thickness can be adjusted with '**Radius**' (_3_).
+
+With '**Blend**' (_4_) you can change how the original image and the effect are blended, using formulas very similar to those used by _Photoshop_.
+
+Additionally you can apply a deformation to the effect with '**Fisheye**' (_5_). If the value is positive a _fisheye_ effect will be applied and if negative an _anti-fisheye_ effect will be applied.
+
+You may want the effect to become less intense as you move away from the camera. Activate '**Process depth**' (_7_) and adjust '**Depth power**' to achieve this. If you also want it to affect the sky, turn on '**Sample sky**'.
+
+Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
