@@ -309,7 +309,7 @@ Finally, if you click on '**documentation**' (_6_) you will go to the online doc
 
 {{< youtube nNVYDesYfF8 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/neon/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/neon/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-neon-270269" >}}
 
 Neon synthwave effect highlighting the edges of the image with cycling colors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
