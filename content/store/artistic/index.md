@@ -68,10 +68,10 @@ To modify any of the effect parameters, you must first request its __settings__.
 If you are using an effect other than '**OneBit**' just change it to its name. Check the source code comments for more information.
 
 ---
-# {#onebit}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube Yz9j7iXuDhY >}}
+# {#onebit}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/onebit/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000">}}
 
@@ -108,10 +108,10 @@ When '**Invert**' (_9_) is activated, the color is inverted.
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
 
 ---
-# {#oilpaint}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube A9jtFpXo02Q >}}
+# {#oilpaint}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/oilpaint/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" >}}
 
@@ -153,10 +153,10 @@ Don't want the effect to be applied to the sky? Disable '**Sample sky**' (__3__)
 Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
 ---
-# {#tiltshift}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube ixqjMNnUSus >}}
+# {#tiltshift}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tiltshift/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tilt-shift-265465" >}}
 
@@ -177,10 +177,10 @@ In order to better adjust these parameters, you can activate '**Debug**' (_9_) t
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
 
 ---
-# {#colorisolation}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube XfHdKU1qTF4 >}}
+# {#colorisolation}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/colorisolation/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-color-isolation-266086">}}
 
@@ -203,10 +203,10 @@ Once you have isolated the color you want, you can apply different effects to bo
 Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
 ---
-# {#sharpen}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube Xjax-orCmVY >}}
+# {#sharpen}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/sharpen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-sharpen-266728">}}
 
@@ -237,10 +237,10 @@ To view in which areas of the image the effect is applied, activate '**Debug vie
 Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
 ---
-# {#tonemapper}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube XcLXlvqG5yU >}}
+# {#tonemapper}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tonemapper/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" >}}
 
@@ -282,10 +282,10 @@ You can also modify the final color with the parameters offered by '**Color filt
 Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
 
 ---
-# {#comic}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube W4t0Cnk1Q0U >}}
+# {#comic}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-comic-269586" >}}
 
@@ -304,10 +304,10 @@ If you want to finely adjust the angle of each color point, you can modify it wi
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
 
 ---
-# {#neon}
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 {{< youtube nNVYDesYfF8 >}}
+# {#neon}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/neon/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-neon-270269" >}}
 
