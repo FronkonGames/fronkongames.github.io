@@ -363,7 +363,7 @@ If you want to better adjust at what brightness level rays start to be generated
 Although it will decrease the quality of the effect, you can increase the performance of the effect by choosing other values for '**Down sample**' (_8_). This may generate some annoying glitches in the brightness, you can mitigate them by using '**Artifacts**' (_9_).
 
 {{< notice tip >}}
-You don't want the effect to be generated on your particulates? You can change when it is applied by going to '**Advanced** > **RenderPass event**' and setting it to '_After Rendering Transparents_'.
+You don't want the effect to be generated on your particles? You can change when it is applied by going to '**Advanced** > **RenderPass event**' and setting it to '_After Rendering Transparents_'.
 {{< /notice >}}
 
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
