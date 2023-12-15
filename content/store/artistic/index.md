@@ -71,8 +71,8 @@ If you are using an effect other than '**OneBit**' just change it to its name. C
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube Yz9j7iXuDhY >}}
 # {#onebit}
+{{< youtube Yz9j7iXuDhY >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/onebit/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000">}}
 
@@ -111,8 +111,8 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube A9jtFpXo02Q >}}
 # {#oilpaint}
+{{< youtube A9jtFpXo02Q >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/oilpaint/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" >}}
 
@@ -160,8 +160,8 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube ixqjMNnUSus >}}
 # {#tiltshift}
+{{< youtube ixqjMNnUSus >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tiltshift/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tilt-shift-265465" >}}
 
@@ -184,8 +184,8 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube XfHdKU1qTF4 >}}
 # {#colorisolation}
+{{< youtube XfHdKU1qTF4 >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/colorisolation/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-color-isolation-266086">}}
 
@@ -210,8 +210,8 @@ Finally, if you click on '**documentation**' (_5_) you will go to the online doc
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube Xjax-orCmVY >}}
 # {#sharpen}
+{{< youtube Xjax-orCmVY >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/sharpen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-sharpen-266728">}}
 
@@ -244,8 +244,8 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube XcLXlvqG5yU >}}
 # {#tonemapper}
+{{< youtube XcLXlvqG5yU >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tonemapper/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" >}}
 
@@ -289,8 +289,8 @@ Finally, if you click on '**documentation**' (_7_) you will go to the online doc
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube W4t0Cnk1Q0U >}}
 # {#comic}
+{{< youtube W4t0Cnk1Q0U >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-comic-269586" >}}
 
@@ -311,8 +311,8 @@ Finally, if you click on '**documentation**' (_6_) you will go to the online doc
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube nNVYDesYfF8 >}}
 # {#neon}
+{{< youtube nNVYDesYfF8 >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/neon/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-neon-270269" >}}
 
@@ -337,8 +337,8 @@ Finally, if you click on '**documentation**' (_8_) you will go to the online doc
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
-{{< youtube kgwMRlHzGxs >}}
 # {#spark}
+{{< youtube kgwMRlHzGxs >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/spark/" >}}
 
