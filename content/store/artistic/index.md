@@ -18,6 +18,7 @@ type: "store"
 * [Comic](#comic), simulates the printing technique used in comics and newspapers.
 * [Neon](#neon), synth-wave effect.
 * [Spark](#spark), adds bloom and ray-of-light effects.
+* [Radial Blur](#radialblue), the need for the speed.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -367,6 +368,22 @@ You don't want the effect to be generated on your particles? You can change when
 {{< /notice >}}
 
 Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#radialblur}
+{{< youtube kgwMRlHzGxs >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/radialblur/" >}}
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/artistic/radialblue_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_12_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_13_). If you need to reset all the effect values, click on '**Reset**' (_14_).
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
