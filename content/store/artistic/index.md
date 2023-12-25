@@ -379,7 +379,7 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/radialblue_0.jpg" >}}
+{{< imagecenter src="/store/artistic/radialblur_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
