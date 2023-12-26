@@ -373,7 +373,7 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 # {#radialblur}
-{{< youtube kgwMRlHzGxs >}}
+{{< youtube rSE8fjbire4 >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/radialblur/" >}}
 
