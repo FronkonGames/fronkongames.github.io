@@ -1,0 +1,108 @@
+---
+title: "Glitches"
+date: 2022-10-22T12:23:10+06:00
+image: /store/glitches/mini.png
+logo: /store/glitches/logo.png
+description: "Add digital and analog glitches to increase the realism of your games!"
+type: "store"
+---
+
+'**Glitches**' contains the following assets:
+
+* [Color Blindness](#colorblindness), simulates the most common vision defects.
+
+{{< rawhtml >}}</br>{{< /rawhtml >}}
+## Requirements
+
+All '**Glitches**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP)', which means they will **not work** with Built-In, or HDRP.
+
+You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
+
+{{< rawhtml >}}</br>{{< /rawhtml >}}
+## Using them in the Editor
+
+Once installed, you have to add the effect you want to use from '**Glitches**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
+
+{{< imagecenter src="/store/glitches/editor_0.jpg" >}}
+
+Remember that the camera you are using must have the '**Post Processing**' option enabled.
+
+{{< imagecenter src="/store/glitches/editor_1.jpg" >}}
+
+{{< rawhtml >}}</br>{{< /rawhtml >}}
+## Using them in code
+
+You can also handle '**Glitches**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
+
+They are all of the style 'FronkonGames.Glitches.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Color Blindness**' the code would be:
+
+{{< highlight csharp "linenos=false" >}}
+using FronkonGames.Glitches.ColorBlindness;
+{{< /highlight >}}
+</br>
+
+And with this code you could check if the effect is added, and if it is not, add it.
+
+{{< highlight csharp "linenos=false" >}}
+if (ColorBlindness.IsInRenderFeatures() == false)
+    ColorBlindness.AddRenderFeature();
+{{< /highlight >}}
+</br>
+
+To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
+
+{{< highlight csharp "linenos=false" >}}
+ ColorBlindness.Settings settings = ColorBlindness.GetSettings();
+
+ settings.intensity = 0.5f;
+ {{< /highlight >}}
+</br>
+
+If you are using an effect other than '**Color Blindness**' just change it to its name. Check the source code comments for more information.
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#colorblindness}
+{{< youtube f5CiPt9bzBE >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/colorblindness/">}}
+
+'**Color Blindness**' simulates the most common vision defects.
+
+{{< notice warning "" >}}
+This asset **simulates** a series of vision defects, **NOT** corrects them.
+{{< /notice >}}
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/glitches/colorblindness_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Finally, if you click on '**documentation**' (_12_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_13_). If you need to reset all the effect values, click on '**Reset**' (_14_).
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## Misc
+
+All '**Glitches**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
+
+{{< imagecenter src="/store/glitches/color.jpg" >}}
+
+They also have an '**Advanced**' panel with these options:
+
+{{< imagecenter src="/store/glitches/advanced.jpg" >}}
+
+Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
+
+Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
+
+{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+## Support
+
+Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
+
+Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
+
+If you are happy with this asset, **please consider leaving a positive review** in the store, it would really help me, **thanks**!

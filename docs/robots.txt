@@ -10,6 +10,8 @@ Disallow: /store.html
 
 Disallow: /store/retro.html
 
+Disallow: /store/glitches.html
+
 Disallow: /games/dawn-of-the-cards.html
 
 Disallow: /games.html
