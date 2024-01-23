@@ -18,7 +18,7 @@ type: "store"
 * [Comic](#comic), simulates the printing technique used in comics and newspapers.
 * [Neon](#neon), synth-wave effect.
 * [Spark](#spark), adds bloom and ray-of-light effects.
-* [Radial Blur](#radialblue), the need for the speed.
+* [Radial Blur](#radialblur), the need for the speed.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -377,11 +377,21 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/radialblur/" >}}
 
-Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Increases the feeling of speed and adrenaline! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< imagecenter src="/store/artistic/radialblur_0.jpg" >}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+Change the origin of the effect with '**Center**' (_2_), where (0, 0) is the center of the screen.
+
+The quality depends directly on the number of '**Samples**' (_3_) you use. The higher the number, the better the quality, the lower the number, the better the performance. By adjusting the '**Density**' (_4_) and '**Falloff**' (_5_) values correctly you can lower the number of samples.
+
+In addition to the radial blur effect, another chromatic aberration effect (also radial) is used. Adjust how it affects each color channel with '**Offset**' (_6_).
+
+A screen warping effect is also added with '**Fisheye**' (_7_). With negative values the deformation will be inward and with positive values outward.
+
+You can also apply color effects to the inner zone, '**Inner**' (_10_), where less effect is applied and to the outer zone, '**Outer**' (_11_), where more effect is applied. The zones can be modified with '**Gradient power**' (_8_) and '**Range**' (_9_).
 
 Finally, if you click on '**documentation**' (_12_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_13_). If you need to reset all the effect values, click on '**Reset**' (_14_).
 
