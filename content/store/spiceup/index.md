@@ -386,15 +386,23 @@ The vision of strange creatures. Once installed, when you select your '_Universa
 
 {{< imagecenter src="/store/spiceup/ghostvision_0.jpg" >}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. '**Strength**' (_2_) modulates the intensity of the rest of the parameters.
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-By default the focus of the vision is positioned in the center of the screen (at 0, 0), if you want to modify it, you can use '**Focus**' (_3_). You can also modify its aperture (_4_) and zoom (_5_).
+'**Quality**' (_2_) can select different quality levels of the noise used to generate the effect. A '_Custom_' mode is also included in which you can manually adjust the octaves of the noise.
 
-With '**Speed**' (_6_) you can change the speed of the effect and by activating '**Aspect ratio**' (_7_) it will be adjusted to the resolution of the monitor.
+'**Strength**' (_3_) modulates the intensity of the rest of the parameters.
 
-You can also modify the color of the central viewing area, '**Inner color**' (_8_), and the outer area, '**Outer color**' (_9_).
+By default the focus of the vision is positioned in the center of the screen (at 0, 0), if you want to modify it, you can use '**Focus**' (_3_). You can also modify its aperture (_5_) and zoom (_6_).
 
-Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
+{{< notice tip >}}
+Activate '**Debug view**' (_11_) to see the area where the effect is most applied with a red tint.
+{{< /notice >}}
+
+With '**Speed**' (_7_) you can change the speed of the effect and by activating '**Aspect ratio**' (_8_) it will be adjusted to the resolution of the monitor.
+
+You can also modify the color of the central viewing area, '**Inner color**' (_9_), and the outer area, '**Outer color**' (_10_).
+
+Finally, if you click on '**documentation**' (_12_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_13_). If you need to reset all the effect values, click on '**Reset**' (_14_).
 
 ---
 # {#scanner}

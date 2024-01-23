@@ -50,13 +50,13 @@ URL = "hero-area"
 weight = 1
 
 [[menu.main]]
-name = "Games"
-URL = "games"
+name = "Assets"
+URL = "store"
 weight = 2
 
 [[menu.main]]
-name = "Assets"
-URL = "store"
+name = "Games"
+URL = "games"
 weight = 3
 
 [[menu.main]]
@@ -98,7 +98,7 @@ featured = "images/featured.jpg"
 # meta data
 author = "Martin Bustos"
 description = "Indie game developer and asset publisher"
-keywords = "gamedev,unity,asset,store,unity3d,videogames,programmer"
+keywords = "gamedev, unity, asset, store, unity3d, videogames, programmer"
 
 # Google Analitycs 4 ID
 googleAnalyticsID = "G-90Y4J5LX9J"
@@ -107,7 +107,7 @@ googleAnalyticsID = "G-90Y4J5LX9J"
 main_sections = ["post"]
 
 # copyright
-copyright = "Copyright &copy; 2023 Fronkon Games"
+copyright = "Copyright &copy; 2024 Fronkon Games"
 
 # Preloader
 [params.preloader]
