@@ -80,7 +80,20 @@ Once installed, when you select your '_Universal Renderer Data_', you will see s
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-Finally, if you click on '**documentation**' (_12_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_13_). If you need to reset all the effect values, click on '**Reset**' (_14_).
+Select the type of deficiency you want to simulate with '**Deficiency**' (_2_):
+
+* **Protanomaly**: red-green vision deficiency, 1% of males, 0.03% of females.
+* **Deuteranomaly**: red-green color blindness, 6% of males, 0.4% of females.
+* **Tritanomaly**: blue-yellow color blindness, 0.01% for males and females.
+* **Protanopia**: reds are greatly reduced, 1% of males, 0.02% of females.
+* **Deuteranopia**: greens are greatly reduced, 1% of males.
+* **Tritanopia**: blues are greatly reduced, 0.003% population.
+* **Achromatopsia**: total color blindness, 0.001% population.
+* **Achromatomaly**: partial color blindness, 0.00001% population.
+
+In order to compare the result with a normal view, move '**Comparator**'.
+
+Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
