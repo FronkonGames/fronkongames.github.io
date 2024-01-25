@@ -10,6 +10,7 @@ type: "store"
 '**Glitches**' contains the following assets:
 
 * [Color Blindness](#colorblindness), simulates the most common vision defects.
+* [Corrupt Memory](#corruptmemory), a cyber attack? no, it's just corrupted memory..
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -92,6 +93,32 @@ Select the type of deficiency you want to simulate with '**Deficiency**' (_2_):
 * **Achromatomaly**: partial color blindness, 0.00001% population.
 
 In order to compare the result with a normal view, move '**Comparator**'.
+
+Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#corruptmemory}
+{{< youtube F4ubH6fGgcA >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/corruptmemory/">}}
+
+'**Corrupt Memory**' emulates malfunctioning memory.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/glitches/corruptmemory_0.jpg" >}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+The effect generates a pattern of overlapping rectangles that change dimensions and position randomly. The first parameters (from _2_ to _6_), modify this pattern. If you want to see it better, activate '**Debug view**' (_10_).
+
+The first thing you can adjust is the complexity (_2_) of the pattern and the density (_3_) of the rectangles. Then the speed (_4_) with which they vary and their displacement (_5_) on the screen. Finally you can also change their magnification (_6_).
+
+The pattern is used to define the zones where three effects will be applied. The first one is a pixelation effect (_7_), then a chromatic aberration effect (_8_) and finally an image displacement effect (_9_).
+
+In all of them you can adjust the limit at which it is activated ('_Threshold_'). With a very high limit, it will use very few rectangles of the pattern. With a very low limit, many.
 
 Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
 
