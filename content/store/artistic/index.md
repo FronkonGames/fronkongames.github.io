@@ -341,7 +341,7 @@ Finally, if you click on '**documentation**' (_8_) you will go to the online doc
 # {#spark}
 {{< youtube kgwMRlHzGxs >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/spark/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/spark/" store="https://assetstore.unity.com/packages/slug/270898">}}
 
 Adds bloom and ray-of-light effects to the brightest areas. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
