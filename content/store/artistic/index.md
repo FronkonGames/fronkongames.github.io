@@ -375,7 +375,7 @@ Finally, if you click on '**documentation**' (_10_) you will go to the online do
 # {#radialblur}
 {{< youtube rSE8fjbire4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/radialblur/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/radialblur/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-radial-blur-271547" >}}
 
 Increases the feeling of speed and adrenaline! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
