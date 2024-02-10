@@ -12,6 +12,8 @@ Disallow: /store/retro.html
 
 Disallow: /store/glitches.html
 
+Disallow: /store/luts.html
+
 Disallow: /games/dawn-of-the-cards.html
 
 Disallow: /games.html
