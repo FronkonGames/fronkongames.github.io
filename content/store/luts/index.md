@@ -130,8 +130,6 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cyberpunk/">}}
 
-Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
-
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## Misc
@@ -139,6 +137,20 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 All '**LUTs**' have an advanced color grading panel. Check '**Color grading**' (_1_) to activate it.
 
 {{< imagecenter src="/store/luts/color.jpg" >}}
+
+'**Exposure**' (_2_) changes the exposure, or brightness. Just below you have a contrast control (_3_) and an HDR color (_4_) without alpha channel to tint the image.
+
+To move the color wheel, use '**Hue**' (_5_). To change the amount of color, use '**Saturation**' (_6_).
+
+Select the tone operator, '**Tonemap**' (_7_), that best suits your needs. The most popular ones are available: Neutral, ACES and Reinhard. If you want more, you may be interested in '[Artistic: Tonemapper](http://localhost:1313/store/artistic.html#tonemapper)'.
+
+With '**White balance**' (_8_) you can adjust the perceived _temperature_ of the image. First you can make it perceived cooler or warmer. The next parameter modifies the color used to vary the perceived temperature.
+
+'**Split toning**' (_9_) is used to tint shadows and highlights of an image separately. A typical example is to push shadows toward cool blue and highlights toward warm orange.
+
+'**Channel mixer**' (_10_) allows you to combine input RGB values to create a new RGB value. For example, you could swap R and G, subtract B from G, or add G to R to push green toward yellow.
+
+The last setting is '**Shadow Midtones Highlights**' (_11_), it works like split-toning, except that it also allows adjustment of the midtones and decouples the shadow and highlight regions, making them configurable.
 
 They also have an '**Advanced**' panel with these options:
 
@@ -155,4 +167,9 @@ Do you have any problem or any suggestions? Click on "**support**" or send me an
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-If you are happy with this asset, **please consider leaving a positive review** in the store, it would really help me, **thanks**!
+{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+
+❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+
+## If you are happy with this asset, **please consider leaving a positive review** in the store, it would really help me,
+# **thanks**!

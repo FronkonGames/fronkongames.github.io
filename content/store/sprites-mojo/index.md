@@ -331,4 +331,9 @@ Do you have any problem or any suggestions? Send me an email to **fronkongames@g
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-If you are happy with this asset, **please consider leaving a positive review** in the store, it would really help me, **thanks**!
+{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+
+❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+
+## If you are happy with this asset, **please consider leaving a positive review** in the store, it would really help me,
+# **thanks**!
