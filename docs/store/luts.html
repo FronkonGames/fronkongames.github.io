@@ -145,7 +145,7 @@
                     <p><strong>LUTs</strong>&rsquo; is (or will be) the largest collection of LUTs of the entire store. Thanks to LUTs (or &lsquo;LookUp Table&rsquo;) you can completely transform the look of your games, making them more coherent with your artistic preferences.</p>
 <p>&lsquo;<strong>LUTs</strong>&rsquo; contains the following assets:</p>
 <ul>
-<li><a href="#cyberpunk">Cyberpunk</a>, apocalyptic future, looking cool.</li>
+<li><a href="#cyberpunk">Cyberpunk</a> (61 LUTs): apocalyptic future, looking cool.</li>
 </ul>
 </br>
 <h2 id="requirements">Requirements</h2>
@@ -285,6 +285,14 @@
 <p>With the intensity (<em>1</em>) set to <em>1.0</em> the effect is fully applied, with 0 it is deactivated and with the intermediate values you get a mix between the original and the final image.</p>
 <p>There are two modes (<em>2</em>), the quality mode and the performance mode. The first one uses high resolution 3D textures, while the second one uses smaller versions. For VR and mobile I recommend the second mode.</p>
 <p>Each lut is contained in a <em>profile</em> that you can find in the &lsquo;<em>Profiles</em>&rsquo; folder. By clicking on &lsquo;<strong>Profile</strong>&rsquo; (<em>3</em>) you will see all the available ones.</p>
+
+
+
+<div style="text-align: center">
+  <img src="../store/luts/editor_3.jpg" alt="" decoding="async" />
+</div>
+&nbsp;
+
 </br>
 <h2 id="using-them-in-code">Using them in code</h2>
 <p>You can also handle &lsquo;<strong>LUTs</strong>&rsquo; effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.</p>
@@ -300,6 +308,37 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span> settings.intensity = <span style="color:#ae81ff">0.5f</span>;
 </span></span><span style="display:flex;"><span> </span></span></code></pre></div>
+<!-- raw HTML omitted --></p>
+<p>You can load a <em>profile</em> in several ways. A <em>profile</em> is nothing more than a ScriptableObject, so it must be referenced by some object to be included in the build.</p>
+<p>A very simple way is to create a MonoBehaviour and add a list of <em>profiles</em> to it. This way Unity will include in the build the <em>profiles</em> that you have referenced.</p>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProfileBank</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">  [SerializableField]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> List&lt;Profile&gt; profiles = <span style="color:#66d9ef">new</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Awake()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set a random profile.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (profiles.Length &gt; <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      settings.profile = profiles[Random.Range(<span style="color:#ae81ff">0</span>, profiles.Length)];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<!-- raw HTML omitted --></p>
+<p>Another method you can use, more versatile, is to move the <em>profiles</em> folder into the &lsquo;<em>Resources</em>&rsquo; folder. Everything included in this folder will be added to the build and you can load its content with the <a href="https://docs.unity3d.com/ScriptReference/Resources.html">Resources</a> class:</p>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// In this example the profiles are located</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// inside Resources in the folder &#39;LUTs/Profiles/Cyberpunk&#39;.</span>
+</span></span><span style="display:flex;"><span>Profile profile = Resources.Load&lt;Profile&gt;(<span style="color:#e6db74">&#34;LUTs/Profiles/Cyberpunk/Cyberpunk_01&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>settings.profile = profile;</span></span></code></pre></div>
+<!-- raw HTML omitted --></p>
+<p>With this method, you can unload the profile when you no longer want to use it.</p>
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Resources.UnloadAsset(profile);</span></span></code></pre></div>
 <!-- raw HTML omitted --></p>
 <p>If you are using an effect other than &lsquo;<strong>Cyberpunk</strong>&rsquo; just change it to its name. Check the source code comments for more information.</p>
 <hr>

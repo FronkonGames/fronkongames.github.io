@@ -11,7 +11,7 @@ type: "store"
 
 '**LUTs**' contains the following assets:
 
-* [Cyberpunk](#cyberpunk), apocalyptic future, looking cool.
+* [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -45,6 +45,8 @@ There are two modes (_2_), the quality mode and the performance mode. The first 
 
 Each lut is contained in a _profile_ that you can find in the '_Profiles_' folder. By clicking on '**Profile**' (_3_) you will see all the available ones.
 
+{{< imagecenter src="/store/luts/editor_3.jpg" >}}
+
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Using them in code
 
@@ -72,6 +74,50 @@ To modify any of the effect parameters, you must first request its __settings__.
 
  settings.intensity = 0.5f;
  {{< /highlight >}}
+</br>
+
+You can load a _profile_ in several ways. A _profile_ is nothing more than a ScriptableObject, so it must be referenced by some object to be included in the build.
+
+A very simple way is to create a MonoBehaviour and add a list of _profiles_ to it. This way Unity will include in the build the _profiles_ that you have referenced.
+
+{{< highlight csharp "linenos=false" >}}
+public class ProfileBank : MonoBehaviour
+{
+  [SerializableField]
+  private List<Profile> profiles = new();
+
+  private void Awake()
+  {
+    // Set a random profile.
+    if (profiles.Length > 0)
+    {
+      Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+
+      settings.profile = profiles[Random.Range(0, profiles.Length)];
+    }
+  }
+}
+{{< /highlight >}}
+</br>
+
+Another method you can use, more versatile, is to move the _profiles_ folder into the '_Resources_' folder. Everything included in this folder will be added to the build and you can load its content with the [Resources](https://docs.unity3d.com/ScriptReference/Resources.html) class:
+
+{{< highlight csharp "linenos=false" >}}
+// In this example the profiles are located
+// inside Resources in the folder 'LUTs/Profiles/Cyberpunk'.
+Profile profile = Resources.Load<Profile>("LUTs/Profiles/Cyberpunk/Cyberpunk_01");
+
+Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+
+settings.profile = profile;
+{{< /highlight >}}
+</br>
+
+With this method, you can unload the profile when you no longer want to use it.
+
+{{< highlight csharp "linenos=false" >}}
+Resources.UnloadAsset(profile);
+{{< /highlight >}}
 </br>
 
 If you are using an effect other than '**Cyberpunk**' just change it to its name. Check the source code comments for more information.
