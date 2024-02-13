@@ -331,9 +331,9 @@
 <p>Another method you can use, more versatile, is to move the <em>profiles</em> folder into the &lsquo;<em>Resources</em>&rsquo; folder. Everything included in this folder will be added to the build and you can load its content with the <a href="https://docs.unity3d.com/ScriptReference/Resources.html">Resources</a> class:</p>
 <p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// In this example the profiles are located</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// inside Resources in the folder &#39;LUTs/Profiles/Cyberpunk&#39;.</span>
-</span></span><span style="display:flex;"><span>Profile profile = Resources.Load&lt;Profile&gt;(<span style="color:#e6db74">&#34;LUTs/Profiles/Cyberpunk/Cyberpunk_01&#34;</span>);
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Profile profile = Resources.Load&lt;Profile&gt;(<span style="color:#e6db74">&#34;LUTs/Profiles/Cyberpunk/Cyberpunk_01&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>settings.profile = profile;</span></span></code></pre></div>
 <!-- raw HTML omitted --></p>
@@ -385,16 +385,16 @@
 <style>
 #slide-window {
     position: relative;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     overflow: hidden;
     top: 0px;
     left: 0px;
 }
 
 #slides-list {
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -410,8 +410,8 @@
     float: left;
     margin: 0;
     padding: 0;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     background: #ccc;
     text-align: center;
     line-height: 100%;
@@ -453,16 +453,17 @@
 <center>
 <div id="slide-window">
     <ol id="slides-list">
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide1.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide10.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide2.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide3.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide4.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide5.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide6.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide7.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide8.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide9.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide1.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide10.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide11.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide2.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide3.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide4.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide5.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide6.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide7.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide8.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/pinkteal/slide9.jpeg);"></li>
         </ol>
     <span class="nav fa fa-chevron-left fa-3x" id="left"></span>
     <span class="nav fa fa-chevron-right fa-3x" id="right"></span>
@@ -569,16 +570,16 @@ Pink & Teal (11): different proportions of cyberpunk colors.
 <style>
 #slide-window {
     position: relative;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     overflow: hidden;
     top: 0px;
     left: 0px;
 }
 
 #slides-list {
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -594,8 +595,8 @@ Pink & Teal (11): different proportions of cyberpunk colors.
     float: left;
     margin: 0;
     padding: 0;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     background: #ccc;
     text-align: center;
     line-height: 100%;
@@ -637,16 +638,38 @@ Pink & Teal (11): different proportions of cyberpunk colors.
 <center>
 <div id="slide-window">
     <ol id="slides-list">
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide1.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide10.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide2.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide3.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide4.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide5.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide6.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide7.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide8.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide9.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide1.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide10.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide11.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide12.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide13.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide14.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide15.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide16.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide17.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide18.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide19.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide2.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide20.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide21.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide22.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide23.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide24.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide25.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide26.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide27.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide28.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide29.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide3.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide30.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide31.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide32.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide4.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide5.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide6.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide7.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide8.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/neotokyo/slide9.jpeg);"></li>
         </ol>
     <span class="nav fa fa-chevron-left fa-3x" id="left"></span>
     <span class="nav fa fa-chevron-right fa-3x" id="right"></span>
@@ -753,16 +776,16 @@ Neo Tokyo (33): taken from the nighttime streets of a neon-lit Tokyo.
 <style>
 #slide-window {
     position: relative;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     overflow: hidden;
     top: 0px;
     left: 0px;
 }
 
 #slides-list {
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -778,8 +801,8 @@ Neo Tokyo (33): taken from the nighttime streets of a neon-lit Tokyo.
     float: left;
     margin: 0;
     padding: 0;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     background: #ccc;
     text-align: center;
     line-height: 100%;
@@ -821,16 +844,14 @@ Neo Tokyo (33): taken from the nighttime streets of a neon-lit Tokyo.
 <center>
 <div id="slide-window">
     <ol id="slides-list">
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide1.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide10.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide2.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide3.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide4.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide5.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide6.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide7.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide8.jpg);"></li>
-                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide9.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide1.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide2.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide3.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide4.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide5.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide6.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide7.jpeg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/dystopia/slide8.jpeg);"></li>
         </ol>
     <span class="nav fa fa-chevron-left fa-3x" id="left"></span>
     <span class="nav fa fa-chevron-right fa-3x" id="right"></span>
@@ -937,16 +958,16 @@ Dystopia (8): taken from the nighttime streets of a neon-lit Tokyo.
 <style>
 #slide-window {
     position: relative;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     overflow: hidden;
     top: 0px;
     left: 0px;
 }
 
 #slides-list {
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -962,8 +983,8 @@ Dystopia (8): taken from the nighttime streets of a neon-lit Tokyo.
     float: left;
     margin: 0;
     padding: 0;
-    width: 720px;
-    height: 720px;
+    width: 600px;
+    height: 600px;
     background: #ccc;
     text-align: center;
     line-height: 100%;
@@ -1005,15 +1026,25 @@ Dystopia (8): taken from the nighttime streets of a neon-lit Tokyo.
 <center>
 <div id="slide-window">
     <ol id="slides-list">
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide1.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide1.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide10.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide10.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide2.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide2.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide3.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide3.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide4.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide4.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide5.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide5.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide6.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide6.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide7.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide7.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide8.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide8.jpg);"></li>
+                <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide9.jpeg);"></li>
                 <li class="slide" style="background-image:url(https://fronkongames.github.io/images/store/luts/gallery/cyberpunk/slide9.jpg);"></li>
         </ol>
     <span class="nav fa fa-chevron-left fa-3x" id="left"></span>
@@ -1133,9 +1164,11 @@ Cyberpunk (10): cyberpunk tones.
 <p>Do you have any problem or any suggestions? Click on &ldquo;<strong>support</strong>&rdquo; or send me an email to <strong><a href="mailto:fronkongames@gmail.com">fronkongames@gmail.com</a></strong> and I&rsquo;ll be happy to help you.</p>
 <p>Remember that if you want to inform me of an error, it would help me if you sent to me the <a href="https://docs.unity3d.com/Manual/LogFiles.html">log file</a>.</p>
 <p></br></br></p>
-<p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
-<h2 id="if-you-are-happy-with-this-asset-please-consider-leaving-a-positive-review-in-the-store-it-would-really-help-me">If you are happy with this asset, <strong>please consider leaving a positive review</strong> in the store, it would really help me,</h2>
-<h1 id="thanks"><strong>thanks</strong>!</h1>
+<p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+<p style="text-align: center;">
+If you are happy with this asset, <b>please consider leaving a positive review</b> in the store, it would really help me,
+<b>thanks</b>!
+</p></p>
 
                     <br><br><br>
                 </div>

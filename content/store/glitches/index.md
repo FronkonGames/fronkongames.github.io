@@ -148,6 +148,7 @@ Remember that if you want to inform me of an error, it would help me if you sent
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 
 ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-
-## If you are happy with this asset, **please consider leaving a positive review** in the store, it would really help me,
-# **thanks**!
+{{< center >}}
+If you are happy with this asset, <b>please consider leaving a positive review</b> in the store, it would really help me,
+<b>thanks</b>!
+{{< /center >}}

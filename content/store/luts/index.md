@@ -105,9 +105,9 @@ Another method you can use, more versatile, is to move the _profiles_ folder int
 {{< highlight csharp "linenos=false" >}}
 // In this example the profiles are located
 // inside Resources in the folder 'LUTs/Profiles/Cyberpunk'.
-Profile profile = Resources.Load<Profile>("LUTs/Profiles/Cyberpunk/Cyberpunk_01");
-
 Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+
+Profile profile = Resources.Load<Profile>("LUTs/Profiles/Cyberpunk/Cyberpunk_01");
 
 settings.profile = profile;
 {{< /highlight >}}
@@ -132,22 +132,22 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 
 In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes over 60 high quality LUTs including:
 
-{{< gallery-slider dir="/images/store/luts/gallery/cyberpunk" auto-slide="3000" width="720px" height="720px" >}}
+{{< gallery-slider dir="/images/store/luts/gallery/pinkteal" auto-slide="3000" width="600px" height="600px" >}}
 {{< center >}}
 Pink & Teal (11): different proportions of cyberpunk colors.
 {{< /center >}}
 
-{{< gallery-slider dir="/images/store/luts/gallery/cyberpunk" auto-slide="3000" width="720px" height="720px" >}}
+{{< gallery-slider dir="/images/store/luts/gallery/neotokyo" auto-slide="3000" width="600px" height="600px" >}}
 {{< center >}}
 Neo Tokyo (33): taken from the nighttime streets of a neon-lit Tokyo.
 {{< /center >}}
 
-{{< gallery-slider dir="/images/store/luts/gallery/cyberpunk" auto-slide="3000" width="720px" height="720px" >}}
+{{< gallery-slider dir="/images/store/luts/gallery/dystopia" auto-slide="3000" width="600px" height="600px" >}}
 {{< center >}}
 Dystopia (8): taken from the nighttime streets of a neon-lit Tokyo.
 {{< /center >}}
 
-{{< gallery-slider dir="/images/store/luts/gallery/cyberpunk" auto-slide="3000" width="720px" height="720px" >}}
+{{< gallery-slider dir="/images/store/luts/gallery/cyberpunk" auto-slide="3000" width="600px" height="600px" >}}
 {{< center >}}
 Cyberpunk (10): cyberpunk tones.
 {{< /center >}}
@@ -192,6 +192,7 @@ Remember that if you want to inform me of an error, it would help me if you sent
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 
 ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-
-## If you are happy with this asset, **please consider leaving a positive review** in the store, it would really help me,
-# **thanks**!
+{{< center >}}
+If you are happy with this asset, <b>please consider leaving a positive review</b> in the store, it would really help me,
+<b>thanks</b>!
+{{< /center >}}
