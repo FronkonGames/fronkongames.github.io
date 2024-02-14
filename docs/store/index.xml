@@ -6,62 +6,49 @@
     <description>Recent content in Stores on Fronkon Games</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2023 12:23:10 +0600</lastBuildDate><atom:link href="https://fronkongames.github.io/store/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 12:23:10 +0600</lastBuildDate>
+    <atom:link href="https://fronkongames.github.io/store/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artistic</title>
       <link>https://fronkongames.github.io/store/artistic.html</link>
       <pubDate>Wed, 22 Feb 2023 12:23:10 +0600</pubDate>
-      
       <guid>https://fronkongames.github.io/store/artistic.html</guid>
-      <description>&amp;lsquo;Artistic&amp;rsquo; contains the following assets:
-One Bit, a hipster, original and versatile look using a dithering with blue noise.</description>
+      <description>&amp;lsquo;Artistic&amp;rsquo; contains the following assets:&#xA;One Bit, a hipster, original and versatile look using a dithering with blue noise.</description>
     </item>
-    
     <item>
       <title>Spice Up</title>
       <link>https://fronkongames.github.io/store/spiceup.html</link>
       <pubDate>Wed, 22 Feb 2023 12:23:10 +0600</pubDate>
-      
       <guid>https://fronkongames.github.io/store/spiceup.html</guid>
       <description>&amp;lsquo;Spice Up&amp;rsquo; is a large selection of effects to give juice to your FPS / VR games.</description>
     </item>
-    
     <item>
       <title>Retro</title>
       <link>https://fronkongames.github.io/store/retro.html</link>
       <pubDate>Wed, 23 Nov 2022 12:23:10 +0600</pubDate>
-      
       <guid>https://fronkongames.github.io/store/retro.html</guid>
       <description>&amp;lsquo;Retro&amp;rsquo; is a great collection of retro effects, simple to use and with many configuration options.</description>
     </item>
-    
     <item>
       <title>Glitches</title>
       <link>https://fronkongames.github.io/store/glitches.html</link>
       <pubDate>Sat, 22 Oct 2022 12:23:10 +0600</pubDate>
-      
       <guid>https://fronkongames.github.io/store/glitches.html</guid>
-      <description>&amp;lsquo;Glitches&amp;rsquo; contains the following assets:
-Color Blindness, simulates the most common vision defects.</description>
+      <description>&amp;lsquo;Glitches&amp;rsquo; contains the following assets:&#xA;Color Blindness, simulates the most common vision defects.</description>
     </item>
-    
     <item>
       <title>LUTs</title>
       <link>https://fronkongames.github.io/store/luts.html</link>
       <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://fronkongames.github.io/store/luts.html</guid>
       <description>LUTs&amp;rsquo; is (or will be) the largest collection of LUTs of the entire store.</description>
     </item>
-    
     <item>
       <title>Sprites Mojo</title>
       <link>https://fronkongames.github.io/store/sprites-mojo.html</link>
       <pubDate>Wed, 23 Feb 2022 12:23:10 +0600</pubDate>
-      
       <guid>https://fronkongames.github.io/store/sprites-mojo.html</guid>
       <description>Editor From the editor you can create &amp;lsquo;Sprites Mojo&amp;rsquo; effects in two different ways: creating sprites and creating materials.</description>
     </item>
-    
   </channel>
 </rss>

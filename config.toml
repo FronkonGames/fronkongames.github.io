@@ -2,7 +2,7 @@
 baseURL = "https://fronkongames.github.io/"
 languageCode = "en-us"
 title = "Fronkon Games"
-theme = "restaurant-hugo"
+theme = ["restaurant-hugo", "hugo-shortcode-gallery"]
 summaryLength = "10"
 paginate = 4
 enableRobotsTXT = true
@@ -10,8 +10,8 @@ enableEmoji = true
 relativeurls = true
 uglyurls = true
 publishDir = "/docs"
-############################# Plugins ##############################
 
+############################# Plugins ##############################
 # CSS Plugins
 [[params.plugins.css]]
 URL = "css/bootstrap.min.css"
@@ -185,3 +185,6 @@ link = "https://www.linkedin.com/in/martinbr"
 [[params.footer.socialLink]]
 icon = "youtube"
 link = "https://www.youtube.com/@fronkongames"
+
+[imaging.exif]
+includeFields = ".*"

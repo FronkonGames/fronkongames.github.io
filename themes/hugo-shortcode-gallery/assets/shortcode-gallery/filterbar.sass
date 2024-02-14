@@ -1,0 +1,53 @@
+/* Changes made here sadly only apply after restarting hugo server */
+    
+/* make 5px space between the button(filter options) in the filter bar
+.justified-gallery-filterbar
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  gap: 5px
+  margin-bottom: 10px
+
+  button
+    padding: 6px
+    border: 0px solid #fff
+    border-radius: 0px
+    background-color: #ad444a
+    font-weight: bold
+    color: #ffffff
+    line-height: 1em
+
+    &:hover
+        color: #333333
+        text-decoration: underline
+        background-color: #e6e6e6
+
+    &.selected
+        text-decoration: underline
+
+    svg
+        width: 1em
+        height: 1em
+        transform: rotate(90deg)
+        transition: transform .2s linear
+
+    &:hover svg
+        transform: rotate(90deg) scale(1.3)
+
+
+.fulltab
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 100
+  min-height: 100%
+  background-color: #222
+
+  .justified-gallery-filterbar
+    position: sticky
+    top: 0
+    left: 0
+    z-index: 101
+    background-color: #222
+    padding: 5px
+    margin: 0px

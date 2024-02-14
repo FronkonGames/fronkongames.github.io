@@ -21,7 +21,7 @@ All '**LUTs**' effects are developed for '[Universal Render Pipeline](https://do
 You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
 {{< notice warning "" >}}
-All LUTs are 3D textures, so the hardware must support it (+2014). 
+All LUTs are 3D textures, so the hardware must support it (>2014). 
 {{< /notice >}}
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
@@ -132,25 +132,17 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 
 In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes over 60 high quality LUTs including:
 
-{{< gallery-slider dir="/images/store/luts/gallery/pinkteal" auto-slide="3000" width="600px" height="600px" >}}
-{{< center >}}
-Pink & Teal (11): different proportions of cyberpunk colors.
-{{< /center >}}
-
-{{< gallery-slider dir="/images/store/luts/gallery/neotokyo" auto-slide="3000" width="600px" height="600px" >}}
-{{< center >}}
-Neo Tokyo (33): taken from the nighttime streets of a neon-lit Tokyo.
-{{< /center >}}
-
-{{< gallery-slider dir="/images/store/luts/gallery/dystopia" auto-slide="3000" width="600px" height="600px" >}}
-{{< center >}}
-Dystopia (8): taken from the nighttime streets of a neon-lit Tokyo.
-{{< /center >}}
-
-{{< gallery-slider dir="/images/store/luts/gallery/cyberpunk" auto-slide="3000" width="600px" height="600px" >}}
-{{< center >}}
-Cyberpunk (10): cyberpunk tones.
-{{< /center >}}
+{{<
+  gallery match="cyberpunk/*"
+  sortOrder="desc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="800x533 q100 Lanczos"
+  showExif=true
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Pink & Teal', description: 'Pink*'}, {label: 'Neo Tokyo', description: 'NeoTokyo*'}, {label: 'Dystopia', description: 'Dystopia*'}, {label: 'Cyberpunk', description: 'Cyberpunk*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
