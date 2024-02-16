@@ -188,3 +188,7 @@ link = "https://www.youtube.com/@fronkongames"
 
 [imaging.exif]
 includeFields = ".*"
+
+[module]
+  [module.hugoVersion]
+    extended = true

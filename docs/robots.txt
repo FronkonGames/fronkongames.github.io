@@ -26,6 +26,8 @@ Disallow: /gamedev/design-patterns-in-game-development.html
 
 Disallow: /gamedev.html
 
+Disallow: /blog/global-game-jam-dataset/global-game-jam-dataset.html
+
 Disallow: /blog/ml-game-ideas/ml-game-ideas.html
 
 Disallow: /blog/steam-games-dataset/steam-games-dataset.html
