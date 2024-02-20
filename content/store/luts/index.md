@@ -128,7 +128,7 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 # {#cyberpunk}
 {{< youtube 9JZdwytXLbA >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cyberpunk/">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cyberpunk/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cyberpunk-275005">}}
 
 In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes over 60 high quality LUTs including:
 

@@ -67,7 +67,7 @@ If you are using an effect other than '**Color Blindness**' just change it to it
 # {#colorblindness}
 {{< youtube f5CiPt9bzBE >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/colorblindness/">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/colorblindness/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-color-blindness-273126">}}
 
 '**Color Blindness**' simulates the most common vision defects.
 
@@ -108,7 +108,7 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/glitches/corruptmemory_0.jpg" >}}
+{{< imagecenter src="/store/glitches/corruptmemory_0.jpg">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
