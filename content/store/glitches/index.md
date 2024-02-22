@@ -10,7 +10,7 @@ type: "store"
 '**Glitches**' contains the following assets:
 
 * [Color Blindness](#colorblindness), simulates the most common vision defects.
-* [Corrupt Memory](#corruptmemory), a cyber attack? no, it's just corrupted memory..
+* [Corrupt Memory](#corruptmemory), a cyber attack? no, it's just corrupted memory.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -102,7 +102,7 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 # {#corruptmemory}
 {{< youtube F4ubH6fGgcA >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/corruptmemory/">}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/corruptmemory/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-corrupt-memory-274730" >}}
 
 '**Corrupt Memory**' emulates malfunctioning memory.
 
