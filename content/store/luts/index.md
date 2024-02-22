@@ -12,6 +12,7 @@ type: "store"
 '**LUTs**' contains the following assets:
 
 * [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
+* [Vinatge](#vintage) (90 LUTs): nostalgia for the past.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -143,6 +144,28 @@ In '**Cyberpunk**' you will find the look you are looking for in your futuristic
   embedPreview=true
   loadJQuery=true
   filterOptions= "[{label: 'Pink & Teal', description: 'Pink*'}, {label: 'Neo Tokyo', description: 'NeoTokyo*'}, {label: 'Dystopia', description: 'Dystopia*'}, {label: 'Cyberpunk', description: 'Cyberpunk*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#vintage}
+{{< youtube v052UeIjusk >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/vintage/" >}}
+
+The vintage and retro look you're looking for is in '**Vintage**', 90 high quality LUTs including:
+
+{{<
+  gallery match="vintage/*"
+  sortOrder="desc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="800x533 q100 Lanczos"
+  showExif=true
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: '70s', description: '70s*'}, {label: 'Noir', description: 'Noir*'}, {label: 'Nostalgia', description: 'Nostalgia*'}, {label: 'Old Films', description: 'OlFilms*'}, {label: 'Photo', description: 'Photo*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Sepia', description: 'Sepia*'}, {label: 'Semi B&W', description: 'SemiBW*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
