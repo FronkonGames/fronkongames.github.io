@@ -165,7 +165,7 @@ The vintage and retro look you're looking for is in '**Vintage**', 90 high quali
   previewType="blur"
   embedPreview=true
   loadJQuery=true
-  filterOptions= "[{label: '70s', description: '70s*'}, {label: 'Noir', description: 'Noir*'}, {label: 'Nostalgia', description: 'Nostalgia*'}, {label: 'Old Films', description: 'OlFIlms*'}, {label: 'Photo', description: 'Photo*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Sepia', description: 'Sepia*'}, {label: 'Semi B&W', description: 'SemiBW*'}, {label: 'All', description: '.*'}]">}}
+  filterOptions= "[{label: 'Nostalgia', description: 'Nostalgia*'}, {label: 'Retro', description: 'Retro*'}, {label: '70s', description: '70s*'}, {label: 'Noir', description: 'Noir*'}, {label: 'Old Films', description: 'OlFIlms*'}, {label: 'Photo', description: 'Photo*'}, {label: 'Sepia', description: 'Sepia*'}, {label: 'Semi B&W', description: 'SemiBW*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
