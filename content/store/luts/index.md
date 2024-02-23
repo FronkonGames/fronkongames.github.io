@@ -12,7 +12,7 @@ type: "store"
 '**LUTs**' contains the following assets:
 
 * [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
-* [Vinatge](#vintage) (90 LUTs): nostalgia for the past.
+* [Vintage](#vintage) (90 LUTs): nostalgia for the past.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -134,7 +134,7 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes over 60 high quality LUTs including:
 
 {{<
-  gallery match="cyberpunk/*"
+  gallery match="/cyberpunk/*"
   sortOrder="desc"
   rowHeight="100"
   margins="5"
@@ -151,12 +151,12 @@ In '**Cyberpunk**' you will find the look you are looking for in your futuristic
 # {#vintage}
 {{< youtube v052UeIjusk >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/vintage/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/vintage/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-vintage-275594" >}}
 
 The vintage and retro look you're looking for is in '**Vintage**', 90 high quality LUTs including:
 
 {{<
-  gallery match="vintage/*"
+  gallery match="/vintage/*"
   sortOrder="desc"
   rowHeight="100"
   margins="5"
