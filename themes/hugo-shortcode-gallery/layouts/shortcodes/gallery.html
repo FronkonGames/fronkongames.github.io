@@ -4,7 +4,6 @@
 {{ if .Get "match"}}
 	{{ $images = (.Page.Resources.Match (.Get "match")) }}
 {{ end }}
-
 {{ $filterOptions := .Get "filterOptions" | default (.Site.Params.galleryFilterOptions | default "[]") }}
 {{ if not $filterOptions }}
 	{{ $filterOptions = "[]" }}
@@ -43,7 +42,7 @@
 {{ $thumbnailResourceDir := printf "%s%s" (.Site.Params.resourceDir | default "resources") "/_gen/images/" }}
 
 <!-- Load jquery, jquery-lazy, swipebox and justified_gallery only once per page -->
-{{ if not (.Page.Scratch.Get "galleryLoaded") }}
+{{ if true }}
   	{{ .Page.Scratch.Set "galleryLoaded" true }}
 	<!-- Use relURL to support hugo projects that run in a subdirectory (bug #18) -->
 

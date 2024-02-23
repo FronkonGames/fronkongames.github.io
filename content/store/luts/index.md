@@ -134,7 +134,7 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes over 60 high quality LUTs including:
 
 {{<
-  gallery match="/cyberpunk/*"
+  gallery match="cyberpunk/*"
   sortOrder="desc"
   rowHeight="100"
   margins="5"
@@ -156,7 +156,7 @@ In '**Cyberpunk**' you will find the look you are looking for in your futuristic
 The vintage and retro look you're looking for is in '**Vintage**', 90 high quality LUTs including:
 
 {{<
-  gallery match="/vintage/*"
+  gallery match="vintage/*"
   sortOrder="desc"
   rowHeight="100"
   margins="5"
@@ -165,7 +165,7 @@ The vintage and retro look you're looking for is in '**Vintage**', 90 high quali
   previewType="blur"
   embedPreview=true
   loadJQuery=true
-  filterOptions= "[{label: '70s', description: '70s*'}, {label: 'Noir', description: 'Noir*'}, {label: 'Nostalgia', description: 'Nostalgia*'}, {label: 'Old Films', description: 'OlFilms*'}, {label: 'Photo', description: 'Photo*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Sepia', description: 'Sepia*'}, {label: 'Semi B&W', description: 'SemiBW*'}, {label: 'All', description: '.*'}]">}}
+  filterOptions= "[{label: '70s', description: '70s*'}, {label: 'Noir', description: 'Noir*'}, {label: 'Nostalgia', description: 'Nostalgia*'}, {label: 'Old Films', description: 'OlFIlms*'}, {label: 'Photo', description: 'Photo*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Sepia', description: 'Sepia*'}, {label: 'Semi B&W', description: 'SemiBW*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
