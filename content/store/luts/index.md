@@ -13,6 +13,7 @@ type: "store"
 
 * [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
 * [Vintage](#vintage) (90 LUTs): nostalgia for the past.
+* [Anime](#anime) (60 LUTs): vibrant tones, unique contrasts.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -166,6 +167,28 @@ The vintage and retro look you're looking for is in '**Vintage**', 90 high quali
   embedPreview=true
   loadJQuery=true
   filterOptions= "[{label: 'Nostalgia', description: 'Nostalgia*'}, {label: 'Retro', description: 'Retro*'}, {label: '70s', description: '70s*'}, {label: 'Noir', description: 'Noir*'}, {label: 'Old Films', description: 'OlFIlms*'}, {label: 'Photo', description: 'Photo*'}, {label: 'Sepia', description: 'Sepia*'}, {label: 'Semi B&W', description: 'SemiBW*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#anime}
+{{< youtube vCk9eIxhir4 >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/anime/" >}}
+
+Vibrant tones, unique contrasts and a cinematic touch. 60 high quality LUTs including:
+
+{{<
+  gallery match="anime/*"
+  sortOrder="desc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="800x533 q100 Lanczos"
+  showExif=true
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Anime', description: 'Anime*'}, {label: 'Arcade', description: 'Arcade*'}, {label: 'Game', description: 'Game*'}, {label: 'Virtual', description: 'Virtual*'}, {label: 'Yolk', description: 'Yolk*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
