@@ -175,7 +175,7 @@ The vintage and retro look you're looking for is in '**Vintage**', 90 high quali
 # {#anime}
 {{< youtube vCk9eIxhir4 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/anime/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/anime/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-anime-276902" >}}
 
 Vibrant tones, unique contrasts and a cinematic touch. 60 high quality LUTs including:
 
@@ -197,7 +197,7 @@ Vibrant tones, unique contrasts and a cinematic touch. 60 high quality LUTs incl
 # {#synthwave}
 {{< youtube 2pW7-FFgTUA >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/synthwave/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/synthwave/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-synthwave-278499" >}}
 
 Neon-drenched cyberpunk worlds. 50 high quality LUTs including:
 
