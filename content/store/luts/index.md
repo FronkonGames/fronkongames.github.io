@@ -14,6 +14,7 @@ type: "store"
 * [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
 * [Vintage](#vintage) (90 LUTs): nostalgia for the past.
 * [Anime](#anime) (60 LUTs): vibrant tones, unique contrasts.
+* [Synthwave](#synthwave) (50 LUTs): neon-drenched cyberpunk worlds.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -189,6 +190,28 @@ Vibrant tones, unique contrasts and a cinematic touch. 60 high quality LUTs incl
   embedPreview=true
   loadJQuery=true
   filterOptions= "[{label: 'Anime', description: 'Anime*'}, {label: 'Arcade', description: 'Arcade*'}, {label: 'Game', description: 'Game*'}, {label: 'Virtual', description: 'Virtual*'}, {label: 'Yolk', description: 'Yolk*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#synthwave}
+{{< youtube 2pW7-FFgTUA >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/synthwave/" >}}
+
+Neon-drenched cyberpunk worlds. 50 high quality LUTs including:
+
+{{<
+  gallery match="synthwave/*"
+  sortOrder="desc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="800x533 q100 Lanczos"
+  showExif=true
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Synthwave I', description: 'Anime*'}, {label: 'Synthwave II', description: 'Arcade*'}, {label: 'Synthwave III', description: 'Game*'}, {label: 'Synthwave IV', description: 'Virtual*'}, {label: 'Synthwave V', description: 'Yolk*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
