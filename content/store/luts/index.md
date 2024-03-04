@@ -7,7 +7,7 @@ description: "The largest collection of LUTs in the entire store"
 type: "store"
 ---
 
-**LUTs**' is (or will be) the largest collection of LUTs of the entire store. Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
+'**LUTs**' is (or will be) the largest collection of LUTs of the entire store. Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
 
 '**LUTs**' contains the following assets:
 
@@ -137,11 +137,11 @@ In '**Cyberpunk**' you will find the look you are looking for in your futuristic
 
 {{<
   gallery match="cyberpunk/*"
-  sortOrder="desc"
+  sortOrder="asc"
   rowHeight="100"
   margins="5"
   thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=true
+  showExif=false
   previewType="blur"
   embedPreview=true
   loadJQuery=true
@@ -159,11 +159,11 @@ The vintage and retro look you're looking for is in '**Vintage**', 90 high quali
 
 {{<
   gallery match="vintage/*"
-  sortOrder="desc"
+  sortOrder="asc"
   rowHeight="100"
   margins="5"
   thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=true
+  showExif=false
   previewType="blur"
   embedPreview=true
   loadJQuery=true
@@ -181,11 +181,11 @@ Vibrant tones, unique contrasts and a cinematic touch. 60 high quality LUTs incl
 
 {{<
   gallery match="anime/*"
-  sortOrder="desc"
+  sortOrder="asc"
   rowHeight="100"
   margins="5"
   thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=true
+  showExif=false
   previewType="blur"
   embedPreview=true
   loadJQuery=true
@@ -203,15 +203,15 @@ Neon-drenched cyberpunk worlds. 50 high quality LUTs including:
 
 {{<
   gallery match="synthwave/*"
-  sortOrder="desc"
+  sortOrder="asc"
   rowHeight="100"
   margins="5"
   thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=true
+  showExif=false
   previewType="blur"
   embedPreview=true
   loadJQuery=true
-  filterOptions= "[{label: 'Synthwave I', description: 'Anime*'}, {label: 'Synthwave II', description: 'Arcade*'}, {label: 'Synthwave III', description: 'Game*'}, {label: 'Synthwave IV', description: 'Virtual*'}, {label: 'Synthwave V', description: 'Yolk*'}, {label: 'All', description: '.*'}]">}}
+  filterOptions= "[{label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
