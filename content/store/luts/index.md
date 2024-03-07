@@ -9,6 +9,10 @@ type: "store"
 
 '**LUTs**' is (or will be) the largest collection of LUTs of the entire store. Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
 
+{{< notice information "Wait a minute, what is a LUT?" >}}
+If you don't know what a LUT is, [here is a good explanation](https://lettier.github.io/3d-game-shaders-for-beginners/lookup-table.html) of how they are used in videogames.
+{{< /notice >}}
+
 '**LUTs**' contains the following assets:
 
 * [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
@@ -134,7 +138,12 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cyberpunk/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cyberpunk-275005">}}
 
-In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes over 60 high quality LUTs including:
+In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes 62 high quality LUTs including:
+
+* **Pink & Teal** (11): vibrant, dystopian look with intense pinks / purples / greens.
+* **Neo Tokyo** (33): colors pop without oversaturation, shadows are desaturated.
+* **Dystopia** (8): inspired by the movie Blade Runner 2049.
+* **Cyberpunk** (10): retrofuturistism vibe.
 
 {{<
   gallery match="cyberpunk/*"
