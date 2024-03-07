@@ -167,6 +167,15 @@ In '**Cyberpunk**' you will find the look you are looking for in your futuristic
 
 The vintage and retro look you're looking for is in '**Vintage**', 90 high quality LUTs including:
 
+* **Nostalgia** (10): nostalgic aesthetics of retro cinema.
+* **Retro** (10): retro vibes to travel to other times.
+* **70s** (8): a journey through the iconic eras of the 1970s and 1980s.
+* **Noir** (30): rich, nostalgic tones of classic film noir.
+* **Old Films** (8): nostalgic aesthetics of retro cinema.
+* **Photo** (8): iconic look and feel of vintage Fujifilm.
+* **Sepia** (8): warm nostalgic look, beautiful sepia tones.
+* **Semi B&W** (8): different black and white balances.
+
 {{<
   gallery match="vintage/*"
   sortOrder="asc"
