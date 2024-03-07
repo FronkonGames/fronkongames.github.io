@@ -15,6 +15,7 @@ type: "store"
 * [Vintage](#vintage) (90 LUTs): nostalgia for the past.
 * [Anime](#anime) (60 LUTs): vibrant tones, unique contrasts.
 * [Synthwave](#synthwave) (50 LUTs): neon-drenched cyberpunk worlds.
+* [Colors](#colors) (277 LUTs): a rainbow of colors for your games.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -212,6 +213,16 @@ Neon-drenched cyberpunk worlds. 50 high quality LUTs including:
   embedPreview=true
   loadJQuery=true
   filterOptions= "[{label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#colors}
+{{< youtube L-cWwo7O3IY >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/colors/" >}}
+
+A rainbow of colors for your games. 277 high quality LUTs including:
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
