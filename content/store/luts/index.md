@@ -220,9 +220,21 @@ Neon-drenched cyberpunk worlds. 50 high quality LUTs including:
 # {#colors}
 {{< youtube L-cWwo7O3IY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/colors/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/colors/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-colors-278789" >}}
 
 A rainbow of colors for your games. 277 high quality LUTs including:
+
+{{<
+  gallery match="colors/*"
+  sortOrder="asc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="800x533 q100 Lanczos"
+  showExif=false
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Colorify', description: 'Colorify*'}, {label: 'Bleach', description: 'Bleach*'}, {label: 'Creative', description: 'Creative*'}, , {label: 'Crisp White', description: 'CrispWhite*'}, {label: 'Vibrant', description: 'Vibrant*'}, {label: 'Bright', description: 'Bright*'}, {label: 'Pastels', description: 'Pastels*'}, {label: 'Minimalist', description: 'Minimalist*'}, {label: 'Pink', description: 'Pink*'}, {label: 'Teal & Orange', description: 'TealAndOrange*'}, {label: 'Luxury Black', description: 'LuxuryBlack*'}, {label: 'Dark Mood', description: 'DarkMood*'}, {label: 'Golden', description: 'Golden*'}, {label: 'Brownish', description: 'Brownish*'}, {label: 'Dark Green', description: 'DarkGreen*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
