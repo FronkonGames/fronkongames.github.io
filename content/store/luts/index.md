@@ -196,7 +196,13 @@ The vintage and retro look you're looking for is in '**Vintage**', 90 high quali
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-luts/anime/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-anime-276902" >}}
 
-Vibrant tones, unique contrasts and a cinematic touch. 60 high quality LUTs including:
+Vibrant tones, unique contrasts and a cinematic touch. 58 high quality LUTs including:
+
+* **Anime** (18): vibrant blue tones that captures the dreamlike essence of anime.
+* **Arcade** (10): palette of old Japanese arcade machines.
+* **Game** (10): colorful and saturated video game environment.
+* **Virtual** (10): tones of consoles of past generations.
+* **Yolk** (10): creomous yellow tones and contrasts.
 
 {{<
   gallery match="anime/*"
@@ -241,6 +247,22 @@ Neon-drenched cyberpunk worlds. 50 high quality LUTs including:
 {{< asset-buttons demo="https://fronkongames.github.io/demos-luts/colors/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-colors-278789" >}}
 
 A rainbow of colors for your games. 277 high quality LUTs including:
+
+* **Bleach** (10): higher contrast, reduced saturation and very distinctive look.
+* **Bright** (52): white tones displaced to blue and more clarity.
+* **Brownish** (8): warm brown tones.
+* **Colorify** (25): based on Instagram filters.
+* **Creative** (7): creative ways to handle color.
+* **Crisp White** (8): infuses simplicity and luminosity.
+* **Dark Green** (8): dark forests.
+* **Dark Mood** (10): dark and moody elegance.
+* **Golden** (2): luxurious and minimalist look.
+* **Luxury Black** (10): .
+* **Minimalist** (26): modern look, bringing a crisp, clean, and bright aesthetic.
+* **Pastels** (16): soft pastel hues.
+* **Pink** (10): warm and pink tones.
+* **Teal and Orange** (70): perfect balance of teal and orange tones.
+* **Vibrant** (12): vibrant and dynamic aesthetic.
 
 {{<
   gallery match="colors/*"
