@@ -10,6 +10,7 @@ enableEmoji = true
 relativeurls = true
 uglyurls = true
 publishDir = "/docs"
+timeout = 60
 
 ############################# Plugins ##############################
 # CSS Plugins

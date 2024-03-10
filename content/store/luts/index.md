@@ -20,6 +20,7 @@ If you don't know what a LUT is, [here is a good explanation](https://docs.unity
 * [Anime](#anime) (60 LUTs): vibrant tones, unique contrasts.
 * [Synthwave](#synthwave) (50 LUTs): neon-drenched cyberpunk worlds.
 * [Colors](#colors) (277 LUTs): a rainbow of colors for your games.
+* [Places](#places) (225 LUTs): the right color for the right place.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -275,6 +276,40 @@ A rainbow of colors for your games. 277 high quality LUTs including:
   embedPreview=true
   loadJQuery=true
   filterOptions= "[{label: 'Colorify', description: 'Colorify*'}, {label: 'Bleach', description: 'Bleach*'}, {label: 'Creative', description: 'Creative*'}, , {label: 'Crisp White', description: 'CrispWhite*'}, {label: 'Vibrant', description: 'Vibrant*'}, {label: 'Bright', description: 'Bright*'}, {label: 'Pastels', description: 'Pastels*'}, {label: 'Minimalist', description: 'Minimalist*'}, {label: 'Pink', description: 'Pink*'}, {label: 'Teal & Orange', description: 'TealAndOrange*'}, {label: 'Luxury Black', description: 'LuxuryBlack*'}, {label: 'Dark Mood', description: 'DarkMood*'}, {label: 'Golden', description: 'Golden*'}, {label: 'Brownish', description: 'Brownish*'}, {label: 'Dark Green', description: 'DarkGreen*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#places}
+{{< youtube XpqdRRJdz4U >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/places/" >}}
+
+The right color for the right place. 225 high quality LUTs including:
+
+* **Adventure** (15): colors of natural environments enhanced.
+* **Autumn** (15): warm and vibrant hues of fall.
+* **Nature** (9): enhance the majesty of nature.
+* **Outdoor** (26): feature summery colors and natural tones.
+* **Snow** (31): infuse crisp and ethereal beauty of winter.
+* **Summer** (18): higher contrast, warm and saturated tones.
+* **Sunset** (20): natural warm and luminous colors.
+* **Travel** (7): creative and varied color grading.
+* **Urban** (18): enhance color grading, contrast, and atmosphere.
+* **Western** (8): dusty trails and sunsets over prairies.
+* **XMas** (59): the richness of holiday colors.
+
+{{<
+  gallery match="places/*"
+  sortOrder="asc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="1920x1080 q100 Lanczos"
+  showExif=false
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Adventure', description: 'Adventure*'}, {label: 'Autumn', description: 'Autumn*'}, {label: 'Nature', description: 'Nature*'}, , {label: 'Outdoor', description: 'Outdoor*'}, {label: 'Snow', description: 'Snow*'}, {label: 'Summer', description: 'Summer*'}, {label: 'Sunset', description: 'Sunset*'}, {label: 'Travel', description: 'Travel*'}, {label: 'Urban', description: 'Urban*'}, {label: 'Western', description: 'Western*'}, {label: 'XMas', description: 'XMas*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
