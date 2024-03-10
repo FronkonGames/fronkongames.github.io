@@ -258,7 +258,7 @@ A rainbow of colors for your games. 277 high quality LUTs including:
 * **Dark Green** (8): dark forests.
 * **Dark Mood** (10): dark and moody elegance.
 * **Golden** (2): luxurious and minimalist look.
-* **Luxury Black** (10): .
+* **Luxury Black** (10): blend of gold and black tones, soft contrasts.
 * **Minimalist** (26): modern look, bringing a crisp, clean, and bright aesthetic.
 * **Pastels** (16): soft pastel hues.
 * **Pink** (10): warm and pink tones.
