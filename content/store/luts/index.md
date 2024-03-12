@@ -7,7 +7,7 @@ description: "The largest collection of LUTs in the entire store"
 type: "store"
 ---
 
-'**LUTs**' is (or will be) the largest collection of LUTs of the entire store. Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
+The largest collection of LUTs of the entire store. Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
 
 {{< notice information "Wait a minute, what is a LUT?" >}}
 If you don't know what a LUT is, [here is a good explanation](https://docs.unity3d.com/2018.3/Documentation/Manual/PostProcessing-UserLut.html) of how they are used in videogames.
@@ -21,6 +21,7 @@ If you don't know what a LUT is, [here is a good explanation](https://docs.unity
 * [Synthwave](#synthwave) (50 LUTs): neon-drenched cyberpunk worlds.
 * [Colors](#colors) (277 LUTs): a rainbow of colors for your games.
 * [Places](#places) (225 LUTs): the right color for the right place.
+* [Cinematic](#cinematic) (254 LUTs): the color of the movies, in your games.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -310,6 +311,38 @@ The right color for the right place. 225 high quality LUTs including:
   embedPreview=true
   loadJQuery=true
   filterOptions= "[{label: 'Adventure', description: 'Adventure*'}, {label: 'Autumn', description: 'Autumn*'}, {label: 'Nature', description: 'Nature*'}, , {label: 'Outdoor', description: 'Outdoor*'}, {label: 'Snow', description: 'Snow*'}, {label: 'Summer', description: 'Summer*'}, {label: 'Sunset', description: 'Sunset*'}, {label: 'Travel', description: 'Travel*'}, {label: 'Urban', description: 'Urban*'}, {label: 'Western', description: 'Western*'}, {label: 'XMas', description: 'XMas*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#cinematic}
+{{< youtube Ynnqp5NG_Fk >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cinematic/" >}}
+
+The color of the movies, in your games. 254 high quality cinematic LUTs including:
+
+* **Analog** (10): mimics analog tapes and 'Log to Rec 709' effect.
+* **Drama** (25): moody brown tones and a touch of cinematic allure.
+* **Epic** (20): from vintage tones to modern cinematic effects.
+* **High Contrast** (15): saturated colors and high contrast.
+* **Hollywood** (48): elegance of classic Hollywood films.
+* **Horror** (15): vibrant reds and powerful darks.
+* **Indie** (30): filmic colors and tones in independent films.
+* **Retro** (51): color grading and cinematic styles of iconic films from the past.
+* **Romance** (40): an instant dose of love.
+
+{{<
+  gallery match="cinematic/*"
+  sortOrder="asc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="1920x1080 q100 Lanczos"
+  showExif=false
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Analog', description: 'Analog*'}, {label: 'Drama', description: 'Drama*'}, {label: 'Epic', description: 'Epic*'}, , {label: 'High Contrast', description: 'HighContrast*'}, {label: 'Hollywood', description: 'Hollywood*'}, {label: 'Horror', description: 'Horror*'}, {label: 'Indie', description: 'Indie*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Romance', description: 'Romance*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
