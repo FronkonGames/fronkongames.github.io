@@ -7,7 +7,7 @@ description: "The largest collection of LUTs in the entire store"
 type: "store"
 ---
 
-The largest collection of LUTs of the entire store. Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
+Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
 
 {{< notice information "Wait a minute, what is a LUT?" >}}
 If you don't know what a LUT is, [here is a good explanation](https://docs.unity3d.com/2018.3/Documentation/Manual/PostProcessing-UserLut.html) of how they are used in videogames.
