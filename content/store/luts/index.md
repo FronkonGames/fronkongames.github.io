@@ -316,7 +316,7 @@ The right color for the right place. 225 high quality LUTs including:
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 # {#cinematic}
-{{< youtube Ynnqp5NG_Fk >}}
+{{< youtube zhGBdWJ_8rI >}}
 
 {{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cinematic/" >}}
 
