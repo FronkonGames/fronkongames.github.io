@@ -9,10 +9,6 @@ type: "store"
 
 Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
 
-{{< notice information "Wait a minute, what is a LUT?" >}}
-If you don't know what a LUT is, [here is a good explanation](https://docs.unity3d.com/2018.3/Documentation/Manual/PostProcessing-UserLut.html) of how they are used in videogames.
-{{< /notice >}}
-
 '**LUTs**' contains the following assets:
 
 * [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
@@ -22,6 +18,10 @@ If you don't know what a LUT is, [here is a good explanation](https://docs.unity
 * [Colors](#colors) (277 LUTs): a rainbow of colors for your games.
 * [Places](#places) (225 LUTs): the right color for the right place.
 * [Cinematic](#cinematic) (254 LUTs): the color of the movies, in your games.
+* [Fantasy](#fantasy) (131 LUTs): worlds of fantasy and color.
+
+{{< rawhtml >}}</br>{{< /rawhtml >}}
+## What is a LUT?
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
@@ -276,7 +276,7 @@ A rainbow of colors for your games. 277 high quality LUTs including:
   previewType="blur"
   embedPreview=true
   loadJQuery=true
-  filterOptions= "[{label: 'Colorify', description: 'Colorify*'}, {label: 'Bleach', description: 'Bleach*'}, {label: 'Creative', description: 'Creative*'}, , {label: 'Crisp White', description: 'CrispWhite*'}, {label: 'Vibrant', description: 'Vibrant*'}, {label: 'Bright', description: 'Bright*'}, {label: 'Pastels', description: 'Pastels*'}, {label: 'Minimalist', description: 'Minimalist*'}, {label: 'Pink', description: 'Pink*'}, {label: 'Teal & Orange', description: 'TealAndOrange*'}, {label: 'Luxury Black', description: 'LuxuryBlack*'}, {label: 'Dark Mood', description: 'DarkMood*'}, {label: 'Golden', description: 'Golden*'}, {label: 'Brownish', description: 'Brownish*'}, {label: 'Dark Green', description: 'DarkGreen*'}, {label: 'All', description: '.*'}]">}}
+  filterOptions= "[{label: 'Colorify', description: 'Colorify*'}, {label: 'Bleach', description: 'Bleach*'}, {label: 'Creative', description: 'Creative*'}, {label: 'Crisp White', description: 'CrispWhite*'}, {label: 'Vibrant', description: 'Vibrant*'}, {label: 'Bright', description: 'Bright*'}, {label: 'Pastels', description: 'Pastels*'}, {label: 'Minimalist', description: 'Minimalist*'}, {label: 'Pink', description: 'Pink*'}, {label: 'Teal & Orange', description: 'TealAndOrange*'}, {label: 'Luxury Black', description: 'LuxuryBlack*'}, {label: 'Dark Mood', description: 'DarkMood*'}, {label: 'Golden', description: 'Golden*'}, {label: 'Brownish', description: 'Brownish*'}, {label: 'Dark Green', description: 'DarkGreen*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
@@ -310,7 +310,7 @@ The right color for the right place. 225 high quality LUTs including:
   previewType="blur"
   embedPreview=true
   loadJQuery=true
-  filterOptions= "[{label: 'Adventure', description: 'Adventure*'}, {label: 'Autumn', description: 'Autumn*'}, {label: 'Nature', description: 'Nature*'}, , {label: 'Outdoor', description: 'Outdoor*'}, {label: 'Snow', description: 'Snow*'}, {label: 'Summer', description: 'Summer*'}, {label: 'Sunset', description: 'Sunset*'}, {label: 'Travel', description: 'Travel*'}, {label: 'Urban', description: 'Urban*'}, {label: 'Western', description: 'Western*'}, {label: 'XMas', description: 'XMas*'}, {label: 'All', description: '.*'}]">}}
+  filterOptions= "[{label: 'Adventure', description: 'Adventure*'}, {label: 'Autumn', description: 'Autumn*'}, {label: 'Nature', description: 'Nature*'}, {label: 'Outdoor', description: 'Outdoor*'}, {label: 'Snow', description: 'Snow*'}, {label: 'Summer', description: 'Summer*'}, {label: 'Sunset', description: 'Sunset*'}, {label: 'Travel', description: 'Travel*'}, {label: 'Urban', description: 'Urban*'}, {label: 'Western', description: 'Western*'}, {label: 'XMas', description: 'XMas*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
@@ -342,7 +342,33 @@ The color of the movies, in your games. 254 high quality cinematic LUTs includin
   previewType="blur"
   embedPreview=true
   loadJQuery=true
-  filterOptions= "[{label: 'Analog', description: 'Analog*'}, {label: 'Drama', description: 'Drama*'}, {label: 'Epic', description: 'Epic*'}, , {label: 'High Contrast', description: 'HighContrast*'}, {label: 'Hollywood', description: 'Hollywood*'}, {label: 'Horror', description: 'Horror*'}, {label: 'Indie', description: 'Indie*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Romance', description: 'Romance*'}, {label: 'All', description: '.*'}]">}}
+  filterOptions= "[{label: 'Analog', description: 'Analog*'}, {label: 'Drama', description: 'Drama*'}, {label: 'Epic', description: 'Epic*'}, {label: 'High Contrast', description: 'HighContrast*'}, {label: 'Hollywood', description: 'Hollywood*'}, {label: 'Horror', description: 'Horror*'}, {label: 'Indie', description: 'Indie*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Romance', description: 'Romance*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#fantasy}
+{{< youtube kNT1Au3LY6s >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/fantasy/" >}}
+
+Worlds of fantasy and color. 131 high quality fantasy LUTs including:
+
+* **Fantasy** (50): .
+* **Dark Fantasy** (36): .
+* **Movies and TV Shows** (45): .
+
+{{<
+  gallery match="fantasy/*"
+  sortOrder="asc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="1920x1080 q100 Lanczos"
+  showExif=false
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Fantasy', description: 'Fantasy*'}, {label: 'Dark Fantasy', description: 'Dark*'}, {label: 'Movies & TV Shows', description: 'Movies*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
