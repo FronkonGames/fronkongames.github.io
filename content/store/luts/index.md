@@ -354,9 +354,9 @@ The color of the movies, in your games. 254 high quality cinematic LUTs includin
 
 Worlds of fantasy and color. 131 high quality fantasy LUTs including:
 
-* **Fantasy** (50): .
-* **Dark Fantasy** (36): .
-* **Movies and TV Shows** (45): .
+* **Fantasy** (50): beautiful colors and a mystical vibe.
+* **Dark Fantasy** (36): dark and mysterious magic.
+* **Movies & TV Shows** (45): movies/tv-shows inspired: Game Of Thrones, Harry Potter, ...
 
 {{<
   gallery match="fantasy/*"
