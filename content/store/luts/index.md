@@ -7,7 +7,7 @@ description: "The largest collection of LUTs in the entire store"
 type: "store"
 ---
 
-Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your games, making them more coherent with your artistic preferences.
+Thanks to LUTs you can completely transform the look of your games, making them more coherent with your artistic preferences.
 
 '**LUTs**' contains the following assets:
 
@@ -22,6 +22,8 @@ Thanks to LUTs (or 'LookUp Table') you can completely transform the look of your
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## What is a LUT?
+
+LUTs, or 'LookUp Table', are a kind of color filter you use to alter the colors in your game. They apply predetermined sets of mathematical formulas to your game's existing colors to change those colors and achieve a desired look.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Requirements
