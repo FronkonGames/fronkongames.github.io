@@ -20,6 +20,7 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 * [Cinematic](#cinematic) (254 LUTs): the color of the movies, in your games.
 * [Fantasy](#fantasy) (131 LUTs): worlds of fantasy and color.
 * [Unreal](#unreal) (67 LUTs): colors from other worlds, stunning looks.
+* [Action](#action) (163 LUTs): colors for action!
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## What is a LUT?
@@ -400,6 +401,35 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
   embedPreview=true
   loadJQuery=true
   filterOptions= "[{label: 'Weird', description: 'Weird*'}, {label: 'Monotone', description: 'Monotone*'}, {label: 'Duotone', description: 'DuoTone*'}, {label: 'Thermal', description: 'Thermal*'}, {label: 'Day to night', description: 'DayToNight*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#action}
+{{< youtube PrSI6uIoUd0 >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/action/" >}}
+
+163 high quality action LUTs including:
+
+* **Action** (26): cinematic depth and vibrant energy to your games.
+* **Apocalypse** (50): horror atmosphere.
+* **Automotive** (23): car photography filters for sport look.
+* **Military** (15): colors inspired by cinematic war movies.
+* **Movies** (30): inspired by the best action movies of all time.
+* **Sports** (19): dynamic colors and intensity.
+
+{{<
+  gallery match="action/*"
+  sortOrder="asc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="1920x1080 q100 Lanczos"
+  showExif=false
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Action', description: 'Action*'}, {label: 'Apocalypse', description: 'Apocalypse*'}, {label: 'Automotive', description: 'Automotive*'}, {label: 'Military', description: 'Military*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Sports', description: 'Sports*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
