@@ -3,8 +3,9 @@
 {{ $demo2 := .Get "demo2" }}
 {{ $demo2_label := .Get "demo2_label" }}
 {{ $store := .Get "store" }}
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     {{- if .Get "demo" -}}
     {{- if .Get "demo_label" -}}
     <a href="{{ $demo }}" class="btn btn-default">🕹️ {{ $demo_label }}</a>

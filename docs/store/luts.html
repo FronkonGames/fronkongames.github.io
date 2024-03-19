@@ -305,6 +305,33 @@
 </div>
 &nbsp;
 
+<p>All &lsquo;<strong>LUTs</strong>&rsquo; have an advanced color grading panel. Check &lsquo;<strong>Color grading</strong>&rsquo; (<em>1</em>) to activate it.</p>
+
+
+
+<div style="text-align: center">
+  <img src="../store/luts/color.jpg" alt="" decoding="async" />
+</div>
+&nbsp;
+
+<p>&lsquo;<strong>Exposure</strong>&rsquo; (<em>2</em>) changes the exposure, or brightness. Just below you have a contrast control (<em>3</em>) and an HDR color (<em>4</em>) without alpha channel to tint the image.</p>
+<p>To move the color wheel, use &lsquo;<strong>Hue</strong>&rsquo; (<em>5</em>). To change the amount of color, use &lsquo;<strong>Saturation</strong>&rsquo; (<em>6</em>).</p>
+<p>Select the tone operator, &lsquo;<strong>Tonemap</strong>&rsquo; (<em>7</em>), that best suits your needs. The most popular ones are available: Neutral, ACES and Reinhard. If you want more, you may be interested in &lsquo;<a href="http://localhost:1313/store/artistic.html#tonemapper">Artistic: Tonemapper</a>&rsquo;.</p>
+<p>With &lsquo;<strong>White balance</strong>&rsquo; (<em>8</em>) you can adjust the perceived <em>temperature</em> of the image. First you can make it perceived cooler or warmer. The next parameter modifies the color used to vary the perceived temperature.</p>
+<p>&lsquo;<strong>Split toning</strong>&rsquo; (<em>9</em>) is used to tint shadows and highlights of an image separately. A typical example is to push shadows toward cool blue and highlights toward warm orange.</p>
+<p>&lsquo;<strong>Channel mixer</strong>&rsquo; (<em>10</em>) allows you to combine input RGB values to create a new RGB value. For example, you could swap R and G, subtract B from G, or add G to R to push green toward yellow.</p>
+<p>The last setting is &lsquo;<strong>Shadow Midtones Highlights</strong>&rsquo; (<em>11</em>), it works like split-toning, except that it also allows adjustment of the midtones and decouples the shadow and highlight regions, making them configurable.</p>
+<p>They also have an &lsquo;<strong>Advanced</strong>&rsquo; panel with these options:</p>
+
+
+
+<div style="text-align: center">
+  <img src="../store/luts/advanced.jpg" alt="" decoding="async" />
+</div>
+&nbsp;
+
+<p>Activate &lsquo;<strong>Affect the Scene View?</strong>&rsquo; (<em>1</em>) if you want the effect to be applied also in the &lsquo;<em>Scene</em>&rsquo; window of the Editor. With &lsquo;<strong>Filter mode</strong>&rsquo; (<em>2</em>) you can change the type of filter used.</p>
+<p>Although it is not recommended to change it, with &lsquo;<strong>RenderPass event</strong>&rsquo; (<em>3</em>) you can modify at which point in the render pipeline the effect is applied. Finally, activate &lsquo;<strong>Enable profiling</strong>&rsquo; (<em>4</em>) to show in the &lsquo;<em>Profiling</em>&rsquo; window the metrics of the effect.</p>
 </br>
 <h2 id="using-them-in-code">Using them in code</h2>
 <p>You can also handle &lsquo;<strong>LUTs</strong>&rsquo; effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.</p>
@@ -366,8 +393,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/cyberpunk/" class="btn btn-default">🕹️ Demo</a>&nbsp;&nbsp;&nbsp;
     <a href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cyberpunk-275005" class="btn btn-default">🛒 Store</a>
 </div>
@@ -496,8 +524,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-18-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-18" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-20-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-20" class="justified-gallery">
 	
 		
 		
@@ -4663,7 +4691,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-18");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-20");
 			
 
 			
@@ -4778,7 +4806,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-18-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-20-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -4876,8 +4904,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/vintage/" class="btn btn-default">🕹️ Demo</a>&nbsp;&nbsp;&nbsp;
     <a href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-vintage-275594" class="btn btn-default">🛒 Store</a>
 </div>
@@ -5010,8 +5039,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-22-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-22" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-24-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-24" class="justified-gallery">
 	
 		
 		
@@ -11149,7 +11178,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-22");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-24");
 			
 
 			
@@ -11264,7 +11293,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-22-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-24-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -11362,8 +11391,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/anime/" class="btn btn-default">🕹️ Demo</a>&nbsp;&nbsp;&nbsp;
     <a href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-anime-276902" class="btn btn-default">🛒 Store</a>
 </div>
@@ -11493,8 +11523,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-26-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-26" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-28-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-28" class="justified-gallery">
 	
 		
 		
@@ -15456,7 +15486,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-26");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-28");
 			
 
 			
@@ -15571,7 +15601,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-26-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-28-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -15669,8 +15699,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/synthwave/" class="btn btn-default">🕹️ Demo</a>&nbsp;&nbsp;&nbsp;
     <a href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-synthwave-278499" class="btn btn-default">🛒 Store</a>
 </div>
@@ -15793,8 +15824,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-30-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-30" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-32-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-32" class="justified-gallery">
 	
 		
 		
@@ -19212,7 +19243,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-30");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-32");
 			
 
 			
@@ -19327,7 +19358,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-30-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-32-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -19425,8 +19456,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/colors/" class="btn btn-default">🕹️ Demo</a>&nbsp;&nbsp;&nbsp;
     <a href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-colors-278789" class="btn btn-default">🛒 Store</a>
 </div>
@@ -19566,8 +19598,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-34-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-34" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-36-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-36" class="justified-gallery">
 	
 		
 		
@@ -38421,7 +38453,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-34");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-36");
 			
 
 			
@@ -38536,7 +38568,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-34-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-36-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -38634,8 +38666,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/places/" class="btn btn-default">🕹️ Demo</a>
     <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
 </div>
@@ -38771,8 +38804,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-38-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-38" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-40-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-40" class="justified-gallery">
 	
 		
 		
@@ -53954,7 +53987,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-38");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-40");
 			
 
 			
@@ -54069,7 +54102,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-38-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-40-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -54167,8 +54200,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/cinematic/" class="btn btn-default">🕹️ Demo</a>
     <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
 </div>
@@ -54302,8 +54336,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-42-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-42" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-44-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-44" class="justified-gallery">
 	
 		
 		
@@ -71593,7 +71627,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-42");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-44");
 			
 
 			
@@ -71708,7 +71742,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-42-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-44-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -71806,8 +71840,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/fantasy/" class="btn btn-default">🕹️ Demo</a>
     <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
 </div>
@@ -71935,8 +71970,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-46-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-46" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-48-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-48" class="justified-gallery">
 	
 		
 		
@@ -80862,7 +80897,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-46");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-48");
 			
 
 			
@@ -80977,7 +81012,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-46-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-48-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -81075,8 +81110,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/unreal/" class="btn btn-default">🕹️ Demo</a>
     <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
 </div>
@@ -81206,8 +81242,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-50-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-50" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-52-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-52" class="justified-gallery">
 	
 		
 		
@@ -85781,7 +85817,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-50");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-52");
 			
 
 			
@@ -85896,7 +85932,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-50-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-52-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -85994,8 +86030,9 @@
 
 
 
-<br>
-<div style="text-align:right;">
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
     <a href="https://fronkongames.github.io/demos-luts/action/" class="btn btn-default">🕹️ Demo</a>
     <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
 </div>
@@ -86126,8 +86163,8 @@
 
 
 
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-54-wrapper" class="gallery-wrapper">
-<div id="gallery-72a04c600021fbd739e681bad3a720fc-54" class="justified-gallery">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-56-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-56" class="justified-gallery">
 	
 		
 		
@@ -97229,7 +97266,7 @@
 	;(function($) {
 
 		$( document ).ready(() => {
-			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-54");
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-56");
 			
 
 			
@@ -97344,7 +97381,7 @@
 				const filterBar = $("<div class='justified-gallery-filterbar'/>");
 				gallery.before(filterBar);
 
-				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-54-wrapper");
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-56-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
@@ -97430,35 +97467,6 @@
 </script>
 
 <hr>
-<br><br>
-<h2 id="misc">Misc</h2>
-<p>All &lsquo;<strong>LUTs</strong>&rsquo; have an advanced color grading panel. Check &lsquo;<strong>Color grading</strong>&rsquo; (<em>1</em>) to activate it.</p>
-
-
-
-<div style="text-align: center">
-  <img src="../store/luts/color.jpg" alt="" decoding="async" />
-</div>
-&nbsp;
-
-<p>&lsquo;<strong>Exposure</strong>&rsquo; (<em>2</em>) changes the exposure, or brightness. Just below you have a contrast control (<em>3</em>) and an HDR color (<em>4</em>) without alpha channel to tint the image.</p>
-<p>To move the color wheel, use &lsquo;<strong>Hue</strong>&rsquo; (<em>5</em>). To change the amount of color, use &lsquo;<strong>Saturation</strong>&rsquo; (<em>6</em>).</p>
-<p>Select the tone operator, &lsquo;<strong>Tonemap</strong>&rsquo; (<em>7</em>), that best suits your needs. The most popular ones are available: Neutral, ACES and Reinhard. If you want more, you may be interested in &lsquo;<a href="http://localhost:1313/store/artistic.html#tonemapper">Artistic: Tonemapper</a>&rsquo;.</p>
-<p>With &lsquo;<strong>White balance</strong>&rsquo; (<em>8</em>) you can adjust the perceived <em>temperature</em> of the image. First you can make it perceived cooler or warmer. The next parameter modifies the color used to vary the perceived temperature.</p>
-<p>&lsquo;<strong>Split toning</strong>&rsquo; (<em>9</em>) is used to tint shadows and highlights of an image separately. A typical example is to push shadows toward cool blue and highlights toward warm orange.</p>
-<p>&lsquo;<strong>Channel mixer</strong>&rsquo; (<em>10</em>) allows you to combine input RGB values to create a new RGB value. For example, you could swap R and G, subtract B from G, or add G to R to push green toward yellow.</p>
-<p>The last setting is &lsquo;<strong>Shadow Midtones Highlights</strong>&rsquo; (<em>11</em>), it works like split-toning, except that it also allows adjustment of the midtones and decouples the shadow and highlight regions, making them configurable.</p>
-<p>They also have an &lsquo;<strong>Advanced</strong>&rsquo; panel with these options:</p>
-
-
-
-<div style="text-align: center">
-  <img src="../store/luts/advanced.jpg" alt="" decoding="async" />
-</div>
-&nbsp;
-
-<p>Activate &lsquo;<strong>Affect the Scene View?</strong>&rsquo; (<em>1</em>) if you want the effect to be applied also in the &lsquo;<em>Scene</em>&rsquo; window of the Editor. With &lsquo;<strong>Filter mode</strong>&rsquo; (<em>2</em>) you can change the type of filter used.</p>
-<p>Although it is not recommended to change it, with &lsquo;<strong>RenderPass event</strong>&rsquo; (<em>3</em>) you can modify at which point in the render pipeline the effect is applied. Finally, activate &lsquo;<strong>Enable profiling</strong>&rsquo; (<em>4</em>) to show in the &lsquo;<em>Profiling</em>&rsquo; window the metrics of the effect.</p>
 <p></br></br></p>
 <h2 id="support">Support</h2>
 <p>Do you have any problem or any suggestions? Click on &ldquo;<strong>support</strong>&rdquo; or send me an email to <strong><a href="mailto:fronkongames@gmail.com">fronkongames@gmail.com</a></strong> and I&rsquo;ll be happy to help you.</p>

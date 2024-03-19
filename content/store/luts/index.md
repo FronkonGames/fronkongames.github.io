@@ -61,6 +61,32 @@ Each lut is contained in a _profile_ that you can find in the '_Profiles_' folde
 
 {{< imagecenter src="/store/luts/editor_3.jpg" >}}
 
+All '**LUTs**' have an advanced color grading panel. Check '**Color grading**' (_1_) to activate it.
+
+{{< imagecenter src="/store/luts/color.jpg" >}}
+
+'**Exposure**' (_2_) changes the exposure, or brightness. Just below you have a contrast control (_3_) and an HDR color (_4_) without alpha channel to tint the image.
+
+To move the color wheel, use '**Hue**' (_5_). To change the amount of color, use '**Saturation**' (_6_).
+
+Select the tone operator, '**Tonemap**' (_7_), that best suits your needs. The most popular ones are available: Neutral, ACES and Reinhard. If you want more, you may be interested in '[Artistic: Tonemapper](http://localhost:1313/store/artistic.html#tonemapper)'.
+
+With '**White balance**' (_8_) you can adjust the perceived _temperature_ of the image. First you can make it perceived cooler or warmer. The next parameter modifies the color used to vary the perceived temperature.
+
+'**Split toning**' (_9_) is used to tint shadows and highlights of an image separately. A typical example is to push shadows toward cool blue and highlights toward warm orange.
+
+'**Channel mixer**' (_10_) allows you to combine input RGB values to create a new RGB value. For example, you could swap R and G, subtract B from G, or add G to R to push green toward yellow.
+
+The last setting is '**Shadow Midtones Highlights**' (_11_), it works like split-toning, except that it also allows adjustment of the midtones and decouples the shadow and highlight regions, making them configurable.
+
+They also have an '**Advanced**' panel with these options:
+
+{{< imagecenter src="/store/luts/advanced.jpg" >}}
+
+Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
+
+Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
+
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Using them in code
 
@@ -432,34 +458,6 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
   filterOptions= "[{label: 'Action', description: 'Action*'}, {label: 'Apocalypse', description: 'Apocalypse*'}, {label: 'Automotive', description: 'Automotive*'}, {label: 'Military', description: 'Military*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Sports', description: 'Sports*'}, {label: 'All', description: '.*'}]">}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## Misc
-
-All '**LUTs**' have an advanced color grading panel. Check '**Color grading**' (_1_) to activate it.
-
-{{< imagecenter src="/store/luts/color.jpg" >}}
-
-'**Exposure**' (_2_) changes the exposure, or brightness. Just below you have a contrast control (_3_) and an HDR color (_4_) without alpha channel to tint the image.
-
-To move the color wheel, use '**Hue**' (_5_). To change the amount of color, use '**Saturation**' (_6_).
-
-Select the tone operator, '**Tonemap**' (_7_), that best suits your needs. The most popular ones are available: Neutral, ACES and Reinhard. If you want more, you may be interested in '[Artistic: Tonemapper](http://localhost:1313/store/artistic.html#tonemapper)'.
-
-With '**White balance**' (_8_) you can adjust the perceived _temperature_ of the image. First you can make it perceived cooler or warmer. The next parameter modifies the color used to vary the perceived temperature.
-
-'**Split toning**' (_9_) is used to tint shadows and highlights of an image separately. A typical example is to push shadows toward cool blue and highlights toward warm orange.
-
-'**Channel mixer**' (_10_) allows you to combine input RGB values to create a new RGB value. For example, you could swap R and G, subtract B from G, or add G to R to push green toward yellow.
-
-The last setting is '**Shadow Midtones Highlights**' (_11_), it works like split-toning, except that it also allows adjustment of the midtones and decouples the shadow and highlight regions, making them configurable.
-
-They also have an '**Advanced**' panel with these options:
-
-{{< imagecenter src="/store/luts/advanced.jpg" >}}
-
-Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
-
-Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
 ## Support

@@ -116,6 +116,15 @@ a, a:active, a:focus, a:active {
   color: #bd1a23;
 }
 
+small-center {
+  color: #9D9D9D;
+  font-size: 12px;
+  line-height: 0px;
+  text-align: center;
+  padding: 0px 200px;
+  position: relative;
+}
+
 .section {
   background-color: gainsboro;
 }
