@@ -21,6 +21,7 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 * [Fantasy](#fantasy) (131 LUTs): worlds of fantasy and color.
 * [Unreal](#unreal) (67 LUTs): colors from other worlds, stunning looks.
 * [Action](#action) (163 LUTs): colors for action!
+* [Horror](#horror) (598 LUTs): the colors of fear...
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## What is a LUT?
@@ -447,6 +448,28 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
 
 {{<
   gallery match="action/*"
+  sortOrder="asc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="1920x1080 q100 Lanczos"
+  showExif=false
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Action', description: 'Action*'}, {label: 'Apocalypse', description: 'Apocalypse*'}, {label: 'Automotive', description: 'Automotive*'}, {label: 'Military', description: 'Military*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Sports', description: 'Sports*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#horror}
+{{< youtube SoM5cH3c_YY >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/horror/" >}}
+
+598 high quality scary LUTs including:
+
+{{<
+  gallery match="horror/*"
   sortOrder="asc"
   rowHeight="100"
   margins="5"

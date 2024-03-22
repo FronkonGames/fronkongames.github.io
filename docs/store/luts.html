@@ -155,6 +155,7 @@
 <li><a href="#fantasy">Fantasy</a> (131 LUTs): worlds of fantasy and color.</li>
 <li><a href="#unreal">Unreal</a> (67 LUTs): colors from other worlds, stunning looks.</li>
 <li><a href="#action">Action</a> (163 LUTs): colors for action!</li>
+<li><a href="#horror">Horror</a> (598 LUTs): the colors of fear&hellip;</li>
 </ul>
 </br>
 <h2 id="what-is-a-lut">What is a LUT?</h2>
@@ -97382,6 +97383,363 @@
 				gallery.before(filterBar);
 
 				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-56-wrapper");
+
+				
+				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
+				const compressIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022compress-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
+
+				function setFulltab(activate) {
+					if(activate == wrapper.classList.contains("fulltab")){
+						return;  
+					}
+
+					wrapper.classList.toggle("fulltab");
+					gallery.justifiedGallery({
+						rowHeight : "100" * (activate ? 1.5 : 1.0),
+						lastRow: (activate ? "nojustify": "justify"),
+						
+						refreshTime: 0,
+					});
+					
+					gallery.data('jg.controller').startImgAnalyzer();
+					fullTabButton.html(wrapper.classList.contains("fulltab") ? compressIcon : expandIcon)
+				};
+
+
+				function activateFilterButton(filterButton) {
+					
+					gallery.justifiedGallery({filter : filterButton.filter});
+					
+					filterBar.find('.selected').removeClass('selected');
+					filterButton.addClass("selected");
+				};
+		
+				
+				
+				const params = new URLSearchParams(location.hash.replace(/^\#/,""));
+				let activeFilter = params.get('gallery-filter');
+				if (!activeFilter) {
+					
+					activeFilter = filterOptions[0].label;
+				}
+
+				
+				filterOptions.forEach(filterConfig => {
+					let filter; 
+					if(filterConfig.tags) {
+						filter = createTagFilter(filterConfig.tags);
+					} else if(filterConfig.rating){
+						if(filterConfig.rating.includes("-")){
+							minMax = filterConfig.rating.split("-");  
+						} else {
+							minMax = [filterConfig.rating, filterConfig.rating];  
+						}
+						filter = createRatingFilter(parseInt(minMax[0]), parseInt(minMax[1]));
+					} else if(filterConfig.color_label){
+						filter = createColorLabelFilter(filterConfig.color_label);
+					} else if(filterConfig.description){
+						filter = createImageDescriptionFilter(filterConfig.description);
+					} else {
+						
+						filter = createMetadataFilter(meta => true);
+					}
+
+					const filterButton = $("<button/>");
+					filterButton.text(filterConfig.label);
+					filterButton.filter = filter;
+					filterButton.click(() => {
+						activateFilterButton(filterButton);
+
+						
+					});
+					filterBar.append(filterButton);
+
+					if(filterConfig.label.toLowerCase() === activeFilter.toLowerCase()) {
+						activateFilterButton(filterButton);
+					}
+				});
+			
+		});
+
+	
+	
+	
+	})($.noConflict(true))
+</script>
+
+<hr>
+<br><br>
+<h1 id="horror"></h1>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/SoM5cH3c_YY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+
+
+
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
+    <a href="https://fronkongames.github.io/demos-luts/horror/" class="btn btn-default">🕹️ Demo</a>
+    <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
+</div>
+</br>
+
+<p>598 high quality scary LUTs including:</p>
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	
+	
+
+	
+		<script src="../shortcode-gallery/jquery-3.7.1.min.js"></script>
+	
+	
+	
+		<script src="../shortcode-gallery/lazy/jquery.lazy.min.js"></script>
+	
+
+	<script src="../shortcode-gallery/swipebox/js/jquery.swipebox.min.js"></script>
+	<link rel="stylesheet" href="../shortcode-gallery/swipebox/css/swipebox.min.css">
+
+	<script src="../shortcode-gallery/justified_gallery/jquery.justifiedGallery.min.js"></script>
+	<link rel="stylesheet" href="../shortcode-gallery/justified_gallery/justifiedGallery.min.css"/>
+
+
+<style>
+	
+
+	
+		 
+		/* Changes made here sadly only apply after restarting hugo server */
+/* make 5px space between the button(filter options) in the filter bar */
+.justified-gallery-filterbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px; }
+  .justified-gallery-filterbar button {
+    padding: 6px;
+    border: 0px solid #fff;
+    border-radius: 0px;
+    background-color: #ad444a;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1em; }
+    .justified-gallery-filterbar button:hover {
+      color: #333333;
+      text-decoration: underline;
+      background-color: #e6e6e6; }
+    .justified-gallery-filterbar button.selected {
+      text-decoration: underline; }
+    .justified-gallery-filterbar button svg {
+      width: 1em;
+      height: 1em;
+      transform: rotate(90deg);
+      transition: transform .2s linear; }
+    .justified-gallery-filterbar button:hover svg {
+      transform: rotate(90deg) scale(1.3); }
+
+.fulltab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  min-height: 100%;
+  background-color: #222; }
+  .fulltab .justified-gallery-filterbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    background-color: #222;
+    padding: 5px;
+    margin: 0px; }
+
+	
+</style>
+
+
+
+
+
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-60-wrapper" class="gallery-wrapper">
+<div id="gallery-72a04c600021fbd739e681bad3a720fc-60" class="justified-gallery">
+	
+</div>
+</div>
+
+<script>
+	if (!window.jQuery) {
+		throw new Error("jQuery is not loaded, hugo-shortcode-gallery wont work without it!");
+	}
+
+	
+	
+	
+	
+	
+	;(function($) {
+
+		$( document ).ready(() => {
+			const gallery = $("#gallery-72a04c600021fbd739e681bad3a720fc-60");
+			
+
+			
+			let swipeboxInstance = null;
+
+			
+			
+			gallery.on('jg.complete', () => {
+				
+					
+					
+					$(() => {
+						$('.lazy').Lazy({
+							visibleOnly: true,
+							afterLoad: element => element.css({filter: "none", transition: "filter 1.0s ease-in-out"})
+						});
+					});
+				
+
+				swipeboxInstance = $('.galleryImg').swipebox(
+					$.extend({},
+						{  }
+					)
+				);
+			});
+
+			
+			gallery.justifiedGallery({
+				rowHeight : "100",
+				margins : "5",
+				border : 0,
+				randomize :  false ,
+				waitThumbnailsLoad : false,
+				lastRow : "justify",
+				captions : false,
+				
+				
+					
+					
+					
+					filter : () => false
+				
+			});
+
+			
+			
+
+				
+				
+				function createMetadataFilter(filterFunction) {
+					return (entry, index, array) => {
+						let meta = $(entry).find("a").attr("data-meta");
+						meta = meta ? JSON.parse(meta) : {};
+						
+						let include = filterFunction(meta);
+
+						
+						
+						$(entry).find("a").toggleClass("galleryImg", include);
+
+						return include;
+					}
+				}
+
+				
+				
+				function createTagFilter(tagsRegexString) {
+					const tagsRegex = RegExp(tagsRegexString);
+					return createMetadataFilter(meta => {
+						let tags = meta.Tags;
+						tags = tags ? tags : [];
+						return tags.some(tag => tagsRegex.test(tag));
+					});
+				};
+
+				
+				
+				function createImageDescriptionFilter(descriptionRegexString) {
+					const descriptionRegex = RegExp(descriptionRegexString);
+					return createMetadataFilter(meta => {
+						let imageDescription = meta.ImageDescription;
+						return imageDescription !== null && descriptionRegex.test(imageDescription);
+					});
+				};
+
+				
+				
+				function createRatingFilter(min, max) {
+					return createMetadataFilter(meta => {
+						let rating = meta.Rating;
+						if(rating === null){
+							rating = -1;
+						}
+						return rating >= min && rating <= max;
+					});
+				};
+
+				
+				
+				function createColorLabelFilter(color) {
+					color = color.charAt(0).toLowerCase()
+					return createMetadataFilter(meta => {
+						let colors = meta.ColorLabels;
+						return colors && colors.includes(color);
+					});
+				};
+
+				
+				const filterOptions = [{label: 'Action', description: 'Action*'}, {label: 'Apocalypse', description: 'Apocalypse*'}, {label: 'Automotive', description: 'Automotive*'}, {label: 'Military', description: 'Military*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Sports', description: 'Sports*'}, {label: 'All', description: '.*'}];
+				
+				
+				const filterBar = $("<div class='justified-gallery-filterbar'/>");
+				gallery.before(filterBar);
+
+				var wrapper = document.getElementById("gallery-72a04c600021fbd739e681bad3a720fc-60-wrapper");
 
 				
 				const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
