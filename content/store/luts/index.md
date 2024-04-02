@@ -22,6 +22,7 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 * [Unreal](#unreal) (67 LUTs): colors from other worlds, stunning looks.
 * [Action](#action) (163 LUTs): colors for action!
 * [Horror](#horror) (598 LUTs): the colors of fear...
+* [Sci-Fi](#scifi) (150 LUTs): futuristic and dystopian looks.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}
 ## What is a LUT?
@@ -468,6 +469,12 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
 
 598 high quality scary LUTs including:
 
+* **Darkness** (100): dark tones and spooky shades.
+* **Halloween** (305): colors inspired by the Halloween holiday.
+* **Movies** (11): inspired by classic horror movies.
+* **Terror** (132): looks that inspire suspense and terror.
+* **Vampire** (50): colors inspired by vampire movies.
+
 {{<
   gallery match="horror/*"
   sortOrder="asc"
@@ -478,7 +485,33 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
   previewType="blur"
   embedPreview=true
   loadJQuery=true
-  filterOptions= "[{label: 'Action', description: 'Action*'}, {label: 'Apocalypse', description: 'Apocalypse*'}, {label: 'Automotive', description: 'Automotive*'}, {label: 'Military', description: 'Military*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Sports', description: 'Sports*'}, {label: 'All', description: '.*'}]">}}
+  filterOptions= "[{label: 'Darkness', description: 'Darkness*'}, {label: 'Halloween', description: 'Halloween*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Terror', description: 'Terror*'}, {label: 'Vampire', description: 'Vampire*'}, {label: 'All', description: '.*'}]">}}
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#scifi}
+{{< youtube ItmAGy08gAY >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/scifi/" >}}
+
+150 high quality sci-fi LUTs including:
+
+* **Dystopia** (50): dystopian neon realities.
+* **Future** (50): looks from movies like Blade Runner.
+* **Sci-Fi** (50): colors inspired by science fiction classics.
+
+{{<
+  gallery match="scifi/*"
+  sortOrder="asc"
+  rowHeight="100"
+  margins="5"
+  thumbnailResizeOptions="1920x1080 q100 Lanczos"
+  showExif=false
+  previewType="blur"
+  embedPreview=true
+  loadJQuery=true
+  filterOptions= "[{label: 'Dystopia', description: 'Dystopia*'}, {label: 'Future', description: 'Future*'}, {label: 'Sci-Fi', description: 'SciFi*'}, {label: 'All', description: '.*'}]">}}
 
 ---
 
