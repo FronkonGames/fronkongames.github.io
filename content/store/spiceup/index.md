@@ -28,20 +28,20 @@ type: "store"
 * [BodyCam](#bodycam), body camera (BWC) or wearable camera.
 * [Lens Flare](#lensflare), a.k.a. JJ Abrams' illumination.
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< rawhtml >}}<br>{{< /rawhtml >}}
 {{< notice note "SPECIAL OFFER" >}}
 You can obtain each effect separately (for only $8!), but if you want multiple effects, you might be interested in '[SPICE UP BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333)' where you can find them all at a special price!
 {{< /notice >}}
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Requirements
+{{< rawhtml >}}<br>{{< /rawhtml >}}
+## ⚙️ Requirements
 
 All '**Spice Up**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
 You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in the Editor
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🖥️ Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**Spice Up**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
@@ -51,8 +51,15 @@ Remember that the camera you are using must have the '**Post Processing**' optio
 
 {{< imagecenter src="/store/spiceup/editor_1.jpg" >}}
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in code
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🥸 VR
+
+To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
+
+{{< imagecenter src="/store/spiceup/vr.jpg" >}}
+
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🪄 Using them in code
 
 You can also handle '**Spice Up**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
 
@@ -703,7 +710,7 @@ Finally, if you click on '**documentation**' (_9_) you will go to the online doc
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## Misc
+## 📊 Misc
 
 All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
@@ -719,13 +726,13 @@ Although it is not recommended to change it, with '**RenderPass event**' (_3_) y
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## Support
+## 🩺 Support
 
 Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 {{< center >}}

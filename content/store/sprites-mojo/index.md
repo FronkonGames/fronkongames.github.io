@@ -325,7 +325,7 @@ All effect variables of type _IntVariable_, _FloatVariable_, _ColorVariable_ and
 Check the class comments for more information.
 
 {{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Support
+## 🩺 Support
 
 Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 

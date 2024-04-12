@@ -24,13 +24,13 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 * [Horror](#horror) (598 LUTs): the colors of fear...
 * [Sci-Fi](#scifi) (150 LUTs): futuristic and dystopian looks.
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## What is a LUT?
 
 LUTs, or 'LookUp Table', are a kind of color filter you use to alter the colors in your game. They apply predetermined sets of mathematical formulas to your game's existing colors to change those colors and achieve a desired look.
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Requirements
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## ⚙️ Requirements
 
 All '**LUTs**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP)', which means they will **not work** with Built-In, or HDRP.
 
@@ -40,8 +40,8 @@ You will need to have URP version 12.1 or higher installed. If you don't know ho
 All LUTs are 3D textures, so the hardware must support it (>2014). 
 {{< /notice >}}
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in the Editor
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🖥️ Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**LUTs**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
@@ -89,8 +89,15 @@ Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied
 
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in code
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🥸 VR
+
+To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
+
+{{< imagecenter src="/store/luts/vr.jpg" >}}
+
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🪄 Using them in code
 
 You can also handle '**LUTs**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
 
@@ -515,14 +522,14 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
 
 ---
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Support
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🩺 Support
 
 Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 {{< center >}}

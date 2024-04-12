@@ -11,16 +11,17 @@ type: "store"
 
 * [Color Blindness](#colorblindness), simulates the most common vision defects.
 * [Corrupt Memory](#corruptmemory), a cyber attack? no, it's just corrupted memory.
+* [Interferences](#interferences), something is interfering with the signal...
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Requirements
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## ⚙️ Requirements
 
 All '**Glitches**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP)', which means they will **not work** with Built-In, or HDRP.
 
 You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in the Editor
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🖥️ Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**Glitches**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
@@ -30,8 +31,15 @@ Remember that the camera you are using must have the '**Post Processing**' optio
 
 {{< imagecenter src="/store/glitches/editor_1.jpg" >}}
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in code
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🥸 VR
+
+To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
+
+{{< imagecenter src="/store/glitches/vr.jpg" >}}
+
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🪄 Using them in code
 
 You can also handle '**Glitches**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
 
@@ -124,7 +132,33 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## Misc
+
+# {#interferences}
+{{< youtube lYrj9jj3U8Y >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/interferences/" >}}
+
+With '**Interferences**' you can simulate video transmission failures.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/glitches/interferences_0.jpg">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+With '**Blend**' (_2_) modify the color operation used to blend the original pixel with the effect pixel.
+
+'**Offset**' (_3_) amplifies the strength of the effect.
+
+From the distortion effect (_4_) you can control different variables such as speed, density, amplitude and frequency.
+
+The second effect applied is scanlines (_5_) and you can adjust its density and opacity.
+
+Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 📊 Misc
 
 All '**Glitches**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
@@ -138,14 +172,14 @@ Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied
 
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Support
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🩺 Support
 
 Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 {{< center >}}

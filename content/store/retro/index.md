@@ -3,9 +3,6 @@ title: "Retro"
 date: 2022-11-23T12:23:10+06:00
 image: /store/retro/mini.png
 logo: /store/retro/logo.png
-#demo: https://fronkongames.github.io/demos-retro/one-bit/
-#store: https://assetstore.unity.com/packages/slug/216000
-#youtube: https://www.youtube.com/watch?v=WY10wS39GDw
 description: "A collection of retro effects for your games"
 type: "store"
 ---
@@ -21,23 +18,23 @@ type: "store"
 * [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
 * [Handheld 8-Bit](#handheld8bit), imitates the graphics of the 8-bit handheld consoles of the late 1980s.
 
-{{< gallery-slider dir="/images/store/retro/gallery/" auto-slide="3000" width="100%" top="75%" >}}
+<!--{{< gallery-slider dir="/images/store/retro/gallery/" auto-slide="3000" width="100%" top="75%" >}}-->
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< rawhtml >}}<br>{{< /rawhtml >}}
 {{< notice note "SPECIAL OFFER" >}}
 You can obtain each effect separately (for only $8!), but if you want multiple effects, you might be interested in '[RETRO BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493)' where you can find them all at a special price!
 {{< /notice >}}
 
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## Requirements
+{{< rawhtml >}}<br>{{< /rawhtml >}}
+## ⚙️ Requirements
 
 All '**Retro**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP)', which means they will **not work** with Built-In, or HDRP.
 
 You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in the Editor
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🖥️ Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**Retro**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
@@ -47,8 +44,15 @@ Remember that the camera you are using must have the '**Post Processing**' optio
 
 {{< imagecenter src="/store/retro/editor_1.jpg" >}}
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}
-## Using them in code
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🥸 VR
+
+To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
+
+{{< imagecenter src="/store/retro/vr.jpg" >}}
+
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## 🪄 Using them in code
 
 You can also handle '**Retro**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
 
@@ -418,7 +422,7 @@ In '**Full**' simulation mode, you can also adjust the grid color with '**Grid c
 Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
 
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
-## Misc
+## 📊 Misc
 
 All '**Retro**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
@@ -433,13 +437,13 @@ Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
 {{< rawhtml >}}</br></br>{{< /rawhtml >}}
-## Support
+## 🩺 Support
 
 Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}</br>{{< /rawhtml >}}{{< rawhtml >}}</br>{{< /rawhtml >}}
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
 
 ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 {{< center >}}

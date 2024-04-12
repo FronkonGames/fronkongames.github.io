@@ -146,13 +146,14 @@
 <ul>
 <li><a href="#colorblindness">Color Blindness</a>, simulates the most common vision defects.</li>
 <li><a href="#corruptmemory">Corrupt Memory</a>, a cyber attack? no, it&rsquo;s just corrupted memory.</li>
+<li><a href="#interferences">Interferences</a>, something is interfering with the signal&hellip;</li>
 </ul>
-</br>
-<h2 id="requirements">Requirements</h2>
+<br><br>
+<h2 id="-requirements">⚙️ Requirements</h2>
 <p>All &lsquo;<strong>Glitches</strong>&rsquo; effects are developed for &lsquo;<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html">Universal Render Pipeline</a>&rsquo; (or URP)&rsquo;, which means they will <strong>not work</strong> with Built-In, or HDRP.</p>
 <p>You will need to have URP version 12.1 or higher installed. If you don&rsquo;t know how to do it, I recommend you to follow this <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html">official tutorial</a>.</p>
-</br>
-<h2 id="using-them-in-the-editor">Using them in the Editor</h2>
+<br><br>
+<h2 id="-using-them-in-the-editor">🖥️ Using them in the Editor</h2>
 <p>Once installed, you have to add the effect you want to use from &lsquo;<strong>Glitches</strong>&rsquo; as a &lsquo;<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html">Render Feature</a>&rsquo;. This <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html">official tutorial</a> tells how to do it.</p>
 
 
@@ -171,8 +172,19 @@
 </div>
 &nbsp;
 
-</br>
-<h2 id="using-them-in-code">Using them in code</h2>
+<br><br>
+<h2 id="-vr">🥸 VR</h2>
+<p>To increase compatibility with VR devices, I recommend that you select &lsquo;<strong>Stereo Rendering Mode</strong>&rsquo; in &lsquo;<strong>Multi Pass</strong>&rsquo; mode:</p>
+
+
+
+<div style="text-align: center">
+  <img src="../store/glitches/vr.jpg" alt="" decoding="async" />
+</div>
+&nbsp;
+
+<br><br>
+<h2 id="-using-them-in-code">🪄 Using them in code</h2>
 <p>You can also handle &lsquo;<strong>Glitches</strong>&rsquo; effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.</p>
 <p>They are all of the style &lsquo;FronkonGames.Glitches.XXXX&rsquo;, where XXXX is the name of the effect. For example, if the effect you want to use is &lsquo;<strong>Color Blindness</strong>&rsquo; the code would be:</p>
 <p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> FronkonGames.Glitches.ColorBlindness;</span></span></code></pre></div>
@@ -374,7 +386,44 @@
 <p>Finally, if you click on &lsquo;<strong>documentation</strong>&rsquo; (<em>4</em>) you will go to the online documentation. If you need support, you can send me an email to &lsquo;<em>frokongames@gmail.com</em>&rsquo; or you can click on &lsquo;<strong>support</strong>&rsquo; (<em>5</em>). If you need to reset all the effect values, click on &lsquo;<strong>Reset</strong>&rsquo; (<em>6</em>).</p>
 <hr>
 <br><br>
-<h2 id="misc">Misc</h2>
+<h1 id="interferences"></h1>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/lYrj9jj3U8Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+
+
+
+<small-center>assets and music used in this video are <b>not included</b></small-center>
+
+<div style="text-align:right">
+    <a href="https://fronkongames.github.io/demos-glitches/interferences/" class="btn btn-default">🕹️ Demo</a>
+    <a href="" class="btn bt btn-default">🛒 Store (soon!)</a>
+</div>
+</br>
+
+<p>With &lsquo;<strong>Interferences</strong>&rsquo; you can simulate video transmission failures.</p>
+<p>Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+
+
+
+<div style="text-align: center">
+  <img src="../store/glitches/interferences_0.jpg" alt="" decoding="async" />
+</div>
+&nbsp;
+
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
+<p>With &lsquo;<strong>Blend</strong>&rsquo; (<em>2</em>) modify the color operation used to blend the original pixel with the effect pixel.</p>
+<p>&lsquo;<strong>Offset</strong>&rsquo; (<em>3</em>) amplifies the strength of the effect.</p>
+<p>From the distortion effect (<em>4</em>) you can control different variables such as speed, density, amplitude and frequency.</p>
+<p>The second effect applied is scanlines (<em>5</em>) and you can adjust its density and opacity.</p>
+<p>Finally, if you click on &lsquo;<strong>documentation</strong>&rsquo; (<em>6</em>) you will go to the online documentation. If you need support, you can send me an email to &lsquo;<em>frokongames@gmail.com</em>&rsquo; or you can click on &lsquo;<strong>support</strong>&rsquo; (<em>7</em>). If you need to reset all the effect values, click on &lsquo;<strong>Reset</strong>&rsquo; (<em>8</em>).</p>
+<hr>
+<br><br>
+<h2 id="-misc">📊 Misc</h2>
 <p>All &lsquo;<strong>Glitches</strong>&rsquo; effects have a panel, &lsquo;<strong>Color</strong>&rsquo;, in which you can modify the final color of the effect.</p>
 
 
@@ -395,11 +444,11 @@
 
 <p>Activate &lsquo;<strong>Affect the Scene View?</strong>&rsquo; (<em>1</em>) if you want the effect to be applied also in the &lsquo;<em>Scene</em>&rsquo; window of the Editor. With &lsquo;<strong>Filter mode</strong>&rsquo; (<em>2</em>) you can change the type of filter used.</p>
 <p>Although it is not recommended to change it, with &lsquo;<strong>RenderPass event</strong>&rsquo; (<em>3</em>) you can modify at which point in the render pipeline the effect is applied. Finally, activate &lsquo;<strong>Enable profiling</strong>&rsquo; (<em>4</em>) to show in the &lsquo;<em>Profiling</em>&rsquo; window the metrics of the effect.</p>
-<p></br></br></p>
-<h2 id="support">Support</h2>
+<br><br>
+<h2 id="-support">🩺 Support</h2>
 <p>Do you have any problem or any suggestions? Click on &ldquo;<strong>support</strong>&rdquo; or send me an email to <strong><a href="mailto:fronkongames@gmail.com">fronkongames@gmail.com</a></strong> and I&rsquo;ll be happy to help you.</p>
 <p>Remember that if you want to inform me of an error, it would help me if you sent to me the <a href="https://docs.unity3d.com/Manual/LogFiles.html">log file</a>.</p>
-<p></br></br></p>
+<br><br>
 <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 <p style="text-align: center;">
 If you are happy with this asset, <b>please consider leaving a positive review</b> in the store, it would really help me,
