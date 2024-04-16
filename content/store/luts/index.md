@@ -25,9 +25,11 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 * [Sci-Fi](#scifi) (150 LUTs): futuristic and dystopian looks.
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## What is a LUT?
+## 🤔 What is a LUT?
 
 LUTs, or 'LookUp Table', are a kind of color filter you use to alter the colors in your game. They apply predetermined sets of mathematical formulas to your game's existing colors to change those colors and achieve a desired look.
+
+{{< imagecenter src="/store/luts/howto.png" >}}
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## ⚙️ Requirements
@@ -323,7 +325,7 @@ A rainbow of colors for your games. 277 high quality LUTs including:
 # {#places}
 {{< youtube XpqdRRJdz4U >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/places/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/places/" store="https://assetstore.unity.com/packages/slug/279132" >}}
 
 The right color for the right place. 225 high quality LUTs including:
 
@@ -357,7 +359,7 @@ The right color for the right place. 225 high quality LUTs including:
 # {#cinematic}
 {{< youtube zhGBdWJ_8rI >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cinematic/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cinematic/" store="https://assetstore.unity.com/packages/slug/279333" >}}
 
 The color of the movies, in your games. 254 high quality cinematic LUTs including:
 
@@ -389,7 +391,7 @@ The color of the movies, in your games. 254 high quality cinematic LUTs includin
 # {#fantasy}
 {{< youtube kNT1Au3LY6s >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/fantasy/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/fantasy/" store="https://assetstore.unity.com/packages/slug/279569" >}}
 
 Worlds of fantasy and color. 131 high quality fantasy LUTs including:
 
@@ -415,7 +417,7 @@ Worlds of fantasy and color. 131 high quality fantasy LUTs including:
 # {#unreal}
 {{< youtube PqITkuWFoKk >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/unreal/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/unreal/" store="https://assetstore.unity.com/packages/slug/279579" >}}
 
 Colors from other worlds, stunning looks. 67 high quality originals LUTs including:
 
@@ -443,7 +445,7 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
 # {#action}
 {{< youtube PrSI6uIoUd0 >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/action/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/action/" store="https://assetstore.unity.com/packages/slug/280076" >}}
 
 163 high quality action LUTs including:
 
@@ -472,7 +474,7 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
 # {#horror}
 {{< youtube SoM5cH3c_YY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/horror/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/horror/" store="https://assetstore.unity.com/packages/slug/280345" >}}
 
 598 high quality scary LUTs including:
 
@@ -500,7 +502,7 @@ Colors from other worlds, stunning looks. 67 high quality originals LUTs includi
 # {#scifi}
 {{< youtube ItmAGy08gAY >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/scifi/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/scifi/" store="https://assetstore.unity.com/packages/slug/280709" >}}
 
 150 high quality sci-fi LUTs including:
 
