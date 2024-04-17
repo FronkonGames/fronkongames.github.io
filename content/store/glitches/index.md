@@ -12,6 +12,7 @@ type: "store"
 * [Color Blindness](#colorblindness), simulates the most common vision defects.
 * [Corrupt Memory](#corruptmemory), a cyber attack? no, it's just corrupted memory.
 * [Interferences](#interferences), something is interfering with the signal...
+* [VHS](#vhs), the beauty of analog.
 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## ⚙️ Requirements
@@ -136,7 +137,7 @@ Finally, if you click on '**documentation**' (_4_) you will go to the online doc
 # {#interferences}
 {{< youtube lYrj9jj3U8Y >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/interferences/" >}}
+{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/interferences/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-interferences-281861" >}}
 
 With '**Interferences**' you can simulate video transmission failures.
 
@@ -155,6 +156,28 @@ From the distortion effect (_4_) you can control different variables such as spe
 The second effect applied is scanlines (_5_) and you can adjust its density and opacity.
 
 Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
+
+---
+{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+
+# {#vhs}
+{{< youtube 2aAEdOKg_Bw >}}
+
+{{< asset-buttons demo="https://fronkongames.github.io/demos-glitches/vhs/">}}
+
+Accurately emulates an old VHS tape. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< imagecenter src="/store/glitches/vhs_0.jpg">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+**VHS**' consists of two very typical effects of the old VHS tapes: the noise and the pause.
+
+The first one can be controlled using '**Noise**' (_2_) and its parameters. The second with '**Pause**' (_3_) and '**Pause Band**' (_4_).
+
+If you want to use only the noise, set '**Pause**' (_3_) and '**Pause Band**' (_4_) to zero. If you only want to use the pause effect, set '**Noise**' (_2_) to zero.
+
+Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
 
 ---
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}

@@ -27,7 +27,7 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 {{< rawhtml >}}<br><br>{{< /rawhtml >}}
 ## 🤔 What is a LUT?
 
-LUTs, or 'LookUp Table', are a kind of color filter you use to alter the colors in your game. They apply predetermined sets of mathematical formulas to your game's existing colors to change those colors and achieve a desired look.
+LUT, or '**L**ook**U**p **T**able', are a kind of color filter you use to alter the colors in your game. They apply predetermined sets of mathematical formulas to your game's existing colors to change those colors and achieve a desired look.
 
 {{< imagecenter src="/store/luts/howto.png" >}}
 
