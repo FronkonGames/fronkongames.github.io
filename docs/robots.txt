@@ -1,12 +1,8 @@
 User-agent: *
 
-Disallow: /
-
-Disallow: /games.html
-
-Disallow: /games/little-big-dungeons.html
-
 Disallow: /store/artistic.html
+
+Disallow: /
 
 Disallow: /store/spiceup.html
 
@@ -19,6 +15,8 @@ Disallow: /store/glitches.html
 Disallow: /store/luts.html
 
 Disallow: /games/dawn-of-the-cards.html
+
+Disallow: /games.html
 
 Disallow: /gamedev/awesome-game-development/awesome-gamedev.html
 
