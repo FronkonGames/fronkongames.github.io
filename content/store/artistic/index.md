@@ -22,7 +22,7 @@ type: "store"
 
 {{< rawhtml >}}<br>{{< /rawhtml >}}
 {{< notice note "SPECIAL OFFER" >}}
-You can obtain each effect separately (for only $8!), but if you want multiple effects, you might be interested in '[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266)' where you can find them all at a special price!
+You can obtain each effect separately (for only $8!), but if you want multiple effects, you might be interested in '[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266?aid=1101l9zFC&utm_source=aff)' where you can find them all at a special price!
 {{< /notice >}}
 
 {{< rawhtml >}}<br>{{< /rawhtml >}}
