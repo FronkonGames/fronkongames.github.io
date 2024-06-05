@@ -1,15 +1,7 @@
-# Hugo default output directory
-#/public
+/_vendor
+public/
+resources/
+node_modules/
 
-## OS Files
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Rider
-.idea
-
-# OSX
-.DS_Store
+.DS_store
+.hugo_build.lock

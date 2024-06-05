@@ -2,70 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fronkongames.github.io/store/artistic.html</loc>
-    <lastmod>2023-02-22T12:23:10+06:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/devblog/</loc>
+    <lastmod>1970-01-01T01:00:07+01:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/</loc>
-    <lastmod>2023-02-22T12:23:10+06:00</lastmod>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/store/spiceup.html</loc>
-    <lastmod>2023-02-22T12:23:10+06:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/game-development/</loc>
+    <lastmod>1970-01-01T01:00:07+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/store.html</loc>
-    <lastmod>2023-02-22T12:23:10+06:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/gamedev/</loc>
+    <lastmod>1970-01-01T01:00:07+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/store/retro.html</loc>
-    <lastmod>2022-11-23T12:23:10+06:00</lastmod>
+    <loc>https://fronkongames.github.io/projects/kairos/</loc>
+    <lastmod>1970-01-01T01:00:07+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/store/glitches.html</loc>
-    <lastmod>2022-10-22T12:23:10+06:00</lastmod>
+    <loc>https://fronkongames.github.io/projects/</loc>
+    <lastmod>1970-01-01T01:00:07+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/store/luts.html</loc>
-    <lastmod>2022-10-01T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/games/dawn-of-the-cards.html</loc>
-    <lastmod>2022-05-08T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/2d/</loc>
+    <lastmod>2024-04-12T22:53:57+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/games.html</loc>
-    <lastmod>2022-05-08T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/projects/awesome-game-development/</loc>
+    <lastmod>1970-01-01T01:00:06+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/gamedev/awesome-game-development/awesome-gamedev.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/sprites/</loc>
+    <lastmod>2024-04-12T22:53:57+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/blog.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/store/sprites-mojo/</loc>
+    <lastmod>2024-04-12T22:53:57+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/gamedev/design-patterns-in-game-development.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/store/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/gamedev.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/store/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/blog/global-game-jam-dataset/global-game-jam-dataset.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/unity/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/blog/ml-game-ideas/ml-game-ideas.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/projects/gamework-foundation/</loc>
+    <lastmod>1970-01-01T01:00:05+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/blog/steam-games-dataset/steam-games-dataset.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/lut/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/blog/steam-games-scraper/steam-games-scraper.html</loc>
-    <lastmod>2022-04-15T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/tags/luts/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/gamedev/gamework/core.html</loc>
-    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/store/luts/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/gamedev/gamework/foundation.html</loc>
-    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+    <loc>https://fronkongames.github.io/projects/kairos/dragging-and-dropping-3d-cards/</loc>
+    <lastmod>1970-01-01T01:00:04+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/store/sprites-mojo.html</loc>
-    <lastmod>2022-02-23T12:23:10+06:00</lastmod>
+    <loc>https://fronkongames.github.io/projects/gamework-core/</loc>
+    <lastmod>1970-01-01T01:00:04+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/categories.html</loc>
+    <loc>https://fronkongames.github.io/tags/glitch/</loc>
+    <lastmod>2024-05-12T18:39:53+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/blog/go-weiqi-igo-baduk.html</loc>
+    <loc>https://fronkongames.github.io/store/glitches/</loc>
+    <lastmod>2024-05-12T18:39:53+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/tags.html</loc>
+    <loc>https://fronkongames.github.io/tags/hack/</loc>
+    <lastmod>2024-05-12T18:39:53+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/kairos/</loc>
+    <lastmod>1970-01-01T01:00:04+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/kairos/</loc>
+    <lastmod>1970-01-01T01:00:04+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/blog/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/blog/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/gamejam/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/steam-games-dataset/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/go/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/blog/introduction-to-go/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/python/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/kairos/rendering-a-card/</loc>
+    <lastmod>1970-01-01T01:00:03+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/retro/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/store/retro/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/design/</loc>
+    <lastmod>1970-01-01T01:00:02+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/blog/design-patterns-in-game-development/</loc>
+    <lastmod>1970-01-01T01:00:02+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/kairos/making-a-3d-card-in-blender/</loc>
+    <lastmod>1970-01-01T01:00:02+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/pattern/</loc>
+    <lastmod>1970-01-01T01:00:02+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/store/spiceup/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/steam/</loc>
+    <lastmod>1970-01-01T01:00:02+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/global-gamejam-dataset/</loc>
+    <lastmod>1970-01-01T01:00:02+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/store/artistic/</loc>
+    <lastmod>2024-05-14T18:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/build-history/</loc>
+    <lastmod>1970-01-01T01:00:01+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/c#/</loc>
+    <lastmod>1970-01-01T01:00:01+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/kairos/hello-everybody/</loc>
+    <lastmod>1970-01-01T01:00:01+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</loc>
+    <lastmod>1970-01-01T01:00:01+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/browserconfig.xml</loc>
   </url>
 </urlset>

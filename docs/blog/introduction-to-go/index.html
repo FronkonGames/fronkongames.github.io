@@ -1,0 +1,2736 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="theme" content="Hinode 0.24.0-beta3">
+    
+
+
+
+
+
+    
+    
+<link rel="stylesheet" href="/css/main.min.beeaeaf5cec42efc86b3a10d5ccac318f52d6a942f3f6a165e137460683f6d54.css" integrity="sha256-vurq9c7ELvyGs6ENXMrDGPUtapQvP2oWXhN0YGg/bVQ=" crossorigin="anonymous">
+    
+        
+    
+        
+        <link rel="preload" href="/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+
+
+
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Fronkon Games - Introduction To Go</title>
+    <meta name="description" content="The oldest board game still played today">
+
+<link rel="canonical" href="https://fronkongames.github.io/blog/introduction-to-go/">
+
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction To Go">
+<meta property="og:description" content="The oldest board game still played today">
+<meta property="og:url" content="https://fronkongames.github.io/blog/introduction-to-go/">
+<meta property="og:site_name" content="Fronkon Games">
+<meta property="article:published_time" content="1970-01-01T01:00:03+01:00">
+    <meta property="article:modified_time" content="1970-01-01T01:00:03+01:00">
+    <meta property="og:image" content="https://fronkongames.github.io/img/introduction-to-go-1280x640.jpg">
+<meta property="og:image:alt" content="Introduction To Go">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:title" content="Introduction To Go">
+<meta name="twitter:description" content="The oldest board game still played today">
+<meta name="twitter:image" content="https://fronkongames.github.io/img/introduction-to-go-1280x640.jpg">
+<meta name="twitter:image:alt" content="Introduction To Go">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://fronkongames.github.io/#/schema/organization/1",
+      "name": "Fronkon Games",
+      "url": "https://fronkongames.github.io/",
+      "sameAs": [
+        "https://x.com/fronkongames"
+        , "https://www.linkedin.com/in/martinbr"
+        , "https://github.com/FronkonGames"
+        ],
+      "image": {
+          "@type": "ImageObject",
+          "@id": "https://fronkongames.github.io/#/schema/image/1",
+          "url": "https://fronkongames.github.io/\u003cnil\u003e",
+          "width": null ,
+          "height": null ,
+          "caption": "Fronkon Games"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://fronkongames.github.io/#/schema/website/1",
+      "url": "https://fronkongames.github.io/",
+      "name": "Fronkon Games",
+      "description": "Hi! I\u0027m Martin Bustos, an indie game developer and asset store publisher",
+      "publisher": {
+          "@id": "https://fronkongames.github.io/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://fronkongames.github.io/blog/introduction-to-go/",
+      "url": "https://fronkongames.github.io/blog/introduction-to-go/",
+      "name": "Introduction To Go",
+      "description": "The oldest board game still played today",
+      "isPartOf": {
+        "@id": "https://fronkongames.github.io/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://fronkongames.github.io/#/schema/organization/1"
+        },
+      "datePublished": "1970-01-01T01:00:03CET",
+      "dateModified": "1970-01-01T01:00:03CET",
+      "breadcrumb": {
+        "@id": "https://fronkongames.github.io/blog/introduction-to-go/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://fronkongames.github.io/blog/introduction-to-go/#/schema/image/2"
+      },
+      "inLanguage": "es-ES",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://fronkongames.github.io/blog/introduction-to-go/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fronkongames.github.io/blog/introduction-to-go/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://fronkongames.github.io/",
+          "url": "https://fronkongames.github.io/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://fronkongames.github.io/blog/",
+          "url": "https://fronkongames.github.io/blog/",
+          "name": "Blog"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "https://fronkongames.github.io/blog/introduction-to-go/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://fronkongames.github.io/#/schema/article/1",
+          "headline": "Introduction To Go",
+          "description": "The oldest board game still played today",
+          "isPartOf": {
+            "@id": "https://fronkongames.github.io/blog/introduction-to-go/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://fronkongames.github.io/blog/introduction-to-go/"
+          },
+          "datePublished": "1970-01-01T01:00:03CET",
+          "dateModified": "1970-01-01T01:00:03CET",
+          "author": {
+            "@id": "https://fronkongames.github.io/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "https://fronkongames.github.io/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "https://fronkongames.github.io/blog/introduction-to-go/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://fronkongames.github.io/#/schema/person/2",
+          "name":  null ,
+          "sameAs": [
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://fronkongames.github.io/blog/introduction-to-go/#/schema/image/2",
+          "url": "https://fronkongames.github.io/img/introduction-to-go-1280x640.jpg",
+          "contentUrl": "https://fronkongames.github.io/img/introduction-to-go-1280x640.jpg",
+          "caption": "Introduction To Go"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_16x16_resize_catmullrom_3.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_32x32_resize_catmullrom_3.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_48x48_resize_catmullrom_3.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_180x0_resize_catmullrom_3.png">
+    
+
+</head>
+
+    <body>
+<script src="/js/critical.bundle.min.96ae5a5b75a1905e739850994918bc181acb7543200ad6a79a31b0980bbb0009.js" integrity="sha256-lq5aW3WhkF5zmFCZSRi8GBrLdUMgCtanmjGwmAu7AAk=" crossorigin="anonymous"></script>
+    <div class="d-flex flex-column min-vh-100">
+            <div class="d-flex flex-column ">
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid fixed-top p-0">
+
+
+
+
+
+
+<nav class="navbar p-4 bg-body navbar-fixed-top navbar-expand-md"
+        
+        
+        >
+        <div class="container-xxl p-0">
+            <div class="d-flex navbar-container justify-content-center">
+                
+                <div class="d-flex align-items-center">
+                        <button class="navbar-toggler collapsed p-0 mx-auto invisible fw-30" type="button">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-ellipsis fa-fw"></i> --><svg class="svg-inline--fa fas fa-ellipsis fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
+
+    
+</button></div>
+        
+                
+                <div class="mx-auto">
+                    <a class="navbar-brand" href="/" aria-label="Home">
+                            <img src="/img/logo_icon.png" alt="Fronkon Games" height="40"></a>
+                </div>
+        
+                
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler main-nav-toggler collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-0-collapse"
+                        aria-controls="navbar-0" aria-expanded="false" aria-label="Toggle main navigation">
+                        <span class="toggler-icon top-bar emphasis"></span>
+                        <span class="toggler-icon middle-bar emphasis"></span>
+                        <span class="toggler-icon bottom-bar emphasis"></span>
+                    </button>
+                </div>
+            </div>
+    
+            <div class="navbar-collapse collapse" id="navbar-0-collapse">
+                <div class="d-flex flex-fill ms-md-3">
+    <form class="search flex-fill position-relative me-auto">
+        <input class="search-input form-control is-search" type="search" placeholder="Search this site" aria-label="Search this site" autocomplete="off">
+        <div class="search-suggestions shadow bg-body rounded d-none" data-no-results="No results for"></div>
+    </form>
+</div>
+
+                <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link" 
+        
+        data-nav="main" data-nav-main="store" 
+        href="/store/" ><strong><span >STORE</span></strong>&nbsp;</a>
+</li>
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link" 
+        
+        data-nav="main" data-nav-main="projects" 
+        href="/projects/" ><strong><span >PROJECTS</span></strong>&nbsp;</a>
+</li>
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link active" 
+        
+        data-nav="main" data-nav-main="blog" 
+        href="/blog/" ><strong><span  class="active">BLOG</span></strong>&nbsp;</a>
+</li><li class="nav-item dropdown d-md-none">
+        <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-label="Toggle theme" aria-expanded="false" id="-theme-collapsed">
+            <span class="theme-icon-active">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    &nbsp;
+</span>&nbsp;Toggle theme
+            <span class="d-md-none"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="-theme-collapsed">
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="light" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    
+</span>&nbsp;Light
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="dark" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-moon fa-fw"></i> --><svg class="svg-inline--fa fas fa-moon fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+
+    
+</span>&nbsp;Dark
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="auto" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-circle-half-stroke fa-fw"></i> --><svg class="svg-inline--fa fas fa-circle-half-stroke fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+
+    
+</span>&nbsp;Auto
+                </a>
+            </li>
+        </ul>
+    </li><li class="nav-item dropdown d-none d-md-block">
+        <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-label="Toggle theme" aria-expanded="false" id="-theme">
+            <span class="theme-icon-active">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    &nbsp;
+</span>
+            <span class="d-md-none"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="-theme">
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="light" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    
+</span>&nbsp;Light
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="dark" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-moon fa-fw"></i> --><svg class="svg-inline--fa fas fa-moon fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+
+    
+</span>&nbsp;Dark
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="auto" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-circle-half-stroke fa-fw"></i> --><svg class="svg-inline--fa fas fa-circle-half-stroke fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+
+    
+</span>&nbsp;Auto
+                </a>
+            </li>
+        </ul>
+    </li></ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="main-content">
+                    </div>
+                
+            </div>
+
+            
+                
+    
+
+    
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvass-sidebar" aria-inledby="offcanvas-label">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvas-label">Blog</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                
+
+            </div>
+        </div>
+    
+
+    <div class="container-xxl flex-fill p-4 px-xxl-0">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col col-lg-2 d-none d-lg-block sidebar-overflow sticky-top pt-5">
+                    
+
+                </div>
+                <div class="col-12 col-md-9 col-lg-8 mb-5 p-4">
+                    
+
+
+
+
+
+
+
+
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                
+                    <li class="breadcrumb-item"><a href="/blog/">Blog</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Introduction To Go</li>
+        </ol>
+    </nav>
+
+    
+
+
+
+
+
+
+
+
+<div class="d-md-none pb-5">
+
+
+
+
+
+
+<div class="d-grid gap-2 mx-auto">
+        
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="On this page"
+        href="#toc-collapse" class="btn btn-outline-secondary  position-relative  toc-button"
+         data-bs-toggle="collapse" aria-expanded="false" aria-controls="toc-collapse"role="button"
+        >
+        <div class="d-flex justify-content-between">
+            <div class="my-auto">On this page</div><div class="align-self-center ps-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sort "></i> --><svg class="svg-inline--fa fas fa-sort " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 320 512"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+
+    
+</div>
+        </div></a>
+</div>
+
+    <div class="collapse border bg-body-tertiary rounded p-1 navbar-nav-scroll" id="toc-collapse">
+        <div class="toc toc-panel text-body p-2">
+            <small><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-go">What is Go?</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#basic-rules">Basic rules</a></li>
+    <li><a href="#lets-play">Lets play!</a></li>
+  </ul>
+</nav></small>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="img-wrap mb-5"><img class="img-fluid rounded"
+            src="/img/introduction-to-go-2800x1200.jpg"
+            
+            fetchpriority="high"
+            srcset="/img/introduction-to-go-576x247.webp 576w, /img/introduction-to-go-768x329.webp 768w, /img/introduction-to-go-992x425.webp 992w, /img/introduction-to-go-1200x514.webp 1200w, /img/introduction-to-go-1400x600.webp 1400w, /img/introduction-to-go-2800x1200.webp 2800w" sizes="100vw"
+            height="1200"
+            width="2800"
+            alt="Introduction To Go">
+</div><br><p><a href="https://en.wikipedia.org/wiki/Go_(game)">Go</a> is a very old strategy game that consists of capturing pieces and winning territories. It is about 2,500 years old and was invented in China, although the exact location is unknown.</p>
+
+<h2 id="what-is-go" class="heading">What is Go? <a href="#what-is-go" aria-labelledby="what-is-go">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>It is very popular in China, Japan, and Korea (known as <strong>weiqi</strong>, <strong>igo</strong>, and <strong>baduk</strong> respectively). So popular that it is taught in schools, it has its own TV channels and even has its own <a href="https://en.wikipedia.org/wiki/Hikaru_no_Go">anime</a>.</p>
+<p>Although little known in the West, it is the most played board game in the world (ahead of chess). Only in Japan 10 million people practice it, and I don&rsquo;t want to imagine how many millions in China.</p>
+
+<h2 id="introduction" class="heading">Introduction <a href="#introduction" aria-labelledby="introduction">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p><strong>Go</strong> perfectly fulfills the maxim of the founder of <a href="https://en.wikipedia.org/wiki/Atari">Atari</a>, <a href="https://en.wikipedia.org/wiki/Nolan_Bushnell">Nolan Bushnell</a>, on the games:</p>
+<blockquote>
+<p>&hellip;the best games are those easy to learn and difficult to master</p>
+</blockquote>
+<p><strong>Bushnell</strong> is a big fan of this game, so much so that the name of his company, &lsquo;<strong>Atari</strong>&rsquo;, is a term used in <strong>Go</strong>.</p>
+<p><strong>Go</strong> is played on a board like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/go_board-2800x2255.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/go_board-576x464.webp 576w, /blog/introduction-to-go/go_board-768x618.webp 768w, /blog/introduction-to-go/go_board-992x799.webp 992w, /blog/introduction-to-go/go_board-1200x966.webp 1200w, /blog/introduction-to-go/go_board-1400x1127.webp 1400w, /blog/introduction-to-go/go_board-2800x2255.webp 2800w" sizes="100vw"
+            height="2255"
+            width="2800"
+            >
+</div><br>
+<p>Its rules are very simple and have hardly changed since it was invented:</p>
+<ul>
+<li>Both players (one with white stones and the other with black stones) play in turns, putting a single stone on the board each time (it starts empty).</li>
+<li>The stones must be placed on the intersection between the vertical lines and the horizontal lines, including the edges.</li>
+<li>Once a stone is placed, it cannot be withdrawn unless it loses all its <strong>liberties</strong>.</li>
+</ul>
+<p>It is so easy to learn that the recommended age to start playing is only 5 years old. It is also proven that it is a very healthy mental exercise. There are <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa022252">studies</a> on its positive effects against senile dementia and Alzheimer&rsquo;s in adults. At an early age its benefits in the development of intelligence and concentration are demonstrated.</p>
+<p>But it is so complex that it was not until 2016 that an AI managed to beat a great master (something that happened in chess 20 years earlier). If you are interested in learning more about this topic, I recommend you watch the great documentary &lsquo;<a href="https://www.youtube.com/watch?v=WXuK6gekU1Y">AlphaGo - The Movie</a>&rsquo;.</p>
+<p>I finish this brief introduction with an old tale that illustrates very well what it is to play <strong>Go</strong> and tells how&hellip;</p>
+<blockquote>
+<p>&hellip; the young and robust Chih ventured into the mountains to find the best wood for his ax. He went so deep into the forest that he ended up getting lost.</p>
+<p>He wander for some time and end up discovering two strange men, very old, who were playing Go. Chih was fascinated. He put his ax aside and began to look closely. So much he got into the game that he lost track of time.</p>
+<p>When he woke up from the deep trance, he realized that the elders had disappeared. Picking up his ax, the handle fell apart in his hands. He had grown a long white beard. Upon returning to his village his family had disappeared and no one remembered his name &hellip;</p>
+</blockquote>
+
+<h2 id="basic-rules" class="heading">Basic rules <a href="#basic-rules" aria-labelledby="basic-rules">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>The official board is 19×19 positions (between 20 and 40 minutes of play), although beginners usually use boards smaller like 13×13 (between about 15 minutes of play) or 9×9 (no more than 10 minutes). To teach you the basic rules I will use a 5×5 board like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board-576x576.webp 576w, /blog/introduction-to-go/board-768x768.webp 768w, /blog/introduction-to-go/board-992x992.webp 992w, /blog/introduction-to-go/board-1200x1200.webp 1200w, /blog/introduction-to-go/board-1400x1400.webp 1400w, /blog/introduction-to-go/board-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>The stones will be placed in turns, at the intersections of the black lines (including the edges). Black usually starts, so a first move could be <strong>B4</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board01-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board01-576x576.webp 576w, /blog/introduction-to-go/board01-768x768.webp 768w, /blog/introduction-to-go/board01-992x992.webp 992w, /blog/introduction-to-go/board01-1200x1200.webp 1200w, /blog/introduction-to-go/board01-1400x1400.webp 1400w, /blog/introduction-to-go/board01-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>We already have our first <strong>group</strong> done, although for now it only has one stone. Now it would be White&rsquo;s turn and they could move, for example in <strong>D2</strong> and the board would look like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board02-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board02-576x576.webp 576w, /blog/introduction-to-go/board02-768x768.webp 768w, /blog/introduction-to-go/board02-992x992.webp 992w, /blog/introduction-to-go/board02-1200x1200.webp 1200w, /blog/introduction-to-go/board02-1400x1400.webp 1400w, /blog/introduction-to-go/board02-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>A <strong>group</strong> are stones of the same color that are joined at the top, bottom, left, or right. <strong>Never</strong> diagonally. Let&rsquo;s see a board with only black stones and count the groups we have:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board03-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board03-576x576.webp 576w, /blog/introduction-to-go/board03-768x768.webp 768w, /blog/introduction-to-go/board03-992x992.webp 992w, /blog/introduction-to-go/board03-1200x1200.webp 1200w, /blog/introduction-to-go/board03-1400x1400.webp 1400w, /blog/introduction-to-go/board03-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>We can count three different groups. Note that the stones in <strong>C4</strong> and <strong>D3</strong> <strong>do not touch</strong>, they belong to two different groups. There is never diagonal contact.</p>
+<p>I said at the beginning that one of the rules is that you cannot remove a token (or group) unless they lose their <strong>liberties</strong>. The <strong>liberty</strong> of a group is the number of free spaces around it. Consider these examples:</p>
+
+<br>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board04-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board04-576x576.webp 576w, /blog/introduction-to-go/board04-768x768.webp 768w, /blog/introduction-to-go/board04-992x992.webp 992w, /blog/introduction-to-go/board04-1200x1200.webp 1200w, /blog/introduction-to-go/board04-1400x1400.webp 1400w, /blog/introduction-to-go/board04-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board05-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board05-576x576.webp 576w, /blog/introduction-to-go/board05-768x768.webp 768w, /blog/introduction-to-go/board05-992x992.webp 992w, /blog/introduction-to-go/board05-1200x1200.webp 1200w, /blog/introduction-to-go/board05-1400x1400.webp 1400w, /blog/introduction-to-go/board05-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board06-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board06-576x576.webp 576w, /blog/introduction-to-go/board06-768x768.webp 768w, /blog/introduction-to-go/board06-992x992.webp 992w, /blog/introduction-to-go/board06-1200x1200.webp 1200w, /blog/introduction-to-go/board06-1400x1400.webp 1400w, /blog/introduction-to-go/board06-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board07-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board07-576x576.webp 576w, /blog/introduction-to-go/board07-768x768.webp 768w, /blog/introduction-to-go/board07-992x992.webp 992w, /blog/introduction-to-go/board07-1200x1200.webp 1200w, /blog/introduction-to-go/board07-1400x1400.webp 1400w, /blog/introduction-to-go/board07-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+</tr>
+<tr>
+<td align="center"><strong>A</strong></td>
+<td align="center"><strong>B</strong></td>
+<td align="center"><strong>C</strong></td>
+<td align="center"><strong>D</strong></td>
+</tr>
+</tbody>
+</table>
+
+<br><br>
+<p>On the board <strong>A</strong>, we have a group consisting of a single stone. All of your neighbors are empty (red squares), so we have <strong>four liberties</strong>. In <strong>B</strong> we only have two neighbors and they are empty, so we have <strong>two liberties</strong>.</p>
+<p>On the board <strong>C</strong> we already have a group of more than one token, and logically we have more <strong>liberties</strong>, we have <strong>eight</strong>. In <strong>D</strong> we see how White has taken away <strong>two liberties</strong>, so that group only has <strong>five liberties</strong>.</p>
+<p>What happens to groups with only one <strong>liberty</strong>? These groups are said to be in &lsquo;<strong>Atari</strong>&rsquo;, in danger. Let&rsquo;s see an example:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board08-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board08-576x576.webp 576w, /blog/introduction-to-go/board08-768x768.webp 768w, /blog/introduction-to-go/board08-992x992.webp 992w, /blog/introduction-to-go/board08-1200x1200.webp 1200w, /blog/introduction-to-go/board08-1400x1400.webp 1400w, /blog/introduction-to-go/board08-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>This group of stones only has <strong>one liberty</strong>, its survival is in danger. As I said at the beginning, a group without liberties is withdrawn, or captured, by the enemy. If it was White&rsquo;s turn now, the logical move would be to move on <strong>B3</strong>, which is the only liberty left for that group of Black:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board09-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board09-576x576.webp 576w, /blog/introduction-to-go/board09-768x768.webp 768w, /blog/introduction-to-go/board09-992x992.webp 992w, /blog/introduction-to-go/board09-1200x1200.webp 1200w, /blog/introduction-to-go/board09-1400x1400.webp 1400w, /blog/introduction-to-go/board09-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>Running out of <strong>liberties</strong>, White removes those stones earning one point for each stone captured. The board would look like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board10-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board10-576x576.webp 576w, /blog/introduction-to-go/board10-768x768.webp 768w, /blog/introduction-to-go/board10-992x992.webp 992w, /blog/introduction-to-go/board10-1200x1200.webp 1200w, /blog/introduction-to-go/board10-1400x1400.webp 1400w, /blog/introduction-to-go/board10-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>In case you&rsquo;re wondering, suicide is not allowed in Go. I mean, you can&rsquo;t put a stone that takes away the liberties of a group (and give them points to the enemy). You will see it clearly with the following example:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board11-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board11-576x576.webp 576w, /blog/introduction-to-go/board11-768x768.webp 768w, /blog/introduction-to-go/board11-992x992.webp 992w, /blog/introduction-to-go/board11-1200x1200.webp 1200w, /blog/introduction-to-go/board11-1400x1400.webp 1400w, /blog/introduction-to-go/board11-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>If you could put a black stone on <strong>B1</strong>, you would form a group without liberties, which would be a kind of suicide. In this example, if it is Black&rsquo;s turn, <strong>B1</strong> is a <strong>forbidden move</strong>.</p>
+<p>There is another <strong>forbidden movement</strong>, the &lsquo;<strong>Ko</strong>&rsquo;. It is used to prevent two players from repeating identical plays over and over again without stopping, something that would not make much sense either. Let&rsquo;s see a very simple example with these boards:</p>
+
+<center><br>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board12-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board12-576x576.webp 576w, /blog/introduction-to-go/board12-768x768.webp 768w, /blog/introduction-to-go/board12-992x992.webp 992w, /blog/introduction-to-go/board12-1200x1200.webp 1200w, /blog/introduction-to-go/board12-1400x1400.webp 1400w, /blog/introduction-to-go/board12-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board13-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board13-576x576.webp 576w, /blog/introduction-to-go/board13-768x768.webp 768w, /blog/introduction-to-go/board13-992x992.webp 992w, /blog/introduction-to-go/board13-1200x1200.webp 1200w, /blog/introduction-to-go/board13-1400x1400.webp 1400w, /blog/introduction-to-go/board13-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board12-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board12-576x576.webp 576w, /blog/introduction-to-go/board12-768x768.webp 768w, /blog/introduction-to-go/board12-992x992.webp 992w, /blog/introduction-to-go/board12-1200x1200.webp 1200w, /blog/introduction-to-go/board12-1400x1400.webp 1400w, /blog/introduction-to-go/board12-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+</tr>
+<tr>
+<td align="center"><strong>A</strong></td>
+<td align="center"><strong>B</strong></td>
+<td align="center"><strong>C</strong></td>
+</tr>
+</tbody>
+</table>
+
+</center><br><br>
+<p>If White&rsquo;s turn start on the board <strong>A</strong>, they could remove the black stone at <strong>D3</strong> since he only has one liberty at <strong>C3</strong> (so he is at <strong>Atari</strong>). That brings us to the board <strong>B</strong> and the turn goes to Black. Thinking of avenging their stone, they will want to eliminate the white token at <strong>C3</strong>, which is now at <strong>Atari</strong>. This brings us to the <strong>C</strong> board.</p>
+<p>Board <strong>C</strong> is the same as board <strong>A</strong>, so this loop could be repeated forever (Ko or 劫 means eternal in Japanese). Basically, the &lsquo;<strong>Ko</strong>&rsquo; rule tells us that we cannot make a move that recreates a board as in the previous move. In the example above:</p>
+
+<center><br>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board12-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board12-576x576.webp 576w, /blog/introduction-to-go/board12-768x768.webp 768w, /blog/introduction-to-go/board12-992x992.webp 992w, /blog/introduction-to-go/board12-1200x1200.webp 1200w, /blog/introduction-to-go/board12-1400x1400.webp 1400w, /blog/introduction-to-go/board12-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board13-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board13-576x576.webp 576w, /blog/introduction-to-go/board13-768x768.webp 768w, /blog/introduction-to-go/board13-992x992.webp 992w, /blog/introduction-to-go/board13-1200x1200.webp 1200w, /blog/introduction-to-go/board13-1400x1400.webp 1400w, /blog/introduction-to-go/board13-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class=""><img class="img-fluid "
+            src="/blog/introduction-to-go/board14-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board14-576x576.webp 576w, /blog/introduction-to-go/board14-768x768.webp 768w, /blog/introduction-to-go/board14-992x992.webp 992w, /blog/introduction-to-go/board14-1200x1200.webp 1200w, /blog/introduction-to-go/board14-1400x1400.webp 1400w, /blog/introduction-to-go/board14-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+</tr>
+<tr>
+<td align="center"><strong>A</strong></td>
+<td align="center"><strong>B</strong></td>
+<td align="center"><strong>C</strong></td>
+</tr>
+</tbody>
+</table>
+
+</center><br><br>
+<p>Black, on the board <strong>C</strong>, could put anywhere, except for <strong>D3</strong>, which would cause a &lsquo;<strong>Ko</strong>&rsquo;. On the next move, it could be used again.</p>
+<p>These are the basic rules, it only remains to know when a game ends and how to know who wins.</p>
+<p>A game ends when <strong>both players decide to pass their turn</strong>. A player may do so at any time during the game. Do not put any stone and pass the turn to your opponent. Normally only a turn is passed when a player considers that it is not worth putting more stones on the board. And it is that, as we will see shortly, when you think you have all your safe territories, putting superfluous stones takes away points.</p>
+<p>When both players pass, the game is over and it&rsquo;s time to count points. Let&rsquo;s see a finished board and how we would count the points of both players to know who is the winner:</p>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board15-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board15-576x576.webp 576w, /blog/introduction-to-go/board15-768x768.webp 768w, /blog/introduction-to-go/board15-992x992.webp 992w, /blog/introduction-to-go/board15-1200x1200.webp 1200w, /blog/introduction-to-go/board15-1400x1400.webp 1400w, /blog/introduction-to-go/board15-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>As I said at the beginning, the purpose of this game is to have more territory and capture stones from your opponent. Suppose the black player has captured <strong>6 white stones</strong> and the white player has another <strong>6 black stones</strong> as well. Let&rsquo;s count how much land each player has totally encompassed:</p>
+
+<center><br>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board17-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board17-576x576.webp 576w, /blog/introduction-to-go/board17-768x768.webp 768w, /blog/introduction-to-go/board17-992x992.webp 992w, /blog/introduction-to-go/board17-1200x1200.webp 1200w, /blog/introduction-to-go/board17-1400x1400.webp 1400w, /blog/introduction-to-go/board17-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+<td align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/blog/introduction-to-go/board19-2800x2800.jpg"
+            
+            
+            srcset="/blog/introduction-to-go/board19-576x576.webp 576w, /blog/introduction-to-go/board19-768x768.webp 768w, /blog/introduction-to-go/board19-992x992.webp 992w, /blog/introduction-to-go/board19-1200x1200.webp 1200w, /blog/introduction-to-go/board19-1400x1400.webp 1400w, /blog/introduction-to-go/board19-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br></td>
+</tr>
+<tr>
+<td align="center"><strong>Black: 7 points</strong></td>
+<td align="center"><strong>White: 5 points</strong></td>
+</tr>
+</tbody>
+</table>
+
+</center><br><br>
+<p>Black would add <strong>6 points</strong> for captured stones and <strong>7 points</strong> for territory won, in total <strong>13 points</strong>. Note that <strong>D3</strong> does not count as won territory for anyone because it is not <strong>fully encompassed</strong> by stones of one color.</p>
+<p>White adds <strong>6 points</strong> for captured pieces and <strong>5 for territory</strong>, in total <strong>11 points</strong>. Black has won the game because they have conquered more territory than white.</p>
+<p>Can a tie occur? The points of both players could be identical and to solve this (and another problem) the &lsquo;<strong>Komi</strong>&rsquo; was created. This is one of the few variations that the original game rules have suffered since it was invented.</p>
+<p>Back in 1930, the great masters of the time realized that there was an advantage to moving first (traditionally black). To fix it, they gave White an initial score to make up for that disadvantage, the &lsquo;<strong>Komi</strong>&rsquo;. Its value has varied greatly over time. In current tournaments it is set between <strong>5.5</strong> and <strong>6.5</strong>. In <strong>amateur</strong> games, where players don&rsquo;t know how to take advantage of that advantage, <strong>0.5</strong> is usually used.</p>
+<p>Why are decimals used? Because by the way, thanks to &lsquo;<strong>Komi</strong>&rsquo; games can never end in a draw. In the case of the example, a &lsquo;<strong>Komi</strong>&rsquo; of <strong>0.5</strong> should be added to White&rsquo;s score. The end result would be black <strong>13 points</strong>, white <strong>11.5 points</strong>, so black would continue to win.</p>
+
+<h2 id="lets-play" class="heading">Lets play! <a href="#lets-play" aria-labelledby="lets-play">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>You already know the basics of Go and <strong>you can start playing</strong>! If you play online, you will be interested to know that there is a way to know how good a player is. Each player has a rank according to the games he wins. When you start you don&rsquo;t have any rank (normally it will tell you that you have a rank &lsquo;<strong>?</strong>&rsquo;). Until you play your first rated game (on 19×19 boards) you will not be assigned one.</p>
+<p>Amateur players usually start with <strong>30 kyu</strong> (Japanese system). The better you are, the less <strong>kyu</strong> you will have. When you have <strong>1 kyu</strong> you can go to the next category and be <strong>1 dan</strong>. Here are the best players. The better you play, the more you will have. It usually goes from <strong>1 dan</strong> to <strong>9 dan</strong>. The winning teacher of the most prestigious Go tournament, is usually called <strong>Judan</strong>, which means <strong>10 dan</strong>.</p>
+<p>To play online the best <strong>IMHO</strong> site is <a href="https://online-go.com">online-go</a>.</p>
+
+<br><br>
+
+
+
+<div class="row row-cols-2 mt-5 mb-3">
+    <div class="col">
+        </div>
+    <div class="col text-end">
+        <a class="previous" href="/blog/design-patterns-in-game-development/">
+                    Design Patterns In Game Development&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-arrow-right "></i> --><svg class="svg-inline--fa fas fa-arrow-right " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+
+    
+
+                </a></div>
+</div>
+
+
+                </div>
+                <div class="col col-md-3 col-lg-2 d-none d-md-block pt-5">
+                    
+    
+
+
+<div class="toc toc-sidebar mb-5 my-md-0 mb-lg-5 p-3 text-body-secondary sticky-top">
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+<strong class="d-block h6 my-2 pb-2">On this page:</strong>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-go">What is Go?</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#basic-rules">Basic rules</a></li>
+    <li><a href="#lets-play">Lets play!</a></li>
+  </ul>
+</nav>
+
+    </div>
+
+                </div>
+            </div>
+        </div>
+<div class="giscus"></div>
+                
+                
+
+  
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="FronkonGames/fronkongames.github.io"
+    data-repo-id="R_kgDOIyuXfQ"
+    data-category="Comments"
+    data-category-id="DIC_kwDOIyuXfc4Cf3OB"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    data-strict="1"
+    crossorigin="anonymous"
+    onload="document.body.dispatchEvent(new Event('giscus-load'))"
+    async
+  ></script>
+
+
+<div class="container-fluid bg-primary bg-opacity-10">
+        <div class="container-xxl px-4 px-xxl-0">
+            <div class="row row-cols-2 py-3 align-items-center">
+                <div class="col col-6">
+                    <div class="row justify-content-end p-0">
+                        <div class="col-12 col-md-8 p-0">
+                            <div class="fs-3 fw-bold">Any questions or suggestions?</div>
+                            <p>Just write an email to <a href="mailto:fronkongames@gmail.com">fronkongames@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-6 text-sm-start">
+                    <a href="mailto:fronkongames@gmail.com"  target="_blank" rel="noopener noreferrer" aria-label="eMail" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-envelope fa-2x"></i> --><svg class="svg-inline--fa fa fa-envelope fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://www.linkedin.com/in/martinbr"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-linkedin fa-2x"></i> --><svg class="svg-inline--fa fab fa-linkedin fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://x.com/fronkongames"  target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-twitter fa-2x"></i> --><svg class="svg-inline--fa fab fa-twitter fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://github.com/FronkonGames"  target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-github fa-2x"></i> --><svg class="svg-inline--fa fab fa-github fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://www.youtube.com/@fronkongames"  target="_blank" rel="noopener noreferrer" aria-label="Youtube" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-youtube fa-2x"></i> --><svg class="svg-inline--fa fab fa-youtube fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+<footer class="container-fluid footer text-center p-3">
+    <div class="container-xxl text-center">
+        <small>
+            Copyright © 2024 Fronkon Games
+            
+            
+                
+                
+            
+        </small>
+    </div>
+</footer>
+        </div>
+
+        <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3">
+
+
+
+
+
+
+
+<div id="toast-copied-code-message" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="me-auto">Fronkon Games</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">Code copied to clipboard</div>
+</div>
+</div>
+
+<script src="/js/main.bundle.min.b52f6fa5637f28846d0cef5fc78cb9e88797809b624dcc74b3794dca2372e075.js" integrity="sha256-tS9vpWN/KIRtDO9fx4y56IeXgJtiTcx0s3lNyiNy4HU=" crossorigin="anonymous" async></script>
+    
+
+    
+
+
+
+</body>
+</html>

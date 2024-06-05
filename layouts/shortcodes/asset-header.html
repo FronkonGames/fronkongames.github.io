@@ -1,0 +1,102 @@
+{{- $youtube := .Get "youtube" | default "" -}}
+{{- $store := .Get "store" | default "" -}}
+{{- $demo := .Get "demo" | default "" -}}
+{{- $demo2 := .Get "demo2" | default "" -}}
+
+{{- if ne $youtube "" -}}
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ $youtube }}?origin={{ .Site.BaseURL }}" allowfullscreen title="YouTube Video">
+  </iframe>
+</div>
+<div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div>
+{{- end -}}
+
+<div align="right">
+
+{{- if ne $store "" -}}
+    {{- $output := partial "assets/button.html" (dict
+    "type" "button"
+    "title" "STORE"
+    "size" "md"
+    "color" "success"
+    "label" "STORE"
+    "href" (printf "%s%s" $store "?aid=1101l9zFC&utm_source=aff")
+    "icon" "fab unity"
+    "order" "first")
+    -}}
+    
+    {{ with .Get "wrapper" }}
+    {{ $output = printf `<div class="%s">%s</div>` . $output }}
+    {{ end }}
+    
+    {{- if .Parent -}}
+    {{ $current := .Parent.Scratch.Get "inner" }}
+    {{ if $current }}
+    {{ .Parent.Scratch.Set "inner" (print $current $output) }}
+    {{ else }}
+    {{ .Parent.Scratch.Set "inner" $output }}
+    {{ end }}
+    {{- else -}}
+    {{ $output | safeHTML }}
+    {{- end -}}
+{{- end -}}
+
+{{- if ne $demo "" -}}
+    {{- $output := partial "assets/button.html" (dict
+    "type" "button"
+    "title" "DEMO"
+    "size" "md"
+    "color" "success"
+    "label" "DEMO"
+    "href" $demo
+    "icon" "fas gamepad"
+    "order" "first")
+    -}}
+    
+    {{ with .Get "wrapper" }}
+    {{ $output = printf `<div class="%s">%s</div>` . $output }}
+    {{ end }}
+    
+    {{- if .Parent -}}
+    {{ $current := .Parent.Scratch.Get "inner" }}
+    {{ if $current }}
+    {{ .Parent.Scratch.Set "inner" (print $current $output) }}
+    {{ else }}
+    {{ .Parent.Scratch.Set "inner" $output }}
+    {{ end }}
+    {{- else -}}
+    {{ $output | safeHTML }}
+    {{- end -}}
+{{- end -}}
+
+{{- if ne $demo2 "" -}}
+    {{- $output := partial "assets/button.html" (dict
+    "type" "button"
+    "title" "DEMO"
+    "size" "md"
+    "color" "success"
+    "label" "DEMO"
+    "href" $demo2
+    "icon" "fas gamepad"
+    "order" "first")
+    -}}
+    
+    {{ with .Get "wrapper" }}
+    {{ $output = printf `<div class="%s">%s</div>` . $output }}
+    {{ end }}
+    
+    {{- if .Parent -}}
+    {{ $current := .Parent.Scratch.Get "inner" }}
+    {{ if $current }}
+    {{ .Parent.Scratch.Set "inner" (print $current $output) }}
+    {{ else }}
+    {{ .Parent.Scratch.Set "inner" $output }}
+    {{ end }}
+    {{- else -}}
+    {{ $output | safeHTML }}
+    {{- end -}}
+{{- end -}}
+
+</div><br><br>

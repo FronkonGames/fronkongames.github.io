@@ -1,0 +1,1818 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="theme" content="Hinode 0.24.0-beta3">
+    
+
+
+
+
+
+    
+    
+<link rel="stylesheet" href="/css/main.min.beeaeaf5cec42efc86b3a10d5ccac318f52d6a942f3f6a165e137460683f6d54.css" integrity="sha256-vurq9c7ELvyGs6ENXMrDGPUtapQvP2oWXhN0YGg/bVQ=" crossorigin="anonymous">
+    
+        
+    
+        
+        <link rel="preload" href="/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+
+
+
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Fronkon Games - Rendering A Card 🖌️</title>
+    <meta name="description" content="How to make a custom shader to render cards using &#39;Universal RP&#39; from Unity">
+
+<link rel="canonical" href="https://fronkongames.github.io/projects/kairos/rendering-a-card/">
+
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rendering A Card 🖌️">
+<meta property="og:description" content="How to make a custom shader to render cards using &#39;Universal RP&#39; from Unity">
+<meta property="og:url" content="https://fronkongames.github.io/projects/kairos/rendering-a-card/">
+<meta property="og:site_name" content="Fronkon Games">
+<meta property="article:published_time" content="1970-01-01T01:00:03+01:00">
+    <meta property="article:modified_time" content="1970-01-01T01:00:03+01:00">
+    <meta property="og:image" content="https://fronkongames.github.io/img/kairos_rendering_a_card.gif">
+<meta property="og:image:alt" content="Rendering A Card 🖌️">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:title" content="Rendering A Card 🖌️">
+<meta name="twitter:description" content="How to make a custom shader to render cards using &#39;Universal RP&#39; from Unity">
+<meta name="twitter:image" content="https://fronkongames.github.io/img/kairos_rendering_a_card.gif">
+<meta name="twitter:image:alt" content="Rendering A Card 🖌️">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://fronkongames.github.io/#/schema/organization/1",
+      "name": "Fronkon Games",
+      "url": "https://fronkongames.github.io/",
+      "sameAs": [
+        "https://x.com/fronkongames"
+        , "https://www.linkedin.com/in/martinbr"
+        , "https://github.com/FronkonGames"
+        ],
+      "image": {
+          "@type": "ImageObject",
+          "@id": "https://fronkongames.github.io/#/schema/image/1",
+          "url": "https://fronkongames.github.io/\u003cnil\u003e",
+          "width": null ,
+          "height": null ,
+          "caption": "Fronkon Games"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://fronkongames.github.io/#/schema/website/1",
+      "url": "https://fronkongames.github.io/",
+      "name": "Fronkon Games",
+      "description": "Hi! I\u0027m Martin Bustos, an indie game developer and asset store publisher",
+      "publisher": {
+          "@id": "https://fronkongames.github.io/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://fronkongames.github.io/projects/kairos/rendering-a-card/",
+      "url": "https://fronkongames.github.io/projects/kairos/rendering-a-card/",
+      "name": "Rendering A Card 🖌️",
+      "description": "How to make a custom shader to render cards using \u0027Universal RP\u0027 from Unity",
+      "isPartOf": {
+        "@id": "https://fronkongames.github.io/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://fronkongames.github.io/#/schema/organization/1"
+        },
+      "datePublished": "1970-01-01T01:00:03CET",
+      "dateModified": "1970-01-01T01:00:03CET",
+      "breadcrumb": {
+        "@id": "https://fronkongames.github.io/projects/kairos/rendering-a-card/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://fronkongames.github.io/projects/kairos/rendering-a-card/#/schema/image/2"
+      },
+      "inLanguage": "es-ES",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://fronkongames.github.io/projects/kairos/rendering-a-card/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fronkongames.github.io/projects/kairos/rendering-a-card/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://fronkongames.github.io/",
+          "url": "https://fronkongames.github.io/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://fronkongames.github.io/projects/",
+          "url": "https://fronkongames.github.io/projects/",
+          "name": "Projects"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://fronkongames.github.io/projects/kairos/",
+          "url": "https://fronkongames.github.io/projects/kairos/",
+          "name": "Kairos"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "https://fronkongames.github.io/projects/kairos/rendering-a-card/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://fronkongames.github.io/projects/kairos/rendering-a-card/#/schema/image/2",
+          "url": "https://fronkongames.github.io/img/kairos_rendering_a_card.gif",
+          "contentUrl": "https://fronkongames.github.io/img/kairos_rendering_a_card.gif",
+          "caption": "Rendering A Card 🖌️"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_16x16_resize_catmullrom_3.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_32x32_resize_catmullrom_3.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_48x48_resize_catmullrom_3.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_180x0_resize_catmullrom_3.png">
+    
+
+</head>
+
+    <body>
+<script src="/js/critical.bundle.min.96ae5a5b75a1905e739850994918bc181acb7543200ad6a79a31b0980bbb0009.js" integrity="sha256-lq5aW3WhkF5zmFCZSRi8GBrLdUMgCtanmjGwmAu7AAk=" crossorigin="anonymous"></script>
+    <div class="d-flex flex-column min-vh-100">
+            <div class="d-flex flex-column ">
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid fixed-top p-0">
+
+
+
+
+
+
+<nav class="navbar p-4 bg-body navbar-fixed-top navbar-expand-md"
+        
+        
+        >
+        <div class="container-xxl p-0">
+            <div class="d-flex navbar-container justify-content-center">
+                
+                <div class="d-flex align-items-center">
+                        <button class="navbar-toggler collapsed p-0 mx-auto invisible fw-30" type="button">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-ellipsis fa-fw"></i> --><svg class="svg-inline--fa fas fa-ellipsis fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
+
+    
+</button></div>
+        
+                
+                <div class="mx-auto">
+                    <a class="navbar-brand" href="/" aria-label="Home">
+                            <img src="/img/logo_icon.png" alt="Fronkon Games" height="40"></a>
+                </div>
+        
+                
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler main-nav-toggler collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-0-collapse"
+                        aria-controls="navbar-0" aria-expanded="false" aria-label="Toggle main navigation">
+                        <span class="toggler-icon top-bar emphasis"></span>
+                        <span class="toggler-icon middle-bar emphasis"></span>
+                        <span class="toggler-icon bottom-bar emphasis"></span>
+                    </button>
+                </div>
+            </div>
+    
+            <div class="navbar-collapse collapse" id="navbar-0-collapse">
+                <div class="d-flex flex-fill ms-md-3">
+    <form class="search flex-fill position-relative me-auto">
+        <input class="search-input form-control is-search" type="search" placeholder="Search this site" aria-label="Search this site" autocomplete="off">
+        <div class="search-suggestions shadow bg-body rounded d-none" data-no-results="No results for"></div>
+    </form>
+</div>
+
+                <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link" 
+        
+        data-nav="main" data-nav-main="store" 
+        href="/store/" ><strong><span >STORE</span></strong>&nbsp;</a>
+</li>
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link active" 
+        
+        data-nav="main" data-nav-main="projects" 
+        href="/projects/" ><strong><span  class="active">PROJECTS</span></strong>&nbsp;</a>
+</li>
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link" 
+        
+        data-nav="main" data-nav-main="blog" 
+        href="/blog/" ><strong><span >BLOG</span></strong>&nbsp;</a>
+</li><li class="nav-item dropdown d-md-none">
+        <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-label="Toggle theme" aria-expanded="false" id="-theme-collapsed">
+            <span class="theme-icon-active">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    &nbsp;
+</span>&nbsp;Toggle theme
+            <span class="d-md-none"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="-theme-collapsed">
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="light" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    
+</span>&nbsp;Light
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="dark" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-moon fa-fw"></i> --><svg class="svg-inline--fa fas fa-moon fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+
+    
+</span>&nbsp;Dark
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="auto" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-circle-half-stroke fa-fw"></i> --><svg class="svg-inline--fa fas fa-circle-half-stroke fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+
+    
+</span>&nbsp;Auto
+                </a>
+            </li>
+        </ul>
+    </li><li class="nav-item dropdown d-none d-md-block">
+        <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-label="Toggle theme" aria-expanded="false" id="-theme">
+            <span class="theme-icon-active">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    &nbsp;
+</span>
+            <span class="d-md-none"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="-theme">
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="light" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+
+    
+</span>&nbsp;Light
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="dark" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-moon fa-fw"></i> --><svg class="svg-inline--fa fas fa-moon fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+
+    
+</span>&nbsp;Dark
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="auto" href="#!">
+                    <span class="theme-icon">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-circle-half-stroke fa-fw"></i> --><svg class="svg-inline--fa fas fa-circle-half-stroke fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+
+    
+</span>&nbsp;Auto
+                </a>
+            </li>
+        </ul>
+    </li></ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="main-content">
+                    </div>
+                
+            </div>
+
+            
+                
+    
+
+    
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvass-sidebar" aria-inledby="offcanvas-label">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvas-label">Projects</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                
+
+            </div>
+        </div>
+    
+
+    <div class="container-xxl flex-fill p-4 px-xxl-0">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col col-lg-2 d-none d-lg-block sidebar-overflow sticky-top pt-5">
+                    
+
+                </div>
+                <div class="col-12 col-md-9 col-lg-8 mb-5 p-4">
+                    
+
+
+
+
+
+
+
+
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                
+                    <li class="breadcrumb-item"><a href="/projects/">Projects</a></li>
+                
+                    <li class="breadcrumb-item"><a href="/projects/kairos/">Kairos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Rendering A Card 🖌️</li>
+        </ol>
+    </nav>
+
+    
+
+
+
+
+
+
+
+
+<div class="d-md-none pb-5">
+
+
+
+
+
+
+</div>
+
+
+
+<center>
+<video src="promo.mp4" type="video/mp4" loop="false" preload="auto" autoplay  class="video-shortcode">
+  There should have been a video here but your browser does not seem
+  to support it.
+</video>
+</center>
+<br>
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            All art in this post have been generated by an AI and do not represent the final style of the game
+        </div>
+    </div>
+<p>As we saw in the <a href="../making-a-3d-card-in-blender/">previous post</a>, each card has three materials:</p>
+<ul>
+<li><strong>FrontFace</strong>: the face where all the important information and the image representing the card will be.</li>
+<li><strong>BackFace</strong>: the face that will be seen when the card is face down.</li>
+<li><strong>Border</strong>: the border material of the card.</li>
+</ul>
+<p>To be able to adjust to the maximum each one of these materials, I will create three custom shaders using the pipeline that the game will use: &lsquo;<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html">Universal RP</a>&rsquo;, specifically version 12.1.</p>
+<p>The simplest shader of the three is the one that is in charge of drawing the border of the card, which only has to draw one color:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">Shader</span> <span class="s">&#34;Card/Border&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Properties are options set per material,</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// exposed by the material inspector.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Properties</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// [MainColor] allow Material.color to use the correct properties.</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [MainColor]</span> <span class="n">_BaseColor</span><span class="p">(</span><span class="s">&#34;Base Color&#34;</span><span class="p">,</span> <span class="n">Color</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Subshaders allow for different behaviour and options for</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// different pipelines and platforms.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">SubShader</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// These tags are shared by all passes in this sub shader.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Tags</span> <span class="p">{</span> <span class="s">&#34;RenderType&#34;</span> <span class="p">=</span> <span class="s">&#34;Opaque&#34;</span> <span class="s">&#34;Queue&#34;</span> <span class="p">=</span> <span class="s">&#34;Geometry&#34;</span> <span class="s">&#34;RenderPipeline&#34;</span> <span class="p">=</span> <span class="s">&#34;UniversalPipeline&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Shaders can have several passes which are used to render</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// different data about the material. Each pass has it&#39;s own</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// vertex and fragment function and shader variant keywords.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Pass</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Begin HLSL code</span>
+</span></span><span class="line"><span class="cl">      <span class="n">HLSLPROGRAM</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// Register our programmable stage functions.</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">#pragma</span> <span class="n">vertex</span> <span class="n">vert</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">#pragma</span> <span class="n">fragment</span> <span class="n">frag</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Include basics URP functions.</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="n">include</span> <span class="s">&#34;Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// This attributes struct receives data about the mesh we&#39;re</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// currently rendering. Data is automatically placed in</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// fields according to their semantic.</span>
+</span></span><span class="line"><span class="cl">      <span class="k">struct</span> <span class="nc">Attributes</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">float4</span> <span class="n">vertex</span> <span class="p">:</span> <span class="n">POSITION</span><span class="p">;</span>  <span class="c1">// Position in object space.</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// This struct is output by the vertex function and input to</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// the fragment function. Note that fields will be</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// transformed by the intermediary rasterization stage.</span>
+</span></span><span class="line"><span class="cl">      <span class="k">struct</span> <span class="nc">Varyings</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// This value should contain the position in clip space (which</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// is similar to a position on screen) when output from the</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// vertex function. It will be transformed into pixel position</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// of the current fragment on the screen when read from</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// the fragment function.      </span>
+</span></span><span class="line"><span class="cl">        <span class="n">float4</span> <span class="n">position</span> <span class="p">:</span> <span class="n">SV_POSITION</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">half4</span> <span class="n">_BaseColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// The vertex function. This runs for each vertex on the mesh. It</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// must output the position on the screen each vertex should</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// appear at, as well as any data the fragment function will need.</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Varyings</span> <span class="n">vert</span><span class="p">(</span><span class="n">Attributes</span> <span class="n">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Varyings</span> <span class="n">output</span> <span class="p">=</span> <span class="p">(</span><span class="n">Varyings</span><span class="p">)</span><span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// These helper functions transform object space values into</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// world and clip space.        </span>
+</span></span><span class="line"><span class="cl">        <span class="kd">const</span> <span class="n">VertexPositionInputs</span> <span class="n">positionInputs</span> <span class="p">=</span> <span class="n">GetVertexPositionInputs</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">vertex</span><span class="p">.</span><span class="n">xyz</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Pass position data to the fragment function.</span>
+</span></span><span class="line"><span class="cl">        <span class="n">output</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">positionInputs</span><span class="p">.</span><span class="n">positionCS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// The fragment function. This runs once per fragment, which</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// you can think of as a pixel on the screen. It must output</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// the final color of this pixel.</span>
+</span></span><span class="line"><span class="cl">      <span class="n">half4</span> <span class="n">frag</span><span class="p">(</span><span class="kd">const</span> <span class="n">Varyings</span> <span class="n">input</span><span class="p">)</span> <span class="p">:</span> <span class="n">SV_Target</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_BaseColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ENDHLSL</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>To check that everything goes well, I will create three materials with the above shader, each one of a color and assign it to each<br />
+material on the card.</p>
+<center>
+  <img src="rgb.gif" width="100%" height="100%"/>
+</center>
+<br>
+<p>It looks like everything is correct.</p>
+<p>The next shader in difficulty would be the one for the back face. In it I want to mix two textures, one for the background image and another one as a frame.<br />
+The texture of the frame must have a transparent zone (alpha equal to 0) that allows to see the background texture.</p>
+
+<center>
+<table>
+<thead>
+<tr>
+<th align="center">Background</th>
+<th align="center">Frame</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src="backface.png" alt="Background" title="Background" /></td>
+<td align="center"><img src="backframe.png" alt="Frame" title="Frame" /></td>
+</tr>
+</tbody>
+</table>
+
+</center><br>
+<p>To mix, or more precisely <em>interpolate</em>, both pixels I will use the function <a href="https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-lerp">lerp(x, y, s)</a>, which returns <em>x</em> if <em>s</em> is 0, <em>y</em> if <em>s</em> is 1 and a linearly interpolated value between <em>x</em> and <em>y</em> if the value of <em>s</em> is between 0 and 1.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">half3</span> <span class="n">pixel</span> <span class="p">=</span> <span class="n">lerp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">a</span><span class="p">);</span></span></span></code></pre></div></div><p>In this way if the transparency of the frame is 0, you will see the image, otherwise you will see the frame. And if it is something in between, we will see a mix between the two images.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/back-2800x4631.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/back-576x953.webp 576w, /projects/kairos/rendering-a-card/back-768x1270.webp 768w, /projects/kairos/rendering-a-card/back-992x1641.webp 992w, /projects/kairos/rendering-a-card/back-1200x1985.webp 1200w, /projects/kairos/rendering-a-card/back-1400x2315.webp 1400w, /projects/kairos/rendering-a-card/back-2800x4631.webp 2800w" sizes="100vw"
+            height="4631"
+            width="2800"
+            >
+</div><br>
+<p>This new shader would look like this.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">Shader</span> <span class="s">&#34;Card/Back Side&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Properties</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// [MainTexture] allow Material.mainTexture to use</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// the correct properties.</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [MainTexture]</span> <span class="n">_BaseMap</span><span class="p">(</span><span class="s">&#34;Image (RGB)&#34;</span><span class="p">,</span> <span class="m">2D</span><span class="p">)</span> <span class="p">=</span> <span class="s">&#34;white&#34;</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">_FrameTex</span><span class="p">(</span><span class="s">&#34;Frame (RGBA)&#34;</span><span class="p">,</span> <span class="m">2D</span><span class="p">)</span> <span class="p">=</span> <span class="s">&#34;white&#34;</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_FrameColor</span><span class="p">(</span><span class="s">&#34;Frame Color&#34;</span><span class="p">,</span> <span class="n">Color</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">SubShader</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Tags</span> <span class="p">{</span> <span class="s">&#34;RenderType&#34;</span> <span class="p">=</span> <span class="s">&#34;Opaque&#34;</span> <span class="s">&#34;Queue&#34;</span> <span class="p">=</span> <span class="s">&#34;Geometry&#34;</span> <span class="s">&#34;RenderPipeline&#34;</span> <span class="p">=</span> <span class="s">&#34;UniversalPipeline&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Pass</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">HLSLPROGRAM</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">#pragma</span> <span class="n">vertex</span> <span class="n">vert</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">#pragma</span> <span class="n">fragment</span> <span class="n">frag</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="n">include</span> <span class="s">&#34;Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="n">include</span> <span class="s">&#34;Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceInput.hlsl&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">struct</span> <span class="nc">Attributes</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">float4</span> <span class="n">vertex</span> <span class="p">:</span> <span class="n">POSITION</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">float2</span> <span class="n">uv</span>     <span class="p">:</span> <span class="n">TEXCOORD0</span><span class="p">;</span> <span class="c1">// Material texture UVs.</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">struct</span> <span class="nc">Varyings</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">float4</span> <span class="n">position</span> <span class="p">:</span> <span class="n">SV_POSITION</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">float2</span> <span class="n">uv</span>       <span class="p">:</span> <span class="n">TEXCOORD0</span><span class="p">;</span> <span class="c1">// Material texture UVs.</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// This is automatically set by Unity.</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Used in TRANSFORM_TEX to apply UV tiling.</span>
+</span></span><span class="line"><span class="cl">      <span class="n">float4</span> <span class="n">_BaseMap_ST</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Defines the Frame texture, sampler and color.</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// _BaseMap is already defined in SurfaceInput.hlsl.</span>
+</span></span><span class="line"><span class="cl">      <span class="n">TEXTURE2D</span><span class="p">(</span><span class="n">_FrameTex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">SAMPLER</span><span class="p">(</span><span class="n">sampler_FrameTex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">float4</span> <span class="n">_FrameColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="n">Varyings</span> <span class="n">vert</span><span class="p">(</span><span class="n">Attributes</span> <span class="n">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Varyings</span> <span class="n">output</span> <span class="p">=</span> <span class="p">(</span><span class="n">Varyings</span><span class="p">)</span><span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">const</span> <span class="n">VertexPositionInputs</span> <span class="n">positionInputs</span> <span class="p">=</span> <span class="n">GetVertexPositionInputs</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">vertex</span><span class="p">.</span><span class="n">xyz</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">output</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">positionInputs</span><span class="p">.</span><span class="n">positionCS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">output</span><span class="p">.</span><span class="n">uv</span> <span class="p">=</span> <span class="n">TRANSFORM_TEX</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">,</span> <span class="n">_BaseMap</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">half4</span> <span class="n">frag</span><span class="p">(</span><span class="n">Varyings</span> <span class="n">input</span><span class="p">)</span> <span class="p">:</span> <span class="n">SV_Target</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Sample the textures.</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">const</span> <span class="n">half4</span> <span class="n">image</span> <span class="p">=</span> <span class="n">SAMPLE_TEXTURE2D</span><span class="p">(</span><span class="n">_BaseMap</span><span class="p">,</span> <span class="n">sampler_BaseMap</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">const</span> <span class="n">half4</span> <span class="n">frame</span> <span class="p">=</span> <span class="n">SAMPLE_TEXTURE2D</span><span class="p">(</span><span class="n">_FrameTex</span><span class="p">,</span> <span class="n">sampler_FrameTex</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">)</span> <span class="p">*</span> <span class="n">_FrameColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Interpolates between image and frame according</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// to the transparency of the frame.</span>
+</span></span><span class="line"><span class="cl">        <span class="n">half4</span> <span class="n">pixel</span> <span class="p">=</span> <span class="n">lerp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">pixel</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ENDHLSL</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>The shader for the front part of the card, in a first version, is similar to the previous one but with another layer. It consists of three layers, that from more to less depth are:</p>
+<ul>
+<li><strong>Background</strong>: the background of the card.</li>
+<li><strong>Image</strong>: the image that represents the card.</li>
+<li><strong>Frame</strong>: the border of the card.</li>
+</ul>
+
+<center>
+<table>
+<thead>
+<tr>
+<th align="center">Background</th>
+<th align="center">Image</th>
+<th align="center">Frame</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src="background.png" alt="Background" title="Background" /></td>
+<td align="center"><img src="image.png" alt="Image" title="Image" /></td>
+<td align="center"><img src="frontframe.png" alt="Frame" title="Frame" /></td>
+</tr>
+</tbody>
+</table>
+
+</center><br>
+<p>In addition to defining the new texture, in the &lsquo;frag&rsquo; function you will have to add one more &lsquo;<strong>lerp</strong>&rsquo;:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl">  <span class="c1">// Sample the textures.</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">const</span> <span class="n">half4</span> <span class="n">image</span> <span class="p">=</span> <span class="n">SAMPLE_TEXTURE2D</span><span class="p">(</span><span class="n">_BaseMap</span><span class="p">,</span> <span class="n">sampler_BaseMap</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">const</span> <span class="n">half4</span> <span class="n">background</span> <span class="p">=</span> <span class="n">SAMPLE_TEXTURE2D</span><span class="p">(</span><span class="n">_BackgroundTex</span><span class="p">,</span> <span class="n">sampler_BackgroundTex</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">const</span> <span class="n">half4</span> <span class="n">frame</span> <span class="p">=</span> <span class="n">SAMPLE_TEXTURE2D</span><span class="p">(</span><span class="n">_FrameTex</span><span class="p">,</span> <span class="n">sampler_FrameTex</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Interpolates between image and background according to</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// the transparency of the frame.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">half4</span> <span class="n">pixel</span> <span class="p">=</span> <span class="n">lerp</span><span class="p">(</span><span class="n">background</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">image</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// And the result is interpolated with the frame</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// transparency.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pixel</span> <span class="p">=</span> <span class="n">lerp</span><span class="p">(</span><span class="n">pixel</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">pixel</span><span class="p">;</span></span></span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/front-2800x4726.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/front-576x972.webp 576w, /projects/kairos/rendering-a-card/front-768x1296.webp 768w, /projects/kairos/rendering-a-card/front-992x1675.webp 992w, /projects/kairos/rendering-a-card/front-1200x2026.webp 1200w, /projects/kairos/rendering-a-card/front-1400x2363.webp 1400w, /projects/kairos/rendering-a-card/front-2800x4726.webp 2800w" sizes="100vw"
+            height="4726"
+            width="2800"
+            >
+</div><br>
+<p>And why separate the background from the image when they could be a single texture and save a texture fetch? you might be asking yourself.</p>
+<p>And you would be right, since a texture fetch (the &lsquo;<strong>SAMPLE_TEXTURE2D</strong>&rsquo; macro) is one of the most expensive operations in shaders.</p>
+<p>The answer is that we can add effects <strong>behind</strong> the image representing the card and <strong>in front</strong> of it.</p>
+<p>The first effect we are going to see is the transformation of the UV coordinates. In particular, the displacement of these, with which we will achieve the rain effect and the fog effect that you saw at the beginning of this post.</p>
+<p>These effects depend on the type of UV mapping your geometry uses. In my case, as we saw in the <a href="../making-a-3d-card-in-blender/">previous post</a>, I use a cubic projection so if I modify one axis of the coordinates I know that the texture will be displaced on one axis.</p>
+<p>You can do a simple test by creating a cube in a scene and assigning a material to it. You can modify the UV coordinates of the material by changing its &lsquo;<strong>Offset</strong>&rsquo;.</p>
+<p><img src="uv.gif" alt="Offset UV" title="Offset UV" /></p>
+<p>I&rsquo;m going to add two more textures to the shader. One between &lsquo;<strong>background</strong>&rsquo; and &lsquo;<strong>image</strong>&rsquo; and another between &lsquo;<strong>image</strong>&rsquo; and &lsquo;<strong>frame</strong>&rsquo;. In total we would have these layers:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/layers-2800x1670.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/layers-576x343.webp 576w, /projects/kairos/rendering-a-card/layers-768x458.webp 768w, /projects/kairos/rendering-a-card/layers-992x591.webp 992w, /projects/kairos/rendering-a-card/layers-1200x716.webp 1200w, /projects/kairos/rendering-a-card/layers-1400x835.webp 1400w, /projects/kairos/rendering-a-card/layers-2800x1670.webp 2800w" sizes="100vw"
+            height="1670"
+            width="2800"
+            >
+</div><br>
+<p>It will be in these two new textures where I will apply a displacement in their UV coordinates. We only have to modify the UV coordinates in the macro <strong>SAMPLE_TEXTURE2D</strong>. If &lsquo;<strong>_Offset</strong>&rsquo; were a vector with the offset, it would be applied like this:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">float2</span> <span class="n">newUV</span> <span class="p">=</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span> <span class="p">+</span> <span class="n">_Offset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="n">half4</span> <span class="n">image</span> <span class="p">=</span> <span class="n">SAMPLE_TEXTURE2D</span><span class="p">(</span><span class="n">_BackgroundFXTex</span><span class="p">,</span> <span class="n">sampler_BackgroundFXTex</span><span class="p">,</span> <span class="n">newUV</span><span class="p">);</span></span></span></code></pre></div></div><p>But instead of specifying a displacement, I will use a linear velocity vector. I will calculate the final displacement by multiplying this velocity by the time. The time is provided by Unity in the vector &lsquo;<a href="https://docs.unity3d.com/Manual/SL-UnityShaderVariables.html"><strong>_Time</strong></a>&rsquo;, its coordinate <strong>y</strong> being the unscaled time. If &lsquo;<strong>_ScrollVelocity</strong>&rsquo; were a vector with the linear velocity, it would be applied like this:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">float2</span> <span class="n">newUV</span> <span class="p">=</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span> <span class="p">+</span> <span class="n">frac</span><span class="p">(</span><span class="n">_ScrollVelocity</span> <span class="p">*</span> <span class="n">_Time</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="n">half4</span> <span class="n">image</span> <span class="p">=</span> <span class="n">SAMPLE_TEXTURE2D</span><span class="p">(</span><span class="n">_BackgroundFXTex</span><span class="p">,</span> <span class="n">sampler_BackgroundFXTex</span><span class="p">,</span> <span class="n">newUV</span><span class="p">);</span></span></span></code></pre></div></div><p>As the UV coordinates are between 0 and 1, with the function &lsquo;<a href="https://learn.microsoft.com/windows/win32/direct3dhlsl/dx-graphics-hlsl-frac"><strong>frac</strong></a>&rsquo; we will use only the decimal part to add it to these coordinates.</p>
+<p>By using two effect layers, one behind the image and one in front of it, we can give each layer a different speed to simulate depth by making the farthest layer slower.</p>
+<p>To create a rain effect I will use a rain texture that is &lsquo;<strong>seamless</strong>&rsquo;, that is, that you don&rsquo;t notice a cut when you move it. It is important that you use a texture format that allows the transparency channel to have more than one bit of color (not like the PNG format). In my case I used a TGA.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/rain-2800x2800.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/rain-576x576.webp 576w, /projects/kairos/rendering-a-card/rain-768x768.webp 768w, /projects/kairos/rendering-a-card/rain-992x992.webp 992w, /projects/kairos/rendering-a-card/rain-1200x1200.webp 1200w, /projects/kairos/rendering-a-card/rain-1400x1400.webp 1400w, /projects/kairos/rendering-a-card/rain-2800x2800.webp 2800w" sizes="100vw"
+            height="2800"
+            width="2800"
+            >
+</div><br>
+<p>The final effect would look something like this:</p>
+<center>
+  <img src="valeria.gif" width="70%" height="70%"/>
+</center>
+<br>
+<p>By changing the texture to a fog texture, and scrolling on the horizontal axis we can get a fog effect like this:</p>
+<center>
+  <img src="herrick.gif" width="70%" height="70%"/>
+</center>
+<br>
+<p>Finally it remains to add something fundamental, text. For this we will use <a href="https://docs.unity3d.com/Manual/com.unity.textmeshpro.html">TextMeshPro</a>, since it provides much better quality and options than the text offered by Unity. To install it just add it using the &lsquo;Package Manager&rsquo;.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/package-2800x1768.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/package-576x364.webp 576w, /projects/kairos/rendering-a-card/package-768x485.webp 768w, /projects/kairos/rendering-a-card/package-992x626.webp 992w, /projects/kairos/rendering-a-card/package-1200x758.webp 1200w, /projects/kairos/rendering-a-card/package-1400x884.webp 1400w, /projects/kairos/rendering-a-card/package-2800x1768.webp 2800w" sizes="100vw"
+            height="1768"
+            width="2800"
+            >
+</div><br>
+<p>I added a child and added a 3D text.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/tmp-2800x2863.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/tmp-576x589.webp 576w, /projects/kairos/rendering-a-card/tmp-768x785.webp 768w, /projects/kairos/rendering-a-card/tmp-992x1014.webp 992w, /projects/kairos/rendering-a-card/tmp-1200x1227.webp 1200w, /projects/kairos/rendering-a-card/tmp-1400x1432.webp 1400w, /projects/kairos/rendering-a-card/tmp-2800x2863.webp 2800w" sizes="100vw"
+            height="2863"
+            width="2800"
+            >
+</div><br>
+<p>And adjust the Z coordinate to be slightly ahead of the card.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/text-2800x970.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/text-576x199.webp 576w, /projects/kairos/rendering-a-card/text-768x266.webp 768w, /projects/kairos/rendering-a-card/text-992x343.webp 992w, /projects/kairos/rendering-a-card/text-1200x416.webp 1200w, /projects/kairos/rendering-a-card/text-1400x485.webp 1400w, /projects/kairos/rendering-a-card/text-2800x970.webp 2800w" sizes="100vw"
+            height="970"
+            width="2800"
+            >
+</div><br>
+<p>And <em>voalá</em>!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-10 mx-auto"><img class="img-fluid "
+            src="/projects/kairos/rendering-a-card/label-2800x1677.jpg"
+            
+            
+            srcset="/projects/kairos/rendering-a-card/label-576x345.webp 576w, /projects/kairos/rendering-a-card/label-768x460.webp 768w, /projects/kairos/rendering-a-card/label-992x594.webp 992w, /projects/kairos/rendering-a-card/label-1200x719.webp 1200w, /projects/kairos/rendering-a-card/label-1400x838.webp 1400w, /projects/kairos/rendering-a-card/label-2800x1677.webp 2800w" sizes="100vw"
+            height="1677"
+            width="2800"
+            >
+</div><br>
+<p>That&rsquo;s all for now. In next posts I will add other effects that can be useful for a card game. In the meantime you can add some small improvements like:</p>
+<ul>
+<li>One color for each layer to tint it. You would only have to multiply the result of <strong>SAMPLE_TEXTURE2D</strong> by that color.</li>
+<li>Scaling. Simply multiplying by a scalar the UV coordinate.</li>
+<li>Angular velocity, to rotate the layers of the effects.</li>
+<li>Use different <a href="https://photoshoptrainingchannel.com/blending-modes-explained/">blending functions</a> for the effect layers. In this post I have only used a simple way to blend the layers, but there are many blending functions that can give interesting results.</li>
+<li>And&hellip; can you think of anything else? I&rsquo;d love to read about it in the comments.</li>
+</ul>
+<p class="h4">Until next time&hellip; 
+
+
+
+
+
+
+
+    <span class="badge text-bg-secondary">stay gamedev, stay awesome!</span>
+    <br><br>
+</p>
+<p class="h4">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-code "></i> --><svg class="svg-inline--fa fas fa-code " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    &nbsp;
+<a href="https://gist.github.com/FronkonGames/78f2d00334b7aa8d3a3564b6c62f4fe7">Back Side Shader</a><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-code "></i> --><svg class="svg-inline--fa fas fa-code " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    &nbsp;
+<a href="https://gist.github.com/FronkonGames/c1e4c12b41612f72b84c6ed68076fb49">Front Side Shader</a><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-code "></i> --><svg class="svg-inline--fa fas fa-code " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    &nbsp;
+<a href="https://gist.github.com/FronkonGames/6b419e60eb42d81666bf35f18c59ab00">Border Shader</a></p>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            In these shaders I have prioritized readability over optimization
+        </div>
+    </div>
+
+
+
+<div class="row row-cols-2 mt-5 mb-3">
+    <div class="col">
+        <a class="next" href="/projects/kairos/dragging-and-dropping-3d-cards/">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-arrow-left "></i> --><svg class="svg-inline--fa fas fa-arrow-left " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+
+    
+&nbsp;Drag &amp; Drop Cards 🃏
+                </a></div>
+    <div class="col text-end">
+        <a class="previous" href="/projects/kairos/making-a-3d-card-in-blender/">
+                    Making A 3D Card In Blender 🃏&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-arrow-right "></i> --><svg class="svg-inline--fa fas fa-arrow-right " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+
+    
+
+                </a></div>
+</div>
+
+
+                </div>
+                <div class="col col-md-3 col-lg-2 d-none d-md-block pt-5">
+                    
+    
+
+
+<div class="toc toc-sidebar mb-5 my-md-0 mb-lg-5 p-3 text-body-secondary sticky-top">
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+
+    </div>
+
+                </div>
+            </div>
+        </div>
+<div class="giscus"></div>
+                
+                
+
+  
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="FronkonGames/fronkongames.github.io"
+    data-repo-id="R_kgDOIyuXfQ"
+    data-category="Comments"
+    data-category-id="DIC_kwDOIyuXfc4Cf3OB"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    data-strict="1"
+    crossorigin="anonymous"
+    onload="document.body.dispatchEvent(new Event('giscus-load'))"
+    async
+  ></script>
+
+
+<div class="container-fluid bg-primary bg-opacity-10">
+        <div class="container-xxl px-4 px-xxl-0">
+            <div class="row row-cols-2 py-3 align-items-center">
+                <div class="col col-6">
+                    <div class="row justify-content-end p-0">
+                        <div class="col-12 col-md-8 p-0">
+                            <div class="fs-3 fw-bold">Any questions or suggestions?</div>
+                            <p>Just write an email to <a href="mailto:fronkongames@gmail.com">fronkongames@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-6 text-sm-start">
+                    <a href="mailto:fronkongames@gmail.com"  target="_blank" rel="noopener noreferrer" aria-label="eMail" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-envelope fa-2x"></i> --><svg class="svg-inline--fa fa fa-envelope fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://www.linkedin.com/in/martinbr"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-linkedin fa-2x"></i> --><svg class="svg-inline--fa fab fa-linkedin fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://x.com/fronkongames"  target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-twitter fa-2x"></i> --><svg class="svg-inline--fa fab fa-twitter fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://github.com/FronkonGames"  target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-github fa-2x"></i> --><svg class="svg-inline--fa fab fa-github fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    <a href="https://www.youtube.com/@fronkongames"  target="_blank" rel="noopener noreferrer" aria-label="Youtube" class="text-decoration-none link-secondary d-inline p-2">
+                            
+                                
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-youtube fa-2x"></i> --><svg class="svg-inline--fa fab fa-youtube fa-2x" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+
+    &nbsp;
+
+                            
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+<footer class="container-fluid footer text-center p-3">
+    <div class="container-xxl text-center">
+        <small>
+            Copyright © 2024 Fronkon Games
+            
+            
+                
+                
+            
+        </small>
+    </div>
+</footer>
+        </div>
+
+        <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3">
+
+
+
+
+
+
+
+<div id="toast-copied-code-message" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="me-auto">Fronkon Games</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">Code copied to clipboard</div>
+</div>
+</div>
+
+<script src="/js/main.bundle.min.b52f6fa5637f28846d0cef5fc78cb9e88797809b624dcc74b3794dca2372e075.js" integrity="sha256-tS9vpWN/KIRtDO9fx4y56IeXgJtiTcx0s3lNyiNy4HU=" crossorigin="anonymous" async></script>
+    
+
+    
+
+
+
+</body>
+</html>

@@ -1,10 +1,15 @@
 ---
-title: "LUTs"
-date: 2022-10-01
-image: /store/luts/mini.png
-logo: /store/luts/logo.png
-description: "The largest collection of LUTs in the entire store"
-type: "store"
+author: Martin Bustos
+title: LUTs
+showTitle: false
+date: 5
+description: The largest collection of LUTs in the entire store
+tags: ["unity", "store", "lut", "luts"]
+metadata: none
+modules: ["mgallery"]
+showImage: true
+thumbnail:
+  url: img/luts.jpg
 ---
 
 Thanks to LUTs you can completely transform the look of your games, making them more coherent with your artistic preferences.
@@ -24,43 +29,35 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 * [Horror](#horror) (598 LUTs): the colors of fear...
 * [Sci-Fi](#scifi) (150 LUTs): futuristic and dystopian looks.
 
-{{< rawhtml >}}<br>{{< /rawhtml >}}
-{{< notice note "SPECIAL OFFER" >}}
-You can obtain each effect separately (for only $6!), but if you want multiple effects, you might be interested in '[LUTS BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-bundle-282899?aid=1101l9zFC&utm_source=aff)' where you can find them all at a special price!
-{{< /notice >}}
+{{< alert color="light" >}}
+You can obtain each effect separately (**for only $6!**), but if you want multiple effects, you might be interested in **'[LUTS BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-bundle-282899?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
+{{< /alert >}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🤔 What is a LUT?
+## What is a LUT?
 
 LUT, or '**L**ook**U**p **T**able', are a kind of color filter you use to alter the colors in your game. They apply predetermined sets of mathematical formulas to your game's existing colors to change those colors and achieve a desired look.
 
-{{< imagecenter src="/store/luts/howto.png" >}}
+{{< image src="howto.png" caption="Source > LUTs > Screen" wrapper="text-center">}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## ⚙️ Requirements
+## Requirements
 
-All '**LUTs**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP)', which means they will **not work** with Built-In, or HDRP.
+All '**LUTs**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
 You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
-{{< notice warning "" >}}
-All LUTs are 3D textures, so the hardware must support it (>2014). 
-{{< /notice >}}
-
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🖥️ Using them in the Editor
+## Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**LUTs**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
-{{< imagecenter src="/store/luts/editor_0.jpg" >}}
+{{< image src="editor_0.jpg" wrapper="col-6 mx-auto">}}
 
 Remember that the camera you are using must have the '**Post Processing**' option enabled.
 
-{{< imagecenter src="/store/luts/editor_1.jpg" >}}
+{{< image src="editor_1.jpg" wrapper="col-6 mx-auto">}}
 
 All '**LUTs**' have an inspector similar to this one:
 
-{{< imagecenter src="/store/luts/editor_2.jpg" >}}
+{{< image src="editor_2.jpg" wrapper="col-6 mx-auto">}}
 
 With the intensity (_1_) set to _1.0_ the effect is fully applied, with 0 it is deactivated and with the intermediate values you get a mix between the original and the final image.
 
@@ -68,17 +65,17 @@ There are two modes (_2_), the quality mode and the performance mode. The first 
 
 Each lut is contained in a _profile_ that you can find in the '_Profiles_' folder. By clicking on '**Profile**' (_3_) you will see all the available ones.
 
-{{< imagecenter src="/store/luts/editor_3.jpg" >}}
+{{< image src="editor_3.jpg" wrapper="col-6 mx-auto">}}
 
 All '**LUTs**' have an advanced color grading panel. Check '**Color grading**' (_1_) to activate it.
 
-{{< imagecenter src="/store/luts/color.jpg" >}}
+{{< image src="color.jpg" wrapper="col-6 mx-auto">}}
 
 '**Exposure**' (_2_) changes the exposure, or brightness. Just below you have a contrast control (_3_) and an HDR color (_4_) without alpha channel to tint the image.
 
 To move the color wheel, use '**Hue**' (_5_). To change the amount of color, use '**Saturation**' (_6_).
 
-Select the tone operator, '**Tonemap**' (_7_), that best suits your needs. The most popular ones are available: Neutral, ACES and Reinhard. If you want more, you may be interested in '[Artistic: Tonemapper](http://localhost:1313/store/artistic.html#tonemapper)'.
+Select the tone operator, '**Tonemap**' (_7_), that best suits your needs. The most popular ones are available: Neutral, ACES and Reinhard. If you want more, you may be interested in '[Artistic: Tonemapper](/store/artistic/#tonemapper)'.
 
 With '**White balance**' (_8_) you can adjust the perceived _temperature_ of the image. First you can make it perceived cooler or warmer. The next parameter modifies the color used to vary the perceived temperature.
 
@@ -90,53 +87,48 @@ The last setting is '**Shadow Midtones Highlights**' (_11_), it works like split
 
 They also have an '**Advanced**' panel with these options:
 
-{{< imagecenter src="/store/luts/advanced.jpg" >}}
+{{< image src="advanced.jpg" wrapper="col-6 mx-auto">}}
 
 Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
 
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🥸 VR
+## VR
 
 To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
 
-{{< imagecenter src="/store/luts/vr.jpg" >}}
+{{< image src="vr.jpg" wrapper="col-6 mx-auto">}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🪄 Using them in code
+## Using them in code
 
 You can also handle '**LUTs**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
 
 They are all of the style 'FronkonGames.LUTs.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Cyberpunk**' the code would be:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 using FronkonGames.LUTs.Cyberpunk;
-{{< /highlight >}}
-</br>
+```
 
 And with this code you could check if the effect is added, and if it is not, add it.
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 if (Cyberpunk.IsInRenderFeatures() == false)
     Cyberpunk.AddRenderFeature();
-{{< /highlight >}}
-</br>
+```
 
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
-{{< highlight csharp "linenos=false" >}}
- Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+```csharp
+Cyberpunk.Settings settings = Cyberpunk.GetSettings();
 
- settings.intensity = 0.5f;
- {{< /highlight >}}
-</br>
+settings.intensity = 0.5f;
+```
 
 You can load a _profile_ in several ways. A _profile_ is nothing more than a ScriptableObject, so it must be referenced by some object to be included in the build.
 
 A very simple way is to create a MonoBehaviour and add a list of _profiles_ to it. This way Unity will include in the build the _profiles_ that you have referenced.
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 public class ProfileBank : MonoBehaviour
 {
   [SerializableField]
@@ -153,12 +145,11 @@ public class ProfileBank : MonoBehaviour
     }
   }
 }
-{{< /highlight >}}
-</br>
+```
 
 Another method you can use, more versatile, is to move the _profiles_ folder into the '_Resources_' folder. Everything included in this folder will be added to the build and you can load its content with the [Resources](https://docs.unity3d.com/ScriptReference/Resources.html) class:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 // In this example the profiles are located
 // inside Resources in the folder 'LUTs/Profiles/Cyberpunk'.
 Cyberpunk.Settings settings = Cyberpunk.GetSettings();
@@ -166,380 +157,558 @@ Cyberpunk.Settings settings = Cyberpunk.GetSettings();
 Profile profile = Resources.Load<Profile>("LUTs/Profiles/Cyberpunk/Cyberpunk_01");
 
 settings.profile = profile;
-{{< /highlight >}}
-</br>
+```
 
 With this method, you can unload the profile when you no longer want to use it.
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 Resources.UnloadAsset(profile);
-{{< /highlight >}}
-</br>
+```
 
 If you are using an effect other than '**Cyberpunk**' just change it to its name. Check the source code comments for more information.
 
----
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+{{< alert color="warning" icon="fas triangle-exclamation" >}}
+Do not use the code of the demos in your projects, they are only there to show you the use of the effect through code.
+{{< /alert >}}
 
-# {#cyberpunk}
-{{< youtube 9JZdwytXLbA >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cyberpunk/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cyberpunk-275005">}}
-
-In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes 62 high quality LUTs including:
-
-* **Pink & Teal** (11): vibrant, dystopian look with intense pinks / purples / greens.
-* **Neo Tokyo** (33): colors pop without oversaturation, shadows are desaturated.
-* **Dystopia** (8): inspired by the movie Blade Runner 2049.
-* **Cyberpunk** (10): retrofuturistism vibe.
-
-{{<
-  gallery match="cyberpunk/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Pink & Teal', description: 'Pink*'}, {label: 'Neo Tokyo', description: 'NeoTokyo*'}, {label: 'Dystopia', description: 'Dystopia*'}, {label: 'Cyberpunk', description: 'Cyberpunk*'}, {label: 'All', description: '.*'}]">}}
+#
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## Cyberpunk {#cyberpunk}
+{{< asset-header youtube="9JZdwytXLbA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cyberpunk-275005" demo="https://fronkongames.github.io/demos-luts/cyberpunk/">}}
 
-# {#vintage}
-{{< youtube v052UeIjusk >}}
+In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes **62 high quality LUTs**.
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/vintage/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-vintage-275594" >}}
+### Pink & Teal
 
-The vintage and retro look you're looking for is in '**Vintage**', 90 high quality LUTs including:
+Vibrant, dystopian look with intense pinks / purples / greens (11 LUTs).
 
-* **Nostalgia** (10): nostalgic aesthetics of retro cinema.
-* **Retro** (10): retro vibes to travel to other times.
-* **70s** (8): a journey through the iconic eras of the 1970s and 1980s.
-* **Noir** (30): rich, nostalgic tones of classic film noir.
-* **Old Films** (8): nostalgic aesthetics of retro cinema.
-* **Photo** (8): iconic look and feel of vintage Fujifilm.
-* **Sepia** (8): warm nostalgic look, beautiful sepia tones.
-* **Semi B&W** (8): different black and white balances.
+{{< mgallery "list"="cyberpunk/Pink*" "cols"=4 "thumb"="16x9" >}}
 
-{{<
-  gallery match="vintage/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Nostalgia', description: 'Nostalgia*'}, {label: 'Retro', description: 'Retro*'}, {label: '70s', description: '70s*'}, {label: 'Noir', description: 'Noir*'}, {label: 'Old Films', description: 'OlFIlms*'}, {label: 'Photo', description: 'Photo*'}, {label: 'Sepia', description: 'Sepia*'}, {label: 'Semi B&W', description: 'SemiBW*'}, {label: 'All', description: '.*'}]">}}
+### Neo Tokyo
 
----
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+Colors pop without oversaturation, shadows are desaturated (33 LUTs).
 
-# {#anime}
-{{< youtube vCk9eIxhir4 >}}
+{{< mgallery "list"="cyberpunk/NeoTokyo*" "cols"=4 "thumb"="16x9" >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/anime/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-anime-276902" >}}
+### Dystopia
 
-Vibrant tones, unique contrasts and a cinematic touch. 58 high quality LUTs including:
+Inspired by the movie Blade Runner 2049 (8 LUTs).
 
-* **Anime** (18): vibrant blue tones that captures the dreamlike essence of anime.
-* **Arcade** (10): palette of old Japanese arcade machines.
-* **Game** (10): colorful and saturated video game environment.
-* **Virtual** (10): tones of consoles of past generations.
-* **Yolk** (10): creomous yellow tones and contrasts.
+{{< mgallery "list"="cyberpunk/Dystopia*" "cols"=4 "thumb"="16x9" >}}
 
-{{<
-  gallery match="anime/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Anime', description: 'Anime*'}, {label: 'Arcade', description: 'Arcade*'}, {label: 'Game', description: 'Game*'}, {label: 'Virtual', description: 'Virtual*'}, {label: 'Yolk', description: 'Yolk*'}, {label: 'All', description: '.*'}]">}}
+### Cyberpunk
+
+A retrofuturistism vibe (10 LUTs).
+
+{{< mgallery "list"="cyberpunk/Cyberpunk*" "cols"=4 "thumb"="16x9" >}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## Vintage {#vintage}
+{{< asset-header youtube="v052UeIjusk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-vintage-275594" demo="https://fronkongames.github.io/demos-luts/vintage/">}}
 
-# {#synthwave}
-{{< youtube 2pW7-FFgTUA >}}
+The vintage and retro look you're looking for is in '**Vintage**'. Includes **90 high quality LUTs**.
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/synthwave/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-synthwave-278499" >}}
+### Nostalgia
 
-Neon-drenched cyberpunk worlds. 50 high quality LUTs including:
+Nostalgic aesthetics of retro cinema (10 LUTs).
 
-{{<
-  gallery match="synthwave/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'All', description: '.*'}]">}}
+{{< mgallery "list"="vintage/Nostalgia*" "cols"=4 "thumb"="16x9" >}}
 
----
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+### Retro
 
-# {#colors}
-{{< youtube L-cWwo7O3IY >}}
+Retro vibes to travel to other times (10 LUTs).
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/colors/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-colors-278789" >}}
+{{< mgallery "list"="vintage/Retro*" "cols"=4 "thumb"="16x9" >}}
 
-A rainbow of colors for your games. 277 high quality LUTs including:
+### 70's
 
-* **Bleach** (10): higher contrast, reduced saturation and very distinctive look.
-* **Bright** (52): white tones displaced to blue and more clarity.
-* **Brownish** (8): warm brown tones.
-* **Colorify** (25): based on Instagram filters.
-* **Creative** (7): creative ways to handle color.
-* **Crisp White** (8): infuses simplicity and luminosity.
-* **Dark Green** (8): dark forests.
-* **Dark Mood** (10): dark and moody elegance.
-* **Golden** (2): luxurious and minimalist look.
-* **Luxury Black** (10): blend of gold and black tones, soft contrasts.
-* **Minimalist** (26): modern look, bringing a crisp, clean, and bright aesthetic.
-* **Pastels** (16): soft pastel hues.
-* **Pink** (10): warm and pink tones.
-* **Teal and Orange** (70): perfect balance of teal and orange tones.
-* **Vibrant** (12): vibrant and dynamic aesthetic.
+A journey through the iconic eras of the 1970s and 1980s (8 LUTs).
 
-{{<
-  gallery match="colors/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="800x533 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Colorify', description: 'Colorify*'}, {label: 'Bleach', description: 'Bleach*'}, {label: 'Creative', description: 'Creative*'}, {label: 'Crisp White', description: 'CrispWhite*'}, {label: 'Vibrant', description: 'Vibrant*'}, {label: 'Bright', description: 'Bright*'}, {label: 'Pastels', description: 'Pastels*'}, {label: 'Minimalist', description: 'Minimalist*'}, {label: 'Pink', description: 'Pink*'}, {label: 'Teal & Orange', description: 'TealAndOrange*'}, {label: 'Luxury Black', description: 'LuxuryBlack*'}, {label: 'Dark Mood', description: 'DarkMood*'}, {label: 'Golden', description: 'Golden*'}, {label: 'Brownish', description: 'Brownish*'}, {label: 'Dark Green', description: 'DarkGreen*'}, {label: 'All', description: '.*'}]">}}
+{{< mgallery "list"="vintage/70s*" "cols"=4 "thumb"="16x9" >}}
+
+### Noir
+
+Rich, nostalgic tones of classic film noir (30 LUTs).
+
+{{< mgallery "list"="vintage/Noir*" "cols"=5 "thumb"="16x9" >}}
+
+### Old Films
+
+Nostalgic aesthetics of retro cinema (8 LUTs).
+
+{{< mgallery "list"="vintage/OlFilm*" "cols"=4 "thumb"="16x9" >}}
+
+### Photo
+
+Iconic look and feel of vintage Fujifilm (8 LUTs).
+
+{{< mgallery "list"="vintage/Photo*" "cols"=4 "thumb"="16x9" >}}
+
+### Sepia
+
+Warm nostalgic look, beautiful sepia tones (8 LUTs).
+
+{{< mgallery "list"="vintage/Sepia*" "cols"=4 "thumb"="16x9" >}}
+
+### Semi B&W
+
+Different black and white balances (8 LUTs).
+
+{{< mgallery "list"="vintage/Semi*" "cols"=4 "thumb"="16x9" >}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## Anime {#anime}
+{{< asset-header youtube="vCk9eIxhir4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-anime-276902" demo="https://fronkongames.github.io/demos-luts/anime/">}}
 
-# {#places}
-{{< youtube XpqdRRJdz4U >}}
+Vibrant tones, unique contrasts and a cinematic touch. Includes **58 high quality LUTs**.
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/places/" store="https://assetstore.unity.com/packages/slug/279132" >}}
+### Anime
 
-The right color for the right place. 225 high quality LUTs including:
+Vibrant blue tones that captures the dreamlike essence of anime (18 LUTs).
 
-* **Adventure** (15): colors of natural environments enhanced.
-* **Autumn** (15): warm and vibrant hues of fall.
-* **Nature** (9): enhance the majesty of nature.
-* **Outdoor** (26): feature summery colors and natural tones.
-* **Snow** (31): infuse crisp and ethereal beauty of winter.
-* **Summer** (18): higher contrast, warm and saturated tones.
-* **Sunset** (20): natural warm and luminous colors.
-* **Travel** (7): creative and varied color grading.
-* **Urban** (18): enhance color grading, contrast, and atmosphere.
-* **Western** (8): dusty trails and sunsets over prairies.
-* **XMas** (59): the richness of holiday colors.
+{{< mgallery "list"="anime/anime*" "cols"=4 "thumb"="16x9" >}}
 
-{{<
-  gallery match="places/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="1920x1080 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Adventure', description: 'Adventure*'}, {label: 'Autumn', description: 'Autumn*'}, {label: 'Nature', description: 'Nature*'}, {label: 'Outdoor', description: 'Outdoor*'}, {label: 'Snow', description: 'Snow*'}, {label: 'Summer', description: 'Summer*'}, {label: 'Sunset', description: 'Sunset*'}, {label: 'Travel', description: 'Travel*'}, {label: 'Urban', description: 'Urban*'}, {label: 'Western', description: 'Western*'}, {label: 'XMas', description: 'XMas*'}, {label: 'All', description: '.*'}]">}}
+### Arcade
 
----
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+Palette of old Japanese arcade machines (10 LUTs).
 
-# {#cinematic}
-{{< youtube zhGBdWJ_8rI >}}
+{{< mgallery "list"="anime/arcade*" "cols"=4 "thumb"="16x9" >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/cinematic/" store="https://assetstore.unity.com/packages/slug/279333" >}}
+### Game
 
-The color of the movies, in your games. 254 high quality cinematic LUTs including:
+Colorful and saturated video game environment (10 LUTs).
 
-* **Analog** (10): mimics analog tapes and 'Log to Rec 709' effect.
-* **Drama** (25): moody brown tones and a touch of cinematic allure.
-* **Epic** (20): from vintage tones to modern cinematic effects.
-* **High Contrast** (15): saturated colors and high contrast.
-* **Hollywood** (48): elegance of classic Hollywood films.
-* **Horror** (15): vibrant reds and powerful darks.
-* **Indie** (30): filmic colors and tones in independent films.
-* **Retro** (51): color grading and cinematic styles of iconic films from the past.
-* **Romance** (40): an instant dose of love.
+{{< mgallery "list"="anime/game*" "cols"=4 "thumb"="16x9" >}}
 
-{{<
-  gallery match="cinematic/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="1920x1080 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Analog', description: 'Analog*'}, {label: 'Drama', description: 'Drama*'}, {label: 'Epic', description: 'Epic*'}, {label: 'High Contrast', description: 'HighContrast*'}, {label: 'Hollywood', description: 'Hollywood*'}, {label: 'Horror', description: 'Horror*'}, {label: 'Indie', description: 'Indie*'}, {label: 'Retro', description: 'Retro*'}, {label: 'Romance', description: 'Romance*'}, {label: 'All', description: '.*'}]">}}
+### Virtual
+
+Tones of consoles of past generations (10 LUTs).
+
+{{< mgallery "list"="anime/virtual*" "cols"=4 "thumb"="16x9" >}}
+
+### Yolk
+
+Creomous yellow tones and contrasts (10 LUTs).
+
+{{< mgallery "list"="anime/yolk*" "cols"=4 "thumb"="16x9" >}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## Synthwave {#synthwave}
+{{< asset-header youtube="2pW7-FFgTUA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-synthwave-278499" demo="https://fronkongames.github.io/demos-luts/synthwave/">}}
 
-# {#fantasy}
-{{< youtube kNT1Au3LY6s >}}
+Neon-drenched cyberpunk worlds. Includes **50 high quality LUTs**.
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/fantasy/" store="https://assetstore.unity.com/packages/slug/279569" >}}
-
-Worlds of fantasy and color. 131 high quality fantasy LUTs including:
-
-* **Fantasy** (50): beautiful colors and a mystical vibe.
-* **Dark Fantasy** (36): dark and mysterious magic.
-* **Movies & TV Shows** (45): movies/tv-shows inspired: Game Of Thrones, Harry Potter, ...
-
-{{<
-  gallery match="fantasy/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="1920x1080 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Fantasy', description: 'Fantasy*'}, {label: 'Dark Fantasy', description: 'Dark*'}, {label: 'Movies & TV Shows', description: 'Movies*'}, {label: 'All', description: '.*'}]">}}
+{{< mgallery "list"="synthwave/*" "cols"=5 "thumb"="16x9" >}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+## Colors {#colors}
+{{< asset-header youtube="L-cWwo7O3IY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-colors-278789" demo="https://fronkongames.github.io/demos-luts/colors/">}}
 
-# {#unreal}
-{{< youtube PqITkuWFoKk >}}
+A rainbow of colors for your games. Includes **277 high quality LUTs**.
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/unreal/" store="https://assetstore.unity.com/packages/slug/279579" >}}
+### Bleach
 
-Colors from other worlds, stunning looks. 67 high quality originals LUTs including:
+Higher contrast, reduced saturation and very distinctive look (10 LUTs).
 
-* **Weird** (27): inspired by infrared vision.
-* **Monotone** (8): mono-color tone and black & white.
-* **Duotone** (14): duo-tone complementary colors.
-* **Thermal** (10): night vision goggles colors.
-* **Day to night** (8): transitions from day to night.
+{{< mgallery "list"="colors/bleach*" "cols"=4 "thumb"="16x9" >}}
 
-{{<
-  gallery match="unreal/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="1920x1080 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Weird', description: 'Weird*'}, {label: 'Monotone', description: 'Monotone*'}, {label: 'Duotone', description: 'DuoTone*'}, {label: 'Thermal', description: 'Thermal*'}, {label: 'Day to night', description: 'DayToNight*'}, {label: 'All', description: '.*'}]">}}
+### Bright
 
----
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+White tones displaced to blue and more clarity (52 LUTs).
 
-# {#action}
-{{< youtube PrSI6uIoUd0 >}}
+{{< mgallery "list"="colors/bright*" "cols"=5 "thumb"="16x9" >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/action/" store="https://assetstore.unity.com/packages/slug/280076" >}}
+### Brownish
 
-163 high quality action LUTs including:
+Warm brown tones (8 LUTs).
 
-* **Action** (26): cinematic depth and vibrant energy to your games.
-* **Apocalypse** (50): horror atmosphere.
-* **Automotive** (23): car photography filters for sport look.
-* **Military** (15): colors inspired by cinematic war movies.
-* **Movies** (30): inspired by the best action movies of all time.
-* **Sports** (19): dynamic colors and intensity.
+{{< mgallery "list"="colors/brownish*" "cols"=4 "thumb"="16x9" >}}
 
-{{<
-  gallery match="action/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="1920x1080 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Action', description: 'Action*'}, {label: 'Apocalypse', description: 'Apocalypse*'}, {label: 'Automotive', description: 'Automotive*'}, {label: 'Military', description: 'Military*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Sports', description: 'Sports*'}, {label: 'All', description: '.*'}]">}}
+### Colorify
 
----
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+Based on Instagram filters (25 LUTs).
 
-# {#horror}
-{{< youtube SoM5cH3c_YY >}}
+{{< mgallery "list"="colors/colorify*" "cols"=5 "thumb"="16x9" >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/horror/" store="https://assetstore.unity.com/packages/slug/280345" >}}
+### Creative
 
-598 high quality scary LUTs including:
+Creative ways to handle color (7 LUTs).
 
-* **Darkness** (100): dark tones and spooky shades.
-* **Halloween** (305): colors inspired by the Halloween holiday.
-* **Movies** (11): inspired by classic horror movies.
-* **Terror** (132): looks that inspire suspense and terror.
-* **Vampire** (50): colors inspired by vampire movies.
+{{< mgallery "list"="colors/creative*" "cols"=3 "thumb"="16x9" >}}
 
-{{<
-  gallery match="horror/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="1920x1080 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Darkness', description: 'Darkness*'}, {label: 'Halloween', description: 'Halloween*'}, {label: 'Movies', description: 'Movies*'}, {label: 'Terror', description: 'Terror*'}, {label: 'Vampire', description: 'Vampire*'}, {label: 'All', description: '.*'}]">}}
+### Crisp White
 
----
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+Infuses simplicity and luminosity (8).
 
-# {#scifi}
-{{< youtube ItmAGy08gAY >}}
+{{< mgallery "list"="colors/crisp*" "cols"=3 "thumb"="16x9" >}}
 
-{{< asset-buttons demo="https://fronkongames.github.io/demos-luts/scifi/" store="https://assetstore.unity.com/packages/slug/280709" >}}
+### Dark Green
 
-150 high quality sci-fi LUTs including:
+Dark forests (8 LUTs).
 
-* **Dystopia** (50): dystopian neon realities.
-* **Future** (50): looks from movies like Blade Runner.
-* **Sci-Fi** (50): colors inspired by science fiction classics.
+{{< mgallery "list"="colors/darkgreen*" "cols"=3 "thumb"="16x9" >}}
 
-{{<
-  gallery match="scifi/*"
-  sortOrder="asc"
-  rowHeight="100"
-  margins="5"
-  thumbnailResizeOptions="1920x1080 q100 Lanczos"
-  showExif=false
-  previewType="blur"
-  embedPreview=true
-  loadJQuery=true
-  filterOptions= "[{label: 'Dystopia', description: 'Dystopia*'}, {label: 'Future', description: 'Future*'}, {label: 'Sci-Fi', description: 'SciFi*'}, {label: 'All', description: '.*'}]">}}
+### Dark Mood
+
+Dark and moody elegance (10 LUTs).
+
+{{< mgallery "list"="colors/darkmood*" "cols"=4 "thumb"="16x9" >}}
+
+### Golden
+
+Luxurious and minimalist look (2 LUTs).
+
+{{< mgallery "list"="colors/golden*" "cols"=2 "thumb"="16x9" >}}
+
+### Luxury Black
+
+Blend of gold and black tones, soft contrasts (10 LUTs).
+
+{{< mgallery "list"="colors/luxury*" "cols"=4 "thumb"="16x9" >}}
+
+### Minimalist
+
+Modern look, bringing a crisp, clean, and bright aesthetic (26 LUTs).
+
+{{< mgallery "list"="colors/minimalist*" "cols"=4 "thumb"="16x9" >}}
+
+### Pastels
+
+Soft pastel hues (16 LUTs).
+
+{{< mgallery "list"="colors/pastel*" "cols"=4 "thumb"="16x9" >}}
+
+### Pink
+
+Warm and pink tones (10 LUTs).
+
+{{< mgallery "list"="colors/pink*" "cols"=4 "thumb"="16x9" >}}
+
+### Teal and Orange
+
+Perfect balance of teal and orange tones (70 LUTs).
+
+{{< mgallery "list"="colors/teal*" "cols"=5 "thumb"="16x9" >}}
+
+### Vibrant
+
+Vibrant and dynamic aesthetic (12 LUTs).
+
+{{< mgallery "list"="colors/vibrant*" "cols"=4 "thumb"="16x9" >}}
 
 ---
+## Places {#places}
+{{< asset-header youtube="XpqdRRJdz4U" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-places-279132" demo="https://fronkongames.github.io/demos-luts/places/">}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🩺 Support
+The right color for the right place. Includes **225 high quality LUTs**.
 
-Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
+### Adventure
+
+Colors of natural environments enhanced (15 LUTs).
+
+{{< mgallery "list"="places/adventure*" "cols"=4 "thumb"="16x9" >}}
+
+### Autumn
+
+Warm and vibrant hues of fall (15 LUTs).
+
+{{< mgallery "list"="places/autum*" "cols"=4 "thumb"="16x9" >}}
+
+### Nature
+
+Enhance the majesty of nature (9 LUTs).
+
+{{< mgallery "list"="places/nature*" "cols"=3 "thumb"="16x9" >}}
+
+### Outdoor
+
+Feature summery colors and natural tones (26 LUTs).
+
+{{< mgallery "list"="places/outdoor*" "cols"=5 "thumb"="16x9" >}}
+
+### Snow
+
+Infuse crisp and ethereal beauty of winter (31 LUTs).
+
+{{< mgallery "list"="places/snow*" "cols"=5 "thumb"="16x9" >}}
+
+### Summer
+
+Higher contrast, warm and saturated tones (18 LUTs).
+
+{{< mgallery "list"="places/summer*" "cols"=5 "thumb"="16x9" >}}
+
+### Sunset
+
+Natural warm and luminous colors (20 LUTs).
+
+{{< mgallery "list"="places/sunset*" "cols"=5 "thumb"="16x9" >}}
+
+### Travel
+
+Creative and varied color grading (7 LUTs).
+
+{{< mgallery "list"="places/travel*" "cols"=3 "thumb"="16x9" >}}
+
+### Urban
+
+Enhance color grading, contrast, and atmosphere (18 LUTs).
+
+{{< mgallery "list"="places/urban*" "cols"=5 "thumb"="16x9" >}}
+
+### Western
+
+Dusty trails and sunsets over prairies (8 LUTs).
+
+{{< mgallery "list"="places/western*" "cols"=3 "thumb"="16x9" >}}
+
+### XMas
+
+The richness of holiday colors (59 LUTs).
+
+{{< mgallery "list"="places/xmas*" "cols"=5 "thumb"="16x9" >}}
+
+---
+## Cinematic {#cinematic}
+{{< asset-header youtube="zhGBdWJ_8rI" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cinematic-279333" demo="https://fronkongames.github.io/demos-luts/cinematic/">}}
+
+The color of the movies, in your games. Includes **254 high quality cinematic LUTs**.
+
+### Analog
+
+Mimics analog tapes and 'Log to Rec 709' effect (10 LUTs).
+
+{{< mgallery "list"="cinematic/analog*" "cols"=4 "thumb"="16x9" >}}
+
+### Drama
+
+Moody brown tones and a touch of cinematic allure (25 LUTs).
+
+{{< mgallery "list"="cinematic/drama*" "cols"=5 "thumb"="16x9" >}}
+
+### Epic
+
+From vintage tones to modern cinematic effects (20 LUTs).
+
+{{< mgallery "list"="cinematic/epic*" "cols"=5 "thumb"="16x9" >}}
+
+### High Contrast
+
+Saturated colors and high contrast (15 LUTs).
+
+{{< mgallery "list"="cinematic/high*" "cols"=5 "thumb"="16x9" >}}
+
+### Hollywood
+
+Elegance of classic Hollywood films (48 LUTs).
+
+{{< mgallery "list"="cinematic/hollywood*" "cols"=5 "thumb"="16x9" >}}
+
+### Horror
+
+Vibrant reds and powerful darks (15 LUTs).
+
+{{< mgallery "list"="cinematic/horror*" "cols"=5 "thumb"="16x9" >}}
+
+### Indie
+
+Filmic colors and tones in independent films (30 LUTs).
+
+{{< mgallery "list"="cinematic/indie*" "cols"=5 "thumb"="16x9" >}}
+
+### Retro
+
+Color grading and cinematic styles of iconic films from the past (51 LUTs).
+
+{{< mgallery "list"="cinematic/retro*" "cols"=5 "thumb"="16x9" >}}
+
+### Romance
+
+An instant dose of love (40 LUTs).
+
+{{< mgallery "list"="cinematic/romance*" "cols"=5 "thumb"="16x9" >}}
+
+---
+## Fantasy {#fantasy}
+{{< asset-header youtube="kNT1Au3LY6s" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-fantasy-279569" demo="https://fronkongames.github.io/demos-luts/fantasy/">}}
+
+Worlds of fantasy and color. Includes **131 high quality fantasy LUTs**.
+
+### Fantasy
+
+Beautiful colors and a mystical vibe (50 LUTs).
+
+{{< mgallery "list"="fantasy/fantasy*" "cols"=5 "thumb"="16x9" >}}
+
+### Dark Fantasy
+
+Dark and mysterious magic (36 LUTs).
+
+{{< mgallery "list"="fantasy/dark*" "cols"=5 "thumb"="16x9" >}}
+
+### Movies & TV Shows
+
+Movies / tv-shows inspired: Game Of Thrones, Harry Potter, ... (45 LUTs).
+
+{{< mgallery "list"="fantasy/movies*" "cols"=5 "thumb"="16x9" >}}
+
+---
+## Unreal {#unreal}
+{{< asset-header youtube="PqITkuWFoKk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-unreal-279579" demo="https://fronkongames.github.io/demos-luts/unreal/">}}
+
+Colors from other worlds, stunning looks. Includes **67 high quality originals LUTs**.
+
+### Weird
+
+Inspired by infrared vision (27 LUTs).
+
+{{< mgallery "list"="unreal/weird*" "cols"=5 "thumb"="16x9" >}}
+
+### Monotone
+
+Mono-color tone and black & white (8 LUTs).
+
+{{< mgallery "list"="unreal/monotone*" "cols"=3 "thumb"="16x9" >}}
+
+### Duotone
+
+Duo-tone complementary colors (14 LUTs).
+
+{{< mgallery "list"="unreal/duotone*" "cols"=5 "thumb"="16x9" >}}
+
+### Thermal
+
+Thermal vision goggles colors (10 LUTs).
+
+{{< mgallery "list"="unreal/thermal*" "cols"=5 "thumb"="16x9" >}}
+
+### Day to night
+
+Transitions from day to night (8 LUTs).
+
+{{< mgallery "list"="unreal/day*" "cols"=3 "thumb"="16x9" >}}
+
+---
+## Action {#action}
+{{< asset-header youtube="PrSI6uIoUd0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-action-280076" demo="https://fronkongames.github.io/demos-luts/action/">}}
+
+Perfect looks for action games. Includes **163 high quality action LUTs**.
+
+### Action
+
+Cinematic depth and vibrant energy to your games (26 LUTs).
+
+{{< mgallery "list"="action/action*" "cols"=5 "thumb"="16x9" >}}
+
+### Apocalypse
+
+Horror atmosphere (50 LUTs).
+
+{{< mgallery "list"="action/apocalypse*" "cols"=5 "thumb"="16x9" >}}
+
+### Automotive
+
+Car photography filters for sport look (23 LUTs).
+
+{{< mgallery "list"="action/automotive*" "cols"=5 "thumb"="16x9" >}}
+
+### Military
+
+Colors inspired by cinematic war movies (15 LUTs).
+
+{{< mgallery "list"="action/military*" "cols"=5 "thumb"="16x9" >}}
+
+### Movies
+
+Inspired by the best action movies of all time (30 LUTs).
+
+{{< mgallery "list"="action/movie*" "cols"=5 "thumb"="16x9" >}}
+
+### Sports
+
+Dynamic colors and intensity (19 LUTs).
+
+{{< mgallery "list"="action/sport*" "cols"=5 "thumb"="16x9" >}}
+
+---
+## Horror {#horror}
+{{< asset-header youtube="SoM5cH3c_YY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-horror-280345" demo="https://fronkongames.github.io/demos-luts/horror/">}}
+
+The color of fear. Includes **598 high quality scary LUTs**.
+
+### Darkness
+
+Dark tones and spooky shades (100 LUTs).
+
+{{< mgallery "list"="horror/darkness*" "cols"=5 "thumb"="16x9" >}}
+
+### Halloween
+
+Colors inspired by the Halloween holiday (305 LUTs).
+
+{{< mgallery "list"="horror/halloween*" "cols"=5 "thumb"="16x9" >}}
+
+### Movies
+
+Inspired by classic horror movies (11 LUTs).
+
+{{< mgallery "list"="horror/movie*" "cols"=5 "thumb"="16x9" >}}
+
+### Terror
+
+Looks that inspire suspense and terror (132 LUTs).
+
+{{< mgallery "list"="horror/terror*" "cols"=5 "thumb"="16x9" >}}
+
+### Vampire
+
+Colors inspired by vampire movies (50 LUTs).
+
+{{< mgallery "list"="horror/vampire*" "cols"=5 "thumb"="16x9" >}}
+
+---
+# Sci-Fi {#scifi}
+{{< asset-header youtube="ItmAGy08gAY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-sci-fi-280709" demo="https://fronkongames.github.io/demos-luts/scifi/">}}
+
+Colors of other worlds. Includes **150 high quality sci-fi LUTs**.
+
+### Dystopia
+
+Dystopian neon realities (50 LUTs).
+
+{{< mgallery "list"="scifi/dystopia*" "cols"=5 "thumb"="16x9" >}}
+
+### Future
+
+Looks from movies like Blade Runner (50 LUTs).
+
+{{< mgallery "list"="scifi/future*" "cols"=5 "thumb"="16x9" >}}
+
+### Sci-Fi
+
+Colors inspired by science fiction classics (50 LUTs).
+
+{{< mgallery "list"="scifi/scifi*" "cols"=5 "thumb"="16x9" >}}
+
+#
+---
+## Support
+
+Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+{{< rawhtml >}}
+<br><center><h4>
+{{< /rawhtml >}}
 
-❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-{{< center >}}
-If you are happy with this asset, <b>please consider leaving a positive review</b> in the store, it would really help me,
-<b>thanks</b>!
-{{< /center >}}
+{{< alert color="warning" >}}
+If you are happy with this asset, consider write a review in the store
+
+❤️ thanks! ❤️
+{{< /alert >}}
+
+{{< rawhtml >}}
+</center></h4>
+{{< /rawhtml >}}

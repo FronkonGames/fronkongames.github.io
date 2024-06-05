@@ -1,0 +1,15 @@
+# toml-docs-start lang-main
+[en]
+    languageName = "English"
+    contentDir = "content"
+    weight = 1
+# toml-docs-end lang-main
+# toml-docs-start lang-param
+    [en.params.head]
+        tagline = "an indie video game developer"
+    [en.params.socialparams.social]
+        title = "Any questions or suggestions?"
+        caption = "Just write an email to fronkongames@gmail.com"
+    [en.params.footer]
+        # license = "Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
+# toml-docs-end lang-param

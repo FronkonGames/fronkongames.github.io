@@ -2,10 +2,159 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Fronkon Games</title>
-    <link>https://fronkongames.github.io/tags.html</link>
+    <link>https://fronkongames.github.io/tags/</link>
     <description>Recent content in Tags on Fronkon Games</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>Copyright © 2024 Fronkon Games</copyright>
+    <lastBuildDate>Tue, 14 May 2024 18:28:15 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>devblog</title>
+      <link>https://fronkongames.github.io/tags/devblog/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/devblog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>game development</title>
+      <link>https://fronkongames.github.io/tags/game-development/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/game-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>gamedev</title>
+      <link>https://fronkongames.github.io/tags/gamedev/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/gamedev/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2D</title>
+      <link>https://fronkongames.github.io/tags/2d/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/2d/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>sprites</title>
+      <link>https://fronkongames.github.io/tags/sprites/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/sprites/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>store</title>
+      <link>https://fronkongames.github.io/tags/store/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/store/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>unity</title>
+      <link>https://fronkongames.github.io/tags/unity/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/unity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>lut</title>
+      <link>https://fronkongames.github.io/tags/lut/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/lut/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>luts</title>
+      <link>https://fronkongames.github.io/tags/luts/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/luts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>glitch</title>
+      <link>https://fronkongames.github.io/tags/glitch/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/glitch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>hack</title>
+      <link>https://fronkongames.github.io/tags/hack/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/hack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>kairos</title>
+      <link>https://fronkongames.github.io/tags/kairos/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/kairos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>blog</title>
+      <link>https://fronkongames.github.io/tags/blog/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>gamejam</title>
+      <link>https://fronkongames.github.io/tags/gamejam/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/gamejam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>go</title>
+      <link>https://fronkongames.github.io/tags/go/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>python</title>
+      <link>https://fronkongames.github.io/tags/python/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>retro</title>
+      <link>https://fronkongames.github.io/tags/retro/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/retro/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>design</title>
+      <link>https://fronkongames.github.io/tags/design/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pattern</title>
+      <link>https://fronkongames.github.io/tags/pattern/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/pattern/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>steam</title>
+      <link>https://fronkongames.github.io/tags/steam/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/steam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>c#</title>
+      <link>https://fronkongames.github.io/tags/c#/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

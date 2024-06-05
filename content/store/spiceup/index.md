@@ -1,13 +1,17 @@
 ---
-title: "Spice Up"
-date: 2023-02-22T12:23:10+06:00
-image: /store/spiceup/mini.png
-logo: /store/spiceup/logo.png
-description: "A large selection of assets to give juice to your FPS / VR games."
-type: "store"
+author: Martin Bustos
+title: Spice Up
+showTitle: false
+date: 2
+description: A large selection of assets to give juice to your FPS / VR games
+tags: ["unity", "store"]
+metadata: none
+showImage: true
+thumbnail:
+  url: img/spiceup.jpg
 ---
 
-'**Spice Up**' is a large selection of effects to give juice to your FPS / VR games. It consists of the following assets:
+'**Spice Up**' is a large selection of effects to give juice to your FPS / VR games. It consists of the following effects:
 
 * [Damage](#damage), a visual indicator of health and damage received.
 * [Drunk](#drunk), simulates the effects of alcohol on the player.
@@ -28,78 +32,71 @@ type: "store"
 * [BodyCam](#bodycam), body camera (BWC) or wearable camera.
 * [Lens Flare](#lensflare), a.k.a. JJ Abrams' illumination.
 
-{{< rawhtml >}}<br>{{< /rawhtml >}}
-{{< notice note "SPECIAL OFFER" >}}
-You can obtain each effect separately (for only $8!), but if you want multiple effects, you might be interested in '[SPICE UP BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333?aid=1101l9zFC&utm_source=aff)' where you can find them all at a special price!
-{{< /notice >}}
+{{< alert color="light" >}}
+You can obtain each effect separately (**for only $8!**), but if you want multiple effects, you might be interested in **'[SPICE UP BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
+{{< /alert >}}
 
-{{< rawhtml >}}<br>{{< /rawhtml >}}
-## ⚙️ Requirements
+## Requirements
 
 All '**Spice Up**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
 You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🖥️ Using them in the Editor
+## Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**Spice Up**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
-{{< imagecenter src="/store/spiceup/editor_0.jpg" >}}
+{{< image src="editor_0.jpg" wrapper="col-6 mx-auto">}}
 
 Remember that the camera you are using must have the '**Post Processing**' option enabled.
 
-{{< imagecenter src="/store/spiceup/editor_1.jpg" >}}
+{{< image src="editor_1.jpg" wrapper="col-6 mx-auto">}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🥸 VR
+## VR
 
 To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
 
-{{< imagecenter src="/store/spiceup/vr.jpg" >}}
+{{< image src="vr.jpg" wrapper="col-6 mx-auto">}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🪄 Using them in code
+## Using them in code
 
 You can also handle '**Spice Up**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
 
 They are all of the style 'FronkonGames.SpiceUp.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Damage**' the code would be:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 using FronkonGames.SpiceUp.Damage;
-{{< /highlight >}}
-</br>
+```
 
 And with this code you could check if the effect is added, and if it is not, add it.
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 if (Damage.IsInRenderFeatures() == false)
     Damage.AddRenderFeature();
-{{< /highlight >}}
-</br>
+```
 
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
-{{< highlight csharp "linenos=false" >}}
- Damage.Settings settings = Damage.GetSettings();
+```csharp
+Damage.Settings settings = Damage.GetSettings();
 
- settings.intensity = 0.5f;
- {{< /highlight >}}
-</br>
+settings.intensity = 0.5f;
+```
 
 If you are using an effect other than '**Damage**' just change it to its name. Check the source code comments for more information.
 
+{{< alert color="warning" icon="fas triangle-exclamation" >}}
+Do not use the code of the demos in your projects, they are only there to show you the use of the effect through code.
+{{< /alert >}}
+
+#
 ---
-# {#damage}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube rChUFliVX_E >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/damage/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-damage-247019">}}
+## Damage {#damage}
+{{< asset-header youtube="rChUFliVX_E" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-damage-247019" demo="https://fronkongames.github.io/demos-spiceup/damage/" >}}
 
 '**Damage**' is a visual indicator of the damage suffered by the player. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/damage_0.jpg" >}}
+{{< image src="damage_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -107,21 +104,23 @@ The damage must be **normalized**, or in other words between 0 and 1 (inclusive)
 
 Let's say that '_DamageMax_' is a constant that indicates the maximum amount of damage the player can receive and '_damage_' is the variable with the damage received:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 Damage.GetSettings().damage = damage / DamageMax;
-{{< /highlight >}}
-</br>
+```
 
 It can also be calculated from health:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 Damage.GetSettings().damage = 1.0f - (health / HealthMax);
-{{< /highlight >}}
-</br>
+```
 
 Visually the damage is represented by three effects: _Liquid_, _Veins_ and _Drops_. You can configure how much they affect the final result using their sliders.
 
-{{< gallery-slider dir="/images/store/spiceup/damage/" auto-slide="3000" width="600px" height="400px" color="#ffff" >}}
+{{< carousel class="col-sm-12 col-lg-8 mx-auto" >}}
+  {{< img src="img/damage/slide1.jpg" caption="Liquid">}}
+  {{< img src="img/damage/slide2.jpg" caption="Veins">}}
+  {{< img src="img/damage/slide3.jpg" caption="Drops">}}
+{{< /carousel >}}
 
 * Liquid: is the liquid that expands from the edges of the screen.
 * Veins: simulates the capillary vessels of the human eye and add an extra 'gore'.
@@ -129,43 +128,41 @@ Visually the damage is represented by three effects: _Liquid_, _Veins_ and _Drop
 
 To indicate impacts, and the direction they come from, you can use '**Impact strength**' (_3_). These impacts will be displayed on the edges of the screen and will indicate the direction from which the impact is coming, the top part being a frontal impact, and the bottom part a rear impact.
 
-{{< imagecenter src="/store/spiceup/damage_2.jpg" >}}
+{{< image src="damage_2.jpg" wrapper="col-6 mx-auto">}}
 
 The time it stays on screen can be configured with: '_Rise time_', '_Wait time_' and '_Fall time_'. You can also adjust its thickness and the smoothness of the edges.
 
 To get an idea of the effect, you can do it with '**Simulate impact**' (_13_).
 
-{{< imagecenter src="/store/spiceup/damage_1.jpg" >}}
+{{< image src="damage_1.jpg" wrapper="col-6 mx-auto">}}
 
 And how do I do it in the game? Very simple, 'Damage' takes care of everything. First it sets the target of the hits. The most typical case would be on the player. If 'player' is a GameObject that represents the player, it would be like this:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 Damage.Target = player.transform;
-{{< /highlight >}}
-</br>
+```
 
 Now you will only have to call the 'Impact' function every time the unfortunate player receives an impact. If you do not specify the origin of the hit, a flash effect (general damage) will be created. If you specify who caused the damage, an impact with direction will be created.
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 // Flash effect.
 Damage.Impact(0.25f);
 
 // Impact with direction.
 Damage.Impact(0.5f, zombie.transform);
-{{< /highlight >}}
-</br>
+```
 
-{{< notice tip >}}
+{{< alert type="info" >}}
 * Damage must be **normalized**, i.e. from 0 to 1.
 * The maximum number of hits with direction on the screen is **4**.
 * The plane in which the direction is calculated is the XZ.
-{{< /notice >}}
+{{< /alert >}}
 
 You can change the color in '**Color gradient**'. From the gradient used (_4_), through the color and ending with how the effect blends with the screen.
 
-{{< notice tip >}}
+{{< alert type="info" >}}
 If the final result is too dark, or too bright, try one of the many Blend operations included.
-{{< /notice >}}
+{{< /alert >}}
 
 To modify the definition of the edges, change '**Definition**' (_5_). The final brightness of the effect can be set with '**Brightness**' (_6_).
 
@@ -179,35 +176,29 @@ To simulate some _volume_ to the liquid, a slight shimmer effect is applied to t
 
 Another effect you may have seen in other games, is how the player blinks, or loses peripheral vision. This effect can be adjusted with '**Blink**' (_11_). Like '**Desaturation**' (_9_), this effect must be adjusted manually.
 
-{{< notice warning >}}
+{{< alert type="danger" >}}
 Very high values of '_Speed_' can create a **stroboscopic** effect that **may affect some users**.
-{{< /notice >}}
+{{< /alert >}}
 
 Do values close to 1 of '**Damage**' (_2_) make the effect too intense? Adjust the range with '**Remap damage**' (_12_). By lowering the upper range somewhat, you will make very high values lower.
 
-Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
-
 ---
-# {#drunk}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube L7agg4NP7XU >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/drunk/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-drunk-247929">}}
+## Drunk {#drunk}
+{{< asset-header youtube="L7agg4NP7XU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-drunk-247929" demo="https://fronkongames.github.io/demos-spiceup/drunk/" >}}
 
 With '**Drunk**' you can let players know that they are drinking too much.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/drunk_0.jpg" >}}
+{{< image src="drunk_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 With '**Drunkenness**' (_2_) you control the overall intensity of the effect. The higher the value, the more intense the result. You can also adjust the speed of the oscillations and their amplitude.
 
-{{< notice warning >}}
+{{< alert type="danger" >}}
 High values of this effect may cause dizziness. Use with caution.
-{{< /notice >}}
+{{< /alert >}}
 
 '**Swinging**' (_3_) causes the camera to swing. In addition to the intensity, you can control its speed.
 
@@ -217,21 +208,15 @@ With '**Distortion**' you can modify how the image is distorted, you can also co
 
 Do values close to 1 of '**Drunkenness**' (_2_) make the effect too intense? Adjust the range with '**Remap damage**' (_8_). By lowering the upper range somewhat, you will make very high values lower.
 
-Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
-
 ---
-# {#stoned}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube 5f_TMTkHXM0 >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/stoned/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-stoned-248596">}}
+## Stoned {#stoned}
+{{< asset-header youtube="5f_TMTkHXM0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-stoned-248596" demo="https://fronkongames.github.io/demos-spiceup/stoned/" >}}
 
 Too many potions? With '**Stoned**' you can simulate the effect of drinking too many.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/stoned_0.jpg" >}}
+{{< image src="stoned_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -243,9 +228,9 @@ With '**Displacement**' (_5_) you can adjust the screen deformation. You can inc
 
 With '**Hue**' (_7_) you can shift the final color of the effect (is not the same control as the one in 'Color').
 
-{{< notice tip >}}
+{{< alert type="info" >}}
 If you cycle from 0 to 1 and back again, you can add extra psychedelia to the effect.
-{{< /notice >}}
+{{< /alert >}}
 
 Adjust the strength of each color channel with '**Channel**' (_8_).
 
@@ -253,25 +238,19 @@ Internally, the effect uses the YIQ color space (used by the analog NTSC TV). In
 
 **Lines** (_10_) transforms the clouds of the effect into lines of intense color.
 
-{{< notice tip >}}
+{{< alert type="info" >}}
 If you use lines and add ['Bloom' postprocessing](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/post-processing-bloom.html), you can get a very interesting effect. Adjust the intensity of 'Bloom' well to avoid annoying flares.
-{{< /notice >}}
+{{< /alert >}}
 
 With '**Tint**' (_11_) you can color the final result with the color of your choice. In '**Blend**' (_12_) you can select from a large list of color mixing functions. The selected function will be the one that blends the effect with the screen.
 
-Finally, if you click on '**documentation**' (_14_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_15_). If you need to reset all the effect values, click on '**Reset**' (_16_).
-
 ---
-# {#frozen}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube FPn7dk3fkG4 >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/frozen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-frozen-249207">}}
+## Frozen {#frozen}
+{{< asset-header youtube="FPn7dk3fkG4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-frozen-249207" demo="https://fronkongames.github.io/demos-spiceup/frozen/" >}}
 
 Experience a realistic and immersive freezing effect. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/frozen_0.jpg" >}}
+{{< image src="frozen_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -285,19 +264,13 @@ Modify the distortion that the effect produces on the screen with '**Distortion*
 
 With '**Vision tint**' (_8_) you can modify the color of the effect.
 
-Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
-
 ---
-# {#speedlines}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube KfDiwLYM6xw >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/speedlines/" store="https://assetstore.unity.com/packages/slug/250408">}}
+## Speed Lines {#speedlines}
+{{< asset-header youtube="KfDiwLYM6xw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-speed-lines-250408" demo="https://fronkongames.github.io/demos-spiceup/speedlines/" >}}
 
 Anime speed lines. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/speedlines_0.jpg" >}}
+{{< image src="speedlines_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -313,19 +286,13 @@ The color of the effect can be adjusted in '**Color blend**' (_9_). From the typ
 
 If you check '**Aspect ratio**' (_10_), the effect will not conform to the screen and will form a circle inside the screen instead of conforming to the edges of the screen.
 
-Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
-
 ---
-# {#blurry}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube izte-BmU-nw >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/blurry/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-blurry-251642">}}
+## Blurry {#blurry}
+{{< asset-header youtube="izte-BmU-nw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-blurry-251642" demo="https://fronkongames.github.io/demos-spiceup/blurry/" >}}
 
 Blurred vision based on previous frames. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/blurry_0.jpg" >}}
+{{< image src="blurry_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -335,19 +302,13 @@ The number of frames the effect will use can be set in '**Frames**' (_3_). The m
 
 By default the frames used will have the same resolution as the screen. You can change this with '**Resolution**' (_5_) to make them smaller. This not only improves the performance of the effect, but also makes the image more blurred.
 
-Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
-
 ---
-# {#doublevision}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube FPELiWUmtw4 >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/doublevision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-double-vision-252006">}}
+## Double Vision {#doublevision}
+{{< asset-header youtube="FPELiWUmtw4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-double-vision-252006" demo="https://fronkongames.github.io/demos-spiceup/doublevision/" >}}
 
 Dual vision effect with steroids. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/doublevision_0.jpg" >}}
+{{< image src="doublevision_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -357,19 +318,13 @@ You can also add a _color channel phase effect_ (_4_) and adjust its intensity o
 
 With '**Blend strength**' (_5_) you can configure how the effect mixes with the screen and which operation is used to mix them.
 
-Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
-
 ---
-# {#rain}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube DKMAa_LY7yU >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/rain/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-rain-252460" >}}
+## Rain {#rain}
+{{< asset-header youtube="DKMAa_LY7yU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-rain-252460" demo="https://fronkongames.github.io/demos-spiceup/rain/" >}}
 
 Simulates the raindrops on the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/rain_0.jpg" >}}
+{{< image src="rain_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -379,19 +334,13 @@ In the next section, '**Color**' (_3_) you can change its color. If you activate
 
 With '**Layers**' (_4_) you can configure the drop layers. Three layers are available. The first, '**Static**', are droplets that do not move on the screen. The next two correspond to drops that do scroll on the screen.
 
-Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
-
 ---
-# {#ghostvision}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube NyqkpzdqkNU >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/ghostvision/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-ghost-vision-252730">}}
+## Ghost Vision {#ghostvision}
+{{< asset-header youtube="NyqkpzdqkNU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-ghost-vision-252730" demo="https://fronkongames.github.io/demos-spiceup/ghostvision/" >}}
 
 The vision of strange creatures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/ghostvision_0.jpg" >}}
+{{< image src="ghostvision_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -401,33 +350,27 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 
 By default the focus of the vision is positioned in the center of the screen (at 0, 0), if you want to modify it, you can use '**Focus**' (_3_). You can also modify its aperture (_5_) and zoom (_6_).
 
-{{< notice tip >}}
+{{< alert type="info" >}}
 Activate '**Debug view**' (_11_) to see the area where the effect is most applied with a red tint.
-{{< /notice >}}
+{{< /alert >}}
 
 With '**Speed**' (_7_) you can change the speed of the effect and by activating '**Aspect ratio**' (_8_) it will be adjusted to the resolution of the monitor.
 
 You can also modify the color of the central viewing area, '**Inner color**' (_9_), and the outer area, '**Outer color**' (_10_).
 
-Finally, if you click on '**documentation**' (_12_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_13_). If you need to reset all the effect values, click on '**Reset**' (_14_).
-
 ---
-# {#scanner}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube cudFCcHb_HY >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/scanner/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-scanner-253706" >}}
+## Scanner {#scanner}
+{{< asset-header youtube="cudFCcHb_HY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-scanner-253706" demo="https://fronkongames.github.io/demos-spiceup/scanner/" >}}
 
 Cameras, Monitors and Robots. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/scanner_0.jpg" >}}
+{{< image src="scanner_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. '**Strength**' (_2_) modulates the intensity of the rest of the parameters.
 
-{{< notice tip >}}
+{{< alert type="info" >}}
 '**Intensity**' and '**Strength**' must be greater than 0 to activate the effect.
-{{< /notice >}}
+{{< /alert >}}
 
 With '**Lines**' (_3_) you can adjust the number of lines, their color and how the line blends with the background color. In the spaces between lines you can also modify its color, '**Background**' (_4_) and the function used to mix its color.
 
@@ -439,19 +382,13 @@ You can simulate the typical curvature of old monitors with '**Barrel**' (_11_).
 
 To add a shadow effect on the edges you can use '**Vignette**' (_12_).
 
-Finally, if you click on '**documentation**' (_13_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_14_). If you need to reset all the effect values, click on '**Reset**' (_15_).
-
 ---
-# {#deathscreen}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube ewXstV38FWc >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/deathscreen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-death-screen-254360" >}}
+## Death Screen {#deathscreen}
+{{< asset-header youtube="ewXstV38FWc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-death-screen-254360" demo="https://fronkongames.github.io/demos-spiceup/deathscreen/" >}}
 
 The last screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/deathscreen_0.jpg" >}}
+{{< image src="deathscreen_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -461,43 +398,31 @@ To adjust the color, use '**Blood**' (_3_). You can also change the formula used
 
 If you want to modify the color of the areas where the effect does not act, use '**Not blood**' (_7_).
 
-Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
-
 ---
-# {#purkinje}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube FGC6LDY1RGg >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/purkinje/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-purkinje-255525" >}}
+## Purkinje {#purkinje}
+{{< asset-header youtube="FGC6LDY1RGg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-purkinje-255525" demo="https://fronkongames.github.io/demos-spiceup/purkinje/" >}}
 
 When the level of luminance drops below a certain threshold, the stimuli from rod cells supersedes that of cone cells. Due to the rod cells' minimal sensitivity to red light and heightened sensitivity to blue-green light, it leads to the perception of blue images during nighttime. This asset attempts to correct colour by simulating the above effect. 
 
-{{< imagecenter src="/store/spiceup/purkinje_1.jpg" >}}
+{{< image src="purkinje_1.jpg" wrapper="col-6 mx-auto">}}
 
 With '[Purkinje](https://en.wikipedia.org/wiki/Purkinje_cell)' you can create night scenes that really feel nocturnal, not just darker.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/purkinje_0.jpg" >}}
+{{< image src="purkinje_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 You can modify the hue with '**Tint**' (_2_) and adjust the darkness of the image with '**Darkness**' (_3_).
 
-Finally, if you click on '**documentation**' (_4_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_5_). If you need to reset all the effect values, click on '**Reset**' (_6_).
-
 ---
-# {#brokenscreen}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube eqaPjR1KYPg >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/brokenscreen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-broken-screen-256124">}}
+## Broken Screen {#brokenscreen}
+{{< asset-header youtube="eqaPjR1KYPg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-broken-screen-256124" demo="https://fronkongames.github.io/demos-spiceup/brokenscreen/" >}}
 
 Real-time glass fractures. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/brokenscreen_0.jpg" >}}
+{{< image src="brokenscreen_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -509,19 +434,13 @@ Add distortion effects to the background image and its colors with '**Distortion
 
 With '**Seed**' (_10_) you can change the random seed used to generate the fractures. The same random seed will generate the same shapes in the fractures.
 
-Finally, if you click on '**documentation**' (_11_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_12_). If you need to reset all the effect values, click on '**Reset**' (_13_).
-
 ---
-# {#pulse}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube 63-RWxded2A >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/pulse/" store="https://assetstore.unity.com/packages/slug/257920" >}}
+## Pulse {#pulse}
+{{< asset-header youtube="63-RWxded2A" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-pulse-257920" demo="https://fronkongames.github.io/demos-spiceup/pulse/" >}}
 
 Focus on one point on the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/pulse_0.jpg" >}}
+{{< image src="pulse_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -533,33 +452,25 @@ You can change the color with '**Tint**' (_6_) and the operation that will be us
 
 To see the result in the editor, press '**Test**' (_8_).
 
-Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
-
 Creating a new pulse with code is very simple. As always the first thing to do is to include the namespace:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 using FronkonGames.SpiceUp.Pulse;
-{{< /highlight >}}
-</br>
+```
 
 Now, when you want to create a new pulse, simply do:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 Pulse.Start();
-{{< /highlight >}}
-</br>
+```
 
 ---
-# {#shake}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube 5Zc_0_BYOVw >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/shake/" store="https://assetstore.unity.com/packages/slug/258721" >}}
+## Shake {#shake}
+{{< asset-header youtube="5Zc_0_BYOVw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-shake-258721" demo="https://fronkongames.github.io/demos-spiceup/shake/" >}}
 
 Shakes like in an earthquake! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/shake_0.jpg" >}}
+{{< image src="shake_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -571,33 +482,25 @@ To add even more chaos, if you want, '**Noise**' (_6_) adds some noise to all th
 
 To check the results in the Editor, you can use the '**Test**' button (_7_).
 
-Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
-
 Creating a new shake with code is very simple. As always the first thing to do is to include the namespace:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 using FronkonGames.SpiceUp.Shake;
-{{< /highlight >}}
-</br>
+```
 
 Now, when you want to create a new shake, simply do:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 Shake.Start();
-{{< /highlight >}}
-</br>
+```
 
 ---
-# {#nightvision}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube 7Dam3W04TzU >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/nightvision/" store="https://assetstore.unity.com/packages/slug/259563">}}
+## Night Vision {#nightvision}
+{{< asset-header youtube="7Dam3W04TzU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-night-vision-259563" demo="https://fronkongames.github.io/demos-spiceup/nightvision/" >}}
 
 The most versatile solution for night vision. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/nightvision_0.jpg" >}}
+{{< image src="nightvision_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -617,17 +520,15 @@ You can add an effect that defines the edges with '**Edge**' (_11_), add noises 
 
 With '**Vignette**' (_17_) you can select a shading on the edges of the screen, binoculars or monoculars.
 
-Finally, if you click on '**documentation**' (_18_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_19_). If you need to reset all the effect values, click on '**Reset**' (_20_).
-
-{{< imagecenter src="/store/spiceup/nightvision_1.jpg" >}}
+{{< image src="nightvision_1.jpg" wrapper="col-6 mx-auto">}}
 
 To create a convincing night vision effect, a light is usually added in the direction of the camera. This is not done by the effect and you can do it on your own, but I have added the '**Night Vision Manager**' component to make this task easier for you.
 
 Add it to the camera you are going to use. Set the on (_1_) and off (_2_) time of the effect.
 
-{{< notice tip >}}
+{{< alert type="info" >}}
 If you are going to use sounds, it is a good idea to match the time to the length of the audios.
-{{< /notice >}}
+{{< /alert >}}
 
 In '**Light intensity**' (_3_) you can configure the light that will be added to the camera.
 
@@ -635,26 +536,21 @@ If you want the other lights in the scene to be automatically turned off when th
 
 To turn the effect on and off using '**Night Vision Manager**' just do this:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 // Turn on.
 nightVisionManager.On = true;
 
 // Turn off.
 nightVisionManager.On = false;
-{{< /highlight >}}
-</br>
+```
 
 ---
-# {#bodycam}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube pBp_WXNzlTY >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/bodycam/" store="https://assetstore.unity.com/packages/slug/260035">}}
+## Body Cam {#bodycam}
+{{< asset-header youtube="pBp_WXNzlTY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bodycam-260035" demo="https://fronkongames.github.io/demos-spiceup/bodycam/" >}}
 
 Body camera (BWC) or wearable camera. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/bodycam_0.jpg" >}}
+{{< image src="bodycam_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -664,37 +560,29 @@ Add a '**Blur**' effect (_3_), setting its quality with '**Samples**'. Remember 
 
 You can simulate a reflection of a light with '**Flare**' (_4_). You can manually change its '**Angle**', or you can synchronize it with the Y axis of your character's rotation:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 settings.flareAngle = this.transform.eulerAngles.y;
-{{< /highlight >}}
-</br>
+```
 
 With '**Chroma band**' (_5_) and '**Luma band**' (_6_) you can simulate the defects that some poor quality cameras have. Add some '**Noise**' (_8_) for extra reality.
 
 By default dark colors tend to a blue, change it in '**Shadow tint**' (_7_) and adjust its White / Black balance.
 
-Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
-
 If you look at the demo, and the video, the center of the effect seems to move with some inertia depending on the rotation of the player. This can be easily achieved by adding the '**Body Cam Roll**' component to the camera.
 
-{{< imagecenter src="/store/spiceup/bodycam_1.jpg" >}}
+{{< image src="bodycam_1.jpg" wrapper="col-6 mx-auto">}}
 
 In this simple component you can adjust the '**Strength**' (_1_) and '**Speed**' (_2_) of the inertia.
 
 Note that this component is designed for objects that move in the XZ plane, and therefore rotate on the Y axis (as in the vast majority of FPS). If in your game the displacement planes are different, you will have to modify the code.
 
-
 ---
-# {#lensflare}
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-{{< youtube 9Z6wVV6XXPk >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-spiceup/lensflare/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-lens-flare-261769">}}
+## Lens Flare {#lensflare}
+{{< asset-header youtube="9Z6wVV6XXPk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-lens-flare-261769" demo="https://fronkongames.github.io/demos-spiceup/lensflare/" >}}
 
 Lens flare effect, intended for scenes with high brightness contrast (e.g. night scenes with lights). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/spiceup/lensflare_0.jpg" >}}
+{{< image src="lensflare_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -706,36 +594,39 @@ Add a cinematic touch with '**ACES**' (_5_), a tonemapper widely used in the fil
 
 You can change the operation used to blend the color of the flares with the original image with '**Blend**' (_7_), as well as their color and gamma.
 
-Finally, if you click on '**documentation**' (_9_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_10_). If you need to reset all the effect values, click on '**Reset**' (_11_).
-
+#
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 📊 Misc
+## Misc
 
 All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
-{{< imagecenter src="/store/spiceup/color.jpg" >}}
+{{< image src="color.jpg" wrapper="col-6 mx-auto">}}
 
 They also have an '**Advanced**' panel with these options:
 
-{{< imagecenter src="/store/spiceup/advanced.jpg" >}}
+{{< image src="advanced.jpg" wrapper="col-6 mx-auto">}}
 
 Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
 
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🩺 Support
+## Support
 
-Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
+Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+{{< rawhtml >}}
+<br><center><h4>
+{{< /rawhtml >}}
 
-❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-{{< center >}}
-If you are happy with this asset, <b>please consider leaving a positive review</b> in the store, it would really help me,
-<b>thanks</b>!
-{{< /center >}}
+{{< alert color="warning" >}}
+If you are happy with this asset, consider write a review in the store
+
+❤️ thanks! ❤️
+{{< /alert >}}
+
+{{< rawhtml >}}
+</center></h4>
+{{< /rawhtml >}}

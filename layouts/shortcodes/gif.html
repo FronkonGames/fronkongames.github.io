@@ -1,0 +1,7 @@
+{{ $src := .Get "src" -}}
+{{ $scale := .Get "scale" | default "100" -}}
+
+<center>
+  <img src="{{ $src }}" width="{{$scale}}%" height="{{$scale}}%"/>
+</center>
+<br>

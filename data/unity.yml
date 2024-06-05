@@ -1,0 +1,96 @@
+- title: 
+  icon: fas person
+  color: primary
+  date: 2014-07-03
+  showYearOnly: true
+  url: https://github.com/gethinode/hinode/releases/tag/v0.15.3
+  content: [
+    "[John Riccitiello](https://en.wikipedia.org/wiki/John_Riccitiello) (ex-Electronic Arts) replaces [David Helgason](https://www.linkedin.com/in/davidhelgason/) as CEO.",
+    "Unity acquired [Playnomics](https://www.gamesindustry.biz/unity-acquires-playnomics-report) and [EveryPlay](https://unity.com/our-company/newsroom/unity-technologies-acquire-applifier-bring-everyplay-social-gaming-community)."
+    ]
+
+- title: 
+  icon: fas question
+  color: primary
+  date: 2017-04-16
+  showYearOnly: true
+  content: ["Unity changes the way of naming versions. Unity 5.6 is renamed 2017. For me, version 2017.2 was the last good one."]
+
+- title: 
+  icon: fas arrow-trend-down
+  color: primary
+  date: 2018-04-16
+  showYearOnly: true
+  content: [
+    "Unity goes public at $68 per share, today it is worth $36.",
+    "Unity presents its '[Scriptable Render Pipeline](https://docs.unity3d.com/Manual/ScriptableRenderPipeline.html)', with two flavors 'Lightweight Rendering Pipeline' (now renamed to '[Universal Render Pipeline](https://unity.com/srp/universal-render-pipeline)') and '[High-Definition Rendering Pipeline](https://unity.com/srp/High-Definition-Render-Pipeline)'. The [#SRPLife](https://forum.unity.com/threads/join-us-for-srplife-week.915275/) chaos begins and to this day it continues to give me nightmares.",
+    "Unity [acquired Digital Monarch Media](https://unity.com/our-company/newsroom/unity-technologies-acquire-digital-monarch-media-pioneer-next-generation-real).",
+    "Unity [introduces DOTS](https://www.youtube.com/watch?v=j4rWfPyf-hk), a data-oriented design tech, four years later version 1.0 is released."
+    ]
+
+- title: 
+  icon: fas dollar-sign
+  color: primary
+  date: 2019-04-16
+  showYearOnly: true
+  content: [
+    "Unity [acquired Vivox](https://variety.com/2019/gaming/news/unity-technologies-acquires-vivox-1203122251/).",
+    "Unity [acquired deltaDNA](https://unity.com/our-company/newsroom/unity-technologies-acquires-deltadna-games-liveops-provider) for $53M.",
+    "Unity [acquired ChilliConnect](https://unity.com/our-company/newsroom/unity-technologies-acquires-chilliconnect).",
+    "Unity [acquired Obvioos](https://www.gamesindustry.biz/unity-acquires-cloud-video-streaming-service-creator-obvioos) for $123M."
+    ]
+
+- title: 
+  icon: fas dollar-sign
+  color: primary
+  date: 2020-04-16
+  showYearOnly: true
+  content: [
+    "Unity [acquired Finger Food Advanced](https://blog.unity.com/news/finger-food-advanced-technology-group-joins-unity) for $23M.",
+    "Unity [acquired Plastic SCM](https://mcvuk.com/development-news/unity-acquires-plastic-scm-developer-codice-software/).",
+    "Unity [acquired Codice Software](https://venturebeat.com/business/unity-acquires-codice-software-to-manage-3d-workflows/).",
+    "Unity [acquired RestAR](https://www.businesswire.com/news/home/20201215005325/en/Unity-Acquires-RestAR-to-Enable-AI-Based-3D-Capture).",
+    "Unity introduces [Visual Scripting](https://unity.com/features/unity-visual-scripting) (formerly Bolt).",
+    "Unity introduces [Barracuda](https://docs.unity3d.com/Packages/com.unity.barracuda@1.0/manual/index.html), a lightweight cross-platform neural network inference library. Three years later it was replaced by 'Sentis'."
+    ]
+
+- title: 
+  icon: fas dollar-sign
+  color: primary
+  date: 2021-04-16
+  showYearOnly: true
+  content: [
+    "Unity [acquired Ziva Dynamics](https://www.marketscreener.com/quote/stock/UNITY-SOFTWARE-INC-112492634/news/Unity-Software-Inc-NYSE-U-acquired-Ziva-Dynamics-Inc-for-approximately-130-million-37636791/) for $130M.",
+    "Unity [acquired Parsec](https://techcrunch.com/2021/08/10/unity-to-acquire-parsec-in-its-biggest-acquisition-to-date/) for $320M.",
+    "Unity [acquired ChilliConnect](https://unity.com/our-company/newsroom/unity-technologies-acquires-chilliconnect).",
+    "Unity [acquired Weta Digital](https://investors.unity.com/news/news-details/2021/Unity-Completes-Acquisition-of-Weta-Digitals-Tools-Pipeline-and-Engineering-Talent/default.aspx) for $1.6B.",
+    "Unity [acquired PiXYZ](https://blog.unity.com/news/pixyz-software-joins-unity).",
+    "Unity [acquire SyncSketch](https://blog.unity.com/news/welcome-syncsketch) for $30M.",
+    "Unity [acquire VisualLive](https://blog.unity.com/news/visuallive-joins-unity)."
+    ]
+
+- title: 
+  icon: fas question
+  color: primary
+  date: 2022-05-16
+  showYearOnly: true
+  content: [
+    "Unity cancels, and fires all involved, the ['Gigaya' project](https://blog.unity.com/games/introducing-unitys-latest-sample-game-gigaya), its first and only attempt to make a complete game.",
+    "Unity [buys ironSource](https://techcrunch.com/2022/11/07/unity-and-ironsources-4-4b-merger-is-now-complete/), formerly InstallCore, a giant malware producer, for $4.4B.",
+    "John Ricciatello said developers that shun monetisation practises or leave them to later in the development cycle are '[fucking idiots](https://www.gamesindustry.biz/riccitiello-developers-who-push-back-against-monetisation-are-pure-brilliant-and-fucking-idiots)'.",
+    "AppLovin offers $20B for Unity, but without ironSource. The deal is [rejected](https://www.cnbc.com/2022/09/12/applovin-abandons-effort-to-buy-unity-after-20-billion-bid-rejected.html).",
+    "Unity introduces '[Unity Gaming Services](https://unity.com/solutions/gaming-services)'.",
+    "Unity introduce '[UI Toolkit](https://unity.com/features/ui-toolkit)'.",
+    "Unity close '[Unity Answers](https://forum.unity.com/threads/unity-answers-shutdown-canceled.1293360/)'.",
+    "Unity introduces '[Verified Solutions](https://unity.com/partners/verified-solutions)' in the store.",
+    "Unity introduce ['Muse' and 'Sentis'](https://blog.unity.com/engine-platform/introducing-unity-muse-and-unity-sentis-ai), AI-powered tools."
+    ]    
+
+- title: 
+  icon: fas bomb
+  color: primary
+  date: 2023-05-16
+  showYearOnly: true
+  content: [
+    "Unity introduce '[Unity Runtime Fee](https://unity.com/runtime-fee)'."
+    ]

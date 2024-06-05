@@ -1,0 +1,73 @@
+[[main]]
+  name = "STORE"
+  pageRef = "/store/"
+  weight = 10
+
+[[main]]
+  name = "PROJECTS"
+  pageRef = "/projects/"
+  weight = 20
+
+[[main]]
+  name = "BLOG"
+  pageRef = "/blog/"
+  weight = 30
+
+# [[main]]
+#   name = "ABOUT"
+#   pageRef = "/about/"
+#   weight = 40
+
+[[social]]
+  name = "eMail"
+  pre = "fa envelope"
+  url = "mailto:fronkongames@gmail.com"
+  weight = 1
+
+[[social]]
+  name = "LinkedIn"
+  pre = "fab linkedin"
+  url = "https://www.linkedin.com/in/martinbr"
+  weight = 10
+
+[[social]]
+  name = "Twitter"
+  pre = "fab twitter"
+  url = "https://x.com/fronkongames"
+  weight = 20
+
+[[social]]
+  name = "GitHub"
+  pre = "fab fa-github"
+  url = "https://github.com/FronkonGames"
+  weight = 30
+
+[[social]]
+  name = "Youtube"
+  pre = "fab youtube"
+  url = "https://www.youtube.com/@fronkongames"
+  weight = 40
+
+# toml-docs-start sample-navigation
+[[sample]]
+  name = "Blog"
+  pageRef = "/blog/"
+  weight = 10
+
+[[sample]]
+  name = "PROJECTS"
+  pageRef = "/projects/"
+  weight = 20
+
+[[main]]
+  name = "Kairos"
+  pageRef = "/projects/kairos/"
+  parent = "PROJECTS"
+  weight = 0
+
+[[sample]]
+  name = "Another project"
+  pageRef = "/projects/kairos/"
+  parent = "PROJECTS"
+  weight = 2
+# toml-docs-end sample-navigation

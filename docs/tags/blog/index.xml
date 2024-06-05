@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Fronkon Games</title>
+    <link>https://fronkongames.github.io/tags/blog/</link>
+    <description>Recent content in blog on Fronkon Games</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2024 Fronkon Games</copyright>
+    <lastBuildDate>Thu, 01 Jan 1970 01:00:03 +0100</lastBuildDate>
+    <atom:link href="https://fronkongames.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction To Go</title>
+      <link>https://fronkongames.github.io/blog/introduction-to-go/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <guid>https://fronkongames.github.io/blog/introduction-to-go/</guid>
+      <description>Go is a very old strategy game that consists of capturing pieces and winning territories. It is about 2,500 years old and was invented in China, although the exact location is unknown.</description>
+    </item>
+    <item>
+      <title>Design Patterns In Game Development</title>
+      <link>https://fronkongames.github.io/blog/design-patterns-in-game-development/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
+      <guid>https://fronkongames.github.io/blog/design-patterns-in-game-development/</guid>
+      <description>The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.</description>
+    </item>
+    <item>
+      <title>Unity Is A Harsh Mistress 💔</title>
+      <link>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <guid>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</guid>
+      <description>&amp;nbsp; UPDATE (10/10/2023)&#xA;Today it was announced that John Riccitiello is stepping down from all of his positions at Unity: President, CEO, Chairman and member of the board of directors.</description>
+    </item>
+  </channel>
+</rss>

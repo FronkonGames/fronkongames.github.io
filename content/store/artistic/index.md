@@ -1,13 +1,17 @@
 ---
-title: "Artistic"
-date: 2023-02-22T12:23:10+06:00
-image: /store/artistic/mini.png
-logo: /store/artistic/logo.png
-description: "Enhance your creativity and get a unique style with this effects bundle."
-type: "store"
+author: Martin Bustos
+title: Artistic
+showTitle: false
+date: 1
+description: Enhance your creativity and get a unique style with this effects bundle
+tags: ["unity", "store"]
+metadata: none
+showImage: true
+thumbnail:
+  url: img/artistic.jpg
 ---
 
-'**Artistic**' contains the following assets:
+All the effects of '**Artistic**' will help you to achieve a unique look for your games. It consists of the following effects:
 
 * [One Bit](#onebit), a hipster, original and versatile look using a dithering with blue noise.
 * [Oil Paint](#oilpaint), transform your games into pieces of art.
@@ -20,80 +24,74 @@ type: "store"
 * [Spark](#spark), adds bloom and ray-of-light effects.
 * [Radial Blur](#radialblur), the need for the speed.
 
-{{< rawhtml >}}<br>{{< /rawhtml >}}
-{{< notice note "SPECIAL OFFER" >}}
-You can obtain each effect separately (for only $8!), but if you want multiple effects, you might be interested in '[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266?aid=1101l9zFC&utm_source=aff)' where you can find them all at a special price!
-{{< /notice >}}
+{{< alert color="light" >}}
+You can obtain each effect separately (**for only $8!**), but if you want multiple effects, you might be interested in **'[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
+{{< /alert >}}
 
-{{< rawhtml >}}<br>{{< /rawhtml >}}
-## ⚙️ Requirements
+## Requirements
 
 All '**Artistic**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
 You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🖥️ Using them in the Editor
+## Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**Artistic**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
-{{< imagecenter src="/store/artistic/editor_0.jpg" >}}
+{{< image src="editor_0.jpg" wrapper="col-6 mx-auto">}}
 
 Remember that the camera you are using must have the '**Post Processing**' option enabled.
 
-{{< imagecenter src="/store/artistic/editor_1.jpg" >}}
+{{< image src="editor_1.jpg" wrapper="col-6 mx-auto">}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🥸 VR
+## VR
 
 To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
 
-{{< imagecenter src="/store/artistic/vr.jpg" >}}
+{{< image src="vr.jpg" wrapper="col-6 mx-auto">}}
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🪄 Using them in code
+
+## Using them in code
 
 You can also handle '**Artistic**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
 
 They are all of the style 'FronkonGames.Artistic.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**One Bit**' the code would be:
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 using FronkonGames.Artistic.OneBit;
-{{< /highlight >}}
-</br>
+```
 
 And with this code you could check if the effect is added, and if it is not, add it.
 
-{{< highlight csharp "linenos=false" >}}
+```csharp
 if (OneBit.IsInRenderFeatures() == false)
-    OneBit.AddRenderFeature();
-{{< /highlight >}}
-</br>
+  OneBit.AddRenderFeature();
+```
 
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
-{{< highlight csharp "linenos=false" >}}
- OneBit.Settings settings = OneBit.GetSettings();
+```csharp
+OneBit.Settings settings = OneBit.GetSettings();
 
- settings.intensity = 0.5f;
- {{< /highlight >}}
-</br>
+settings.intensity = 0.5f;
+```
 
 If you are using an effect other than '**OneBit**' just change it to its name. Check the source code comments for more information.
 
+{{< alert color="warning" icon="fas triangle-exclamation" >}}
+Do not use the code of the demos in your projects, they are only there to show you the use of the effect through code.
+{{< /alert >}}
+
+#
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#onebit}
-{{< youtube Yz9j7iXuDhY >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/onebit/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000">}}
+## One Bit {#onebit}
+{{< asset-header youtube="Yz9j7iXuDhY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000" demo="https://fronkongames.github.io/demos-artistic/onebit/" >}}
 
 Get a distinctive look with '**One Bit**', an original and versatile effect that uses a special type of dithering algorithm based on Blue Noise, similar to that used at the award-winning '_Return of the Obra Dinn_'.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/onebit_0.jpg" >}}
+{{< image src="onebit_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -101,37 +99,31 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 
 '**Blend**' (_4_), specifies the formula used to mix the original color of the screen with the effect. They are very similar to those you can find in '_Photoshop_'. With '**Color**' you can change the way a color (or several) effects the final result. The simplest is '**Solid**' and its '**Color**' parameter tints the image. Other modes are '**Horizontal**', '**Vertical**' and '**Circular**' and use two colors in a gradient in different directions.
 
-{{< imagecenter src="/store/artistic/onebit_1.jpg" >}}
+{{< image src="onebit_1.jpg" wrapper="col-6 mx-auto">}}
 
-'**Ramp**' is another mode that uses the brightness of the original pixel to replace it in a color gradient. So the leftmost colors of the gradient would be used for the darker areas of the image and the rightmost colors would be used for the brighter areas. Click on the gradient to modify it to your liking. If the gradient you use does not have dark colors, the result may be too bright, and vice versa. You can modify the brightness range used with '**Luminance**'.
+'**Gradient**' is another mode that uses the brightness of the original pixel to replace it in a color gradient. So the leftmost colors of the gradient would be used for the darker areas of the image and the rightmost colors would be used for the brighter areas. Click on the gradient to modify it to your liking. If the gradient you use does not have dark colors, the result may be too bright, and vice versa. You can modify the brightness range used with '**Luminance**'.
 
 Click on '**search**' to open the color palette search tool.
 
-{{< imagecenter src="/store/artistic/onebit_2.jpg" >}}
+{{< image src="onebit_2.jpg" wrapper="col-6 mx-auto">}}
 
 Just find a palette you like and click the '**Use**' button.
 
-{{< notice note "" >}}
+{{< alert color="success" icon="fas circle-info" >}}
 This tool requires an Internet connection.
-{{< /notice >}}
+{{< /alert >}}
 
 In _6_, _7_ and _8_ you can modify the color range in each channel. Small values in these fields can create a '_retro_' effect.
 
 When '**Invert**' (_9_) is activated, the color is inverted.
 
-Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
-
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#oilpaint}
-{{< youtube A9jtFpXo02Q >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/oilpaint/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" >}}
+## Oil Paint {#oilpaint}
+{{< asset-header youtube="A9jtFpXo02Q" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" demo="https://fronkongames.github.io/demos-artistic/oilpaint/" >}}
 
 Transform your games into pieces of art in a very easy way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/oilpaint_0.jpg" >}}
+{{< image src="oilpaint_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -154,33 +146,27 @@ Still not enough? Raise the value of '**Water Color**' (__4__) to add an water c
 
 If you need more control, activate '**Process depth**' (__5__).
 
-{{< imagecenter src="/store/artistic/oilpaint_1.jpg" >}}
+{{< image src="oilpaint_1.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Depth curve**' (__1__) you can adjust the intensity of the effect depending on the depth. In the values of the example you can see that the effect would have the maximum intensity except in the farthest areas it would tend to 0. With this you can avoid that small details in the background of the scene disappear because of the effect. You can also adjust the intensity of the curve with '**Depth power**' (__2__).
 
 Adjusting these two parameters can be complicated by not being able to see clearly how the curve varies. Activate '**View depth curve**' (__4__) and you will see that the areas with the most intense effect are warmer and the areas with the least are cooler.
 
-{{< video src="/store/artistic/oilpaint_2.mp4" >}}
+{{< video src="oilpaint_2.mp4" loop="true" autoplay="true" >}}
 
 Don't want the effect to be applied to the sky? Disable '**Sample sky**' (__3__).
 
-{{< notice tip >}}
+{{< alert color="success" icon="fas circle-info" >}}
 In order to use this feature, you must enable '**Depth Texture**' in your camera or pipeline settings.
-{{< /notice >}}
-
-Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
+{{< /alert >}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#tiltshift}
-{{< youtube ixqjMNnUSus >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tiltshift/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tilt-shift-265465" >}}
+## Tilt Shift {#tiltshift}
+{{< asset-header youtube="ixqjMNnUSus" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tilt-shift-265465" demo="https://fronkongames.github.io/demos-artistic/tiltshift/" >}}
 
 Used to simulate a miniature scene, something very used in cinema as in the [race scene](https://www.youtube.com/watch?v=QetnuKbo1XI) of '_The Social Network_'. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/tiltshift_0.jpg" >}}
+{{< image src="tiltshift_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -188,23 +174,17 @@ You can modify the angle (_2_), aperture (_3_) and offset (_4_) of the effect. A
 
 You can also modify certain color parameters in the 'focused' (_7_) area (where the effect is not applied) and in the 'unfocus' (_8_) area.
 
-{{< imagecenter src="/store/artistic/tiltshift_1.jpg" >}}
+{{< image src="tiltshift_1.jpg" wrapper="col-6 mx-auto" >}}
 
 In order to better adjust these parameters, you can activate '**Debug**' (_9_) to better see how the effect is applied. With this parameter activated, the areas with more intensity of the effect will be tinted red, and those with less intensity will be tinted blue.
 
-Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
-
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#colorisolation}
-{{< youtube XfHdKU1qTF4 >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/colorisolation/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-color-isolation-266086">}}
+## Color Isolation {#colorisolation}
+{{< asset-header youtube="XfHdKU1qTF4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-color-isolation-266086" demo="https://fronkongames.github.io/demos-artistic/colorisolation/" >}}
 
 Isolates areas by color and applies effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/colorisolation_0.jpg" >}}
+{{< image src="colorisolation_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -212,25 +192,19 @@ The first thing to do is to set the color you want to isolate, using '_Isolated 
 
 '**Color Isolation**' translates the image into the [CIELAB color space](https://en.wikipedia.org/wiki/CIELAB_color_space), in order to more accurately differentiate colors. You can adjust the parameters that are used:
 
-* L*, luminosity.
-* a*, green-magenta axis.
-* b*, blue-yellow axis.
+* L*: luminosity.
+* a*: green-magenta axis.
+* b*: blue-yellow axis.
 
 Once you have isolated the color you want, you can apply different effects to both the '**Isolated zone**' (_3_) and the '**Not isolated zone**' (_4_).
 
-Finally, if you click on '**documentation**' (_5_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_6_). If you need to reset all the effect values, click on '**Reset**' (_7_).
-
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#sharpen}
-{{< youtube Xjax-orCmVY >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/sharpen/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-sharpen-266728">}}
+## Sharpen {#sharpen}
+{{< asset-header youtube="Xjax-orCmVY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-sharpen-266728" demo="https://fronkongames.github.io/demos-artistic/sharpen/" >}}
 
 Enhances image details using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/sharpen_0.jpg" >}}
+{{< image src="sharpen_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -252,19 +226,13 @@ You can also increase the contrast of the colors with '**Vibrance**' (_5_).
 
 To view in which areas of the image the effect is applied, activate '**Debug view**' (_6_).
 
-Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
-
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#tonemapper}
-{{< youtube XcLXlvqG5yU >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/tonemapper/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" >}}
+## Tonemapper {#tonemapper}
+{{< asset-header youtube="XcLXlvqG5yU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" demo="https://fronkongames.github.io/demos-artistic/tonemapper/" >}}
 
 Maps wide range colors (HDR) into low dynamic range (LDR) using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/tonemapper_0.jpg" >}}
+{{< image src="tonemapper_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. These are the operators (_2_) included:
 
@@ -297,19 +265,13 @@ Each operator can also have some extra parameters that will appear under it.
 
 You can also modify the final color with the parameters offered by '**Color filter**' (_3_) and its '**Lift**' (_4_), '**Midtones**' (_5_) and '**Gain**' (_6_).
 
-Finally, if you click on '**documentation**' (_7_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_8_). If you need to reset all the effect values, click on '**Reset**' (_9_).
-
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#comic}
-{{< youtube W4t0Cnk1Q0U >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/comic/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-comic-269586" >}}
+## Comic {#comic}
+{{< asset-header youtube="W4t0Cnk1Q0U" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-comic-269586" demo="https://fronkongames.github.io/demos-artistic/comic/" >}}
 
 Simulates the printing technique used in comics and newspapers: [halftone](https://en.wikipedia.org/wiki/Halftone). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/comic_0.jpg" >}}
+{{< image src="comic_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -319,19 +281,13 @@ To increase the feeling of seeing a comic book, you can add a stroke effect with
 
 If you want to finely adjust the angle of each color point, you can modify it with '**CMYK pattern**' (_5_).
 
-Finally, if you click on '**documentation**' (_6_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_7_). If you need to reset all the effect values, click on '**Reset**' (_8_).
-
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#neon}
-{{< youtube nNVYDesYfF8 >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/neon/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-neon-270269" >}}
+## Neon {#neon}
+{{< asset-header youtube="nNVYDesYfF8" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-neon-270269" demo="https://fronkongames.github.io/demos-artistic/neon/" >}}
 
 Neon synthwave effect highlighting the edges of the image with cycling colors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/neon_0.jpg" >}}
+{{< image src="neon_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. You can control the edge strength with '**Strength**' (_2_). The thickness can be adjusted with '**Radius**' (_3_).
 
@@ -341,31 +297,25 @@ Additionally you can apply a deformation to the effect with '**Fisheye**' (_5_).
 
 You may want the effect to become less intense as you move away from the camera. Activate '**Process depth**' (_7_) and adjust '**Depth power**' to achieve this. If you also want it to affect the sky, turn on '**Sample sky**'.
 
-{{< notice tip >}}
+{{< alert color="success" icon="fas circle-info" >}}
 In order to use this feature, you must enable '**Depth Texture**' in your camera or pipeline settings.
-{{< /notice >}}
-
-Finally, if you click on '**documentation**' (_8_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_9_). If you need to reset all the effect values, click on '**Reset**' (_10_).
+{{< /alert >}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#spark}
-{{< youtube kgwMRlHzGxs >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/spark/" store="https://assetstore.unity.com/packages/slug/270898">}}
+## Spark {#spark}
+{{< asset-header youtube="kgwMRlHzGxs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-spark-270898" demo="https://fronkongames.github.io/demos-artistic/spark/" >}}
 
 Adds bloom and ray-of-light effects to the brightest areas. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/spark_0.jpg" >}}
+{{< image src="spark_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 In the '**Rays**' section (_2_) you can adjust everything related to the rays generated by the effect. From their size, intensity, color and angle, to the operation used to blend them with the original image.
 
-{{< notice tip >}}
+{{< alert color="success" icon="fas circle-info" >}}
 By default the rays do not rotate, but you can do it easily by moving '**Spin**'. If you want to do it via script, you have an example in the demo code.
-{{< /notice >}}
+{{< /alert >}}
 
 In '**Barrel**' (_3_) you can control the deformation of the rays and with '**Dispersion**' (_4_) you can simulate a chromatic shift of their colors.
 
@@ -375,23 +325,17 @@ If you want to better adjust at what brightness level rays start to be generated
 
 Although it will decrease the quality of the effect, you can increase the performance of the effect by choosing other values for '**Down sample**' (_8_). This may generate some annoying glitches in the brightness, you can mitigate them by using '**Artifacts**' (_9_).
 
-{{< notice tip >}}
-You don't want the effect to be generated on your particles? You can change when it is applied by going to '**Advanced** > **RenderPass event**' and setting it to '_After Rendering Transparents_'.
-{{< /notice >}}
-
-Finally, if you click on '**documentation**' (_10_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_11_). If you need to reset all the effect values, click on '**Reset**' (_12_).
+{{< alert type="info" >}}
+You don't want the effect to be generated on your particles? You can change when it is applied by going to '**Advanced** > **RenderPass event**' and setting it to '**After Rendering Transparents**'.
+{{< /alert >}}
 
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-
-# {#radialblur}
-{{< youtube rSE8fjbire4 >}}
-
-{{< asset-buttons demo="https://fronkongames.github.io/demos-artistic/radialblur/" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-radial-blur-271547" >}}
+## Radial Blur {#radialblur}
+{{< asset-header youtube="rSE8fjbire4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-radial-blur-271547" demo="https://fronkongames.github.io/demos-artistic/radialblur/" >}}
 
 Increases the feeling of speed and adrenaline! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< imagecenter src="/store/artistic/radialblur_0.jpg" >}}
+{{< image src="radialblur_0.jpg" wrapper="col-6 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -405,35 +349,39 @@ A screen warping effect is also added with '**Fisheye**' (_7_). With negative va
 
 You can also apply color effects to the inner zone, '**Inner**' (_10_), where less effect is applied and to the outer zone, '**Outer**' (_11_), where more effect is applied. The zones can be modified with '**Gradient power**' (_8_) and '**Range**' (_9_).
 
-Finally, if you click on '**documentation**' (_12_) you will go to the online documentation. If you need support, you can send me an email to '_frokongames@gmail.com_' or you can click on '**support**' (_13_). If you need to reset all the effect values, click on '**Reset**' (_14_).
-
+#
 ---
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 📊 Misc
+## Misc
 
 All '**Artistic**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
-{{< imagecenter src="/store/artistic/color.jpg" >}}
+{{< image src="color.jpg" wrapper="col-6 mx-auto">}}
 
 They also have an '**Advanced**' panel with these options:
 
-{{< imagecenter src="/store/artistic/advanced.jpg" >}}
+{{< image src="advanced.jpg" wrapper="col-6 mx-auto">}}
 
 Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
 
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
-## 🩺 Support
+---
+## Support
 
-Do you have any problem or any suggestions? Click on "**support**" or send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
+Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
 
 Remember that if you want to inform me of an error, it would help me if you sent to me the [log file](https://docs.unity3d.com/Manual/LogFiles.html).
 
-{{< rawhtml >}}<br><br>{{< /rawhtml >}}
+{{< rawhtml >}}
+<br><center><h4>
+{{< /rawhtml >}}
 
-❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-{{< center >}}
-If you are happy with this asset, <b>please consider leaving a positive review</b> in the store, it would really help me,
-<b>thanks</b>!
-{{< /center >}}
+{{< alert color="warning" >}}
+If you are happy with this asset, consider write a review in the store
+
+❤️ thanks! ❤️
+{{< /alert >}}
+
+{{< rawhtml >}}
+</center></h4>
+{{< /rawhtml >}}

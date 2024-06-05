@@ -2,24 +2,22 @@
 /* make 5px space between the button(filter options) in the filter bar */
 .justified-gallery-filterbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 10px; }
+  gap: 5px; }
   .justified-gallery-filterbar button {
     padding: 6px;
-    border: 0px solid #fff;
-    border-radius: 0px;
-    background-color: #ad444a;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
     font-weight: bold;
-    color: #ffffff;
+    color: #fff;
     line-height: 1em; }
     .justified-gallery-filterbar button:hover {
-      color: #333333;
-      text-decoration: underline;
-      background-color: #e6e6e6; }
-    .justified-gallery-filterbar button.selected {
       text-decoration: underline; }
+    .justified-gallery-filterbar button.selected {
+      text-decoration: underline;
+      background-color: #fff3; }
     .justified-gallery-filterbar button svg {
       width: 1em;
       height: 1em;

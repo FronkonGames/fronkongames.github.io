@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gamedev on Fronkon Games</title>
+    <link>https://fronkongames.github.io/tags/gamedev/</link>
+    <description>Recent content in gamedev on Fronkon Games</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2024 Fronkon Games</copyright>
+    <lastBuildDate>Thu, 01 Jan 1970 01:00:07 +0100</lastBuildDate>
+    <atom:link href="https://fronkongames.github.io/tags/gamedev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kairos</title>
+      <link>https://fronkongames.github.io/projects/kairos/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/kairos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Awesome Game Development</title>
+      <link>https://fronkongames.github.io/projects/awesome-game-development/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/awesome-game-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Game:Work Foundation</title>
+      <link>https://fronkongames.github.io/projects/gamework-foundation/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/gamework-foundation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Game:Work Core</title>
+      <link>https://fronkongames.github.io/projects/gamework-core/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/gamework-core/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design Patterns In Game Development</title>
+      <link>https://fronkongames.github.io/blog/design-patterns-in-game-development/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
+      <guid>https://fronkongames.github.io/blog/design-patterns-in-game-development/</guid>
+      <description>The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.</description>
+    </item>
+    <item>
+      <title>Build History</title>
+      <link>https://fronkongames.github.io/projects/build-history/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/build-history/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
