@@ -23,6 +23,13 @@
                 </div>
                 <div class="col-12 col-{{ $breakpoint.current }}-9 col-{{ $breakpoint.next }}-8 mb-5 p-4">
                     {{ .Render "single/main" }}
+
+                        {{ if .Page.Params.giscus | default false }}
+                        <div class="giscus">
+                          {{- partial "giscus/script-with-options" .Site.Params.giscus -}}
+                        </div>
+                        {{ end }}
+
                 </div>
                 <div class="col col-{{ $breakpoint.current }}-3 col-{{ $breakpoint.next }}-2 d-none d-{{ $breakpoint.current }}-block pt-5">
                     {{ $toc | safeHTML }}
@@ -32,6 +39,13 @@
             <div class="row row-cols-1 row-cols-{{ $breakpoint.current }}-2">
                 <div class="col col-{{ $breakpoint.prev }}-12 col-{{ $breakpoint.current }}-9">
                     {{ .Render "single/main" }}
+
+                        {{ if .Page.Params.giscus | default false }}
+                        <div class="giscus">
+                          {{- partial "giscus/script-with-options" .Site.Params.giscus -}}
+                        </div>
+                        {{ end }}
+
                 </div>
                 <div class="col col-{{ $breakpoint.current }}-3 d-none d-{{ $breakpoint.current }}-block">
                     {{ $toc | safeHTML }}

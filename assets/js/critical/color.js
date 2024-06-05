@@ -12,10 +12,6 @@
   const storedTheme = 'dark'//localStorage.getItem('theme')
 
   const getPreferredTheme = () => {
-    if (storedTheme) {
-      return storedTheme
-    }
-
     return 'dark'
   }
 
@@ -57,7 +53,7 @@
     document.querySelectorAll('[data-bs-theme-value]')
       .forEach(toggle => {
         toggle.addEventListener('click', () => {
-          const theme = toggle.getAttribute('data-bs-theme-value')
+          const theme = 'dark'//toggle.getAttribute('data-bs-theme-value')
           localStorage.setItem('theme', theme)
           setTheme(theme)
           showActiveTheme(theme)

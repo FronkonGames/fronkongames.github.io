@@ -52,6 +52,7 @@
                     {{ block "featured" . }}{{ end -}}
 
                 </div>
+
                 {{ if .Site.Params.main.footerBelowFold }}
                     {{ block "main" . }}
                     {{ end -}}
@@ -61,12 +62,6 @@
             {{ if not .Site.Params.main.footerBelowFold }}
                 {{ block "main" . }}
                 {{ end -}}
-
-                {{ if .Page.Params.giscus | default false }}
-                <div class="container-xxl flex-fill p-4 px-xxl-0">
-                  {{- partial "giscus/script-with-options" .Site.Params.giscus -}}
-                </div>
-                {{ end }}
 
                 {{- partial "footer/social.html" . -}}
                 {{- partial "footer/footer.html" . -}}

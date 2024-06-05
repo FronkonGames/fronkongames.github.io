@@ -2,7 +2,7 @@
 [main]
     separator = "-"
     description = "Hi! I'm Martin Bustos, an indie game developer and asset store publisher"
-    enableDarkMode = false
+    enableDarkMode = true
     modes = ["light", "dark"]
     canonifyAssetsURLs = false
     endorse = true
