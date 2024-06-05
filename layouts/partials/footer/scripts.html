@@ -45,3 +45,5 @@
         <script src="{{ if $absoluteURL }}{{ $js.Permalink }}{{ else }}{{ $js.RelPermalink }}{{ end }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"{{ with $state}} {{ . | safeHTMLAttr }}{{ end }}></script>
     {{ end -}}
 {{ end -}}
+
+{{ partial "analytics.html" . }}

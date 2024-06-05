@@ -78,7 +78,6 @@
 
 {{ partial "head/opengraph.html" . }}
 {{ partial "head/twitter_cards.html" . }}
-
 {{ range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
