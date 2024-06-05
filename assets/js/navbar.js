@@ -1,11 +1,9 @@
-document.documentElement.setAttribute('data-bs-theme', 'dark')
-
 const navbar = document.querySelector('.navbar')
 const togglers = document.querySelectorAll('.main-nav-toggler')
 const modeSelectors = document.querySelectorAll('.switch-mode-collapsed')
 const colorsBG = ['body', 'secondary', 'tertiary']
 
-function updateNavbar () {
+function updateNavbar() {
   if (window.scrollY > 75) {
     navbar.classList.add('nav-active')
     const storedTheme = 'dark'//localStorage.getItem('theme')
@@ -18,6 +16,8 @@ function updateNavbar () {
 }
 
 if ((navbar !== null) && (window.performance.getEntriesByType)) {
+  document.documentElement.setAttribute('data-bs-theme', 'dark')
+
   if (window.performance.getEntriesByType('navigation')[0].type === 'reload') {
     updateNavbar()
   }

@@ -7,9 +7,9 @@
  */
 
 (() => {
-  'use strict'
-  document.documentElement.setAttribute('data-bs-theme', 'dark')
   /*
+  'use strict'
+
   const storedTheme = 'dark'//localStorage.getItem('theme')
 
   const getPreferredTheme = () => {
