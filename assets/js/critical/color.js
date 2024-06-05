@@ -8,7 +8,8 @@
 
 (() => {
   'use strict'
-
+  document.documentElement.setAttribute('data-bs-theme', 'dark')
+  /*
   const storedTheme = 'dark'//localStorage.getItem('theme')
 
   const getPreferredTheme = () => {
@@ -60,6 +61,7 @@
         })
       })
   })
+  */
 })()
 
 {{- end -}}
