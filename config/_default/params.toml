@@ -3,7 +3,7 @@
     separator = "-"
     description = "Hi! I'm Martin Bustos, an indie game developer and asset store publisher"
     enableDarkMode = true
-    modes = ["light", "dark"]
+    modes = ["dark"]
     canonifyAssetsURLs = false
     endorse = true
     footerBelowFold = false

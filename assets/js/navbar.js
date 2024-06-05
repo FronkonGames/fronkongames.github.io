@@ -1,3 +1,5 @@
+document.documentElement.setAttribute('data-bs-theme', 'dark')
+
 const navbar = document.querySelector('.navbar')
 const togglers = document.querySelectorAll('.main-nav-toggler')
 const modeSelectors = document.querySelectorAll('.switch-mode-collapsed')

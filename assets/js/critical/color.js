@@ -1,4 +1,4 @@
-{{- if true -}}
+{{- if site.Params.main.enableDarkMode -}}
 
 /*!
  * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
@@ -48,7 +48,7 @@
   })
 
   window.addEventListener('DOMContentLoaded', () => {
-    showActiveTheme(getPreferredTheme())
+    //showActiveTheme(getPreferredTheme())
 
     document.querySelectorAll('[data-bs-theme-value]')
       .forEach(toggle => {
