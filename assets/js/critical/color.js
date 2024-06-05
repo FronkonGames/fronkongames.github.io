@@ -7,7 +7,6 @@
  */
 
 (() => {
-  /*
   'use strict'
 
   const storedTheme = 'dark'//localStorage.getItem('theme')
@@ -61,7 +60,6 @@
         })
       })
   })
-  */
 })()
 
 {{- end -}}
