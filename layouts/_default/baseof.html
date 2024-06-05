@@ -50,21 +50,24 @@
                 -}}
                 <div class="main-content">
                     {{ block "featured" . }}{{ end -}}
+
                 </div>
                 {{ if .Site.Params.main.footerBelowFold }}
-                    {{ block "main" . }}{{ end -}}
+                    {{ block "main" . }}
+                    {{ end -}}
                 {{ end }}
             </div>
 
             {{ if not .Site.Params.main.footerBelowFold }}
-                {{ block "main" . }}{{ end -}}
-                <div class="giscus"></div>
+                {{ block "main" . }}
+                {{ end -}}
+
                 {{ if .Page.Params.giscus | default false }}
-                <!-- giscus enabled -->
-                {{- partial "giscus/script-with-options" .Site.Params.giscus -}}
-                {{ else }}
-                <!-- giscus disabled -->
+                <div class="container-xxl flex-fill p-4 px-xxl-0">
+                  {{- partial "giscus/script-with-options" .Site.Params.giscus -}}
+                </div>
                 {{ end }}
+
                 {{- partial "footer/social.html" . -}}
                 {{- partial "footer/footer.html" . -}}
             {{ end }}

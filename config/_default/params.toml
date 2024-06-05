@@ -271,7 +271,7 @@
     #   transparent_dark:       Transparent Dark.
     #   preferred_color_scheme: Preferred color scheme.
     #   an URL of external CSS. It may be unsafe, make sure you trust the author and provider of the CSS file.
-    theme = "preferred_color_scheme"
+    theme = "dark"
 
     # The input position. Available options:
     #   top:    above the comments.
