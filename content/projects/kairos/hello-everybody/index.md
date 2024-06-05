@@ -11,13 +11,14 @@ giscus: true
 parent: kairos
 thumbnail:
   url: img/kairos_hello.jpg
+  ratio: "4x3"
 ---
 
-This is a devblog about an indie game of **cards** and **zombies**!
+This is a devblog about an indie game of **cards** and **zombies**.
 
 Hi I'm **Martin Bustos** and I've been developing games for more than two decades for PC, consoles, online, etc (you can check the list in my [GitHub](https://github.com/FronkonGames) profile). I've worked in several videogame companies and even co-founded two of them.
 
-I recently decided to leave the corporate environment and dedicate myself to making games that I feel like making and playing! Here I will be recording the progress of my first game as an indie developer: '**Dawn Of The Cards**', a card and zombie game.
+I recently decided to leave the corporate environment and dedicate myself to making games that I feel like making and playing! Here I will be recording the progress of my first game as an indie developer: codename '**Kairos**', a card and zombie game.
 
 The game engine will be [Unity](https://unity.com/) and I will build a modular framework to use it in future projects. This framework, which I've called '**Game:Work**', is available on my [GitHub](https://github.com/FronkonGames) under [MIT License](https://github.com/FronkonGames/GameWork-Core/blob/main/LICENSE.md).
 
@@ -37,4 +38,3 @@ A big part of the project I hope to separate it into modules and those that are 
 
 Until next time... {{< badge title="stay gamedev, stay awesome!" >}}
 {.h4}
-

@@ -3,7 +3,7 @@
 {{- with .wrapper }}{{ $wrapper = printf "img-wrap %s" . }}{{ end -}}
 {{ $class := "rounded" }}
 {{ with .class }}{{ $class = . }}{{ end }}
-{{- $ratio := .ratio | default "21x9" -}}
+{{- $ratio := .page.Params.Thumbnail.ratio | default "21x9" -}}
 {{- $thumbnail := "" -}}
 {{- $credits := "" -}}
 {{ $figclass := .figclass }}
@@ -36,7 +36,6 @@
     {{ end }}
     {{- if and $page.Params.photoCredits $page.Params.PhotoSource }}{{ $credits = printf (T "photoFull") $page.Params.photoCredits $page.Params.PhotoSource }}{{ end -}}
 {{- end -}}
-
 {{ if and $thumbnail $page.Params.showImage -}}
     {{- partial "assets/image.html" (dict "url" $thumbnail "ratio" $ratio "wrapper" $wrapper "class" $class "title" $page.Params.title "caption" $credits "figclass" $figclass "priority" "high") -}}
 {{ end -}}

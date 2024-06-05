@@ -11,6 +11,7 @@ giscus: true
 parent: kairos
 thumbnail:
   url: img/kairos_3d_card.png
+  ratio: "4x3"
 ---
 
 The first thing a card game needs is... cards.

@@ -11,6 +11,7 @@ showImage: false
 parent: kairos
 thumbnail:
   url: img/kairos_rendering_a_card.gif
+  ratio: "4x3"
 ---
 
 {{< video src="promo.mp4" autoplay=true >}}

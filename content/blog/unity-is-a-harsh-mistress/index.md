@@ -9,14 +9,33 @@ giscus: true
 showImage: true
 thumbnail:
   url: img/unity-is-a-harsh-mistress.jpg
+  ratio: "16x9"
 ---
+
+{{< alert type="info" >}}
+**UPDATE (01/04/2024)**
+
+{{< rawhtml >}}<center>{{< /rawhtml >}}
+
+![](Matthew_Bromberg.jpg)
+
+{{< rawhtml >}}</center>{{< /rawhtml >}}
+
+[Unity appoints Matthew Bromberg as new CEO](https://investors.unity.com/news/news-details/2024/Unity-Appoints-Matthew-Bromberg-as-New-CEO/default.aspx). A bummer, in my opinion, as I believe that the measures taken by the previous interim CEO, [James Moon Whitehurst](https://en.wikipedia.org/wiki/Jim_Whitehurst), were going in the right direction: focus on the 3D engine and the editor.
+
+It's still too early to tell if the [new CEO](https://www.linkedin.com/in/matthew-bromberg-79836b13/) will follow that path or not, but coming from Zynga, EA Mobile and being an advisor to Blackstone, I think we lose out with the change.
+{{< /alert >}}
 
 {{< alert type="info" >}}
 **UPDATE (10/10/2023)**
 
 Today it was [announced](https://investors.unity.com/news/news-details/2023/Unity-Announces-Leadership-Transition/default.aspx) that [John Riccitiello](https://en.wikipedia.org/wiki/John_Riccitiello) is stepping down from all of his positions at Unity: President, CEO, Chairman and member of the board of directors.
 
+{{< rawhtml >}}<center>{{< /rawhtml >}}
+
 ![](riccitiello_bye.jpg)
+
+{{< rawhtml >}}</center>{{< /rawhtml >}}
 
 [James Moon Whitehurst](https://en.wikipedia.org/wiki/Jim_Whitehurst) will serve as interim CEO. Whitehurst is a former president of IBM and CEO of Red Hat, and is currently a '_Special Advisor_' at [Silver Lake](https://en.wikipedia.org/wiki/Silver_Lake_(investment_firm)), which owns 10% of Unity.
 
