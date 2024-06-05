@@ -6,11 +6,11 @@ const colorsBG = ['body', 'secondary', 'tertiary']
 function updateNavbar () {
   if (window.scrollY > 75) {
     navbar.classList.add('nav-active')
-    const storedTheme = localStorage.getItem('theme')
+    const storedTheme = 'dark'//localStorage.getItem('theme')
     navbar.setAttribute('data-bs-theme', storedTheme)
   } else {
     navbar.classList.remove('nav-active')
-    const defaultTheme = navbar.getAttribute('data-bs-overlay')
+    const defaultTheme = 'dark'//navbar.getAttribute('data-bs-overlay')
     navbar.setAttribute('data-bs-theme', defaultTheme)
   }
 }

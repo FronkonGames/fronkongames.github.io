@@ -130,7 +130,7 @@
 {{- $logo := .logo | default site.Params.navigation.logo -}}
 {{- $logoLight := "" -}}
 {{- $logoDark := "" -}}
-{{- if $enableDarkMode -}}
+{{- if true -}}
     {{ $ext := path.Ext $logo -}}
     {{- $logoLight = printf "%s-light%s" (strings.TrimSuffix $ext $logo) $ext -}}
     {{- $logoDark = printf "%s-dark%s" (strings.TrimSuffix $ext $logo) $ext -}}

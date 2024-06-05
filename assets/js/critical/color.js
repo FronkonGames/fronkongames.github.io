@@ -1,4 +1,4 @@
-{{- if site.Params.main.enableDarkMode -}}
+{{- if true -}}
 
 /*!
  * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
@@ -9,22 +9,18 @@
 (() => {
   'use strict'
 
-  const storedTheme = localStorage.getItem('theme')
+  const storedTheme = 'dark'//localStorage.getItem('theme')
 
   const getPreferredTheme = () => {
     if (storedTheme) {
       return storedTheme
     }
 
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    return 'dark'
   }
 
   const setTheme = function (theme) {
-    if (theme === 'auto') {
-      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
-    } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
-    }
+    document.documentElement.setAttribute('data-bs-theme', 'dark')
   }
 
   setTheme(getPreferredTheme())
