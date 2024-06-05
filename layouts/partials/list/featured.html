@@ -33,7 +33,8 @@
     {{- $align := .align | default "center" -}}
 
     <div class="text-{{ $align }}">
-        <img src="img/logo_text.png" wrapper="col-2 mx-auto" height="90"/><br><br>
+        {{ partial "assets/image.html" (dict "url" "img/logo_text.png" "wrapper" "col-10" "class" "rounded" "title" $page.Site.Title "priority" "high") }}
+
         <!-- <strong>{{ with $page.Title }}</strong><p class="display-2">{{ . }}</p>{{ end }} -->
         <span class="fs-3 text-muted">{{ $page.Description }}
         {{ if $actions }}
