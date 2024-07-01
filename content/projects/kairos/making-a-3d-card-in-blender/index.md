@@ -10,7 +10,7 @@ showImage: true
 giscus: true
 parent: kairos
 thumbnail:
-  url: img/kairos_3d_card.png
+  url: img/kairos/kairos_3d_card.png
   ratio: "4x3"
 ---
 

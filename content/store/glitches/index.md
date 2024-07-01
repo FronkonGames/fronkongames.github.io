@@ -17,6 +17,9 @@ thumbnail:
 * [Corrupt Memory](#corruptmemory), a cyber attack? no, it's just corrupted memory.
 * [Interferences](#interferences), something is interfering with the signal...
 * [VHS](#vhs), the beauty of analog.
+* [Distortions](#distortions), distortions effects to increase the awesomeness of your games.
+* [Cheap Camera](#cheap-camera), emulates the defects of cheap cameras with poor quality digital sensors.
+* [Bad GPU](#bad-gpu), simulates the effects of a broken GPU.
 
 ## Requirements
 
@@ -157,6 +160,133 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 The first one can be controlled using '**Noise**' (_2_) and its parameters. The second with '**Pause**' (_3_) and '**Pause Band**' (_4_).
 
 If you want to use only the noise, set '**Pause**' (_3_) and '**Pause Band**' (_4_) to zero. If you only want to use the pause effect, set '**Noise**' (_2_) to zero.
+
+---
+## Distortions {#distortions}
+{{< asset-header youtube="ydWFcmFnSaU" demo="https://fronkongames.github.io/demos-glitches/distortions/">}}
+
+This asset includes several distortion-based effects. You should include them individually.
+
+### Gravity {#gravity}
+
+{{< video src="/store/glitches/distortions/gravity.mp4" loop="true" autoplay="true">}}
+
+A black hole on tour screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="gravity.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Water 2D {#water2D}
+
+{{< video src="/store/glitches/distortions/water2D.mp4" loop="true" autoplay="true">}}
+
+Perfect water for platform games. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="water2D.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Under Water {#under-water}
+
+{{< video src="/store/glitches/distortions/underwater.mp4" loop="true" autoplay="true">}}
+
+Simulates that you are underwater in a simple way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="underwater.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Raining {#raining}
+
+{{< video src="/store/glitches/distortions/raining.mp4" loop="true" autoplay="true">}}
+
+Blurred vision when coming out of the water. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="raining.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Magnifying {#magnifying}
+
+{{< video src="/store/glitches/distortions/magnifying.mp4" loop="true" autoplay="true">}}
+
+A magnifying glass to investigate details. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="magnifying.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Swirl {#swirl}
+
+{{< video src="/store/glitches/distortions/swirl.mp4" loop="true" autoplay="true">}}
+
+Twist the screen mercilessly! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="swirl.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Tremors {#tremors}
+
+{{< video src="/store/glitches/distortions/tremors.mp4" loop="true" autoplay="true">}}
+
+Shakes like in a earthquake! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="tremors.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Scope {#scope}
+
+{{< video src="/store/glitches/distortions/scope.mp4" loop="true" autoplay="true">}}
+
+The sight of a sniper. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="scope.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Inflate {#inflate}
+
+{{< video src="/store/glitches/distortions/inflate.mp4" loop="true" autoplay="true">}}
+
+Swells (or deflates) areas of the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="inflate.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+### Fisheye {#fisheye}
+
+{{< video src="/store/glitches/distortions/fisheye.mp4" loop="true" autoplay="true">}}
+
+Fisheye / anti-fisheye effect. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="fisheye.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+---
+## Cheap Camera {#cheap-camera}
+
+{{< asset-header youtube="GJZYzdBmruM" demo="https://fronkongames.github.io/demos-glitches/cheap-camera/">}}
+
+Emulates the defects of cheap cameras with poor quality digital sensors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="cheapcamera_0.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+---
+## Bap GPU {#bad-gpu}
+{{< asset-header youtube="Q86NARQPUJk" demo="https://fronkongames.github.io/demos-glitches/bad-gpu/">}}
+
+Simulates the effects of a broken GPU. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="badgpu_0.jpg" wrapper="col-6 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 #
 ---

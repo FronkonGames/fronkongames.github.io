@@ -10,7 +10,7 @@ giscus: true
 showImage: false
 parent: kairos
 thumbnail:
-  url: img/kairos_rendering_a_card.gif
+  url: img/kairos/kairos_rendering_a_card.gif
   ratio: "4x3"
 ---
 

@@ -7,5 +7,5 @@ tags: ["devblog", "gamedev", "game development"]
 metadata: none
 hide: true
 thumbnail:
-  url: img/kairos_hello.jpg
+  url: img/kairos/kairos_hello.jpg
 ---

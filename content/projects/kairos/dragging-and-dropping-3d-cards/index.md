@@ -10,7 +10,7 @@ showImage: false
 giscus: true
 parent: kairos
 thumbnail:
-  url: img/kairos_drag_drop.gif
+  url: img/kairos/kairos_drag_drop.gif
 ---
 
 {{< video src="promo.mp4" autoplay=true >}}
