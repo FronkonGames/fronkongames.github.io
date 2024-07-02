@@ -175,7 +175,17 @@ A black hole on tour screen. Once installed, when you select your '_Universal Re
 
 {{< image src="gravity.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Center**' (_2_): the position of the effect, where (0.5, 0.5) is the center of the screen.
+
+'**Radius**' (_3_): size of the effect.
+
+'**Strength**' (_4_): intensity of the deformation effect.
+
+'**Corona**' (_5_): Outer corona tint, strength and color mixing operation.
+
+'**Core**' (_6_): Tint of the inner zone and color mixing operation.
 
 ### Water 2D {#water2D}
 
@@ -185,7 +195,19 @@ Perfect water for platform games. Once installed, when you select your '_Univers
 
 {{< image src="water2D.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Height**' (_2_): vertical water height.
+
+'**Strength**' (_3_): wave strength.
+
+'**Frequency**' (_4_): wave frequency.
+
+'**Angle**' (_5_): angle of reflection.
+
+'**Tint**' (_6_): effect tint.
+
+'**Blend**' (_7_): color operation used.
 
 ### Under Water {#under-water}
 
@@ -195,7 +217,21 @@ Simulates that you are underwater in a simple way. Once installed, when you sele
 
 {{< image src="underwater.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Strength**' (_2_): effect strength on each axis.
+
+'**Speed**' (_3_): speed of ripples on each axis.
+
+'**Amplitude**' (_4_): wave amplitude.
+
+'**Blend**' (_5_): color operation used to blend effect with original image.
+
+'**Use depth**' (_6_): Activates the tinting depending on the pixel depth. You can change the color of the near and far zones. You can also adjust the depth modulation.
+
+{{< alert color="info" icon="fas triangle-exclamation" >}}
+If you activate '**Use depth**' (_6_), '**Depth Texture**' of the Universal Render Pipeline file must be enabled.
+{{< /alert >}}
 
 ### Raining {#raining}
 
@@ -205,7 +241,17 @@ Blurred vision when coming out of the water. Once installed, when you select you
 
 {{< image src="raining.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Strength**' (_2_): strength of effect.
+
+'**Speed**' (_3_): movement speed.
+
+'**Density**' (_4_): effect density.
+
+'**Tint**' (_5_): effect tint.
+
+'**Blend**' (_6_): color mixing operation used.
 
 ### Magnifying {#magnifying}
 
@@ -215,7 +261,23 @@ A magnifying glass to investigate details. Once installed, when you select your 
 
 {{< image src="magnifying.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Center**' (_2_): the center of the effect, being the center (0.5, 0.5).
+
+'**Radius**' (_3_): lens radius.
+
+'**Magnification**' (_4_): zoom level.
+
+{{< alert color="info" icon="fas triangle-exclamation" >}}
+High values of '**Magnification**' (_4_) can show very pixelated images.
+{{< /alert >}}
+
+'**Tint**' (_5_): lens border color.
+
+'**Distortion**' (_6_): color aberration and power in each channel.
+
+'**Border**' (_7_): color aberration power and tint.
 
 ### Swirl {#swirl}
 
@@ -225,7 +287,19 @@ Twist the screen mercilessly! Once installed, when you select your '_Universal R
 
 {{< image src="swirl.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Angle**' (_2_): torsion angle.
+
+'**Radius**' (_3_): effect radius.
+
+'**Center**' (_4_): the center of the effect, being the center.
+
+'**Threshold**' (_5_): smoothness of the effect limit.
+
+'**Blend**' (_6_): color operation used to blend effect with original image.
+
+'**Tint**' (_7_): color tint.
 
 ### Tremors {#tremors}
 
@@ -235,7 +309,25 @@ Shakes like in a earthquake! Once installed, when you select your '_Universal Re
 
 {{< image src="tremors.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Strength**' (_2_): effect strength on each axis.
+
+'**Speed**' (_3_): speed on each axis.
+
+'**Amplitude**' (_4_): wave amplitude.
+
+'**Frequency**' (_5_): wave frequency.
+
+'**Blend**' (_6_): color operation used to blend effect with original image.
+
+'**Samples**' (_7_): samples used to calculate blur.
+
+{{< alert color="danger" icon="fas triangle-exclamation" >}}
+The higher the value, the better the blur quality and the lower the performance.
+{{< /alert >}}
+
+'**Tint**' (_8_): color tint.
 
 ### Scope {#scope}
 
@@ -245,7 +337,19 @@ The sight of a sniper. Once installed, when you select your '_Universal Renderer
 
 {{< image src="scope.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Center**' (_2_): the center of the effect, being the center (0.5, 0.5).
+
+'**Radius**' (_3_): effect radius.
+
+'**Vignette**' (_4_): vignette strength.
+
+'**Tint**' (_5_): effect tint.
+
+'**Radial distortion**' (_6_): lens distortion [formula](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#:%7E:text=The%20next%20figures,monotonically%20increasing).
+
+'**Dispersion**' (_7_): size of the distortion zone.
 
 ### Inflate {#inflate}
 
@@ -255,7 +359,13 @@ Swells (or deflates) areas of the screen. Once installed, when you select your '
 
 {{< image src="inflate.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Strength**' (_2_): values above 0 for a inflate effect, below 0 for deflate.
+
+'**Radius**' (_3_): effect radius.
+
+'**Center**' (_4_): the center of the effect, being the center (0.5, 0.5).
 
 ### Fisheye {#fisheye}
 
@@ -265,7 +375,15 @@ Fisheye / anti-fisheye effect. Once installed, when you select your '_Universal 
 
 {{< image src="fisheye.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Strength**' (_2_): values above 0 for a fisheye effect, below 0 for anti-fisheye.
+
+'**Center**' (_3_): the center of the effect, being the center (0.5, 0.5).
+
+'**Blend**' (_4_): color operation used to blend effect with original image.
+
+'**Tint**' (_5_): color tint.
 
 ---
 ## Cheap Camera {#cheap-camera}
@@ -276,7 +394,8 @@ Emulates the defects of cheap cameras with poor quality digital sensors. Once in
 
 {{< image src="cheapcamera_0.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+* '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+* '****' (__): .
 
 ---
 ## Bap GPU {#bad-gpu}
@@ -286,7 +405,8 @@ Simulates the effects of a broken GPU. Once installed, when you select your '_Un
 
 {{< image src="badgpu_0.jpg" wrapper="col-6 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+* '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+* '****' (__): .
 
 #
 ---
