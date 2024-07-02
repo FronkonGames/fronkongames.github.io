@@ -394,19 +394,63 @@ Emulates the defects of cheap cameras with poor quality digital sensors. Once in
 
 {{< image src="cheapcamera_0.jpg" wrapper="col-6 mx-auto">}}
 
-* '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
-* '****' (__): .
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Lens**' (_2_), consists of the following effects:
+* Vignette effect, negative values for darker and positive values for brighter.
+  * x: intensity in the center of the screen.
+  * y: intensity in the middle area of the screen.
+  * z: intensity in the outer area of the screen.
+* Radial distortion.
+  * x: intensity in the center of the screen.
+  * y: intensity in the middle area of the screen.
+  * z: intensity in the outer area of the screen.
+* Chromatic aberration.
+  * x: intensity in the center of the screen.
+  * y: intensity in the middle area of the screen.
+  * z: intensity in the outer area of the screen.
+* Tangential distortion, diagonal distortions.
+* Zoom.
+
+'**Sensor**' (_3_), consists of the following effects:
+* Resolution, the lower the resolution, the more pixelated.
+* Blur quality, quality of the blur effect.
+* Pixel noise.
+  * x: intensity of static noise.
+  * y: dynamic noise intensity.
+  * z: dynamic noise velocity.
+* Exposure, prior to applying the noise.
+* Gain, after applying the noise.
+* Dynamic range, sensitivity of the sensor to color, the lower the sensitivity, the less colors.
+
+'**Processor**' (_4_), consists of the following effects:
+* Functions.
+  * x: edges.
+  * y: sharpen intensity.
+  * z: pixel size.
+* White balance per color channel.
 
 ---
 ## Bap GPU {#bad-gpu}
 {{< asset-header youtube="Q86NARQPUJk" demo="https://fronkongames.github.io/demos-glitches/bad-gpu/">}}
 
-Simulates the effects of a broken GPU. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Simulates the effects of a broken GPU, using a combination of four glitch effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
 {{< image src="badgpu_0.jpg" wrapper="col-6 mx-auto">}}
 
-* '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
-* '****' (__): .
+'**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
+
+'**Blend**' (_2_): color blend operation.
+
+'**Tint**' (_3_): color tint.
+
+'**Glitch #1**' (_4_): Intensity, speed and threshold of the first glitch effect. 
+
+'**Glitch #2**' (_5_):  Intensity, speed and threshold of the second glitch effect. 
+
+'**Glitch #3**' (_6_):  Intensity, speed and threshold of the third glitch effect. 
+
+'**Glitch #4**' (_7_):  Intensity, speed and threshold of the fourth glitch effect.
 
 #
 ---

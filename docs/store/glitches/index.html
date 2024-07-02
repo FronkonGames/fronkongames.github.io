@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/glitches/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:04+01:00">
-    <meta property="article:modified_time" content="2024-07-02T00:30:41+02:00">
+    <meta property="article:modified_time" content="2024-07-02T19:04:57+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/glitches-1280x640.jpg">
 <meta property="og:image:alt" content="Glitches">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:04CET",
-      "dateModified": "2024-07-02T00:30:41CET",
+      "dateModified": "2024-07-02T19:04:57CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/glitches/#/schema/breadcrumb/1"
       },
@@ -2999,9 +2999,58 @@
             width="2800"
             >
 </div><br>
+<p>&lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>): intensity of the effect. If it is 0, the effect will not be active.</p>
+<p>&lsquo;<strong>Lens</strong>&rsquo; (<em>2</em>), consists of the following effects:</p>
 <ul>
-<li>&lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>): intensity of the effect. If it is 0, the effect will not be active.</li>
-<li>&lsquo;****&rsquo; (__): .</li>
+<li>Vignette effect, negative values for darker and positive values for brighter.
+<ul>
+<li>x: intensity in the center of the screen.</li>
+<li>y: intensity in the middle area of the screen.</li>
+<li>z: intensity in the outer area of the screen.</li>
+</ul>
+</li>
+<li>Radial distortion.
+<ul>
+<li>x: intensity in the center of the screen.</li>
+<li>y: intensity in the middle area of the screen.</li>
+<li>z: intensity in the outer area of the screen.</li>
+</ul>
+</li>
+<li>Chromatic aberration.
+<ul>
+<li>x: intensity in the center of the screen.</li>
+<li>y: intensity in the middle area of the screen.</li>
+<li>z: intensity in the outer area of the screen.</li>
+</ul>
+</li>
+<li>Tangential distortion, diagonal distortions.</li>
+<li>Zoom.</li>
+</ul>
+<p>&lsquo;<strong>Sensor</strong>&rsquo; (<em>3</em>), consists of the following effects:</p>
+<ul>
+<li>Resolution, the lower the resolution, the more pixelated.</li>
+<li>Blur quality, quality of the blur effect.</li>
+<li>Pixel noise.
+<ul>
+<li>x: intensity of static noise.</li>
+<li>y: dynamic noise intensity.</li>
+<li>z: dynamic noise velocity.</li>
+</ul>
+</li>
+<li>Exposure, prior to applying the noise.</li>
+<li>Gain, after applying the noise.</li>
+<li>Dynamic range, sensitivity of the sensor to color, the lower the sensitivity, the less colors.</li>
+</ul>
+<p>&lsquo;<strong>Processor</strong>&rsquo; (<em>4</em>), consists of the following effects:</p>
+<ul>
+<li>Functions.
+<ul>
+<li>x: edges.</li>
+<li>y: sharpen intensity.</li>
+<li>z: pixel size.</li>
+</ul>
+</li>
+<li>White balance per color channel.</li>
 </ul>
 <hr />
 
@@ -3063,7 +3112,7 @@
         </div></a>&nbsp;
 </div><br><br>
 
-<p>Simulates the effects of a broken GPU. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+<p>Simulates the effects of a broken GPU, using a combination of four glitch effects. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
 
 
 
@@ -3137,10 +3186,13 @@
             width="2800"
             >
 </div><br>
-<ul>
-<li>&lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>): intensity of the effect. If it is 0, the effect will not be active.</li>
-<li>&lsquo;****&rsquo; (__): .</li>
-</ul>
+<p>&lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>): intensity of the effect. If it is 0, the effect will not be active.</p>
+<p>&lsquo;<strong>Blend</strong>&rsquo; (<em>2</em>): color blend operation.</p>
+<p>&lsquo;<strong>Tint</strong>&rsquo; (<em>3</em>): color tint.</p>
+<p>&lsquo;<strong>Glitch #1</strong>&rsquo; (<em>4</em>): Intensity, speed and threshold of the first glitch effect.</p>
+<p>&lsquo;<strong>Glitch #2</strong>&rsquo; (<em>5</em>):  Intensity, speed and threshold of the second glitch effect.</p>
+<p>&lsquo;<strong>Glitch #3</strong>&rsquo; (<em>6</em>):  Intensity, speed and threshold of the third glitch effect.</p>
+<p>&lsquo;<strong>Glitch #4</strong>&rsquo; (<em>7</em>):  Intensity, speed and threshold of the fourth glitch effect.</p>
 
 <h1 id="heading-1" class="heading"> <a href="#heading-1" aria-labelledby="heading-1">
 
@@ -3632,7 +3684,7 @@
 </div>
 </div>
 
-<script src="/js/main.bundle.min.ff93bb199c40aa297ad367db22cc597556232778aac63e1a1ffa96d17f2db1b5.js" integrity="sha256-/5O7GZxAqil602fbIsxZdVYjJ3iqxj4aH/qW0X8tsbU=" crossorigin="anonymous" async></script>
+<script src="/js/main.bundle.min.7f53ad13d172d3aab6048ef6eae7a708dc19f6b72573bfdf7808deff4f3dea81.js" integrity="sha256-f1OtE9Fy06q2BI726uenCNwZ9rclc7/feAje/0896oE=" crossorigin="anonymous" async></script>
       <script data-goatcounter="https://fronkongames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     
