@@ -31,17 +31,17 @@ You will need to have URP version 12.1 or higher installed. If you don't know ho
 
 Once installed, you have to add the effect you want to use from '**Glitches**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
-{{< image src="editor_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="editor_0.jpg" wrapper="col-8 mx-auto">}}
 
 Remember that the camera you are using must have the '**Post Processing**' option enabled.
 
-{{< image src="editor_1.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="editor_1.jpg" wrapper="col-8 mx-auto">}}
 
 ## VR
 
 To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
 
-{{< image src="vr.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="vr.jpg" wrapper="col-8 mx-auto">}}
 
 ## Using them in code
 
@@ -88,7 +88,7 @@ This asset **simulates** a series of vision defects, **NOT** corrects them.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="colorblindness_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="colorblindness_0.jpg" wrapper="col-8 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -113,7 +113,7 @@ In order to compare the result with a normal view, move '**Comparator**'.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="corruptmemory_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="corruptmemory_0.jpg" wrapper="col-8 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -133,7 +133,7 @@ With '**Interferences**' you can simulate video transmission failures.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="interferences_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="interferences_0.jpg" wrapper="col-8 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -151,7 +151,7 @@ The second effect applied is scanlines (_5_) and you can adjust its density and 
 
 Accurately emulates an old VHS tape. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="vhs_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="vhs_0.jpg" wrapper="col-8 mx-auto">}}
 
 With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
 
@@ -163,7 +163,7 @@ If you want to use only the noise, set '**Pause**' (_3_) and '**Pause Band**' (_
 
 ---
 ## Distortions {#distortions}
-{{< asset-header youtube="ydWFcmFnSaU" demo="https://fronkongames.github.io/demos-glitches/distortions/">}}
+{{< asset-header youtube="ydWFcmFnSaU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-distortions-282947" demo="https://fronkongames.github.io/demos-glitches/distortions/">}}
 
 This asset includes several distortion-based effects. You should include them individually.
 
@@ -173,7 +173,7 @@ This asset includes several distortion-based effects. You should include them in
 
 A black hole on tour screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="gravity.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="gravity.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -193,7 +193,7 @@ A black hole on tour screen. Once installed, when you select your '_Universal Re
 
 Perfect water for platform games. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="water2D.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="water2D.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -215,7 +215,7 @@ Perfect water for platform games. Once installed, when you select your '_Univers
 
 Simulates that you are underwater in a simple way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="underwater.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="underwater.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -229,8 +229,8 @@ Simulates that you are underwater in a simple way. Once installed, when you sele
 
 '**Use depth**' (_6_): Activates the tinting depending on the pixel depth. You can change the color of the near and far zones. You can also adjust the depth modulation.
 
-{{< alert color="info" icon="fas triangle-exclamation" >}}
-If you activate '**Use depth**' (_6_), '**Depth Texture**' of the Universal Render Pipeline file must be enabled.
+{{< alert color="success" icon="fas circle-info" >}}
+In order to use this feature, you must enable '**Depth Texture**' in your camera or pipeline settings.
 {{< /alert >}}
 
 ### Raining {#raining}
@@ -239,7 +239,7 @@ If you activate '**Use depth**' (_6_), '**Depth Texture**' of the Universal Rend
 
 Blurred vision when coming out of the water. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="raining.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="raining.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -259,7 +259,7 @@ Blurred vision when coming out of the water. Once installed, when you select you
 
 A magnifying glass to investigate details. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="magnifying.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="magnifying.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -285,7 +285,7 @@ High values of '**Magnification**' (_4_) can show very pixelated images.
 
 Twist the screen mercilessly! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="swirl.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="swirl.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -307,7 +307,7 @@ Twist the screen mercilessly! Once installed, when you select your '_Universal R
 
 Shakes like in a earthquake! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="tremors.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="tremors.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -335,7 +335,7 @@ The higher the value, the better the blur quality and the lower the performance.
 
 The sight of a sniper. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="scope.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="scope.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -357,7 +357,7 @@ The sight of a sniper. Once installed, when you select your '_Universal Renderer
 
 Swells (or deflates) areas of the screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="inflate.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="inflate.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -373,7 +373,7 @@ Swells (or deflates) areas of the screen. Once installed, when you select your '
 
 Fisheye / anti-fisheye effect. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="fisheye.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="fisheye.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -392,7 +392,7 @@ Fisheye / anti-fisheye effect. Once installed, when you select your '_Universal 
 
 Emulates the defects of cheap cameras with poor quality digital sensors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="cheapcamera_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="cheapcamera_0.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
@@ -436,21 +436,25 @@ Emulates the defects of cheap cameras with poor quality digital sensors. Once in
 
 Simulates the effects of a broken GPU, using a combination of four glitch effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-{{< image src="badgpu_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="badgpu_0.jpg" wrapper="col-8 mx-auto">}}
 
 '**Intensity**' (_1_): intensity of the effect. If it is 0, the effect will not be active.
 
-'**Blend**' (_2_): color blend operation.
+'**Balance**' (_2_): balance between original image (<0) and final effect (>0).
 
-'**Tint**' (_3_): color tint.
+'**Booster**' (_3_): enhances intensity and brightness.
 
-'**Glitch #1**' (_4_): Intensity, speed and threshold of the first glitch effect. 
+'**Blend**' (_4_): color blend operation.
 
-'**Glitch #2**' (_5_):  Intensity, speed and threshold of the second glitch effect. 
+'**Tint**' (_5_): color tint.
 
-'**Glitch #3**' (_6_):  Intensity, speed and threshold of the third glitch effect. 
+'**Glitch #1**' (_6_): Intensity, speed and threshold of the first glitch effect. 
 
-'**Glitch #4**' (_7_):  Intensity, speed and threshold of the fourth glitch effect.
+'**Glitch #2**' (_7_):  Intensity, speed and threshold of the second glitch effect. 
+
+'**Glitch #3**' (_8_):  Intensity, speed and threshold of the third glitch effect. 
+
+'**Glitch #4**' (_9_):  Intensity, speed and threshold of the fourth glitch effect.
 
 #
 ---
@@ -458,11 +462,11 @@ Simulates the effects of a broken GPU, using a combination of four glitch effect
 
 All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
-{{< image src="color.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="color.jpg" wrapper="col-8 mx-auto">}}
 
 They also have an '**Advanced**' panel with these options:
 
-{{< image src="advanced.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="advanced.jpg" wrapper="col-8 mx-auto">}}
 
 Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
 
