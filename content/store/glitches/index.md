@@ -388,7 +388,7 @@ Fisheye / anti-fisheye effect. Once installed, when you select your '_Universal 
 ---
 ## Cheap Camera {#cheap-camera}
 
-{{< asset-header youtube="GJZYzdBmruM" demo="https://fronkongames.github.io/demos-glitches/cheap-camera/">}}
+{{< asset-header youtube="GJZYzdBmruM" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-cheap-camera-287563" demo="https://fronkongames.github.io/demos-glitches/cheap-camera/">}}
 
 Emulates the defects of cheap cameras with poor quality digital sensors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
