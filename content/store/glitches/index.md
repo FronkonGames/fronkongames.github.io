@@ -432,7 +432,7 @@ Emulates the defects of cheap cameras with poor quality digital sensors. Once in
 
 ---
 ## Bap GPU {#bad-gpu}
-{{< asset-header youtube="Q86NARQPUJk" demo="https://fronkongames.github.io/demos-glitches/bad-gpu/">}}
+{{< asset-header youtube="Q86NARQPUJk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-bad-gpu-288689" demo="https://fronkongames.github.io/demos-glitches/bad-gpu/">}}
 
 Simulates the effects of a broken GPU, using a combination of four glitch effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
