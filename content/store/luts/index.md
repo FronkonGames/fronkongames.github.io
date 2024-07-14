@@ -43,7 +43,7 @@ LUT, or '**L**ook**U**p **T**able', are a kind of color filter you use to alter 
 
 All '**LUTs**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
-You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
+You will need to have URP version **12.1.11** or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
 ## Using them in the Editor
 
@@ -101,19 +101,12 @@ To increase compatibility with VR devices, I recommend that you select '**Stereo
 
 ## Using them in code
 
-You can also handle '**LUTs**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
+Once you have added the effect in the Editor, you can also handle '**LUTs**' effects by code. 
 
-They are all of the style 'FronkonGames.LUTs.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Cyberpunk**' the code would be:
+First you must add the corresponding namespace. They are all of the style 'FronkonGames.LUTs.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Cyberpunk**' the code would be:
 
 ```csharp
 using FronkonGames.LUTs.Cyberpunk;
-```
-
-And with this code you could check if the effect is added, and if it is not, add it.
-
-```csharp
-if (Cyberpunk.IsInRenderFeatures() == false)
-    Cyberpunk.AddRenderFeature();
 ```
 
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
@@ -693,6 +686,28 @@ Colors inspired by science fiction classics (50 LUTs).
 
 #
 ---
+## F.A.Q.
+
+##### _How to make the effect also affect the UI?_
+
+In order for the UI not to be affected by the effect, you should set the 'Render Mode' of your canvas from 'Screen Space - Overlay' to 'Screen Space - Camera' and dragging your camera with to 'Render Camera'.
+
+{{< image src="ui.jpg" wrapper="col-6 mx-auto">}}
+
+{{< alert color="warning" icon="fas triangle-exclamation" >}}
+Note that when you make this change, the coordinates of your UI will be in camera space, so you will have to change them.
+{{< /alert >}}
+<br>
+
+##### _When Bloom is added, its intensity is too low or the effect stops working._
+
+Bloom's URP Unity effect is not compatible with postprocessing effects based on [ScriptableRendererFeature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/renderer-features/scriptable-renderer-features/inject-a-pass-using-a-scriptable-renderer-feature.html?q=ScriptableRendererFeature) (like this one).
+
+You will have to add your own one based on ScriptableRendererFeature or you can use [this one at no cost](https://github.com/FronkonGames/ScriptableRenderBloom) ;)
+
+---
+<br>
+
 ## Support
 
 Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.

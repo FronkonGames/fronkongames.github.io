@@ -30,7 +30,7 @@ You can obtain each effect separately (**for only $8!**), but if you want multip
 
 All '**Retro**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
-You will need to have URP version 12.1 or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
+You will need to have URP version **12.1.11** or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
 ## Using them in the Editor
 
@@ -50,19 +50,12 @@ To increase compatibility with VR devices, I recommend that you select '**Stereo
 
 ## Using them in code
 
-You can also handle '**Retro**' effects by code. The first thing you will have to do is to add the namespace of the effect you want to use.
+Once you have added the effect in the Editor, you can also handle '**Retro**' effects by code. 
 
-They are all of the style 'FronkonGames.Retro.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Spectrum**' the code would be:
+First you must add the corresponding namespace. They are all of the style 'FronkonGames.Retro.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Spectrum**' the code would be:
 
 ```csharp
 using FronkonGames.Retro.Spectrum;
-```
-
-And with this code you could check if the effect is added, and if it is not, add it.
-
-```csharp
-if (Spectrum.IsInRenderFeatures() == false)
-    Spectrum.AddRenderFeature();
 ```
 
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
@@ -370,8 +363,31 @@ To change the pixel size, use '**Pixel size**' (_3_) and to adjust the luminosit
 Although the color palette used by the effect is perfect to emulate the console, you may want to change some (or all) colors. You can do this in '**Palette colors**' (_6_). Note that they should be sorted by luminance, with the darkest colors first and the lightest at the end.
 
 In '**Full**' simulation mode, you can also adjust the grid color with '**Grid color**' (_7_). Use the alpha channel of the color to modulate its intensity.
+
 #
 ---
+## F.A.Q.
+
+##### _How to make the effect also affect the UI?_
+
+In order for the UI not to be affected by the effect, you should set the 'Render Mode' of your canvas from 'Screen Space - Overlay' to 'Screen Space - Camera' and dragging your camera with to 'Render Camera'.
+
+{{< image src="ui.jpg" wrapper="col-6 mx-auto">}}
+
+{{< alert color="warning" icon="fas triangle-exclamation" >}}
+Note that when you make this change, the coordinates of your UI will be in camera space, so you will have to change them.
+{{< /alert >}}
+<br>
+
+##### _When Bloom is added, its intensity is too low or the effect stops working._
+
+Bloom's URP Unity effect is not compatible with postprocessing effects based on [ScriptableRendererFeature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/renderer-features/scriptable-renderer-features/inject-a-pass-using-a-scriptable-renderer-feature.html?q=ScriptableRendererFeature) (like this one).
+
+You will have to add your own one based on ScriptableRendererFeature or you can use [this one at no cost](https://github.com/FronkonGames/ScriptableRenderBloom) ;)
+
+---
+<br>
+
 ## Misc
 
 All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
