@@ -25,6 +25,12 @@
   weight = 1
 
 [[social]]
+  name = "Unity"
+  pre = "fab unity"
+  url = "https://assetstore.unity.com/publishers/62716"
+  weight = 5
+
+[[social]]
   name = "LinkedIn"
   pre = "fab linkedin"
   url = "https://www.linkedin.com/in/martinbr"

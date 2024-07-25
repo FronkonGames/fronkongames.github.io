@@ -36,7 +36,19 @@
         {{ partial "assets/image.html" (dict "url" "img/logo_text.png" "wrapper" "col-10" "class" "rounded" "title" $page.Site.Title "priority" "high") }}
 
         <!-- <strong>{{ with $page.Title }}</strong><p class="display-2">{{ . }}</p>{{ end }} -->
-        <span class="fs-3 text-muted">{{ $page.Description }}
+        <span class="fs-2 text-muted">{{ $page.Description }}
+        <br>
+        <br>
+        <div align="center">
+        <a href="mailto:fronkongames@gmail.com" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-secondary d-inline p-2">{{ partial "assets/icon.html" (dict "icon" (printf "fa envelope fa-2x" .Pre) )}}</a>
+        <a href="https://assetstore.unity.com/publishers/62716" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-secondary d-inline p-2">{{ partial "assets/icon.html" (dict "icon" (printf "fab fa-unity fa-2x" .Pre) )}}</a>
+        <a href="https://www.linkedin.com/in/martinbr" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-secondary d-inline p-2">{{ partial "assets/icon.html" (dict "icon" (printf "fab linkedin fa-2x" .Pre) )}}</a>
+        <a href="https://x.com/fronkongames" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-secondary d-inline p-2">{{ partial "assets/icon.html" (dict "icon" (printf "fab twitter fa-2x" .Pre) )}}</a>
+        <a href="https://github.com/FronkonGames" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-secondary d-inline p-2">{{ partial "assets/icon.html" (dict "icon" (printf "fab fa-github fa-2x" .Pre) )}}</a>
+        <a href="https://www.youtube.com/@fronkongames" target="_blank" rel="noopener noreferrer" class="text-decoration-none link-secondary d-inline p-2">{{ partial "assets/icon.html" (dict "icon" (printf "fab fa-youtube fa-2x" .Pre) )}}</a>
+        </div>
+        </span>
+
         {{ if $actions }}
             {{- $actions = sort $actions "weight" "asc" -}}
             <div class="hstack{{ if gt (len $actions) 1 }} gap-1{{ end }} justify-content-{{ $align}} pt-5 pt-md-3">
