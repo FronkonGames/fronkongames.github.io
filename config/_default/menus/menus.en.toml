@@ -43,6 +43,12 @@
   weight = 20
 
 [[social]]
+  name = "Instagram"
+  pre = "fab instagram"
+  url = "https://www.instagram.com/fronkongames/"
+  weight = 25
+
+[[social]]
   name = "GitHub"
   pre = "fab fa-github"
   url = "https://github.com/FronkonGames"
