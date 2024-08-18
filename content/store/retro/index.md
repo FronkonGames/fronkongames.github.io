@@ -366,6 +366,23 @@ In '**Full**' simulation mode, you can also adjust the grid color with '**Grid c
 
 #
 ---
+<br>
+
+## Misc
+
+All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
+
+{{< image src="color.jpg" wrapper="col-6 mx-auto">}}
+
+They also have an '**Advanced**' panel with these options:
+
+{{< image src="advanced.jpg" wrapper="col-6 mx-auto">}}
+
+Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
+
+Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
+
+---
 ## F.A.Q.
 
 ##### _How to make the effect also affect the UI?_
@@ -384,23 +401,6 @@ Note that when you make this change, the coordinates of your UI will be in camer
 Bloom's URP Unity effect is not compatible with postprocessing effects based on [ScriptableRendererFeature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/renderer-features/scriptable-renderer-features/inject-a-pass-using-a-scriptable-renderer-feature.html?q=ScriptableRendererFeature) (like this one).
 
 You will have to add your own one based on ScriptableRendererFeature or you can use [this one at no cost](https://github.com/FronkonGames/ScriptableRenderBloom) ;)
-
----
-<br>
-
-## Misc
-
-All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
-
-{{< image src="color.jpg" wrapper="col-6 mx-auto">}}
-
-They also have an '**Advanced**' panel with these options:
-
-{{< image src="advanced.jpg" wrapper="col-6 mx-auto">}}
-
-Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
-
-Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
 ---
 ## Support
