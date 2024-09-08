@@ -40,7 +40,7 @@ You can obtain each effect separately (**for only $8!**), but if you want multip
 
 All '**Spice Up**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
-You will need to have URP version **12.1.11** or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
+You will need to have URP version **12.1.15** or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
 ## Using them in the Editor
 
@@ -614,9 +614,7 @@ In order for the UI not to be affected by the effect, you should set the 'Render
 
 {{< image src="ui.jpg" wrapper="col-6 mx-auto">}}
 
-{{< alert color="warning" icon="fas triangle-exclamation" >}}
 Note that when you make this change, the coordinates of your UI will be in camera space, so you will have to change them.
-{{< /alert >}}
 <br>
 
 ##### _When Bloom is added, its intensity is too low or the effect stops working._
@@ -624,6 +622,16 @@ Note that when you make this change, the coordinates of your UI will be in camer
 Bloom's URP Unity effect is not compatible with postprocessing effects based on [ScriptableRendererFeature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/renderer-features/scriptable-renderer-features/inject-a-pass-using-a-scriptable-renderer-feature.html?q=ScriptableRendererFeature) (like this one).
 
 You will have to add your own one based on ScriptableRendererFeature or you can use [this one at no cost](https://github.com/FronkonGames/ScriptableRenderBloom) ;)
+<br>
+
+##### _Can I use it in a material?_
+
+Yes! Any effect can easily be used on a material. Just follow these steps:
+
+* In the '**Project**' window, open the '**Create**' menu with the right mouse button and select '**Create > Render Texture**'.
+* Create a new camera and in '**Output Texture**' select the Render Texture previously created. Remember to activate '**Post Processing**' and select in '**Renderer**' where you have the effect added.
+* In the material you want to use, select in '**Base Map**' the Render Texture.
+<br>
 
 ---
 ## Support
