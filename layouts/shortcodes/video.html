@@ -4,11 +4,15 @@
 {{ $autoplay := .Get "autoplay" | default true -}}
 {{ $preload := .Get "preload" | default "auto" -}}
 {{ $controls := .Get "controls" | default false -}}
+{{ $title := .Get "title" -}}
 
 <center>
 <video src="{{ $src }}" type="{{ $type }}" loop="{{ $loop }}" preload="{{ $preload }}" {{ if $autoplay }}autoplay{{ end }} {{ if $controls }}controls{{ end }} class="video-shortcode">
   There should have been a video here but your browser does not seem
   to support it.
 </video>
+{{ if $title }}
+  <br><i><small>{{ $title }}</small></i>
+{{ end }}
 </center>
 <br>

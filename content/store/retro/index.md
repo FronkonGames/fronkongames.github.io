@@ -370,7 +370,7 @@ In '**Full**' simulation mode, you can also adjust the grid color with '**Grid c
 
 ## Misc
 
-All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
+All effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
 {{< image src="color.jpg" wrapper="col-6 mx-auto">}}
 

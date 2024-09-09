@@ -348,7 +348,7 @@ You can also apply color effects to the inner zone, '**Inner**' (_10_), where le
 
 ## Misc
 
-All '**Artistic**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
+All effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
 {{< image src="color.jpg" wrapper="col-6 mx-auto">}}
 

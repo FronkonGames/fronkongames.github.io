@@ -593,7 +593,7 @@ You can change the operation used to blend the color of the flares with the orig
 
 ## Misc
 
-All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
+All effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
 {{< image src="color.jpg" wrapper="col-6 mx-auto">}}
 

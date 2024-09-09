@@ -485,27 +485,27 @@ Visually emulates a hacking using various effects. Once installed, when you sele
 
 The hacking effect is achieved by combining six different effects. '**Strength**' (_2_) modulates the intensity of **all** these effects.
 
-{{< video src="/store/glitches/hacked/hacked_framejump.mp4" loop="true" autoplay="true">}}
+{{< video src="/store/glitches/hacked/hacked_framejump.mp4" loop="true" autoplay="true" title="Frame jump" >}}
 
 The first effect is '**Frame jump**' (_3_), commonly caused by a synchronization failure between the signal and the monitor. In addition to its intensity, you can adjust its speed.
 
-{{< video src="/store/glitches/hacked/hacked_jitter.mp4" loop="true" autoplay="true">}}
+{{< video src="/store/glitches/hacked/hacked_jitter.mp4" loop="true" autoplay="true" title="Jitter" >}}
 
 '**Jitter**' (_4_) creates horizontal bands that _slice_ the image. In addition to their intensity and speed, you can modify their density.
 
-{{< video src="/store/glitches/hacked/hacked_blocks.mp4" loop="true" autoplay="true">}}
+{{< video src="/store/glitches/hacked/hacked_blocks.mp4" loop="true" autoplay="true" title="Blocks" >}}
 
 '**Blocks**' (_5_) creates a multitude of blocks that deform the color channels. You can adjust their density, chromatic aberration intensity and noise.
 
-{{< video src="/store/glitches/hacked/hacked_waves.mp4" loop="true" autoplay="true">}}
+{{< video src="/store/glitches/hacked/hacked_waves.mp4" loop="true" autoplay="true" title="Waves" >}}
 
 With '**Waves**' (_6_) you can add a sine wave deformation that alters the color channels, and you can adjust its speed and the intensity of the color channel separation.
 
-{{< video src="/store/glitches/hacked/hacked_scanlines.mp4" loop="true" autoplay="true">}}
+{{< video src="/store/glitches/hacked/hacked_scanlines.mp4" loop="true" autoplay="true" title="Scanlines" >}}
 
 '**Scanlines**' (_7_) adds a horizontal noise.
 
-{{< video src="/store/glitches/hacked/hacked_noise.mp4" loop="true" autoplay="true">}}
+{{< video src="/store/glitches/hacked/hacked_noise.mp4" loop="true" autoplay="true" title="Noise" >}}
 
 Finally '**Noise**' (_8_) creates the classic analog noise.
 
@@ -515,7 +515,7 @@ Finally '**Noise**' (_8_) creates the classic analog noise.
 
 ## Misc
 
-All '**Spice Up**' effects have a panel, '**Color**', in which you can modify the final color of the effect.
+All effects have a panel, '**Color**', in which you can modify the final color of the effect.
 
 {{< image src="color.jpg" wrapper="col-8 mx-auto">}}
 
