@@ -13,6 +13,19 @@ thumbnail:
 ---
 
 {{< alert type="info" >}}
+**UPDATE (12/09/2024)**
+
+{{< rawhtml >}}<center>{{< /rawhtml >}}
+
+![](cancel.png)
+
+{{< rawhtml >}}</center>{{< /rawhtml >}}
+
+Although the damage is done, [Unity finally cancels the controversial Runtime Free](https://unity.com/blog/unity-is-canceling-the-runtime-fee).
+
+{{< /alert >}}
+
+{{< alert type="info" >}}
 **UPDATE (01/04/2024)**
 
 {{< rawhtml >}}<center>{{< /rawhtml >}}
