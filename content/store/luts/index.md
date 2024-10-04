@@ -14,7 +14,7 @@ thumbnail:
 
 Thanks to LUTs you can completely transform the look of your games, making them more coherent with your artistic preferences.
 
-'**LUTs**' contains the following assets:
+'**[LUTs](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-bundle-282899?aid=1101l9zFC&utm_source=aff)**' contains the following assets:
 
 * [Cyberpunk](#cyberpunk) (61 LUTs): apocalyptic future, looking cool.
 * [Vintage](#vintage) (90 LUTs): nostalgia for the past.
@@ -30,7 +30,7 @@ Thanks to LUTs you can completely transform the look of your games, making them 
 * [Sci-Fi](#scifi) (150 LUTs): futuristic and dystopian looks.
 
 {{< alert color="light" >}}
-You can obtain each effect separately (**for only $6!**), but if you want multiple effects, you might be interested in **'[LUTS BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-bundle-282899?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
+You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[LUTS BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-bundle-282899?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
 {{< /alert >}}
 
 ## What is a LUT?

@@ -11,7 +11,7 @@ thumbnail:
   url: img/retro.jpg
 ---
 
-'**Retro**' is a great collection of retro effects, simple to use and with many configuration options. It consists of the following effects:
+'**[Retro](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493?aid=1101l9zFC&utm_source=aff)**' is a great collection of retro effects, simple to use and with many configuration options. It consists of the following effects:
 
 * [VHS](#vhs), mimic VHS as true as possible.
 * [Old Films](#oldfilms), the best way to replicate the look of old movies.
@@ -23,7 +23,7 @@ thumbnail:
 * [Handheld 8-Bit](#handheld8bit), imitates the graphics of the 8-bit handheld consoles of the late 1980s.
 
 {{< alert color="light" >}}
-You can obtain each effect separately (**for only $8!**), but if you want multiple effects, you might be interested in **'[RETRO BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
+You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[RETRO BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
 {{< /alert >}}
 
 ## Requirements
