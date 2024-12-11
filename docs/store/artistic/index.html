@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/artistic/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:01+01:00">
-    <meta property="article:modified_time" content="2024-09-09T13:53:47+02:00">
+    <meta property="article:modified_time" content="2024-10-04T18:02:32+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/artistic-1280x640.jpg">
 <meta property="og:image:alt" content="Artistic">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:01CET",
-      "dateModified": "2024-09-09T13:53:47CET",
+      "dateModified": "2024-10-04T18:02:32CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/artistic/#/schema/breadcrumb/1"
       },
@@ -401,7 +401,11 @@
         <div class="toc toc-panel text-body p-2">
             <small><nav id="TableOfContents">
   <ul>
-    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#requirements">Requirements</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#using-them-in-the-editor">Using them in the Editor</a></li>
     <li><a href="#vr">VR</a></li>
     <li><a href="#using-them-in-code">Using them in code</a></li>
@@ -544,7 +548,77 @@
     &nbsp;
 </a></h2>
 <p>All &lsquo;<strong>Artistic</strong>&rsquo; effects are developed for &lsquo;<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html">Universal Render Pipeline</a>&rsquo; (or URP), which means they will <strong>not work</strong> with Built-In, or HDRP.</p>
-<p>You will need to have URP version <em>12.1.11</em> or higher installed. If you don&rsquo;t know how to do it, I recommend you to follow this <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html">official tutorial</a>.</p>
+
+<h4 id="unity-6-or-higher" class="heading">Unity 6 or higher <a href="#unity-6-or-higher" aria-labelledby="unity-6-or-higher">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>All effects are compatible with <strong>Unity 6</strong>. Most of them do it natively when using <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html">Render Graph</a>.<br />
+You will need to have URP version <em>17.0.2</em> or higher installed. In the <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html">official documentation</a> you can find the steps to install it correctly.</p>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-info fa-2x fa-fw"></i> --><svg class="svg-inline--fa fas fa-info fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 192 512"><path d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            At the moment &lsquo;Oil Paint&rsquo; and &lsquo;Spark&rsquo; are not compatible with Render Graph and require the compatibility mode to be enabled. You can activate it in <strong>Project Settings &gt; Graphics &gt; URP &gt; Render Graph &gt; Compatibility Mode</strong>. I am working on making them compatible with Render Graph.
+        </div>
+    </div>
+
+<h4 id="unity-20223-or-higher" class="heading">Unity 2022.3 or higher <a href="#unity-20223-or-higher" aria-labelledby="unity-20223-or-higher">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>You will need to have URP version <em>12.1.15</em> or higher installed. If you don&rsquo;t know how to do it, I recommend you to follow this <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html">official tutorial</a>.</p>
 
 <h2 id="using-them-in-the-editor" class="heading">Using them in the Editor <a href="#using-them-in-the-editor" aria-labelledby="using-them-in-the-editor">
 
@@ -3723,7 +3797,11 @@
 <strong class="d-block h6 my-2 pb-2">On this page:</strong>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#requirements">Requirements</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#using-them-in-the-editor">Using them in the Editor</a></li>
     <li><a href="#vr">VR</a></li>
     <li><a href="#using-them-in-code">Using them in code</a></li>
@@ -3948,7 +4026,7 @@
 </div>
 </div>
 
-<script src="/js/main.bundle.min.bb67d0ffa0eaccb4c6298472b301e1625a0f5d4f2e51836baf45a2dd4c1b6b0a.js" integrity="sha256-u2fQ/6DqzLTGKYRyswHhYloPXU8uUYNrr0Wi3Uwbawo=" crossorigin="anonymous" async></script>
+<script src="/js/main.bundle.min.8900a513500a746b28f8b5dc1f2a419d22375382e966edd1d1a0ff8826d20893.js" integrity="sha256-iQClE1AKdGso&#43;LXcHypBnSI3U4LpZu3R0aD/iCbSCJM=" crossorigin="anonymous" async></script>
       <script data-goatcounter="https://fronkongames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     
