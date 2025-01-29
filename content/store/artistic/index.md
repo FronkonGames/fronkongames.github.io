@@ -24,7 +24,7 @@ All the effects of '**[Artistic](https://assetstore.unity.com/packages/vfx/shade
 * [Spark](#spark), adds bloom and ray-of-light effects.
 * [Radial Blur](#radialblur), the need for the speed.
 
-{{< alert color="light" >}}
+{{< alert color="dark" >}}
 You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
 {{< /alert >}}
 

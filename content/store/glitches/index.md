@@ -32,7 +32,15 @@ You can obtain each effect separately, but if you want multiple effects, you mig
 
 All '**Glitches**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
-You will need to have URP version **12.1.15** or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
+#### Unity 6 or higher
+
+All effects are compatible with **Unity 6** using **[Compatibility Mode](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/compatibility-mode.html)**. You can activate it in **Project Settings > Graphics > URP > Render Graph > Compatibility Mode**. I am working on making them compatible with Render Graph.
+
+You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
+
+#### Unity 2022.3 or higher
+
+You will need to have URP version *12.1.15* or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
 ## Using them in the Editor
 
@@ -80,11 +88,11 @@ Do not use the code of the demos in your projects, they are only there to show y
 ## Color Blindness {#colorblindness}
 {{< asset-header youtube="f5CiPt9bzBE" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-color-blindness-273126" demo="https://fronkongames.github.io/demos-glitches/colorblindness/">}}
 
-'**Color Blindness**' simulates the most common vision defects.
-
 {{< alert color="danger" icon="fas triangle-exclamation" >}}
 This asset **simulates** a series of vision defects, **NOT** corrects them.
 {{< /alert >}}
+
+'**Color Blindness**' simulates the most common vision defects.
 
 Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -321,11 +329,7 @@ Shakes like in a earthquake! Once installed, when you select your '_Universal Re
 
 '**Blend**' (_6_): color operation used to blend effect with original image.
 
-'**Samples**' (_7_): samples used to calculate blur.
-
-{{< alert color="danger" icon="fas triangle-exclamation" >}}
-The higher the value, the better the blur quality and the lower the performance.
-{{< /alert >}}
+'**Samples**' (_7_): samples used to calculate blur. The higher the value, the better the blur quality and the lower the performance.
 
 '**Tint**' (_8_): color tint.
 

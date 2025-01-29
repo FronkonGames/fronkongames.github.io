@@ -31,27 +31,21 @@
   weight = 5
 
 [[social]]
-  name = "LinkedIn"
-  pre = "fab linkedin"
-  url = "https://www.linkedin.com/in/martinbr"
-  weight = 10
-
-[[social]]
-  name = "Twitter"
-  pre = "fab twitter"
-  url = "https://x.com/fronkongames"
-  weight = 20
-
-[[social]]
-  name = "Instagram"
-  pre = "fab instagram"
-  url = "https://www.instagram.com/fronkongames/"
-  weight = 25
-
-[[social]]
   name = "GitHub"
   pre = "fab fa-github"
   url = "https://github.com/FronkonGames"
+  weight = 10
+
+[[social]]
+  name = "Bluesky"
+  pre = "fab bluesky"
+  url = "https://bsky.app/profile/fronkongames.bsky.social"
+  weight = 20
+
+[[social]]
+  name = "Twitter"
+  pre = "fab x-twitter"
+  url = "https://x.com/fronkongames"
   weight = 30
 
 [[social]]
@@ -59,6 +53,12 @@
   pre = "fab youtube"
   url = "https://www.youtube.com/@fronkongames"
   weight = 40
+
+[[social]]
+  name = "LinkedIn"
+  pre = "fab linkedin"
+  url = "https://www.linkedin.com/in/martinbr"
+  weight = 50
 
 # toml-docs-start sample-navigation
 [[sample]]
