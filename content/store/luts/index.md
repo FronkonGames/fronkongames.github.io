@@ -118,10 +118,26 @@ using FronkonGames.LUTs.Cyberpunk;
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
 ```csharp
-Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+Cyberpunk.Settings settings = Cyberpunk.Instance.settings;
 
 settings.intensity = 0.5f;
 ```
+
+And how can I activate and deactivate the effect? It's as easy as that:
+
+```csharp
+Cyberpunk cyberpunk = Cyberpunk.Instance;
+
+// Switch between active and inactive.
+if (cyberpunk.isActive == true)
+  cyberpunk.SetActive(false);
+else
+  cyberpunk.SetActive(true);
+```
+
+{{< alert color="warning" icon="fas triangle-exclamation" >}}
+The Instance function uses [Reflection](https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/reflection), and is therefore expensive. I recommend that you save the Instance value to use it without affecting performance.
+{{< /alert >}}
 
 You can load a _profile_ in several ways. A _profile_ is nothing more than a ScriptableObject, so it must be referenced by some object to be included in the build.
 
@@ -138,7 +154,7 @@ public class ProfileBank : MonoBehaviour
     // Set a random profile.
     if (profiles.Length > 0)
     {
-      Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+      Cyberpunk.Settings settings = Cyberpunk.Instance.settings;
 
       settings.profile = profiles[Random.Range(0, profiles.Length)];
     }
@@ -151,7 +167,7 @@ Another method you can use, more versatile, is to move the _profiles_ folder int
 ```csharp
 // In this example the profiles are located
 // inside Resources in the folder 'LUTs/Profiles/Cyberpunk'.
-Cyberpunk.Settings settings = Cyberpunk.GetSettings();
+Cyberpunk.Settings settings = Cyberpunk.Instance.settings;
 
 Profile profile = Resources.Load<Profile>("LUTs/Profiles/Cyberpunk/Cyberpunk_01");
 
@@ -165,11 +181,6 @@ Resources.UnloadAsset(profile);
 ```
 
 If you are using an effect other than '**Cyberpunk**' just change it to its name. Check the source code comments for more information.
-
-{{< alert color="warning" icon="fas triangle-exclamation" >}}
-Do not use the code of the demos in your projects, they are only there to show you the use of the effect through code.
-{{< /alert >}}
-
 #
 
 ---

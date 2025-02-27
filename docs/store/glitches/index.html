@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/glitches/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:04+01:00">
-    <meta property="article:modified_time" content="2024-12-11T18:56:15+01:00">
+    <meta property="article:modified_time" content="2025-01-30T00:41:24+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/glitches-1280x640.jpg">
 <meta property="og:image:alt" content="Glitches">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:04CET",
-      "dateModified": "2024-12-11T18:56:15CET",
+      "dateModified": "2025-01-30T00:41:24CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/glitches/#/schema/breadcrumb/1"
       },
@@ -578,8 +578,7 @@
 
     &nbsp;
 </a></h4>
-<p>All effects are compatible with <strong>Unity 6</strong> using <strong><a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/compatibility-mode.html">Compatibility Mode</a></strong>. You can activate it in <strong>Project Settings &gt; Graphics &gt; URP &gt; Render Graph &gt; Compatibility Mode</strong>. I am working on making them compatible with Render Graph.</p>
-<p>You will need to have URP version <em>17.0.2</em> or higher installed. In the <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html">official documentation</a> you can find the steps to install it correctly.</p>
+<p>All effects are compatible with <strong>Unity 6</strong>, and use the new <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html">Render Graph</a>. You will need to have URP version <em>17.0.2</em> or higher installed. In the <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html">official documentation</a> you can find the steps to install it correctly.</p>
 
 <h4 id="unity-20223-or-higher" class="heading">Unity 2022.3 or higher <a href="#unity-20223-or-higher" aria-labelledby="unity-20223-or-higher">
 
@@ -874,10 +873,16 @@
 <p>Once you have added the effect in the Editor, you can also handle &lsquo;<strong>Glitches</strong>&rsquo; effects by code.</p>
 <p>First you must add the corresponding namespace. They are all of the style &lsquo;FronkonGames.Glitches.XXXX&rsquo;, where XXXX is the name of the effect. For example, if the effect you want to use is &lsquo;<strong>Color Blindness</strong>&rsquo; the code would be:</p>
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Glitches.ColorBlindness</span><span class="p">;</span></span></span></code></pre></div></div><p>To modify any of the effect parameters, you must first request its <strong>settings</strong>. In the following example we change the intensity of the effect by half.</p>
-<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">ColorBlindness</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">ColorBlindness</span><span class="p">.</span><span class="n">GetSettings</span><span class="p">();</span>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">ColorBlindness</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">ColorBlindness</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span></span></span></code></pre></div></div><p>If you are using an effect other than &lsquo;<strong>Color Blindness</strong>&rsquo; just change it to its name. Check the source code comments for more information.</p>
-
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span></span></span></code></pre></div></div><p>And how can I activate and deactivate the effect? It&rsquo;s as easy as that:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">ColorBlindness</span> <span class="n">colorBlindness</span> <span class="p">=</span> <span class="n">ColorBlindness</span><span class="p">.</span><span class="n">Instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Switch between active and inactive.</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">colorBlindness</span><span class="p">.</span><span class="n">isActive</span> <span class="p">==</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">colorBlindness</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="n">colorBlindness</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span></span></span></code></pre></div></div>
 
 
 
@@ -908,9 +913,10 @@
     &nbsp;
 </div>
         <div class="flex-grow-1 my-auto">
-            Do not use the code of the demos in your projects, they are only there to show you the use of the effect through code.
+            The Instance function uses <a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/reflection">Reflection</a>, and is therefore expensive. I recommend that you save the Instance value to use it without affecting performance.
         </div>
     </div>
+<p>If you are using an effect other than &lsquo;<strong>Color Blindness</strong>&rsquo; just change it to its name. Check the source code comments for more information.</p>
 
 <h1 id="heading" class="heading"> <a href="#heading" aria-labelledby="heading">
 
@@ -4709,7 +4715,7 @@
 </div>
 </div>
 
-<script src="/js/main.bundle.min.360e48a7e8bcdc08f2311cfed8cf286cbb99535ee4993a7b33b1f2f555c63162.js" integrity="sha256-Ng5Ip&#43;i83AjyMRz&#43;2M8obLuZU17kmTp7M7Hy9VXGMWI=" crossorigin="anonymous" async></script>
+<script src="/js/main.bundle.min.9746e05530c9a5492515ae5617d0bf3a693ca704a0e1a24456b9c0e06acb730c.js" integrity="sha256-l0bgVTDJpUklFa5WF9C/Omk8pwSg4aJEVrnA4GrLcww=" crossorigin="anonymous" async></script>
       <script data-goatcounter="https://fronkongames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     

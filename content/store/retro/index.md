@@ -76,10 +76,6 @@ settings.intensity = 0.5f;
 
 If you are using an effect other than '**Spectrum**' just change it to its name. Check the source code comments for more information.
 
-{{< alert color="warning" icon="fas triangle-exclamation" >}}
-Do not use the code of the demos in your projects, they are only there to show you the use of the effect through code.
-{{< /alert >}}
-
 #
 ---
 ## VHS {#vhs}

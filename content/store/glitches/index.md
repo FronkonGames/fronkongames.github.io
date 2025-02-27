@@ -34,9 +34,7 @@ All '**Glitches**' effects are developed for '[Universal Render Pipeline](https:
 
 #### Unity 6 or higher
 
-All effects are compatible with **Unity 6** using **[Compatibility Mode](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/compatibility-mode.html)**. You can activate it in **Project Settings > Graphics > URP > Render Graph > Compatibility Mode**. I am working on making them compatible with Render Graph.
-
-You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
+All effects are compatible with **Unity 6**, and use the new [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html). You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
 #### Unity 2022.3 or higher
 
@@ -71,16 +69,29 @@ using FronkonGames.Glitches.ColorBlindness;
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
 ```csharp
-ColorBlindness.Settings settings = ColorBlindness.GetSettings();
+ColorBlindness.Settings settings = ColorBlindness.Instance.settings;
 
 settings.intensity = 0.5f;
 ```
 
-If you are using an effect other than '**Color Blindness**' just change it to its name. Check the source code comments for more information.
+And how can I activate and deactivate the effect? It's as easy as that:
+
+```csharp
+ColorBlindness colorBlindness = ColorBlindness.Instance;
+
+// Switch between active and inactive.
+if (colorBlindness.isActive == true)
+  colorBlindness.SetActive(false);
+else
+  colorBlindness.SetActive(true);
+```
 
 {{< alert color="warning" icon="fas triangle-exclamation" >}}
-Do not use the code of the demos in your projects, they are only there to show you the use of the effect through code.
+The Instance function uses [Reflection](https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/reflection), and is therefore expensive. I recommend that you save the Instance value to use it without affecting performance.
 {{< /alert >}}
+
+If you are using an effect other than '**Color Blindness**' just change it to its name. Check the source code comments for more information.
+
 
 #
 
