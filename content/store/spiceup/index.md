@@ -18,7 +18,6 @@ thumbnail:
 * [Stoned](#stoned), imitates the symptoms of feeling high or intoxicated.
 * [Frozen](#frozen), experience a realistic and immersive freezing effect.
 * [Speed Lines](#speedlines), anime speed lines.
-* [Blurry](#blurry), blurred vision based on previous frames.
 * [Double Vision](#doublevision), dual vision effect with steroids.
 * [Rain](#rain), simulates the raindrops on the screen.
 * [Ghost Vision](#ghostvision), the vision of strange creatures.
@@ -42,9 +41,7 @@ All '**Spice Up**' effects are developed for '[Universal Render Pipeline](https:
 
 #### Unity 6 or higher
 
-All effects are compatible with **Unity 6** using **[Compatibility Mode](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/compatibility-mode.html)**. You can activate it in **Project Settings > Graphics > URP > Render Graph > Compatibility Mode**. I am working on making them compatible with Render Graph.
-
-You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
+All effects are compatible with **Unity 6**, and use the new [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html). You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
 #### Unity 2022.3 or higher
 
@@ -282,22 +279,6 @@ With '**Noise**' (_8_) you can modify how different some _arrows_ are from other
 The color of the effect can be adjusted in '**Color blend**' (_9_). From the type of operation used to blend with the background of the screen, to brightness, colors, etc.
 
 If you check '**Aspect ratio**' (_10_), the effect will not conform to the screen and will form a circle inside the screen instead of conforming to the edges of the screen.
-
----
-## Blurry {#blurry}
-{{< asset-header youtube="izte-BmU-nw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-blurry-251642" demo="https://fronkongames.github.io/demos-spiceup/blurry/" >}}
-
-Blurred vision based on previous frames. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
-
-{{< image src="blurry_0.jpg" wrapper="col-6 mx-auto">}}
-
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
-
-With '**Strength**' (_2_) you control the intensity of its parameters.
-
-The number of frames the effect will use can be set in '**Frames**' (_3_). The more frames, the more blurriness you will get. You can also set in '**Step**' (_4_) if you want to skip frames.
-
-By default the frames used will have the same resolution as the screen. You can change this with '**Resolution**' (_5_) to make them smaller. This not only improves the performance of the effect, but also makes the image more blurred.
 
 ---
 ## Double Vision {#doublevision}

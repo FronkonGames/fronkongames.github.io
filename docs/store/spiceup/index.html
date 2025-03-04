@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/spiceup/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:02+01:00">
-    <meta property="article:modified_time" content="2025-01-30T00:41:24+01:00">
+    <meta property="article:modified_time" content="2025-02-28T00:42:25+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/spiceup-1280x640.jpg">
 <meta property="og:image:alt" content="Spice Up">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:02CET",
-      "dateModified": "2025-01-30T00:41:24CET",
+      "dateModified": "2025-02-28T00:42:25CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/spiceup/#/schema/breadcrumb/1"
       },
@@ -417,7 +417,6 @@
     <li><a href="#stoned">Stoned</a></li>
     <li><a href="#frozen">Frozen</a></li>
     <li><a href="#speedlines">Speed Lines</a></li>
-    <li><a href="#blurry">Blurry</a></li>
     <li><a href="#doublevision">Double Vision</a></li>
     <li><a href="#rain">Rain</a></li>
     <li><a href="#ghostvision">Ghost Vision</a></li>
@@ -515,7 +514,6 @@
 <li><a href="#stoned">Stoned</a>, imitates the symptoms of feeling high or intoxicated.</li>
 <li><a href="#frozen">Frozen</a>, experience a realistic and immersive freezing effect.</li>
 <li><a href="#speedlines">Speed Lines</a>, anime speed lines.</li>
-<li><a href="#blurry">Blurry</a>, blurred vision based on previous frames.</li>
 <li><a href="#doublevision">Double Vision</a>, dual vision effect with steroids.</li>
 <li><a href="#rain">Rain</a>, simulates the raindrops on the screen.</li>
 <li><a href="#ghostvision">Ghost Vision</a>, the vision of strange creatures.</li>
@@ -581,8 +579,7 @@
 
     &nbsp;
 </a></h4>
-<p>All effects are compatible with <strong>Unity 6</strong> using <strong><a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/compatibility-mode.html">Compatibility Mode</a></strong>. You can activate it in <strong>Project Settings &gt; Graphics &gt; URP &gt; Render Graph &gt; Compatibility Mode</strong>. I am working on making them compatible with Render Graph.</p>
-<p>You will need to have URP version <em>17.0.2</em> or higher installed. In the <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html">official documentation</a> you can find the steps to install it correctly.</p>
+<p>All effects are compatible with <strong>Unity 6</strong>, and use the new <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html">Render Graph</a>. You will need to have URP version <em>17.0.2</em> or higher installed. In the <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html">official documentation</a> you can find the steps to install it correctly.</p>
 
 <h4 id="unity-20223-or-higher" class="heading">Unity 2022.3 or higher <a href="#unity-20223-or-higher" aria-labelledby="unity-20223-or-higher">
 
@@ -2509,193 +2506,6 @@
 <p>With &lsquo;<strong>Noise</strong>&rsquo; (<em>8</em>) you can modify how different some <em>arrows</em> are from others.</p>
 <p>The color of the effect can be adjusted in &lsquo;<strong>Color blend</strong>&rsquo; (<em>9</em>). From the type of operation used to blend with the background of the screen, to brightness, colors, etc.</p>
 <p>If you check &lsquo;<strong>Aspect ratio</strong>&rsquo; (<em>10</em>), the effect will not conform to the screen and will form a circle inside the screen instead of conforming to the edges of the screen.</p>
-<hr />
-
-<h2 id="blurry" class="heading">Blurry <a href="#blurry" aria-labelledby="blurry">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h2>
-<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
-  <iframe src="https://www.youtube-nocookie.com/embed/izte-BmU-nw?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
-  </iframe>
-</div>
-<div align="left">
-<i><small>assets used in video and demo are not included</small></i><br>
-</div><div align="right">
-
-
-
-
-
-
-
-
-
-    
-
-    <a aria-label="STORE"
-        href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-blurry-251642?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
-        role="button"
-        >
-        <div class="d-flex justify-content-center">
-            <div class="my-auto">STORE&nbsp;
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
-
-    &nbsp;
-</div><div class="align-self-center order-first pe-1">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
-
-    
-</div>
-        </div></a>&nbsp;
-
-
-
-
-
-
-
-
-
-
-    
-
-    <a aria-label="DEMO"
-        href="https://fronkongames.github.io/demos-spiceup/blurry/" class="btn btn-success  position-relative  "
-        role="button"
-        >
-        <div class="d-flex justify-content-center">
-            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
-
-    
-</div>
-        </div></a>&nbsp;
-</div><br><br>
-
-<p>Blurred vision based on previous frames. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-            
-        
-    
-
-        
-        
-            
-        
-    
-
-        
-        
-            
-        
-    
-
-
-
-
-
-    
-        
-        
-    
-
-    
-    
-
-
-
-
-
-    
-        
-        
-    
-
-
-
-
-
-
-<div class="col-6 mx-auto"><img class="img-fluid "
-            src="/store/spiceup/blurry_0-2800x1768.jpg"
-            
-            
-            srcset="/store/spiceup/blurry_0-576x364.webp 576w, /store/spiceup/blurry_0-768x485.webp 768w, /store/spiceup/blurry_0-992x626.webp 992w, /store/spiceup/blurry_0-1200x758.webp 1200w, /store/spiceup/blurry_0-1400x884.webp 1400w, /store/spiceup/blurry_0-2800x1768.webp 2800w" sizes="100vw"
-            height="1768"
-            width="2800"
-            >
-</div><br>
-<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
-<p>With &lsquo;<strong>Strength</strong>&rsquo; (<em>2</em>) you control the intensity of its parameters.</p>
-<p>The number of frames the effect will use can be set in &lsquo;<strong>Frames</strong>&rsquo; (<em>3</em>). The more frames, the more blurriness you will get. You can also set in &lsquo;<strong>Step</strong>&rsquo; (<em>4</em>) if you want to skip frames.</p>
-<p>By default the frames used will have the same resolution as the screen. You can change this with &lsquo;<strong>Resolution</strong>&rsquo; (<em>5</em>) to make them smaller. This not only improves the performance of the effect, but also makes the image more blurred.</p>
 <hr />
 
 <h2 id="doublevision" class="heading">Double Vision <a href="#doublevision" aria-labelledby="doublevision">
@@ -5774,7 +5584,6 @@
     <li><a href="#stoned">Stoned</a></li>
     <li><a href="#frozen">Frozen</a></li>
     <li><a href="#speedlines">Speed Lines</a></li>
-    <li><a href="#blurry">Blurry</a></li>
     <li><a href="#doublevision">Double Vision</a></li>
     <li><a href="#rain">Rain</a></li>
     <li><a href="#ghostvision">Ghost Vision</a></li>
@@ -5995,7 +5804,7 @@
 </div>
 </div>
 
-<script src="/js/main.bundle.min.9746e05530c9a5492515ae5617d0bf3a693ca704a0e1a24456b9c0e06acb730c.js" integrity="sha256-l0bgVTDJpUklFa5WF9C/Omk8pwSg4aJEVrnA4GrLcww=" crossorigin="anonymous" async></script>
+<script src="/js/main.bundle.min.5a41121878be184683df986fba776d083b869bf09f13b182d62fed1ebc1dfeac.js" integrity="sha256-WkESGHi&#43;GEaD35hvundtCDuGm/CfE7GC1i/tHrwd/qw=" crossorigin="anonymous" async></script>
       <script data-goatcounter="https://fronkongames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     
