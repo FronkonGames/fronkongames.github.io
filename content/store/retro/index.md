@@ -32,9 +32,7 @@ All '**Retro**' effects are developed for '[Universal Render Pipeline](https://d
 
 #### Unity 6 or higher
 
-All effects are compatible with **Unity 6** using **[Compatibility Mode](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/compatibility-mode.html)**. You can activate it in **Project Settings > Graphics > URP > Render Graph > Compatibility Mode**. I am working on making them compatible with Render Graph.
-
-You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
+All effects are compatible with **Unity 6**, and use the new [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html). You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
 #### Unity 2022.3 or higher
 
@@ -79,7 +77,7 @@ If you are using an effect other than '**Spectrum**' just change it to its name.
 #
 ---
 ## VHS {#vhs}
-{{< asset-header youtube="LH9KDnOq0dg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vhs-244944" demo="https://fronkongames.github.io/demos-retro/vhs/" demo2="https://fronkongames.github.io/demos-retro/vhs_material/">}}
+{{< asset-header youtube="LH9KDnOq0dg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vhs-244944" demo="https://fronkongames.github.io/demos-retro/vhs/">}}
 
 '**VHS**' mimic as true as possible. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -108,7 +106,7 @@ Another very common effect due to head alignment failures was bands that modifie
 With '**Bottom warp**' (_12_) you can simulate the noise in the signal that was produced in the lower part of the image due to head tracking failures.
 
 Thanks to '**Vignette**' (_13_) you can adjust the shading effect on old CRT monitors.
-
+<!--
 You can also apply the effect on objects in the scene using the material found in '**Fronkon Games/Retro/VHS**'.
 
 {{< image src="vhs_1.jpg" wrapper="col-6 mx-auto">}}
@@ -122,7 +120,7 @@ Remember that the object to which you apply the material **must have UV coordina
 {{< image src="tv_uv.jpg" wrapper="col-6 mx-auto">}}
 
 You have an example in the scene '**FronkonGames/Retro/VHS/Demo/VHS_Material_Demo**'.
-
+-->
 ---
 ## Old Films {#oldfilms}
 {{< asset-header youtube="zBwXR_i6_gw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-films-241298" demo="https://fronkongames.github.io/demos-retro/oldfilms/" >}}
@@ -151,7 +149,7 @@ Something you can also see in old films are small scratches. You can simulate th
 
 ---
 ## CRT TV {#crttv}
-{{< asset-header youtube="UFFvtpXdUBc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-crt-tv-241411" demo="https://fronkongames.github.io/demos-retro/crttv/" demo2="https://fronkongames.github.io/demos-retro/crttv_material/">}}
+{{< asset-header youtube="UFFvtpXdUBc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-crt-tv-241411" demo="https://fronkongames.github.io/demos-retro/crttv/">}}
 
 '**CRT TV**' makes your game look like on an old television, those with the [glass tube](https://en.wikipedia.org/wiki/Cathode-ray_tube). With more than 40 parameters, it is possibly the most configurable effect in the store.
 
@@ -188,7 +186,7 @@ It was also frequent to find 'jumps' in the picture on old TV sets, due to defec
 The signal coming to the recorder was analog and could incorporate noise depending on many factors (signal quality, antenna, weather, etc.). The result was an image with '**Grain**' (_14_) and '**Static noise**' (_15_). Some circuit failures used to produce some bands that moved vertically. You can control them in '**Bar effect**' (_16_).
 
 In '**Flicker**' (_17_) you can adjust another very common defect in TV sets which is the fluctuation of the screen brightness.
-
+<!--
 You can also apply the effect on objects in the scene using the material found in '**Fronkon Games/Retro/CRT TV**'.
 
 {{< image src="crttv_2.jpg" wrapper="col-6 mx-auto">}}
@@ -202,7 +200,7 @@ Remember that the object to which you apply the material **must have UV coordina
 {{< image src="tv_uv.jpg" wrapper="col-6 mx-auto">}}
 
 You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material_Demo**'.
-
+-->
 ---
 ## Old Computers {#oldcomputers}
 {{< asset-header youtube="_gADYOdLbL4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-computers-243911" demo="https://fronkongames.github.io/demos-retro/oldcomputers/" >}}
