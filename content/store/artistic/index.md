@@ -37,9 +37,9 @@ All '**Artistic**' effects are developed for '[Universal Render Pipeline](https:
 All effects are compatible with **Unity 6**. Most of them do it natively when using [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html).
 You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
-{{< alert color="info" icon="fas info" >}}
-At the moment 'Oil Paint' and 'Spark' are not compatible with Render Graph and require the compatibility mode to be enabled. You can activate it in **Project Settings > Graphics > URP > Render Graph > Compatibility Mode**. I am working on making them compatible with Render Graph.
-{{< /alert >}}
+Make sure that the '_Compatibility Mode_' is **disabled**.
+
+{{< image src="compatibility_mode.jpg" wrapper="col-6 mx-auto">}}
 
 #### Unity 2022.3 or higher
 

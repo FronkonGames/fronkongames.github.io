@@ -36,6 +36,10 @@ All '**Glitches**' effects are developed for '[Universal Render Pipeline](https:
 
 All effects are compatible with **Unity 6**, and use the new [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html). You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
+Make sure that the '_Compatibility Mode_' is **disabled**.
+
+{{< image src="compatibility_mode.jpg" wrapper="col-6 mx-auto">}}
+
 #### Unity 2022.3 or higher
 
 You will need to have URP version *12.1.15* or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
