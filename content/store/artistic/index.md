@@ -37,7 +37,7 @@ All '**Artistic**' effects are developed for '[Universal Render Pipeline](https:
 All effects are compatible with **Unity 6**. Most of them do it natively when using [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html).
 You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
-Make sure that the '_Compatibility Mode_' is **disabled**.
+Make sure that the '_Compatibility Mode_' is **disabled** (_Project Settings > Graphics > Render Graph_).
 
 {{< image src="compatibility_mode.jpg" wrapper="col-6 mx-auto">}}
 
@@ -121,13 +121,7 @@ When '**Invert**' (_9_) is activated, the color is inverted.
 ## Oil Paint {#oilpaint}
 {{< asset-header youtube="A9jtFpXo02Q" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" demo="https://fronkongames.github.io/demos-artistic/oilpaint/" >}}
 
-Transform your games into pieces of art in a very easy way. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
-
-{{< image src="oilpaint_0.jpg" wrapper="col-6 mx-auto">}}
-
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
-
-Oil Paint provides you with a wide variety of algorithms (__2__) to choose from to best suit your needs. They are as follows:
+Transform your games into pieces of art in a very easy way. Once installed, when you select your '_Universal Renderer Data_', you will have the following [Renderer Features](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.1/manual/urp-renderer-feature-how-to-add.html) to choose from:
 
 * **Kuwahara Basic**: the simplest and fastest based on the algorithm created by [Michiyoshi Kuwahara](https://en.wikipedia.org/wiki/Kuwahara_filter).
 * **Kuwahara Generalized**: a version that fixes some problems of the previous one, based on the work of [Acerola](https://www.youtube.com/@Acerola_t).
@@ -136,15 +130,17 @@ Oil Paint provides you with a wide variety of algorithms (__2__) to choose from 
 * **Tomita-Tsuji**: a steroid version of Kuwahara's algorithm, with the best visual results but with a performance decrease.
 * **Symmetric Nearest Neighbour**: another smoothing algorithm designed to preserve image edges. Much more efficient than the previous ones.
 
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
 Depending on the selected algorithm, you will see different parameters although all of them have '**Passes**'. This parameter specifies the number of passes of the algorithm to be performed. If it is 1, the algorithm will only run once per pixel.
 
 If you increase the value, the effect will be greatly enhanced but you will multiply the cost of the effect. I only recommend that the value be greater than 1 if you are going to use it on powerful hardware (consoles and PC).
 
-You can add an extra algorithm to better define details with '**Improve details**' (__3__): Emboss and Sharpen. Note that adding this algorithm creates an additional pass and therefore lower performance.
+You can add an extra algorithm to better define details with '**Improve details**': Emboss and Sharpen. Note that adding this algorithm creates an additional pass and therefore lower performance.
 
-Still not enough? Raise the value of '**Water Color**' (__4__) to add an water color paint effect to the image.
+Still not enough? Raise the value of '**Water Color**' to add an water color paint effect to the image.
 
-If you need more control, activate '**Process depth**' (__5__).
+If you need more control, activate '**Process depth**'.
 
 {{< image src="oilpaint_1.jpg" wrapper="col-6 mx-auto">}}
 

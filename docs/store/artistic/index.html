@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/artistic/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:01+01:00">
-    <meta property="article:modified_time" content="2025-02-28T00:42:25+01:00">
+    <meta property="article:modified_time" content="2025-03-18T17:42:36+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/artistic-1280x640.jpg">
 <meta property="og:image:alt" content="Artistic">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:01CET",
-      "dateModified": "2025-02-28T00:42:25CET",
+      "dateModified": "2025-03-18T17:42:36CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/artistic/#/schema/breadcrumb/1"
       },
@@ -569,7 +569,7 @@
 </a></h4>
 <p>All effects are compatible with <strong>Unity 6</strong>. Most of them do it natively when using <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html">Render Graph</a>.<br />
 You will need to have URP version <em>17.0.2</em> or higher installed. In the <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html">official documentation</a> you can find the steps to install it correctly.</p>
-<p>Make sure that the &lsquo;<em>Compatibility Mode</em>&rsquo; is <strong>disabled</strong>.</p>
+<p>Make sure that the &lsquo;<em>Compatibility Mode</em>&rsquo; is <strong>disabled</strong> (<em>Project Settings &gt; Graphics &gt; Render Graph</em>).</p>
 
 
 
@@ -1438,82 +1438,7 @@ You will need to have URP version <em>17.0.2</em> or higher installed. In the <a
         </div></a>&nbsp;
 </div><br><br>
 
-<p>Transform your games into pieces of art in a very easy way. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-            
-        
-    
-
-        
-        
-            
-        
-    
-
-        
-        
-            
-        
-    
-
-
-
-
-
-    
-        
-        
-    
-
-    
-    
-
-
-
-
-
-    
-        
-        
-    
-
-
-
-
-
-
-<div class="col-6 mx-auto"><img class="img-fluid "
-            src="/store/artistic/oilpaint_0-2800x2356.jpg"
-            
-            
-            srcset="/store/artistic/oilpaint_0-576x485.webp 576w, /store/artistic/oilpaint_0-768x646.webp 768w, /store/artistic/oilpaint_0-992x835.webp 992w, /store/artistic/oilpaint_0-1200x1010.webp 1200w, /store/artistic/oilpaint_0-1400x1178.webp 1400w, /store/artistic/oilpaint_0-2800x2356.webp 2800w" sizes="100vw"
-            height="2356"
-            width="2800"
-            >
-</div><br>
-<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
-<p>Oil Paint provides you with a wide variety of algorithms (<strong>2</strong>) to choose from to best suit your needs. They are as follows:</p>
+<p>Transform your games into pieces of art in a very easy way. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will have the following <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.1/manual/urp-renderer-feature-how-to-add.html">Renderer Features</a> to choose from:</p>
 <ul>
 <li><strong>Kuwahara Basic</strong>: the simplest and fastest based on the algorithm created by <a href="https://en.wikipedia.org/wiki/Kuwahara_filter">Michiyoshi Kuwahara</a>.</li>
 <li><strong>Kuwahara Generalized</strong>: a version that fixes some problems of the previous one, based on the work of <a href="https://www.youtube.com/@Acerola_t">Acerola</a>.</li>
@@ -1522,11 +1447,12 @@ You will need to have URP version <em>17.0.2</em> or higher installed. In the <a
 <li><strong>Tomita-Tsuji</strong>: a steroid version of Kuwahara&rsquo;s algorithm, with the best visual results but with a performance decrease.</li>
 <li><strong>Symmetric Nearest Neighbour</strong>: another smoothing algorithm designed to preserve image edges. Much more efficient than the previous ones.</li>
 </ul>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
 <p>Depending on the selected algorithm, you will see different parameters although all of them have &lsquo;<strong>Passes</strong>&rsquo;. This parameter specifies the number of passes of the algorithm to be performed. If it is 1, the algorithm will only run once per pixel.</p>
 <p>If you increase the value, the effect will be greatly enhanced but you will multiply the cost of the effect. I only recommend that the value be greater than 1 if you are going to use it on powerful hardware (consoles and PC).</p>
-<p>You can add an extra algorithm to better define details with &lsquo;<strong>Improve details</strong>&rsquo; (<strong>3</strong>): Emboss and Sharpen. Note that adding this algorithm creates an additional pass and therefore lower performance.</p>
-<p>Still not enough? Raise the value of &lsquo;<strong>Water Color</strong>&rsquo; (<strong>4</strong>) to add an water color paint effect to the image.</p>
-<p>If you need more control, activate &lsquo;<strong>Process depth</strong>&rsquo; (<strong>5</strong>).</p>
+<p>You can add an extra algorithm to better define details with &lsquo;<strong>Improve details</strong>&rsquo;: Emboss and Sharpen. Note that adding this algorithm creates an additional pass and therefore lower performance.</p>
+<p>Still not enough? Raise the value of &lsquo;<strong>Water Color</strong>&rsquo; to add an water color paint effect to the image.</p>
+<p>If you need more control, activate &lsquo;<strong>Process depth</strong>&rsquo;.</p>
 
 
 
