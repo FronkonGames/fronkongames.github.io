@@ -16,6 +16,7 @@ All the effects of '**[Artistic](https://assetstore.unity.com/packages/vfx/shade
 * [One Bit](#onebit), a hipster, original and versatile look using a dithering with blue noise.
 * [Oil Paint](#oilpaint), transform your games into pieces of art.
 * [Tilt Shift](#tiltshift), used to simulate a miniature scene.
+* [Photo](#photo), recreates the authentic look & feel of professional cameras.
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
 * [Sharpen](#sharpen), enhances image details.
 * [Tonemapper](#tonemapper), maps HDR into LDR using different algorithms.
@@ -75,7 +76,7 @@ using FronkonGames.Artistic.OneBit;
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
 ```csharp
-OneBit.Settings settings = OneBit.GetSettings();
+OneBit.Settings settings = OneBit.Instance.settings;
 
 settings.intensity = 0.5f;
 ```
@@ -173,6 +174,87 @@ You can also modify certain color parameters in the 'focused' (_7_) area (where 
 {{< image src="tiltshift_1.jpg" wrapper="col-6 mx-auto" >}}
 
 In order to better adjust these parameters, you can activate '**Debug**' (_9_) to better see how the effect is applied. With this parameter activated, the areas with more intensity of the effect will be tinted red, and those with less intensity will be tinted blue.
+
+---
+## Photo {#photo}
+{{< asset-header youtube="LPs97XIfQTE" store="https://assetstore.unity.com/packages/slug/315961" demo="https://fronkongames.github.io/demos-artistic/photo/" >}}
+
+A versatile film camera simulator, offering a comprehensive suite of effects that mimic the charm and character of analog photography. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="photo_0.png" wrapper="col-6 mx-auto">}}
+
+#### Focus
+
+The focus system simulates the depth of field effects found in real cameras. With a range from -1.0 to 1.0 (with 0.0 being perfect focus), you can create everything from tack-sharp images to dreamy, soft-focus scenes. The focus offset parameter controls how much the image shifts when out of focus, while the blur strength determines the intensity of the blurring effect.
+
+This creates a realistic simulation of a camera's focusing mechanism, perfect for creating cinematic moments or highlighting specific elements in your scene.
+
+#### Grid
+
+The grid overlay simulates the viewfinder elements found in traditional cameras. When enabled, it creates a subtle points grid that helps with composition and framing. You can customize the color and blending mode to match your aesthetic preferences.
+
+This feature is particularly useful for creating a diegetic camera interface or simulating the experience of looking through a vintage camera viewfinder.
+
+#### Rings
+
+The rings feature adds concentric circles to your view, simulating the optical elements inside a camera lens. With controls for thickness, sharpness, and individual ring scaling, you can create everything from subtle lens effects to pronounced artistic overlays. The ring split parameter allows you to adjust the spacing between rings, creating various optical patterns.
+These rings can be colored and blended with the image in different ways, offering extensive creative possibilities.
+
+#### Frost
+
+The frost effect creates a soft, diffused glow around the edges of your frame, similar to what might be seen in vintage lenses or when shooting in cold conditions. You can adjust the intensity, color, and blending mode to achieve various atmospheric effects.
+
+This subtle effect adds depth and character to your scenes, especially when combined with other lens effects.
+
+#### Chromatic aberration
+
+Chromatic aberration simulates the color fringing that occurs in real lenses when light wavelengths fail to converge at the same point. The effect can be controlled globally and fine-tuned per color channel, allowing for precise control over the look. From subtle, realistic lens imperfections to bold, stylized color separation, this effect adds authentic character to your camera.
+
+#### Vignetting
+
+The vignette effect darkens the corners of the image, drawing attention to the center of the frame. Choose between circular and rectangular vignettes, and adjust the size, smoothness, and aspect ratio to achieve your desired look. Vignetting is essential for creating authentic film looks and directing the viewer's attention to important elements in your scene.
+
+#### Film grain
+
+Film grain adds texture and character to your images, simulating the granular appearance of photographic film. Adjust the intensity to create anything from a subtle texture to a pronounced grainy look. This effect is crucial for achieving authentic film aesthetics and can add warmth and organic quality to digital imagery.
+
+#### Aperture simulation
+
+The aperture controls simulate the opening in a camera lens through which light passes. Adjust the size and number of blades.
+
+#### Film manufactures
+
+Accurate simulations of popular film stocks, each with its unique characteristics:
+
+**Agfa Vista 400** provides a cool color balance with strong blue and green response, perfect for creating a budget film look.
+
+**Cinestill 800T** delivers that cinematic quality with its distinctive red halation effect, ideal for night scenes and moody interiors.
+
+**Fuji Velvia 50** offers high saturation and punchy contrast with enhanced red and blue response, making it perfect for landscape photography.
+
+**Fuji C200** emphasizes cool tones with a blue bias, while **Fuji Pro 400H** delivers soft, natural skin tones with a neutral gray balance, making it excellent for portraits.
+
+**Lomography Color 800** creates a distinctive look with heavy grain, cyan shift, and crushed shadows, perfect for creating a hipster aesthetic.
+
+**ORWO UT18** simulates cinema film stock with green/magenta bias and soft highlight shoulder, while **Kodak Ektar 100** delivers ultra-vivid colors and high contrast.
+
+**Kodak Portra 400**, a favorite among portrait photographers, offers soft highlight rolloff and enhanced greens for flattering skin tones.
+
+**Kodak Gold 200** brings golden hues and a green boost, perfect for warm, nostalgic scenes.
+
+For instant camera enthusiasts, **Polaroid 600** simulation provides warm tones and a strong vignette.
+
+Finally, **Ilford HP5** offers a classic black and white look for timeless monochrome imagery.
+
+#### Glitches and Imperfections
+
+The charm of analog photography often comes from its imperfections. '**Photo**' offers several parameters to simulate these characteristics:
+
+Chromatic fringing adds color separation in high-contrast areas, while dust particles can be added to simulate dirty lenses or aged film. Light leaks create those beautiful streaks of light that occur when light penetrates the camera body, with controls for both intensity and animation speed.
+
+Color bleeding simulates the way colors can bleed into adjacent areas on film, and the expired years parameter recreates the look of film that has been stored beyond its expiration date, with shifts in color balance and contrast.
+
+For **Cinestill 800T** film users, the halation effect creates that distinctive red glow around bright light sources, adding authenticity to night scenes and images with strong light sources.
 
 ---
 ## Color Isolation {#colorisolation}

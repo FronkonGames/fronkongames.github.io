@@ -71,7 +71,7 @@ using FronkonGames.Retro.Spectrum;
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
 ```csharp
-Spectrum.Settings settings = Spectrum.GetSettings();
+Spectrum.Settings settings = Spectrum.Instance.settings;
 
 settings.intensity = 0.5f;
 ```

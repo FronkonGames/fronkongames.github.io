@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/artistic/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:01+01:00">
-    <meta property="article:modified_time" content="2025-03-18T17:42:36+01:00">
+    <meta property="article:modified_time" content="2025-03-18T20:17:08+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/artistic-1280x640.jpg">
 <meta property="og:image:alt" content="Artistic">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:01CET",
-      "dateModified": "2025-03-18T17:42:36CET",
+      "dateModified": "2025-03-18T20:17:08CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/artistic/#/schema/breadcrumb/1"
       },
@@ -417,6 +417,11 @@
     <li><a href="#onebit">One Bit</a></li>
     <li><a href="#oilpaint">Oil Paint</a></li>
     <li><a href="#tiltshift">Tilt Shift</a></li>
+    <li><a href="#photo">Photo</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#colorisolation">Color Isolation</a></li>
     <li><a href="#sharpen">Sharpen</a></li>
     <li><a href="#tonemapper">Tonemapper</a></li>
@@ -507,6 +512,7 @@
 <li><a href="#onebit">One Bit</a>, a hipster, original and versatile look using a dithering with blue noise.</li>
 <li><a href="#oilpaint">Oil Paint</a>, transform your games into pieces of art.</li>
 <li><a href="#tiltshift">Tilt Shift</a>, used to simulate a miniature scene.</li>
+<li><a href="#photo">Photo</a>, recreates the authentic look &amp; feel of professional cameras.</li>
 <li><a href="#colorisolation">Color Isolation</a>, isolates areas by color and applies effects.</li>
 <li><a href="#sharpen">Sharpen</a>, enhances image details.</li>
 <li><a href="#tonemapper">Tonemapper</a>, maps HDR into LDR using different algorithms.</li>
@@ -937,7 +943,7 @@ You will need to have URP version <em>17.0.2</em> or higher installed. In the <a
 <p>Once you have added the effect in the Editor, you can also handle &lsquo;<strong>Artistic</strong>&rsquo; effects by code.</p>
 <p>First you must add the corresponding namespace. They are all of the style &lsquo;FronkonGames.Artistic.XXXX&rsquo;, where XXXX is the name of the effect. For example, if the effect you want to use is &lsquo;<strong>One Bit</strong>&rsquo; the code would be:</p>
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Artistic.OneBit</span><span class="p">;</span></span></span></code></pre></div></div><p>To modify any of the effect parameters, you must first request its <strong>settings</strong>. In the following example we change the intensity of the effect by half.</p>
-<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">OneBit</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">OneBit</span><span class="p">.</span><span class="n">GetSettings</span><span class="p">();</span>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">OneBit</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">OneBit</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span></span></span></code></pre></div></div><p>If you are using an effect other than &lsquo;<strong>OneBit</strong>&rsquo; just change it to its name. Check the source code comments for more information.</p>
 
@@ -1831,6 +1837,386 @@ You will need to have URP version <em>17.0.2</em> or higher installed. In the <a
             >
 </div><br>
 <p>In order to better adjust these parameters, you can activate &lsquo;<strong>Debug</strong>&rsquo; (<em>9</em>) to better see how the effect is applied. With this parameter activated, the areas with more intensity of the effect will be tinted red, and those with less intensity will be tinted blue.</p>
+<hr />
+
+<h2 id="photo" class="heading">Photo <a href="#photo" aria-labelledby="photo">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/LPs97XIfQTE?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div>
+<div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="STORE"
+        href="https://assetstore.unity.com/packages/slug/315961?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">STORE&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+
+    &nbsp;
+</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-artistic/photo/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p>A versatile film camera simulator, offering a comprehensive suite of effects that mimic the charm and character of analog photography. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/store/artistic/photo_0-2800x5083.jpg"
+            
+            
+            srcset="/store/artistic/photo_0-576x1046.webp 576w, /store/artistic/photo_0-768x1394.webp 768w, /store/artistic/photo_0-992x1801.webp 992w, /store/artistic/photo_0-1200x2178.webp 1200w, /store/artistic/photo_0-1400x2541.webp 1400w, /store/artistic/photo_0-2800x5083.webp 2800w" sizes="100vw"
+            height="5083"
+            width="2800"
+            >
+</div><br>
+
+<h4 id="focus" class="heading">Focus <a href="#focus" aria-labelledby="focus">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The focus system simulates the depth of field effects found in real cameras. With a range from -1.0 to 1.0 (with 0.0 being perfect focus), you can create everything from tack-sharp images to dreamy, soft-focus scenes. The focus offset parameter controls how much the image shifts when out of focus, while the blur strength determines the intensity of the blurring effect.</p>
+<p>This creates a realistic simulation of a camera&rsquo;s focusing mechanism, perfect for creating cinematic moments or highlighting specific elements in your scene.</p>
+
+<h4 id="grid" class="heading">Grid <a href="#grid" aria-labelledby="grid">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The grid overlay simulates the viewfinder elements found in traditional cameras. When enabled, it creates a subtle points grid that helps with composition and framing. You can customize the color and blending mode to match your aesthetic preferences.</p>
+<p>This feature is particularly useful for creating a diegetic camera interface or simulating the experience of looking through a vintage camera viewfinder.</p>
+
+<h4 id="rings" class="heading">Rings <a href="#rings" aria-labelledby="rings">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The rings feature adds concentric circles to your view, simulating the optical elements inside a camera lens. With controls for thickness, sharpness, and individual ring scaling, you can create everything from subtle lens effects to pronounced artistic overlays. The ring split parameter allows you to adjust the spacing between rings, creating various optical patterns.<br />
+These rings can be colored and blended with the image in different ways, offering extensive creative possibilities.</p>
+
+<h4 id="frost" class="heading">Frost <a href="#frost" aria-labelledby="frost">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The frost effect creates a soft, diffused glow around the edges of your frame, similar to what might be seen in vintage lenses or when shooting in cold conditions. You can adjust the intensity, color, and blending mode to achieve various atmospheric effects.</p>
+<p>This subtle effect adds depth and character to your scenes, especially when combined with other lens effects.</p>
+
+<h4 id="chromatic-aberration" class="heading">Chromatic aberration <a href="#chromatic-aberration" aria-labelledby="chromatic-aberration">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Chromatic aberration simulates the color fringing that occurs in real lenses when light wavelengths fail to converge at the same point. The effect can be controlled globally and fine-tuned per color channel, allowing for precise control over the look. From subtle, realistic lens imperfections to bold, stylized color separation, this effect adds authentic character to your camera.</p>
+
+<h4 id="vignetting" class="heading">Vignetting <a href="#vignetting" aria-labelledby="vignetting">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The vignette effect darkens the corners of the image, drawing attention to the center of the frame. Choose between circular and rectangular vignettes, and adjust the size, smoothness, and aspect ratio to achieve your desired look. Vignetting is essential for creating authentic film looks and directing the viewer&rsquo;s attention to important elements in your scene.</p>
+
+<h4 id="film-grain" class="heading">Film grain <a href="#film-grain" aria-labelledby="film-grain">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Film grain adds texture and character to your images, simulating the granular appearance of photographic film. Adjust the intensity to create anything from a subtle texture to a pronounced grainy look. This effect is crucial for achieving authentic film aesthetics and can add warmth and organic quality to digital imagery.</p>
+
+<h4 id="aperture-simulation" class="heading">Aperture simulation <a href="#aperture-simulation" aria-labelledby="aperture-simulation">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The aperture controls simulate the opening in a camera lens through which light passes. Adjust the size and number of blades.</p>
+
+<h4 id="film-manufactures" class="heading">Film manufactures <a href="#film-manufactures" aria-labelledby="film-manufactures">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Accurate simulations of popular film stocks, each with its unique characteristics:</p>
+<p><strong>Agfa Vista 400</strong> provides a cool color balance with strong blue and green response, perfect for creating a budget film look.</p>
+<p><strong>Cinestill 800T</strong> delivers that cinematic quality with its distinctive red halation effect, ideal for night scenes and moody interiors.</p>
+<p><strong>Fuji Velvia 50</strong> offers high saturation and punchy contrast with enhanced red and blue response, making it perfect for landscape photography.</p>
+<p><strong>Fuji C200</strong> emphasizes cool tones with a blue bias, while <strong>Fuji Pro 400H</strong> delivers soft, natural skin tones with a neutral gray balance, making it excellent for portraits.</p>
+<p><strong>Lomography Color 800</strong> creates a distinctive look with heavy grain, cyan shift, and crushed shadows, perfect for creating a hipster aesthetic.</p>
+<p><strong>ORWO UT18</strong> simulates cinema film stock with green/magenta bias and soft highlight shoulder, while <strong>Kodak Ektar 100</strong> delivers ultra-vivid colors and high contrast.</p>
+<p><strong>Kodak Portra 400</strong>, a favorite among portrait photographers, offers soft highlight rolloff and enhanced greens for flattering skin tones.</p>
+<p><strong>Kodak Gold 200</strong> brings golden hues and a green boost, perfect for warm, nostalgic scenes.</p>
+<p>For instant camera enthusiasts, <strong>Polaroid 600</strong> simulation provides warm tones and a strong vignette.</p>
+<p>Finally, <strong>Ilford HP5</strong> offers a classic black and white look for timeless monochrome imagery.</p>
+
+<h4 id="glitches-and-imperfections" class="heading">Glitches and Imperfections <a href="#glitches-and-imperfections" aria-labelledby="glitches-and-imperfections">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The charm of analog photography often comes from its imperfections. &lsquo;<strong>Photo</strong>&rsquo; offers several parameters to simulate these characteristics:</p>
+<p>Chromatic fringing adds color separation in high-contrast areas, while dust particles can be added to simulate dirty lenses or aged film. Light leaks create those beautiful streaks of light that occur when light penetrates the camera body, with controls for both intensity and animation speed.</p>
+<p>Color bleeding simulates the way colors can bleed into adjacent areas on film, and the expired years parameter recreates the look of film that has been stored beyond its expiration date, with shifts in color balance and contrast.</p>
+<p>For <strong>Cinestill 800T</strong> film users, the halation effect creates that distinctive red glow around bright light sources, adding authenticity to night scenes and images with strong light sources.</p>
 <hr />
 
 <h2 id="colorisolation" class="heading">Color Isolation <a href="#colorisolation" aria-labelledby="colorisolation">
@@ -3745,6 +4131,11 @@ You will need to have URP version <em>17.0.2</em> or higher installed. In the <a
     <li><a href="#onebit">One Bit</a></li>
     <li><a href="#oilpaint">Oil Paint</a></li>
     <li><a href="#tiltshift">Tilt Shift</a></li>
+    <li><a href="#photo">Photo</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#colorisolation">Color Isolation</a></li>
     <li><a href="#sharpen">Sharpen</a></li>
     <li><a href="#tonemapper">Tonemapper</a></li>

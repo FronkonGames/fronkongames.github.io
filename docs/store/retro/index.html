@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/retro/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:03+01:00">
-    <meta property="article:modified_time" content="2025-03-18T17:42:36+01:00">
+    <meta property="article:modified_time" content="2025-03-18T20:17:08+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/retro-1280x640.jpg">
 <meta property="og:image:alt" content="Retro">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:03CET",
-      "dateModified": "2025-03-18T17:42:36CET",
+      "dateModified": "2025-03-18T20:17:08CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/retro/#/schema/breadcrumb/1"
       },
@@ -932,7 +932,7 @@
 <p>Once you have added the effect in the Editor, you can also handle &lsquo;<strong>Retro</strong>&rsquo; effects by code.</p>
 <p>First you must add the corresponding namespace. They are all of the style &lsquo;FronkonGames.Retro.XXXX&rsquo;, where XXXX is the name of the effect. For example, if the effect you want to use is &lsquo;<strong>Spectrum</strong>&rsquo; the code would be:</p>
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Retro.Spectrum</span><span class="p">;</span></span></span></code></pre></div></div><p>To modify any of the effect parameters, you must first request its <strong>settings</strong>. In the following example we change the intensity of the effect by half.</p>
-<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Spectrum</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">Spectrum</span><span class="p">.</span><span class="n">GetSettings</span><span class="p">();</span>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Spectrum</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">Spectrum</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span></span></span></code></pre></div></div><p>If you are using an effect other than &lsquo;<strong>Spectrum</strong>&rsquo; just change it to its name. Check the source code comments for more information.</p>
 

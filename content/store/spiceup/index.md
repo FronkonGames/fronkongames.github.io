@@ -80,7 +80,7 @@ using FronkonGames.SpiceUp.Damage;
 To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
 
 ```csharp
-Damage.Settings settings = Damage.GetSettings();
+Damage.Settings settings = Damage.Instance.settings;
 
 settings.intensity = 0.5f;
 ```
