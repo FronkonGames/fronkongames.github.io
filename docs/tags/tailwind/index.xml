@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tailwind on Fronkon Games</title>
+    <link>https://fronkongames.github.io/tags/tailwind/</link>
+    <description>Recent content in tailwind on Fronkon Games</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2024 Fronkon Games</copyright>
+    <lastBuildDate>Thu, 01 Jan 1970 01:00:01 +0100</lastBuildDate>
+    <atom:link href="https://fronkongames.github.io/tags/tailwind/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailwind Colors</title>
+      <link>https://fronkongames.github.io/projects/tailwind-colors/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/tailwind-colors/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

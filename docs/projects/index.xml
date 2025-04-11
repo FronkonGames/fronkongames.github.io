@@ -11,71 +11,78 @@
     <item>
       <title>Kairos</title>
       <link>https://fronkongames.github.io/projects/kairos/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:01:40 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/kairos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Awesome Game Development</title>
-      <link>https://fronkongames.github.io/projects/awesome-game-development/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/awesome-game-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Game:Work Foundation</title>
       <link>https://fronkongames.github.io/projects/gamework-foundation/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:10 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/gamework-foundation/</guid>
       <description></description>
     </item>
     <item>
       <title>Game:Work Core</title>
       <link>https://fronkongames.github.io/projects/gamework-core/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:09 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/gamework-core/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Awesome Game Development</title>
+      <link>https://fronkongames.github.io/projects/awesome-game-development/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:08 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/awesome-game-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Global GameJam Dataset</title>
       <link>https://fronkongames.github.io/projects/steam-games-dataset/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/steam-games-dataset/</guid>
       <description></description>
     </item>
     <item>
       <title>Steam Games Dataset</title>
       <link>https://fronkongames.github.io/projects/global-gamejam-dataset/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/global-gamejam-dataset/</guid>
       <description></description>
     </item>
     <item>
       <title>Tiny Tween</title>
       <link>https://fronkongames.github.io/projects/tiny-tween/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/tiny-tween/</guid>
       <description></description>
     </item>
     <item>
       <title>Build History</title>
       <link>https://fronkongames.github.io/projects/build-history/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/build-history/</guid>
       <description></description>
     </item>
     <item>
       <title>Code Wizard</title>
       <link>https://fronkongames.github.io/projects/code-wizard/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/code-wizard/</guid>
       <description></description>
     </item>
     <item>
       <title>Palette Tool</title>
       <link>https://fronkongames.github.io/projects/palette-tool/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/palette-tool/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tailwind Colors</title>
+      <link>https://fronkongames.github.io/projects/tailwind-colors/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/tailwind-colors/</guid>
       <description></description>
     </item>
   </channel>

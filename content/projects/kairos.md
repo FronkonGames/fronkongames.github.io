@@ -1,7 +1,7 @@
 ---
 author: Martin Bustos
 title: Kairos
-date: 7
+date: 100
 description: A devblog about a game of cards and zombies
 tags: ["devblog", "gamedev", "game development"]
 metadata: none
