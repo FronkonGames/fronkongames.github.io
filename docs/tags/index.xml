@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Tue, 18 Mar 2025 20:17:08 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 02 Apr 2025 18:57:50 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>devblog</title>
@@ -168,6 +168,20 @@
       <link>https://fronkongames.github.io/tags/code/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
       <guid>https://fronkongames.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>color</title>
+      <link>https://fronkongames.github.io/tags/color/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/color/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>palette</title>
+      <link>https://fronkongames.github.io/tags/palette/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
+      <guid>https://fronkongames.github.io/tags/palette/</guid>
       <description></description>
     </item>
     <item>
