@@ -120,15 +120,11 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 
 '**Gradient**' is another mode that uses the brightness of the original pixel to replace it in a color gradient. So the leftmost colors of the gradient would be used for the darker areas of the image and the rightmost colors would be used for the brighter areas. Click on the gradient to modify it to your liking. If the gradient you use does not have dark colors, the result may be too bright, and vice versa. You can modify the brightness range used with '**Luminance**'.
 
-Click on '**search**' to open the color palette search tool.
+Click on '**🔍**' icon to open the **Palette Tool**.
 
 {{< image src="onebit_2.jpg" wrapper="col-6 mx-auto">}}
 
-Just find a palette you like and click the '**Use**' button.
-
-{{< alert color="success" icon="fas circle-info" >}}
-This tool requires an Internet connection.
-{{< /alert >}}
+Simply enter the color you want to search for and **Palette Tool** will search over **6000** color palettes from [color-hex](https://www.color-hex.com/). Once you find the one that best fits your needs, click on the button with the name to apply it to the gradient.
 
 In _6_, _7_ and _8_ you can modify the color range in each channel. Small values in these fields can create a '_retro_' effect.
 
