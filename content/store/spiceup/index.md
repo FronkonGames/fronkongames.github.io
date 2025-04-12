@@ -85,6 +85,22 @@ Damage.Settings settings = Damage.Instance.settings;
 settings.intensity = 0.5f;
 ```
 
+And how can I activate and deactivate the effect? It's as easy as that:
+
+```csharp
+Damage damage = Damage.Instance;
+
+// Switch between active and inactive.
+if (damage.isActive == true)
+  damage.SetActive(false);
+else
+  damage.SetActive(true);
+```
+
+{{< alert color="warning" icon="fas triangle-exclamation" >}}
+The Instance function uses [Reflection](https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/reflection), and is therefore expensive. I recommend that you save the Instance value to use it without affecting performance.
+{{< /alert >}}
+
 If you are using an effect other than '**Damage**' just change it to its name. Check the source code comments for more information.
 
 #
