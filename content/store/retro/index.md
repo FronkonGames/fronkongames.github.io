@@ -225,7 +225,7 @@ You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material
 
 ---
 ## Lo-Fi {#lofi}
-{{< asset-header youtube="51rAf7z0Plg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-films-241298" demo="https://fronkongames.github.io/demos-retro/lofi/" >}}
+{{< asset-header youtube="51rAf7z0Plg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-lo-fi-297300" demo="https://fronkongames.github.io/demos-retro/lofi/" >}}
 
 Create stunning retro-style visuals with '**Lo-Fi**'. Craft the perfect nostalgic look for your project.
 
