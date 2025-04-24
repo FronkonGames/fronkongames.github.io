@@ -227,11 +227,131 @@ You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material
 ## Lo-Fi {#lofi}
 {{< asset-header youtube="51rAf7z0Plg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-films-241298" demo="https://fronkongames.github.io/demos-retro/lofi/" >}}
 
-Create stunning retro-style visuals with '**Lo-Fi**'.
+Create stunning retro-style visuals with '**Lo-Fi**'. Craft the perfect nostalgic look for your project.
 
 Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
 
-{{< image src="oldfilms_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="lofi_0.jpg" wrapper="col-6 mx-auto">}}
+
+#### Master Control
+
+*   **Intensity:** Think of this as the main volume knob for the entire effect. Slide it down towards zero to gently blend the retro vibe with your original visuals, or push it up to one for the full, unfiltered Lo-Fi experience. If you set it to zero, the effect won't run at all.
+
+#### Palette: The Heart of Retro Color
+
+Enable this section to transform your scene's colors using classic, limited palettes.
+
+*   **Enable Palette:** Toggle this on to activate the color conversion process.
+*   **Profile:** This is where you choose your retro color scheme. Click the search icon to open the Palette Browser and select a pre-made profile (like those mimicking old consoles or computers) or even one you've created yourself. Changing the profile tells the effect which specific set of colors to use.
+*   **Mode:** How should the colors in the palette blend?
+    *   `Blend`: Creates smooth transitions between the colors in the palette, like a gradient.
+    *   `Fixed`: Results in sharp, distinct boundaries between colors, closer to how some very old hardware displayed graphics.
+*   **Sample Method:** This determines *how* the effect decides which palette color to use for each pixel in your original scene. Different methods produce distinct looks:
+    *   `Luminance`: Matches colors based purely on the brightness (luminance) of the original pixel. Good for simple, brightness-based color swaps.
+        *   *Luminance Power:* Adjusts the contrast when using the Luminance method. Higher values make the brightness differences more dramatic in the final palette.
+        *   *Remap Luminance:* Fine-tune which brightness range in the original image gets mapped to the palette. Drag the sliders to focus the effect on shadows, highlights, or mid-tones.
+        *   *Invert:* Flips the palette order, useful for creating negative or unique film-like effects.
+    *   `Distance`: Finds the palette color that is mathematically closest to the original pixel's color in standard RGB space (with perceptual weighting). A good all-around choice.
+    *   `HSV`: Compares colors based on Hue, Saturation, and Value. Can be good at preserving the general *feel* of colors even when the palette is very different.
+    *   `Similarity (CIELab)`: Uses a more advanced, perceptually accurate color comparison (CIELab) to find the closest match. Often gives the most visually pleasing results but is slightly more performance-intensive.
+    *   `Dominant`: Looks at a small area around each pixel, finds the most prominent color, and then maps *that* color to the palette. Can create a slightly chunkier, posterized look.
+*   **Color Threshold (for non-Luminance methods):** How strictly should the effect stick to the palette? Lower values mean the chosen palette color must be very close to the original; higher values allow for looser matches.
+*   **Resolution:** Controls the detail level of the internal texture generated from your chosen palette profile. Higher resolutions mean smoother gradients (in `Blend` mode) and potentially more accurate color matching, but use slightly more memory. You'll see a preview of the generated palette texture below if you have a Profile selected.
+
+#### Pixelate: Embrace the Blocks
+
+Turn this on to give your scene that classic, low-resolution pixelated appearance.
+
+*   **Enable Pixelate:** Activate the pixelation effect.
+*   **Size:** Determines how big the pixel blocks are. Larger values mean chunkier, more abstract pixels, like zooming in on an old game sprite. The value snaps to even numbers.
+*   **Blend:** How does the pixelated image combine with the original? `Solid` replaces the original, while other modes like `Multiply` or `Additive` can create interesting overlay effects.
+*   **Tint:** Apply a color wash over the pixelated result. Use white for no tint, or pick a color to create monochrome or duotone styles. The alpha channel controls the tint's strength.
+*   **Sobel:** Adds an edge-detection effect to the pixel blocks, giving them a subtle, pseudo-3D look.
+    *   *Sobel Power:* Controls the strength of the edge effect.
+    *   *Sobel Light Angle:* Sets the direction the 'light' seems to be coming from for the edge effect, influencing where highlights and shadows appear on the pixel edges.
+    *   *Sobel Light Intensity:* How bright is the light source for the Sobel effect? Affects the contrast of the edges.
+    *   *Sobel Ambient:* Sets a base light level, preventing the shadowed parts of the Sobel effect from becoming completely black.
+*   **Round:** Smooths the corners of the pixel blocks. At 0, they are perfect squares; slide towards 1 to make them increasingly circular.
+    *   *Bevel:* When `Round` is greater than zero, this adds a 3D-like bevel to the rounded pixel edges, enhancing the sense of depth.
+*   **Samples:** Improves the quality of the pixelation by taking multiple samples within each original pixel area before creating the final block color. Higher values give smoother results (less jaggedness) but cost more performance. A value of 1 is the fastest but can look more aliased.
+
+#### Scanline: CRT Monitor Vibes
+
+*   **Scanline Intensity:** Adds horizontal lines across the screen, mimicking the look of old CRT monitors. Slide from 0 (no lines) up to 1 (strong lines).
+*   **Count:** How many scanlines should appear vertically? More lines mean finer, denser scanlines.
+*   **Speed:** Makes the scanlines gently scroll up or down the screen. Use negative values for upward movement, positive for downward. Zero keeps them static.
+
+#### Screen Effects
+
+*   **Vignette:** Darkens the corners and edges of the screen, simulating the natural light falloff on CRT displays. Higher values create a stronger, more focused center.
+*   **Quantization:** Reduces the number of distinct colors visible on screen *after* other effects are applied, forcing the image into a more limited color range for an extra retro feel.
+    *   *Colors:* Sets the target number of colors for the quantization process. Lower values (like 8, 16, or 32) create more noticeable color banding.
+*   **Chromatic Aberration:** Introduces color fringing, especially towards the edges of the screen. This simulates the lens distortions or signal imperfections common in older display technologies.
+*   **Glass Shine:** Adds a subtle, broad highlight, like light reflecting off the curved glass surface of a CRT monitor.
+    *   *Shine Size:* Controls how large and diffuse the glass shine effect is.
+*   **Aperture:** Simulates the physical mask or grille inside a CRT, slightly darkening the edges and creating a softer frame within the screen area. Lower values make the effect more pronounced.
+*   **Curvature:** Bends the entire image outwards, mimicking the physically curved screens of old CRT monitors. Higher values create a more noticeable bulge.
+
+#### Border: Frame Your View
+
+*   **Enable Border:** Adds a solid border around the screen, simulating the plastic bezel of a vintage monitor or TV.
+*   **Color:** Choose the color for the border. The default is a classic beige.
+*   **Smooth:** Controls how soft the transition is between the screen image and the border. Higher values create a more feathered edge.
+*   **Noise:** Adds a subtle noise texture to the border, giving it a slightly aged or textured look.
+*   **Margins:** Adjust the thickness of the border horizontally (x) and vertically (y).
+
+#### Using the Palette Browser
+
+{{< image src="lofi_1.jpg" wrapper="col-6 mx-auto">}}
+
+The Palette Browser is a handy tool designed to help you discover, manage, and apply **+6000** palettes for the Retro Lo-Fi effect directly within the Unity editor.
+
+##### Opening the Browser
+
+You can typically access the Palette Browser by clicking the small search icon next to the **Profile** field in the Lo-Fi effect settings in the Inspector.
+
+##### Exploring Palettes
+
+Once opened, the Palette Browser presents you with a list of available `LoFiProfile` assets found in your project.
+
+###### Finding Your Palette
+
+*   **Search Bar:** At the top right, use the search bar to quickly find palettes by typing parts of their **name** or any associated **tags**. Hit Enter or wait a moment for the list to filter. Click "Clear" to remove the search term.
+*   **Sorting:** Next to the search bar, you can choose how to sort the palettes:
+    *   By **Name** (A-Z or Z-A)
+    *   By **Likes** (Most popular first or least popular first - *Note: 'Likes' seem to be a predefined value in the profile asset*)
+    *   By **Color Count** (Fewest colors first or most colors first)
+    Click "Apply Sort" after selecting your preferred order.
+*   **Tag Filters:** Click the "Show Tag Filters" button to reveal a list of tags associated with the palettes. Tags are sorted by how many palettes use them.
+    *   Click on one or more tags to filter the list, showing only palettes that contain *all* the selected tags.
+    *   The button for a selected tag will appear highlighted. Click it again to deselect it.
+    *   Click "Clear All" in the tag filter section to remove all tag selections.
+
+###### Palette List
+
+The main area displays the filtered and sorted palettes. Each palette entry shows:
+
+*   **Title:** The name of the palette profile.
+*   **Likes:** A small heart icon followed by a number, indicating its popularity score.
+*   **Color Preview:** A horizontal strip showcasing the first 16 colors contained within the palette.
+*   **Use Button:** Click this button to instantly apply the selected palette profile to the active Lo-Fi effect settings in your scene's rendering pipeline.
+
+###### Navigation
+
+If there are more palettes than can fit on one screen (typically 5 per page), pagination controls will appear at the bottom:
+
+*   Use the **"◄ Previous"** and **"Next ►"** buttons to navigate between pages.
+*   The text in the middle shows your current page number and the total number of pages.
+
+##### Applying a Palette
+
+When you find a palette you like, simply click the **"Use"** button on its entry. The browser will attempt to find the Lo-Fi effect settings in your project's Universal Render Pipeline asset and update the **Profile** field automatically.
+
+{{< alert type="info" >}}
+This requires the Lo-Fi effect to be added as a Renderer Feature in your active URP Renderer Data asset. If the effect isn't found, you'll receive a notification.
+{{< /alert >}}
+
+The Palette Browser makes it easy to experiment with different color schemes and find the perfect retro look for your project!
 
 ---
 ## Old Computers {#oldcomputers}
