@@ -16,6 +16,7 @@ thumbnail:
 * [VHS](#vhs), mimic VHS as true as possible.
 * [Old Films](#oldfilms), the best way to replicate the look of old movies.
 * [CRT TV](#crttv), the most configurable old TV effect you'll ever find.
+* [Lo-Fi](#lofi), stunning retro-style visuals.
 * [Old Computers](#oldcomputers), emulates the color palettes of old 8-bit and 16-bit computers.
 * [ASCII](#ascii), the old-school ASCII effect with steroids.
 * [Spectrum](#spectrum), mimics the legendary ZX Spectrum 8-bits computer from 1982.
@@ -221,6 +222,17 @@ Remember that the object to which you apply the material **must have UV coordina
 
 You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material_Demo**'.
 -->
+
+---
+## Lo-Fi {#lofi}
+{{< asset-header youtube="51rAf7z0Plg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-films-241298" demo="https://fronkongames.github.io/demos-retro/lofi/" >}}
+
+Create stunning retro-style visuals with '**Lo-Fi**'.
+
+Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+
+{{< image src="oldfilms_0.jpg" wrapper="col-6 mx-auto">}}
+
 ---
 ## Old Computers {#oldcomputers}
 {{< asset-header youtube="_gADYOdLbL4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-computers-243911" demo="https://fronkongames.github.io/demos-retro/oldcomputers/" >}}
