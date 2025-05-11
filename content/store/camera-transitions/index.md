@@ -3,7 +3,7 @@ author: Martin Bustos
 title: Camera Transitions
 showTitle: false
 date: 3
-description: Cinematic, realtime and easy-to-use transitions between cameras in a scene
+description: Cinematic, realtime and easy-to-use transitions between cameras in a camera
 tags: ["unity", "store", "camera", "transitions", "transition", "fade", "realtime", "cinematic", "cinema", "film"]
 metadata: none
 showImage: false
@@ -29,9 +29,9 @@ This asset provides a collection of **cinematic**, **realtime** and **easy-to-us
 
 To use a camera transition:
 
-1.  Ensure you have at least two `Camera` objects in your scene.
+1.  Ensure you have at least two `Camera` objects in your camera.
 2.  Add the `Transition Renderer Feature` as a `Renderer Feature`. This [official tutorial](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-renderer-feature.html) tells how to do it.
-3.  Make sure there is an instance of `Transition Manager` in your scene. If not, create an empty GameObject and add the `TransitionManager.cs` script to it.
+3.  Make sure there is an instance of `Transition Manager` in your camera. If not, create an empty GameObject and add the `TransitionManager.cs` script to it.
 4.  Call the static `Start` method of the desired transition class from your script.
 
 **Example:**
@@ -56,7 +56,7 @@ public class TransitionTest : MonoBehaviour
 ```
 
 {{< alert color="info" >}}
-This asset **does not handle scene loading** or switching between scenes. All camera transitions are performed between cameras that exist within a single scene.
+This asset **does not handle scene loading** or switching between scenes. All transitions are performed between cameras that exist within a **single scene**.
 {{< /alert >}}
 
 ---
@@ -65,11 +65,11 @@ This asset **does not handle scene loading** or switching between scenes. All ca
 
 <center><video controls loop="true" src="/store/camera-transitions/CrossZoom.webm"></video></center>
 
-A zoom and crossfade effect. The current scene zooms out while the new scene zooms in and fades, creating a smooth and dynamic transition.
+A zoom and crossfade effect. The current camera zooms out while the new camera zooms in and fades, creating a smooth and dynamic transition.
 
 **Parameters:**
 
-*   `strength`: `float` (optional) - The intensity of the zoom effect. Determines how much the scenes will scale during the transition. Default is `0.4f`. Range `[0.0f, 1.0f]`.
+*   `strength`: `float` (optional) - The intensity of the zoom effect. Determines how much the camera will scale during the transition. Default is `0.4f`. Range `[0.0f, 1.0f]`.
 *   `quality`: `float` (optional) - Effect quality, affecting the smoothness or detail of the zoom. Default is `20.0f`. Range `[1.0f, 40.0f]`.
 
 **Example Usage:**
@@ -88,7 +88,7 @@ TransitionCrossZoom.Start(cameraA, cameraB, 1.0f, strength: 0.6f, quality: 30.0f
 
 <center><video controls loop="true" src="/store/camera-transitions/Bounce.webm"></video></center>
 
-A bouncing effect for the transition. The outgoing scene appears to bounce off the screen, revealing the incoming scene.
+A bouncing effect for the transition. The outgoing camera appears to bounce off the screen, revealing the incoming camera.
 
 **Parameters:**
 
@@ -112,7 +112,7 @@ TransitionBounce.Start(cameraA, cameraB, 1.5f, bounces: 5.0f, shadowColor: Color
 
 <center><video controls loop="true" src="/store/camera-transitions/Bars.webm"></video></center>
 
-A horizontal bars effect. The new scene is revealed through a series of horizontal bars that wipe across the screen.
+A horizontal bars effect. The new camera is revealed through a series of horizontal bars that wipe across the screen.
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ TransitionBars.Start(cameraA, cameraB, 0.75f);
 
 <center><video controls loop="true" src="/store/camera-transitions/CircleCrop.webm"></video></center>
 
-Crops to a background color in a circle, then reveals the new scene.
+Crops to a background color in a circle, then reveals the new camera.
 
 **Parameters:**
 
@@ -176,7 +176,7 @@ TransitionChromaticWaves.Start(cameraA, cameraB, 1.0f, amplitude: 2.0f, waves: 1
 
 <center><video controls loop="true" src="/store/camera-transitions/ColorDistance.webm"></video></center>
 
-Transitions pixels based on the color difference between the two scenes.
+Transitions pixels based on the color difference between the two cameras.
 
 **Parameters:**
 
@@ -223,7 +223,7 @@ TransitionCube.Start(cameraA, cameraB, 1.5f, perspective: 0.9f, zoom: 0.2f, refl
 
 <center><video controls loop="true" src="/store/camera-transitions/Doom.webm"></video></center>
 
-A circular iris wipe with a noisy, Doom-like (the game) screen melt effect.
+A circular iris wipe with a noisy, Doom-like ([the game](https://www.youtube.com/watch?v=S7IEg0_qNXs)) screen melt effect.
 
 **Parameters:**
 
@@ -248,7 +248,7 @@ TransitionDoom.Start(cameraA, cameraB, 1.2f, barWidth: 30, amplitude: 5.0f, nois
 
 <center><video controls loop="true" src="/store/camera-transitions/FadeToColor.webm"></video></center>
 
-Fades the current scene to a solid color, then fades from that color to the new scene.
+Fades the current camera to a solid color, then fades from that color to the new camera.
 
 **Parameters:**
 
@@ -271,11 +271,11 @@ TransitionFadeToColor.Start(cameraA, cameraB, 1.0f, strength: 0.8f, fadeColor: C
 
 <center><video controls loop="true" src="/store/camera-transitions/FadeToGrayscale.webm"></video></center>
 
-Fades the current scene to grayscale, then fades from grayscale to reveal the new scene.
+Fades the current camera to grayscale, then fades from grayscale to reveal the new camera.
 
 **Parameters:**
 
-*   `strength`: `float` (optional) - Controls the intensity of the grayscale effect at the peak of the transition. A value of `1.0` means the scene will be fully desaturated. Range `[0.0, 1.0]`. Default is `0.3`.
+*   `strength`: `float` (optional) - Controls the intensity of the grayscale effect at the peak of the transition. A value of `1.0` means the camera will be fully desaturated. Range `[0.0, 1.0]`. Default is `0.3`.
 
 **Example Usage:**
 
@@ -293,7 +293,7 @@ TransitionFadeToGrayscale.Start(cameraA, cameraB, 1.0f, strength: 0.9f);
 
 <center><video controls loop="true" src="/store/camera-transitions/Flash.webm"></video></center>
 
-A bright flash effect that briefly illuminates the screen, transitioning to the new scene.
+A bright flash effect that briefly illuminates the screen, transitioning to the new camera.
 
 **Parameters:**
 
@@ -319,7 +319,7 @@ TransitionFlash.Start(cameraA, cameraB, 0.5f, strength: 0.5f, intensity: 4.0f, z
 
 <center><video controls loop="true" src="/store/camera-transitions/Flip.webm"></video></center>
 
-Flips the view horizontally or vertically to reveal the new scene.
+Flips the view horizontally or vertically to reveal the new camera.
 
 **Parameters:**
 
@@ -342,7 +342,7 @@ TransitionFlip.Start(cameraA, cameraB, 0.8f, mode: TransitionAxis.Horizontal, co
 
 <center><video controls loop="true" src="/store/camera-transitions/Fold.webm"></video></center>
 
-Folds the scene like a piece of paper, revealing the new scene underneath.
+Folds the camera like a piece of paper, revealing the new camera underneath.
 
 **Parameters:**
 
@@ -365,12 +365,12 @@ TransitionFold.Start(cameraA, cameraB, 1.0f, mode: TransitionAxis.Horizontal, co
 
 <center><video controls loop="true" src="/store/camera-transitions/Focus.webm"></video></center>
 
-Creates a depth-of-field-like focus effect. The scene blurs and zooms in a way that simulates a camera lens changing focus, with different parts of the screen (rings) zooming at different rates.
+Creates a depth-of-field-like focus effect. The camera blurs and zooms in a way that simulates a camera lens changing focus, with different parts of the screen (rings) zooming at different rates.
 
 **Parameters:**
 
-*   `focalDepthPoint`: `float` (optional) - The point in the transition (normalized time `[0.01, 0.99]`) at which the incoming scene starts to become clear and mix with the outgoing scene. Default is `0.8`.
-*   `focalLength`: `float` (optional) - Controls the softness or duration of the mix between the two scenes after the `focalDepthPoint` is reached. A smaller value means a sharper, quicker focus change. Range `[0.01, 0.5]`. Default is `0.07`.
+*   `focalDepthPoint`: `float` (optional) - The point in the transition (normalized time `[0.01, 0.99]`) at which the incoming camera starts to become clear and mix with the outgoing camera. Default is `0.8`.
+*   `focalLength`: `float` (optional) - Controls the softness or duration of the mix between the two cameras after the `focalDepthPoint` is reached. A smaller value means a sharper, quicker focus change. Range `[0.01, 0.5]`. Default is `0.07`.
 *   `zoomIntensity`: `float` (optional) - The overall intensity of the zoom effect applied during the transition. Range `[0.0, 1.0]`. Default is `0.2`.
 *   `ringZoomFactors`: `Vector4` (optional) - A `Vector4` defining the relative zoom factors for four concentric rings, from the center outwards (x=center, y=mid, z=mid-outer, w=outer). These values are scaled by `zoomIntensity`. Default is `(0.1f, 0.15f, 0.2f, 0.25f)`.
 
@@ -423,7 +423,7 @@ TransitionGalaxy.Start(cameraA, cameraB, 2.0f,
 
 <center><video controls loop="true" src="/store/camera-transitions/Gate.webm"></video></center>
 
-A gate-like opening effect. The current scene splits and opens like a set of gates, revealing the new scene behind it.
+A gate-like opening effect. The current camera splits and opens like a set of gates, revealing the new camera behind it.
 
 **Parameters:**
 
@@ -447,7 +447,7 @@ TransitionGate.Start(cameraA, cameraB, 1.2f, perspective: 0.6f, depth: 5.0f, ref
 
 <center><video controls loop="true" src="/store/camera-transitions/Glitch.webm"></video></center>
 
-A digital glitch distortion effect. The scene fragments and distorts as it transitions to the new view.
+A digital glitch distortion effect. The camera fragments and distorts as it transitions to the new view.
 
 **Parameters:**
 
@@ -469,7 +469,7 @@ TransitionGlitch.Start(cameraA, cameraB, 0.7f, strength: 1.5f);
 
 <center><video controls loop="true" src="/store/camera-transitions/Glass.webm"></video></center>
 
-Creates a glass-like distortion effect, as if viewing the scene through a textured or irregular piece of glass.
+Creates a glass-like distortion effect, as if viewing the camera through a textured or irregular piece of glass.
 
 **Parameters:**
 
@@ -493,7 +493,7 @@ TransitionGlass.Start(cameraA, cameraB, 1.0f, size: 0.1f, zoom: 30.0f, colorSepa
 
 <center><video controls loop="true" src="/store/camera-transitions/Gradient.webm"></video></center>
 
-Uses a grayscale texture to control the wipe pattern between scenes. The transition progresses based on the luminance values of the gradient texture.
+Uses a grayscale texture to control the wipe pattern between camera. The transition progresses based on the luminance values of the gradient texture.
 
 **Parameters:**
 
@@ -540,12 +540,12 @@ TransitionGradient.Start(cameraA, cameraB, 1.5f,
 
 <center><video controls loop="true" src="/store/camera-transitions/GridFlip.webm"></video></center>
 
-Reveals the next scene through a grid of cells that flip over, either sequentially or with some randomness.
+Reveals the next camera through a grid of cells that flip over, either sequentially or with some randomness.
 
 **Parameters:**
 
 *   `size`: `Vector2Int` (optional) - The number of columns (x) and rows (y) in the grid. Range `[(1,1), (100,100)]`. Default is `(4,4)`.
-*   `pause`: `float` (optional) - Duration of a pause at the beginning (showing the original scene) and end (showing the new scene) of the transition, during which cells are static. This value is a fraction of the total transition time. Range `[0.0, 0.49]`. Default is `0.1`.
+*   `pause`: `float` (optional) - Duration of a pause at the beginning (showing the original camera) and end (showing the new camera) of the transition, during which cells are static. This value is a fraction of the total transition time. Range `[0.0, 0.49]`. Default is `0.1`.
 *   `dividerWidth`: `float` (optional) - The width of the dividers or gaps between grid cells, expressed as a fraction of a cell's size. Range `[0.0, 0.5]`. Default is `0.05`.
 *   `backgroundColor`: `Color` (optional) - The color shown in the dividers between cells and during the pause phases if the cells don't cover the entire screen. Default is `Color.black`.
 *   `randomness`: `float` (optional) - A factor that introduces randomness to the flip timing of individual cells. A value of `0.0` means cells flip in a more ordered sequence, while `1.0` introduces maximum randomness. Range `[0.0, 1.0]`. Default is `0.1`.
@@ -594,7 +594,7 @@ TransitionHexagon.Start(cameraA, cameraB, 1.3f, steps: 70, horizontalHexagons: 1
 
 <center><video controls loop="true" src="/store/camera-transitions/InkSpread.webm"></video></center>
 
-An organic ink spread effect using noise. The new scene is revealed as if ink is spreading across the screen.
+An organic ink spread effect using noise. The new camera is revealed as if ink is spreading across the screen.
 
 **Parameters:**
 
@@ -617,7 +617,7 @@ TransitionInkSpread.Start(cameraA, cameraB, 1.8f, noiseScale: 5.0f, noiseSpeed: 
 
 <center><video controls loop="true" src="/store/camera-transitions/LinearBlur.webm"></video></center>
 
-Applies a linear blur effect during the transition. The scene smoothly blurs and then unblurs to reveal the new scene.
+Applies a linear blur effect during the transition. The camera smoothly blurs and then unblurs to reveal the new camera.
 
 **Parameters:**
 
@@ -640,7 +640,7 @@ TransitionLinearBlur.Start(cameraA, cameraB, 1.0f, intensity: 0.3f, passes: 4);
 
 <center><video controls loop="true" src="/store/camera-transitions/LuminanceMelt.webm"></video></center>
 
-Melts the scene based on its luminance (brightness) values, revealing the new scene. Pixels will "melt" or "drip" away depending on their brightness and the chosen parameters.
+Melts the camera based on its luminance (brightness) values, revealing the new camera. Pixels will "melt" or "drip" away depending on their brightness and the chosen parameters.
 
 **Parameters:**
 
@@ -667,7 +667,7 @@ TransitionLuminanceMelt.Start(cameraA, cameraB, 1.5f,
 
 <center><video controls loop="true" src="/store/camera-transitions/Mosaic.webm"></video></center>
 
-A mosaic pixelation effect. The scene transitions by breaking into mosaic tiles that change to reveal the new scene.
+A mosaic pixelation effect. The camera transitions by breaking into mosaic tiles that change to reveal the new camera.
 
 **Parameters:**
 
@@ -690,7 +690,7 @@ TransitionMosaic.Start(cameraA, cameraB, 1.0f, steps: new Vector2(2, -1), rotate
 
 <center><video controls loop="true" src="/store/camera-transitions/PageCurl.webm"></video></center>
 
-Simulates a page curling effect, where the current scene curls up or away like a sheet of paper to reveal the new scene.
+Simulates a page curling effect, where the current camera curls up or away like a sheet of paper to reveal the new camera.
 
 **Parameters:**
 
@@ -699,7 +699,7 @@ Simulates a page curling effect, where the current scene curls up or away like a
 *   `frontShadow`: `bool` (optional) - If `true`, a shadow effect is applied to the front (visible side) of the curling page. Default is `true`.
 *   `backTransparency`: `float` (optional) - Controls the transparency of the back side of the curling page. `0.0` is fully transparent, `1.0` is fully opaque. Range `[0.0, 1.0]`. Default is `0.25`.
 *   `backShadow`: `bool` (optional) - If `true`, a shadow effect is applied to the back side of the curling page. Default is `true`.
-*   `innerShadow`: `bool` (optional) - If `true`, a shadow effect is applied to the area of the scene being revealed, where the page is curling away from. Default is `true`.
+*   `innerShadow`: `bool` (optional) - If `true`, a shadow effect is applied to the area of the camera being revealed, where the page is curling away from. Default is `true`.
 
 **Example Usage:**
 
@@ -723,7 +723,7 @@ TransitionPageCurl.Start(cameraA, cameraB, 1.5f,
 
 <center><video controls loop="true" src="/store/camera-transitions/Pixelate.webm"></video></center>
 
-A pixelation reveal effect. The outgoing scene becomes increasingly pixelated, then resolves into the new scene which starts pixelated and becomes clear.
+A pixelation reveal effect. The outgoing camera becomes increasingly pixelated, then resolves into the new camera which starts pixelated and becomes clear.
 
 **Parameters:**
 
@@ -745,7 +745,7 @@ TransitionPixelate.Start(cameraA, cameraB, 1.0f, pixelSize: 100.0f);
 
 <center><video controls loop="true" src="/store/camera-transitions/PolkaDots.webm"></video></center>
 
-A polka dot reveal effect. The new scene is revealed through a pattern of growing (or shrinking) polka dots.
+A polka dot reveal effect. The new camera is revealed through a pattern of growing (or shrinking) polka dots.
 
 **Parameters:**
 
@@ -768,7 +768,7 @@ TransitionPolkaDots.Start(cameraA, cameraB, 1.0f, dots: 8.0f, center: new Vector
 
 <center><video controls loop="true" src="/store/camera-transitions/Radial.webm"></video></center>
 
-A radial wipe effect. The new scene is revealed by a wipe that rotates around the center of the screen, similar to a clock hand.
+A radial wipe effect. The new camera is revealed by a wipe that rotates around the center of the screen, similar to a clock hand.
 
 **Parameters:**
 
@@ -790,7 +790,7 @@ TransitionRadial.Start(cameraA, cameraB, 1.0f, clockwise: false);
 
 <center><video controls loop="true" src="/store/camera-transitions/Ripple.webm"></video></center>
 
-Creates a ripple distortion effect, as if a disturbance is spreading across the screen, transitioning from one scene to the other.
+Creates a ripple distortion effect, as if a disturbance is spreading across the screen, transitioning from one camera to the other.
 
 **Parameters:**
 
@@ -813,13 +813,13 @@ TransitionRipple.Start(cameraA, cameraB, 1.0f, amplitude: 150.0f, speed: 75.0f);
 
 <center><video controls loop="true" src="/store/camera-transitions/RotoZoom.webm"></video></center>
 
-Creates a rotating and zooming effect. The scene scales down while rotating around a central point, then the new scene scales up and rotates into place.
+Creates a rotating and zooming effect. The camera scales down while rotating around a central point, then the new camera scales up and rotates into place.
 
 **Parameters:**
 
 *   `center`: `Vector2` (optional) - The center point (in normalized screen coordinates, `(0.5, 0.5)` is the screen center) for the rotation and zoom effect. Default is `(0.5, 0.5)`.
-*   `rotations`: `float` (optional) - The number of full 360-degree rotations the scene will perform during the transition. Can be fractional. Default is `1.0`.
-*   `scale`: `float` (optional) - The initial (and final) scale factor. The scene zooms from/to this scale. A higher value means more zoom. Default is `8.0`.
+*   `rotations`: `float` (optional) - The number of full 360-degree rotations the camera will perform during the transition. Can be fractional. Default is `1.0`.
+*   `scale`: `float` (optional) - The initial (and final) scale factor. The camera zooms from/to this scale. A higher value means more zoom. Default is `8.0`.
 *   `backColor`: `Color` (optional) - The background color visible in areas outside the scaled and rotated image, especially when the image is zoomed out. Default is a dark gray `(0.15, 0.15, 0.15, 1.0)`.
 
 **Example Usage:**
@@ -842,7 +842,7 @@ TransitionRotoZoom.Start(cameraA, cameraB, 1.5f,
 
 <center><video controls loop="true" src="/store/camera-transitions/Schwifty.webm"></video></center>
 
-A psychedelic warping effect. The scene distorts with a "[schwifty](https://www.youtube.com/watch?v=4ctK1aoWuqY)" visual style, transitioning to the new scene.
+A psychedelic warping effect. The camera distorts with a "[schwifty](https://www.youtube.com/watch?v=4ctK1aoWuqY)" visual style, transitioning to the new camera.
 
 **Parameters:**
 
@@ -865,7 +865,7 @@ TransitionSchwifty.Start(cameraA, cameraB, 1.0f, intensity: 0.8f, amplitude: 15.
 
 <center><video controls loop="true" src="/store/camera-transitions/Simple.webm"></video></center>
 
-A simple linear fade between scenes. The outgoing scene fades out while the incoming scene fades in.
+A simple linear fade between camera. The outgoing camera fades out while the incoming camera fades in.
 
 **Parameters:**
 
@@ -883,7 +883,7 @@ TransitionSimple.Start(cameraA, cameraB, 1.0f);
 
 <center><video controls loop="true" src="/store/camera-transitions/Slice.webm"></video></center>
 
-Creates a slicing effect for the transition. The scene is divided into a number of slices that transition sequentially or with a smooth overlap.
+Creates a slicing effect for the transition. The camera is divided into a number of slices that transition sequentially or with a smooth overlap.
 
 **Parameters:**
 
@@ -906,7 +906,7 @@ TransitionSlice.Start(cameraA, cameraB, 1.0f, count: 20.0f, smoothness: 0.1f);
 
 <center><video controls loop="true" src="/store/camera-transitions/Smash.webm"></video></center>
 
-Creates a vertical squash and stretch effect, accompanied by color separation, as if the scene is being "smashed" down and then bouncing back with the new scene.
+Creates a vertical squash and stretch effect, accompanied by color separation, as if the camera is being "smashed" down and then bouncing back with the new camera.
 
 **Parameters:**
 
@@ -928,13 +928,13 @@ TransitionSmash.Start(cameraA, cameraB, 0.8f, colorSeparation: 0.1f);
 
 <center><video controls loop="true" src="/store/camera-transitions/SmoothCircle.webm"></video></center>
 
-A smooth circular wipe. The new scene is revealed by a circle that expands from (or contracts to) a central point, with a soft, anti-aliased edge.
+A smooth circular wipe. The new camera is revealed by a circle that expands from (or contracts to) a central point, with a soft, anti-aliased edge.
 
 **Parameters:**
 
 *   `smoothness`: `float` (optional) - Controls the softness or feathering of the circle's edge. Higher values create a more gradual transition at the edge. Range `[0.0, 1.0]`. Default is `0.3`.
 *   `center`: `Vector2` (optional) - The center point (in normalized screen coordinates, `(0.0, 0.0)` is bottom-left, `(1.0, 1.0)` is top-right) from which the circle expands or to which it contracts. Default is `(0.5, 0.5)` (screen center).
-*   `invert`: `bool` (optional) - If `false` (default), the circle expands to reveal the new scene. If `true`, the circle contracts, with the old scene disappearing into the center point, revealing the new scene around it. Default is `false`.
+*   `invert`: `bool` (optional) - If `false` (default), the circle expands to reveal the new camera. If `true`, the circle contracts, with the old camera disappearing into the center point, revealing the new camera around it. Default is `false`.
 
 **Example Usage:**
 
@@ -978,7 +978,7 @@ TransitionSmoothLine.Start(cameraA, cameraB, 1.0f, angle: 90.0f, smoothness: 0.1
 
 <center><video controls loop="true" src="/store/camera-transitions/Swap.webm"></video></center>
 
-Two scenes swap places with a 3D perspective effect. One scene slides out while the other slides in, often with a sense of depth and optional reflection.
+two cameras swap places with a 3D perspective effect. One camera slides out while the other slides in, often with a sense of depth and optional reflection.
 
 **Parameters:**
 
@@ -1005,7 +1005,7 @@ TransitionSwap.Start(cameraA, cameraB, 1.0f, reflection: 0.6f);
 
 <center><video controls loop="true" src="/store/camera-transitions/Valentine.webm"></video></center>
 
-A heart-themed transition. Often involves a heart shape expanding or contracting to reveal the new scene, possibly with a colored border.
+A heart-themed transition. Often involves a heart shape expanding or contracting to reveal the new camera, possibly with a colored border.
 
 **Parameters:**
 
@@ -1050,7 +1050,7 @@ TransitionVortex.Start(cameraA, cameraB, 1.0f, distortion: 0.7f);
 
 <center><video controls loop="true" src="/store/camera-transitions/WarpWave.webm"></video></center>
 
-A wave-like distortion warps the scene as it transitions. The wave can be horizontal or vertical, and its curvature can be adjusted.
+A wave-like distortion warps the camera as it transitions. The wave can be horizontal or vertical, and its curvature can be adjusted.
 
 **Parameters:**
 
@@ -1073,7 +1073,7 @@ TransitionWarpWave.Start(cameraA, cameraB, 1.0f, mode: TransitionAxis.Vertical, 
 
 <center><video controls loop="true" src="/store/camera-transitions/Wind.webm"></video></center>
 
-A wind-swept effect. The scene appears to be blown away by streaks of wind, revealing the new scene beneath.
+A wind-swept effect. The camera appears to be blown away by streaks of wind, revealing the new camera beneath.
 
 **Parameters:**
 
@@ -1095,7 +1095,7 @@ TransitionWind.Start(cameraA, cameraB, 1.0f, size: 0.5f);
 
 <center><video controls loop="true" src="/store/camera-transitions/WaterDrop.webm"></video></center>
 
-A water drop ripple effect. The transition emanates from the center of the screen like ripples from a water drop, revealing the new scene.
+A water drop ripple effect. The transition emanates from the center of the screen like ripples from a water drop, revealing the new camera.
 
 **Parameters:**
 
@@ -1118,7 +1118,7 @@ TransitionWaterDrop.Start(cameraA, cameraB, 1.0f, amplitude: 50.0f, speed: 60.0f
 
 <center><video controls loop="true" src="/store/camera-transitions/Wipe.webm"></video></center>
 
-A directional wipe effect. The new scene is revealed by a line that wipes across the screen, either horizontally or vertically.
+A directional wipe effect. The new camera is revealed by a line that wipes across the screen, either horizontally or vertically.
 
 **Parameters:**
 
@@ -1140,11 +1140,11 @@ TransitionWipe.Start(cameraA, cameraB, 1.0f, mode: TransitionAxis.Horizontal);
 
 <center><video controls loop="true" src="/store/camera-transitions/Zoom.webm"></video></center>
 
-A zoom and crossfade effect. The current scene zooms out, and as it zooms, it begins to fade into the new scene.
+A zoom and crossfade effect. The current camera zooms out, and as it zooms, it begins to fade into the new camera.
 
 **Parameters:**
 
-*   `zoomQuickness`: `float` (optional) - Controls how quickly the zoom portion of the effect completes within the total transition duration. A value of `0.2` means the zoom finishes very early in the transition, while `1.0` means it finishes at the very end. The fade to the next scene typically starts slightly before the zoom completes. Range `[0.2f, 1.0f]`. Default is `0.8f`.
+*   `zoomQuickness`: `float` (optional) - Controls how quickly the zoom portion of the effect completes within the total transition duration. A value of `0.2` means the zoom finishes very early in the transition, while `1.0` means it finishes at the very end. The fade to the next camera typically starts slightly before the zoom completes. Range `[0.2f, 1.0f]`. Default is `0.8f`.
 
 **Example Usage:**
 

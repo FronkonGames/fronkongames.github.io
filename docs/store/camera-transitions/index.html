@@ -31,18 +31,18 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>Fronkon Games - Camera Transitions</title>
-    <meta name="description" content="Cinematic, realtime and easy-to-use transitions between cameras in a scene">
+    <meta name="description" content="Cinematic, realtime and easy-to-use transitions between cameras in a camera">
 
 <link rel="canonical" href="https://fronkongames.github.io/store/camera-transitions/">
 
 <meta property="og:locale" content="es_ES">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Camera Transitions">
-<meta property="og:description" content="Cinematic, realtime and easy-to-use transitions between cameras in a scene">
+<meta property="og:description" content="Cinematic, realtime and easy-to-use transitions between cameras in a camera">
 <meta property="og:url" content="https://fronkongames.github.io/store/camera-transitions/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:03+01:00">
-    <meta property="article:modified_time" content="1970-01-01T01:00:03+01:00">
+    <meta property="article:modified_time" content="2025-05-11T03:07:21+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/camera-transitions-1280x640.jpg">
 <meta property="og:image:alt" content="Camera Transitions">
 
@@ -52,7 +52,7 @@
 
 
 <meta name="twitter:title" content="Camera Transitions">
-<meta name="twitter:description" content="Cinematic, realtime and easy-to-use transitions between cameras in a scene">
+<meta name="twitter:description" content="Cinematic, realtime and easy-to-use transitions between cameras in a camera">
 <meta name="twitter:image" content="https://fronkongames.github.io/img/camera-transitions-1280x640.jpg">
 <meta name="twitter:image:alt" content="Camera Transitions">
 
@@ -94,7 +94,7 @@
       "@id": "https://fronkongames.github.io/store/camera-transitions/",
       "url": "https://fronkongames.github.io/store/camera-transitions/",
       "name": "Camera Transitions",
-      "description": "Cinematic, realtime and easy-to-use transitions between cameras in a scene",
+      "description": "Cinematic, realtime and easy-to-use transitions between cameras in a camera",
       "isPartOf": {
         "@id": "https://fronkongames.github.io/#/schema/website/1"
       },
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:03CET",
-      "dateModified": "1970-01-01T01:00:03CET",
+      "dateModified": "2025-05-11T03:07:21CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/camera-transitions/#/schema/breadcrumb/1"
       },
@@ -571,9 +571,9 @@
 </a></h2>
 <p>To use a camera transition:</p>
 <ol>
-<li>Ensure you have at least two <code>Camera</code> objects in your scene.</li>
+<li>Ensure you have at least two <code>Camera</code> objects in your camera.</li>
 <li>Add the <code>Transition Renderer Feature</code> as a <code>Renderer Feature</code>. This <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-renderer-feature.html">official tutorial</a> tells how to do it.</li>
-<li>Make sure there is an instance of <code>Transition Manager</code> in your scene. If not, create an empty GameObject and add the <code>TransitionManager.cs</code> script to it.</li>
+<li>Make sure there is an instance of <code>Transition Manager</code> in your camera. If not, create an empty GameObject and add the <code>TransitionManager.cs</code> script to it.</li>
 <li>Call the static <code>Start</code> method of the desired transition class from your script.</li>
 </ol>
 <p><strong>Example:</strong></p>
@@ -606,7 +606,7 @@
 <div class="d-flex alert alert-info " role="alert">
         
         <div class="flex-grow-1 my-auto">
-            This asset <strong>does not handle scene loading</strong> or switching between scenes. All camera transitions are performed between cameras that exist within a single scene.
+            This asset <strong>does not handle scene loading</strong> or switching between scenes. All transitions are performed between cameras that exist within a <strong>single scene</strong>.
         </div>
     </div>
 <hr />
@@ -628,10 +628,10 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/CrossZoom.webm"></video></center>
-<p>A zoom and crossfade effect. The current scene zooms out while the new scene zooms in and fades, creating a smooth and dynamic transition.</p>
+<p>A zoom and crossfade effect. The current camera zooms out while the new camera zooms in and fades, creating a smooth and dynamic transition.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>strength</code>: <code>float</code> (optional) - The intensity of the zoom effect. Determines how much the scenes will scale during the transition. Default is <code>0.4f</code>. Range <code>[0.0f, 1.0f]</code>.</li>
+<li><code>strength</code>: <code>float</code> (optional) - The intensity of the zoom effect. Determines how much the camera will scale during the transition. Default is <code>0.4f</code>. Range <code>[0.0f, 1.0f]</code>.</li>
 <li><code>quality</code>: <code>float</code> (optional) - Effect quality, affecting the smoothness or detail of the zoom. Default is <code>20.0f</code>. Range <code>[1.0f, 40.0f]</code>.</li>
 </ul>
 <p><strong>Example Usage:</strong></p>
@@ -658,7 +658,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Bounce.webm"></video></center>
-<p>A bouncing effect for the transition. The outgoing scene appears to bounce off the screen, revealing the incoming scene.</p>
+<p>A bouncing effect for the transition. The outgoing camera appears to bounce off the screen, revealing the incoming camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>bounces</code>: <code>float</code> (optional) - The number of bounces during the transition. Default is <code>3.0f</code>. Recommended range <code>[1.0f, 10.0f]</code>.</li>
@@ -689,7 +689,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Bars.webm"></video></center>
-<p>A horizontal bars effect. The new scene is revealed through a series of horizontal bars that wipe across the screen.</p>
+<p>A horizontal bars effect. The new camera is revealed through a series of horizontal bars that wipe across the screen.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>This transition does not have any configurable parameters beyond the standard duration. The number and behavior of the bars are predefined in the shader.</li>
@@ -714,7 +714,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/CircleCrop.webm"></video></center>
-<p>Crops to a background color in a circle, then reveals the new scene.</p>
+<p>Crops to a background color in a circle, then reveals the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>backgroundColor</code>: <code>Color</code> (optional) - The color of the circular crop area that appears during the transition. Defaults to <code>Color.black</code>.</li>
@@ -774,7 +774,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/ColorDistance.webm"></video></center>
-<p>Transitions pixels based on the color difference between the two scenes.</p>
+<p>Transitions pixels based on the color difference between the two cameras.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>power</code>: <code>float</code> (optional) - Power curve for the overall transition. Affects the speed and intensity of the transition based on color differences. Recommended range <code>[1.0, 10.0]</code>. Default is <code>5.0f</code>.</li>
@@ -835,7 +835,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Doom.webm"></video></center>
-<p>A circular iris wipe with a noisy, Doom-like (the game) screen melt effect.</p>
+<p>A circular iris wipe with a noisy, Doom-like (<a href="https://www.youtube.com/watch?v=S7IEg0_qNXs">the game</a>) screen melt effect.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>barWidth</code>: <code>int</code> (optional) - The width of the &ldquo;bars&rdquo; or columns in the melt effect. Default is <code>50</code>. Range <code>[0, N]</code> (non-negative).</li>
@@ -867,7 +867,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/FadeToColor.webm"></video></center>
-<p>Fades the current scene to a solid color, then fades from that color to the new scene.</p>
+<p>Fades the current camera to a solid color, then fades from that color to the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>strength</code>: <code>float</code> (optional) - Determines how much the solid color dominates at the peak of the transition. A value of <code>1.0</code> means the screen will be fully the <code>fadeColor</code>. Range <code>[0.0, 1.0]</code>. Default is <code>0.3</code>.</li>
@@ -897,10 +897,10 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/FadeToGrayscale.webm"></video></center>
-<p>Fades the current scene to grayscale, then fades from grayscale to reveal the new scene.</p>
+<p>Fades the current camera to grayscale, then fades from grayscale to reveal the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>strength</code>: <code>float</code> (optional) - Controls the intensity of the grayscale effect at the peak of the transition. A value of <code>1.0</code> means the scene will be fully desaturated. Range <code>[0.0, 1.0]</code>. Default is <code>0.3</code>.</li>
+<li><code>strength</code>: <code>float</code> (optional) - Controls the intensity of the grayscale effect at the peak of the transition. A value of <code>1.0</code> means the camera will be fully desaturated. Range <code>[0.0, 1.0]</code>. Default is <code>0.3</code>.</li>
 </ul>
 <p><strong>Example Usage:</strong></p>
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Fades to grayscale with default strength.</span>
@@ -926,7 +926,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Flash.webm"></video></center>
-<p>A bright flash effect that briefly illuminates the screen, transitioning to the new scene.</p>
+<p>A bright flash effect that briefly illuminates the screen, transitioning to the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>strength</code>: <code>float</code> (optional) - The strength or phase of the flash effect. Affects how much the flash color dominates. Range <code>[0.0, 1.0]</code>. Default is <code>0.3</code>.</li>
@@ -959,7 +959,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Flip.webm"></video></center>
-<p>Flips the view horizontally or vertically to reveal the new scene.</p>
+<p>Flips the view horizontally or vertically to reveal the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>mode</code>: <code>TransitionAxis</code> (optional) - Determines the axis of the flip. Can be <code>TransitionAxis.Horizontal</code> or <code>TransitionAxis.Vertical</code>. Default is <code>TransitionAxis.Vertical</code>.</li>
@@ -989,7 +989,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Fold.webm"></video></center>
-<p>Folds the scene like a piece of paper, revealing the new scene underneath.</p>
+<p>Folds the camera like a piece of paper, revealing the new camera underneath.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>mode</code>: <code>TransitionAxis</code> (optional) - Determines the direction of the fold. Can be <code>TransitionAxis.Horizontal</code> or <code>TransitionAxis.Vertical</code>. Default is <code>TransitionAxis.Vertical</code>.</li>
@@ -1019,11 +1019,11 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Focus.webm"></video></center>
-<p>Creates a depth-of-field-like focus effect. The scene blurs and zooms in a way that simulates a camera lens changing focus, with different parts of the screen (rings) zooming at different rates.</p>
+<p>Creates a depth-of-field-like focus effect. The camera blurs and zooms in a way that simulates a camera lens changing focus, with different parts of the screen (rings) zooming at different rates.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>focalDepthPoint</code>: <code>float</code> (optional) - The point in the transition (normalized time <code>[0.01, 0.99]</code>) at which the incoming scene starts to become clear and mix with the outgoing scene. Default is <code>0.8</code>.</li>
-<li><code>focalLength</code>: <code>float</code> (optional) - Controls the softness or duration of the mix between the two scenes after the <code>focalDepthPoint</code> is reached. A smaller value means a sharper, quicker focus change. Range <code>[0.01, 0.5]</code>. Default is <code>0.07</code>.</li>
+<li><code>focalDepthPoint</code>: <code>float</code> (optional) - The point in the transition (normalized time <code>[0.01, 0.99]</code>) at which the incoming camera starts to become clear and mix with the outgoing camera. Default is <code>0.8</code>.</li>
+<li><code>focalLength</code>: <code>float</code> (optional) - Controls the softness or duration of the mix between the two cameras after the <code>focalDepthPoint</code> is reached. A smaller value means a sharper, quicker focus change. Range <code>[0.01, 0.5]</code>. Default is <code>0.07</code>.</li>
 <li><code>zoomIntensity</code>: <code>float</code> (optional) - The overall intensity of the zoom effect applied during the transition. Range <code>[0.0, 1.0]</code>. Default is <code>0.2</code>.</li>
 <li><code>ringZoomFactors</code>: <code>Vector4</code> (optional) - A <code>Vector4</code> defining the relative zoom factors for four concentric rings, from the center outwards (x=center, y=mid, z=mid-outer, w=outer). These values are scaled by <code>zoomIntensity</code>. Default is <code>(0.1f, 0.15f, 0.2f, 0.25f)</code>.</li>
 </ul>
@@ -1091,7 +1091,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Gate.webm"></video></center>
-<p>A gate-like opening effect. The current scene splits and opens like a set of gates, revealing the new scene behind it.</p>
+<p>A gate-like opening effect. The current camera splits and opens like a set of gates, revealing the new camera behind it.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>perspective</code>: <code>float</code> (optional) - The amount of perspective applied to the &ldquo;gates&rdquo; as they open. Range <code>[0.0, 1.0]</code>. Default is <code>0.4</code>.</li>
@@ -1122,7 +1122,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Glitch.webm"></video></center>
-<p>A digital glitch distortion effect. The scene fragments and distorts as it transitions to the new view.</p>
+<p>A digital glitch distortion effect. The camera fragments and distorts as it transitions to the new view.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>strength</code>: <code>float</code> (optional) - Controls the intensity of the glitch and displacement effect. Higher values result in more pronounced distortion. Range <code>[0.0, 10.0]</code>. Default is <code>0.4</code>.</li>
@@ -1151,7 +1151,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Glass.webm"></video></center>
-<p>Creates a glass-like distortion effect, as if viewing the scene through a textured or irregular piece of glass.</p>
+<p>Creates a glass-like distortion effect, as if viewing the camera through a textured or irregular piece of glass.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>size</code>: <code>float</code> (optional) - Controls the size or scale of the distortion pattern. Default is <code>0.04</code>.</li>
@@ -1182,7 +1182,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Gradient.webm"></video></center>
-<p>Uses a grayscale texture to control the wipe pattern between scenes. The transition progresses based on the luminance values of the gradient texture.</p>
+<p>Uses a grayscale texture to control the wipe pattern between camera. The transition progresses based on the luminance values of the gradient texture.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>gradientTexture</code>: <code>Texture</code> (<strong>required</strong>) - The grayscale texture that defines the wipe pattern. Brighter areas of the texture will transition earlier than darker areas.</li>
@@ -1229,11 +1229,11 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/GridFlip.webm"></video></center>
-<p>Reveals the next scene through a grid of cells that flip over, either sequentially or with some randomness.</p>
+<p>Reveals the next camera through a grid of cells that flip over, either sequentially or with some randomness.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>size</code>: <code>Vector2Int</code> (optional) - The number of columns (x) and rows (y) in the grid. Range <code>[(1,1), (100,100)]</code>. Default is <code>(4,4)</code>.</li>
-<li><code>pause</code>: <code>float</code> (optional) - Duration of a pause at the beginning (showing the original scene) and end (showing the new scene) of the transition, during which cells are static. This value is a fraction of the total transition time. Range <code>[0.0, 0.49]</code>. Default is <code>0.1</code>.</li>
+<li><code>pause</code>: <code>float</code> (optional) - Duration of a pause at the beginning (showing the original camera) and end (showing the new camera) of the transition, during which cells are static. This value is a fraction of the total transition time. Range <code>[0.0, 0.49]</code>. Default is <code>0.1</code>.</li>
 <li><code>dividerWidth</code>: <code>float</code> (optional) - The width of the dividers or gaps between grid cells, expressed as a fraction of a cell&rsquo;s size. Range <code>[0.0, 0.5]</code>. Default is <code>0.05</code>.</li>
 <li><code>backgroundColor</code>: <code>Color</code> (optional) - The color shown in the dividers between cells and during the pause phases if the cells don&rsquo;t cover the entire screen. Default is <code>Color.black</code>.</li>
 <li><code>randomness</code>: <code>float</code> (optional) - A factor that introduces randomness to the flip timing of individual cells. A value of <code>0.0</code> means cells flip in a more ordered sequence, while <code>1.0</code> introduces maximum randomness. Range <code>[0.0, 1.0]</code>. Default is <code>0.1</code>.</li>
@@ -1297,7 +1297,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/InkSpread.webm"></video></center>
-<p>An organic ink spread effect using noise. The new scene is revealed as if ink is spreading across the screen.</p>
+<p>An organic ink spread effect using noise. The new camera is revealed as if ink is spreading across the screen.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>noiseScale</code>: <code>float</code> (optional) - Controls the scale of the noise pattern that drives the ink spread. Smaller values create larger, more spread-out patterns; larger values create finer, more detailed patterns. Range <code>[1.0, 50.0]</code>. Default is <code>10.0</code>.</li>
@@ -1327,7 +1327,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/LinearBlur.webm"></video></center>
-<p>Applies a linear blur effect during the transition. The scene smoothly blurs and then unblurs to reveal the new scene.</p>
+<p>Applies a linear blur effect during the transition. The camera smoothly blurs and then unblurs to reveal the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>intensity</code>: <code>float</code> (optional) - Controls the maximum intensity of the blur effect. Range <code>[0.0, 1.0]</code>. Default is <code>0.1</code>.</li>
@@ -1357,7 +1357,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/LuminanceMelt.webm"></video></center>
-<p>Melts the scene based on its luminance (brightness) values, revealing the new scene. Pixels will &ldquo;melt&rdquo; or &ldquo;drip&rdquo; away depending on their brightness and the chosen parameters.</p>
+<p>Melts the camera based on its luminance (brightness) values, revealing the new camera. Pixels will &ldquo;melt&rdquo; or &ldquo;drip&rdquo; away depending on their brightness and the chosen parameters.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>meltDownwards</code>: <code>bool</code> (optional) - If <code>true</code>, the melt effect moves downwards (pixels drip down). If <code>false</code>, it moves upwards. Default is <code>true</code>.</li>
@@ -1391,7 +1391,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Mosaic.webm"></video></center>
-<p>A mosaic pixelation effect. The scene transitions by breaking into mosaic tiles that change to reveal the new scene.</p>
+<p>A mosaic pixelation effect. The camera transitions by breaking into mosaic tiles that change to reveal the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>steps</code>: <code>Vector2</code> (optional) - Controls the size and apparent movement of the mosaic cells. These are integer step values for how the mosaic pattern is constructed. Avoid <code>(0,0)</code>. Range for each component is typically <code>[-10, 10]</code>. Default is <code>(1,1)</code>.</li>
@@ -1421,7 +1421,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/PageCurl.webm"></video></center>
-<p>Simulates a page curling effect, where the current scene curls up or away like a sheet of paper to reveal the new scene.</p>
+<p>Simulates a page curling effect, where the current camera curls up or away like a sheet of paper to reveal the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>angle</code>: <code>float</code> (optional) - The angle of the page curl in degrees. This determines the direction from which the page curls. Range <code>[0.0, 180.0]</code>. Default is <code>45.0</code>.</li>
@@ -1429,7 +1429,7 @@
 <li><code>frontShadow</code>: <code>bool</code> (optional) - If <code>true</code>, a shadow effect is applied to the front (visible side) of the curling page. Default is <code>true</code>.</li>
 <li><code>backTransparency</code>: <code>float</code> (optional) - Controls the transparency of the back side of the curling page. <code>0.0</code> is fully transparent, <code>1.0</code> is fully opaque. Range <code>[0.0, 1.0]</code>. Default is <code>0.25</code>.</li>
 <li><code>backShadow</code>: <code>bool</code> (optional) - If <code>true</code>, a shadow effect is applied to the back side of the curling page. Default is <code>true</code>.</li>
-<li><code>innerShadow</code>: <code>bool</code> (optional) - If <code>true</code>, a shadow effect is applied to the area of the scene being revealed, where the page is curling away from. Default is <code>true</code>.</li>
+<li><code>innerShadow</code>: <code>bool</code> (optional) - If <code>true</code>, a shadow effect is applied to the area of the camera being revealed, where the page is curling away from. Default is <code>true</code>.</li>
 </ul>
 <p><strong>Example Usage:</strong></p>
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Uses default page curl parameters.</span>
@@ -1461,7 +1461,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Pixelate.webm"></video></center>
-<p>A pixelation reveal effect. The outgoing scene becomes increasingly pixelated, then resolves into the new scene which starts pixelated and becomes clear.</p>
+<p>A pixelation reveal effect. The outgoing camera becomes increasingly pixelated, then resolves into the new camera which starts pixelated and becomes clear.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>pixelSize</code>: <code>float</code> (optional) - Controls the size of the pixels during the transition. Larger values result in a more coarse pixelation. Default is <code>50.0f</code>. Range <code>[0.0f, N]</code> (non-negative).</li>
@@ -1490,7 +1490,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/PolkaDots.webm"></video></center>
-<p>A polka dot reveal effect. The new scene is revealed through a pattern of growing (or shrinking) polka dots.</p>
+<p>A polka dot reveal effect. The new camera is revealed through a pattern of growing (or shrinking) polka dots.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>dots</code>: <code>float</code> (optional) - Controls the number of dots that would fit across the screen, effectively determining their size. Range <code>[1.0, 100.0]</code>. Default is <code>20.0</code>.</li>
@@ -1520,7 +1520,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Radial.webm"></video></center>
-<p>A radial wipe effect. The new scene is revealed by a wipe that rotates around the center of the screen, similar to a clock hand.</p>
+<p>A radial wipe effect. The new camera is revealed by a wipe that rotates around the center of the screen, similar to a clock hand.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>clockwise</code>: <code>bool</code> (optional) - If <code>true</code>, the radial wipe proceeds in a clockwise direction. If <code>false</code>, it proceeds counter-clockwise. Default is <code>true</code>.</li>
@@ -1549,7 +1549,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Ripple.webm"></video></center>
-<p>Creates a ripple distortion effect, as if a disturbance is spreading across the screen, transitioning from one scene to the other.</p>
+<p>Creates a ripple distortion effect, as if a disturbance is spreading across the screen, transitioning from one camera to the other.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>amplitude</code>: <code>float</code> (optional) - Controls the height or intensity of the ripple waves. Default is <code>100.0</code>.</li>
@@ -1579,12 +1579,12 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/RotoZoom.webm"></video></center>
-<p>Creates a rotating and zooming effect. The scene scales down while rotating around a central point, then the new scene scales up and rotates into place.</p>
+<p>Creates a rotating and zooming effect. The camera scales down while rotating around a central point, then the new camera scales up and rotates into place.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>center</code>: <code>Vector2</code> (optional) - The center point (in normalized screen coordinates, <code>(0.5, 0.5)</code> is the screen center) for the rotation and zoom effect. Default is <code>(0.5, 0.5)</code>.</li>
-<li><code>rotations</code>: <code>float</code> (optional) - The number of full 360-degree rotations the scene will perform during the transition. Can be fractional. Default is <code>1.0</code>.</li>
-<li><code>scale</code>: <code>float</code> (optional) - The initial (and final) scale factor. The scene zooms from/to this scale. A higher value means more zoom. Default is <code>8.0</code>.</li>
+<li><code>rotations</code>: <code>float</code> (optional) - The number of full 360-degree rotations the camera will perform during the transition. Can be fractional. Default is <code>1.0</code>.</li>
+<li><code>scale</code>: <code>float</code> (optional) - The initial (and final) scale factor. The camera zooms from/to this scale. A higher value means more zoom. Default is <code>8.0</code>.</li>
 <li><code>backColor</code>: <code>Color</code> (optional) - The background color visible in areas outside the scaled and rotated image, especially when the image is zoomed out. Default is a dark gray <code>(0.15, 0.15, 0.15, 1.0)</code>.</li>
 </ul>
 <p><strong>Example Usage:</strong></p>
@@ -1615,7 +1615,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Schwifty.webm"></video></center>
-<p>A psychedelic warping effect. The scene distorts with a &ldquo;<a href="https://www.youtube.com/watch?v=4ctK1aoWuqY">schwifty</a>&rdquo; visual style, transitioning to the new scene.</p>
+<p>A psychedelic warping effect. The camera distorts with a &ldquo;<a href="https://www.youtube.com/watch?v=4ctK1aoWuqY">schwifty</a>&rdquo; visual style, transitioning to the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>intensity</code>: <code>float</code> (optional) - Controls the overall intensity of the schwifty distortion. Internally, this value is scaled (multiplied by <code>0.1</code> in the shader). Range <code>[0.0, 1.0]</code>. Default is <code>0.3</code>.</li>
@@ -1645,7 +1645,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Simple.webm"></video></center>
-<p>A simple linear fade between scenes. The outgoing scene fades out while the incoming scene fades in.</p>
+<p>A simple linear fade between camera. The outgoing camera fades out while the incoming camera fades in.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>This transition does not have any configurable parameters beyond the standard duration.</li>
@@ -1670,7 +1670,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Slice.webm"></video></center>
-<p>Creates a slicing effect for the transition. The scene is divided into a number of slices that transition sequentially or with a smooth overlap.</p>
+<p>Creates a slicing effect for the transition. The camera is divided into a number of slices that transition sequentially or with a smooth overlap.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>count</code>: <code>float</code> (optional) - The number of slices the screen is divided into. Range <code>[1.0, 100.0]</code>. Default is <code>10.0f</code>.</li>
@@ -1700,7 +1700,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Smash.webm"></video></center>
-<p>Creates a vertical squash and stretch effect, accompanied by color separation, as if the scene is being &ldquo;smashed&rdquo; down and then bouncing back with the new scene.</p>
+<p>Creates a vertical squash and stretch effect, accompanied by color separation, as if the camera is being &ldquo;smashed&rdquo; down and then bouncing back with the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>colorSeparation</code>: <code>float</code> (optional) - Controls the amount of chromatic aberration or color splitting that occurs during the squash and stretch. Higher values increase the separation. Default is <code>0.04</code>.</li>
@@ -1729,12 +1729,12 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/SmoothCircle.webm"></video></center>
-<p>A smooth circular wipe. The new scene is revealed by a circle that expands from (or contracts to) a central point, with a soft, anti-aliased edge.</p>
+<p>A smooth circular wipe. The new camera is revealed by a circle that expands from (or contracts to) a central point, with a soft, anti-aliased edge.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>smoothness</code>: <code>float</code> (optional) - Controls the softness or feathering of the circle&rsquo;s edge. Higher values create a more gradual transition at the edge. Range <code>[0.0, 1.0]</code>. Default is <code>0.3</code>.</li>
 <li><code>center</code>: <code>Vector2</code> (optional) - The center point (in normalized screen coordinates, <code>(0.0, 0.0)</code> is bottom-left, <code>(1.0, 1.0)</code> is top-right) from which the circle expands or to which it contracts. Default is <code>(0.5, 0.5)</code> (screen center).</li>
-<li><code>invert</code>: <code>bool</code> (optional) - If <code>false</code> (default), the circle expands to reveal the new scene. If <code>true</code>, the circle contracts, with the old scene disappearing into the center point, revealing the new scene around it. Default is <code>false</code>.</li>
+<li><code>invert</code>: <code>bool</code> (optional) - If <code>false</code> (default), the circle expands to reveal the new camera. If <code>true</code>, the circle contracts, with the old camera disappearing into the center point, revealing the new camera around it. Default is <code>false</code>.</li>
 </ul>
 <p><strong>Example Usage:</strong></p>
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Uses default parameters for a circle expanding from the center.</span>
@@ -1793,7 +1793,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Swap.webm"></video></center>
-<p>Two scenes swap places with a 3D perspective effect. One scene slides out while the other slides in, often with a sense of depth and optional reflection.</p>
+<p>two cameras swap places with a 3D perspective effect. One camera slides out while the other slides in, often with a sense of depth and optional reflection.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>perspective</code>: <code>float</code> (optional) - Controls the amount of perspective distortion during the swap. Higher values create a more pronounced 3D effect. Default is <code>0.2f</code>. Range <code>[0.0f, 1.0f]</code>.</li>
@@ -1827,7 +1827,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Valentine.webm"></video></center>
-<p>A heart-themed transition. Often involves a heart shape expanding or contracting to reveal the new scene, possibly with a colored border.</p>
+<p>A heart-themed transition. Often involves a heart shape expanding or contracting to reveal the new camera, possibly with a colored border.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>border</code>: <code>float</code> (optional) - The width of the heart shape&rsquo;s border. Default is <code>25.0f</code>. Range <code>[0.0f, 100.0f]</code>.</li>
@@ -1886,7 +1886,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/WarpWave.webm"></video></center>
-<p>A wave-like distortion warps the scene as it transitions. The wave can be horizontal or vertical, and its curvature can be adjusted.</p>
+<p>A wave-like distortion warps the camera as it transitions. The wave can be horizontal or vertical, and its curvature can be adjusted.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>mode</code>: <code>TransitionAxis</code> (enum) (optional) - Determines the direction of the wave. Can be <code>TransitionAxis.Horizontal</code> or <code>TransitionAxis.Vertical</code>. Default is <code>TransitionAxis.Horizontal</code>.</li>
@@ -1916,7 +1916,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Wind.webm"></video></center>
-<p>A wind-swept effect. The scene appears to be blown away by streaks of wind, revealing the new scene beneath.</p>
+<p>A wind-swept effect. The camera appears to be blown away by streaks of wind, revealing the new camera beneath.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>size</code>: <code>float</code> (optional) - Controls the size or thickness of the wind streaks. Default is <code>0.2f</code>. Range <code>[0.0f, 1.0f]</code>.</li>
@@ -1945,7 +1945,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/WaterDrop.webm"></video></center>
-<p>A water drop ripple effect. The transition emanates from the center of the screen like ripples from a water drop, revealing the new scene.</p>
+<p>A water drop ripple effect. The transition emanates from the center of the screen like ripples from a water drop, revealing the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>amplitude</code>: <code>float</code> (optional) - Controls the amplitude or height of the ripple waves. Recommended range <code>[1.0f, 100.0f]</code>. Default is <code>30.0f</code>.</li>
@@ -1975,7 +1975,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Wipe.webm"></video></center>
-<p>A directional wipe effect. The new scene is revealed by a line that wipes across the screen, either horizontally or vertically.</p>
+<p>A directional wipe effect. The new camera is revealed by a line that wipes across the screen, either horizontally or vertically.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>mode</code>: <code>TransitionAxis</code> (optional) - Determines the direction of the wipe. Can be <code>TransitionAxis.Horizontal</code> or <code>TransitionAxis.Vertical</code>. Default is <code>TransitionAxis.Vertical</code>.</li>
@@ -2004,10 +2004,10 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/Zoom.webm"></video></center>
-<p>A zoom and crossfade effect. The current scene zooms out, and as it zooms, it begins to fade into the new scene.</p>
+<p>A zoom and crossfade effect. The current camera zooms out, and as it zooms, it begins to fade into the new camera.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>zoomQuickness</code>: <code>float</code> (optional) - Controls how quickly the zoom portion of the effect completes within the total transition duration. A value of <code>0.2</code> means the zoom finishes very early in the transition, while <code>1.0</code> means it finishes at the very end. The fade to the next scene typically starts slightly before the zoom completes. Range <code>[0.2f, 1.0f]</code>. Default is <code>0.8f</code>.</li>
+<li><code>zoomQuickness</code>: <code>float</code> (optional) - Controls how quickly the zoom portion of the effect completes within the total transition duration. A value of <code>0.2</code> means the zoom finishes very early in the transition, while <code>1.0</code> means it finishes at the very end. The fade to the next camera typically starts slightly before the zoom completes. Range <code>[0.2f, 1.0f]</code>. Default is <code>0.8f</code>.</li>
 </ul>
 <p><strong>Example Usage:</strong></p>
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Uses default zoom quickness.</span>
