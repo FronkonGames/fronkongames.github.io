@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fade on Fronkon Games</title>
+    <link>https://fronkongames.github.io/tags/fade/</link>
+    <description>Recent content in Fade on Fronkon Games</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright © 2024 Fronkon Games</copyright>
+    <lastBuildDate>Thu, 01 Jan 1970 01:00:03 +0100</lastBuildDate>
+    <atom:link href="https://fronkongames.github.io/tags/fade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Camera Transitions</title>
+      <link>https://fronkongames.github.io/store/camera-transitions/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/camera-transitions/</guid>
+      <description>assets used in video and demo are not included&#xA;DEMO &amp;nbsp;&#xD;This asset provides a collection of cinematic, realtime and easy-to-use camera transition effects to enhance your games.</description>
+    </item>
+  </channel>
+</rss>
