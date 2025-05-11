@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/camera-transitions/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:03+01:00">
-    <meta property="article:modified_time" content="2025-05-11T03:07:21+02:00">
+    <meta property="article:modified_time" content="2025-05-11T03:27:08+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/camera-transitions-1280x640.jpg">
 <meta property="og:image:alt" content="Camera Transitions">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:03CET",
-      "dateModified": "2025-05-11T03:07:21CET",
+      "dateModified": "2025-05-11T03:27:08CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/camera-transitions/#/schema/breadcrumb/1"
       },
@@ -571,9 +571,9 @@
 </a></h2>
 <p>To use a camera transition:</p>
 <ol>
-<li>Ensure you have at least two <code>Camera</code> objects in your camera.</li>
+<li>Ensure you have at least two <code>Camera</code> objects in your scene.</li>
 <li>Add the <code>Transition Renderer Feature</code> as a <code>Renderer Feature</code>. This <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-renderer-feature.html">official tutorial</a> tells how to do it.</li>
-<li>Make sure there is an instance of <code>Transition Manager</code> in your camera. If not, create an empty GameObject and add the <code>TransitionManager.cs</code> script to it.</li>
+<li>Make sure there is an instance of <code>Transition Manager</code> in your scene. If not, create an empty GameObject and add the <code>Transition Manager</code> component to it.</li>
 <li>Call the static <code>Start</code> method of the desired transition class from your script.</li>
 </ol>
 <p><strong>Example:</strong></p>
@@ -589,7 +589,6 @@
 </span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// Example: Start a CrossZoom transition from cameraA to cameraB</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// over a duration of 1.0 seconds.</span>
 </span></span><span class="line"><span class="cl">        <span class="n">TransitionCrossZoom</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="n">cameraA</span><span class="p">,</span> <span class="n">cameraB</span><span class="p">,</span> <span class="n">transitionDuration</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
@@ -606,7 +605,7 @@
 <div class="d-flex alert alert-info " role="alert">
         
         <div class="flex-grow-1 my-auto">
-            This asset <strong>does not handle scene loading</strong> or switching between scenes. All transitions are performed between cameras that exist within a <strong>single scene</strong>.
+            This asset <strong>does not handle scene loading</strong> or switching between scenes. All transitions are performed between cameras that exist within a <strong>scene</strong>.
         </div>
     </div>
 <hr />
@@ -628,7 +627,7 @@
     &nbsp;
 </a></h3>
 <center><video controls loop="true" src="/store/camera-transitions/CrossZoom.webm"></video></center>
-<p>A zoom and crossfade effect. The current camera zooms out while the new camera zooms in and fades, creating a smooth and dynamic transition.</p>
+<p>A zoom and cross-fade effect. The current camera zooms out while the new camera zooms in and fades, creating a smooth and dynamic transition.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>strength</code>: <code>float</code> (optional) - The intensity of the zoom effect. Determines how much the camera will scale during the transition. Default is <code>0.4f</code>. Range <code>[0.0f, 1.0f]</code>.</li>

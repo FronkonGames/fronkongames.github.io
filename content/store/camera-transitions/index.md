@@ -29,9 +29,9 @@ This asset provides a collection of **cinematic**, **realtime** and **easy-to-us
 
 To use a camera transition:
 
-1.  Ensure you have at least two `Camera` objects in your camera.
+1.  Ensure you have at least two `Camera` objects in your scene.
 2.  Add the `Transition Renderer Feature` as a `Renderer Feature`. This [official tutorial](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-renderer-feature.html) tells how to do it.
-3.  Make sure there is an instance of `Transition Manager` in your camera. If not, create an empty GameObject and add the `TransitionManager.cs` script to it.
+3.  Make sure there is an instance of `Transition Manager` in your scene. If not, create an empty GameObject and add the `Transition Manager` component to it.
 4.  Call the static `Start` method of the desired transition class from your script.
 
 **Example:**
@@ -49,14 +49,13 @@ public class TransitionTest : MonoBehaviour
     void Start()
     {
         // Example: Start a CrossZoom transition from cameraA to cameraB
-        // over a duration of 1.0 seconds.
         TransitionCrossZoom.Start(cameraA, cameraB, transitionDuration);
     }
 }
 ```
 
 {{< alert color="info" >}}
-This asset **does not handle scene loading** or switching between scenes. All transitions are performed between cameras that exist within a **single scene**.
+This asset **does not handle scene loading** or switching between scenes. All transitions are performed between cameras that exist within a **scene**.
 {{< /alert >}}
 
 ---
@@ -65,7 +64,7 @@ This asset **does not handle scene loading** or switching between scenes. All tr
 
 <center><video controls loop="true" src="/store/camera-transitions/CrossZoom.webm"></video></center>
 
-A zoom and crossfade effect. The current camera zooms out while the new camera zooms in and fades, creating a smooth and dynamic transition.
+A zoom and cross-fade effect. The current camera zooms out while the new camera zooms in and fades, creating a smooth and dynamic transition.
 
 **Parameters:**
 
