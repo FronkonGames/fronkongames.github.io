@@ -415,6 +415,19 @@
 
   <ul>
     <li><a href="#vhs">VHS</a></li>
+    <li><a href="#pixelator">Pixelator</a></li>
+    <li><a href="#parameters">Parameters</a>
+      <ul>
+        <li><a href="#main-settings">Main Settings</a></li>
+        <li><a href="#pixelation">Pixelation</a></li>
+        <li><a href="#gradient-mapping">Gradient Mapping</a></li>
+        <li><a href="#dithering">Dithering</a></li>
+        <li><a href="#posterization">Posterization</a></li>
+        <li><a href="#bevel-effect">Bevel Effect</a></li>
+        <li><a href="#chromatic-aberration">Chromatic Aberration</a></li>
+        <li><a href="#color-filters">Color Filters</a></li>
+      </ul>
+    </li>
     <li><a href="#oldfilms">Old Films</a></li>
     <li><a href="#crttv">CRT TV</a></li>
     <li><a href="#lofi">Lo-Fi</a>
@@ -508,6 +521,7 @@
 </div><br><p>&lsquo;<strong><a href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493?aid=1101l9zFC&utm_source=aff">Retro</a></strong>&rsquo; is a great collection of retro effects, simple to use and with many configuration options. It consists of the following effects:</p>
 <ul>
 <li><a href="/store/retro/#vhs">VHS</a>, mimic VHS as true as possible.</li>
+<li><a href="/store/retro/#pixelator">Pixelator</a>, unleash stunning retro visuals!</li>
 <li><a href="/store/retro/#oldfilms">Old Films</a>, the best way to replicate the look of old movies.</li>
 <li><a href="/store/retro/#crttv">CRT TV</a>, the most configurable old TV effect you&rsquo;ll ever find.</li>
 <li><a href="/store/retro/#lofi">Lo-Fi</a>, stunning retro-style visuals.</li>
@@ -1359,6 +1373,433 @@ Remember that the object to which you apply the material **must have UV coordina
 
 You have an example in the scene '**FronkonGames/Retro/VHS/Demo/VHS_Material_Demo**'.
 -->
+<hr />
+
+<h2 id="pixelator" class="heading">Pixelator <a href="#pixelator" aria-labelledby="pixelator">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/lLxdmqDiQec?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div>
+<div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-retro/pixelator/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p>&lsquo;<strong>Pixelator</strong>&rsquo; allows you to create a wide variety of retro-inspired visuals. It offers highly customizable pixelation, advanced color manipulation including posterization and dithering, unique visual effects like beveling and chromatic aberration, and a suite of color filters.</p>
+
+<h2 id="parameters" class="heading">Parameters <a href="#parameters" aria-labelledby="parameters">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>Below is a detailed description of all the parameters available in the Pixelator settings.</p>
+
+<h3 id="main-settings" class="heading">Main Settings <a href="#main-settings" aria-labelledby="main-settings">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<ul>
+<li><strong>Intensity</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 1.0)<br />
+Controls the overall intensity of all combined Pixelator effects. An intensity of 0 means the effect is not applied.</li>
+</ul>
+
+<h3 id="pixelation" class="heading">Pixelation <a href="#pixelation" aria-labelledby="pixelation">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<ul>
+<li>
+<p><strong>Pixelation Mode</strong>: <code>enum</code> (Default: Rectangle)<br />
+Determines the shape and algorithm used for pixelation.<br />
+Available modes:</p>
+<ul>
+<li><code>Rectangle</code>: Classic square/rectangular pixelation.</li>
+<li><code>Circle</code>: Pixels are represented as circles.</li>
+<li><code>Triangle</code>: Pixels are represented as triangles.</li>
+<li><code>Diamond</code>: Pixels are represented as diamonds.</li>
+<li><code>Hexagon</code>: Pixels are represented as hexagons.</li>
+<li><code>Leaf</code>: A leaf-like pattern for pixel cells.</li>
+<li><code>LED</code>: Simulates an LED screen display.</li>
+<li><code>Knitted</code>: Simulates a knitted or cross-stitch pattern.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pixel Size</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.75)<br />
+Controls the perceived size of the pixels. The exact interpretation can vary slightly per mode.</p>
+</li>
+</ul>
+
+<h4 id="mode-specific-pixelation-parameters" class="heading">Mode-Specific Pixelation Parameters: <a href="#mode-specific-pixelation-parameters" aria-labelledby="mode-specific-pixelation-parameters">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li>
+<p><strong>For <code>Rectangle</code>, <code>Triangle</code>, <code>Hexagon</code>, <code>Leaf</code> modes:</strong></p>
+<ul>
+<li><strong>Screen Aspect Ratio</strong>: <code>bool</code> (Default: true)<br />
+If true, uses the screen&rsquo;s aspect ratio to calculate pixel scaling. If false, <code>Custom Aspect Ratio</code> is used.</li>
+<li><strong>Custom Aspect Ratio</strong>: <code>float</code> (Range: 0.2 to 5.0, Default: 1.0)<br />
+Only used if <code>Screen Aspect Ratio</code> is false. Defines a custom aspect ratio for pixel scaling.</li>
+<li><strong>Pixel Scale</strong>: <code>Vector2</code> (Default: (1,1))<br />
+Allows non-uniform scaling of pixels along X and Y axes.</li>
+</ul>
+</li>
+<li>
+<p><strong>For <code>Circle</code>, <code>LED</code> modes:</strong></p>
+<ul>
+<li><strong>Radius</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.5)<br />
+Controls the radius of the circular or LED elements within each pixel cell.</li>
+<li><strong>Background</strong>: <code>Color</code> (Default: Black)<br />
+The color shown in the gaps between circular/LED elements if their radius doesn&rsquo;t fill the cell.</li>
+</ul>
+</li>
+<li>
+<p><strong>For <code>Knitted</code> mode:</strong></p>
+<ul>
+<li><strong>Threads</strong>: <code>int</code> (Range: 1 to 8, Default: 3)<br />
+Simulates the number of threads in the knitted pattern.</li>
+<li><strong>Pixel Scale</strong>: <code>Vector2</code> (Default: (1,1))<br />
+Controls the scale of the knitted pattern.</li>
+</ul>
+</li>
+</ul>
+
+<h3 id="gradient-mapping" class="heading">Gradient Mapping <a href="#gradient-mapping" aria-labelledby="gradient-mapping">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Maps the screen colors to a custom gradient texture.</p>
+<ul>
+<li><strong>Gradient Intensity</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+The intensity of the gradient mapping effect. 0 means disabled.</li>
+<li><strong>Gradient</strong>: <code>UnityEngine.Gradient</code> (Default: Grayscale gradient)<br />
+The gradient to use for color mapping. This is baked into a texture at runtime.</li>
+<li><strong>Luminance Min</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+The minimum input luminance that maps to the start of the gradient (for Luminance mode).</li>
+<li><strong>Luminance Max</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 1.0)<br />
+The maximum input luminance that maps to the end of the gradient (for Luminance mode).</li>
+<li><strong>Mapping Mode</strong>: <code>enum</code> (Default: CIELAB)<br />
+Determines how colors are mapped to the gradient.
+<ul>
+<li><code>Luminance</code>: Maps based on the input pixel&rsquo;s luminance.</li>
+<li><code>CIELAB</code>: Maps based on perceptual color similarity in the CIELAB color space, finding the closest color in the gradient.</li>
+</ul>
+</li>
+<li><strong>CIELAB Samples</strong>: <code>int</code> (Range: 2 to 64, Default: 16)<br />
+Number of samples taken along the gradient texture when <code>Mapping Mode</code> is <code>CIELAB</code>. Higher values are more accurate but slower.</li>
+<li><strong>Apply Luminance</strong>: <code>bool</code> (Default: true)<br />
+If true, the luminance of the original pixel (or mapped luminance for Luminance mode) is multiplied with the final mapped gradient color. This can preserve some of the original brightness characteristics.</li>
+</ul>
+
+<h3 id="dithering" class="heading">Dithering <a href="#dithering" aria-labelledby="dithering">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Simulates colors by using patterns of a limited color palette.</p>
+<ul>
+<li><strong>Dither Intensity</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.5)<br />
+The strength of the dithering effect.</li>
+<li><strong>Pattern Scale</strong>: <code>int</code> (Options: 2, 4, 8, Default: 4)<br />
+The size of the Bayer matrix used for ordered dithering (2x2, 4x4, or 8x8).</li>
+<li><strong>Threshold Scale</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.75)<br />
+Adjusts the influence of the dither pattern.</li>
+<li><strong>Color Steps</strong>: <code>int</code> (Range: 2 to 16, Default: 8)<br />
+The number of discrete color steps per channel that the dithering will attempt to simulate.</li>
+</ul>
+
+<h3 id="posterization" class="heading">Posterization <a href="#posterization" aria-labelledby="posterization">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Reduces the number of distinct colors in the image.</p>
+<ul>
+<li><strong>Posterize Intensity</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.5)<br />
+The overall strength of the posterization effect. 0 effectively disables it.</li>
+<li><strong>RGB Steps</strong>: <code>Vector3Int</code> (Range: 2 to 256 per channel, Default: (24,24,24))<br />
+Number of color steps for Red, Green, and Blue channels respectively when RGB posterization is active.</li>
+<li><strong>Luminance Steps</strong>: <code>int</code> (Range: 2 to 256, Default: 24)<br />
+Number of steps for the luminance channel when Luminance posterization is active.</li>
+<li><strong>HSV Steps</strong>: <code>Vector3Int</code> (Range H: 2-64, S: 2-32, V: 2-32, Default: (24,24,24))<br />
+Number of color steps for Hue, Saturation, and Value channels respectively when HSV posterization is active.</li>
+<li><strong>Gamma</strong>: <code>float</code> (Range: 0.1 to 3.0, Default: 1.0)<br />
+Applies gamma correction before posterization and de-correction after. Values other than 1.0 can change perceived brightness and color relationships.</li>
+</ul>
+
+<h3 id="bevel-effect" class="heading">Bevel Effect <a href="#bevel-effect" aria-labelledby="bevel-effect">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Adds a pseudo-3D bevel based on color differences, giving a chiseled look.</p>
+<ul>
+<li><strong>Bevel</strong>: <code>float</code> (Range: 0.0 to 10.0, Default: 1.0)<br />
+The strength and depth of the bevel effect.</li>
+</ul>
+
+<h3 id="chromatic-aberration" class="heading">Chromatic Aberration <a href="#chromatic-aberration" aria-labelledby="chromatic-aberration">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Simulates lens distortion by offsetting color channels.</p>
+<ul>
+<li><strong>Chromatic Aberration Intensity</strong>: <code>float</code> (Range: 0.0 to 10.0, Default: 1.0)<br />
+The overall strength of the chromatic aberration effect.</li>
+<li><strong>Offset</strong>: <code>Vector3</code> (Default: (1.0, 2.0, -1.0))<br />
+The amount by which the Red, Green, and Blue channels are shifted, respectively.</li>
+</ul>
+
+<h3 id="color-filters" class="heading">Color Filters <a href="#color-filters" aria-labelledby="color-filters">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Applies various stylistic color filters.</p>
+<ul>
+<li>
+<p><strong>Filters Intensity</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+The global intensity for all active color filters. Lerps between the original color and the filtered color.</p>
+</li>
+<li>
+<p><strong>Sepia</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of the sepia tone filter.</p>
+</li>
+<li>
+<p><strong>Cool Blue</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a cool blue tint filter.</p>
+</li>
+<li>
+<p><strong>Warm</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a warm orange/yellow tint filter.</p>
+</li>
+<li>
+<p><strong>Invert Color</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of the color inversion filter.</p>
+</li>
+<li>
+<p><strong>Hudson</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a filter emulating the Hudson Instagram effect (cool, vignetted).</p>
+</li>
+<li>
+<p><strong>Hefe</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a filter emulating the Hefe Instagram effect (high contrast, warm, vignetted).</p>
+</li>
+<li>
+<p><strong>X-Pro</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a filter emulating the X-Pro II Instagram effect (high contrast, saturated, warm cast, vignette).</p>
+</li>
+<li>
+<p><strong>Rise</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a filter emulating the Rise Instagram effect (soft, warm, desaturated).</p>
+</li>
+<li>
+<p><strong>Toaster</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a filter emulating the Toaster Instagram effect (strong vignette, warm center, burnt edges).</p>
+</li>
+<li>
+<p><strong>Infrared</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of an infrared photography simulation filter.</p>
+</li>
+<li>
+<p><strong>Thermal</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a thermal camera/heat map style filter.</p>
+</li>
+<li>
+<p><strong>Duotone</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of the duotone filter, which maps image luminance between two chosen colors.</p>
+<ul>
+<li><strong>Color A</strong>: <code>Color</code> (Default: Dark Blue)<br />
+The first color for the duotone effect (typically for darker areas).</li>
+<li><strong>Color B</strong>: <code>Color</code> (Default: Bright Yellow)<br />
+The second color for the duotone effect (typically for lighter areas).</li>
+</ul>
+</li>
+<li>
+<p><strong>Night Vision</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a night vision goggle simulation filter.</p>
+</li>
+<li>
+<p><strong>Pop Art</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a Pop Art style filter using a limited, vibrant color palette.</p>
+</li>
+<li>
+<p><strong>Blueprint</strong>: <code>float</code> (Range: 0.0 to 1.0, Default: 0.0)<br />
+Intensity of a blueprint-style filter with edge detection.</p>
+<ul>
+<li><strong>Edge Color</strong>: <code>Color</code> (Default: Light Blue)<br />
+The color for detected edges in blueprint mode.</li>
+<li><strong>Background Color</strong>: <code>Color</code> (Default: Dark Blue)<br />
+The background color for blueprint mode.</li>
+<li><strong>Edge Threshold</strong>: <code>float</code> (Range: 0.05 to 0.5, Default: 0.1)<br />
+The threshold for edge detection in blueprint mode.</li>
+</ul>
+</li>
+</ul>
 <hr />
 
 <h2 id="oldfilms" class="heading">Old Films <a href="#oldfilms" aria-labelledby="oldfilms">
@@ -4729,6 +5170,19 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
 
   <ul>
     <li><a href="#vhs">VHS</a></li>
+    <li><a href="#pixelator">Pixelator</a></li>
+    <li><a href="#parameters">Parameters</a>
+      <ul>
+        <li><a href="#main-settings">Main Settings</a></li>
+        <li><a href="#pixelation">Pixelation</a></li>
+        <li><a href="#gradient-mapping">Gradient Mapping</a></li>
+        <li><a href="#dithering">Dithering</a></li>
+        <li><a href="#posterization">Posterization</a></li>
+        <li><a href="#bevel-effect">Bevel Effect</a></li>
+        <li><a href="#chromatic-aberration">Chromatic Aberration</a></li>
+        <li><a href="#color-filters">Color Filters</a></li>
+      </ul>
+    </li>
     <li><a href="#oldfilms">Old Films</a></li>
     <li><a href="#crttv">CRT TV</a></li>
     <li><a href="#lofi">Lo-Fi</a>

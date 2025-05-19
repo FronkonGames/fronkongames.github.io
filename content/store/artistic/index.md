@@ -35,8 +35,7 @@ All '**Artistic**' effects are developed for '[Universal Render Pipeline](https:
 
 #### Unity 6 or higher
 
-All effects are compatible with **Unity 6**. Most of them do it natively when using [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html).
-You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
+All effects are compatible with **Unity 6**, and use [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html). You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
 Make sure that the '_Compatibility Mode_' is **disabled** (_Project Settings > Graphics > Render Graph_).
 
