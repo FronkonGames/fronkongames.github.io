@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lut on Fronkon Games</title>
-    <link>https://fronkongames.github.io/tags/lut/</link>
+    <link>http://localhost:1313/tags/lut/</link>
     <description>Recent content in Lut on Fronkon Games</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
     <lastBuildDate>Tue, 18 Mar 2025 20:17:08 +0100</lastBuildDate>
-    <atom:link href="https://fronkongames.github.io/tags/lut/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/lut/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LUTs</title>
-      <link>https://fronkongames.github.io/store/luts/</link>
+      <link>http://localhost:1313/store/luts/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/luts/</guid>
+      <guid>http://localhost:1313/store/luts/</guid>
       <description>Thanks to LUTs you can completely transform the look of your games, making them more coherent with your artistic preferences.</description>
     </item>
   </channel>

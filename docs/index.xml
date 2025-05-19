@@ -2,185 +2,185 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fronkon Games</title>
-    <link>https://fronkongames.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Fronkon Games</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <atom:link href="https://fronkongames.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Game:Work Foundation</title>
-      <link>https://fronkongames.github.io/projects/gamework-foundation/</link>
+      <link>http://localhost:1313/projects/gamework-foundation/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:10 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/gamework-foundation/</guid>
+      <guid>http://localhost:1313/projects/gamework-foundation/</guid>
       <description></description>
     </item>
     <item>
       <title>Game:Work Core</title>
-      <link>https://fronkongames.github.io/projects/gamework-core/</link>
+      <link>http://localhost:1313/projects/gamework-core/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:09 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/gamework-core/</guid>
+      <guid>http://localhost:1313/projects/gamework-core/</guid>
       <description></description>
     </item>
     <item>
       <title>Awesome Game Development</title>
-      <link>https://fronkongames.github.io/projects/awesome-game-development/</link>
+      <link>http://localhost:1313/projects/awesome-game-development/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:08 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/awesome-game-development/</guid>
+      <guid>http://localhost:1313/projects/awesome-game-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Global GameJam Dataset</title>
-      <link>https://fronkongames.github.io/projects/steam-games-dataset/</link>
+      <link>http://localhost:1313/projects/steam-games-dataset/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/steam-games-dataset/</guid>
+      <guid>http://localhost:1313/projects/steam-games-dataset/</guid>
       <description></description>
     </item>
     <item>
       <title>Sprites Mojo</title>
-      <link>https://fronkongames.github.io/store/sprites-mojo/</link>
+      <link>http://localhost:1313/store/sprites-mojo/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/sprites-mojo/</guid>
-      <description>assets used in video and demo are not included&#xA;STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO &amp;nbsp;&#xD;Editor &amp;nbsp; From the editor you can create &amp;lsquo;Sprites Mojo&amp;rsquo; effects in two different ways: creating sprites and creating materials.</description>
+      <guid>http://localhost:1313/store/sprites-mojo/</guid>
+      <description>assets used in video and demo are not included&#xA;STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;Editor &amp;nbsp; From the editor you can create &amp;lsquo;Sprites Mojo&amp;rsquo; effects in two different ways: creating sprites and creating materials.</description>
     </item>
     <item>
       <title>Steam Games Dataset</title>
-      <link>https://fronkongames.github.io/projects/global-gamejam-dataset/</link>
+      <link>http://localhost:1313/projects/global-gamejam-dataset/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/global-gamejam-dataset/</guid>
+      <guid>http://localhost:1313/projects/global-gamejam-dataset/</guid>
       <description></description>
     </item>
     <item>
       <title>LUTs</title>
-      <link>https://fronkongames.github.io/store/luts/</link>
+      <link>http://localhost:1313/store/luts/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/luts/</guid>
+      <guid>http://localhost:1313/store/luts/</guid>
       <description>Thanks to LUTs you can completely transform the look of your games, making them more coherent with your artistic preferences.</description>
     </item>
     <item>
       <title>Tiny Tween</title>
-      <link>https://fronkongames.github.io/projects/tiny-tween/</link>
+      <link>http://localhost:1313/projects/tiny-tween/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/tiny-tween/</guid>
+      <guid>http://localhost:1313/projects/tiny-tween/</guid>
       <description></description>
     </item>
     <item>
       <title>Build History</title>
-      <link>https://fronkongames.github.io/projects/build-history/</link>
+      <link>http://localhost:1313/projects/build-history/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/build-history/</guid>
+      <guid>http://localhost:1313/projects/build-history/</guid>
       <description></description>
     </item>
     <item>
       <title>Drag &amp; Drop Cards 🃏</title>
-      <link>https://fronkongames.github.io/projects/kairos/dragging-and-dropping-3d-cards/</link>
+      <link>http://localhost:1313/projects/kairos/dragging-and-dropping-3d-cards/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/kairos/dragging-and-dropping-3d-cards/</guid>
+      <guid>http://localhost:1313/projects/kairos/dragging-and-dropping-3d-cards/</guid>
       <description>There should have been a video here but your browser does not seem to support it.&#xD;&amp;nbsp; All art in this post have been generated by an AI and do not represent the final style of the game&#xD;Now that I have defined visually a card, the next thing to do is to move it around the scene.</description>
     </item>
     <item>
       <title>Glitches</title>
-      <link>https://fronkongames.github.io/store/glitches/</link>
+      <link>http://localhost:1313/store/glitches/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/glitches/</guid>
+      <guid>http://localhost:1313/store/glitches/</guid>
       <description>&amp;lsquo;Glitches&amp;rsquo; contains the following assets:&#xA;Color Blindness, simulates the most common vision defects. Corrupt Memory, a cyber attack? no, it&amp;rsquo;s just corrupted memory.</description>
     </item>
     <item>
       <title>Camera Transitions</title>
-      <link>https://fronkongames.github.io/store/camera-transitions/</link>
+      <link>http://localhost:1313/store/camera-transitions/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/camera-transitions/</guid>
-      <description>assets used in video and demo are not included&#xA;STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO &amp;nbsp;&#xD;This asset provides a collection of cinematic, realtime and easy-to-use camera transition effects to enhance your games.</description>
+      <guid>http://localhost:1313/store/camera-transitions/</guid>
+      <description>assets used in video and demo are not included&#xA;STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;This asset provides a collection of cinematic, realtime and easy-to-use camera transition effects to enhance your games.</description>
     </item>
     <item>
       <title>Code Wizard</title>
-      <link>https://fronkongames.github.io/projects/code-wizard/</link>
+      <link>http://localhost:1313/projects/code-wizard/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/code-wizard/</guid>
+      <guid>http://localhost:1313/projects/code-wizard/</guid>
       <description></description>
     </item>
     <item>
       <title>Introduction To Go</title>
-      <link>https://fronkongames.github.io/blog/introduction-to-go/</link>
+      <link>http://localhost:1313/blog/introduction-to-go/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
-      <guid>https://fronkongames.github.io/blog/introduction-to-go/</guid>
+      <guid>http://localhost:1313/blog/introduction-to-go/</guid>
       <description>Go is a very old strategy game that consists of capturing pieces and winning territories. It is about 2,500 years old and was invented in China, although the exact location is unknown.</description>
     </item>
     <item>
       <title>Rendering A Card 🖌️</title>
-      <link>https://fronkongames.github.io/projects/kairos/rendering-a-card/</link>
+      <link>http://localhost:1313/projects/kairos/rendering-a-card/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/kairos/rendering-a-card/</guid>
+      <guid>http://localhost:1313/projects/kairos/rendering-a-card/</guid>
       <description>There should have been a video here but your browser does not seem to support it.&#xD;&amp;nbsp; All art in this post have been generated by an AI and do not represent the final style of the game&#xD;As we saw in the previous post, each card has three materials:</description>
     </item>
     <item>
       <title>Retro</title>
-      <link>https://fronkongames.github.io/store/retro/</link>
+      <link>http://localhost:1313/store/retro/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/retro/</guid>
+      <guid>http://localhost:1313/store/retro/</guid>
       <description>&amp;lsquo;Retro&amp;rsquo; is a great collection of retro effects, simple to use and with many configuration options. It consists of the following effects:</description>
     </item>
     <item>
       <title>Design Patterns In Game Development</title>
-      <link>https://fronkongames.github.io/blog/design-patterns-in-game-development/</link>
+      <link>http://localhost:1313/blog/design-patterns-in-game-development/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
-      <guid>https://fronkongames.github.io/blog/design-patterns-in-game-development/</guid>
+      <guid>http://localhost:1313/blog/design-patterns-in-game-development/</guid>
       <description>The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.</description>
     </item>
     <item>
       <title>Making A 3D Card In Blender 🃏</title>
-      <link>https://fronkongames.github.io/projects/kairos/making-a-3d-card-in-blender/</link>
+      <link>http://localhost:1313/projects/kairos/making-a-3d-card-in-blender/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/kairos/making-a-3d-card-in-blender/</guid>
+      <guid>http://localhost:1313/projects/kairos/making-a-3d-card-in-blender/</guid>
       <description>The first thing a card game needs is&amp;hellip; cards.&#xA;And why in 3D? It would be easier to do it in 2D, but to have more options in terms of effects and also to differentiate from the rest I decided that my card game would be 3D.</description>
     </item>
     <item>
       <title>Palette Tool</title>
-      <link>https://fronkongames.github.io/projects/palette-tool/</link>
+      <link>http://localhost:1313/projects/palette-tool/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/palette-tool/</guid>
+      <guid>http://localhost:1313/projects/palette-tool/</guid>
       <description></description>
     </item>
     <item>
       <title>Spice Up</title>
-      <link>https://fronkongames.github.io/store/spiceup/</link>
+      <link>http://localhost:1313/store/spiceup/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/spiceup/</guid>
+      <guid>http://localhost:1313/store/spiceup/</guid>
       <description>&amp;lsquo;Spice Up&amp;rsquo; is a large selection of effects to give juice to your FPS / VR games. It consists of the following effects:</description>
     </item>
     <item>
       <title>Artistic</title>
-      <link>https://fronkongames.github.io/store/artistic/</link>
+      <link>http://localhost:1313/store/artistic/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/artistic/</guid>
+      <guid>http://localhost:1313/store/artistic/</guid>
       <description>All the effects of &amp;lsquo;Artistic&amp;rsquo; will help you to achieve a unique look for your games. It consists of the following effects:</description>
     </item>
     <item>
       <title>Hello Everybody! 🧟</title>
-      <link>https://fronkongames.github.io/projects/kairos/hello-everybody/</link>
+      <link>http://localhost:1313/projects/kairos/hello-everybody/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/kairos/hello-everybody/</guid>
+      <guid>http://localhost:1313/projects/kairos/hello-everybody/</guid>
       <description>This is a devblog about an indie game of cards and zombies.&#xA;Hi I&amp;rsquo;m Martin Bustos and I&amp;rsquo;ve been developing games for more than two decades for PC, consoles, online, etc (you can check the list in my GitHub profile).</description>
     </item>
     <item>
       <title>Tailwind Colors</title>
-      <link>https://fronkongames.github.io/projects/tailwind-colors/</link>
+      <link>http://localhost:1313/projects/tailwind-colors/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/tailwind-colors/</guid>
+      <guid>http://localhost:1313/projects/tailwind-colors/</guid>
       <description></description>
     </item>
     <item>
       <title>Unity Is A Harsh Mistress 💔</title>
-      <link>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</link>
+      <link>http://localhost:1313/blog/unity-is-a-harsh-mistress/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
-      <guid>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</guid>
+      <guid>http://localhost:1313/blog/unity-is-a-harsh-mistress/</guid>
       <description>&amp;nbsp; UPDATE (12/09/2024)&#xA;Although the damage is done, Unity finally cancels the controversial Runtime Free.&#xA;&amp;nbsp; UPDATE (01/04/2024)&#xA;Unity appoints Matthew Bromberg as new CEO.</description>
     </item>
     <item>
       <title></title>
-      <link>https://fronkongames.github.io/browserconfig.xml</link>
+      <link>http://localhost:1313/browserconfig.xml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/browserconfig.xml</guid>
+      <guid>http://localhost:1313/browserconfig.xml</guid>
       <description></description>
     </item>
   </channel>

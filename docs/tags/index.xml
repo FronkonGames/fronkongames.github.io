@@ -2,256 +2,256 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Fronkon Games</title>
-    <link>https://fronkongames.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Fronkon Games</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Mon, 12 May 2025 01:05:29 +0200</lastBuildDate>
-    <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 May 2025 13:08:01 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Game Development</title>
-      <link>https://fronkongames.github.io/tags/game-development/</link>
+      <link>http://localhost:1313/tags/game-development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/game-development/</guid>
+      <guid>http://localhost:1313/tags/game-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Gamedev</title>
-      <link>https://fronkongames.github.io/tags/gamedev/</link>
+      <link>http://localhost:1313/tags/gamedev/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/gamedev/</guid>
+      <guid>http://localhost:1313/tags/gamedev/</guid>
       <description></description>
     </item>
     <item>
       <title>Unity</title>
-      <link>https://fronkongames.github.io/tags/unity/</link>
+      <link>http://localhost:1313/tags/unity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/unity/</guid>
+      <guid>http://localhost:1313/tags/unity/</guid>
       <description></description>
     </item>
     <item>
       <title>Gamejam</title>
-      <link>https://fronkongames.github.io/tags/gamejam/</link>
+      <link>http://localhost:1313/tags/gamejam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/gamejam/</guid>
+      <guid>http://localhost:1313/tags/gamejam/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://fronkongames.github.io/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>2D</title>
-      <link>https://fronkongames.github.io/tags/2d/</link>
+      <link>http://localhost:1313/tags/2d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/2d/</guid>
+      <guid>http://localhost:1313/tags/2d/</guid>
       <description></description>
     </item>
     <item>
       <title>Sprites</title>
-      <link>https://fronkongames.github.io/tags/sprites/</link>
+      <link>http://localhost:1313/tags/sprites/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/sprites/</guid>
+      <guid>http://localhost:1313/tags/sprites/</guid>
       <description></description>
     </item>
     <item>
       <title>Steam</title>
-      <link>https://fronkongames.github.io/tags/steam/</link>
+      <link>http://localhost:1313/tags/steam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/steam/</guid>
+      <guid>http://localhost:1313/tags/steam/</guid>
       <description></description>
     </item>
     <item>
       <title>Store</title>
-      <link>https://fronkongames.github.io/tags/store/</link>
+      <link>http://localhost:1313/tags/store/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/store/</guid>
+      <guid>http://localhost:1313/tags/store/</guid>
       <description></description>
     </item>
     <item>
       <title>C#</title>
-      <link>https://fronkongames.github.io/tags/c%23/</link>
+      <link>http://localhost:1313/tags/c%23/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/c%23/</guid>
+      <guid>http://localhost:1313/tags/c%23/</guid>
       <description></description>
     </item>
     <item>
       <title>Lut</title>
-      <link>https://fronkongames.github.io/tags/lut/</link>
+      <link>http://localhost:1313/tags/lut/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/lut/</guid>
+      <guid>http://localhost:1313/tags/lut/</guid>
       <description></description>
     </item>
     <item>
       <title>Luts</title>
-      <link>https://fronkongames.github.io/tags/luts/</link>
+      <link>http://localhost:1313/tags/luts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/luts/</guid>
+      <guid>http://localhost:1313/tags/luts/</guid>
       <description></description>
     </item>
     <item>
       <title>Tween</title>
-      <link>https://fronkongames.github.io/tags/tween/</link>
+      <link>http://localhost:1313/tags/tween/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/tween/</guid>
+      <guid>http://localhost:1313/tags/tween/</guid>
       <description></description>
     </item>
     <item>
       <title>Devblog</title>
-      <link>https://fronkongames.github.io/tags/devblog/</link>
+      <link>http://localhost:1313/tags/devblog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/devblog/</guid>
+      <guid>http://localhost:1313/tags/devblog/</guid>
       <description></description>
     </item>
     <item>
       <title>Glitch</title>
-      <link>https://fronkongames.github.io/tags/glitch/</link>
+      <link>http://localhost:1313/tags/glitch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/glitch/</guid>
+      <guid>http://localhost:1313/tags/glitch/</guid>
       <description></description>
     </item>
     <item>
       <title>Hack</title>
-      <link>https://fronkongames.github.io/tags/hack/</link>
+      <link>http://localhost:1313/tags/hack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/hack/</guid>
+      <guid>http://localhost:1313/tags/hack/</guid>
       <description></description>
     </item>
     <item>
       <title>Kairos</title>
-      <link>https://fronkongames.github.io/tags/kairos/</link>
+      <link>http://localhost:1313/tags/kairos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/kairos/</guid>
+      <guid>http://localhost:1313/tags/kairos/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>https://fronkongames.github.io/tags/blog/</link>
+      <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Camera</title>
-      <link>https://fronkongames.github.io/tags/camera/</link>
+      <link>http://localhost:1313/tags/camera/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/camera/</guid>
+      <guid>http://localhost:1313/tags/camera/</guid>
       <description></description>
     </item>
     <item>
       <title>Cinema</title>
-      <link>https://fronkongames.github.io/tags/cinema/</link>
+      <link>http://localhost:1313/tags/cinema/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/cinema/</guid>
+      <guid>http://localhost:1313/tags/cinema/</guid>
       <description></description>
     </item>
     <item>
       <title>Cinematic</title>
-      <link>https://fronkongames.github.io/tags/cinematic/</link>
+      <link>http://localhost:1313/tags/cinematic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/cinematic/</guid>
+      <guid>http://localhost:1313/tags/cinematic/</guid>
       <description></description>
     </item>
     <item>
       <title>Code</title>
-      <link>https://fronkongames.github.io/tags/code/</link>
+      <link>http://localhost:1313/tags/code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/code/</guid>
+      <guid>http://localhost:1313/tags/code/</guid>
       <description></description>
     </item>
     <item>
       <title>Fade</title>
-      <link>https://fronkongames.github.io/tags/fade/</link>
+      <link>http://localhost:1313/tags/fade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/fade/</guid>
+      <guid>http://localhost:1313/tags/fade/</guid>
       <description></description>
     </item>
     <item>
       <title>Film</title>
-      <link>https://fronkongames.github.io/tags/film/</link>
+      <link>http://localhost:1313/tags/film/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/film/</guid>
+      <guid>http://localhost:1313/tags/film/</guid>
       <description></description>
     </item>
     <item>
       <title>Go</title>
-      <link>https://fronkongames.github.io/tags/go/</link>
+      <link>http://localhost:1313/tags/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/go/</guid>
+      <guid>http://localhost:1313/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Realtime</title>
-      <link>https://fronkongames.github.io/tags/realtime/</link>
+      <link>http://localhost:1313/tags/realtime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/realtime/</guid>
+      <guid>http://localhost:1313/tags/realtime/</guid>
       <description></description>
     </item>
     <item>
       <title>Retro</title>
-      <link>https://fronkongames.github.io/tags/retro/</link>
+      <link>http://localhost:1313/tags/retro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/retro/</guid>
+      <guid>http://localhost:1313/tags/retro/</guid>
       <description></description>
     </item>
     <item>
       <title>Templates</title>
-      <link>https://fronkongames.github.io/tags/templates/</link>
+      <link>http://localhost:1313/tags/templates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/templates/</guid>
+      <guid>http://localhost:1313/tags/templates/</guid>
       <description></description>
     </item>
     <item>
       <title>Transition</title>
-      <link>https://fronkongames.github.io/tags/transition/</link>
+      <link>http://localhost:1313/tags/transition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/transition/</guid>
+      <guid>http://localhost:1313/tags/transition/</guid>
       <description></description>
     </item>
     <item>
       <title>Transitions</title>
-      <link>https://fronkongames.github.io/tags/transitions/</link>
+      <link>http://localhost:1313/tags/transitions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/transitions/</guid>
+      <guid>http://localhost:1313/tags/transitions/</guid>
       <description></description>
     </item>
     <item>
       <title>Color</title>
-      <link>https://fronkongames.github.io/tags/color/</link>
+      <link>http://localhost:1313/tags/color/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/color/</guid>
+      <guid>http://localhost:1313/tags/color/</guid>
       <description></description>
     </item>
     <item>
       <title>Design</title>
-      <link>https://fronkongames.github.io/tags/design/</link>
+      <link>http://localhost:1313/tags/design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/design/</guid>
+      <guid>http://localhost:1313/tags/design/</guid>
       <description></description>
     </item>
     <item>
       <title>Palette</title>
-      <link>https://fronkongames.github.io/tags/palette/</link>
+      <link>http://localhost:1313/tags/palette/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/palette/</guid>
+      <guid>http://localhost:1313/tags/palette/</guid>
       <description></description>
     </item>
     <item>
       <title>Pattern</title>
-      <link>https://fronkongames.github.io/tags/pattern/</link>
+      <link>http://localhost:1313/tags/pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/pattern/</guid>
+      <guid>http://localhost:1313/tags/pattern/</guid>
       <description></description>
     </item>
     <item>
       <title>Tailwind</title>
-      <link>https://fronkongames.github.io/tags/tailwind/</link>
+      <link>http://localhost:1313/tags/tailwind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/tailwind/</guid>
+      <guid>http://localhost:1313/tags/tailwind/</guid>
       <description></description>
     </item>
   </channel>

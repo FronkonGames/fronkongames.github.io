@@ -146,20 +146,18 @@ You have an example in the scene '**FronkonGames/Retro/VHS/Demo/VHS_Material_Dem
 
 ---
 ## Pixelator {#pixelator}
-{{< asset-header youtube="lLxdmqDiQec" demo="https://fronkongames.github.io/demos-retro/pixelator/" >}}
+{{< asset-header youtube="lLxdmqDiQec" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-pixelator-292731" demo="https://fronkongames.github.io/demos-retro/pixelator/" >}}
 
 '**Pixelator**' allows you to create a wide variety of retro-inspired visuals. It offers highly customizable pixelation, advanced color manipulation including posterization and dithering, unique visual effects like beveling and chromatic aberration, and a suite of color filters.
 
-## Parameters
+{{< image src="pixelator_0.jpg" wrapper="col-6 mx-auto">}}
 
-Below is a detailed description of all the parameters available in the Pixelator settings.
-
-### Main Settings
+#### Main control
 
 *   **Intensity**: `float` (Range: 0.0 to 1.0, Default: 1.0)
     Controls the overall intensity of all combined Pixelator effects. An intensity of 0 means the effect is not applied.
 
-### Pixelation
+#### Pixelation
 
 *   **Pixelation Mode**: `enum` (Default: Rectangle)
     Determines the shape and algorithm used for pixelation.
@@ -176,7 +174,7 @@ Below is a detailed description of all the parameters available in the Pixelator
 *   **Pixel Size**: `float` (Range: 0.0 to 1.0, Default: 0.75)
     Controls the perceived size of the pixels. The exact interpretation can vary slightly per mode.
 
-#### Mode-Specific Pixelation Parameters:
+##### Mode-Specific Pixelation Parameters:
 
 *   **For `Rectangle`, `Triangle`, `Hexagon`, `Leaf` modes:**
     *   **Screen Aspect Ratio**: `bool` (Default: true)
@@ -198,7 +196,7 @@ Below is a detailed description of all the parameters available in the Pixelator
     *   **Pixel Scale**: `Vector2` (Default: (1,1))
         Controls the scale of the knitted pattern.
 
-### Gradient Mapping
+#### Gradient Mapping
 
 Maps the screen colors to a custom gradient texture.
 
@@ -219,7 +217,15 @@ Maps the screen colors to a custom gradient texture.
 *   **Apply Luminance**: `bool` (Default: true)
     If true, the luminance of the original pixel (or mapped luminance for Luminance mode) is multiplied with the final mapped gradient color. This can preserve some of the original brightness characteristics.
 
-### Dithering
+'**Pixelator**' brings a tool to search through more than 6,000 palettes created by artists. Simply click on the `magnifying glass icon`.
+
+{{< image src="pixelator_1.jpg" wrapper="col-6 mx-auto">}}
+
+Select or use the search to find the palette you want to use and click on its name to apply it automatically.
+
+{{< image src="pixelator_2.jpg" wrapper="col-6 mx-auto">}}
+
+#### Dithering
 
 Simulates colors by using patterns of a limited color palette.
 
@@ -232,7 +238,7 @@ Simulates colors by using patterns of a limited color palette.
 *   **Color Steps**: `int` (Range: 2 to 16, Default: 8)
     The number of discrete color steps per channel that the dithering will attempt to simulate.
 
-### Posterization
+#### Posterization
 
 Reduces the number of distinct colors in the image.
 
@@ -247,14 +253,14 @@ Reduces the number of distinct colors in the image.
 *   **Gamma**: `float` (Range: 0.1 to 3.0, Default: 1.0)
     Applies gamma correction before posterization and de-correction after. Values other than 1.0 can change perceived brightness and color relationships.
 
-### Bevel Effect
+#### Bevel Effect
 
 Adds a pseudo-3D bevel based on color differences, giving a chiseled look.
 
 *   **Bevel**: `float` (Range: 0.0 to 10.0, Default: 1.0)
     The strength and depth of the bevel effect.
 
-### Chromatic Aberration
+#### Chromatic Aberration
 
 Simulates lens distortion by offsetting color channels.
 
@@ -263,7 +269,7 @@ Simulates lens distortion by offsetting color channels.
 *   **Offset**: `Vector3` (Default: (1.0, 2.0, -1.0))
     The amount by which the Red, Green, and Blue channels are shifted, respectively.
 
-### Color Filters
+#### Color Filters
 
 Applies various stylistic color filters.
 
