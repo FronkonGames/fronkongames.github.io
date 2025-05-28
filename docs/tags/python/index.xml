@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Fronkon Games</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>https://fronkongames.github.io/tags/python/</link>
     <description>Recent content in Python on Fronkon Games</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
     <lastBuildDate>Fri, 11 Apr 2025 14:34:02 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fronkongames.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Global GameJam Dataset</title>
-      <link>http://localhost:1313/projects/steam-games-dataset/</link>
+      <link>https://fronkongames.github.io/projects/steam-games-dataset/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
-      <guid>http://localhost:1313/projects/steam-games-dataset/</guid>
+      <guid>https://fronkongames.github.io/projects/steam-games-dataset/</guid>
       <description></description>
     </item>
     <item>
       <title>Steam Games Dataset</title>
-      <link>http://localhost:1313/projects/global-gamejam-dataset/</link>
+      <link>https://fronkongames.github.io/projects/global-gamejam-dataset/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
-      <guid>http://localhost:1313/projects/global-gamejam-dataset/</guid>
+      <guid>https://fronkongames.github.io/projects/global-gamejam-dataset/</guid>
       <description></description>
     </item>
   </channel>

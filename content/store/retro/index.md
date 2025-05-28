@@ -18,6 +18,7 @@ thumbnail:
 * [Old Films](#oldfilms), the best way to replicate the look of old movies.
 * [CRT TV](#crttv), the most configurable old TV effect you'll ever find.
 * [Lo-Fi](#lofi), stunning retro-style visuals.
+* [NTSC](#ntsc), simulates the analog video artifacts characteristic of the NTSC.
 * [Old Computers](#oldcomputers), emulates the color palettes of old 8-bit and 16-bit computers.
 * [ASCII](#ascii), the old-school ASCII effect with steroids.
 * [Spectrum](#spectrum), mimics the legendary ZX Spectrum 8-bits computer from 1982.
@@ -528,6 +529,62 @@ This requires the Lo-Fi effect to be added as a Renderer Feature in your active 
 {{< /alert >}}
 
 The Palette Browser makes it easy to experiment with different color schemes and find the perfect retro look for your project!
+
+---
+## NTSC {#ntsc}
+{{< asset-header youtube="MXQ5qz31Cos" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-ntsc-321946" demo="https://fronkongames.github.io/demos-retro/ntsc/" >}}
+
+This effect simulates the analog video artifacts characteristic of the [NTSC](https://en.wikipedia.org/wiki/NTSC) (National Television System Committee) broadcast standard, commonly associated with older televisions and VHS tapes in North America and Japan.
+
+It aims to replicate visual imperfections such as color bleeding, dot crawl, scanlines (though not explicitly a parameter, it's an emergent property of NTSC emulation), phase errors, and signal noise to achieve a retro aesthetic.
+
+Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+
+{{< image src="ntsc_0.jpg" wrapper="col-6 mx-auto">}}
+
+#### NTSC Settings
+
+*   **Intensity**: `float` [0, 1], Default: 1
+    *   Controls the overall strength of the NTSC effect. A value of 0 will bypass the effect.
+*   **Window Radius**: `int` [1, 64], Default: 20
+    *   Controls the size of the sinc filter window used in NTSC signal processing passes. Larger values use more samples, which can improve quality by reducing aliasing and ringing artifacts but will increase computational cost.
+*   **NTSC Scale**: `float` [0.1, 5.0], Default: 1.0
+    *   An overall scaling factor for NTSC artifacts related to the width of pixels. This can affect the prominence of artifacts like color fringing and dot crawl.
+*   **Phase Alternation**: `float` [0.0, ~PI], Default: 0.0
+    *   Simulates the phase alteration per scanline, a characteristic of NTSC signals that can cause hues to shift on alternate lines. A value of 0.0 disables this, while a value close to PI (3.1415927) enables it. This is often related to the "Never The Same Color" moniker of NTSC.
+*   **Noise**: `float` [0.0, 1.0], Default: 0.1
+    *   Controls the amount of random TV static or signal noise added to the image.
+*   **Window Bias**: `float` [-1.0, 1.0], Default: 0.0
+    *   Offsets the shape of the sinc filter window. This can cause artifacts to smear or trail more to one side than the other, affecting the appearance of ringing and other signal-related distortions.
+
+#### Encoder
+
+These settings control the simulation of the NTSC encoding process, where the original RGB signal is converted into Luminance (Y) and Chrominance (I, Q) components and modulated onto a carrier wave.
+
+*   **AM Carrier**: `float` [0.5, 10.0], Default: 2.0
+    *   Wavelength of the Amplitude Modulation (AM) carrier signal used in the NTSC encoding pass. This influences how the luma and chroma information is combined.
+*   **Wavelengths Low-Pass**:
+    *   **Y LowPass**: `float` [0.1, 10.0], Default: 1.0
+        *   Wavelength for the low-pass filter applied to the luminance (Y) component before encoding. Lower values retain more high-frequency detail in luminance, while higher values soften it. This affects the sharpness and can interact with color fringing.
+    *   **I LowPass**: `float` [1.0, 20.0], Default: 8.0
+        *   Wavelength for the low-pass filter applied to the I (in-phase) chrominance component. NTSC allocates less bandwidth to chroma, so I and Q are typically blurred. Higher values increase color smearing and reduce chroma resolution for the I component (orange-cyan axis).
+    *   **Q LowPass**: `float` [1.0, 20.0], Default: 11.0
+        *   Wavelength for the low-pass filter applied to the Q (quadrature) chrominance component. Similar to I LowPass, but for the Q component (green-magenta axis), which typically has even less bandwidth. Higher values increase color smearing.
+*   **Colorburst**: `float` [1.0, 10.0], Default: 3.0
+    *   Wavelength of the colorburst signal for the NTSC encoder pass. The colorburst is a reference signal used by the decoder to correctly interpret hues.
+
+#### Decoder
+
+These settings control the simulation of the NTSC decoding process, where the modulated NTSC signal is converted back into a viewable image, introducing further artifacts.
+
+*   **AM Demodulate**: `float` [0.5, 10.0], Default: 2.0
+    *   Wavelength used for AM signal demodulation in the NTSC decoding pass. This is part of separating the luma and chroma information.
+*   **AM Decode HiPass**: `float` [0.5, 10.0], Default: 2.0
+    *   Wavelength for the high-pass filter used during AM decoding. This helps separate the chroma information from the luma.
+*   **Colorburst**: `float` [1.0, 10.0], Default: 3.0
+    *   Wavelength of the colorburst signal used by the NTSC decoder pass to correctly align and interpret the chrominance information. Mismatches with the encoder can lead to color errors.
+*   **Decode LowPass**: `float` [1.0, 10.0], Default: 4.5
+    *   Wavelength for the low-pass filter applied during the final NTSC decoding stage. This affects the overall blurriness of the decoded signal and can reduce dot crawl and other high-frequency artifacts.
 
 ---
 ## Old Computers {#oldcomputers}

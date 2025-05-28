@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Fronkon Games</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>https://fronkongames.github.io/blog/</link>
     <description>Recent content in Blog on Fronkon Games</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fronkongames.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction To Go</title>
-      <link>http://localhost:1313/blog/introduction-to-go/</link>
+      <link>https://fronkongames.github.io/blog/introduction-to-go/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
-      <guid>http://localhost:1313/blog/introduction-to-go/</guid>
+      <guid>https://fronkongames.github.io/blog/introduction-to-go/</guid>
       <description>Go is a very old strategy game that consists of capturing pieces and winning territories. It is about 2,500 years old and was invented in China, although the exact location is unknown.</description>
     </item>
     <item>
       <title>Design Patterns In Game Development</title>
-      <link>http://localhost:1313/blog/design-patterns-in-game-development/</link>
+      <link>https://fronkongames.github.io/blog/design-patterns-in-game-development/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:02 +0100</pubDate>
-      <guid>http://localhost:1313/blog/design-patterns-in-game-development/</guid>
+      <guid>https://fronkongames.github.io/blog/design-patterns-in-game-development/</guid>
       <description>The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.</description>
     </item>
     <item>
       <title>Unity Is A Harsh Mistress 💔</title>
-      <link>http://localhost:1313/blog/unity-is-a-harsh-mistress/</link>
+      <link>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:01 +0100</pubDate>
-      <guid>http://localhost:1313/blog/unity-is-a-harsh-mistress/</guid>
+      <guid>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</guid>
       <description>&amp;nbsp; UPDATE (12/09/2024)&#xA;Although the damage is done, Unity finally cancels the controversial Runtime Free.&#xA;&amp;nbsp; UPDATE (01/04/2024)&#xA;Unity appoints Matthew Bromberg as new CEO.</description>
     </item>
   </channel>

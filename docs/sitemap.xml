@@ -2,26 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fronkongames.github.io/tags/devblog/</loc>
+    <loc>https://fronkongames.github.io/tags/game-development/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/tags/game-development/</loc>
+    <loc>https://fronkongames.github.io/projects/gamework-foundation/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/gamedev/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/projects/kairos/</loc>
-    <lastmod>2025-04-11T14:34:02+02:00</lastmod>
-  </url><url>
     <loc>https://fronkongames.github.io/tags/</loc>
-    <lastmod>2025-05-19T13:08:01+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/projects/gamework-foundation/</loc>
-    <lastmod>2025-04-11T14:34:02+02:00</lastmod>
+    <lastmod>2025-05-19T16:54:20+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/unity/</loc>
-    <lastmod>2025-05-19T13:08:01+02:00</lastmod>
+    <lastmod>2025-05-19T16:54:20+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/gamework-core/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -54,7 +48,7 @@
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/store/</loc>
-    <lastmod>2025-05-19T13:08:01+02:00</lastmod>
+    <lastmod>2025-05-19T16:54:20+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/c%23/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -76,6 +70,9 @@
   </url><url>
     <loc>https://fronkongames.github.io/projects/build-history/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/devblog/</loc>
+    <lastmod>2024-07-02T00:30:41+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/kairos/dragging-and-dropping-3d-cards/</loc>
     <lastmod>2024-07-02T00:30:41+02:00</lastmod>
@@ -132,10 +129,10 @@
     <lastmod>2024-07-02T00:30:41+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/retro/</loc>
-    <lastmod>2025-05-19T13:08:01+02:00</lastmod>
+    <lastmod>2025-05-19T16:54:20+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/store/retro/</loc>
-    <lastmod>2025-05-19T13:08:01+02:00</lastmod>
+    <lastmod>2025-05-19T16:54:20+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/templates/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -193,6 +190,9 @@
   </url><url>
     <loc>https://fronkongames.github.io/</loc>
     <lastmod>2025-04-24T16:59:24+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/projects/kairos/</loc>
+    <lastmod>2024-07-02T00:30:41+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/</loc>
     <lastmod>2024-06-05T13:03:34+02:00</lastmod>
