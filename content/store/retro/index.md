@@ -22,6 +22,7 @@ thumbnail:
 * [Old Computers](#oldcomputers), emulates the color palettes of old 8-bit and 16-bit computers.
 * [ASCII](#ascii), the old-school ASCII effect with steroids.
 * [Spectrum](#spectrum), mimics the legendary ZX Spectrum 8-bits computer from 1982.
+* [LCD](#lcd), simulates the visual characteristics of a Liquid Crystal Display (LCD).
 * [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
 * [Handheld 8-Bit](#handheld8bit), imitates the graphics of the 8-bit handheld consoles of the late 1980s.
 
@@ -687,6 +688,48 @@ With '**Intensity**' (_1_) you can control the intensity of the effect. If it is
 To change the pixel size, use '**Pixel size**' (_3_) and to adjust the pattern size use '**Dither**' (_4_).
 
 **Spectrum**' uses the image brightness for many calculations, if your scene is too dark (or too bright), you can adjust the brightness range used in '**Brightness levels**' (_5_). You can also modify the initial gamma with '**Adjust gamma**' (_7_).
+
+---
+## LCD {#lcd}
+{{< asset-header youtube="huKT3CiRfRA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-spectrum-239827" demo="https://fronkongames.github.io/demos-retro/lcd/" >}}
+
+Simulates the distinct visual characteristics of a [Liquid Crystal Display](https://en.wikipedia.org/wiki/Liquid-crystal_display) (LCD), such as those found on older handheld games, digital watches, or early portable computers.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="lcd_0.jpg" wrapper="col-6 mx-auto">}}
+
+#### General Settings
+
+* **Intensity**: `float` [0, 1], Default: 1.0. Controls the overall strength of the entire LCD effect. A value of 0 will effectively bypass the effect.
+
+#### Grid Settings
+
+* **Grid Intensity**: `float` [0, 1], Default: 0.9. Controls the visibility of the pixel grid.
+* **Grid Color**: `Color`, Default: Black. The RGB color of the physical grid structure. Alpha is not typically used.
+* **Grid Size**: `float` [1, 4], Default: 2.0. The size of the pixels, acting as grid line thickness.
+* **Grid Bevel**: `float` [0, 2], Default: 0.5. Controls the softness of the subpixel dot edges. Higher values create softer, wider transitions, affecting the perceived bevel of the grid.
+* **Subpixel Layout**: `enum` { RGB, BGR }, Default: RGB. The ordering of color components within each pixel: RGB (standard) or BGR (swapped red and blue).
+* **Subpixel Tiling Factor**: `Vector2`, Default: (3.0, 1.0). Controls the horizontal and vertical tiling of subpixels.
+* **Jitter Intensity**: `float` [0, 2], Default: 0.0. Intensity of UV jitter to reduce moiré patterns, may introduce noise.
+
+#### Blacklight Settings
+
+* **Bleed Intensity**: `float` [0, 1], Default: 0.0. Overall strength of the backlight bleed effect.
+* **Bleed Focus**: `float` [0, 1], Default: 0.5. Controls concentration of the bleed: 0 for edges, 1 for center, 0.5 for even.
+* **Bleed Color**: `Color`, Default: (0.1, 0.1, 0.1, 0.0) (Subtle Gray). Color of the backlight bleed.
+
+#### Dead pixels Settings
+
+* **Dead Subpixel Density**: `float` [0, 1], Default: 0.0. Density of dead subpixels (0 = none, 1 = very high).
+* **Dead Subpixel Seed**: `int`, Default: 0. Seed for the dead subpixel pattern.
+* **Dead Subpixel Color**: `Color`, Default: Black. Color of a dead subpixel.
+
+#### Misc Settings
+
+* **Color Correction Intensity**: `float` [0, 1], Default: 1.0. Intensity of the color correction effect.
+* **Color Bands Intensity**: `float` [0, 1], Default: 0.5. Intensity of the color bands effect.
+* **Color Bands Brightness**: `float` [0, 10], Default: 4.0. Brightness of the color bands effect.
 
 ---
 ## Vintage Filters {#vintagefilters}
