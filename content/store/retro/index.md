@@ -602,21 +602,29 @@ Once installed, when you select your ‘Universal Renderer Data’, you will see
 
 The `Noir` parameter transforms the scene into a black and white image, offering four distinct artistic methods to simulate classic printing and display techniques. Each method provides a unique visual style, from granular dithering to structured lines and patterns.
 
+{{< image src="noir_1.png" wrapper="col-6 mx-auto">}}
+
 - **Dither**: This method uses an 8x8 Bayer matrix to create a dithered black and white image, simulating the look of early digital displays.
   - `Spread`: Controls the spread of the dither pattern.
   - `Density`: Adjusts the density of the dither effect.
   - `Color Blend`: Determines how the dithered pattern blends with the original image.
+
+{{< image src="noir_2.png" wrapper="col-6 mx-auto">}}
 
 - **Dot Screen**: Simulates the dot matrix printing technique, creating a grid of dots of varying sizes to represent shades of gray.
   - `Grid Size`: Sets the size of the dot screen grid.
   - `Luminance Gain`: Adjusts the luminance gain, affecting the size of the dots.
   - `Color Blend`: Specifies the blending mode for the dot screen effect.
 
+{{< image src="noir_3.png" wrapper="col-6 mx-auto">}}
+
 - **Halftone**: Mimics the halftone printing process, using dots of varying sizes and angles to create tonal variations.
   - `Size`: Controls the size of the halftone dots.
   - `Angle`: Sets the angle of the halftone pattern.
   - `Threshold`: Defines the threshold for the halftone effect.
   - `Color Blend`: Determines how the halftone pattern is blended.
+
+{{< image src="noir_4.png" wrapper="col-6 mx-auto">}}
 
 - **Lines**: This method uses parallel lines of varying thickness to create the black and white image, similar to an engraved or etched illustration.
   - `Count`: Sets the number of lines.
