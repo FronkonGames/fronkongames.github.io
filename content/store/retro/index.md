@@ -19,6 +19,7 @@ thumbnail:
 * [CRT TV](#crttv), the most configurable old TV effect you'll ever find.
 * [Lo-Fi](#lofi), stunning retro-style visuals.
 * [NTSC](#ntsc), simulates the analog video artifacts characteristic of the NTSC.
+* [Noir](#noir), a classic, stylized film noir aesthetic.
 * [Old Computers](#oldcomputers), emulates the color palettes of old 8-bit and 16-bit computers.
 * [ASCII](#ascii), the old-school ASCII effect with steroids.
 * [Spectrum](#spectrum), mimics the legendary ZX Spectrum 8-bits computer from 1982.
@@ -586,6 +587,101 @@ These settings control the simulation of the NTSC decoding process, where the mo
     *   Wavelength of the colorburst signal used by the NTSC decoder pass to correctly align and interpret the chrominance information. Mismatches with the encoder can lead to color errors.
 *   **Decode LowPass**: `float` [1.0, 10.0], Default: 4.5
     *   Wavelength for the low-pass filter applied during the final NTSC decoding stage. This affects the overall blurriness of the decoded signal and can reduce dot crawl and other high-frequency artifacts.
+
+---
+## Noir {#noir}
+{{< asset-header youtube="U3wnxAc5Cww" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-noir-322864" demo="https://fronkongames.github.io/demos-retro/noir/" >}}
+
+A comprehensive post-processing solution designed to give your projects a classic, stylized film noir aesthetic. It combines several configurable visual elements to achieve a range of looks, from subtle desaturation and mood lighting to more pronounced vintage film appearances.
+
+Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+
+{{< image src="noir_0.jpg" wrapper="col-6 mx-auto">}}
+
+#### Noir
+
+The `Noir` parameter transforms the scene into a black and white image, offering four distinct artistic methods to simulate classic printing and display techniques. Each method provides a unique visual style, from granular dithering to structured lines and patterns.
+
+- **Dither**: This method uses an 8x8 Bayer matrix to create a dithered black and white image, simulating the look of early digital displays.
+  - `Spread`: Controls the spread of the dither pattern.
+  - `Density`: Adjusts the density of the dither effect.
+  - `Color Blend`: Determines how the dithered pattern blends with the original image.
+
+- **Dot Screen**: Simulates the dot matrix printing technique, creating a grid of dots of varying sizes to represent shades of gray.
+  - `Grid Size`: Sets the size of the dot screen grid.
+  - `Luminance Gain`: Adjusts the luminance gain, affecting the size of the dots.
+  - `Color Blend`: Specifies the blending mode for the dot screen effect.
+
+- **Halftone**: Mimics the halftone printing process, using dots of varying sizes and angles to create tonal variations.
+  - `Size`: Controls the size of the halftone dots.
+  - `Angle`: Sets the angle of the halftone pattern.
+  - `Threshold`: Defines the threshold for the halftone effect.
+  - `Color Blend`: Determines how the halftone pattern is blended.
+
+- **Lines**: This method uses parallel lines of varying thickness to create the black and white image, similar to an engraved or etched illustration.
+  - `Count`: Sets the number of lines.
+  - `Granularity`: Adjusts the granularity of the lines.
+  - `Threshold`: Defines the threshold for line visibility.
+  - `Color Blend`: Specifies the blending mode for the lines.
+
+#### Duo Tone
+
+The Duo Tone effect remaps the image's tones to a gradient between two specified colors, creating a stylized, two-color look. This is often used for dramatic and artistic visuals.
+
+- `Intensity`: Controls the overall intensity of the Duo Tone effect.
+- `Brightness Color`: Sets the color for the brighter parts of the image.
+- `Darkness Color`: Sets the color for the darker parts of theimage.
+- `Threshold`: Defines the midpoint between the brightness and darkness colors.
+- `Luminance Min Range`: Sets the minimum luminance range for the effect.
+- `Luminance Max Range`: Sets the maximum luminance range for the effect.
+- `Softness`: Controls the smoothness of the transition between the two colors.
+- `Exposure`: Adjusts the overall exposure of the image.
+- `Emboss Dark`: Adds an embossing effect to the dark areas.
+- `Color Blend`: Determines how the duo tone colors blend with the scene.
+
+#### Sepia
+
+The Sepia effect applies a brownish tint to the image, simulating the look of aged photographs from the early days of photography.
+
+- `Intensity`: Controls the strength of the Sepia toning. A value of 0 means no effect, while 1 applies the full effect.
+
+#### Chromatic Aberration
+
+Chromatic Aberration simulates the lens artifact where different color channels are not perfectly aligned, resulting in color fringing, especially at the edges of the frame. This can add to the vintage or lo-fi feel of the image.
+
+- `Intensity`: Adjusts the amount of color separation. Higher values increase the distance between the color channels.
+
+#### Film Grain
+
+This effect adds a layer of simulated film grain to the image, mimicking the texture of traditional photographic film. It can enhance the vintage look and help to reduce color banding.
+
+- `Intensity`: Controls the visibility of the film grain.
+- `Speed`: Adjusts the animation speed of the grain, creating a dynamic, flickering effect.
+
+#### Vignette
+
+The Vignette effect darkens the corners and edges of the screen, drawing focus to the center of the image. It's a common technique in photography and cinematography to create mood and frame the subject.
+
+- `Intensity`: Controls the overall strength of the vignette.
+- `Size`: Adjusts the size of the clear, unaffected central area.
+- `Color`: Sets the color of the vignette. While typically black, other colors can be used for stylistic purposes.
+- `Smoothness`: Controls the softness of the vignette's falloff, from a hard edge to a smooth gradient.
+- `Time Variation`: Introduces a subtle, time-based fluctuation to the vignette's intensity, adding a dynamic quality.
+
+#### Blotches
+
+This effect simulates the appearance of film damage or aging by overlaying animated blotches onto the image. This can significantly enhance the retro and worn-out feel of the visuals.
+
+- `Intensity`: Controls the visibility of the blotches.
+- `Speed`: Adjusts the speed at which the blotches animate and change.
+
+#### Scratches
+
+The Scratches effect simulates vertical scratches on the film, another common artifact of old or damaged film reels. It adds to the authenticity of a vintage film look.
+
+- `Intensity`: Controls the visibility and frequency of the scratches.
+- `Speed`: Adjusts the animation speed of the scratches, making them flicker and move.
+
 
 ---
 ## Old Computers {#oldcomputers}
