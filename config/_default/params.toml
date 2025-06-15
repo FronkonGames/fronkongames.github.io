@@ -141,7 +141,7 @@
         footer = "none"
         orientation = "stacked"
         style = "border-0 card-zoom card-body-margin"
-        homepage = 6
+        homepage = 9
         separator = true
     [sections.projects]
         title = "Projects"
@@ -157,7 +157,7 @@
         footer = "none"
         orientation = "horizontal"
         style = "border-1 card-emphasize"
-        homepage = 6
+        homepage = 12
         separator = false
     [sections.projects.kairos]
         title = "Kairos"

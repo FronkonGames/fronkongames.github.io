@@ -1,7 +1,7 @@
 # toml-docs-start main
 title = "Fronkon Games"
 copyright = "Copyright © 2024 Fronkon Games"
-paginate = 6
+paginate = 9
 enableGitInfo = true
 publishDir = "docs"
 # toml-docs-end main
