@@ -59,27 +59,3 @@
   pre = "fab linkedin"
   url = "https://www.linkedin.com/in/martinbr"
   weight = 50
-
-# toml-docs-start sample-navigation
-[[sample]]
-  name = "Blog"
-  pageRef = "/blog/"
-  weight = 10
-
-[[sample]]
-  name = "PROJECTS"
-  pageRef = "/projects/"
-  weight = 20
-
-[[main]]
-  name = "Kairos"
-  pageRef = "/projects/kairos/"
-  parent = "PROJECTS"
-  weight = 0
-
-[[sample]]
-  name = "Another project"
-  pageRef = "/projects/kairos/"
-  parent = "PROJECTS"
-  weight = 2
-# toml-docs-end sample-navigation
