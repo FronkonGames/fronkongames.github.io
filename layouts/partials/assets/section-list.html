@@ -106,6 +106,9 @@
 {{ else }}
     {{ if $nested }}
         {{ $list = $page.RegularPagesRecursive }}
+        {{ if eq $section "projects" }}
+            {{ $list = union $list $page.Sections }}
+        {{ end }}
     {{ else }}
         {{ $list = $page.Pages }}
     {{ end }}

@@ -10,6 +10,13 @@
     <lastBuildDate>Fri, 06 Jun 2025 21:21:11 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Devblog</title>
+      <link>https://fronkongames.github.io/tags/devblog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/devblog/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Game Development</title>
       <link>https://fronkongames.github.io/tags/game-development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -101,13 +108,6 @@
       <description></description>
     </item>
     <item>
-      <title>Devblog</title>
-      <link>https://fronkongames.github.io/tags/devblog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/devblog/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Glitch</title>
       <link>https://fronkongames.github.io/tags/glitch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -119,13 +119,6 @@
       <link>https://fronkongames.github.io/tags/hack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/hack/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kairos</title>
-      <link>https://fronkongames.github.io/tags/kairos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/kairos/</guid>
       <description></description>
     </item>
     <item>
