@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Sun, 15 Jun 2025 17:15:52 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 17:27:00 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Devblog</title>
@@ -245,6 +245,62 @@
       <link>https://fronkongames.github.io/tags/tailwind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/tailwind/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ballistic</title>
+      <link>https://fronkongames.github.io/tags/ballistic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/ballistic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bullet</title>
+      <link>https://fronkongames.github.io/tags/bullet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/bullet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bullets</title>
+      <link>https://fronkongames.github.io/tags/bullets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/bullets/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>First Person</title>
+      <link>https://fronkongames.github.io/tags/first-person/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/first-person/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FPS</title>
+      <link>https://fronkongames.github.io/tags/fps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/fps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Physics</title>
+      <link>https://fronkongames.github.io/tags/physics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/physics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shooter</title>
+      <link>https://fronkongames.github.io/tags/shooter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/shooter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weapon</title>
+      <link>https://fronkongames.github.io/tags/weapon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/weapon/</guid>
       <description></description>
     </item>
   </channel>

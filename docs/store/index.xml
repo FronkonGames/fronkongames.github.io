@@ -57,5 +57,12 @@
       <guid>https://fronkongames.github.io/store/artistic/</guid>
       <description>All the effects of &amp;lsquo;Artistic&amp;rsquo; will help you to achieve a unique look for your games. It consists of the following effects:</description>
     </item>
+    <item>
+      <title>True Ballistics</title>
+      <link>https://fronkongames.github.io/store/true-ballistics/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:00 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/true-ballistics/</guid>
+      <description>assets used in video and demo are not included&#xA;A comprehensive, physically-accurate ballistics simulation system for Unity that provides realistic trajectories, ricochets, penetration mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.</description>
+    </item>
   </channel>
 </rss>
