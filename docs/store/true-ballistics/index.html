@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/true-ballistics/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:00+01:00">
-    <meta property="article:modified_time" content="1970-01-01T01:00:00+01:00">
+    <meta property="article:modified_time" content="2025-07-18T18:30:56+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/true-ballistics-1280x640.jpg">
 <meta property="og:image:alt" content="True Ballistics">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:00CET",
-      "dateModified": "1970-01-01T01:00:00CET",
+      "dateModified": "2025-07-18T18:30:56CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/true-ballistics/#/schema/breadcrumb/1"
       },
@@ -406,12 +406,32 @@
     <li>
       <ul>
         <li></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#how-to-use">How to Use</a></li>
-        <li><a href="#systems">Systems</a></li>
+      </ul>
+    </li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#how-to-use">How to Use</a>
+      <ul>
+        <li><a href="#add-systems">Add systems</a></li>
+      </ul>
+    </li>
+    <li><a href="#systems">Systems</a>
+      <ul>
+        <li><a href="#physics-system">Physics System</a></li>
+        <li><a href="#lifecycle-system">Lifecycle System</a></li>
+        <li><a href="#collision-system">Collision System</a></li>
+        <li><a href="#ricochet-system">Ricochet System</a></li>
+        <li><a href="#penetration-system">Penetration System</a></li>
+        <li><a href="#tracer-system">Tracer System</a></li>
+        <li><a href="#weather-system">Weather System</a></li>
+        <li><a href="#coriolis-system">Coriolis System</a></li>
+        <li><a href="#spin-drift-system">Spin Drift System</a></li>
+        <li><a href="#debug-system">Debug System</a></li>
         <li><a href="#customs-systems">Customs Systems</a></li>
-        <li><a href="#simple-fps">Simple FPS</a></li>
+      </ul>
+    </li>
+    <li><a href="#simple-fps">Simple FPS</a>
+      <ul>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -492,7 +512,7 @@
 ❌ <strong>Networking Solution</strong>: Designed for single-player simulations, not multiplayer networking.<br />
 ❌ <strong>Energy Weapons or Propelled Projectiles</strong>: Designed for ballistic projectiles only, doesn&rsquo;t support laser weapons, plasma guns, or self-propelled projectiles like rockets and missiles.</p>
 
-<h3 id="requirements" class="heading">Requirements <a href="#requirements" aria-labelledby="requirements">
+<h2 id="installation" class="heading">Installation <a href="#installation" aria-labelledby="installation">
 
 
 
@@ -507,33 +527,18 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h3>
+</a></h2>
+<p>Requirements:</p>
 <ul>
 <li>Unity 6000.0 LTS or newer.</li>
 </ul>
-
-<h3 id="installation" class="heading">Installation <a href="#installation" aria-labelledby="installation">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h3>
+<p>Installation:</p>
 <ol>
 <li>Download and import the <code>True Ballistics</code> asset from the Unity Asset Store into your Unity project.</li>
 <li>No additional setup is required. The asset is ready to use out of the box!</li>
 </ol>
 
-<h3 id="how-to-use" class="heading">How to Use <a href="#how-to-use" aria-labelledby="how-to-use">
+<h2 id="how-to-use" class="heading">How to Use <a href="#how-to-use" aria-labelledby="how-to-use">
 
 
 
@@ -548,7 +553,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h3>
+</a></h2>
 <p>The <code>BallisticsManager</code> component is the central hub of the ballistics system. It manages the lightweight ECS, handles projectile spawning, and coordinates all ballistic systems.</p>
 <p>Create an empty GameObject and add the <code>BallisticsManager</code> component (Fronkon Games → True Ballistics → Ballistics Manager)</p>
 
@@ -625,7 +630,7 @@
             >
 </div><br>
 
-<h6 id="add-systems" class="heading">Add systems <a href="#add-systems" aria-labelledby="add-systems">
+<h3 id="add-systems" class="heading">Add systems <a href="#add-systems" aria-labelledby="add-systems">
 
 
 
@@ -640,7 +645,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h6>
+</a></h3>
 <p>Systems are modules that take care of a task. You can add as many as you want in <code>Systems</code>, this way you will only use the ones you need.</p>
 <p>They are <a href="https://docs.unity3d.com/6000.1/Documentation/Manual/class-ScriptableObject.html">ScriptableObjects</a> and therefore files. You can create them from the <code>Project</code> window (Fronkon Games → True Ballistics → Systems)</p>
 
@@ -892,7 +897,30 @@
             >
 </div><br>
 
-<h3 id="systems" class="heading">Systems <a href="#systems" aria-labelledby="systems">
+<h2 id="systems" class="heading">Systems <a href="#systems" aria-labelledby="systems">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p><code>True Ballistics</code> uses a custom lightweight ECS architecture optimized for ballistics simulation:</p>
+<ul>
+<li><strong>Entities</strong>: Simple integer IDs representing projectiles (max 5000 concurrent).</li>
+<li><strong>Components</strong>: Data structures (PhysicsComponent, DragComponent, etc).</li>
+<li><strong>Systems</strong>: Logic processors that operate on entities with specific components.</li>
+</ul>
+
+<h3 id="physics-system" class="heading">Physics System <a href="#physics-system" aria-labelledby="physics-system">
 
 
 
@@ -908,29 +936,6 @@
 
     &nbsp;
 </a></h3>
-<p><code>True Ballistics</code> uses a custom lightweight ECS architecture optimized for ballistics simulation:</p>
-<ul>
-<li><strong>Entities</strong>: Simple integer IDs representing projectiles (max 5000 concurrent).</li>
-<li><strong>Components</strong>: Data structures (PhysicsComponent, DragComponent, etc).</li>
-<li><strong>Systems</strong>: Logic processors that operate on entities with specific components.</li>
-</ul>
-
-<h4 id="physics-system" class="heading">Physics System <a href="#physics-system" aria-labelledby="physics-system">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h4>
 
 
 
@@ -1053,8 +1058,123 @@
 </li>
 <li><code>Max Speed</code>: Maximum projectile velocity in m/s (default value is 299,792,458 m/s, the speed of light in vacuum).</li>
 </ul>
+<p>If you add <code>Debug System</code> to the system list, you will be able to see the trajectories of the projectiles in the <code>Scene</code> window.</p>
 
-<h4 id="lifecycle-system" class="heading">Lifecycle System <a href="#lifecycle-system" aria-labelledby="lifecycle-system">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/physics_0-2800x1233.jpg"
+            
+            
+            srcset="/store/true-ballistics/physics_0-576x254.webp 576w, /store/true-ballistics/physics_0-768x338.webp 768w, /store/true-ballistics/physics_0-992x437.webp 992w, /store/true-ballistics/physics_0-1200x528.webp 1200w, /store/true-ballistics/physics_0-1400x616.webp 1400w, /store/true-ballistics/physics_0-2800x1233.webp 2800w" sizes="100vw"
+            height="1233"
+            width="2800"
+            >
+</div><br>
+<p>The trajectory of the projectile will have these colors:</p>
+
+
+<center>
+
+<table>
+<thead>
+<tr>
+<th>Color                   </th>
+<th align="right">Initial Velocity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td align="right">&gt;=75%</td>
+</tr>
+<tr>
+<td>Orange</td>
+<td align="right">&gt;=50%</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td align="right">&gt;=25%</td>
+</tr>
+<tr>
+<td>Green</td>
+<td align="right">&gt;=10%</td>
+</tr>
+<tr>
+<td>Gray</td>
+<td align="right">&lt;10%</td>
+</tr>
+</tbody>
+</table>
+
+
+</center>
+<br>
+
+<p><strong>In general</strong>, impacts in Green or Gray are not lethal.</p>
+
+<h3 id="lifecycle-system" class="heading">Lifecycle System <a href="#lifecycle-system" aria-labelledby="lifecycle-system">
 
 
 
@@ -1069,7 +1189,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -1146,170 +1266,7 @@
 <p>Manages projectile lifecycle with configurable termination rules. <strong>It is essential to add this system</strong>, since it is in charge of <em>recycling</em> projectiles. Without this system, when the maximum number of projectiles is reached (5000 by default), no more can be created.</p>
 <p>If any of the following (active) rules are met, the projectile is deactivated.</p>
 
-<h5 id="max-lifetime-rule" class="heading">Max Lifetime Rule <a href="#max-lifetime-rule" aria-labelledby="max-lifetime-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile if its lifetime has exceeded a certain limit.</p>
-
-<h5 id="min-speed-percentage-rule" class="heading">Min Speed Percentage Rule <a href="#min-speed-percentage-rule" aria-labelledby="min-speed-percentage-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile if its speed is below a certain percentage.</p>
-
-<h5 id="min-bounds-rule" class="heading">Min Bounds Rule <a href="#min-bounds-rule" aria-labelledby="min-bounds-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile if its coordinates are less than a certain limit.</p>
-
-<h5 id="max-bounds-rule" class="heading">Max Bounds Rule <a href="#max-bounds-rule" aria-labelledby="max-bounds-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile if its coordinates are greater than a certain limit.</p>
-
-<h5 id="stationary-rule" class="heading">Stationary Rule <a href="#stationary-rule" aria-labelledby="stationary-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile if it has been stationary for a certain amount of time.</p>
-
-<h5 id="max-distance-rule" class="heading">Max Distance Rule <a href="#max-distance-rule" aria-labelledby="max-distance-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile if it has traveled a certain linear distance from its point of origin.</p>
-
-<h5 id="one-collision-rule" class="heading">One Collision Rule <a href="#one-collision-rule" aria-labelledby="one-collision-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile after its first collision.</p>
-<p>If you use the <code>Ricochet System</code>, a bouncing projectile <strong>does not count for this rule</strong>.</p>
-
-<h5 id="ricochet-rule" class="heading">Ricochet Rule <a href="#ricochet-rule" aria-labelledby="ricochet-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>Deactivates the projectile if a ricochet occurred with an angle lower than a certain limit.</p>
-
-<h5 id="ricochet-failed-rule" class="heading">Ricochet Failed Rule <a href="#ricochet-failed-rule" aria-labelledby="ricochet-failed-rule">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h5>
-<p>If true, projectiles are deactivated upon any impact that does not result in a ricochet. This overrides <code>One Collision Rule</code> if both are true.</p>
-
-<h4 id="collision-system" class="heading">Collision System <a href="#collision-system" aria-labelledby="collision-system">
+<h4 id="max-lifetime-rule" class="heading">Max Lifetime Rule <a href="#max-lifetime-rule" aria-labelledby="max-lifetime-rule">
 
 
 
@@ -1325,6 +1282,169 @@
 
     &nbsp;
 </a></h4>
+<p>Deactivates the projectile if its lifetime has exceeded a certain limit.</p>
+
+<h4 id="min-speed-percentage-rule" class="heading">Min Speed Percentage Rule <a href="#min-speed-percentage-rule" aria-labelledby="min-speed-percentage-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Deactivates the projectile if its speed is below a certain percentage.</p>
+
+<h4 id="min-bounds-rule" class="heading">Min Bounds Rule <a href="#min-bounds-rule" aria-labelledby="min-bounds-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Deactivates the projectile if its coordinates are less than a certain limit.</p>
+
+<h4 id="max-bounds-rule" class="heading">Max Bounds Rule <a href="#max-bounds-rule" aria-labelledby="max-bounds-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Deactivates the projectile if its coordinates are greater than a certain limit.</p>
+
+<h4 id="stationary-rule" class="heading">Stationary Rule <a href="#stationary-rule" aria-labelledby="stationary-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Deactivates the projectile if it has been stationary for a certain amount of time.</p>
+
+<h4 id="max-distance-rule" class="heading">Max Distance Rule <a href="#max-distance-rule" aria-labelledby="max-distance-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Deactivates the projectile if it has traveled a certain linear distance from its point of origin.</p>
+
+<h4 id="one-collision-rule" class="heading">One Collision Rule <a href="#one-collision-rule" aria-labelledby="one-collision-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Deactivates the projectile after its first collision.</p>
+<p>If you use the <code>Ricochet System</code>, a bouncing projectile <strong>does not count for this rule</strong>.</p>
+
+<h4 id="ricochet-rule" class="heading">Ricochet Rule <a href="#ricochet-rule" aria-labelledby="ricochet-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Deactivates the projectile if a ricochet occurred with an angle lower than a certain limit.</p>
+
+<h4 id="ricochet-failed-rule" class="heading">Ricochet Failed Rule <a href="#ricochet-failed-rule" aria-labelledby="ricochet-failed-rule">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>If true, projectiles are deactivated upon any impact that does not result in a ricochet. This overrides <code>One Collision Rule</code> if both are true.</p>
+
+<h3 id="collision-system" class="heading">Collision System <a href="#collision-system" aria-labelledby="collision-system">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
 
 
 
@@ -1447,7 +1567,7 @@
 <p>Objects with Colliders and physics (<a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">RigidBody</a>) <strong>do not receive any physical impulse</strong> when hitting a projectile (it is not the goal of this library). However you can consult the <code>RigidBodyManager</code> class to see an example of how to do it.</p>
 <p>Neither create bullet marks or particles at the point of impact, although you can see how this is done in the demo in the <code>HolesManager</code> and <code>SparksManager</code> classes. Both solutions are quite rudimentary (enough for the purposes of the demo) so <strong>I do not recommend</strong> using them in production environments.</p>
 
-<h4 id="ricochet-system" class="heading">Ricochet System <a href="#ricochet-system" aria-labelledby="ricochet-system">
+<h3 id="ricochet-system" class="heading">Ricochet System <a href="#ricochet-system" aria-labelledby="ricochet-system">
 
 
 
@@ -1462,7 +1582,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -1546,7 +1666,7 @@
 </ul>
 <p>Once added to the systems, you can subscribe to the <code>OnProjectileRicochet</code> events to receive information on each ricochet.</p>
 
-<h4 id="penetration-system" class="heading">Penetration System <a href="#penetration-system" aria-labelledby="penetration-system">
+<h3 id="penetration-system" class="heading">Penetration System <a href="#penetration-system" aria-labelledby="penetration-system">
 
 
 
@@ -1561,7 +1681,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -1666,7 +1786,7 @@
         </div>
     </div>
 
-<h4 id="tracer-system" class="heading">Tracer System <a href="#tracer-system" aria-labelledby="tracer-system">
+<h3 id="tracer-system" class="heading">Tracer System <a href="#tracer-system" aria-labelledby="tracer-system">
 
 
 
@@ -1681,7 +1801,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -1781,7 +1901,7 @@
         </div>
     </div>
 
-<h4 id="weather-system" class="heading">Weather System <a href="#weather-system" aria-labelledby="weather-system">
+<h3 id="weather-system" class="heading">Weather System <a href="#weather-system" aria-labelledby="weather-system">
 
 
 
@@ -1796,7 +1916,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -1903,7 +2023,7 @@
         </div>
     </div>
 
-<h4 id="coriolis-system" class="heading">Coriolis System <a href="#coriolis-system" aria-labelledby="coriolis-system">
+<h3 id="coriolis-system" class="heading">Coriolis System <a href="#coriolis-system" aria-labelledby="coriolis-system">
 
 
 
@@ -1918,7 +2038,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -2022,7 +2142,7 @@
         </div>
     </div>
 
-<h4 id="spin-drift-system" class="heading">Spin Drift System <a href="#spin-drift-system" aria-labelledby="spin-drift-system">
+<h3 id="spin-drift-system" class="heading">Spin Drift System <a href="#spin-drift-system" aria-labelledby="spin-drift-system">
 
 
 
@@ -2037,7 +2157,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -2140,7 +2260,7 @@
         </div>
     </div>
 
-<h4 id="debug-system" class="heading">Debug System <a href="#debug-system" aria-labelledby="debug-system">
+<h3 id="debug-system" class="heading">Debug System <a href="#debug-system" aria-labelledby="debug-system">
 
 
 
@@ -2155,7 +2275,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h4>
+</a></h3>
 
 
 
@@ -2334,42 +2454,40 @@
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="na">[CreateAssetMenu(fileName = &#34;GravityWellSystem&#34;, menuName = &#34;My Game/Gravity Well System&#34;)]</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">GravityWellSystem</span> <span class="p">:</span> <span class="n">SystemBase</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [Header(&#34;Gravity Well Settings&#34;)]</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Transform</span> <span class="n">gravityWellCenter</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellStrength</span> <span class="p">=</span> <span class="m">10f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellRadius</span> <span class="p">=</span> <span class="m">50f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">  [Header(&#34;Gravity Well Settings&#34;)]</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">Transform</span> <span class="n">gravityWellCenter</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellStrength</span> <span class="p">=</span> <span class="m">10f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellRadius</span> <span class="p">=</span> <span class="m">50f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="kt">int</span> <span class="n">ExecutionOrder</span> <span class="p">=&gt;</span> <span class="n">SystemExecution</span><span class="p">.</span><span class="n">Physics</span> <span class="p">+</span> <span class="m">50</span><span class="p">;</span> <span class="c1">// After PhysicsSystem</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">PostTick</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaTime</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">active</span> <span class="p">||</span> <span class="n">gravityWellCenter</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="kt">int</span> <span class="n">ExecutionOrder</span> <span class="p">=&gt;</span> <span class="n">SystemExecution</span><span class="p">.</span><span class="n">Physics</span> <span class="p">+</span> <span class="m">50</span><span class="p">;</span> <span class="c1">// After PhysicsSystem</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Get component arrays</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">physicsComponents</span> <span class="p">=</span> <span class="n">manager</span><span class="p">.</span><span class="n">GetComponentArray</span><span class="p">&lt;</span><span class="n">PhysicsComponent</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">PostTick</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaTime</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Process all entities with physics components</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">BallisticsManager</span><span class="p">.</span><span class="n">MaxEntities</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(!</span><span class="n">active</span> <span class="p">||</span> <span class="n">gravityWellCenter</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="c1">// Get component arrays</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">physicsComponents</span> <span class="p">=</span> <span class="n">manager</span><span class="p">.</span><span class="n">GetComponentArray</span><span class="p">&lt;</span><span class="n">PhysicsComponent</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="c1">// Process all entities with physics components</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">BallisticsManager</span><span class="p">.</span><span class="n">MaxEntities</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(!</span><span class="n">manager</span><span class="p">.</span><span class="n">entities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            
-</span></span><span class="line"><span class="cl">            <span class="k">ref</span> <span class="kt">var</span> <span class="n">physics</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">physicsComponents</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">            
-</span></span><span class="line"><span class="cl">            <span class="c1">// Calculate distance to gravity well</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Vector3</span> <span class="n">toWell</span> <span class="p">=</span> <span class="n">gravityWellCenter</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">physics</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="kt">float</span> <span class="n">distance</span> <span class="p">=</span> <span class="n">toWell</span><span class="p">.</span><span class="n">magnitude</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            
-</span></span><span class="line"><span class="cl">            <span class="c1">// Apply gravity well force if within radius</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="p">&lt;</span> <span class="n">gravityWellRadius</span> <span class="p">&amp;&amp;</span> <span class="n">distance</span> <span class="p">&gt;</span> <span class="m">0.1f</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="kt">float</span> <span class="n">force</span> <span class="p">=</span> <span class="n">gravityWellStrength</span> <span class="p">/</span> <span class="p">(</span><span class="n">distance</span> <span class="p">*</span> <span class="n">distance</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">                <span class="n">Vector3</span> <span class="n">gravityForce</span> <span class="p">=</span> <span class="n">toWell</span><span class="p">.</span><span class="n">normalized</span> <span class="p">*</span> <span class="n">force</span> <span class="p">*</span> <span class="n">physics</span><span class="p">.</span><span class="n">mass</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">                
-</span></span><span class="line"><span class="cl">                <span class="c1">// Apply force</span>
-</span></span><span class="line"><span class="cl">                <span class="n">physics</span><span class="p">.</span><span class="n">velocity</span> <span class="p">+=</span> <span class="n">gravityForce</span> <span class="p">*</span> <span class="n">deltaTime</span> <span class="p">/</span> <span class="n">physics</span><span class="p">.</span><span class="n">mass</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(!</span><span class="n">manager</span><span class="p">.</span><span class="n">entities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="k">ref</span> <span class="kt">var</span> <span class="n">physics</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">physicsComponents</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// Calculate distance to gravity well</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Vector3</span> <span class="n">toWell</span> <span class="p">=</span> <span class="n">gravityWellCenter</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">physics</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">float</span> <span class="n">distance</span> <span class="p">=</span> <span class="n">toWell</span><span class="p">.</span><span class="n">magnitude</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// Apply gravity well force if within radius</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="p">&lt;</span> <span class="n">gravityWellRadius</span> <span class="p">&amp;&amp;</span> <span class="n">distance</span> <span class="p">&gt;</span> <span class="m">0.1f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">force</span> <span class="p">=</span> <span class="n">gravityWellStrength</span> <span class="p">/</span> <span class="p">(</span><span class="n">distance</span> <span class="p">*</span> <span class="n">distance</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Vector3</span> <span class="n">gravityForce</span> <span class="p">=</span> <span class="n">toWell</span><span class="p">.</span><span class="n">normalized</span> <span class="p">*</span> <span class="n">force</span> <span class="p">*</span> <span class="n">physics</span><span class="p">.</span><span class="n">mass</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          
+</span></span><span class="line"><span class="cl">        <span class="c1">// Apply force</span>
+</span></span><span class="line"><span class="cl">        <span class="n">physics</span><span class="p">.</span><span class="n">velocity</span> <span class="p">+=</span> <span class="n">gravityForce</span> <span class="p">*</span> <span class="n">deltaTime</span> <span class="p">/</span> <span class="n">physics</span><span class="p">.</span><span class="n">mass</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 
 
@@ -2388,7 +2506,7 @@
         </div>
     </div>
 
-<h3 id="simple-fps" class="heading">Simple FPS <a href="#simple-fps" aria-labelledby="simple-fps">
+<h2 id="simple-fps" class="heading">Simple FPS <a href="#simple-fps" aria-labelledby="simple-fps">
 
 
 
@@ -2403,7 +2521,7 @@
     <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
     &nbsp;
-</a></h3>
+</a></h2>
 <p><code>SimpleFPS</code> is an educational first-person controller demo that showcases <code>True Ballistics</code> integration. <strong>It&rsquo;s designed for learning and prototyping, not production use.</strong></p>
 
 <h4 id="purpose" class="heading">Purpose <a href="#purpose" aria-labelledby="purpose">
@@ -2518,8 +2636,8 @@
 
     &nbsp;
 </a></h4>
-<p>✅ <strong>Use for</strong>: Learning, prototyping, testing weapon configurations<br />
-❌ <strong>Don&rsquo;t use for</strong>: Production games, complex gameplay systems</p>
+<p>✅ <strong>Use for</strong>: Learning, prototyping, testing weapon configurations</p>
+<p>❌ <strong>Don&rsquo;t use for</strong>: Production games, complex gameplay systems</p>
 
 
 
@@ -2673,12 +2791,32 @@
     <li>
       <ul>
         <li></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#how-to-use">How to Use</a></li>
-        <li><a href="#systems">Systems</a></li>
+      </ul>
+    </li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#how-to-use">How to Use</a>
+      <ul>
+        <li><a href="#add-systems">Add systems</a></li>
+      </ul>
+    </li>
+    <li><a href="#systems">Systems</a>
+      <ul>
+        <li><a href="#physics-system">Physics System</a></li>
+        <li><a href="#lifecycle-system">Lifecycle System</a></li>
+        <li><a href="#collision-system">Collision System</a></li>
+        <li><a href="#ricochet-system">Ricochet System</a></li>
+        <li><a href="#penetration-system">Penetration System</a></li>
+        <li><a href="#tracer-system">Tracer System</a></li>
+        <li><a href="#weather-system">Weather System</a></li>
+        <li><a href="#coriolis-system">Coriolis System</a></li>
+        <li><a href="#spin-drift-system">Spin Drift System</a></li>
+        <li><a href="#debug-system">Debug System</a></li>
         <li><a href="#customs-systems">Customs Systems</a></li>
-        <li><a href="#simple-fps">Simple FPS</a></li>
+      </ul>
+    </li>
+    <li><a href="#simple-fps">Simple FPS</a>
+      <ul>
+        <li></li>
       </ul>
     </li>
   </ul>

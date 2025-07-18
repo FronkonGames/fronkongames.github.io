@@ -41,16 +41,18 @@ A comprehensive, **physically-accurate** ballistics simulation system for Unity 
 ❌ **Networking Solution**: Designed for single-player simulations, not multiplayer networking.
 ❌ **Energy Weapons or Propelled Projectiles**: Designed for ballistic projectiles only, doesn't support laser weapons, plasma guns, or self-propelled projectiles like rockets and missiles.
 
-### Requirements
+## Installation
+
+Requirements:
 
 * Unity 6000.0 LTS or newer.
 
-### Installation
+Installation:
 
 1. Download and import the `True Ballistics` asset from the Unity Asset Store into your Unity project.
 3. No additional setup is required. The asset is ready to use out of the box!
 
-### How to Use
+## How to Use
 
 The `BallisticsManager` component is the central hub of the ballistics system. It manages the lightweight ECS, handles projectile spawning, and coordinates all ballistic systems.
 
@@ -58,7 +60,7 @@ Create an empty GameObject and add the `BallisticsManager` component (Fronkon Ga
 
 {{< image src="inspector_0.jpg" wrapper="col-9 mx-auto">}}
 
-###### Add systems
+### Add systems
 
 Systems are modules that take care of a task. You can add as many as you want in `Systems`, this way you will only use the ones you need.
 
@@ -107,7 +109,7 @@ You can create new weapons (and shells) from the `Project` window (Fronkon Games
 
 {{< image src="inspector_3.jpg" wrapper="col-9 mx-auto">}}
 
-### Systems
+## Systems
 
 `True Ballistics` uses a custom lightweight ECS architecture optimized for ballistics simulation:
 
@@ -115,7 +117,7 @@ You can create new weapons (and shells) from the `Project` window (Fronkon Games
 * **Components**: Data structures (PhysicsComponent, DragComponent, etc).
 * **Systems**: Logic processors that operate on entities with specific components.
 
-#### Physics System
+### Physics System
 
 {{< image src="inspector_4.jpg" wrapper="col-9 mx-auto">}}
 
@@ -158,7 +160,32 @@ Handles core ballistics physics including gravity, drag, and atmospheric effects
   - 145 m/s at 50,000 meters.
 - `Max Speed`: Maximum projectile velocity in m/s (default value is 299,792,458 m/s, the speed of light in vacuum).
 
-#### Lifecycle System
+If you add `Debug System` to the system list, you will be able to see the trajectories of the projectiles in the `Scene` window.
+
+{{< image src="physics_0.jpg" wrapper="col-9 mx-auto">}}
+
+The trajectory of the projectile will have these colors:
+
+{{< rawhtml >}}
+<center>
+{{< /rawhtml >}}
+
+| Color &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Initial Velocity |
+|----------|-------------------:|
+| Red | >=75% |
+| Orange | >=50% |
+| Yellow | >=25% |
+| Green | >=10% |
+| Gray | <10% |
+
+{{< rawhtml >}}
+</center>
+<br>
+{{< /rawhtml >}}
+
+**In general**, impacts in Green or Gray are not lethal.
+
+### Lifecycle System
 
 {{< image src="inspector_5.jpg" wrapper="col-9 mx-auto">}}
 
@@ -166,45 +193,45 @@ Manages projectile lifecycle with configurable termination rules. **It is essent
 
 If any of the following (active) rules are met, the projectile is deactivated.
 
-##### Max Lifetime Rule
+#### Max Lifetime Rule
 
 Deactivates the projectile if its lifetime has exceeded a certain limit.
 
-##### Min Speed Percentage Rule
+#### Min Speed Percentage Rule
 
 Deactivates the projectile if its speed is below a certain percentage.
 
-##### Min Bounds Rule
+#### Min Bounds Rule
 
 Deactivates the projectile if its coordinates are less than a certain limit.
 
-##### Max Bounds Rule
+#### Max Bounds Rule
 
 Deactivates the projectile if its coordinates are greater than a certain limit.
 
-##### Stationary Rule
+#### Stationary Rule
 
 Deactivates the projectile if it has been stationary for a certain amount of time.
 
-##### Max Distance Rule
+#### Max Distance Rule
 
 Deactivates the projectile if it has traveled a certain linear distance from its point of origin.
 
-##### One Collision Rule
+#### One Collision Rule
 
 Deactivates the projectile after its first collision.
 
 If you use the `Ricochet System`, a bouncing projectile **does not count for this rule**.
 
-##### Ricochet Rule
+#### Ricochet Rule
 
 Deactivates the projectile if a ricochet occurred with an angle lower than a certain limit.
 
-##### Ricochet Failed Rule
+#### Ricochet Failed Rule
 
 If true, projectiles are deactivated upon any impact that does not result in a ricochet. This overrides `One Collision Rule` if both are true.
 
-#### Collision System
+### Collision System
 
 {{< image src="inspector_6.jpg" wrapper="col-9 mx-auto">}}
 
@@ -261,7 +288,7 @@ Objects with Colliders and physics ([RigidBody](https://docs.unity3d.com/Manual/
 
 Neither create bullet marks or particles at the point of impact, although you can see how this is done in the demo in the `HolesManager` and `SparksManager` classes. Both solutions are quite rudimentary (enough for the purposes of the demo) so **I do not recommend** using them in production environments.
 
-#### Ricochet System
+### Ricochet System
 
 {{< image src="inspector_7.jpg" wrapper="col-9 mx-auto">}}
 
@@ -275,7 +302,7 @@ Realistic ricochet simulation based on impact angle and material properties.
 
 Once added to the systems, you can subscribe to the `OnProjectileRicochet` events to receive information on each ricochet.
 
-#### Penetration System
+### Penetration System
 
 {{< image src="inspector_8.jpg" wrapper="col-9 mx-auto">}}
 
@@ -295,7 +322,7 @@ Advanced penetration mechanics with energy-based calculations.
 SECTION UNDER CONSTRUCTION
 {{< /alert >}}
 
-#### Tracer System
+### Tracer System
 
 {{< image src="inspector_9.jpg" wrapper="col-9 mx-auto">}}
 
@@ -311,7 +338,7 @@ GPU-accelerated visual tracer rendering.
 SECTION UNDER CONSTRUCTION
 {{< /alert >}}
 
-#### Weather System
+### Weather System
 
 {{< image src="inspector_10.jpg" wrapper="col-9 mx-auto">}}
 
@@ -333,7 +360,7 @@ Environmental effects simulation using ICAO Standard Atmosphere.
 SECTION UNDER CONSTRUCTION
 {{< /alert >}}
 
-#### Coriolis System
+### Coriolis System
 
 {{< image src="inspector_11.jpg" wrapper="col-9 mx-auto">}}
 
@@ -352,7 +379,7 @@ Coriolis effect simulation for long-range ballistics.
 SECTION UNDER CONSTRUCTION
 {{< /alert >}}
 
-#### Spin Drift System
+### Spin Drift System
 
 {{< image src="inspector_12.jpg" wrapper="col-9 mx-auto">}}
 
@@ -370,7 +397,7 @@ Spin-induced projectile drift for long-range simulation.
 SECTION UNDER CONSTRUCTION
 {{< /alert >}}
 
-#### Debug System
+### Debug System
 
 {{< image src="inspector_13.jpg" wrapper="col-9 mx-auto">}}
 
@@ -445,42 +472,40 @@ public class CustomSystem : SystemBase
 [CreateAssetMenu(fileName = "GravityWellSystem", menuName = "My Game/Gravity Well System")]
 public class GravityWellSystem : SystemBase
 {
-    [Header("Gravity Well Settings")]
-    public Transform gravityWellCenter;
-    public float gravityWellStrength = 10f;
-    public float gravityWellRadius = 50f;
+  [Header("Gravity Well Settings")]
+  public Transform gravityWellCenter;
+  public float gravityWellStrength = 10f;
+  public float gravityWellRadius = 50f;
+  public override int ExecutionOrder => SystemExecution.Physics + 50; // After PhysicsSystem
+  public override void PostTick(float deltaTime)
+  {
+    if (!active || gravityWellCenter == null) return;
     
-    public override int ExecutionOrder => SystemExecution.Physics + 50; // After PhysicsSystem
+    // Get component arrays
+    var physicsComponents = manager.GetComponentArray<PhysicsComponent>();
     
-    public override void PostTick(float deltaTime)
+    // Process all entities with physics components
+    for (int i = 0; i < BallisticsManager.MaxEntities; i++)
     {
-        if (!active || gravityWellCenter == null) return;
-        
-        // Get component arrays
-        var physicsComponents = manager.GetComponentArray<PhysicsComponent>();
-        
-        // Process all entities with physics components
-        for (int i = 0; i < BallisticsManager.MaxEntities; i++)
-        {
-            if (!manager.entities[i]) continue;
-            
-            ref var physics = ref physicsComponents[i];
-            
-            // Calculate distance to gravity well
-            Vector3 toWell = gravityWellCenter.position - physics.position;
-            float distance = toWell.magnitude;
-            
-            // Apply gravity well force if within radius
-            if (distance < gravityWellRadius && distance > 0.1f)
-            {
-                float force = gravityWellStrength / (distance * distance);
-                Vector3 gravityForce = toWell.normalized * force * physics.mass;
-                
-                // Apply force
-                physics.velocity += gravityForce * deltaTime / physics.mass;
-            }
-        }
+      if (!manager.entities[i]) continue;
+      
+      ref var physics = ref physicsComponents[i];
+      
+      // Calculate distance to gravity well
+      Vector3 toWell = gravityWellCenter.position - physics.position;
+      float distance = toWell.magnitude;
+      
+      // Apply gravity well force if within radius
+      if (distance < gravityWellRadius && distance > 0.1f)
+      {
+        float force = gravityWellStrength / (distance * distance);
+        Vector3 gravityForce = toWell.normalized * force * physics.mass;
+          
+        // Apply force
+        physics.velocity += gravityForce * deltaTime / physics.mass;
+      }
     }
+  }
 }
 ```
 
@@ -488,7 +513,7 @@ public class GravityWellSystem : SystemBase
 SECTION UNDER CONSTRUCTION
 {{< /alert >}}
 
-### Simple FPS
+## Simple FPS
 
 `SimpleFPS` is an educational first-person controller demo that showcases `True Ballistics` integration. **It's designed for learning and prototyping, not production use.**
 
@@ -527,6 +552,7 @@ SECTION UNDER CONSTRUCTION
 #### Usage Guidelines
 
 ✅ **Use for**: Learning, prototyping, testing weapon configurations
+
 ❌ **Don't use for**: Production games, complex gameplay systems
 
 {{< alert color="warning" >}}
