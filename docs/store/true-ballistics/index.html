@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/true-ballistics/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:00+01:00">
-    <meta property="article:modified_time" content="2025-07-18T18:30:56+02:00">
+    <meta property="article:modified_time" content="2025-07-18T19:18:19+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/true-ballistics-1280x640.jpg">
 <meta property="og:image:alt" content="True Ballistics">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:00CET",
-      "dateModified": "2025-07-18T18:30:56CET",
+      "dateModified": "2025-07-18T19:18:19CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/true-ballistics/#/schema/breadcrumb/1"
       },
@@ -1564,6 +1564,80 @@
 <li><strong>DestroyOnHit</strong>: The object is destroyed on impact.</li>
 <li><strong>NonKinematicOnHit</strong>: Changes a Kinematic object to Non Kinematic on impact.</li>
 </ul>
+<p>If you add <code>Debug System</code> to the system list, you will be able to see the impacts of the projectiles (a circle with a diagonal cross) in the <code>Scene</code> window.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/collision_0-2800x2948.jpg"
+            
+            
+            srcset="/store/true-ballistics/collision_0-576x606.webp 576w, /store/true-ballistics/collision_0-768x808.webp 768w, /store/true-ballistics/collision_0-992x1044.webp 992w, /store/true-ballistics/collision_0-1200x1263.webp 1200w, /store/true-ballistics/collision_0-1400x1474.webp 1400w, /store/true-ballistics/collision_0-2800x2948.webp 2800w" sizes="100vw"
+            height="2948"
+            width="2800"
+            >
+</div><br>
 <p>Objects with Colliders and physics (<a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">RigidBody</a>) <strong>do not receive any physical impulse</strong> when hitting a projectile (it is not the goal of this library). However you can consult the <code>RigidBodyManager</code> class to see an example of how to do it.</p>
 <p>Neither create bullet marks or particles at the point of impact, although you can see how this is done in the demo in the <code>HolesManager</code> and <code>SparksManager</code> classes. Both solutions are quite rudimentary (enough for the purposes of the demo) so <strong>I do not recommend</strong> using them in production environments.</p>
 
@@ -1664,7 +1738,81 @@
 <li>Material-specific restitution.</li>
 <li>Energy retention modeling.</li>
 </ul>
-<p>Once added to the systems, you can subscribe to the <code>OnProjectileRicochet</code> events to receive information on each ricochet.</p>
+<p>Once added to the systems, you can subscribe to the <code>OnProjectileRicochet</code> events to receive information on each ricochet. If you use <code>Collision System</code>, an <code>OnProjectileHit</code> event will also be emitted.</p>
+<p>If you add <code>Debug System</code> to the system list, you will be able to see the ricochets (a square with an arrow indicating rebound) in the <code>Scene</code> window.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/ricochet_0-2800x2990.jpg"
+            
+            
+            srcset="/store/true-ballistics/ricochet_0-576x615.webp 576w, /store/true-ballistics/ricochet_0-768x820.webp 768w, /store/true-ballistics/ricochet_0-992x1059.webp 992w, /store/true-ballistics/ricochet_0-1200x1282.webp 1200w, /store/true-ballistics/ricochet_0-1400x1495.webp 1400w, /store/true-ballistics/ricochet_0-2800x2990.webp 2800w" sizes="100vw"
+            height="2990"
+            width="2800"
+            >
+</div><br>
 
 <h3 id="penetration-system" class="heading">Penetration System <a href="#penetration-system" aria-labelledby="penetration-system">
 
@@ -1755,7 +1903,7 @@
             width="2800"
             >
 </div><br>
-<p>Advanced penetration mechanics with energy-based calculations.</p>
+<p>Advanced penetration mechanics with energy-based calculations and materials.</p>
 <p><strong>Features</strong>:</p>
 <ul>
 <li>Entry/exit point calculation.</li>
@@ -1765,9 +1913,12 @@
 </ul>
 <p><strong>Configuration</strong>:</p>
 <ul>
-<li><code>energyScale</code>: Energy scaling factor.</li>
-<li><code>maxEntryDeflectionAngleDegrees</code>: Maximum entry deflection.</li>
+<li><code>Layer Mask</code>: Layers considered for penetration raycasts.</li>
+<li><code>Energy Scale</code>: Scaling factor applied to material strength when computing required energy. Lower than 1.0 will make the projectile more likely to penetrate.</li>
+<li><code>Max Entry Deflection Angle</code>: Maximum angle in degrees by which a projectile&rsquo;s path can be deflected upon entering a surface, based on incidence angle.</li>
 </ul>
+<p>This system (and actually Collision and Ricochet) uses <code>Ballistic Material</code> for its calculations. If you do not assign any material to the objects, it will use <code>Default Material</code> from <code>Ballistic Manager</code> (see above). If you do not assign any, the &lsquo;Concrete&rsquo; material will be used.</p>
+<p>In the <code>FronkonGames/TrueBallistics/Data/Materials</code> folder you have a few materials already defined. You can also create your own (they are ScriptableObjects) from the <code>Project</code> window and using the menu <code>Fronkon Games → True Ballistics → Material Data</code>.</p>
 
 
 
@@ -1779,12 +1930,241 @@
 
 
 
-<div class="d-flex alert alert-warning " role="alert">
+
+
+
+
+
+
+
+
+
         
-        <div class="flex-grow-1 my-auto">
-            SECTION UNDER CONSTRUCTION
-        </div>
-    </div>
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/material_0-2800x2414.jpg"
+            
+            
+            srcset="/store/true-ballistics/material_0-576x497.webp 576w, /store/true-ballistics/material_0-768x662.webp 768w, /store/true-ballistics/material_0-992x855.webp 992w, /store/true-ballistics/material_0-1200x1035.webp 1200w, /store/true-ballistics/material_0-1400x1207.webp 1400w, /store/true-ballistics/material_0-2800x2414.webp 2800w" sizes="100vw"
+            height="2414"
+            width="2800"
+            >
+</div><br>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li><code>Description</code>: Description of the material.</li>
+<li><code>Min Angle For Ricochet Prob</code>: Angle (degrees) from surface normal. Impacts at angles greater than this (grazing angles) have increasing ricochet probability.</li>
+<li><code>Guaranteed Ricochet Angle</code>: Angle (degrees) from surface normal. Impacts at angles greater than this (very grazing angles) will always ricochet if probability is met.</li>
+<li><code>Ricochet Probability Curve</code>: Curve defining ricochet probability (Y-axis, 0-1) based on impact angle with surface normal (X-axis, 0-90 degrees). Higher angles = more grazing.</li>
+<li><code>Restitution Normal</code>: Coefficient of restitution for the velocity component normal to the surface (0 = no bounce, 1 = perfect bounce).</li>
+<li><code>Restitution Tangent</code>: Coefficient of restitution for the velocity component tangential to the surface (0 = sticks, 1 = no friction).</li>
+<li><code>Energy Retention Factor</code>: Overall percentage of kinetic energy retained after ricochet (0 = all lost, 1 = all retained). Applied AFTER restitution effects if both are used conceptually.</li>
+<li><code>Density</code>: Density of the material in kg/m^3. Used for penetration calculations.</li>
+<li><code>Yield Strength</code>: Yield strength of the material in MPa. Higher values resist penetration.</li>
+</ul>
+<p>Add the <code>Ballistic Material</code> component to the objects you want to specify a material. Remember that they must be at the same level as the collider that detects the impact.</p>
+<p>In <code>Ballistic Material</code> you can activate <code>Use Material Cache</code> to improve performance, but note that if you do so, you will not be able to change at runtime the material of the objects.</p>
+<p>Three events related to projectile penetration are use:</p>
+<ul>
+<li><strong>OnProjectilePenetrationEnter</strong>: When a projectile penetration starts (enters an object).</li>
+<li><strong>OnProjectilePenetrationExit</strong>: When a projectile exits an object after penetration.</li>
+<li><strong>OnProjectilePenetrationStuck</strong>: When a projectile gets stuck inside an object.</li>
+</ul>
+<p>If you add <code>Debug System</code> to the system list, you will be able to see the the entry point (a circle with a vertical cross), the trajectory (in cyan color) and the exit point (a circle with a vertical cross).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/penetration_0-2800x1834.jpg"
+            
+            
+            srcset="/store/true-ballistics/penetration_0-576x377.webp 576w, /store/true-ballistics/penetration_0-768x503.webp 768w, /store/true-ballistics/penetration_0-992x650.webp 992w, /store/true-ballistics/penetration_0-1200x786.webp 1200w, /store/true-ballistics/penetration_0-1400x917.webp 1400w, /store/true-ballistics/penetration_0-2800x1834.webp 2800w" sizes="100vw"
+            height="1834"
+            width="2800"
+            >
+</div><br>
+<p>If the projectile gets stuck inside the object, you will see its trajectory (in magenta) and the point where the projectile is (magenta circle with vertical cross).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/penetration_1-2800x2326.jpg"
+            
+            
+            srcset="/store/true-ballistics/penetration_1-576x479.webp 576w, /store/true-ballistics/penetration_1-768x638.webp 768w, /store/true-ballistics/penetration_1-992x824.webp 992w, /store/true-ballistics/penetration_1-1200x997.webp 1200w, /store/true-ballistics/penetration_1-1400x1163.webp 1400w, /store/true-ballistics/penetration_1-2800x2326.webp 2800w" sizes="100vw"
+            height="2326"
+            width="2800"
+            >
+</div><br>
+<p>Some considerations:</p>
+<ul>
+<li>Objects with a width of less than 1mm will be ignored.</li>
+<li>On objects 10 meters or more wide, penetration will always fail.</li>
+</ul>
 
 <h3 id="tracer-system" class="heading">Tracer System <a href="#tracer-system" aria-labelledby="tracer-system">
 

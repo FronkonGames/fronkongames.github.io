@@ -284,6 +284,10 @@ Check these classes in `FronkonGames/TrueBallistics/Demos/Scripts` for more exam
 * **DestroyOnHit**: The object is destroyed on impact.
 * **NonKinematicOnHit**: Changes a Kinematic object to Non Kinematic on impact.
 
+If you add `Debug System` to the system list, you will be able to see the impacts of the projectiles (a circle with a diagonal cross) in the `Scene` window.
+
+{{< image src="collision_0.jpg" wrapper="col-9 mx-auto">}}
+
 Objects with Colliders and physics ([RigidBody](https://docs.unity3d.com/Manual/rigidbody-physics-section.html)) **do not receive any physical impulse** when hitting a projectile (it is not the goal of this library). However you can consult the `RigidBodyManager` class to see an example of how to do it.
 
 Neither create bullet marks or particles at the point of impact, although you can see how this is done in the demo in the `HolesManager` and `SparksManager` classes. Both solutions are quite rudimentary (enough for the purposes of the demo) so **I do not recommend** using them in production environments.
@@ -300,13 +304,18 @@ Realistic ricochet simulation based on impact angle and material properties.
 - Material-specific restitution.
 - Energy retention modeling.
 
-Once added to the systems, you can subscribe to the `OnProjectileRicochet` events to receive information on each ricochet.
+Once added to the systems, you can subscribe to the `OnProjectileRicochet` events to receive information on each ricochet. If you use `Collision System`, an `OnProjectileHit` event will also be emitted.
+
+If you add `Debug System` to the system list, you will be able to see the ricochets (a square with an arrow indicating rebound) in the `Scene` window.
+
+{{< image src="ricochet_0.jpg" wrapper="col-9 mx-auto">}}
+
 
 ### Penetration System
 
 {{< image src="inspector_8.jpg" wrapper="col-9 mx-auto">}}
 
-Advanced penetration mechanics with energy-based calculations.
+Advanced penetration mechanics with energy-based calculations and materials. 
 
 **Features**:
 - Entry/exit point calculation.
@@ -315,12 +324,48 @@ Advanced penetration mechanics with energy-based calculations.
 - Stuck projectile handling.
 
 **Configuration**:
-- `energyScale`: Energy scaling factor.
-- `maxEntryDeflectionAngleDegrees`: Maximum entry deflection.
+- `Layer Mask`: Layers considered for penetration raycasts.
+- `Energy Scale`: Scaling factor applied to material strength when computing required energy. Lower than 1.0 will make the projectile more likely to penetrate.
+- `Max Entry Deflection Angle`: Maximum angle in degrees by which a projectile's path can be deflected upon entering a surface, based on incidence angle.
 
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
-{{< /alert >}}
+This system (and actually Collision and Ricochet) uses `Ballistic Material` for its calculations. If you do not assign any material to the objects, it will use `Default Material` from `Ballistic Manager` (see above). If you do not assign any, the 'Concrete' material will be used.
+
+In the `FronkonGames/TrueBallistics/Data/Materials` folder you have a few materials already defined. You can also create your own (they are ScriptableObjects) from the `Project` window and using the menu `Fronkon Games → True Ballistics → Material Data`.
+
+{{< image src="material_0.jpg" wrapper="col-9 mx-auto">}}
+
+**Configuration**:
+- `Description`: Description of the material.
+- `Min Angle For Ricochet Prob`: Angle (degrees) from surface normal. Impacts at angles greater than this (grazing angles) have increasing ricochet probability.
+- `Guaranteed Ricochet Angle`: Angle (degrees) from surface normal. Impacts at angles greater than this (very grazing angles) will always ricochet if probability is met.
+- `Ricochet Probability Curve`: Curve defining ricochet probability (Y-axis, 0-1) based on impact angle with surface normal (X-axis, 0-90 degrees). Higher angles = more grazing.
+- `Restitution Normal`: Coefficient of restitution for the velocity component normal to the surface (0 = no bounce, 1 = perfect bounce).
+- `Restitution Tangent`: Coefficient of restitution for the velocity component tangential to the surface (0 = sticks, 1 = no friction).
+- `Energy Retention Factor`: Overall percentage of kinetic energy retained after ricochet (0 = all lost, 1 = all retained). Applied AFTER restitution effects if both are used conceptually.
+- `Density`: Density of the material in kg/m^3. Used for penetration calculations.
+- `Yield Strength`: Yield strength of the material in MPa. Higher values resist penetration.
+
+Add the `Ballistic Material` component to the objects you want to specify a material. Remember that they must be at the same level as the collider that detects the impact.
+
+In `Ballistic Material` you can activate `Use Material Cache` to improve performance, but note that if you do so, you will not be able to change at runtime the material of the objects.
+
+Three events related to projectile penetration are use:
+
+* **OnProjectilePenetrationEnter**: When a projectile penetration starts (enters an object).
+* **OnProjectilePenetrationExit**: When a projectile exits an object after penetration.
+* **OnProjectilePenetrationStuck**: When a projectile gets stuck inside an object.
+
+If you add `Debug System` to the system list, you will be able to see the the entry point (a circle with a vertical cross), the trajectory (in cyan color) and the exit point (a circle with a vertical cross).
+
+{{< image src="penetration_0.jpg" wrapper="col-9 mx-auto">}}
+
+If the projectile gets stuck inside the object, you will see its trajectory (in magenta) and the point where the projectile is (magenta circle with vertical cross).
+
+{{< image src="penetration_1.jpg" wrapper="col-9 mx-auto">}}
+
+Some considerations:
+* Objects with a width of less than 1mm will be ignored.
+* On objects 10 meters or more wide, penetration will always fail.
 
 ### Tracer System
 
