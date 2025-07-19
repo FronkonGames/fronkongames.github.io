@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/true-ballistics/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:00+01:00">
-    <meta property="article:modified_time" content="2025-07-18T19:18:19+02:00">
+    <meta property="article:modified_time" content="2025-07-19T01:34:34+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/true-ballistics-1280x640.jpg">
 <meta property="og:image:alt" content="True Ballistics">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:00CET",
-      "dateModified": "2025-07-18T19:18:19CET",
+      "dateModified": "2025-07-19T01:34:34CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/true-ballistics/#/schema/breadcrumb/1"
       },
@@ -896,6 +896,102 @@
             width="2800"
             >
 </div><br>
+<p>This is an example of the weapons included:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/weapondata_0-2800x3386.jpg"
+            
+            
+            srcset="/store/true-ballistics/weapondata_0-576x696.webp 576w, /store/true-ballistics/weapondata_0-768x929.webp 768w, /store/true-ballistics/weapondata_0-992x1199.webp 992w, /store/true-ballistics/weapondata_0-1200x1451.webp 1200w, /store/true-ballistics/weapondata_0-1400x1693.webp 1400w, /store/true-ballistics/weapondata_0-2800x3386.webp 2800w" sizes="100vw"
+            height="3386"
+            width="2800"
+            >
+</div><br>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li><code>Weapon Name</code>: The name of the weapon.</li>
+<li><code>Type</code>: The type of weapon.</li>
+<li><code>Muzzle Velocity</code>: The muzzle velocity of the ammo in meters per second.</li>
+<li><code>Magazine Size</code>: The size of the magazine.</li>
+<li><code>Barrel Length</code>: The length of the barrel in centimeters.</li>
+<li><code>Twist Rate</code>: The twist rate of the ammo in inches per 1 meter.</li>
+<li><code>Rate Of Fire Rpm</code>: The rate of fire in rounds per minute.</li>
+<li><code>Recoil Vertical Deg</code>: The vertical recoil per shot in degrees.</li>
+<li><code>Recoil Horizontal Deg</code>: The horizontal recoil per shot in degrees.</li>
+<li><code>Recoil Recovery Ms</code>: The time it takes for recoil to recover in milliseconds.</li>
+<li><code>Reload Time Tactical</code>: The time it takes to perform a tactical reload in seconds.</li>
+<li><code>Reload Time Empty</code>: The time it takes to perform a reload from empty in seconds.</li>
+<li><code>Dispersion MOA</code>: The dispersion of the weapon in Minutes of Angle (MOA).</li>
+<li><code>Jam Probability Percent</code>: The probability of the weapon jamming, as a percentage.</li>
+<li><code>Ammo</code>: The name of the ammo.</li>
+<li><code>Ammo Mass</code>: The mass of the ammo in kilograms.</li>
+<li><code>Ammo Diameter</code>: The diameter of the ammo in meters.</li>
+<li><code>Drag Model</code>: The drag model of the ammo.</li>
+<li><code>Ammo Ballistic Coefficient</code>: The ballistic coefficient of the ammo.</li>
+</ul>
 
 <h2 id="systems" class="heading">Systems <a href="#systems" aria-labelledby="systems">
 
@@ -1172,7 +1268,23 @@
 </center>
 <br>
 
-<p><strong>In general</strong>, impacts in Green or Gray are not lethal.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            <strong>In general</strong>, impacts in Green or Gray are not lethal.
+        </div>
+    </div>
 
 <h3 id="lifecycle-system" class="heading">Lifecycle System <a href="#lifecycle-system" aria-labelledby="lifecycle-system">
 
@@ -1638,8 +1750,40 @@
             width="2800"
             >
 </div><br>
-<p>Objects with Colliders and physics (<a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">RigidBody</a>) <strong>do not receive any physical impulse</strong> when hitting a projectile (it is not the goal of this library). However you can consult the <code>RigidBodyManager</code> class to see an example of how to do it.</p>
-<p>Neither create bullet marks or particles at the point of impact, although you can see how this is done in the demo in the <code>HolesManager</code> and <code>SparksManager</code> classes. Both solutions are quite rudimentary (enough for the purposes of the demo) so <strong>I do not recommend</strong> using them in production environments.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            Objects with Colliders and physics (<a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">RigidBody</a>) <strong>do not receive any physical impulse</strong> when hitting a projectile (it is not the goal of this library). However you can consult the <code>RigidBodyManager</code> class to see an example of how to do it.
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            Neither create bullet marks or particles at the point of impact, although you can see how this is done in the demo in the <code>HolesManager</code> and <code>SparksManager</code> classes. Both solutions are quite rudimentary (enough for the purposes of the demo) so <strong>I do not recommend</strong> using them in production environments.
+        </div>
+    </div>
 
 <h3 id="ricochet-system" class="heading">Ricochet System <a href="#ricochet-system" aria-labelledby="ricochet-system">
 
@@ -2005,7 +2149,23 @@
 <li><code>Yield Strength</code>: Yield strength of the material in MPa. Higher values resist penetration.</li>
 </ul>
 <p>Add the <code>Ballistic Material</code> component to the objects you want to specify a material. Remember that they must be at the same level as the collider that detects the impact.</p>
-<p>In <code>Ballistic Material</code> you can activate <code>Use Material Cache</code> to improve performance, but note that if you do so, you will not be able to change at runtime the material of the objects.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            In <code>Ballistic Material</code> you can activate <code>Use Material Cache</code> to improve performance, but note that if you do so, you will not be able to change at runtime the material of the objects.
+        </div>
+    </div>
 <p>Three events related to projectile penetration are use:</p>
 <ul>
 <li><strong>OnProjectilePenetrationEnter</strong>: When a projectile penetration starts (enters an object).</li>
@@ -2160,11 +2320,27 @@
             width="2800"
             >
 </div><br>
-<p>Some considerations:</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            <p>Some considerations:</p>
 <ul>
 <li>Objects with a width of less than 1mm will be ignored.</li>
 <li>On objects 10 meters or more wide, penetration will always fail.</li>
 </ul>
+        </div>
+    </div>
 
 <h3 id="tracer-system" class="heading">Tracer System <a href="#tracer-system" aria-labelledby="tracer-system">
 

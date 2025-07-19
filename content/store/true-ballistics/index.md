@@ -109,6 +109,31 @@ You can create new weapons (and shells) from the `Project` window (Fronkon Games
 
 {{< image src="inspector_3.jpg" wrapper="col-9 mx-auto">}}
 
+This is an example of the weapons included:
+
+{{< image src="weapondata_0.jpg" wrapper="col-9 mx-auto">}}
+
+**Configuration**:
+- `Weapon Name`: The name of the weapon.
+- `Type`: The type of weapon.
+- `Muzzle Velocity`: The muzzle velocity of the ammo in meters per second.
+- `Magazine Size`: The size of the magazine.
+- `Barrel Length`: The length of the barrel in centimeters.
+- `Twist Rate`: The twist rate of the ammo in inches per 1 meter.
+- `Rate Of Fire Rpm`: The rate of fire in rounds per minute.
+- `Recoil Vertical Deg`: The vertical recoil per shot in degrees.
+- `Recoil Horizontal Deg`: The horizontal recoil per shot in degrees.
+- `Recoil Recovery Ms`: The time it takes for recoil to recover in milliseconds.
+- `Reload Time Tactical`: The time it takes to perform a tactical reload in seconds.
+- `Reload Time Empty`: The time it takes to perform a reload from empty in seconds.
+- `Dispersion MOA`: The dispersion of the weapon in Minutes of Angle (MOA).
+- `Jam Probability Percent`: The probability of the weapon jamming, as a percentage.
+- `Ammo`: The name of the ammo.
+- `Ammo Mass`: The mass of the ammo in kilograms.
+- `Ammo Diameter`: The diameter of the ammo in meters.
+- `Drag Model`: The drag model of the ammo.
+- `Ammo Ballistic Coefficient`: The ballistic coefficient of the ammo.
+
 ## Systems
 
 `True Ballistics` uses a custom lightweight ECS architecture optimized for ballistics simulation:
@@ -183,7 +208,9 @@ The trajectory of the projectile will have these colors:
 <br>
 {{< /rawhtml >}}
 
+{{< alert color="light" >}}
 **In general**, impacts in Green or Gray are not lethal.
+{{< /alert >}}
 
 ### Lifecycle System
 
@@ -288,9 +315,13 @@ If you add `Debug System` to the system list, you will be able to see the impact
 
 {{< image src="collision_0.jpg" wrapper="col-9 mx-auto">}}
 
+{{< alert color="light" >}}
 Objects with Colliders and physics ([RigidBody](https://docs.unity3d.com/Manual/rigidbody-physics-section.html)) **do not receive any physical impulse** when hitting a projectile (it is not the goal of this library). However you can consult the `RigidBodyManager` class to see an example of how to do it.
+{{< /alert >}}
 
+{{< alert color="light" >}}
 Neither create bullet marks or particles at the point of impact, although you can see how this is done in the demo in the `HolesManager` and `SparksManager` classes. Both solutions are quite rudimentary (enough for the purposes of the demo) so **I do not recommend** using them in production environments.
+{{< /alert >}}
 
 ### Ricochet System
 
@@ -347,7 +378,9 @@ In the `FronkonGames/TrueBallistics/Data/Materials` folder you have a few materi
 
 Add the `Ballistic Material` component to the objects you want to specify a material. Remember that they must be at the same level as the collider that detects the impact.
 
+{{< alert color="light" >}}
 In `Ballistic Material` you can activate `Use Material Cache` to improve performance, but note that if you do so, you will not be able to change at runtime the material of the objects.
+{{< /alert >}}
 
 Three events related to projectile penetration are use:
 
@@ -363,9 +396,11 @@ If the projectile gets stuck inside the object, you will see its trajectory (in 
 
 {{< image src="penetration_1.jpg" wrapper="col-9 mx-auto">}}
 
+{{< alert color="light" >}}
 Some considerations:
 * Objects with a width of less than 1mm will be ignored.
 * On objects 10 meters or more wide, penetration will always fail.
+{{< /alert >}}
 
 ### Tracer System
 
