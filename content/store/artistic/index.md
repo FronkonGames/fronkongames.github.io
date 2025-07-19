@@ -101,7 +101,7 @@ If you are using an effect other than '**OneBit**' just change it to its name. C
 #
 ---
 ## One Bit {#onebit}
-{{< asset-header youtube="Yz9j7iXuDhY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000" demo="https://fronkongames.github.io/demos-artistic/onebit/" >}}
+{{< asset-header youtube="Yz9j7iXuDhY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/one-bit-216000" demo="https://fronkongames.github.io/demos-artistic/onebit/" warn="assets used in video and demo are not included">}}
 
 Get a distinctive look with '**One Bit**', an original and versatile effect that uses a special type of dithering algorithm based on Blue Noise, similar to that used at the award-winning '_Return of the Obra Dinn_'.
 
@@ -131,7 +131,7 @@ When '**Invert**' (_9_) is activated, the color is inverted.
 
 ---
 ## Oil Paint {#oilpaint}
-{{< asset-header youtube="A9jtFpXo02Q" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" demo="https://fronkongames.github.io/demos-artistic/oilpaint/" >}}
+{{< asset-header youtube="A9jtFpXo02Q" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-oil-paint-264134" demo="https://fronkongames.github.io/demos-artistic/oilpaint/" warn="assets used in video and demo are not included">}}
 
 Transform your games into pieces of art in a very easy way. Once installed, when you select your '_Universal Renderer Data_', you will have the following [Renderer Features](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.1/manual/urp-renderer-feature-how-to-add.html) to choose from:
 
@@ -170,7 +170,7 @@ In order to use this feature, you must enable '**Depth Texture**' in your camera
 
 ---
 ## Tilt Shift {#tiltshift}
-{{< asset-header youtube="ixqjMNnUSus" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tilt-shift-265465" demo="https://fronkongames.github.io/demos-artistic/tiltshift/" >}}
+{{< asset-header youtube="ixqjMNnUSus" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tilt-shift-265465" demo="https://fronkongames.github.io/demos-artistic/tiltshift/" warn="assets used in video and demo are not included">}}
 
 Used to simulate a miniature scene, something very used in cinema as in the [race scene](https://www.youtube.com/watch?v=QetnuKbo1XI) of '_The Social Network_'. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -188,7 +188,7 @@ In order to better adjust these parameters, you can activate '**Debug**' (_9_) t
 
 ---
 ## Photo {#photo}
-{{< asset-header youtube="LPs97XIfQTE" store="https://assetstore.unity.com/packages/slug/315961" demo="https://fronkongames.github.io/demos-artistic/photo/" >}}
+{{< asset-header youtube="LPs97XIfQTE" store="https://assetstore.unity.com/packages/slug/315961" demo="https://fronkongames.github.io/demos-artistic/photo/" warn="assets used in video and demo are not included">}}
 
 A versatile film camera simulator, offering a comprehensive suite of effects that mimic the charm and character of analog photography. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -269,7 +269,7 @@ For **Cinestill 800T** film users, the halation effect creates that distinctive 
 
 ---
 ## Color Isolation {#colorisolation}
-{{< asset-header youtube="XfHdKU1qTF4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-color-isolation-266086" demo="https://fronkongames.github.io/demos-artistic/colorisolation/" >}}
+{{< asset-header youtube="XfHdKU1qTF4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-color-isolation-266086" demo="https://fronkongames.github.io/demos-artistic/colorisolation/" warn="assets used in video and demo are not included">}}
 
 Isolates areas by color and applies effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -289,7 +289,7 @@ Once you have isolated the color you want, you can apply different effects to bo
 
 ---
 ## Sharpen {#sharpen}
-{{< asset-header youtube="Xjax-orCmVY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-sharpen-266728" demo="https://fronkongames.github.io/demos-artistic/sharpen/" >}}
+{{< asset-header youtube="Xjax-orCmVY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-sharpen-266728" demo="https://fronkongames.github.io/demos-artistic/sharpen/" warn="assets used in video and demo are not included">}}
 
 Enhances image details using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -317,7 +317,7 @@ To view in which areas of the image the effect is applied, activate '**Debug vie
 
 ---
 ## Tonemapper {#tonemapper}
-{{< asset-header youtube="XcLXlvqG5yU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" demo="https://fronkongames.github.io/demos-artistic/tonemapper/" >}}
+{{< asset-header youtube="XcLXlvqG5yU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" demo="https://fronkongames.github.io/demos-artistic/tonemapper/" warn="assets used in video and demo are not included">}}
 
 Maps wide range colors (HDR) into low dynamic range (LDR) using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -356,7 +356,7 @@ You can also modify the final color with the parameters offered by '**Color filt
 
 ---
 ## Comic {#comic}
-{{< asset-header youtube="W4t0Cnk1Q0U" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-comic-269586" demo="https://fronkongames.github.io/demos-artistic/comic/" >}}
+{{< asset-header youtube="W4t0Cnk1Q0U" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-comic-269586" demo="https://fronkongames.github.io/demos-artistic/comic/" warn="assets used in video and demo are not included">}}
 
 Simulates the printing technique used in comics and newspapers: [halftone](https://en.wikipedia.org/wiki/Halftone). Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -372,7 +372,7 @@ If you want to finely adjust the angle of each color point, you can modify it wi
 
 ---
 ## Neon {#neon}
-{{< asset-header youtube="nNVYDesYfF8" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-neon-270269" demo="https://fronkongames.github.io/demos-artistic/neon/" >}}
+{{< asset-header youtube="nNVYDesYfF8" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-neon-270269" demo="https://fronkongames.github.io/demos-artistic/neon/" warn="assets used in video and demo are not included">}}
 
 Neon synthwave effect highlighting the edges of the image with cycling colors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -392,7 +392,7 @@ In order to use this feature, you must enable '**Depth Texture**' in your camera
 
 ---
 ## Spark {#spark}
-{{< asset-header youtube="kgwMRlHzGxs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-spark-270898" demo="https://fronkongames.github.io/demos-artistic/spark/" >}}
+{{< asset-header youtube="kgwMRlHzGxs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-spark-270898" demo="https://fronkongames.github.io/demos-artistic/spark/" warn="assets used in video and demo are not included">}}
 
 Adds bloom and ray-of-light effects to the brightest areas. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -420,7 +420,7 @@ You don't want the effect to be generated on your particles? You can change when
 
 ---
 ## Radial Blur {#radialblur}
-{{< asset-header youtube="rSE8fjbire4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-radial-blur-271547" demo="https://fronkongames.github.io/demos-artistic/radialblur/" >}}
+{{< asset-header youtube="rSE8fjbire4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-radial-blur-271547" demo="https://fronkongames.github.io/demos-artistic/radialblur/" warn="assets used in video and demo are not included">}}
 
 Increases the feeling of speed and adrenaline! Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 

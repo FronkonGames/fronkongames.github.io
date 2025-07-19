@@ -189,7 +189,7 @@ If you are using an effect other than '**Cyberpunk**' just change it to its name
 
 ---
 ## Cyberpunk {#cyberpunk}
-{{< asset-header youtube="9JZdwytXLbA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cyberpunk-275005" demo="https://fronkongames.github.io/demos-luts/cyberpunk/">}}
+{{< asset-header youtube="9JZdwytXLbA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cyberpunk-275005" demo="https://fronkongames.github.io/demos-luts/cyberpunk/" warn="assets used in video and demo are not included">}}
 
 In '**Cyberpunk**' you will find the look you are looking for in your futuristic games. Includes **62 high quality LUTs**.
 
@@ -219,7 +219,7 @@ A retrofuturistism vibe (10 LUTs).
 
 ---
 ## Vintage {#vintage}
-{{< asset-header youtube="v052UeIjusk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-vintage-275594" demo="https://fronkongames.github.io/demos-luts/vintage/">}}
+{{< asset-header youtube="v052UeIjusk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-vintage-275594" demo="https://fronkongames.github.io/demos-luts/vintage/" warn="assets used in video and demo are not included">}}
 
 The vintage and retro look you're looking for is in '**Vintage**'. Includes **90 high quality LUTs**.
 
@@ -273,7 +273,7 @@ Different black and white balances (8 LUTs).
 
 ---
 ## Anime {#anime}
-{{< asset-header youtube="vCk9eIxhir4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-anime-276902" demo="https://fronkongames.github.io/demos-luts/anime/">}}
+{{< asset-header youtube="vCk9eIxhir4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-anime-276902" demo="https://fronkongames.github.io/demos-luts/anime/" warn="assets used in video and demo are not included">}}
 
 Vibrant tones, unique contrasts and a cinematic touch. Includes **58 high quality LUTs**.
 
@@ -309,7 +309,7 @@ Creomous yellow tones and contrasts (10 LUTs).
 
 ---
 ## Synthwave {#synthwave}
-{{< asset-header youtube="2pW7-FFgTUA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-synthwave-278499" demo="https://fronkongames.github.io/demos-luts/synthwave/">}}
+{{< asset-header youtube="2pW7-FFgTUA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-synthwave-278499" demo="https://fronkongames.github.io/demos-luts/synthwave/" warn="assets used in video and demo are not included">}}
 
 Neon-drenched cyberpunk worlds. Includes **50 high quality LUTs**.
 
@@ -317,7 +317,7 @@ Neon-drenched cyberpunk worlds. Includes **50 high quality LUTs**.
 
 ---
 ## Colors {#colors}
-{{< asset-header youtube="L-cWwo7O3IY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-colors-278789" demo="https://fronkongames.github.io/demos-luts/colors/">}}
+{{< asset-header youtube="L-cWwo7O3IY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-colors-278789" demo="https://fronkongames.github.io/demos-luts/colors/" warn="assets used in video and demo are not included">}}
 
 A rainbow of colors for your games. Includes **277 high quality LUTs**.
 
@@ -413,7 +413,7 @@ Vibrant and dynamic aesthetic (12 LUTs).
 
 ---
 ## Places {#places}
-{{< asset-header youtube="XpqdRRJdz4U" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-places-279132" demo="https://fronkongames.github.io/demos-luts/places/">}}
+{{< asset-header youtube="XpqdRRJdz4U" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-places-279132" demo="https://fronkongames.github.io/demos-luts/places/" warn="assets used in video and demo are not included">}}
 
 The right color for the right place. Includes **225 high quality LUTs**.
 
@@ -485,7 +485,7 @@ The richness of holiday colors (59 LUTs).
 
 ---
 ## Cinematic {#cinematic}
-{{< asset-header youtube="zhGBdWJ_8rI" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cinematic-279333" demo="https://fronkongames.github.io/demos-luts/cinematic/">}}
+{{< asset-header youtube="zhGBdWJ_8rI" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-cinematic-279333" demo="https://fronkongames.github.io/demos-luts/cinematic/" warn="assets used in video and demo are not included">}}
 
 The color of the movies, in your games. Includes **254 high quality cinematic LUTs**.
 
@@ -545,7 +545,7 @@ An instant dose of love (40 LUTs).
 
 ---
 ## Fantasy {#fantasy}
-{{< asset-header youtube="kNT1Au3LY6s" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-fantasy-279569" demo="https://fronkongames.github.io/demos-luts/fantasy/">}}
+{{< asset-header youtube="kNT1Au3LY6s" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-fantasy-279569" demo="https://fronkongames.github.io/demos-luts/fantasy/" warn="assets used in video and demo are not included">}}
 
 Worlds of fantasy and color. Includes **131 high quality fantasy LUTs**.
 
@@ -569,7 +569,7 @@ Movies / tv-shows inspired: Game Of Thrones, Harry Potter, ... (45 LUTs).
 
 ---
 ## Unreal {#unreal}
-{{< asset-header youtube="PqITkuWFoKk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-unreal-279579" demo="https://fronkongames.github.io/demos-luts/unreal/">}}
+{{< asset-header youtube="PqITkuWFoKk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-unreal-279579" demo="https://fronkongames.github.io/demos-luts/unreal/" warn="assets used in video and demo are not included">}}
 
 Colors from other worlds, stunning looks. Includes **67 high quality originals LUTs**.
 
@@ -605,7 +605,7 @@ Transitions from day to night (8 LUTs).
 
 ---
 ## Action {#action}
-{{< asset-header youtube="PrSI6uIoUd0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-action-280076" demo="https://fronkongames.github.io/demos-luts/action/">}}
+{{< asset-header youtube="PrSI6uIoUd0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-action-280076" demo="https://fronkongames.github.io/demos-luts/action/" warn="assets used in video and demo are not included">}}
 
 Perfect looks for action games. Includes **163 high quality action LUTs**.
 
@@ -647,7 +647,7 @@ Dynamic colors and intensity (19 LUTs).
 
 ---
 ## Horror {#horror}
-{{< asset-header youtube="SoM5cH3c_YY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-horror-280345" demo="https://fronkongames.github.io/demos-luts/horror/">}}
+{{< asset-header youtube="SoM5cH3c_YY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-horror-280345" demo="https://fronkongames.github.io/demos-luts/horror/" warn="assets used in video and demo are not included">}}
 
 The color of fear. Includes **598 high quality scary LUTs**.
 
@@ -683,7 +683,7 @@ Colors inspired by vampire movies (50 LUTs).
 
 ---
 # Sci-Fi {#scifi}
-{{< asset-header youtube="ItmAGy08gAY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-sci-fi-280709" demo="https://fronkongames.github.io/demos-luts/scifi/">}}
+{{< asset-header youtube="ItmAGy08gAY" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/luts-sci-fi-280709" demo="https://fronkongames.github.io/demos-luts/scifi/" warn="assets used in video and demo are not included">}}
 
 Colors of other worlds. Includes **150 high quality sci-fi LUTs**.
 

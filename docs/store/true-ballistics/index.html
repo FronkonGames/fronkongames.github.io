@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/true-ballistics/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:00+01:00">
-    <meta property="article:modified_time" content="2025-07-19T18:47:08+02:00">
+    <meta property="article:modified_time" content="2025-07-19T19:56:11+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/true-ballistics-1280x640.jpg">
 <meta property="og:image:alt" content="True Ballistics">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:00CET",
-      "dateModified": "2025-07-19T18:47:08CET",
+      "dateModified": "2025-07-19T19:56:11CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/true-ballistics/#/schema/breadcrumb/1"
       },
@@ -449,9 +449,6 @@
 <div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
   <iframe src="https://www.youtube-nocookie.com/embed/44zTW3yJL-Y?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
   </iframe>
-</div>
-<div align="left">
-<i><small>assets used in video and demo are not included</small></i><br>
 </div><div align="right"></div><br><br>
 
 <p>A comprehensive, <strong>physically-accurate</strong> ballistics simulation system for Unity that provides <strong>realistic trajectories</strong>, <strong>ricochets</strong>, <strong>penetration</strong> mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.</p>
@@ -3058,35 +3055,51 @@
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">GravityWellSystem</span> <span class="p">:</span> <span class="n">SystemBase</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="na">  [Header(&#34;Gravity Well Settings&#34;)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Scene object that defines the attractor position.</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">Transform</span> <span class="n">gravityWellCenter</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellStrength</span> <span class="p">=</span> <span class="m">10f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellRadius</span> <span class="p">=</span> <span class="m">50f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="kt">int</span> <span class="n">ExecutionOrder</span> <span class="p">=&gt;</span> <span class="n">SystemExecution</span><span class="p">.</span><span class="n">Physics</span> <span class="p">+</span> <span class="m">50</span><span class="p">;</span> <span class="c1">// After PhysicsSystem</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Pull strength (think “G” constant). Bigger = stronger attraction.</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellStrength</span> <span class="p">=</span> <span class="m">10.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Effective range in metres. Outside this radius nothing happens.</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kt">float</span> <span class="n">gravityWellRadius</span> <span class="p">=</span> <span class="m">50.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Run shortly after PhysicsSystem.</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="kt">int</span> <span class="n">ExecutionOrder</span> <span class="p">=&gt;</span> <span class="n">SystemExecution</span><span class="p">.</span><span class="n">Physics</span> <span class="p">+</span> <span class="m">50</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Called once per frame after other systems have updated positions.</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">PostTick</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaTime</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">active</span> <span class="p">||</span> <span class="n">gravityWellCenter</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1">// Get component arrays</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Skip early if disabled or no centre assigned.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">active</span> <span class="p">||</span> <span class="n">gravityWellCenter</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Grab the PhysicsComponent array for fast indexed access.</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">physicsComponents</span> <span class="p">=</span> <span class="n">manager</span><span class="p">.</span><span class="n">GetComponentArray</span><span class="p">&lt;</span><span class="n">PhysicsComponent</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1">// Process all entities with physics components</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Iterate over every possible entity slot.</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">BallisticsManager</span><span class="p">.</span><span class="n">MaxEntities</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(!</span><span class="n">manager</span><span class="p">.</span><span class="n">entities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// Ignore unused slots.</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(!</span><span class="n">manager</span><span class="p">.</span><span class="n">entities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Reference (not copy) for in-place modification.</span>
 </span></span><span class="line"><span class="cl">      <span class="k">ref</span> <span class="kt">var</span> <span class="n">physics</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">physicsComponents</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">      
-</span></span><span class="line"><span class="cl">      <span class="c1">// Calculate distance to gravity well</span>
-</span></span><span class="line"><span class="cl">      <span class="n">Vector3</span> <span class="n">toWell</span> <span class="p">=</span> <span class="n">gravityWellCenter</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">physics</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      <span class="kt">float</span> <span class="n">distance</span> <span class="p">=</span> <span class="n">toWell</span><span class="p">.</span><span class="n">magnitude</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      
-</span></span><span class="line"><span class="cl">      <span class="c1">// Apply gravity well force if within radius</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Vector from projectile to well.</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Vector3</span> <span class="n">toWell</span>   <span class="p">=</span> <span class="n">gravityWellCenter</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">physics</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">float</span>   <span class="n">distance</span> <span class="p">=</span> <span class="n">toWell</span><span class="p">.</span><span class="n">magnitude</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Only act inside the radius and avoid divide-by-zero when very close.</span>
 </span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="p">&lt;</span> <span class="n">gravityWellRadius</span> <span class="p">&amp;&amp;</span> <span class="n">distance</span> <span class="p">&gt;</span> <span class="m">0.1f</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">force</span> <span class="p">=</span> <span class="n">gravityWellStrength</span> <span class="p">/</span> <span class="p">(</span><span class="n">distance</span> <span class="p">*</span> <span class="n">distance</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Inverse-square fall-off: F = G / r².</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">float</span>   <span class="n">force</span>        <span class="p">=</span> <span class="n">gravityWellStrength</span> <span class="p">/</span> <span class="p">(</span><span class="n">distance</span> <span class="p">*</span> <span class="n">distance</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Vector3</span> <span class="n">gravityForce</span> <span class="p">=</span> <span class="n">toWell</span><span class="p">.</span><span class="n">normalized</span> <span class="p">*</span> <span class="n">force</span> <span class="p">*</span> <span class="n">physics</span><span class="p">.</span><span class="n">mass</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          
-</span></span><span class="line"><span class="cl">        <span class="c1">// Apply force</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Integrate acceleration into velocity ( v += a Δt ).</span>
 </span></span><span class="line"><span class="cl">        <span class="n">physics</span><span class="p">.</span><span class="n">velocity</span> <span class="p">+=</span> <span class="n">gravityForce</span> <span class="p">*</span> <span class="n">deltaTime</span> <span class="p">/</span> <span class="n">physics</span><span class="p">.</span><span class="n">mass</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>

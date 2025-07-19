@@ -10,7 +10,7 @@ showImage: false
 thumbnail:
   url: img/true-ballistics.jpg
 ---
-{{< asset-header youtube="44zTW3yJL-Y" store="" demo="" >}}
+{{< asset-header youtube="44zTW3yJL-Y" store="" demo="">}}
 
 A comprehensive, **physically-accurate** ballistics simulation system for Unity that provides **realistic trajectories**, **ricochets**, **penetration** mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.
 
@@ -582,35 +582,51 @@ public class CustomSystem : SystemBase
 public class GravityWellSystem : SystemBase
 {
   [Header("Gravity Well Settings")]
+
+  // Scene object that defines the attractor position.
   public Transform gravityWellCenter;
-  public float gravityWellStrength = 10f;
-  public float gravityWellRadius = 50f;
-  public override int ExecutionOrder => SystemExecution.Physics + 50; // After PhysicsSystem
+
+  // Pull strength (think “G” constant). Bigger = stronger attraction.
+  public float gravityWellStrength = 10.0f;
+
+  // Effective range in metres. Outside this radius nothing happens.
+  public float gravityWellRadius = 50.0f;
+
+  // Run shortly after PhysicsSystem.
+  public override int ExecutionOrder => SystemExecution.Physics + 50;
+
+  // Called once per frame after other systems have updated positions.
   public override void PostTick(float deltaTime)
   {
-    if (!active || gravityWellCenter == null) return;
-    
-    // Get component arrays
+    // Skip early if disabled or no centre assigned.
+    if (!active || gravityWellCenter == null)
+      return;
+
+    // Grab the PhysicsComponent array for fast indexed access.
     var physicsComponents = manager.GetComponentArray<PhysicsComponent>();
-    
-    // Process all entities with physics components
+
+    // Iterate over every possible entity slot.
     for (int i = 0; i < BallisticsManager.MaxEntities; i++)
     {
-      if (!manager.entities[i]) continue;
-      
+      // Ignore unused slots.
+      if (!manager.entities[i])
+        continue;
+
+      // Reference (not copy) for in-place modification.
       ref var physics = ref physicsComponents[i];
-      
-      // Calculate distance to gravity well
-      Vector3 toWell = gravityWellCenter.position - physics.position;
-      float distance = toWell.magnitude;
-      
-      // Apply gravity well force if within radius
+
+      // Vector from projectile to well.
+      Vector3 toWell   = gravityWellCenter.position - physics.position;
+      float   distance = toWell.magnitude;
+
+      // Only act inside the radius and avoid divide-by-zero when very close.
       if (distance < gravityWellRadius && distance > 0.1f)
       {
-        float force = gravityWellStrength / (distance * distance);
+        // Inverse-square fall-off: F = G / r².
+        float   force        = gravityWellStrength / (distance * distance);
         Vector3 gravityForce = toWell.normalized * force * physics.mass;
-          
-        // Apply force
+
+        // Integrate acceleration into velocity ( v += a Δt ).
         physics.velocity += gravityForce * deltaTime / physics.mass;
       }
     }

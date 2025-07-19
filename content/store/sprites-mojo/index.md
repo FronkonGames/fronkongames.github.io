@@ -11,7 +11,7 @@ thumbnail:
   url: img/sprites-mojo.jpg
 ---
 
-{{< asset-header youtube="4eyGdIvJxko" store="https://assetstore.unity.com/packages/vfx/shaders/sprites-mojo-214468" demo="https://fronkongames.github.io/demos-artistic/sprites-mojo/" >}}
+{{< asset-header youtube="4eyGdIvJxko" store="https://assetstore.unity.com/packages/vfx/shaders/sprites-mojo-214468" demo="https://fronkongames.github.io/demos-artistic/sprites-mojo/" warn="assets used in video and demo are not included">}}
 
 ## Editor
 

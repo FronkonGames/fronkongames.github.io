@@ -10,7 +10,7 @@ showImage: false
 thumbnail:
   url: img/camera-transitions.jpg
 ---
-{{< asset-header youtube="8eKo8r3TG44" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/camera-transitions-293650" demo="https://fronkongames.github.io/demo-camera-transitions/" >}}
+{{< asset-header youtube="8eKo8r3TG44" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/camera-transitions-293650" demo="https://fronkongames.github.io/demo-camera-transitions/" warn="assets used in video and demo are not included">}}
 
 This asset provides a collection of **cinematic**, **realtime** and **easy-to-use** camera transition effects to enhance your games. Effortlessly switch between cameras with a variety of visual styles, from simple transitions to complex effects.
 

@@ -102,7 +102,7 @@ If you are using an effect other than '**Spectrum**' just change it to its name.
 #
 ---
 ## VHS {#vhs}
-{{< asset-header youtube="LH9KDnOq0dg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vhs-244944" demo="https://fronkongames.github.io/demos-retro/vhs/">}}
+{{< asset-header youtube="LH9KDnOq0dg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vhs-244944" demo="https://fronkongames.github.io/demos-retro/vhs/" warn="assets used in video and demo are not included">}}
 
 '**VHS**' mimic as true as possible. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -149,7 +149,7 @@ You have an example in the scene '**FronkonGames/Retro/VHS/Demo/VHS_Material_Dem
 
 ---
 ## Pixelator {#pixelator}
-{{< asset-header youtube="lLxdmqDiQec" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-pixelator-292731" demo="https://fronkongames.github.io/demos-retro/pixelator/" >}}
+{{< asset-header youtube="lLxdmqDiQec" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-pixelator-292731" demo="https://fronkongames.github.io/demos-retro/pixelator/" warn="assets used in video and demo are not included">}}
 
 '**Pixelator**' allows you to create a wide variety of retro-inspired visuals. It offers highly customizable pixelation, advanced color manipulation including posterization and dithering, unique visual effects like beveling and chromatic aberration, and a suite of color filters.
 
@@ -323,7 +323,7 @@ Applies various stylistic color filters.
 
 ---
 ## Old Films {#oldfilms}
-{{< asset-header youtube="zBwXR_i6_gw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-films-241298" demo="https://fronkongames.github.io/demos-retro/oldfilms/" >}}
+{{< asset-header youtube="zBwXR_i6_gw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-films-241298" demo="https://fronkongames.github.io/demos-retro/oldfilms/" warn="assets used in video and demo are not included">}}
 
 '**Old Films**' is the best way to simulate the look of any old movie.
 
@@ -349,7 +349,7 @@ Something you can also see in old films are small scratches. You can simulate th
 
 ---
 ## CRT TV {#crttv}
-{{< asset-header youtube="UFFvtpXdUBc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-crt-tv-241411" demo="https://fronkongames.github.io/demos-retro/crttv/">}}
+{{< asset-header youtube="UFFvtpXdUBc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-crt-tv-241411" demo="https://fronkongames.github.io/demos-retro/crttv/" warn="assets used in video and demo are not included">}}
 
 '**CRT TV**' makes your game look like on an old television, those with the [glass tube](https://en.wikipedia.org/wiki/Cathode-ray_tube). With more than 40 parameters, it is possibly the most configurable effect in the store.
 
@@ -404,7 +404,7 @@ You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material
 
 ---
 ## Lo-Fi {#lofi}
-{{< asset-header youtube="51rAf7z0Plg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-lo-fi-297300" demo="https://fronkongames.github.io/demos-retro/lofi/" >}}
+{{< asset-header youtube="51rAf7z0Plg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-lo-fi-297300" demo="https://fronkongames.github.io/demos-retro/lofi/" warn="assets used in video and demo are not included">}}
 
 Create stunning retro-style visuals with '**Lo-Fi**'. Craft the perfect nostalgic look for your project.
 
@@ -534,7 +534,7 @@ The Palette Browser makes it easy to experiment with different color schemes and
 
 ---
 ## NTSC {#ntsc}
-{{< asset-header youtube="MXQ5qz31Cos" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-ntsc-321946" demo="https://fronkongames.github.io/demos-retro/ntsc/" >}}
+{{< asset-header youtube="MXQ5qz31Cos" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-ntsc-321946" demo="https://fronkongames.github.io/demos-retro/ntsc/" warn="assets used in video and demo are not included">}}
 
 This effect simulates the analog video artifacts characteristic of the [NTSC](https://en.wikipedia.org/wiki/NTSC) (National Television System Committee) broadcast standard, commonly associated with older televisions and VHS tapes in North America and Japan.
 
@@ -590,7 +590,7 @@ These settings control the simulation of the NTSC decoding process, where the mo
 
 ---
 ## Noir {#noir}
-{{< asset-header youtube="U3wnxAc5Cww" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-noir-322864" demo="https://fronkongames.github.io/demos-retro/noir/" >}}
+{{< asset-header youtube="U3wnxAc5Cww" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-noir-322864" demo="https://fronkongames.github.io/demos-retro/noir/" warn="assets used in video and demo are not included">}}
 
 A comprehensive post-processing solution designed to give your projects a classic, stylized film noir aesthetic. It combines several configurable visual elements to achieve a range of looks, from subtle desaturation and mood lighting to more pronounced vintage film appearances.
 
@@ -693,7 +693,7 @@ The Scratches effect simulates vertical scratches on the film, another common ar
 
 ---
 ## Old Computers {#oldcomputers}
-{{< asset-header youtube="_gADYOdLbL4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-computers-243911" demo="https://fronkongames.github.io/demos-retro/oldcomputers/" >}}
+{{< asset-header youtube="_gADYOdLbL4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-computers-243911" demo="https://fronkongames.github.io/demos-retro/oldcomputers/" warn="assets used in video and demo are not included">}}
 
 Emulates the color palettes of old 8-bit and 16-bit computers. You can emulate all of these systems:
 
@@ -737,7 +737,7 @@ Discarding the darker range:
 
 ---
 ## ASCII {#ascii}
-{{< asset-header youtube="shQxDDe8Aw4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-ascii-241924" demo="https://fronkongames.github.io/demos-retro/ascii/" >}}
+{{< asset-header youtube="shQxDDe8Aw4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-ascii-241924" demo="https://fronkongames.github.io/demos-retro/ascii/" warn="assets used in video and demo are not included">}}
 
 The ASCII render was an effect you could see in old [demoscene](https://en.wikipedia.org/wiki/Demoscene). It consists of replacing blocks of pixels with [ASCII](https://en.wikipedia.org/wiki/ASCII) characters according to their luminosity. The higher the luminosity, the 'denser' the character it was replaced with. Now it's back on steroids!
 
@@ -775,7 +775,7 @@ By default, there is no color gradient for the final image, but you can select s
 
 ---
 ## Spectrum {#spectrum}
-{{< asset-header youtube="d66etIztDjs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-spectrum-239827" demo="https://fronkongames.github.io/demos-retro/spectrum/" >}}
+{{< asset-header youtube="d66etIztDjs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-spectrum-239827" demo="https://fronkongames.github.io/demos-retro/spectrum/" warn="assets used in video and demo are not included">}}
 
 '**Spectrum**' simulates the graphical style of old games of the mythical 8-bit microcomputer [Sinclair ZX Spectrum](https://en.wikipedia.org/wiki/ZX_Spectrum) from 1982.
 
@@ -795,7 +795,7 @@ To change the pixel size, use '**Pixel size**' (_3_) and to adjust the pattern s
 
 ---
 ## LCD {#lcd}
-{{< asset-header youtube="huKT3CiRfRA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-spectrum-239827" demo="https://fronkongames.github.io/demos-retro/lcd/" >}}
+{{< asset-header youtube="huKT3CiRfRA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-spectrum-239827" demo="https://fronkongames.github.io/demos-retro/lcd/" warn="assets used in video and demo are not included">}}
 
 Simulates the distinct visual characteristics of a [Liquid Crystal Display](https://en.wikipedia.org/wiki/Liquid-crystal_display) (LCD), such as those found on older handheld games, digital watches, or early portable computers.
 
@@ -837,7 +837,7 @@ Once installed, when you select your '_Universal Renderer Data_', you will see s
 
 ---
 ## Vintage Filters {#vintagefilters}
-{{< asset-header youtube="YXMNQn7cu8I" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vintage-filters-242600" demo="https://fronkongames.github.io/demos-retro/vintagefilters/" >}}
+{{< asset-header youtube="YXMNQn7cu8I" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vintage-filters-242600" demo="https://fronkongames.github.io/demos-retro/vintagefilters/" warn="assets used in video and demo are not included">}}
 
 A great collection of vintage filters inspired by photo Instagram effects:
 

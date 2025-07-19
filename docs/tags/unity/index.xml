@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Sat, 19 Jul 2025 18:47:08 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jul 2025 19:56:11 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Game:Work Foundation</title>
@@ -126,7 +126,7 @@
       <link>https://fronkongames.github.io/store/true-ballistics/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:00 +0100</pubDate>
       <guid>https://fronkongames.github.io/store/true-ballistics/</guid>
-      <description>assets used in video and demo are not included&#xA;A comprehensive, physically-accurate ballistics simulation system for Unity that provides realistic trajectories, ricochets, penetration mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.</description>
+      <description>A comprehensive, physically-accurate ballistics simulation system for Unity that provides realistic trajectories, ricochets, penetration mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.</description>
     </item>
   </channel>
 </rss>

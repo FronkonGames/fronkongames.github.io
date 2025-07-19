@@ -101,7 +101,7 @@ If you are using an effect other than '**Color Blindness**' just change it to it
 
 ---
 ## Color Blindness {#colorblindness}
-{{< asset-header youtube="f5CiPt9bzBE" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-color-blindness-273126" demo="https://fronkongames.github.io/demos-glitches/colorblindness/">}}
+{{< asset-header youtube="f5CiPt9bzBE" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-color-blindness-273126" demo="https://fronkongames.github.io/demos-glitches/colorblindness/" warn="assets used in video and demo are not included">}}
 
 {{< alert color="danger" icon="fas triangle-exclamation" >}}
 This asset **simulates** a series of vision defects, **NOT** corrects them.
@@ -130,7 +130,7 @@ In order to compare the result with a normal view, move '**Comparator**'.
 
 ---
 ## Corrupt Memory {#corruptmemory}
-{{< asset-header youtube="F4ubH6fGgcA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-corrupt-memory-274730" demo="https://fronkongames.github.io/demos-glitches/corruptmemory/">}}
+{{< asset-header youtube="F4ubH6fGgcA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-corrupt-memory-274730" demo="https://fronkongames.github.io/demos-glitches/corruptmemory/" warn="assets used in video and demo are not included">}}
 
 '**Corrupt Memory**' emulates malfunctioning memory.
 
@@ -150,7 +150,7 @@ In all of them you can adjust the limit at which it is activated ('_Threshold_')
 
 ---
 ## Interferences {#interferences}
-{{< asset-header youtube="lYrj9jj3U8Y" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-interferences-281861" demo="https://fronkongames.github.io/demos-glitches/interferences/">}}
+{{< asset-header youtube="lYrj9jj3U8Y" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-interferences-281861" demo="https://fronkongames.github.io/demos-glitches/interferences/" warn="assets used in video and demo are not included">}}
 
 With '**Interferences**' you can simulate video transmission failures.
 
@@ -170,7 +170,7 @@ The second effect applied is scanlines (_5_) and you can adjust its density and 
 
 ---
 ## VHS {#vhs}
-{{< asset-header youtube="f3W4_dPwZK0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-vhs-282181" demo="https://fronkongames.github.io/demos-glitches/vhs/">}}
+{{< asset-header youtube="f3W4_dPwZK0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-vhs-282181" demo="https://fronkongames.github.io/demos-glitches/vhs/" warn="assets used in video and demo are not included">}}
 
 Accurately emulates an old VHS tape. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -186,7 +186,7 @@ If you want to use only the noise, set '**Pause**' (_3_) and '**Pause Band**' (_
 
 ---
 ## Distortions {#distortions}
-{{< asset-header youtube="ydWFcmFnSaU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-distortions-282947" demo="https://fronkongames.github.io/demos-glitches/distortions/">}}
+{{< asset-header youtube="ydWFcmFnSaU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-distortions-282947" demo="https://fronkongames.github.io/demos-glitches/distortions/" warn="assets used in video and demo are not included">}}
 
 This asset includes several distortion-based effects. You should include them individually.
 
@@ -407,7 +407,7 @@ Fisheye / anti-fisheye effect. Once installed, when you select your '_Universal 
 ---
 ## Cheap Camera {#cheap-camera}
 
-{{< asset-header youtube="GJZYzdBmruM" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-cheap-camera-287563" demo="https://fronkongames.github.io/demos-glitches/cheap-camera/">}}
+{{< asset-header youtube="GJZYzdBmruM" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-cheap-camera-287563" demo="https://fronkongames.github.io/demos-glitches/cheap-camera/" warn="assets used in video and demo are not included">}}
 
 Emulates the defects of cheap cameras with poor quality digital sensors. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -451,7 +451,7 @@ Emulates the defects of cheap cameras with poor quality digital sensors. Once in
 
 ---
 ## Bap GPU {#bad-gpu}
-{{< asset-header youtube="Q86NARQPUJk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-bad-gpu-288689" demo="https://fronkongames.github.io/demos-glitches/bad-gpu/">}}
+{{< asset-header youtube="Q86NARQPUJk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-bad-gpu-288689" demo="https://fronkongames.github.io/demos-glitches/bad-gpu/" warn="assets used in video and demo are not included">}}
 
 Simulates the effects of a broken GPU, using a combination of four glitch effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -473,7 +473,7 @@ Similarly, ''**Glitch #2**'' (_7_), '**Glitch #3**' (_8_), and '**Glitch #4**' (
 
 ---
 ## Artifacts {#artifacts}
-{{< asset-header youtube="tyg11e6XrQQ" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-artifacts-288952" demo="https://fronkongames.github.io/demos-glitches/artifacts/">}}
+{{< asset-header youtube="tyg11e6XrQQ" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-artifacts-288952" demo="https://fronkongames.github.io/demos-glitches/artifacts/" warn="assets used in video and demo are not included">}}
 
 Simulates the artifacts generated by a bad video reception. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -493,7 +493,7 @@ Lastly, the '**Lines**' (_7_) option determines the density of the lines in the 
 
 ---
 ## Hacked {#hacked}
-{{< asset-header youtube="gjgyrVs8yx0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-hacked-293724" demo="https://fronkongames.github.io/demos-glitches/hacked/">}}
+{{< asset-header youtube="gjgyrVs8yx0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-hacked-293724" demo="https://fronkongames.github.io/demos-glitches/hacked/" warn="assets used in video and demo are not included">}}
 
 Visually emulates a hacking using various effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
@@ -529,7 +529,7 @@ Finally '**Noise**' (_8_) creates the classic analog noise.
 
 ---
 ## Broken LCD {#broken-lcd}
-{{< asset-header youtube="BgRcZrxu280" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-broken-lcd-294991" demo="https://fronkongames.github.io/demos-glitches/broken-lcd/">}}
+{{< asset-header youtube="BgRcZrxu280" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-broken-lcd-294991" demo="https://fronkongames.github.io/demos-glitches/broken-lcd/" warn="assets used in video and demo are not included">}}
 
 Emulates a broken LCD screen. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 

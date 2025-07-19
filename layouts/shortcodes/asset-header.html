@@ -2,15 +2,18 @@
 {{- $store := .Get "store" | default "" -}}
 {{- $demo := .Get "demo" | default "" -}}
 {{- $demo2 := .Get "demo2" | default "" -}}
+{{- $warn := .Get "warn" | default "" -}}
 
 {{- if ne $youtube "" -}}
 <div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
   <iframe src="https://www.youtube-nocookie.com/embed/{{ $youtube }}?origin={{ .Site.BaseURL }}" allowfullscreen title="YouTube Video">
   </iframe>
 </div>
+{{- if ne $warn "" -}}
 <div align="left">
-<i><small>assets used in video and demo are not included</small></i><br>
+<i><small>{{ $warn }}</small></i><br>
 </div>
+{{- end -}}
 {{- end -}}
 
 <div align="right">
