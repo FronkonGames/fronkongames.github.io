@@ -146,7 +146,7 @@ This is an example of the weapons included:
 
 {{< image src="inspector_4.jpg" wrapper="col-9 mx-auto">}}
 
-Handles core ballistics physics including gravity, drag, and atmospheric effects. Without this system the projectiles **would not move**.
+The engine room of `True Ballistics`. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag and wind, then integrating the motion. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles **would not move**.
 
 **Features**:
 - Configurable gravity vector (supports other planets).
@@ -209,14 +209,14 @@ The trajectory of the projectile will have these colors:
 {{< /rawhtml >}}
 
 {{< alert color="light" >}}
-**In general**, impacts in Green or Gray are not lethal.
+**In general**, impacts in Gray are not lethal.
 {{< /alert >}}
 
 ### Lifecycle System
 
 {{< image src="inspector_5.jpg" wrapper="col-9 mx-auto">}}
 
-Manages projectile lifecycle with configurable termination rules. **It is essential to add this system**, since it is in charge of _recycling_ projectiles. Without this system, when the maximum number of projectiles is reached (5000 by default), no more can be created.
+The house-keeper of `True Ballistics`. Every frame it inspects every projectile and safely removes those that have out-lived their time, slowed below a usable speed, strayed beyond configurable bounds, remained stationary too long, travelled too far, or finished their first (or failed) collision. In essence, it cleans up spent rounds so your scene stays lean and performant. Without this system the projectiles **would never disappear**.
 
 If any of the following (active) rules are met, the projectile is deactivated.
 
@@ -262,7 +262,11 @@ If true, projectiles are deactivated upon any impact that does not result in a r
 
 {{< image src="inspector_6.jpg" wrapper="col-9 mx-auto">}}
 
-Efficient collision detection with adaptive algorithms. Remember that for a projectile to collide with an object on the stage, this object must have some kind of [Collider](https://docs.unity3d.com/Manual/collision-section.html).
+The gate-keeper of `True Ballistics`. Every frame it checks each projectile’s path and decides whether it has struck something—using precise [RayCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.Raycast.html) for hypersonic rounds and efficient batched [SphereCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.SphereCast.html) for everyone else—then fires events that let ricochet, penetration, VFX and damage systems do their work. In short, it turns flying bullets into meaningful impacts your game can react to. Without this system the projectiles **would pass straight through every surface**.
+
+{{< alert color="light" >}}
+Remember that for a projectile to collide with an object on the stage, this object must have some kind of [Collider](https://docs.unity3d.com/Manual/collision-section.html).
+{{< /alert >}}
 
 **Features**:
 - Raycast for high-speed projectiles.
@@ -327,7 +331,7 @@ Neither create bullet marks or particles at the point of impact, although you ca
 
 {{< image src="inspector_7.jpg" wrapper="col-9 mx-auto">}}
 
-Realistic ricochet simulation based on impact angle and material properties.
+The rebound artist of `True Ballistics`. Whenever a projectile’s impact event arrives, it consults the surface’s ricochet curve and the strike angle to decide: should this round skip off the material or stop dead? If a bounce is warranted it recalculates the outgoing velocity using the surface’s restitution and energy-retention factors, updates the projectile’s flight path in-place, and notifies the rest of the framework (VFX, sound, gameplay logic) through a dedicated ricochet event. If the angle or material rejects the bounce it raises a “ricochet failed” event so penetration or simple impact logic can take over. Without this system the projectiles **would never ricochet** – every hit would be a full stop or a penetration attempt.
 
 **Features**:
 - Probability-based ricochet calculation.
@@ -335,18 +339,21 @@ Realistic ricochet simulation based on impact angle and material properties.
 - Material-specific restitution.
 - Energy retention modeling.
 
-Once added to the systems, you can subscribe to the `OnProjectileRicochet` events to receive information on each ricochet. If you use `Collision System`, an `OnProjectileHit` event will also be emitted.
+Once added to the systems, you can subscribe to the `OnProjectileRicochet` events to receive information on each ricochet.
+
+{{< alert color="light" >}}
+If you use `Collision System`, an `OnProjectileHit` event will also be emitted.
+{{< /alert >}}
 
 If you add `Debug System` to the system list, you will be able to see the ricochets (a square with an arrow indicating rebound) in the `Scene` window.
 
 {{< image src="ricochet_0.jpg" wrapper="col-9 mx-auto">}}
 
-
 ### Penetration System
 
 {{< image src="inspector_8.jpg" wrapper="col-9 mx-auto">}}
 
-Advanced penetration mechanics with energy-based calculations and materials. 
+The wall-breaker of `True Ballistics`. When a projectile strikes and doesn’t ricochet, this system decides whether it bores straight through, deflects inside the material, or grinds to a halt. It measures the round’s kinetic energy against the surface’s yield strength and density, calculates how much power is lost tearing an entry plug and ploughing through the medium, and ray-traces ahead to locate a plausible exit point. Each frame it advances the slug through the obstacle, subtracts drag and fracture work, and updates velocity until it either bursts out the far side (firing “penetration enter” and “exit” events) or becomes embedded (“stuck” event). Without this system the projectiles **would stop at the first hit—no through-walls, no over-penetration thrills**.
 
 **Features**:
 - Entry/exit point calculation.
@@ -406,7 +413,14 @@ Some considerations:
 
 {{< image src="inspector_9.jpg" wrapper="col-9 mx-auto">}}
 
-GPU-accelerated visual tracer rendering. 
+The show-stopper of `True Ballistics`. For every projectile that carries a TracerComponent it whips up glowing streaks completely on the GPU: a compute shader extrudes two tiny quads (tail + head), scales them to weapon-specific length/width, and modulates brightness by speed so supersonic rounds blaze while slow pellets barely glow. The system keeps per-weapon settings, batches all tracers each frame, and renders them once per camera—so you get cinematic bullet trails that cost virtually nothing on the CPU. Without this system the projectiles **would be invisible bolts of math**.
+
+✅ **Runs entirely on the GPU**, so hundreds of tracers cost virtually nothing on the CPU.
+✅ **Brightness scales with speed**, weapon presets let you tweak length/width per gun, and head/tail materials create a convincing muzzle-flash “dot” with a fading tail.
+✅ **Batches once per camera**, so it plays nicely with split-screen or Scene/Game views in the Editor.
+
+❌ **No mesh geometry**, the compute shader only emits flat quads.
+❌ **Ricochet bends aren’t visualised**, when the Ricochet System changes velocity, the previous tail is discarded and a new straight one begins; you never see the actual kink where the round bounced.
 
 **Features**:
 - Compute shader-based geometry generation.
@@ -422,7 +436,7 @@ SECTION UNDER CONSTRUCTION
 
 {{< image src="inspector_10.jpg" wrapper="col-9 mx-auto">}}
 
-Environmental effects simulation using ICAO Standard Atmosphere.
+The atmosphere-tuner of `True Ballistics`. Each frame it recalculates air density from altitude and temperature, spices it with a precipitation factor, and exposes a scene-wide wind vector. The rest of the pipeline then uses those values to adjust drag, drop, and drift, making shots feel different on a misty mountain peak than on a hot, windless desert range. Without this system every map would behave like a calm sea-level firing line.
 
 **Features**:
 - Altitude-based air density.
@@ -431,20 +445,39 @@ Environmental effects simulation using ICAO Standard Atmosphere.
 - Precipitation effects.
 
 **Configuration**:
-- `altitude`: Altitude in meters.
-- `temperature`: Temperature in Celsius.
-- `wind`: Wind vector in m/s.
-- `precipitation`: Precipitation intensity (0-1).
-
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
-{{< /alert >}}
+- `Altitude`: Altitude in meters.
+- `Temperature`: Temperature in Celsius.
+- `Wind`: Wind vector in m/s.
+  - Smoke rises vertically: 0-0.5 m/s
+  - Smoke drifts slightly: 0.5-1.5 m/s
+  - Leaves rustle: 1.6-3.3 m/s
+  - Light flags extended: 3.4-5.4 m/s
+  - Raises dust and loose paper: 5.5-7.9 m/s
+  - Small trees sway: 8.0-10.7 m/s
+  - Large branches move: 10.8-13.8 m/s
+  - Whole trees move: 13.9-17.1 m/s
+  - Breaks twigs off trees: 17.2-20.7 m/s
+  - Structural damage possible: 20.8-24.4 m/s
+  - Considerable damage: 24.5-28.4 m/s
+  - Widespread damage: 28.5-32.6 m/s
+  - Extreme damage: 32.7-60.0 m/s
+- `Precipitation`: Precipitation intensity (0-1).
+  - Clear conditions: 0.
+  - Light mist or drizzle: 0.0 - 0.2
+  - Gentle rain: 0.2 - 0.4
+  - Steady rainfall: 0.4 - 0.6
+  - Intense precipitation: 0.6 - 0.8
+  - Extreme heavy rain: 0.8 - 1.0
 
 ### Coriolis System
 
 {{< image src="inspector_11.jpg" wrapper="col-9 mx-auto">}}
 
-Coriolis effect simulation for long-range ballistics.
+The planet-spinner of `True Ballistics`. Computes the [Coriolis acceleration](https://en.wikipedia.org/wiki/Coriolis_force) from the planet’s rotation and current latitude, then adds that deflection to every in-flight projectile—giving long-range shots the subtle sideways (and slight vertical) drift sharpshooters expect. Without this system the world would feel motionless and high-precision sniping would miss that authentic curve.
+
+{{< alert color="light" >}}
+This system is only noticeable in **long distance shots**. If your project does not use them, **you can ignore it**.
+{{< /alert >}}
 
 **Features**:
 - Configurable planetary parameters.
@@ -452,18 +485,18 @@ Coriolis effect simulation for long-range ballistics.
 - Realistic deflection patterns.
 
 **Configuration**:
-- `planetAngularVelocity`: Planet rotation rate.
-- `latitude`: Observer latitude.
-
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
-{{< /alert >}}
+- `Planet Angular Velocity`: Planet rotation rate.
+- `Latitude`: Observer latitude.
 
 ### Spin Drift System
 
 {{< image src="inspector_12.jpg" wrapper="col-9 mx-auto">}}
 
-Spin-induced projectile drift for long-range simulation.
+The gyroscopic nudger of `True Ballistics`. After each physics step it estimates the [Magnus-type side force](https://en.wikipedia.org/wiki/Magnus_effect) produced by a bullet’s spin (based on twist rate, caliber, barrel length and current speed), then nudges velocity and position to mimic real-world spin drift—those subtle inches of right/left drift you spot on long-range targets. Without this system rotated projectiles would fly straight, robbing marksmen of that final layer of authenticity.
+
+{{< alert color="light" >}}
+This system is only noticeable in **long distance shots**. If your project does not use them, **you can ignore it**.
+{{< /alert >}}
 
 **Features**:
 - Magnus effect calculation.
@@ -471,21 +504,17 @@ Spin-induced projectile drift for long-range simulation.
 - Barrel length effects.
 
 **Configuration**:
-- `driftFactor`: Overall drift scaling.
-
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
-{{< /alert >}}
+- `Drift Factor`: Overall drift scaling.
 
 ### Debug System
 
 {{< image src="inspector_13.jpg" wrapper="col-9 mx-auto">}}
 
+The x-ray goggles of `True Ballistics`. In the Unity Editor it samples every active projectile, stores positions, forces, impacts and ricochet/penetration data, then draws colour-coded gizmos: flight paths fade from red to gray with speed loss, force vectors sprout from the tracer, and icons mark hits, bounces and stuck rounds. Despawned trajectories linger for a set time so you can pause, inspect and fine-tune your settings. Disabled in builds, it’s pure dev tooling—turn it on when you need answers, off when you ship.
+
 {{< alert color="warning" >}}
 This system uses Debug.DrawLine and can affect performance **only** in the Editor (in builds it has no effect).
 {{< /alert >}}
-
-Comprehensive debug visualization (Editor only).
 
 **Features**:
 - Trajectory visualization with speed coloring
@@ -589,13 +618,9 @@ public class GravityWellSystem : SystemBase
 }
 ```
 
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
-{{< /alert >}}
-
 ## Simple FPS
 
-`SimpleFPS` is an educational first-person controller demo that showcases `True Ballistics` integration. **It's designed for learning and prototyping, not production use.**
+A lightweight first-person controller that showcases `True Ballistics` integration. **It's designed for learning and prototyping, not production use.**
 
 #### Purpose
 
