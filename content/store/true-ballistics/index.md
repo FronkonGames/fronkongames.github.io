@@ -10,7 +10,7 @@ showImage: false
 thumbnail:
   url: img/true-ballistics.jpg
 ---
-{{< asset-header youtube="44zTW3yJL-Y" store="" demo="">}}
+{{< asset-header youtube="44zTW3yJL-Y" store="https://assetstore.unity.com/packages/templates/systems/true-ballistics-326593" demo="https://www.dropbox.com/scl/fi/0jt8iuc94c98h4ash1yn2/True-Ballistics-Demo.zip?rlkey=pvddb9er79gzphlcxbmhsyvw6&st=rp0gpes2&dl=0">}}
 
 A comprehensive, **physically-accurate** ballistics simulation system for Unity that provides **realistic trajectories**, **ricochets**, **penetration** mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.
 
