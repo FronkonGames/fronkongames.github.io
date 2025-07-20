@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/true-ballistics/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:00+01:00">
-    <meta property="article:modified_time" content="2025-07-19T19:56:11+02:00">
+    <meta property="article:modified_time" content="2025-07-19T20:19:14+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/true-ballistics-1280x640.jpg">
 <meta property="og:image:alt" content="True Ballistics">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:00CET",
-      "dateModified": "2025-07-19T19:56:11CET",
+      "dateModified": "2025-07-19T20:19:14CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/true-ballistics/#/schema/breadcrumb/1"
       },
@@ -1372,7 +1372,7 @@
             width="2800"
             >
 </div><br>
-<p>The house-keeper of <code>True Ballistics</code>. Every frame it inspects every projectile and safely removes those that have out-lived their time, slowed below a usable speed, strayed beyond configurable bounds, remained stationary too long, travelled too far, or finished their first (or failed) collision. In essence, it cleans up spent rounds so your scene stays lean and performant. Without this system the projectiles <strong>would never disappear</strong>.</p>
+<p>The house-keeper of <code>True Ballistics</code>. Inspects every projectile and safely removes those that have out-lived their time, slowed below a usable speed, strayed beyond configurable bounds, remained stationary too long, travelled too far, or finished their first (or failed) collision. In essence, it cleans up spent rounds so your scene stays lean and performant. Without this system the projectiles <strong>would never disappear</strong>.</p>
 <p>If any of the following (active) rules are met, the projectile is deactivated.</p>
 
 <h4 id="max-lifetime-rule" class="heading">Max Lifetime Rule <a href="#max-lifetime-rule" aria-labelledby="max-lifetime-rule">
@@ -1627,7 +1627,7 @@
             width="2800"
             >
 </div><br>
-<p>The gate-keeper of <code>True Ballistics</code>. Every frame it checks each projectile’s path and decides whether it has struck something—using precise <a href="https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.Raycast.html">RayCasts</a> for hypersonic rounds and efficient batched <a href="https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.SphereCast.html">SphereCasts</a> for everyone else—then fires events that let ricochet, penetration, VFX and damage systems do their work. In short, it turns flying bullets into meaningful impacts your game can react to. Without this system the projectiles <strong>would pass straight through every surface</strong>.</p>
+<p>The gate-keeper of <code>True Ballistics</code>. Checks each projectile’s path and decides whether it has struck something—using precise <a href="https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.Raycast.html">RayCasts</a> for hypersonic rounds and efficient batched <a href="https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.SphereCast.html">SphereCasts</a> for everyone else—then fires events that let ricochet, penetration, VFX and damage systems do their work. In short, it turns flying bullets into meaningful impacts your game can react to. Without this system the projectiles <strong>would pass straight through every surface</strong>.</p>
 
 
 
@@ -2475,6 +2475,18 @@
 <li>Brightness based on velocity.</li>
 <li>Separate head/tail materials.</li>
 </ul>
+<p>The <code>Compute Shader</code> field must point at &ldquo;Tracer.compute&rdquo; that ships with the package (FronkonGames/TrueBallistics/Shaders/Tracer.compute). If you create your own shader (to change color ramps, vertex layout, etc) simply drag that asset into the same slot.</p>
+<p>You can add as many <code>Tracers</code> as you want, normally one per weapon type. If a weapon type does not have an associated <code>Tracer</code>, it is ignored.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li><code>Weapon Type</code>: Which weapons use this preset.</li>
+<li><code>Width</code>: Thickness of the tail quad.</li>
+<li><code>Length</code>: World-space length of the streak (metres).</li>
+<li><code>Tail Material</code> / <code>Head Material</code>: You must use &lsquo;Fronkon Games/True Ballistics/Tracer&rsquo; or similar.</li>
+<li><code>Min Brightness</code>: Brightness multiplier at 0 m/s (projectile stopped).</li>
+<li><code>Max Brightness</code>: Brightness multiplier at initial speed, the system interpolates between min/max as the round slows down.</li>
+</ul>
+<p>A Tracer has this geometry:</p>
 
 
 
@@ -2486,10 +2498,84 @@
 
 
 
-<div class="d-flex alert alert-warning " role="alert">
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/tracer_0-2800x1501.jpg"
+            
+            
+            srcset="/store/true-ballistics/tracer_0-576x309.webp 576w, /store/true-ballistics/tracer_0-768x412.webp 768w, /store/true-ballistics/tracer_0-992x532.webp 992w, /store/true-ballistics/tracer_0-1200x643.webp 1200w, /store/true-ballistics/tracer_0-1400x751.webp 1400w, /store/true-ballistics/tracer_0-2800x1501.webp 2800w" sizes="100vw"
+            height="1501"
+            width="2800"
+            >
+</div><br>
+<p>The tail (orange box) is oriented on its longitudinal axis facing the camera. As from the front and from behind you can hardly see anything, the head is a quad that always remains vertical. This way the projectile will be seen from any angle.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
         
         <div class="flex-grow-1 my-auto">
-            SECTION UNDER CONSTRUCTION
+            Try to make the right side of the tail texture the same size as the head texture.
         </div>
     </div>
 
@@ -2975,6 +3061,7 @@
 <li>Ricochet and penetration visualization</li>
 <li>Configurable retention time</li>
 </ul>
+<p><strong>Forces</strong></p>
 
 
 
@@ -2986,12 +3073,446 @@
 
 
 
-<div class="d-flex alert alert-warning " role="alert">
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/debug_0-2800x2604.jpg"
+            
+            
+            srcset="/store/true-ballistics/debug_0-576x536.webp 576w, /store/true-ballistics/debug_0-768x714.webp 768w, /store/true-ballistics/debug_0-992x922.webp 992w, /store/true-ballistics/debug_0-1200x1116.webp 1200w, /store/true-ballistics/debug_0-1400x1302.webp 1400w, /store/true-ballistics/debug_0-2800x2604.webp 2800w" sizes="100vw"
+            height="2604"
+            width="2800"
+            >
+</div><br>
+<p>It shows the position of the projectile (yellow sphere), its momentum (cyan arrow), gravity (orange arrow) and the sum of the other forces acting on the projectile (magenta arrow).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
         
         <div class="flex-grow-1 my-auto">
-            SECTION UNDER CONSTRUCTION
+            The length of the vectors is not to scale.
         </div>
     </div>
+<p><strong>Trayectories</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/physics_0-2800x1233.jpg"
+            
+            
+            srcset="/store/true-ballistics/physics_0-576x254.webp 576w, /store/true-ballistics/physics_0-768x338.webp 768w, /store/true-ballistics/physics_0-992x437.webp 992w, /store/true-ballistics/physics_0-1200x528.webp 1200w, /store/true-ballistics/physics_0-1400x616.webp 1400w, /store/true-ballistics/physics_0-2800x1233.webp 2800w" sizes="100vw"
+            height="1233"
+            width="2800"
+            >
+</div><br>
+<p>Shows the trajectory of the projectile, colored according to the percentage of the initial velocity:</p>
+
+
+<center>
+
+<table>
+<thead>
+<tr>
+<th>Color                   </th>
+<th align="right">Initial Velocity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td align="right">&gt;=75%</td>
+</tr>
+<tr>
+<td>Orange</td>
+<td align="right">&gt;=50%</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td align="right">&gt;=25%</td>
+</tr>
+<tr>
+<td>Green</td>
+<td align="right">&gt;=10%</td>
+</tr>
+<tr>
+<td>Gray</td>
+<td align="right">&lt;10%</td>
+</tr>
+</tbody>
+</table>
+
+
+</center>
+<br>
+
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li><code>Samples Per Second</code>: How many trajectory points the system records for each active projectile every second. Higher values = smoother lines but more memory/Gizmos; lower values = coarse, lighter.</li>
+<li><code>Maximum Samples</code>: Hard cap on points stored per projectile. 0 means unlimited; any positive number stops recording once that count is reached (older points are then dropped).</li>
+<li><code>Projectile Scale</code>: Uniform size multiplier for the sphere/mesh that represents each live round in the Scene view. Useful when your game world is tiny (scale &lt; 1) or huge (&gt; 1).</li>
+<li><code>Keep Despawned Entities</code>: Time in seconds to keep drawing a projectile’s last trajectory after it has been despawned. 0 = remove immediately; &gt; 0 lets you pause/inspect past shots for that duration before they are purged.</li>
+</ul>
+<p><strong>Hits</strong></p>
+<p>Shows the points at which the projectile collides with an object.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/collision_0-2800x2948.jpg"
+            
+            
+            srcset="/store/true-ballistics/collision_0-576x606.webp 576w, /store/true-ballistics/collision_0-768x808.webp 768w, /store/true-ballistics/collision_0-992x1044.webp 992w, /store/true-ballistics/collision_0-1200x1263.webp 1200w, /store/true-ballistics/collision_0-1400x1474.webp 1400w, /store/true-ballistics/collision_0-2800x2948.webp 2800w" sizes="100vw"
+            height="2948"
+            width="2800"
+            >
+</div><br>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li><code>Hit Circle Radius</code>: Increase it if impacts are hard to spot, decrease it if the circles cover too much of the scene.</li>
+<li><code>Hit Direction Length</code>: Next to each impact disc the system also draws a line‐arrow that shows the incoming shot direction.</li>
+</ul>
+<p><strong>Ricochets</strong></p>
+<p>It shows the points at which the projectile bounces off a material.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/ricochet_0-2800x2990.jpg"
+            
+            
+            srcset="/store/true-ballistics/ricochet_0-576x615.webp 576w, /store/true-ballistics/ricochet_0-768x820.webp 768w, /store/true-ballistics/ricochet_0-992x1059.webp 992w, /store/true-ballistics/ricochet_0-1200x1282.webp 1200w, /store/true-ballistics/ricochet_0-1400x1495.webp 1400w, /store/true-ballistics/ricochet_0-2800x2990.webp 2800w" sizes="100vw"
+            height="2990"
+            width="2800"
+            >
+</div><br>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li><code>Maximum Ricochets</code>: Limits how many ricochet events the Debug System keeps and draws at once. 0 = no limit (every bounce is stored and shown), positive value = only the most-recent N ricochets are retained; older ones are discarded.</li>
+<li><code>Ricochet Direction Length</code>: The length, in world metres, of the two arrows the system draws at each ricochet point: one for the incoming velocity, one for the outgoing velocity.</li>
+</ul>
+<p><strong>Penetrations</strong></p>
+<p>It shows the points and trajectories of the projectile penetrating objects.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/penetration_0-2800x1834.jpg"
+            
+            
+            srcset="/store/true-ballistics/penetration_0-576x377.webp 576w, /store/true-ballistics/penetration_0-768x503.webp 768w, /store/true-ballistics/penetration_0-992x650.webp 992w, /store/true-ballistics/penetration_0-1200x786.webp 1200w, /store/true-ballistics/penetration_0-1400x917.webp 1400w, /store/true-ballistics/penetration_0-2800x1834.webp 2800w" sizes="100vw"
+            height="1834"
+            width="2800"
+            >
+</div><br>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li><code>Maximum Penetrations</code>: Sets how many penetration events the Debug System retains and visualises at once. 0 = unlimited (every entry/exit/stuck point is kept). Any positive number keeps only the most-recent N events, discarding older ones.</li>
+</ul>
 
 <h3 id="customs-systems" class="heading">Customs Systems <a href="#customs-systems" aria-labelledby="customs-systems">
 
@@ -3218,59 +3739,9 @@
 <li><strong>Effects</strong>: Head bob, weapon sway, and recoil</li>
 <li><strong>Ballistics</strong>: Full integration with True Ballistics system</li>
 </ul>
-
-<h4 id="usage-guidelines" class="heading">Usage Guidelines <a href="#usage-guidelines" aria-labelledby="usage-guidelines">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h4>
 <p>✅ <strong>Use for</strong>: Learning, prototyping, testing weapon configurations</p>
 <p>❌ <strong>Don&rsquo;t use for</strong>: Production games, complex gameplay systems</p>
-
-
-
-
-
-
-
-
-
-
-
-<div class="d-flex alert alert-warning " role="alert">
-        
-        <div class="flex-grow-1 my-auto">
-            <strong>⚠️ Support Notice</strong>: SimpleFPS is provided as-is for educational purposes only. No support is provided for implementation, customization or troubleshooting.
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-<div class="d-flex alert alert-warning " role="alert">
-        
-        <div class="flex-grow-1 my-auto">
-            SECTION UNDER CONSTRUCTION
-        </div>
-    </div>
+<p>⚠️ <strong>Support Notice</strong>: SimpleFPS is provided as-is for educational purposes only. No support is provided for implementation, customization or troubleshooting.</p>
 <hr />
 
 <h1 id="heading" class="heading"> <a href="#heading" aria-labelledby="heading">

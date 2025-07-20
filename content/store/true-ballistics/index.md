@@ -216,7 +216,7 @@ The trajectory of the projectile will have these colors:
 
 {{< image src="inspector_5.jpg" wrapper="col-9 mx-auto">}}
 
-The house-keeper of `True Ballistics`. Every frame it inspects every projectile and safely removes those that have out-lived their time, slowed below a usable speed, strayed beyond configurable bounds, remained stationary too long, travelled too far, or finished their first (or failed) collision. In essence, it cleans up spent rounds so your scene stays lean and performant. Without this system the projectiles **would never disappear**.
+The house-keeper of `True Ballistics`. Inspects every projectile and safely removes those that have out-lived their time, slowed below a usable speed, strayed beyond configurable bounds, remained stationary too long, travelled too far, or finished their first (or failed) collision. In essence, it cleans up spent rounds so your scene stays lean and performant. Without this system the projectiles **would never disappear**.
 
 If any of the following (active) rules are met, the projectile is deactivated.
 
@@ -262,7 +262,7 @@ If true, projectiles are deactivated upon any impact that does not result in a r
 
 {{< image src="inspector_6.jpg" wrapper="col-9 mx-auto">}}
 
-The gate-keeper of `True Ballistics`. Every frame it checks each projectile’s path and decides whether it has struck something—using precise [RayCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.Raycast.html) for hypersonic rounds and efficient batched [SphereCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.SphereCast.html) for everyone else—then fires events that let ricochet, penetration, VFX and damage systems do their work. In short, it turns flying bullets into meaningful impacts your game can react to. Without this system the projectiles **would pass straight through every surface**.
+The gate-keeper of `True Ballistics`. Checks each projectile’s path and decides whether it has struck something—using precise [RayCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.Raycast.html) for hypersonic rounds and efficient batched [SphereCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.SphereCast.html) for everyone else—then fires events that let ricochet, penetration, VFX and damage systems do their work. In short, it turns flying bullets into meaningful impacts your game can react to. Without this system the projectiles **would pass straight through every surface**.
 
 {{< alert color="light" >}}
 Remember that for a projectile to collide with an object on the stage, this object must have some kind of [Collider](https://docs.unity3d.com/Manual/collision-section.html).
@@ -428,8 +428,26 @@ The show-stopper of `True Ballistics`. For every projectile that carries a Trace
 - Brightness based on velocity.
 - Separate head/tail materials.
 
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
+The `Compute Shader` field must point at "Tracer.compute" that ships with the package (FronkonGames/TrueBallistics/Shaders/Tracer.compute). If you create your own shader (to change color ramps, vertex layout, etc) simply drag that asset into the same slot.
+
+You can add as many `Tracers` as you want, normally one per weapon type. If a weapon type does not have an associated `Tracer`, it is ignored.
+
+**Configuration**:
+- `Weapon Type`: Which weapons use this preset.
+- `Width`: Thickness of the tail quad.
+- `Length`: World-space length of the streak (metres).
+- `Tail Material` / `Head Material`: You must use 'Fronkon Games/True Ballistics/Tracer' or similar.
+- `Min Brightness`: Brightness multiplier at 0 m/s (projectile stopped).
+- `Max Brightness`: Brightness multiplier at initial speed, the system interpolates between min/max as the round slows down.
+
+A Tracer has this geometry:
+
+{{< image src="tracer_0.jpg" wrapper="col-9 mx-auto">}}
+
+The tail (orange box) is oriented on its longitudinal axis facing the camera. As from the front and from behind you can hardly see anything, the head is a quad that always remains vertical. This way the projectile will be seen from any angle.
+
+{{< alert color="light" >}}
+Try to make the right side of the tail texture the same size as the head texture.
 {{< /alert >}}
 
 ### Weather System
@@ -523,9 +541,73 @@ This system uses Debug.DrawLine and can affect performance **only** in the Edito
 - Ricochet and penetration visualization
 - Configurable retention time
 
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
+**Forces**
+
+{{< image src="debug_0.jpg" wrapper="col-6 mx-auto">}}
+
+It shows the position of the projectile (yellow sphere), its momentum (cyan arrow), gravity (orange arrow) and the sum of the other forces acting on the projectile (magenta arrow).
+
+{{< alert color="light" >}}
+The length of the vectors is not to scale.
 {{< /alert >}}
+
+**Trayectories**
+
+{{< image src="physics_0.jpg" wrapper="col-6 mx-auto">}}
+
+Shows the trajectory of the projectile, colored according to the percentage of the initial velocity:
+
+{{< rawhtml >}}
+<center>
+{{< /rawhtml >}}
+
+| Color &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Initial Velocity |
+|----------|-------------------:|
+| Red | >=75% |
+| Orange | >=50% |
+| Yellow | >=25% |
+| Green | >=10% |
+| Gray | <10% |
+
+{{< rawhtml >}}
+</center>
+<br>
+{{< /rawhtml >}}
+
+**Configuration**:
+- `Samples Per Second`: How many trajectory points the system records for each active projectile every second. Higher values = smoother lines but more memory/Gizmos; lower values = coarse, lighter.
+- `Maximum Samples`: Hard cap on points stored per projectile. 0 means unlimited; any positive number stops recording once that count is reached (older points are then dropped).
+- `Projectile Scale`: Uniform size multiplier for the sphere/mesh that represents each live round in the Scene view. Useful when your game world is tiny (scale < 1) or huge (> 1).
+- `Keep Despawned Entities`: Time in seconds to keep drawing a projectile’s last trajectory after it has been despawned. 0 = remove immediately; > 0 lets you pause/inspect past shots for that duration before they are purged.
+
+**Hits**
+
+Shows the points at which the projectile collides with an object.
+
+{{< image src="collision_0.jpg" wrapper="col-6 mx-auto">}}
+
+**Configuration**:
+- `Hit Circle Radius`: Increase it if impacts are hard to spot, decrease it if the circles cover too much of the scene.
+- `Hit Direction Length`: Next to each impact disc the system also draws a line‐arrow that shows the incoming shot direction.
+
+**Ricochets**
+
+It shows the points at which the projectile bounces off a material.
+
+{{< image src="ricochet_0.jpg" wrapper="col-6 mx-auto">}}
+
+**Configuration**:
+- `Maximum Ricochets`: Limits how many ricochet events the Debug System keeps and draws at once. 0 = no limit (every bounce is stored and shown), positive value = only the most-recent N ricochets are retained; older ones are discarded.
+- `Ricochet Direction Length`: The length, in world metres, of the two arrows the system draws at each ricochet point: one for the incoming velocity, one for the outgoing velocity.
+
+**Penetrations**
+
+It shows the points and trajectories of the projectile penetrating objects.
+
+{{< image src="penetration_0.jpg" wrapper="col-6 mx-auto">}}
+
+**Configuration**:
+- `Maximum Penetrations`: Sets how many penetration events the Debug System retains and visualises at once. 0 = unlimited (every entry/exit/stuck point is kept). Any positive number keeps only the most-recent N events, discarding older ones.
 
 ### Customs Systems
 
@@ -670,19 +752,11 @@ A lightweight first-person controller that showcases `True Ballistics` integrati
 - **Effects**: Head bob, weapon sway, and recoil
 - **Ballistics**: Full integration with True Ballistics system
 
-#### Usage Guidelines
-
 ✅ **Use for**: Learning, prototyping, testing weapon configurations
 
 ❌ **Don't use for**: Production games, complex gameplay systems
 
-{{< alert color="warning" >}}
-**⚠️ Support Notice**: SimpleFPS is provided as-is for educational purposes only. No support is provided for implementation, customization or troubleshooting.
-{{< /alert >}}
-
-{{< alert color="warning" >}}
-SECTION UNDER CONSTRUCTION
-{{< /alert >}}
+⚠️ **Support Notice**: SimpleFPS is provided as-is for educational purposes only. No support is provided for implementation, customization or troubleshooting.
 
 ---
 #
