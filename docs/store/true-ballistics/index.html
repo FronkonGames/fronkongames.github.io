@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/true-ballistics/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:00+01:00">
-    <meta property="article:modified_time" content="2025-07-19T20:19:14+02:00">
+    <meta property="article:modified_time" content="2025-07-20T02:47:17+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/true-ballistics-1280x640.jpg">
 <meta property="og:image:alt" content="True Ballistics">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:00CET",
-      "dateModified": "2025-07-19T20:19:14CET",
+      "dateModified": "2025-07-20T02:47:17CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/true-ballistics/#/schema/breadcrumb/1"
       },
@@ -429,14 +429,7 @@
         <li><a href="#customs-systems">Customs Systems</a></li>
       </ul>
     </li>
-    <li><a href="#simple-fps">Simple FPS</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
+    <li><a href="#simple-fps">Simple FPS</a></li>
     <li><a href="#support">Support</a></li>
   </ul>
 </nav></small>
@@ -3642,124 +3635,102 @@
 
     &nbsp;
 </a></h2>
-<p>A lightweight first-person controller that showcases <code>True Ballistics</code> integration. <strong>It&rsquo;s designed for learning and prototyping, not production use.</strong></p>
-
-<h4 id="purpose" class="heading">Purpose <a href="#purpose" aria-labelledby="purpose">
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
 
 
 
 
 
     
+        
+        
+    
 
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h4>
-<ul>
-<li><strong>Educational</strong>: Demonstrates best practices for ballistics integration</li>
-<li><strong>Prototyping</strong>: Rapid testing of weapon configurations</li>
-<li><strong>Reference</strong>: Clean, documented code for learning</li>
-<li><strong>Decoupled</strong>: Event-driven architecture for easy modification</li>
-</ul>
-
-<h4 id="architecture" class="heading">Architecture <a href="#architecture" aria-labelledby="architecture">
-
-
-
-
+    
+    
 
 
 
 
 
     
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h4>
-<ul>
-<li><strong>Event-Driven</strong>: Uses <code>SimpleFPSEvents</code> for decoupled communication</li>
-<li><strong>Auto-Wired</strong>: <code>SimpleFPSDependencyContainer</code> automatically subscribes methods</li>
-<li><strong>Modular</strong>: Each component handles a specific responsibility</li>
-</ul>
-
-<h4 id="key-components" class="heading">Key Components <a href="#key-components" aria-labelledby="key-components">
-
-
-
-
-
-
-
-
-
+        
+        
     
 
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h4>
-<ul>
-<li><strong>SimpleFPSInput</strong>: Keyboard/mouse input handling</li>
-<li><strong>SimpleFPSMovement</strong>: Character movement with physics</li>
-<li><strong>SimpleFPSCamera</strong>: Mouse look with pitch/yaw</li>
-<li><strong>SimpleFPSWeapon</strong>: Weapon handling and ballistics integration</li>
-<li><strong>SimpleFPSInventory</strong>: Weapon switching and ammo management</li>
-<li><strong>SimpleFPSAudio</strong>: Centralized audio management</li>
-<li><strong>SimpleFPSPlayer</strong>: Physics and collision handling</li>
-</ul>
-
-<h4 id="features" class="heading">Features <a href="#features" aria-labelledby="features">
 
 
 
 
 
+<div class="col-9 mx-auto"><img class="img-fluid "
+            src="/store/true-ballistics/simplefps_0-2800x2012.jpg"
+            
+            
+            srcset="/store/true-ballistics/simplefps_0-576x414.webp 576w, /store/true-ballistics/simplefps_0-768x552.webp 768w, /store/true-ballistics/simplefps_0-992x713.webp 992w, /store/true-ballistics/simplefps_0-1200x862.webp 1200w, /store/true-ballistics/simplefps_0-1400x1006.webp 1400w, /store/true-ballistics/simplefps_0-2800x2012.webp 2800w" sizes="100vw"
+            height="2012"
+            width="2800"
+            >
+</div><br>
+<p>Simple FPS is a self-contained first-person-shooter sandbox that ships with <code>True Ballistics</code> to show—rather than just tell—how the library plugs into a game loop.</p>
+<p>At its core it is an event-driven micro-framework: every time the player moves, fires, changes weapons or collides with the world, a strongly-typed event is raised and routed through a lightweight dependency container that “auto-wires” the correct listeners.</p>
+<p>Because each piece of behaviour lives in its own MonoBehaviour (input, movement, camera, weapon, inventory, audio, player physics), you can open any script and see a single, well-scoped responsibility with clear comments.</p>
 
 
 
 
-    
 
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
 
-    &nbsp;
-</a></h4>
-<ul>
-<li><strong>Movement</strong>: Walking, sprinting, jumping, crouching</li>
-<li><strong>Camera</strong>: Smooth mouse look with configurable sensitivity</li>
-<li><strong>Weapons</strong>: 7-slot weapon system with realistic ballistics</li>
-<li><strong>Audio</strong>: Footsteps, weapon sounds, and environmental audio</li>
-<li><strong>Effects</strong>: Head bob, weapon sway, and recoil</li>
-<li><strong>Ballistics</strong>: Full integration with True Ballistics system</li>
-</ul>
-<p>✅ <strong>Use for</strong>: Learning, prototyping, testing weapon configurations</p>
-<p>❌ <strong>Don&rsquo;t use for</strong>: Production games, complex gameplay systems</p>
-<p>⚠️ <strong>Support Notice</strong>: SimpleFPS is provided as-is for educational purposes only. No support is provided for implementation, customization or troubleshooting.</p>
+
+
+
+
+
+<div class="d-flex alert alert-light " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            <p>Although the package is fully functional, it deliberately avoids sophisticated gameplay systems; <strong>its goal is to be a clean</strong>, minimal reference you can dissect, copy into prototypes or use to validate weapon settings before integrating <code>True Ballistics</code> into your own project.</p>
+<p><strong>No official support is offered beyond this educational purpose</strong>.</p>
+
+        </div>
+    </div>
 <hr />
-
-<h1 id="heading" class="heading"> <a href="#heading" aria-labelledby="heading">
-
-
-
-
-
-
-
-
-
-    
-
-    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-
-    &nbsp;
-</a></h1>
 
 <h2 id="support" class="heading">Support <a href="#support" aria-labelledby="support">
 
@@ -3884,14 +3855,7 @@
         <li><a href="#customs-systems">Customs Systems</a></li>
       </ul>
     </li>
-    <li><a href="#simple-fps">Simple FPS</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
+    <li><a href="#simple-fps">Simple FPS</a></li>
     <li><a href="#support">Support</a></li>
   </ul>
 </nav>

@@ -718,48 +718,21 @@ public class GravityWellSystem : SystemBase
 
 ## Simple FPS
 
-A lightweight first-person controller that showcases `True Ballistics` integration. **It's designed for learning and prototyping, not production use.**
+{{< image src="simplefps_0.jpg" wrapper="col-9 mx-auto">}}
 
-#### Purpose
+Simple FPS is a self-contained first-person-shooter sandbox that ships with `True Ballistics` to show—rather than just tell—how the library plugs into a game loop.
 
-- **Educational**: Demonstrates best practices for ballistics integration
-- **Prototyping**: Rapid testing of weapon configurations
-- **Reference**: Clean, documented code for learning
-- **Decoupled**: Event-driven architecture for easy modification
+At its core it is an event-driven micro-framework: every time the player moves, fires, changes weapons or collides with the world, a strongly-typed event is raised and routed through a lightweight dependency container that “auto-wires” the correct listeners.
 
-#### Architecture
+Because each piece of behaviour lives in its own MonoBehaviour (input, movement, camera, weapon, inventory, audio, player physics), you can open any script and see a single, well-scoped responsibility with clear comments.
 
-- **Event-Driven**: Uses `SimpleFPSEvents` for decoupled communication
-- **Auto-Wired**: `SimpleFPSDependencyContainer` automatically subscribes methods
-- **Modular**: Each component handles a specific responsibility
+{{< alert color="light" >}}
+Although the package is fully functional, it deliberately avoids sophisticated gameplay systems; **its goal is to be a clean**, minimal reference you can dissect, copy into prototypes or use to validate weapon settings before integrating `True Ballistics` into your own project.
 
-#### Key Components
-
-- **SimpleFPSInput**: Keyboard/mouse input handling
-- **SimpleFPSMovement**: Character movement with physics
-- **SimpleFPSCamera**: Mouse look with pitch/yaw
-- **SimpleFPSWeapon**: Weapon handling and ballistics integration
-- **SimpleFPSInventory**: Weapon switching and ammo management
-- **SimpleFPSAudio**: Centralized audio management
-- **SimpleFPSPlayer**: Physics and collision handling
-
-#### Features
-
-- **Movement**: Walking, sprinting, jumping, crouching
-- **Camera**: Smooth mouse look with configurable sensitivity
-- **Weapons**: 7-slot weapon system with realistic ballistics
-- **Audio**: Footsteps, weapon sounds, and environmental audio
-- **Effects**: Head bob, weapon sway, and recoil
-- **Ballistics**: Full integration with True Ballistics system
-
-✅ **Use for**: Learning, prototyping, testing weapon configurations
-
-❌ **Don't use for**: Production games, complex gameplay systems
-
-⚠️ **Support Notice**: SimpleFPS is provided as-is for educational purposes only. No support is provided for implementation, customization or troubleshooting.
+**No official support is offered beyond this educational purpose**.
+{{< /alert >}}
 
 ---
-#
 ## Support
 
 Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
