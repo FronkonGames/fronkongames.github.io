@@ -17,6 +17,7 @@ All the effects of '**[Artistic](https://assetstore.unity.com/packages/vfx/shade
 * [Oil Paint](#oilpaint), transform your games into pieces of art.
 * [Tilt Shift](#tiltshift), used to simulate a miniature scene.
 * [Photo](#photo), recreates the authentic look & feel of professional cameras.
+* [Shockwave](#shockwave), stunning shockwave effects with customizable distortion.
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
 * [Sharpen](#sharpen), enhances image details.
 * [Tonemapper](#tonemapper), maps HDR into LDR using different algorithms.
@@ -266,6 +267,124 @@ Chromatic fringing adds color separation in high-contrast areas, while dust part
 Color bleeding simulates the way colors can bleed into adjacent areas on film, and the expired years parameter recreates the look of film that has been stored beyond its expiration date, with shifts in color balance and contrast.
 
 For **Cinestill 800T** film users, the halation effect creates that distinctive red glow around bright light sources, adding authenticity to night scenes and images with strong light sources.
+
+---
+## Shockwave {#shockwave}
+{{< asset-header youtube="Lyg2Og-kzWM" store="https://assetstore.unity.com/packages/slug/330713" demo="https://fronkongames.github.io/demos-artistic/shockwave/" warn="assets used in video and demo are not included">}}
+
+Create stunning shockwave effects with customizable distortion, chromatic aberration, flares, and edge detection. Perfect for explosions, time jumps, portals, and other dramatic visual effects. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="shockwave_0.png" wrapper="col-8 mx-auto">}}
+
+#### Common Settings
+
+``Intensity`` controls the overall intensity of the shockwave effect [0.0, 1.0]. When set to 0, the effect is completely disabled and will not execute. Values between 0 and 1 provide proportional effect strength, allowing for smooth transitions and blending with other post-processing effects.
+
+#### Core Shockwave Parameters
+
+``Radius`` defines the radius of the shockwave effect [0.0, 1.0]. A value of 0 indicates no shockwave is present, while a value of 1 creates a shockwave that extends beyond the screen boundaries. This parameter is fundamental to the effect's visual impact and should be animated to create the characteristic expanding wave motion.
+
+``Center`` specifies the origin point of the shockwave in normalized screen coordinates [0.0, 1.0] for both X and Y components. The center point determines where the shockwave emanates from, with (0.5, 0.5) representing the center of the screen. This parameter is crucial for positioning the effect relative to specific game events or visual elements.
+
+``Strength`` controls the intensity of the shockwave distortion [0.0, 5.0]. Higher values create more pronounced visual effects, while lower values provide subtle distortions. This parameter affects the magnitude of displacement and color shifts within the shockwave area.
+
+``Width`` determines the thickness of the shockwave ring [0.01, 0.75]. This parameter controls how wide the visible shockwave band appears, affecting the overall visual density and impact of the effect.
+
+#### Ring Configuration
+
+``Ring Width (Inner/Outer)`` these parameters control the inner and outer boundaries of the shockwave ring [0.01, 1.0], allowing for asymmetric ring shapes and complex visual patterns. The inner width defines the distance from the center where the effect begins, while the outer width determines where it ends.
+
+``Ring Sharpness`` controls the falloff rate of the shockwave effect from the ring center [1.0, 32.0]. Higher values create sharper, more defined edges, while lower values produce softer, more gradual transitions. This parameter significantly affects the visual quality and realism of the shockwave.
+
+``Ring Skew`` applies asymmetric distortion to the ring thickness [-1.0, 1.0], pushing the effect either inward (negative values) or outward (positive values) from the center. This parameter enables creative variations in shockwave appearance and can simulate directional forces.
+
+#### Color and Visual Effects
+
+``Color Strength`` provides per-channel control over the color intensity of the shockwave effect. Each component (R, G, B) can be adjusted independently to create color-specific distortions and chromatic effects.
+
+``Shockwave Color Blend`` determines how the shockwave color interacts with the underlying image. Different blend modes provide various visual effects, from solid overlays to hue shifts and additive blending.
+
+``Chromatic Aberration`` creates color separation effects by applying different displacement amounts to each color channel. This parameter simulates lens distortion and adds cinematic realism to the shockwave effect.
+
+#### Noise Effects
+
+``Noise Amount`` controls the intensity of procedural noise applied to the shockwave [0.0, 1.0]. Noise adds organic variation and breaks up uniform patterns, creating more natural-looking effects.
+
+``Noise Scale`` determines the frequency of the noise pattern [0.1, 64.0]. Higher values create fine-grained noise, while lower values produce larger, more visible noise patterns.
+
+``Noise Speed`` controls the animation speed of the noise pattern [0.0, 5.0]. This parameter enables dynamic noise movement that can enhance the sense of energy and motion in the shockwave.
+
+#### Flare Effects
+
+``Flares Amount`` controls the intensity of lens flare effects within the shockwave area [0.0, 1.0]. Flares add bright highlights and lens artifacts that enhance the cinematic quality of the effect.
+
+``Flares Color Blend`` determines the blending mode for flare colors, allowing for various visual treatments from solid overlays to additive effects.
+
+``Flares Color`` specifies the base color of the flare effects. This parameter enables customization of the flare appearance to match specific visual themes or artistic requirements.
+
+``Flares Frequency`` controls the density of flare elements within the shockwave [0.0, 64.0]. Higher values create more numerous, smaller flares, while lower values produce fewer, larger flare elements.
+
+``Flares Speed`` determines the animation speed of flare effects [0.0, 5.0]. This parameter enables dynamic flare movement that can enhance the sense of energy and motion.
+
+``Flares Threshold`` controls the brightness threshold at which flares become visible [0.0, 1.0]. This parameter enables fine-tuning of flare visibility and can be used to create more subtle or dramatic effects.
+
+``Flares Softness`` controls the blur amount applied to flare effects [0.0, 10.0]. Higher values create softer, more diffused flares, while lower values produce sharper, more defined flare elements.
+
+#### Inside Zone Effects
+
+``Inside Tint`` applies a color tint to the area inside the shockwave ring. This parameter enables atmospheric effects and can simulate environmental changes within the shockwave area.
+
+``Color Blend`` determines how the inside zone tint interacts with the underlying image. Different blend modes provide various visual treatments for the interior area.
+
+#### Color Correction
+
+``Brightness`` adjusts the overall brightness of the affected area [-1.0, 1.0]. Negative values darken the image, while positive values brighten it, enabling atmospheric and mood adjustments.
+
+``Contrast`` controls the contrast ratio of the affected area [0.0, 2.0]. Values below 1.0 reduce contrast, while values above 1.0 increase it, affecting the visual impact and clarity of the effect.
+
+``Gamma`` adjusts the gamma correction of the affected area [0.1, 10.0]. This parameter enables fine-tuning of the tonal response and can be used to match specific visual styles or compensate for display characteristics.
+
+``Hue`` controls the hue shift applied to the affected area [0.0, 1.0]. This parameter enables color grading effects and can be used to create specific atmospheric conditions or artistic treatments.
+
+``Saturation`` controls the color saturation of the affected area [0.0, 2.0]. Values below 1.0 reduce saturation (toward grayscale), while values above 1.0 increase it, enabling dramatic color effects.
+
+#### Edge Effects
+
+``Edge Amount`` controls the intensity of edge highlighting effects [0.0, 1.0]. Edge effects create bright outlines and highlights that enhance the visual definition of objects within the shockwave area.
+
+``Edge Color Blend`` determines the blending mode for edge colors. The default Hue mode creates color-shifted edges that can enhance the visual impact of the effect.
+
+``Edge Color`` specifies the base color for edge highlighting effects. This parameter enables customization of edge appearance to match specific visual themes.
+
+``Edge Width`` controls the thickness of edge highlighting in texels [0.1, 5.0]. This parameter affects the visual prominence and definition of edge effects.
+
+#### Edge Noise
+
+``Edge Noise Amount`` controls the intensity of noise applied to edge effects [0.0, 1.0]. Edge noise adds organic variation to edge highlighting, creating more natural and dynamic visual results.
+
+``Edge Noise Scale`` determines the frequency of edge noise patterns [0.1, 64.0]. This parameter controls the granularity and detail level of edge noise effects.
+
+``Edge Noise Speed`` controls the animation speed of edge noise effects [0.0, 10.0]. Dynamic edge noise can enhance the sense of energy and motion in the shockwave.
+
+#### Edge Plasma
+
+``Edge Plasma Amount`` controls the intensity of plasma effects applied to edges [0.0, 1.0]. Plasma effects create animated, energy-like patterns that enhance the visual impact of edge highlighting.
+
+``Edge Plasma Scale`` determines the frequency of plasma patterns [0.01, 64.0]. This parameter controls the size and detail level of plasma effects.
+
+``Edge Plasma Speed`` controls the animation speed of plasma effects [0.0, 10.0]. Dynamic plasma can create compelling energy animations that enhance the shockwave's visual appeal.
+
+#### Hue Variation Effects
+
+``Hue Variation Amount`` controls the intensity of hue variation effects [0.0, 1.0]. When enabled, this parameter creates color shifts that vary across the shockwave area, adding dynamic color movement.
+
+``Hue Variation Angular Scale`` controls the angular frequency of hue variation patterns [0.0, 2.0]. This parameter determines how many color bands appear around the shockwave center.
+
+``Hue Variation Speed`` controls the animation speed of hue variation effects [-10.0, 10.0]. Positive values create clockwise rotation, while negative values create counterclockwise rotation.
+
+``Hue Variation Radial Amount`` controls the intensity of radial hue variation effects [0.0, 1.0]. This parameter creates color shifts that vary with distance from the shockwave center.
+
+``Hue Variation Radial Scale`` determines the radial frequency of hue variation patterns [0.0, 64.0]. This parameter controls how many color rings appear from the center outward.
 
 ---
 ## Color Isolation {#colorisolation}
