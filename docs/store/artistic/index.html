@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/artistic/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:01+01:00">
-    <meta property="article:modified_time" content="2025-07-19T20:19:14+02:00">
+    <meta property="article:modified_time" content="2025-08-28T18:19:15+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/artistic-1280x640.jpg">
 <meta property="og:image:alt" content="Artistic">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:01CET",
-      "dateModified": "2025-07-19T20:19:14CET",
+      "dateModified": "2025-08-28T18:19:15CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/artistic/#/schema/breadcrumb/1"
       },
@@ -429,7 +429,11 @@
     </li>
     <li><a href="#colorisolation">Color Isolation</a></li>
     <li><a href="#sharpen">Sharpen</a></li>
-    <li><a href="#tonemapper">Tonemapper</a></li>
+    <li><a href="#tonemapper">Tonemapper</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#comic">Comic</a></li>
     <li><a href="#neon">Neon</a></li>
     <li><a href="#spark">Spark</a></li>
@@ -837,6 +841,26 @@
             width="2800"
             >
 </div><br>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-info " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            <p>&lsquo;<em>Quality</em>&rsquo; levels (<em>Project Settings &gt; Quality</em>) can have their own active &lsquo;<em>Render Pipeline Asset</em>&rsquo;.</p>
+<p>If so, whatever you assign in &lsquo;<em>Scriptable Render Pipeline Settings</em>&rsquo; in &lsquo;<em>Graphics</em>&rsquo; will be ignored.</p>
+<p><strong>Remember to add the effect to the quality levels you want to use.</strong></p>
+
+        </div>
+    </div>
 
 <h2 id="vr" class="heading">VR <a href="#vr" aria-labelledby="vr">
 
@@ -3150,7 +3174,8 @@ These rings can be colored and blended with the image in different ways, offerin
         </div></a>&nbsp;
 </div><br><br>
 
-<p>Maps wide range colors (HDR) into low dynamic range (LDR) using different algorithms. Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+<p>Provides industry-standard tone mapping operators combined with professional color grading tools. It supports both HDR and LDR rendering pipelines and offers precise control over every aspect of your image&rsquo;s tone and color reproduction.</p>
+<p>Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
 
 
 
@@ -3215,44 +3240,986 @@ These rings can be colored and blended with the image in different ways, offerin
 
 
 
-<div class="col-6 mx-auto"><img class="img-fluid "
-            src="/store/artistic/tonemapper_0-2800x3304.jpg"
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_0-2800x2185.jpg"
             
             
-            srcset="/store/artistic/tonemapper_0-576x680.webp 576w, /store/artistic/tonemapper_0-768x906.webp 768w, /store/artistic/tonemapper_0-992x1171.webp 992w, /store/artistic/tonemapper_0-1200x1416.webp 1200w, /store/artistic/tonemapper_0-1400x1652.webp 1400w, /store/artistic/tonemapper_0-2800x3304.webp 2800w" sizes="100vw"
-            height="3304"
+            srcset="/store/artistic/tonemapper_0-576x450.webp 576w, /store/artistic/tonemapper_0-768x599.webp 768w, /store/artistic/tonemapper_0-992x774.webp 992w, /store/artistic/tonemapper_0-1200x937.webp 1200w, /store/artistic/tonemapper_0-1400x1093.webp 1400w, /store/artistic/tonemapper_0-2800x2185.webp 2800w" sizes="100vw"
+            height="2185"
             width="2800"
             >
 </div><br>
-<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active. These are the operators (<em>2</em>) included:</p>
+
+<h4 id="common-settings-1" class="heading">Common Settings <a href="#common-settings-1" aria-labelledby="common-settings-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
 <ul>
-<li><strong>Linear</strong>: Good old linear.</li>
-<li><strong>Logarithmic</strong>: logarithmic mapping</li>
-<li><strong>Exponential</strong>: exponential mapping.</li>
-<li><strong>Simple Reinhard</strong>: simple and fast Reinhard.</li>
-<li><strong>Luma Reinhard</strong>: Reinhard based on luminance from &ldquo;Photographic Tone Reproduction for Digital Images&rdquo;.</li>
-<li><strong>Luma Inverted Reinhard</strong>: Reinhard based on inverted luminance, by Brian Karis.</li>
-<li><strong>White Luma Reinhard</strong>: Reinhard based on luminance, but white preserving.</li>
-<li><strong>Hejl 2015</strong>: ACES-liked, by Jim Hejl.</li>
-<li><strong>Filmic</strong>: filmic tonemapping.</li>
-<li><strong>Filmic Aldridge</strong>: variation of the Hejl and Burgess-Dawson filmic curve by Graham Aldridge.</li>
-<li><strong>ACES</strong>: From &lsquo;ACES Filmic Tone Mapping Curve&rsquo; by Narkowicz.</li>
-<li><strong>ACES Oscars</strong>: Pastel hue function, designed to provide a pleasing albedo.</li>
-<li><strong>ACES Hill</strong>: ACES curve fit by Stephen Hill (@self_shadow).</li>
-<li><strong>Lottes</strong>: From &ldquo;Advanced Techniques and Optimization of HDR Color Pipelines&rdquo; by Timothy Lottes.</li>
-<li><strong>Uchimura</strong>: Used in Gran Turismo. From &ldquo;HDR theory and practice&rdquo; by Uchimura.</li>
-<li><strong>Unreal</strong>: Adapted to be close to ACES curve by Romain Guy. Used in Unreal Engine 3 up to 4.14.</li>
-<li><strong>Uncharted 2</strong>: Created by John Hable for &lsquo;Uncharted 2&rsquo; (based on Haarm-Pieter Duiker&rsquo;s works in 2006 for EA).</li>
-<li><strong>Watch Dogs</strong>: Used in &lsquo;Watch Dogs&rsquo; by Ubisoft.</li>
-<li><strong>Piece-Wise</strong>: &lsquo;Piece-Wise Power Curve&rsquo; by John Hable at Epic Games.</li>
-<li><strong>RomBin Da House</strong>: By tech art Roman Galashov (@RomanGalashov).</li>
-<li><strong>Oklab</strong>: Oklab-based.</li>
-<li><strong>Clamping</strong>: Clamps everything above a given luminance threshold to 1, by Schlick.</li>
-<li><strong>Max 3</strong>: From &lsquo;Optimized Reversible Tonemapper for Resolve&rsquo;, by Timothy Lottes.</li>
-<li><strong>Max 3 Inverted</strong>: Inverted luminance.</li>
+<li><code>Intensity</code>, controls the overall strength of the tonemapping effect. <strong>Note</strong>: An intensity of 0 will disable the effect entirely.</li>
 </ul>
-<p>Each operator can also have some extra parameters that will appear under it.</p>
-<p>You can also modify the final color with the parameters offered by &lsquo;<strong>Color filter</strong>&rsquo; (<em>3</em>) and its &lsquo;<strong>Lift</strong>&rsquo; (<em>4</em>), &lsquo;<strong>Midtones</strong>&rsquo; (<em>5</em>) and &lsquo;<strong>Gain</strong>&rsquo; (<em>6</em>).</p>
+
+<h4 id="tonemapping-operators" class="heading">Tonemapping Operators <a href="#tonemapping-operators" aria-labelledby="tonemapping-operators">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Choose from <strong>28 different tonemapping algorithms</strong>, each with unique characteristics:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-4 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_1-2800x5529.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_1-576x1137.webp 576w, /store/artistic/tonemapper_1-768x1516.webp 768w, /store/artistic/tonemapper_1-992x1959.webp 992w, /store/artistic/tonemapper_1-1200x2369.webp 1200w, /store/artistic/tonemapper_1-1400x2764.webp 1400w, /store/artistic/tonemapper_1-2800x5529.webp 2800w" sizes="100vw"
+            height="5529"
+            width="2800"
+            >
+</div><br>
+
+<h5 id="basic-operators" class="heading">Basic Operators <a href="#basic-operators" aria-labelledby="basic-operators">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ul>
+<li><strong>Linear</strong>: Simple linear mapping (good reference point)</li>
+<li><strong>Logarithmic</strong>: Natural logarithm-based mapping</li>
+<li><strong>Exponential</strong>: Exponential curve mapping</li>
+<li><strong>Clamping</strong>: Simple luminance threshold clamping</li>
+</ul>
+
+<h5 id="reinhard-family" class="heading">Reinhard Family <a href="#reinhard-family" aria-labelledby="reinhard-family">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ul>
+<li><strong>SimpleReinhard</strong>: Basic Reinhard operator</li>
+<li><strong>LumaReinhard</strong>: &ldquo;Photographic Tone Reproduction for Digital Images&rdquo; (Reinhard 2002)</li>
+<li><strong>LumaInvertedReinhard</strong>: Reinhard with inverted luminance (Brian Karis)</li>
+<li><strong>WhiteLumaReinhard</strong>: Luminance-based Reinhard with white preservation</li>
+</ul>
+
+<h5 id="filmic-operators" class="heading">Filmic Operators <a href="#filmic-operators" aria-labelledby="filmic-operators">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ul>
+<li><strong>Filmic</strong>: Basic filmic tonemapping</li>
+<li><strong>FilmicAldridge</strong>: Hejl and Burgess-Dawson variation (Graham Aldridge)</li>
+<li><strong>Hejl2015</strong>: ACES-like curve (Jim Hejl)</li>
+<li><strong>Uncharted2</strong>: Hable curve from Uncharted 2</li>
+<li><strong>WatchDogs</strong>: Ubisoft&rsquo;s Watch Dogs tonemapper</li>
+<li><strong>PieceWise</strong>: Power curve by John Hable (Epic Games)</li>
+</ul>
+
+<h5 id="aces-family" class="heading">ACES Family <a href="#aces-family" aria-labelledby="aces-family">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ul>
+<li><strong>ACES</strong>: &ldquo;ACES Filmic Tone Mapping Curve&rdquo; (Narkowicz 2015)</li>
+<li><strong>ACESOscars</strong>: Official ACES with pastel hue preservation</li>
+<li><strong>ACESHill</strong>: Stephen Hill&rsquo;s ACES curve fit (@self_shadow)</li>
+<li><strong>ACESNarkowicz</strong>: Krzysztof Narkowicz&rsquo;s ACES implementation</li>
+</ul>
+
+<h5 id="advanced-operators" class="heading">Advanced Operators <a href="#advanced-operators" aria-labelledby="advanced-operators">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ul>
+<li><strong>Lottes</strong>: &ldquo;HDR theory and optimization&rdquo; (Lottes 2016)</li>
+<li><strong>Uchimura</strong>: Gran Turismo tonemapper (Uchimura 2017)</li>
+<li><strong>Unreal</strong>: UE3/UE4 tonemapper (Romain Guy adaptation)</li>
+<li><strong>RomBinDaHouse</strong>: Tech art curve (Roman Galashov)</li>
+<li><strong>Oklab</strong>: Oklab color space-based mapping</li>
+</ul>
+
+<h5 id="technical-operators" class="heading">Technical Operators <a href="#technical-operators" aria-labelledby="technical-operators">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ul>
+<li><strong>Max3/Max3Inverted</strong>: Optimized reversible tonemapper (Timothy Lottes)</li>
+<li><strong>PBRNeutral</strong>: Khronos PBR neutral tonemapper</li>
+<li><strong>Schlick</strong>: Simple rational function</li>
+<li><strong>Drago</strong>: Adaptive logarithmic mapping</li>
+<li><strong>AGX</strong>: Latest industry standard (Blender/Filament implementation)</li>
+</ul>
+
+<h4 id="operator-specific-parameters" class="heading">Operator-Specific Parameters <a href="#operator-specific-parameters" aria-labelledby="operator-specific-parameters">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li><code>White Level</code> (Linear, Logarithmic, WhiteLumaReinhard, Hejl2015, Clamping): Controls white point exposure level</li>
+<li><code>Cutoff</code> (FilmicAldridge): Black point cutoff threshold</li>
+<li><code>Linear Controls</code> (WatchDogs): Linear White and Color</li>
+<li><code>Punchy Look</code> (AGX): Enables the characteristic AGX &ldquo;punchy&rdquo; appearance</li>
+</ul>
+
+<h4 id="color-filter" class="heading">Color Filter <a href="#color-filter" aria-labelledby="color-filter">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_2-2800x1021.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_2-576x210.webp 576w, /store/artistic/tonemapper_2-768x280.webp 768w, /store/artistic/tonemapper_2-992x362.webp 992w, /store/artistic/tonemapper_2-1200x438.webp 1200w, /store/artistic/tonemapper_2-1400x510.webp 1400w, /store/artistic/tonemapper_2-2800x1021.webp 2800w" sizes="100vw"
+            height="1021"
+            width="2800"
+            >
+</div><br>
+<p>Basic color grading controls for overall image adjustment.</p>
+<ul>
+<li><code>Exposure</code>: Overall brightness adjustment</li>
+<li><code>Color Filter</code>: Overall color tint applied to the image</li>
+<li><code>White Balance</code>
+<ul>
+<li><code>Temperature</code>: Negative = cooler (blue), Positive = warmer (yellow)</li>
+<li><code>Tint</code>: Negative = green, Positive = magenta</li>
+</ul>
+</li>
+<li><code>Vibrance</code>: Color vibrance
+<ul>
+<li><code>Balance</code>: RGB channel multipliers (Default: 1, 1, 1)</li>
+</ul>
+</li>
+</ul>
+
+<h4 id="lift-midtones--gain-lmg" class="heading">Lift, Midtones &amp; Gain (LMG) <a href="#lift-midtones--gain-lmg" aria-labelledby="lift-midtones--gain-lmg">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_3-2800x814.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_3-576x167.webp 576w, /store/artistic/tonemapper_3-768x223.webp 768w, /store/artistic/tonemapper_3-992x288.webp 992w, /store/artistic/tonemapper_3-1200x349.webp 1200w, /store/artistic/tonemapper_3-1400x407.webp 1400w, /store/artistic/tonemapper_3-2800x814.webp 2800w" sizes="100vw"
+            height="814"
+            width="2800"
+            >
+</div><br>
+<p>Professional color grading controls inspired by ASC-CDL standard.</p>
+<ul>
+<li><code>Lift</code> (Shadows)
+<ul>
+<li><code>Color</code>: RGB shadow adjustment (Default: White)</li>
+<li><code>Brightness</code>: 0.0 to 2.0 (Default: 1.0)</li>
+</ul>
+</li>
+<li><code>Midtones</code>
+<ul>
+<li><code>Color</code>: RGB midtone adjustment (Default: White)</li>
+<li><code>Brightness</code>: 0.0 to 2.0 (Default: 1.0)</li>
+</ul>
+</li>
+<li><code>Gain</code> (Highlights)
+<ul>
+<li><code>Color</code>: RGB highlight adjustment (Default: White)</li>
+<li><code>Brightness</code>: 0.0 to 2.0 (Default: 1.0)</li>
+</ul>
+</li>
+</ul>
+
+<h4 id="tone-curve-controls" class="heading">Tone Curve Controls <a href="#tone-curve-controls" aria-labelledby="tone-curve-controls">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_4-2800x600.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_4-576x124.webp 576w, /store/artistic/tonemapper_4-768x165.webp 768w, /store/artistic/tonemapper_4-992x213.webp 992w, /store/artistic/tonemapper_4-1200x257.webp 1200w, /store/artistic/tonemapper_4-1400x300.webp 1400w, /store/artistic/tonemapper_4-2800x600.webp 2800w" sizes="100vw"
+            height="600"
+            width="2800"
+            >
+</div><br>
+<p>Film-emulation curve adjustments for precise tonal control.</p>
+<ul>
+<li><code>Black Point</code>: Lifts blacks for faded film look</li>
+<li><code>White Point</code>: Lowers whites for vintage appearance</li>
+<li><code>Toe Strength</code>: Controls shadow rolloff smoothness</li>
+<li><code>Shoulder Strength</code>: Controls highlight rolloff smoothness</li>
+</ul>
+
+<h4 id="channel-mixer" class="heading">Channel Mixer <a href="#channel-mixer" aria-labelledby="channel-mixer">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_5-2800x477.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_5-576x98.webp 576w, /store/artistic/tonemapper_5-768x131.webp 768w, /store/artistic/tonemapper_5-992x169.webp 992w, /store/artistic/tonemapper_5-1200x204.webp 1200w, /store/artistic/tonemapper_5-1400x238.webp 1400w, /store/artistic/tonemapper_5-2800x477.webp 2800w" sizes="100vw"
+            height="477"
+            width="2800"
+            >
+</div><br>
+<p>Remap color channels for creative color effects.</p>
+<ul>
+<li><code>Red Output</code>: Controls RGB influence on red output</li>
+<li><code>Green Output</code>: Controls RGB influence on green output</li>
+<li><code>Blue Output</code>: Controls RGB influence on blue output</li>
+</ul>
+
+<h4 id="split-toning" class="heading">Split Toning <a href="#split-toning" aria-labelledby="split-toning">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_6-2800x478.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_6-576x98.webp 576w, /store/artistic/tonemapper_6-768x131.webp 768w, /store/artistic/tonemapper_6-992x169.webp 992w, /store/artistic/tonemapper_6-1200x205.webp 1200w, /store/artistic/tonemapper_6-1400x239.webp 1400w, /store/artistic/tonemapper_6-2800x478.webp 2800w" sizes="100vw"
+            height="478"
+            width="2800"
+            >
+</div><br>
+<p>Apply different colors to shadows and highlights.</p>
+<ul>
+<li><code>Highlight Tint</code>: Color applied to bright image areas</li>
+<li><code>Shadow Tint</code>: Color applied to dark image areas</li>
+<li><code>Balance</code>: Negative favors shadows, positive favors highlights</li>
+</ul>
+
+<h4 id="selective-color" class="heading">Selective Color <a href="#selective-color" aria-labelledby="selective-color">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_7-2800x1140.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_7-576x234.webp 576w, /store/artistic/tonemapper_7-768x313.webp 768w, /store/artistic/tonemapper_7-992x404.webp 992w, /store/artistic/tonemapper_7-1200x488.webp 1200w, /store/artistic/tonemapper_7-1400x570.webp 1400w, /store/artistic/tonemapper_7-2800x1140.webp 2800w" sizes="100vw"
+            height="1140"
+            width="2800"
+            >
+</div><br>
+<p>CMYK adjustments for specific color ranges.</p>
+<p>Each color range (Reds, Yellows, Greens, Cyans, Blues, Magentas, Whites, Neutrals, Blacks) supports:</p>
+<ul>
+<li><strong>Cyan</strong>: -1.0 to 1.0</li>
+<li><strong>Magenta</strong>: -1.0 to 1.0</li>
+<li><strong>Yellow</strong>: -1.0 to 1.0</li>
+<li><strong>Black</strong>: -1.0 to 1.0</li>
+</ul>
+
+<h4 id="advanced-vibrance" class="heading">Advanced Vibrance <a href="#advanced-vibrance" aria-labelledby="advanced-vibrance">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/tonemapper_8-2800x1180.jpg"
+            
+            
+            srcset="/store/artistic/tonemapper_8-576x243.webp 576w, /store/artistic/tonemapper_8-768x324.webp 768w, /store/artistic/tonemapper_8-992x418.webp 992w, /store/artistic/tonemapper_8-1200x506.webp 1200w, /store/artistic/tonemapper_8-1400x590.webp 1400w, /store/artistic/tonemapper_8-2800x1180.webp 2800w" sizes="100vw"
+            height="1180"
+            width="2800"
+            >
+</div><br>
+<p>Enhanced vibrance controls with selective adjustments.</p>
 <hr />
 
 <h2 id="comic" class="heading">Comic <a href="#comic" aria-labelledby="comic">
@@ -4589,7 +5556,11 @@ These rings can be colored and blended with the image in different ways, offerin
     </li>
     <li><a href="#colorisolation">Color Isolation</a></li>
     <li><a href="#sharpen">Sharpen</a></li>
-    <li><a href="#tonemapper">Tonemapper</a></li>
+    <li><a href="#tonemapper">Tonemapper</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#comic">Comic</a></li>
     <li><a href="#neon">Neon</a></li>
     <li><a href="#spark">Spark</a></li>

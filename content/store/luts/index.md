@@ -103,6 +103,14 @@ Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied
 
 Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
 
+{{< alert color="info" >}}
+'_Quality_' levels (_Project Settings > Quality_) can have their own active '_Render Pipeline Asset_'.
+
+If so, whatever you assign in '_Scriptable Render Pipeline Settings_' in '_Graphics_' will be ignored.
+
+**Remember to add the effect to the quality levels you want to use.**
+{{< /alert >}}
+
 ## VR
 
 To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:

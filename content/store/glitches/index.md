@@ -54,6 +54,14 @@ Remember that the camera you are using must have the '**Post Processing**' optio
 
 {{< image src="editor_1.jpg" wrapper="col-8 mx-auto">}}
 
+{{< alert color="info" >}}
+'_Quality_' levels (_Project Settings > Quality_) can have their own active '_Render Pipeline Asset_'.
+
+If so, whatever you assign in '_Scriptable Render Pipeline Settings_' in '_Graphics_' will be ignored.
+
+**Remember to add the effect to the quality levels you want to use.**
+{{< /alert >}}
+
 ## VR
 
 To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:

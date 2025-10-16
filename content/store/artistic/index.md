@@ -46,6 +46,7 @@ Make sure that the '_Compatibility Mode_' is **disabled** (_Project Settings > G
 
 You will need to have URP version *12.1.15* or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
 
+
 ## Using them in the Editor
 
 Once installed, you have to add the effect you want to use from '**Artistic**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
@@ -55,6 +56,14 @@ Once installed, you have to add the effect you want to use from '**Artistic**' a
 Remember that the camera you are using must have the '**Post Processing**' option enabled.
 
 {{< image src="editor_1.jpg" wrapper="col-6 mx-auto">}}
+
+{{< alert color="info" >}}
+'_Quality_' levels (_Project Settings > Quality_) can have their own active '_Render Pipeline Asset_'.
+
+If so, whatever you assign in '_Scriptable Render Pipeline Settings_' in '_Graphics_' will be ignored.
+
+**Remember to add the effect to the quality levels you want to use.**
+{{< /alert >}}
 
 ## VR
 
@@ -438,40 +447,147 @@ To view in which areas of the image the effect is applied, activate '**Debug vie
 ## Tonemapper {#tonemapper}
 {{< asset-header youtube="XcLXlvqG5yU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" demo="https://fronkongames.github.io/demos-artistic/tonemapper/" warn="assets used in video and demo are not included">}}
 
-Maps wide range colors (HDR) into low dynamic range (LDR) using different algorithms. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Provides industry-standard tone mapping operators combined with professional color grading tools. It supports both HDR and LDR rendering pipelines and offers precise control over every aspect of your image's tone and color reproduction.
 
-{{< image src="tonemapper_0.jpg" wrapper="col-6 mx-auto">}}
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active. These are the operators (_2_) included:
+{{< image src="tonemapper_0.jpg" wrapper="col-8 mx-auto">}}
 
-* **Linear**: Good old linear.
-* **Logarithmic**: logarithmic mapping
-* **Exponential**: exponential mapping.
-* **Simple Reinhard**: simple and fast Reinhard.
-* **Luma Reinhard**: Reinhard based on luminance from "Photographic Tone Reproduction for Digital Images".
-* **Luma Inverted Reinhard**: Reinhard based on inverted luminance, by Brian Karis.
-* **White Luma Reinhard**: Reinhard based on luminance, but white preserving.
-* **Hejl 2015**: ACES-liked, by Jim Hejl.
-* **Filmic**: filmic tonemapping.
-* **Filmic Aldridge**: variation of the Hejl and Burgess-Dawson filmic curve by Graham Aldridge.
-* **ACES**: From 'ACES Filmic Tone Mapping Curve' by Narkowicz.
-* **ACES Oscars**: Pastel hue function, designed to provide a pleasing albedo.
-* **ACES Hill**: ACES curve fit by Stephen Hill (@self_shadow).
-* **Lottes**: From "Advanced Techniques and Optimization of HDR Color Pipelines" by Timothy Lottes.
-* **Uchimura**: Used in Gran Turismo. From "HDR theory and practice" by Uchimura.
-* **Unreal**: Adapted to be close to ACES curve by Romain Guy. Used in Unreal Engine 3 up to 4.14.
-* **Uncharted 2**: Created by John Hable for 'Uncharted 2' (based on Haarm-Pieter Duiker's works in 2006 for EA).
-* **Watch Dogs**: Used in 'Watch Dogs' by Ubisoft.
-* **Piece-Wise**: 'Piece-Wise Power Curve' by John Hable at Epic Games.
-* **RomBin Da House**: By tech art Roman Galashov (@RomanGalashov).
-* **Oklab**: Oklab-based.
-* **Clamping**: Clamps everything above a given luminance threshold to 1, by Schlick.
-* **Max 3**: From 'Optimized Reversible Tonemapper for Resolve', by Timothy Lottes.
-* **Max 3 Inverted**: Inverted luminance.
+#### Common Settings
 
-Each operator can also have some extra parameters that will appear under it.
+* `Intensity`, controls the overall strength of the tonemapping effect. **Note**: An intensity of 0 will disable the effect entirely.
 
-You can also modify the final color with the parameters offered by '**Color filter**' (_3_) and its '**Lift**' (_4_), '**Midtones**' (_5_) and '**Gain**' (_6_).
+#### Tonemapping Operators
+
+Choose from **28 different tonemapping algorithms**, each with unique characteristics:
+
+{{< image src="tonemapper_1.jpg" wrapper="col-4 mx-auto">}}
+
+##### Basic Operators
+- **Linear**: Simple linear mapping (good reference point)
+- **Logarithmic**: Natural logarithm-based mapping
+- **Exponential**: Exponential curve mapping
+- **Clamping**: Simple luminance threshold clamping
+
+##### Reinhard Family
+- **SimpleReinhard**: Basic Reinhard operator
+- **LumaReinhard**: "Photographic Tone Reproduction for Digital Images" (Reinhard 2002)
+- **LumaInvertedReinhard**: Reinhard with inverted luminance (Brian Karis)
+- **WhiteLumaReinhard**: Luminance-based Reinhard with white preservation
+
+##### Filmic Operators
+- **Filmic**: Basic filmic tonemapping
+- **FilmicAldridge**: Hejl and Burgess-Dawson variation (Graham Aldridge)
+- **Hejl2015**: ACES-like curve (Jim Hejl)
+- **Uncharted2**: Hable curve from Uncharted 2
+- **WatchDogs**: Ubisoft's Watch Dogs tonemapper
+- **PieceWise**: Power curve by John Hable (Epic Games)
+
+##### ACES Family
+- **ACES**: "ACES Filmic Tone Mapping Curve" (Narkowicz 2015)
+- **ACESOscars**: Official ACES with pastel hue preservation
+- **ACESHill**: Stephen Hill's ACES curve fit (@self_shadow)
+- **ACESNarkowicz**: Krzysztof Narkowicz's ACES implementation
+
+##### Advanced Operators
+- **Lottes**: "HDR theory and optimization" (Lottes 2016)
+- **Uchimura**: Gran Turismo tonemapper (Uchimura 2017)
+- **Unreal**: UE3/UE4 tonemapper (Romain Guy adaptation)
+- **RomBinDaHouse**: Tech art curve (Roman Galashov)
+- **Oklab**: Oklab color space-based mapping
+
+##### Technical Operators
+- **Max3/Max3Inverted**: Optimized reversible tonemapper (Timothy Lottes)
+- **PBRNeutral**: Khronos PBR neutral tonemapper
+- **Schlick**: Simple rational function
+- **Drago**: Adaptive logarithmic mapping
+- **AGX**: Latest industry standard (Blender/Filament implementation)
+
+#### Operator-Specific Parameters
+
+* `White Level` (Linear, Logarithmic, WhiteLumaReinhard, Hejl2015, Clamping): Controls white point exposure level
+* `Cutoff` (FilmicAldridge): Black point cutoff threshold
+* `Linear Controls` (WatchDogs): Linear White and Color
+* `Punchy Look` (AGX): Enables the characteristic AGX "punchy" appearance
+
+#### Color Filter
+
+{{< image src="tonemapper_2.jpg" wrapper="col-8 mx-auto">}}
+
+Basic color grading controls for overall image adjustment.
+
+* `Exposure`: Overall brightness adjustment
+* `Color Filter`: Overall color tint applied to the image
+* `White Balance`
+  - `Temperature`: Negative = cooler (blue), Positive = warmer (yellow)
+  - `Tint`: Negative = green, Positive = magenta
+* `Vibrance`: Color vibrance
+  - `Balance`: RGB channel multipliers (Default: 1, 1, 1)
+
+#### Lift, Midtones & Gain (LMG)
+
+{{< image src="tonemapper_3.jpg" wrapper="col-8 mx-auto">}}
+
+Professional color grading controls inspired by ASC-CDL standard.
+
+* `Lift` (Shadows)
+  - `Color`: RGB shadow adjustment (Default: White)
+  - `Brightness`: 0.0 to 2.0 (Default: 1.0)
+* `Midtones`
+  - `Color`: RGB midtone adjustment (Default: White)
+  - `Brightness`: 0.0 to 2.0 (Default: 1.0)
+* `Gain` (Highlights)
+  - `Color`: RGB highlight adjustment (Default: White)
+  - `Brightness`: 0.0 to 2.0 (Default: 1.0)
+
+#### Tone Curve Controls
+
+{{< image src="tonemapper_4.jpg" wrapper="col-8 mx-auto">}}
+
+Film-emulation curve adjustments for precise tonal control.
+
+* `Black Point`: Lifts blacks for faded film look
+* `White Point`: Lowers whites for vintage appearance
+* `Toe Strength`: Controls shadow rolloff smoothness
+* `Shoulder Strength`: Controls highlight rolloff smoothness
+
+#### Channel Mixer
+
+{{< image src="tonemapper_5.jpg" wrapper="col-8 mx-auto">}}
+
+Remap color channels for creative color effects.
+
+* `Red Output`: Controls RGB influence on red output
+* `Green Output`: Controls RGB influence on green output
+* `Blue Output`: Controls RGB influence on blue output
+
+#### Split Toning
+
+{{< image src="tonemapper_6.jpg" wrapper="col-8 mx-auto">}}
+
+Apply different colors to shadows and highlights.
+
+* `Highlight Tint`: Color applied to bright image areas
+* `Shadow Tint`: Color applied to dark image areas
+* `Balance`: Negative favors shadows, positive favors highlights
+
+#### Selective Color
+
+{{< image src="tonemapper_7.jpg" wrapper="col-8 mx-auto">}}
+
+CMYK adjustments for specific color ranges.
+
+Each color range (Reds, Yellows, Greens, Cyans, Blues, Magentas, Whites, Neutrals, Blacks) supports:
+- **Cyan**: -1.0 to 1.0
+- **Magenta**: -1.0 to 1.0
+- **Yellow**: -1.0 to 1.0
+- **Black**: -1.0 to 1.0
+
+#### Advanced Vibrance
+
+{{< image src="tonemapper_8.jpg" wrapper="col-8 mx-auto">}}
+
+Enhanced vibrance controls with selective adjustments.
 
 ---
 ## Comic {#comic}
