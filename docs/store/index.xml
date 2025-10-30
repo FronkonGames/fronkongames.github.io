@@ -9,13 +9,6 @@
     <copyright>Copyright © 2024 Fronkon Games</copyright>
     <atom:link href="https://fronkongames.github.io/store/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sprites Mojo</title>
-      <link>https://fronkongames.github.io/store/sprites-mojo/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/sprites-mojo/</guid>
-      <description>assets used in video and demo are not included&#xA;STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO &amp;nbsp;&#xD;Editor &amp;nbsp; From the editor you can create &amp;lsquo;Sprites Mojo&amp;rsquo; effects in two different ways: creating sprites and creating materials.</description>
-    </item>
-    <item>
       <title>LUTs</title>
       <link>https://fronkongames.github.io/store/luts/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
@@ -28,6 +21,13 @@
       <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
       <guid>https://fronkongames.github.io/store/glitches/</guid>
       <description>&amp;lsquo;Glitches&amp;rsquo; contains the following assets:&#xA;Color Blindness, simulates the most common vision defects. Corrupt Memory, a cyber attack? no, it&amp;rsquo;s just corrupted memory.</description>
+    </item>
+    <item>
+      <title>Weird</title>
+      <link>https://fronkongames.github.io/store/weird/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/weird/</guid>
+      <description>Embrace the weirdness and make your games truly unique. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.</description>
     </item>
     <item>
       <title>Camera Transitions</title>
