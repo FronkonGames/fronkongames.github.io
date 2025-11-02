@@ -99,7 +99,7 @@ If you are using an effect other than '**OneBit**' just change it to its name. C
 #
 ---
 ## Fire Tunnel {#firetunnel}
-{{< asset-header youtube="t63DSqXg250" demo="https://fronkongames.github.io/demos-weird/firetunnel/" warn="assets used in video and demo are not included">}}
+{{< asset-header youtube="t63DSqXg250" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-fire-tunnel-342436" demo="https://fronkongames.github.io/demos-weird/firetunnel/" warn="assets used in video and demo are not included">}}
 
 Transform your game into a hypnotic journey through flames with **Fire Tunnel**, a mesmerizing post-processing effect that creates a swirling vortex of fire that engulfs the screen. Perfect for dramatic transitions, hellish portals, or just making your players feel like they're diving into the heart of an inferno. 
 
