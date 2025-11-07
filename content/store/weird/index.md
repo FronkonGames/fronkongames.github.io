@@ -98,7 +98,7 @@ else
 The Instance function uses [Reflection](https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/reflection), and is therefore expensive. I recommend that you save the Instance value to use it without affecting performance.
 {{< /alert >}}
 
-If you are using an effect other than '**OneBit**' just change it to its name. Check the source code comments for more information.
+If you are using an effect other than '**FireTunnel**' just change it to its name. Check the source code comments for more information.
 
 #
 ---
@@ -206,7 +206,7 @@ StartCoroutine(CloseFireTunnel());
 
 ---
 ## 🔲 Extruder {#extruder}
-{{< asset-header youtube="4ueppnM4m-A" demo="https://fronkongames.github.io/demos-weird/extruder/" warn="assets used in video and demo are not included">}}
+{{< asset-header youtube="4ueppnM4m-A" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-extruder-343886" demo="https://fronkongames.github.io/demos-weird/extruder/" warn="assets used in video and demo are not included">}}
 
 Transform your rendered scene into a stunning **3D voxel-extruded world**! This postprocess effect uses advanced raymarching techniques to convert your screen into an artistic grid of height-mapped blocks, creating a unique retro-futuristic aesthetic reminiscent of classic voxel graphics.
 
