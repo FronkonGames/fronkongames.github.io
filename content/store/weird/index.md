@@ -14,15 +14,19 @@ thumbnail:
 **Embrace the weirdness** and make your games truly unique. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.
 
 High-performance, fully customizable, and designed specifically for game developers!
-
 <!--
 All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/Weird-bundle-272266?aid=1101l9zFC&utm_source=aff)**' will help you to achieve a unique look for your games. It consists of the following effects:
+-->
 
 * [Fire Tunnel](#firetunnel), a mesmerizing fire tunnel screen-space effect.
+* [Extruder](#extruder), pixelated voxel effect with customizable camera, lighting.
+
+<!--
 {{< alert color="dark" >}}
 You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[Weird BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/Weird-bundle-272266?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
 {{< /alert >}}
 -->
+
 ## Requirements
 
 All '**Weird**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
@@ -98,7 +102,7 @@ If you are using an effect other than '**OneBit**' just change it to its name. C
 
 #
 ---
-## Fire Tunnel {#firetunnel}
+## 🔥 Fire Tunnel {#firetunnel}
 {{< asset-header youtube="t63DSqXg250" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-fire-tunnel-342436" demo="https://fronkongames.github.io/demos-weird/firetunnel/" warn="assets used in video and demo are not included">}}
 
 Transform your game into a hypnotic journey through flames with **Fire Tunnel**, a mesmerizing post-processing effect that creates a swirling vortex of fire that engulfs the screen. Perfect for dramatic transitions, hellish portals, or just making your players feel like they're diving into the heart of an inferno. 
@@ -199,6 +203,172 @@ IEnumerator CloseFireTunnel()
 // Start the animation
 StartCoroutine(CloseFireTunnel());
 ```
+
+---
+## 🔲 Extruder {#extruder}
+{{< asset-header youtube="4ueppnM4m-A" demo="https://fronkongames.github.io/demos-weird/extruder/" warn="assets used in video and demo are not included">}}
+
+Transform your rendered scene into a stunning **3D voxel-extruded world**! This postprocess effect uses advanced raymarching techniques to convert your screen into an artistic grid of height-mapped blocks, creating a unique retro-futuristic aesthetic reminiscent of classic voxel graphics.
+
+Perfect for artistic visualizations, music videos, stylized game cinematics, or adding that extra "weird" factor to your Unity projects!
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="ExtruderInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Extruder
+
+- **Scale** [1-20]: Controls the size of individual voxel blocks. Smaller values create larger, more visible blocks. Default: 3.
+- **Height**: Method for calculating voxel height. Options:
+  - **Grayscale** (default): Uses image luminance to determine height
+  - **Depth**: Uses the depth buffer for 3D-aware height mapping
+- **Depth Scale** [0.1-10]: Amplifies depth differences for height calculation. Only used with Depth mode. Higher values create more dramatic height variations. Default: 1.0.
+- **Depth Remap Min** [0-1]: Minimum depth value to remap. Only used with Depth mode. Depth values below this become zero height. Default: 0.0.
+- **Depth Remap Max** [0-1]: Maximum depth value to remap. Only used with Depth mode. Depth values above this become maximum height. Default: 1.0.
+- **Luminosity Remap Min** [0-1]: Minimum luminosity value to remap. Only used with Grayscale mode. Luminosity values below this become zero height. Default: 0.0.
+- **Luminosity Remap Max** [0-1]: Maximum luminosity value to remap. Only used with Grayscale mode. Luminosity values above this become maximum height. Default: 1.0.
+- **Blend**: Blend mode for colors (Solid, Additive, Multiply, Overlay, Screen, etc.). Default: Solid. See ColorBlends enum for all available modes.
+- **Rotation** [0-360]: Camera rotation in degrees (X, Y axes). Default: (0, 0).
+
+#### Camera & Lighting
+
+- **Distance** [-5 to -0.5]: Distance of the virtual camera from the extruded scene. Closer values give more dramatic perspective. Default: -2.
+- **Light Position** [-3 to 3]: 3D position of the light source (X, Y, Z). Default: (1.5, 2.0, -1.0).
+- **Light Color**: Color and intensity of the light source (RGBA). The alpha channel controls light intensity. Default: (0.25, 0.5, 1.0, 0.3).
+- **Specular Color**: Color of specular highlights. Default: (1.0, 0.5, 0.2).
+- **Fresnel Intensity** [0-128]: Intensity of the fresnel effect (edge lighting). Default: 16.
+
+#### Raymarching
+
+- **Max Ray Distance** [1-50]: Maximum distance rays can travel. Lower values improve performance but may clip distant elements. Default: 20.
+- **Raymarching Steps** [4-128]: Number of steps per ray. Higher values = more accurate but slower. Default: 32.
+- **Step Multiplier** [0.1-1]: Controls raymarching precision. Lower values = more accurate but slower. Higher values = faster but may miss details. Default: 0.7.
+- **Shadow Softness** [1-16]: Controls how soft or hard shadows appear. Higher values create softer, more diffused shadows. Default: 8.
+- **Shadow Iterations** [0-32]: Number of shadow ray iterations. Higher values = more accurate shadows but slower. Set to 0 to disable shadows completely. Default: 8.
+- **Ambient Occlusion Iterations** [0-32]: Number of ambient occlusion iterations. Higher values = more accurate AO but slower. Set to 0 to disable AO completely. Default: 5.
+
+#### Floor Settings
+
+- **Floor Color**: Color of the floor/background plane. Default: Black (0, 0, 0, 1).
+- **Floor Color Blend**: Blend mode for the floor color (same options as Color Blend). Default: Solid.
+
+#### Height Methods
+
+The `Height` setting determines how voxel heights are calculated:
+
+##### **Grayscale**
+- Uses image luminance (brightness) to determine extrusion height.
+- Brighter areas = taller blocks, darker areas = shorter blocks.
+- Works with any content (2D, 3D, stylized, or realistic).
+- Not depth-aware, purely based on pixel brightness.
+- **Advanced**: Use `Luminosity Remap` to focus on specific brightness ranges:
+  - Set `Min = 0.5, Max = 1.0` to only extrude bright areas (highlights).
+  - Set `Min = 0.0, Max = 0.4` to only extrude dark areas (shadows).
+  - Set `Min = 0.3, Max = 0.7` to focus on mid-tones only.
+
+#### **Depth** (Default)
+- Uses the camera's depth buffer to determine extrusion height.
+- Closer objects = taller blocks, farther objects = shorter blocks.
+- Depth-aware and respects 3D scene geometry.
+- Requires a 3D scene with proper depth information.
+- Use `Scale` to amplify height differences (values like 2-5 often work well for dramatic effects).
+- **Advanced**: Use `Depth Remap` to focus on specific depth ranges:
+  - Set `Min = 0.0, Max = 0.4` to only extrude foreground objects (closest 40%).
+  - Set `Min = 0.3, Max = 0.7` to focus on mid-range objects only.
+  - Set `Min = 0.7, Max = 1.0` to only extrude background objects (farthest 30%).
+
+{{< image src="extruder_1.jpg" wrapper="col-8 mx-auto">}}
+
+This method requires you to activate `Depth Texture` in your URP settings.
+
+**When to use each:**
+- **Grayscale**: Best for stylized looks, 2D content, UI effects, or when you want creative control over height based on brightness.
+- **Depth**: Best for 3D scenes where you want accurate spatial representation and realistic depth-based extrusion.
+
+#### Basic Code Usage
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.Extruder;
+
+// Safe to use?
+if (Extruder.IsInRenderFeatures() == false)
+  return;
+
+// Access the settings (after ensuring Extruder is added as a Render Feature)
+Extruder.Settings settings = Extruder.Instance.settings;
+
+// Enable the effect
+settings.intensity = 1.0f;
+
+// Disable it
+settings.intensity = 0.0f;
+```
+
+Reset everything to defaults:
+
+```csharp
+Extruder.Instance.settings.ResetDefaultValues();
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+var settings = Extruder.Instance.settings;
+
+// Core effect
+settings.intensity = 1.0f;                    // [0, 1] - Master intensity
+
+// Extruder settings
+settings.gridScale = 3.0f;                    // [1, 20] - Block size (smaller = larger blocks)
+settings.heightMethod = HeightMethod.Grayscale; // Height calculation method (Grayscale or Depth)
+settings.depthScale = 1.0f;                   // [0.1, 10] - Depth amplification (only for Depth mode)
+settings.depthRemapMin = 0.0f;                // [0, 1] - Minimum depth to remap (only for Depth mode)
+settings.depthRemapMax = 1.0f;                // [0, 1] - Maximum depth to remap (only for Depth mode)
+settings.luminosityRemapMin = 0.0f;           // [0, 1] - Minimum luminosity to remap (only for Grayscale mode)
+settings.luminosityRemapMax = 1.0f;           // [0, 1] - Maximum luminosity to remap (only for Grayscale mode)
+settings.colorBlend = ColorBlends.Solid;      // Color blend mode (Solid, Additive, Multiply, etc.)
+settings.rotation = new Vector2(0f, 0f);      // [0, 360] - Camera rotation (X, Y)
+
+// Camera & lighting
+settings.cameraDistance = -2.0f;              // [-5, -0.5] - Camera distance from scene
+settings.lightPosition = new Vector3(1.5f, 2.0f, -1.0f);  // [-3, 3] - Light position (X, Y, Z)
+settings.lightColor = new Color(0.25f, 0.5f, 1.0f, 0.3f); // Light color and intensity (RGBA)
+settings.specularColor = new Color(1.0f, 0.5f, 0.2f);     // Specular highlight color
+settings.fresnelIntensity = 16.0f;            // [0, 128] - Fresnel effect intensity
+
+// Raymarching (performance & quality)
+settings.maxRayDistance = 20.0f;              // [1, 50] - Maximum ray distance
+settings.raymarchingSteps = 32;               // [4, 128] - Number of steps per ray
+settings.stepMultiplier = 0.7f;               // [0.1, 1] - Raymarching step size
+settings.shadowSoftness = 8.0f;               // [1, 16] - Shadow softness
+settings.shadowIterations = 8;                // [0, 32] - Shadow ray iterations (0 = no shadows)
+settings.ambientOcclusionIterations = 5;      // [0, 32] - AO iterations (0 = no AO)
+
+// Floor settings
+settings.floorColor = Color.black;            // Floor/background color
+settings.floorColorBlend = ColorBlends.Solid; // Floor color blend mode
+
+// Color adjustments
+settings.brightness = 0.0f;                   // [-1, 1] - Brightness adjustment
+settings.contrast = 1.0f;                     // [0, 10] - Contrast
+settings.gamma = 1.0f;                        // [0.1, 10] - Gamma correction
+settings.hue = 0.0f;                          // [0, 1] - Hue shift
+settings.saturation = 1.0f;                   // [0, 2] - Color saturation
+
+// Advanced settings
+settings.affectSceneView = false;             // Affect Scene View?
+settings.whenToInsert = RenderPassEvent.BeforeRenderingPostProcessing;  // Render pass injection point
+```
+
+#### Scene Recommendations
+
+- ✅ **Best**: High-contrast scenes with varied lighting and textures.
+- ✅ **Good**: Outdoor scenes, cityscapes, character models with good lighting.
+- ⚠️ **Challenging**: Very dark scenes (consider increasing brightness), flat-lit environments.
+- ❌ **Avoid**: Completely uniform colors or same depth (nothing to extrude!).
 
 #
 ---
