@@ -20,6 +20,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 
 * [Fire Tunnel](#firetunnel), a mesmerizing fire tunnel screen-space effect.
 * [Extruder](#extruder), pixelated voxel effect with customizable camera, lighting.
+* [Crystal](#crystal), crystalline patterns and dynamic light effects.
 
 <!--
 {{< alert color="dark" >}}
@@ -111,7 +112,7 @@ Once installed, when you select your '_Universal Renderer Data_', you will see s
 
 {{< image src="firetunnel_0.jpg" wrapper="col-8 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 #### Tunnel
 - **Center** (X,Y): Position of the tunnel's center point on screen. (0,0) is center, (-1,-1) bottom-left, (1,1) top-right.
@@ -216,7 +217,7 @@ Once installed, when you select your '_Universal Renderer Data_', you will see s
 
 {{< image src="ExtruderInspector.png" wrapper="col-8 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
 
 #### Extruder
 
@@ -369,6 +370,145 @@ settings.whenToInsert = RenderPassEvent.BeforeRenderingPostProcessing;  // Rende
 - ✅ **Good**: Outdoor scenes, cityscapes, character models with good lighting.
 - ⚠️ **Challenging**: Very dark scenes (consider increasing brightness), flat-lit environments.
 - ❌ **Avoid**: Completely uniform colors or same depth (nothing to extrude!).
+
+---
+## 🔮 Crystal {#crystal}
+{{< asset-header youtube="jlNRgLQmGoE" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-crystal-344468" demo="https://fronkongames.github.io/demos-weird/crystal/" warn="assets used in video and demo are not included">}}
+
+Transform your games with mesmerizing crystalline patterns and dynamic light effects! This post-processing effect creates stunning visual distortions reminiscent of looking through a kaleidoscopic crystal, enhanced with flowing particle-like lights.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="CrystalInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Crystal Effect
+
+- **Crystal** [0-1]: Controls the intensity of the crystalline pattern overlay. Default: 1.0
+- **Blend**: Color blend operation for the crystal effect. Default: Additive
+- **Color**: RGB color tint for the crystal pattern. Default: (0.3, 0.8, 1.2) - cyan/blue tint
+- **Gain** [0-2]: Amplification of the crystal pattern. Higher values create more pronounced patterns. Default: 0.45
+- **Scale** [0.1-10]: Size of the crystal patterns. Larger values create smaller, more detailed patterns. Default: 2.2
+- **Speed** [0-2]: Animation speed of the crystal effect. Default: 0.5
+- **Power** [0.1-20]: Exponential power applied to the crystal pattern, affecting contrast and sharpness. Default: 5.0
+- **Rotation #0** [0-180]: Primary rotation angle for the crystal pattern (degrees). Default: 30.0
+- **Rotation #1** [0-180]: Secondary rotation angle for layered complexity (degrees). Default: 5.0
+- **Reflection** [0-1]: Amount of reflection/mirroring in the crystal effect. Default: 0.1
+  - **Refraction** [0-10]: Strength of refraction (distortion and scale) when reflection is active. Default: 1.0
+
+#### Lights Effect
+
+- **Lights** [0-1]: Intensity of the flowing particle-like lights effect. Default: 0.1
+- **Blend**: Color blend operation for the lights. Default: Screen
+- **Speed** [0-2]: Animation speed of the light particles. Default: 0.5
+- **Iterations** [5-30]: Number of iterations for detail and complexity. Higher values create richer effects but are more expensive. Default: 19
+- **Color Offset**: RGB values that shift the color spectrum of the lights. Default: (1, 2, 3)
+- **Complexity** [0.01-0.1]: Growth rate per iteration, controls how patterns evolve. Default: 0.03
+- **Distortion** [1-15]: Spatial warping intensity of the light patterns. Default: 7.0
+- **Spread** [1-10]: How much the light patterns disperse across the screen. Default: 5.0
+- **Rotation Speed** [0-0.1]: Speed of rotation animation for the light patterns. Default: 0.02
+- **Turbulence** [10-100]: Intensity of chaotic motion in the lights. Default: 40.0
+- **Detail** [0.5-3.0]: Level of fine detail in the light patterns. Default: 1.5
+- **Warp** [3-15]: Amount of spatial warping applied to the coordinate space. Default: 9.0
+- **Brightness** [5-50]: Overall brightness multiplier for the lights. Default: 25.6
+- **Contrast** [5-30]: Contrast level and clipping threshold. Default: 13.0
+- **Power** [1-10]: Final exponential curve applied to the lights for intensity control. Default: 5.0
+
+#### Use in Code
+
+Want to control the crystalline effects programmatically? It's easier than you think:
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.Crystal;
+
+// Is it added as a Renderer Feature?
+if (Crystal.IsInRenderFeatures() == false)
+    return;
+
+// Access the effect instance
+Crystal.Settings settings = Crystal.Instance.settings;
+settings.intensity = 1.0f;
+
+// Control crystal effect
+settings.crystalIntensity = 1.0f;
+settings.crystalColor = new Vector3(0.3f, 0.8f, 1.2f);
+settings.crystalSpeed = 0.5f;
+
+// Control lights effect
+settings.lightsIntensity = 0.5f;
+settings.lightsSpeed = 1.0f;
+settings.lightsIterations = 25;
+```
+
+Animate effects at runtime:
+
+```csharp
+// Smoothly fade in the crystal effect
+Crystal.Instance.settings.crystalIntensity = Mathf.Lerp(
+    Crystal.Instance.settings.crystalIntensity, 
+    1.0f, 
+    Time.deltaTime * 2.0f);
+
+// Dynamically adjust light turbulence based on game events
+Crystal.Instance.settings.lightsTurbulence = 40.0f + Random.Range(-10.0f, 30.0f);
+
+// Shift colors over time
+float hueShift = (Time.time * 0.1f) % 1.0f;
+Crystal.Instance.settings.hue = hueShift;
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+Crystal.Settings settings = Crystal.Instance.settings;
+
+// Crystal parameters
+settings.crystalColorBlend = ColorBlends.Screen;
+settings.crystalGain = 0.45f;
+settings.crystalScale = 2.2f;
+settings.crystalPower = 5.0f;
+settings.crystalRotation0 = 30.0f;
+settings.crystalRotation1 = 5.0f;
+settings.crystalReflection = 0.1f;
+settings.crystalRefraction = 1.0f;
+
+// Lights parameters
+settings.lightsColorBlend = ColorBlends.Additive;
+settings.lightsColorOffset = new Vector3(1.0f, 2.0f, 3.0f);
+settings.lightsComplexity = 0.03f;
+settings.lightsDistortion = 7.0f;
+settings.lightsSpread = 5.0f;
+settings.lightsRotationSpeed = 0.02f;
+settings.lightsTurbulence = 40.0f;
+settings.lightsDetail = 1.5f;
+settings.lightsWarp = 9.0f;
+settings.lightsBrightness = 25.6f;
+settings.lightsContrast = 13.0f;
+settings.lightsPower = 5.0f;
+
+// Color adjustments
+settings.brightness = 0.0f;
+settings.contrast = 1.0f;
+settings.gamma = 1.0f;
+settings.saturation = 1.0f;
+```
+
+Check if the effect is ready:
+
+```csharp
+if (Crystal.IsInRenderFeatures() == true)
+{
+    // Safe to use!
+}
+```
+
+Reset everything to defaults:
+
+```csharp
+Crystal.Instance.settings.ResetDefaultValues();
+```
 
 #
 ---

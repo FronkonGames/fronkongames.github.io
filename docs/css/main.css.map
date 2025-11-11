@@ -3,7 +3,7 @@
 	"file": "main.css",
 	"sourceRoot": "F:/FronkonGames/Web",
 	"sources": [
-		"scss/bundle-1762526702941358600.scss",
+		"scss/bundle-1762887935187369600.scss",
 		"hugo:vars",
 		"assets/scss/common/_variables.scss",
 		"assets/scss/theme/_variables.scss",
