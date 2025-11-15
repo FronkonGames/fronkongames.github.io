@@ -21,6 +21,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Fire Tunnel](#firetunnel), a mesmerizing fire tunnel screen-space effect.
 * [Extruder](#extruder), pixelated voxel effect with customizable camera, lighting.
 * [Crystal](#crystal), crystalline patterns and dynamic light effects.
+* [Bubbles](#bubbles), pop your games with funky bubbles!
 
 <!--
 {{< alert color="dark" >}}
@@ -508,6 +509,109 @@ Reset everything to defaults:
 
 ```csharp
 Crystal.Instance.settings.ResetDefaultValues();
+```
+
+---
+## 🫧 Bubbles {#bubbles}
+{{< asset-header youtube="EuXGj0qHLAQ" demo="https://fronkongames.github.io/demos-weird/bubbles/" warn="assets used in video and demo are not included">}}
+
+Transform your games into a stunning bubble-like effect with customizable lighting, shapes, and colors. Create stunning visual effects with circular or square bubbles, adjustable bevels, and full 3D light control.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="BubblesInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Bubbles
+
+- **Bubbles**: Main bubble color. Default: white.
+- **Blend**: Bubble color blend mode with the original color. Options: Solid, Multiply, Screen, Overlay, etc. Default: Solid.
+- **Roundness** [0-1]: Bubble shape roundness. 0 = perfect squares, 1 = perfect circles. Default: 1.
+- **Size** [10-100]: Bubble size in pixels. Default: 40.
+- **Bevel** [0.05-1]: Bevel depth of the bubbles. Higher values create more pronounced 3D effect. Default: 0.4.
+- **Spacing** [0-1]: Spacing between bubbles. Lower values create tighter grids. Default: 0.1.
+
+#### Lighting
+
+- **Lighting** [0-2]: Specular intensity of the lighting. Controls how shiny the bubbles appear. Default: 0.45.
+- **Color**: Light color. Default: white.
+- **Power** [1-200]: Specular power/sharpness. Higher values create sharper highlights. Default: 70.
+- **Angle** [0-360]: Light orientation angle (azimuth). Rotates the light direction around the bubbles. Default: 45.
+- **Elevation** [0-90]: Light elevation angle. 0 = horizontal (side lighting), 90 = vertical (top-down lighting). Default: 46.
+
+#### Background
+
+- **Background**: Background color between bubbles. Default: white.
+- **Blend**: Background blend mode with the original color. Default: Solid.
+- **Blur** [0-20]: Background blur radius in pixels. Set to 0 to disable blur. Default: 8.
+- **Exposure** [-2-2]: Background exposure adjustment. Negative values darken, positive values brighten. Default: -0.6.
+
+#### Use in Code
+
+Basic usage:
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.Bubbles;
+
+// Safe to use?
+if (Bubbles.IsInRenderFeatures() == false)
+  return;
+
+// Access the settings (after ensuring Bubbles is added as a Render Feature)
+Bubbles.Settings settings = Bubbles.Instance.settings;
+
+// Enable the effect
+settings.intensity = 1.0f;
+
+// Disable it
+settings.intensity = 0.0f;
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+var settings = Bubbles.Instance.settings;
+
+// Core effect
+settings.intensity = 1.0f;                        // [0, 1] - Master intensity
+
+// Bubbles settings
+settings.bubbleColor = Color.white;               // Bubble color
+settings.bubbleColorBlend = ColorBlends.Solid;    // Bubble blend mode
+settings.bubbleRoundness = 1.0f;                  // [0, 1] - Shape: 0=square, 1=circle
+settings.bubbleSize = 40.0f;                      // [10, 100] - Bubble size
+settings.bubbleBevel = 0.4f;                      // [0.05, 1] - Bevel depth
+settings.bubbleSpacing = 0.1f;                    // [0, 1] - Spacing between bubbles
+
+// Lighting settings
+settings.lightSpecular = 0.45f;                   // [0, 2] - Specular intensity
+settings.lightColor = Color.white;                // Light color
+settings.lightSpecularPower = 70.0f;              // [1, 200] - Specular power
+settings.lightAngle = 45.0f;                      // [0, 360] - Light azimuth angle
+settings.lightElevation = 46.0f;                  // [0, 90] - Light elevation angle
+
+// Background settings
+settings.backgroundColor = Color.white;            // Background color
+settings.backgroundBlend = ColorBlends.Solid;      // Background blend mode
+settings.backgroundBlur = 8.0f;                    // [0, 20] - Blur radius
+settings.backgroundExposure = -0.6f;               // [-2, 2] - Exposure adjustment
+```
+
+Check if the effect is ready:
+
+```csharp
+if (Bubbles.IsInRenderFeatures() == true)
+{
+    // Safe to use!
+}
+```
+
+Reset everything to defaults:
+
+```csharp
+Bubbles.Instance.settings.ResetDefaultValues();
 ```
 
 #
