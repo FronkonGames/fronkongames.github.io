@@ -513,7 +513,7 @@ Crystal.Instance.settings.ResetDefaultValues();
 
 ---
 ## 🫧 Bubbles {#bubbles}
-{{< asset-header youtube="EuXGj0qHLAQ" demo="https://fronkongames.github.io/demos-weird/bubbles/" warn="assets used in video and demo are not included">}}
+{{< asset-header youtube="EuXGj0qHLAQ" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bubbles-344944" demo="https://fronkongames.github.io/demos-weird/bubbles/" warn="assets used in video and demo are not included">}}
 
 Transform your games into a stunning bubble-like effect with customizable lighting, shapes, and colors. Create stunning visual effects with circular or square bubbles, adjustable bevels, and full 3D light control.
 
