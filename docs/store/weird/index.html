@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/weird/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:04+01:00">
-    <meta property="article:modified_time" content="2025-11-15T17:00:19+01:00">
+    <meta property="article:modified_time" content="2025-11-16T20:02:42+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/weird-1280x640.jpg">
 <meta property="og:image:alt" content="Weird">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:04CET",
-      "dateModified": "2025-11-15T17:00:19CET",
+      "dateModified": "2025-11-16T20:02:42CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/weird/#/schema/breadcrumb/1"
       },
@@ -434,6 +434,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#pinch">🤏 Pinch</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -522,6 +527,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 <li><a href="/store/weird/#extruder">Extruder</a>, pixelated voxel effect with customizable camera, lighting.</li>
 <li><a href="/store/weird/#crystal">Crystal</a>, crystalline patterns and dynamic light effects.</li>
 <li><a href="/store/weird/#bubbles">Bubbles</a>, pop your games with funky bubbles!</li>
+<li><a href="/store/weird/#pinch">Pinch</a>, a raymarching-based dynamic pinch distortion.</li>
 </ul>
 <!--
 
@@ -2552,7 +2558,339 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Safe to use!</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Reset everything to defaults:</p>
-<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Bubbles</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">ResetDefaultValues</span><span class="p">();</span></span></span></code></pre></div></div>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Bubbles</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">ResetDefaultValues</span><span class="p">();</span></span></span></code></pre></div></div><hr />
+
+<h2 id="pinch" class="heading">🤏 Pinch <a href="#pinch" aria-labelledby="pinch">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/3z-9r5hjPVM?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div><div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-weird/pinch/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p>A raymarching-based post-processing effect that creates a dynamic pinch distortion on the screen. Click and drag to create a conical extrusion effect that follows your pointer, with configurable start and end areas, roundness, and Lambert lighting.</p>
+<p>Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/weird/PinchInspector-2800x2288.jpg"
+            
+            
+            srcset="/store/weird/PinchInspector-576x471.webp 576w, /store/weird/PinchInspector-768x628.webp 768w, /store/weird/PinchInspector-992x811.webp 992w, /store/weird/PinchInspector-1200x981.webp 1200w, /store/weird/PinchInspector-1400x1144.webp 1400w, /store/weird/PinchInspector-2800x2288.webp 2800w" sizes="100vw"
+            height="2288"
+            width="2800"
+            >
+</div><br>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
+
+<h4 id="pinch-1" class="heading">Pinch <a href="#pinch-1" aria-labelledby="pinch-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li><strong>Start</strong> [0-1]: Center/start position of the pinch effect in normalized screen coordinates. Default (0.5, 0.5).</li>
+<li><strong>End</strong> [0-1]: End/target position for the pinch distortion, relative to start. Default (-0.2, 0.2).</li>
+<li><strong>Start Radius</strong> [0-1]: Size of the pinch effect at the start position. Higher values create a wider base. Default 0.</li>
+<li><strong>End Radius</strong> [0-1]: Size of the pinch effect at the end position. Lower values create sharper pinches. Default 0.1.</li>
+<li><strong>Roundness</strong> [0-1]: Controls how sharp or soft the pinch appears. Higher values create softer, more rounded transitions. Default 0.1.</li>
+</ul>
+
+<h4 id="lighting-1" class="heading">Lighting <a href="#lighting-1" aria-labelledby="lighting-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li><strong>Light Intensity</strong> [0-1]: Controls how much Lambert lighting affects the result. 0 = no lighting, 1 = full lighting. Default 0.5.</li>
+<li><strong>Light Direction</strong> [0-1]: Direction vector for the light source. Should be normalized. Default (0.577, 0.577, 0.577) - diagonal.</li>
+</ul>
+
+<h4 id="raymarching-1" class="heading">Raymarching <a href="#raymarching-1" aria-labelledby="raymarching-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li><strong>Steps</strong> [1-100]: Number of raymarching iterations. Higher values = better quality but slower performance. Default 100.</li>
+<li><strong>Max Distance</strong> [0.1-10]: Maximum raymarching distance. Controls how far the effect extends. Default 1.0.</li>
+</ul>
+
+<h4 id="use-in-code-3" class="heading">Use in Code <a href="#use-in-code-3" aria-labelledby="use-in-code-3">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Create a Pinch using a coroutine and tween:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Weird.Pinch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">PinchController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">private</span> <span class="n">Pinch</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Check if Pinch is available</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">Pinch</span><span class="p">.</span><span class="n">IsInRenderFeatures</span><span class="p">()</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Debug</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&#34;Pinch effect not found in Render Features!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Access the settings</span>
+</span></span><span class="line"><span class="cl">    <span class="n">settings</span> <span class="p">=</span> <span class="n">Pinch</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span> <span class="c1">// Enable the effect</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// Create a pinch effect at a specific position</span>
+</span></span><span class="line"><span class="cl">  <span class="k">void</span> <span class="n">CreatePinch</span><span class="p">(</span><span class="n">Vector2</span> <span class="n">screenPosition</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Convert screen position to normalized coordinates [0, 1]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">startPoint</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector2</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="n">screenPosition</span><span class="p">.</span><span class="n">x</span> <span class="p">/</span> <span class="n">Screen</span><span class="p">.</span><span class="n">width</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">screenPosition</span><span class="p">.</span><span class="n">y</span> <span class="p">/</span> <span class="n">Screen</span><span class="p">.</span><span class="n">height</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Set the start point (center of the effect)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">settings</span><span class="p">.</span><span class="n">start</span> <span class="p">=</span> <span class="n">startPoint</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Set the end point offset (creates the pinch direction)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">settings</span><span class="p">.</span><span class="n">end</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector2</span><span class="p">(</span><span class="m">0.3f</span><span class="p">,</span> <span class="m">0.2f</span><span class="p">);</span> <span class="c1">// Pinch points to the right and up</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// Release the pinch - smoothly animate end back to start</span>
+</span></span><span class="line"><span class="cl">  <span class="k">void</span> <span class="n">ReleasePinch</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">TweenPinchRelease</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">IEnumerator</span> <span class="n">TweenPinchRelease</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">startEnd</span> <span class="p">=</span> <span class="n">settings</span><span class="p">.</span><span class="n">end</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">duration</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">elapsed</span> <span class="p">=</span> <span class="m">0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">elapsed</span> <span class="p">&lt;</span> <span class="n">duration</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">elapsed</span> <span class="p">+=</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">float</span> <span class="n">t</span> <span class="p">=</span> <span class="n">elapsed</span> <span class="p">/</span> <span class="n">duration</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// Smooth easing (you can use any easing function)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">t</span> <span class="p">=</span> <span class="n">t</span> <span class="p">*</span> <span class="n">t</span> <span class="p">*</span> <span class="p">(</span><span class="m">3f</span> <span class="p">-</span> <span class="m">2f</span> <span class="p">*</span> <span class="n">t</span><span class="p">);</span> <span class="c1">// Smoothstep</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">// Interpolate end point back to start (Vector2.zero)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">settings</span><span class="p">.</span><span class="n">end</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">Lerp</span><span class="p">(</span><span class="n">startEnd</span><span class="p">,</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">yield</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Ensure it&#39;s exactly at start (no pinch)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">settings</span><span class="p">.</span><span class="n">end</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">zero</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// Example: Mouse interaction</span>
+</span></span><span class="line"><span class="cl">  <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetMouseButtonDown</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Create pinch at mouse position</span>
+</span></span><span class="line"><span class="cl">      <span class="n">CreatePinch</span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">mousePosition</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetMouseButtonUp</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Release the pinch</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ReleasePinch</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="all-the-knobs-and-dials" class="heading">All the Knobs and Dials <a href="#all-the-knobs-and-dials" aria-labelledby="all-the-knobs-and-dials">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Every parameter is at your fingertips:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Pinch configuration</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">start</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector2</span><span class="p">(</span><span class="m">0.5f</span><span class="p">,</span> <span class="m">0.5f</span><span class="p">);</span>        <span class="c1">// Start position</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">end</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector2</span><span class="p">(-</span><span class="m">0.2f</span><span class="p">,</span> <span class="m">0.2f</span><span class="p">);</span>         <span class="c1">// End position (relative to start)</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">startRadius</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                     <span class="c1">// Start area size</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">endRadius</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>                       <span class="c1">// End area size</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">roundness</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>                       <span class="c1">// Pinch roundness</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Lighting</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">lightDirection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0.577f</span><span class="p">,</span> <span class="m">0.577f</span><span class="p">,</span> <span class="m">0.577f</span><span class="p">);</span>  <span class="c1">// Light direction</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">lightIntensity</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>                  <span class="c1">// Light intensity</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Raymarching quality</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">raymarchSteps</span> <span class="p">=</span> <span class="m">100.0f</span><span class="p">;</span>                 <span class="c1">// Number of steps</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">maxDistance</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                      <span class="c1">// Max distance</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Color adjustments</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">brightness</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                      <span class="c1">// Brightness</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">contrast</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                        <span class="c1">// Contrast</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">gamma</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                           <span class="c1">// Gamma</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">hue</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                             <span class="c1">// Hue shift</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">saturation</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                      <span class="c1">// Saturation</span></span></span></code></pre></div></div>
 <h1 id="heading-1" class="heading"> <a href="#heading-1" aria-labelledby="heading-1">
 
 
@@ -3036,6 +3374,11 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
       </ul>
     </li>
     <li><a href="#bubbles">🫧 Bubbles</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#pinch">🤏 Pinch</a>
       <ul>
         <li></li>
       </ul>

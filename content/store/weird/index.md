@@ -22,6 +22,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Extruder](#extruder), pixelated voxel effect with customizable camera, lighting.
 * [Crystal](#crystal), crystalline patterns and dynamic light effects.
 * [Bubbles](#bubbles), pop your games with funky bubbles!
+* [Pinch](#pinch), a raymarching-based dynamic pinch distortion.
 
 <!--
 {{< alert color="dark" >}}
@@ -613,6 +614,148 @@ Reset everything to defaults:
 ```csharp
 Bubbles.Instance.settings.ResetDefaultValues();
 ```
+
+---
+## 🤏 Pinch {#pinch}
+{{< asset-header youtube="3z-9r5hjPVM" demo="https://fronkongames.github.io/demos-weird/pinch/" warn="assets used in video and demo are not included">}}
+
+A raymarching-based post-processing effect that creates a dynamic pinch distortion on the screen. Click and drag to create a conical extrusion effect that follows your pointer, with configurable start and end areas, roundness, and Lambert lighting.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="PinchInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Pinch
+
+- **Start** [0-1]: Center/start position of the pinch effect in normalized screen coordinates. Default (0.5, 0.5).
+- **End** [0-1]: End/target position for the pinch distortion, relative to start. Default (-0.2, 0.2).
+- **Start Radius** [0-1]: Size of the pinch effect at the start position. Higher values create a wider base. Default 0.
+- **End Radius** [0-1]: Size of the pinch effect at the end position. Lower values create sharper pinches. Default 0.1.
+- **Roundness** [0-1]: Controls how sharp or soft the pinch appears. Higher values create softer, more rounded transitions. Default 0.1.
+
+#### Lighting
+
+- **Light Intensity** [0-1]: Controls how much Lambert lighting affects the result. 0 = no lighting, 1 = full lighting. Default 0.5.
+- **Light Direction** [0-1]: Direction vector for the light source. Should be normalized. Default (0.577, 0.577, 0.577) - diagonal.
+
+#### Raymarching
+
+- **Steps** [1-100]: Number of raymarching iterations. Higher values = better quality but slower performance. Default 100.
+- **Max Distance** [0.1-10]: Maximum raymarching distance. Controls how far the effect extends. Default 1.0.
+
+#### Use in Code
+
+Create a Pinch using a coroutine and tween:
+
+```csharp
+using FronkonGames.Weird.Pinch;
+using UnityEngine;
+using System.Collections;
+
+public class PinchController : MonoBehaviour
+{
+  private Pinch.Settings settings;
+  
+  void Start()
+  {
+    // Check if Pinch is available
+    if (Pinch.IsInRenderFeatures() == false)
+    {
+      Debug.LogWarning("Pinch effect not found in Render Features!");
+      this.enabled = false;
+      return;
+    }
+    
+    // Access the settings
+    settings = Pinch.Instance.settings;
+    settings.intensity = 1.0f; // Enable the effect
+  }
+  
+  // Create a pinch effect at a specific position
+  void CreatePinch(Vector2 screenPosition)
+  {
+    // Convert screen position to normalized coordinates [0, 1]
+    Vector2 startPoint = new Vector2(
+      screenPosition.x / Screen.width,
+      screenPosition.y / Screen.height
+    );
+    
+    // Set the start point (center of the effect)
+    settings.start = startPoint;
+    
+    // Set the end point offset (creates the pinch direction)
+    settings.end = new Vector2(0.3f, 0.2f); // Pinch points to the right and up
+  }
+  
+  // Release the pinch - smoothly animate end back to start
+  void ReleasePinch() => StartCoroutine(TweenPinchRelease());
+  
+  IEnumerator TweenPinchRelease()
+  {
+    Vector2 startEnd = settings.end;
+    float duration = 0.5f;
+    float elapsed = 0f;
+    
+    while (elapsed < duration)
+    {
+      elapsed += Time.deltaTime;
+      float t = elapsed / duration;
+      
+      // Smooth easing (you can use any easing function)
+      t = t * t * (3f - 2f * t); // Smoothstep
+      
+      // Interpolate end point back to start (Vector2.zero)
+      settings.end = Vector2.Lerp(startEnd, Vector2.zero, t);
+      yield return null;
+    }
+    
+    // Ensure it's exactly at start (no pinch)
+    settings.end = Vector2.zero;
+  }
+  
+  // Example: Mouse interaction
+  void Update()
+  {
+    if (Input.GetMouseButtonDown(0))
+      // Create pinch at mouse position
+      CreatePinch(Input.mousePosition);
+    else if (Input.GetMouseButtonUp(0))
+      // Release the pinch
+      ReleasePinch();
+  }
+}
+```
+
+#### All the Knobs and Dials
+
+Every parameter is at your fingertips:
+
+```csharp
+// Pinch configuration
+settings.start = new Vector2(0.5f, 0.5f);        // Start position
+settings.end = new Vector2(-0.2f, 0.2f);         // End position (relative to start)
+settings.startRadius = 0.0f;                     // Start area size
+settings.endRadius = 0.1f;                       // End area size
+settings.roundness = 0.1f;                       // Pinch roundness
+
+// Lighting
+settings.lightDirection = new Vector3(0.577f, 0.577f, 0.577f);  // Light direction
+settings.lightIntensity = 0.5f;                  // Light intensity
+
+// Raymarching quality
+settings.raymarchSteps = 100.0f;                 // Number of steps
+settings.maxDistance = 1.0f;                      // Max distance
+
+// Color adjustments
+settings.brightness = 0.0f;                      // Brightness
+settings.contrast = 1.0f;                        // Contrast
+settings.gamma = 1.0f;                           // Gamma
+settings.hue = 0.0f;                             // Hue shift
+settings.saturation = 1.0f;                      // Saturation
+```
+
 
 #
 ---
