@@ -617,7 +617,7 @@ Bubbles.Instance.settings.ResetDefaultValues();
 
 ---
 ## 🤏 Pinch {#pinch}
-{{< asset-header youtube="3z-9r5hjPVM" demo="https://fronkongames.github.io/demos-weird/pinch/" warn="assets used in video and demo are not included">}}
+{{< asset-header youtube="3z-9r5hjPVM" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-pinch-345684" demo="https://fronkongames.github.io/demos-weird/pinch/" warn="assets used in video and demo are not included">}}
 
 A raymarching-based post-processing effect that creates a dynamic pinch distortion on the screen. Click and drag to create a conical extrusion effect that follows your pointer, with configurable start and end areas, roundness, and Lambert lighting.
 
