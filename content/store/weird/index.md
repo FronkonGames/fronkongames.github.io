@@ -23,6 +23,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Crystal](#crystal), crystalline patterns and dynamic light effects.
 * [Bubbles](#bubbles), pop your games with funky bubbles!
 * [Pinch](#pinch), a raymarching-based dynamic pinch distortion.
+* [Doodle](#doodle), a hand-drawn doodle effect.
 
 <!--
 {{< alert color="dark" >}}
@@ -756,6 +757,153 @@ settings.hue = 0.0f;                             // Hue shift
 settings.saturation = 1.0f;                      // Saturation
 ```
 
+---
+## ✏️ Doodle {#doodle}
+{{< asset-header youtube="6lrL4Ma1hVg" demo="https://fronkongames.github.io/demos-weird/doodle/" warn="assets used in video and demo are not included">}}
+
+A hand-drawn doodle effect. It applies a noise-based distortion to simulate a wobbly, sketched look, combined with posterization and edge detection for a complete artistic style.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="DoodleInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Doodle
+
+Uses a noise-based displacement map to simulate the natural jitter and imperfection of hand-drawn animation. By animating this noise over time at a reduced frame rate, it creates a convincing "boiling lines" effect.
+
+- **Doodle** [0-10]: Controls the strength of the distortion.
+- **Scale** [Vector2]: Scale of the noise texture used for distortion.
+- **Frame Rate** [0-60]: Speed of the doodle animation (frames per second). Lower values (e.g., 6-12) look more like traditional animation.
+- **Blend** [Enum]: Color blend mode.
+
+#### Paper
+
+Simulates drawing on paper by blending a paper texture over the image.
+
+- **Paper** [0-1]: Intensity of the paper texture.
+- **Blend** [Enum]: Blend mode for the paper texture.
+- **Scale** [Vector2]: Scale of the paper texture.
+- **Doodle** [0-1]: Controls how much the paper texture distorts with the doodle effect.
+- **Tint** [Color]: Tint color for the paper.
+
+#### Grid
+
+Adds a grid overlay, useful for graph paper or technical drawing effects.
+
+- **Grid** [0-1]: Intensity of the grid effect.
+- **Line Blend** [Enum]: Blend mode for the grid lines.
+- **Size** [1-32]: Size of the grid cells.
+- **Width** [0-5]: Width of the grid lines.
+- **Color** [Color]: Color of the grid lines.
+
+#### Sketch
+
+Adds procedural hatching or sketch lines to shading.
+
+- **Sketch** [0-1]: Intensity of the sketch effect.
+- **Mode** [Enum]: Sketch mode (Simple, Cross, Animated).
+- **Scale** [0.1-10]: Scale of the hatch pattern.
+- **Speed** [0-10]: Animation speed for the hatch pattern.
+- **Angle** [0-360]: Angle of the hatch lines.
+- **Color** [Color]: Color of the sketch lines.
+- **Blend** [Enum]: Blend mode for the sketch lines.
+
+#### Sobel
+
+Calculates the image gradient to detect edges. By applying this after the doodle distortion, the outlines wiggle and vibrate along with the drawing, reinforcing the hand-sketched aesthetic.
+
+- **Sobel** [0-1]: Master intensity of the Sobel edge detection. Set to 0 to disable.
+- **Strength** [0-10]: Thickness/sensitivity of the edge detection.
+- **Tint** [Color]: Color of the edges. Alpha controls the tint strength.
+- **Blend** [Enum]: Blend mode for the edges (Solid, Add, Multiply, Screen, Overlay, etc.).
+
+#### Posterize
+
+Reduces the tonal resolution of the image, banding continuous gradients into fewer steps of color. Lower values create a more stylized, comic-book or retro-digital appearance.
+
+- **Posterize** [2-256]: Controls color quantization. Lower values reduce the number of colors. Set to 256 to disable.
+
+#### Color Remapping
+
+Applies various color presets to the final image.
+
+- **Remapping** [Enum]: Selects the color remapping mode (None, Blueprint, Sepia, Grayscale, Invert, Cyberpunk, Gameboy, Thermal, CGA, RedScale, Matrix, Technicolor, Vintage).
+
+#### Use in Code
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.Doodle;
+
+// Safe to use?
+if (Doodle.IsInRenderFeatures() == false)
+  return;
+
+// Access the settings (after ensuring Doodle is added as a Render Feature)
+Doodle.Settings settings = Doodle.Instance.settings;
+
+// Enable the effect
+settings.intensity = 1.0f;
+
+// Disable it
+settings.intensity = 0.0f;
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+var settings = Doodle.Instance.settings;
+
+// Core effect
+settings.intensity = 1.0f;                    // [0, 1] - Master intensity
+
+// Doodle settings
+settings.strength = 1.0f;                     // [0, 10] - Distortion strength
+settings.scale = Vector2.one;                 // Noise scale
+settings.frameRate = 12.0f;                   // Animation FPS
+settings.blend = ColorBlends.Solid;           // Blend mode
+
+// Paper settings
+settings.paperIntensity = 0.5f;               // [0, 1] - Paper intensity
+settings.paperBlend = ColorBlends.Multiply;   // Paper blend mode
+settings.paperScale = Vector2.one;            // Paper scale
+settings.paperDoodleIntensity = 0.5f;         // [0, 1] - Doodle influence
+settings.paperTint = Color.white;             // Paper tint
+
+// Grid settings
+settings.gridIntensity = 1.0f;                // [0, 1] - Grid intensity
+settings.gridLineBlend = ColorBlends.Solid;   // Grid blend mode
+settings.gridSize = 9;                        // [1, 32] - Grid size
+settings.gridLineWidth = 1.0f;                // [0, 5] - Grid line width
+settings.gridLineColor = new Color(0.35f, 0.65f, 1.0f); // Grid color
+
+// Sketch settings
+settings.sketchIntensity = 1.0f;              // [0, 1] - Sketch intensity
+settings.sketchMode = SketchModes.Simple;     // Sketch mode
+settings.sketchScale = 5.0f;                  // [0.1, 10] - Sketch scale
+settings.sketchSpeed = 0.0f;                  // [0, 10] - Sketch speed
+settings.sketchAngle = 45.0f;                 // [0, 360] - Sketch angle
+settings.sketchColor = Color.black;           // Sketch color
+settings.sketchBlend = ColorBlends.Multiply;  // Sketch blend mode
+
+// Sobel settings
+settings.sobelIntensity = 1.0f;               // [0, 1] - Sobel master intensity
+settings.sobelStrength = 1.0f;                // [0, 10] - Edge detection strength
+settings.sobelTint = Color.black;             // Edge color
+settings.sobelBlend = ColorBlends.Multiply;   // Edge blend mode
+
+// Posterize
+settings.posterize = 8;                       // [2, 256] - Color levels
+
+// Color remapping
+settings.colorRemapping = ColorRemapping.Blueprint;
+
+// Color adjustments
+settings.brightness = 0.0f;
+settings.contrast = 1.1f;
+```
 
 #
 ---
