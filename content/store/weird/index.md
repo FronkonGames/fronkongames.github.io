@@ -759,7 +759,7 @@ settings.saturation = 1.0f;                      // Saturation
 
 ---
 ## ✏️ Doodle {#doodle}
-{{< asset-header youtube="6lrL4Ma1hVg" demo="https://fronkongames.github.io/demos-weird/doodle/" warn="assets used in video and demo are not included">}}
+{{< asset-header youtube="6lrL4Ma1hVg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-doodle-346038" demo="https://fronkongames.github.io/demos-weird/doodle/" warn="assets used in video and demo are not included">}}
 
 A hand-drawn doodle effect. It applies a noise-based distortion to simulate a wobbly, sketched look, combined with posterization and edge detection for a complete artistic style.
 
