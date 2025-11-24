@@ -24,6 +24,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Bubbles](#bubbles), pop your games with funky bubbles!
 * [Pinch](#pinch), a raymarching-based dynamic pinch distortion.
 * [Doodle](#doodle), a hand-drawn doodle effect.
+* [Kaleidoscope](#kaleidoscope), a symmetrical, rotating patterns.
 
 <!--
 {{< alert color="dark" >}}
@@ -903,6 +904,125 @@ settings.colorRemapping = ColorRemapping.Blueprint;
 // Color adjustments
 settings.brightness = 0.0f;
 settings.contrast = 1.1f;
+```
+
+---
+## 🌈 Kaleidoscope {#kaleidoscope}
+{{< asset-header youtube="qpNbKw2UQqA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-kaleidoscope-346522" demo="https://fronkongames.github.io/demos-weird/kaleidoscope/" warn="assets used in video and demo are not included">}}
+
+A kaleidoscope effect for Unity. It creates a symmetrical, rotating pattern from the screen content.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="KaleidoscopeInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Kaleidoscope
+
+Controls the core kaleidoscope pattern generation. These parameters define how the symmetrical tunnel pattern is created and animated. Adjust the center position to shift the effect's focal point, use iterations to control pattern complexity, and the strength curve to create radial falloff effects.
+
+- **Center** [0-1, 0-1]: Center position of the effect in normalized screen coordinates. Default: (0.5, 0.5).
+- **Iterations** [1-10]: Number of pattern iterations. Higher values create more complex patterns. Default: 6.
+- **Strength**: AnimationCurve that controls effect strength based on distance from center. X-axis: 0 = edge of screen, 1 = center. Y-axis: strength value.
+- **Speed** [-10-10]: Speed of the animation. Negative values reverse the direction. Default: 1.
+- **Scale** [0.1-10]: Scale of the effect. Higher values create tighter patterns. Default: 1.
+- **Aspect Ratio**: When enabled, the effect maintains circular symmetry regardless of screen aspect ratio. When disabled, the effect stretches with the screen. Default: false.
+
+#### Offset UV
+
+Creates a chromatic aberration effect by offsetting the UV coordinates of each RGB channel independently. This produces color fringing and separation effects similar to lens distortion. The offset is based on the kaleidoscope pattern, creating dynamic color separation that follows the tunnel's structure. Use this to add depth and visual interest to the effect.
+
+- **Offset UV** [0-1]: Intensity of UV offset effect. Creates chromatic aberration-style separation. Default: 0.
+  - **Red**: Offset scale for red channel. Default: (10.0, 10.0).
+  - **Green**: Offset scale for green channel. Default: (-10.0, 10.0).
+  - **Blue**: Offset scale for blue channel. Default: (10.0, -10.0).
+  - **Scale** [0-10]: Overall scale multiplier for offset distances. Default: 1.
+
+#### Color
+
+Controls the color appearance of the kaleidoscope pattern. Choose from 10 predefined color palettes to instantly change the aesthetic, or use the color adjustments to fine-tune brightness, contrast, gamma, hue, and saturation. The blend mode determines how the kaleidoscope colors combine with the original image.
+
+- **Color** [0-1]: Intensity of the kaleidoscope color pattern. Default: 1.
+  - **Palette**: Color palette preset. Options: Original, Rainbow, BlackAndWhite, Neon, Pastel, Fire, Ocean, Sunset, Monochrome, Cyberpunk. Default: Original.
+  - **Blend**: Blend mode for combining kaleidoscope colors with the source image. Default: Additive.
+- **Brightness** [-1-1]: Adjusts the overall luminosity of the effect. Default: 0.
+- **Contrast** [0-10]: Controls the difference between light and dark areas. Default: 1.
+- **Gamma** [0.1-10]: Fine-tunes the brightness curve of the effect. Default: 1.
+- **Hue** [0-1]: Shifts the color wheel of the entire effect. Default: 0.
+- **Saturation** [0-2]: Controls the intensity of the colors. Lower values make it more grayscale. Default: 1.
+
+#### Segment
+
+Renders geometric segment lines that outline the kaleidoscope pattern boundaries. These lines add structure and definition to the effect, creating a more stylized, geometric appearance. Adjust the width to control line thickness, set the color to match your aesthetic, and use blend modes to control how segments interact with the underlying image.
+
+- **Segment** [0-1]: Intensity of segment lines rendering. Default: 1.
+  - **Blend**: Blend mode for segment lines. Default: Solid.
+  - **Color**: Color of the segment lines. Default: Black.
+  - **Width** [0-1]: Width/thickness of segment lines. Lower values = thicker lines. Default: 0.25.
+
+#### Use in Code
+
+Basic Usage
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.Kaleidoscope;
+
+// Safe to use?
+if (Kaleidoscope.IsInRenderFeatures() == false)
+  return;
+
+// Access the settings (after ensuring Kaleidoscope is added as a Render Feature)
+Kaleidoscope.Settings settings = Kaleidoscope.Instance.settings;
+
+// Enable the effect
+settings.intensity = 1.0f;
+
+// Disable it
+settings.intensity = 0.0f;
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+var settings = Kaleidoscope.Instance.settings;
+
+// Core effect
+settings.intensity = 1.0f;                    // [0, 1] - Master intensity
+
+// Kaleidoscope settings
+settings.center = new Vector2(0.5f, 0.5f);    // Center position [0-1, 0-1]
+settings.iterationCount = 6;                  // [1-10] - Pattern complexity
+settings.strength = new AnimationCurve(...);  // Radial strength curve
+settings.speed = 1.0f;                        // [-10, 10] - Animation speed
+settings.scale = 1.0f;                        // [0.1, 10] - Effect scale
+settings.keepAspectRatio = false;             // Keep circular symmetry (true) or stretch with screen (false)
+
+// Offset UV
+settings.offsetIntensity = 0.5f;              // [0, 1] - UV offset intensity
+settings.offsetRedScale = new Vector2(10f, 10f);
+settings.offsetGreenScale = new Vector2(-10f, 10f);
+settings.offsetBlueScale = new Vector2(10f, -10f);
+settings.offsetScale = 1.0f;                  // [0, 10] - Offset scale multiplier
+
+// Color
+settings.colorIntensity = 1.0f;               // [0, 1] - Color pattern intensity
+settings.colorPalette = ColorPalettes.Rainbow; // Color palette preset
+settings.blend = ColorBlends.Additive;        // Blend mode
+
+// Color adjustments
+settings.brightness = 0.0f;                   // [-1, 1]
+settings.contrast = 1.0f;                     // [0, 10]
+settings.gamma = 1.0f;                        // [0.1, 10]
+settings.hue = 0.0f;                          // [0, 1]
+settings.saturation = 1.0f;                   // [0, 2]
+
+// Segments
+settings.segmentIntensity = 1.0f;              // [0, 1] - Segment line intensity
+settings.segmentColor = Color.black;          // Segment line color
+settings.segmentBlend = ColorBlends.Solid;    // Segment blend mode
+settings.segmentWidth = 0.25f;                // [0, 1] - Segment width
 ```
 
 #
