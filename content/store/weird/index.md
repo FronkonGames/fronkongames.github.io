@@ -1028,7 +1028,7 @@ settings.segmentWidth = 0.25f;                // [0, 1] - Segment width
 
 ---
 ## 🌀 Spiral {#spiral}
-{{< asset-header youtube="yHp39rLtd9E" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-kaleidoscope-346522" demo="https://fronkongames.github.io/demos-weird/spiral/" warn="assets used in video and demo are not included">}}
+{{< asset-header youtube="yHp39rLtd9E" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-spiral-347368" demo="https://fronkongames.github.io/demos-weird/spiral/" warn="assets used in video and demo are not included">}}
 
 A mesmerizing Droste effect that warps image-space to recursively appear within itself, creating infinite spiral tunnels and recursive patterns.
 
