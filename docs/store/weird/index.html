@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/weird/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:04+01:00">
-    <meta property="article:modified_time" content="2025-11-22T00:44:07+01:00">
+    <meta property="article:modified_time" content="2025-11-24T02:08:15+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/weird-1280x640.jpg">
 <meta property="og:image:alt" content="Weird">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:04CET",
-      "dateModified": "2025-11-22T00:44:07CET",
+      "dateModified": "2025-11-24T02:08:15CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/weird/#/schema/breadcrumb/1"
       },
@@ -449,6 +449,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#spiral">🌀 Spiral</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -540,6 +545,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 <li><a href="/store/weird/#pinch">Pinch</a>, a raymarching-based dynamic pinch distortion.</li>
 <li><a href="/store/weird/#doodle">Doodle</a>, a hand-drawn doodle effect.</li>
 <li><a href="/store/weird/#kaleidoscope">Kaleidoscope</a>, a symmetrical, rotating patterns.</li>
+<li><a href="/store/weird/#spiral">Spiral</a>, a hypnotic droste effect.</li>
 </ul>
 <!--
 
@@ -3747,7 +3753,411 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 </span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">segmentIntensity</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>              <span class="c1">// [0, 1] - Segment line intensity</span>
 </span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">segmentColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">;</span>          <span class="c1">// Segment line color</span>
 </span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">segmentBlend</span> <span class="p">=</span> <span class="n">ColorBlends</span><span class="p">.</span><span class="n">Solid</span><span class="p">;</span>    <span class="c1">// Segment blend mode</span>
-</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">segmentWidth</span> <span class="p">=</span> <span class="m">0.25f</span><span class="p">;</span>                <span class="c1">// [0, 1] - Segment width</span></span></span></code></pre></div></div>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">segmentWidth</span> <span class="p">=</span> <span class="m">0.25f</span><span class="p">;</span>                <span class="c1">// [0, 1] - Segment width</span></span></span></code></pre></div></div><hr />
+
+<h2 id="spiral" class="heading">🌀 Spiral <a href="#spiral" aria-labelledby="spiral">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/yHp39rLtd9E?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div><div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="STORE"
+        href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-kaleidoscope-346522?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">STORE&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+
+    &nbsp;
+</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-weird/spiral/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p>A mesmerizing Droste effect that warps image-space to recursively appear within itself, creating infinite spiral tunnels and recursive patterns.</p>
+<p>Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/weird/SpiralInspector-2800x3767.jpg"
+            
+            
+            srcset="/store/weird/SpiralInspector-576x775.webp 576w, /store/weird/SpiralInspector-768x1033.webp 768w, /store/weird/SpiralInspector-992x1335.webp 992w, /store/weird/SpiralInspector-1200x1615.webp 1200w, /store/weird/SpiralInspector-1400x1884.webp 1400w, /store/weird/SpiralInspector-2800x3767.webp 2800w" sizes="100vw"
+            height="3767"
+            width="2800"
+            >
+</div><br>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
+
+<h4 id="wrap" class="heading">Wrap <a href="#wrap" aria-labelledby="wrap">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The Droste effect works by mapping the screen into a logarithmic spiral, creating the illusion that the image contains smaller copies of itself that spiral infinitely inward.</p>
+<ul>
+<li>
+<p><strong>Wrap</strong> [0-1]: Controls the geometric transition between the original flat image and the warped droste effect. At 0, you see the unmodified image. At 1, full droste warping is applied. Animating this creates a mesmerizing &ldquo;folding into itself&rdquo; morphing effect - much more interesting than a simple opacity fade.</p>
+</li>
+<li>
+<p><strong>Shape</strong>: Determines the geometric boundary of each recursion layer:</p>
+<ul>
+<li><em>Circular</em>: Classic round droste spiral (respects screen aspect ratio)</li>
+<li><em>Rectangular</em>: Square/rectangular layers (stretches to fill)</li>
+<li><em>Triangular</em>: 3-sided polygon layers</li>
+<li><em>Pentagonal</em>: 5-sided polygon layers</li>
+<li><em>Hexagonal</em>: 6-sided polygon layers (honeycomb-like)</li>
+</ul>
+</li>
+<li>
+<p><strong>Center</strong> [-0.5, 0.5]: Moves the focal point of the spiral. At (0,0) the spiral centers on screen. Offset values shift where the infinite recursion point appears. Keep near zero for best results.</p>
+</li>
+<li>
+<p><strong>Spiral Amount</strong> [0-1]: The &ldquo;twist&rdquo; factor. At 0, you get pure concentric rings/shapes with no spiral twist - the image just repeats in shrinking layers. At 1, full logarithmic spiral warping creates the classic Escher-like twisted tunnel effect.</p>
+</li>
+<li>
+<p><strong>Rotation</strong> [0-360]: Rotates the entire effect statically. Useful for orienting polygon shapes or adjusting the spiral&rsquo;s starting angle.</p>
+</li>
+<li>
+<p><strong>Rotation Speed</strong> [-2, 2]: Continuously animates rotation over time. Positive values spin clockwise, negative counter-clockwise. Combined with Zoom Speed, creates hypnotic spinning tunnel effects.</p>
+</li>
+<li>
+<p><strong>Outer Ring Size</strong> [0-1]: Controls how much of the screen edge is used as the &ldquo;source&rdquo; texture that gets repeated inward. Lower values create tighter, more compressed recursions. At 1.0, the full screen edge is used.</p>
+</li>
+<li>
+<p><strong>Zoom Speed</strong> [-2, 2]: The tunnel travel animation. Positive values make you appear to fly <em>into</em> the spiral (zooming inward). Negative values make you appear to fly <em>out</em> (zooming outward). This animates which recursion layer is displayed, creating seamless infinite travel.</p>
+</li>
+<li>
+<p><strong>Frequency</strong> [0.1-5]: How many recursion layers fit in the visible area. Higher values pack more smaller copies together (denser recursion). Lower values create fewer, larger layers. This directly affects how &ldquo;deep&rdquo; the spiral appears.</p>
+</li>
+<li>
+<p><strong>Edge Mode</strong>: When the warped UVs sample outside the original image bounds:</p>
+<ul>
+<li><em>Clamp</em>: Stretches edge pixels (can show seams)</li>
+<li><em>Mirror</em>: Reflects the image at boundaries (seamless, default)</li>
+<li><em>Repeat</em>: Tiles the image (can create interesting patterns)</li>
+</ul>
+</li>
+</ul>
+
+<h4 id="outer-tint" class="heading">Outer Tint <a href="#outer-tint" aria-labelledby="outer-tint">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Applies a color effect to the outer recursion layers (the larger, edge copies). Use this to add atmosphere, highlight the &ldquo;entrance&rdquo; of the spiral, or create color gradients from outside to inside.</p>
+<ul>
+<li><strong>Outer Tint</strong> [0-1]: How strongly the tint is applied. At 0, no tint. At 1, full tint color applied to outer layers.</li>
+<li><strong>Blend</strong>: How the tint color combines with the image. <em>Solid</em> replaces colors, <em>Additive</em> brightens, <em>Multiply</em> darkens, <em>Screen</em> lightens, <em>Overlay</em> increases contrast, etc.</li>
+<li><strong>Color</strong>: The tint color to apply.</li>
+<li><strong>Softness</strong> [0.1-5]: Controls the falloff curve. Values &lt; 1 concentrate the tint at the very outer edge. Value of 1 is linear falloff. Values &gt; 1 spread the tint further inward.</li>
+</ul>
+
+<h4 id="shadow" class="heading">Shadow <a href="#shadow" aria-labelledby="shadow">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Applies darkening to the inner recursion layers (the smaller, center copies). Creates a sense of depth as if looking down a tunnel that gets darker. Complements Outer Tint - together they give full control over the depth gradient.</p>
+<ul>
+<li><strong>Shadow</strong> [0-1]: How dark the inner layers become. At 0, no shadow. Higher values create stronger darkening toward the center.</li>
+<li><strong>Blend</strong>: How the shadow combines with the image. <em>Multiply</em> is classic darkening. <em>Burn</em> creates more intense shadows. Other modes create artistic effects.</li>
+<li><strong>Color</strong>: The shadow color (usually black, but colored shadows create interesting effects).</li>
+<li><strong>Softness</strong> [0.1-5]: Controls the falloff curve. Values &lt; 1 concentrate shadows at the very center. Value of 1 is linear. Values &gt; 1 spread shadows outward.</li>
+<li><strong>Offset</strong> [-1, 1]: Shifts where shadows begin. Negative values push shadows toward outer layers. Positive values delay shadows until deeper in.</li>
+</ul>
+
+<h4 id="line" class="heading">Line <a href="#line" aria-labelledby="line">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Draws lines at the boundaries between recursion layers - where one copy of the image meets the next smaller copy. These lines trace the spiral shape and can create neon outlines, subtle separations, or bold graphic effects.</p>
+<ul>
+<li><strong>Line</strong> [0-1]: Line thickness. At 0, no lines drawn. Higher values create thicker lines. The width is resolution-independent.</li>
+<li><strong>Blend</strong>: How line color combines with the image. <em>Solid</em> for opaque lines. <em>Additive</em> or <em>Screen</em> for glowing neon effects. <em>Multiply</em> for subtle dark outlines.</li>
+<li><strong>Color</strong>: The line color.</li>
+<li><strong>Softness</strong> [0.01-1]: Edge falloff of the lines. Low values (0.01-0.2) create hard, crisp edges. High values (0.5-1.0) create soft, blurred, glowing edges.</li>
+<li><strong>Count</strong> [1-10]: Number of evenly-spaced lines per recursion interval. At 1, one line per layer boundary. Higher values subdivide each layer with additional lines.</li>
+</ul>
+
+<h4 id="use-in-code-6" class="heading">Use in Code <a href="#use-in-code-6" aria-labelledby="use-in-code-6">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Basic usage:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Add the namespace</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Weird.Spiral</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Safe to use?</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">Spiral</span><span class="p">.</span><span class="n">IsInRenderFeatures</span><span class="p">()</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Access the settings</span>
+</span></span><span class="line"><span class="cl"><span class="n">Spiral</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">Spiral</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Enable the effect</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Disable it</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span></span></span></code></pre></div></div><p>Every parameter is at your fingertips:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">Spiral</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Core effect</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                              <span class="c1">// [0, 1] - Master intensity</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Spiral settings</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">wrap</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                                   <span class="c1">// [0, 1] - Wrap/unwrap transition</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">shape</span> <span class="p">=</span> <span class="n">ShapeType</span><span class="p">.</span><span class="n">Circular</span><span class="p">;</span>                    <span class="c1">// Shape type</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">center</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">zero</span><span class="p">;</span>                         <span class="c1">// [-0.5, 0.5] - Center position</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">spiralAmount</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                           <span class="c1">// [0, 1] - Spiral twist amount</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">rotation</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                               <span class="c1">// [0, 360] - Static rotation</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">rotationSpeed</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                          <span class="c1">// [-2, 2] - Rotation animation speed</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">outerRing</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                              <span class="c1">// [0, 1] - Outer ring size</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">zoomSpeed</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>                              <span class="c1">// [-2, 2] - Zoom animation speed</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">frequency</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                              <span class="c1">// [0.1, 5] - Recursion frequency</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">edgeMode</span> <span class="p">=</span> <span class="n">Spiral</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">EdgeMode</span><span class="p">.</span><span class="n">Mirror</span><span class="p">;</span>   <span class="c1">// Edge handling mode</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Outer tint (affects outer layers)</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">outerTintIntensity</span> <span class="p">=</span> <span class="m">0.3f</span><span class="p">;</span>                     <span class="c1">// [0, 1] - Tint intensity</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">outerTintColorBlend</span> <span class="p">=</span> <span class="n">ColorBlends</span><span class="p">.</span><span class="n">Solid</span><span class="p">;</span>       <span class="c1">// Blend mode</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">outerTintColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">cyan</span><span class="p">;</span>                   <span class="c1">// Tint color</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">outerTintSoftness</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                      <span class="c1">// [0.1, 5] - Falloff</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Shadow (affects inner layers)</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">shadowIntensity</span> <span class="p">=</span> <span class="m">0.2f</span><span class="p">;</span>                        <span class="c1">// [0, 1] - Shadow intensity</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">shadowColorBlend</span> <span class="p">=</span> <span class="n">ColorBlends</span><span class="p">.</span><span class="n">Multiply</span><span class="p">;</span>       <span class="c1">// Blend mode</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">shadowColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">;</span>                     <span class="c1">// Shadow color</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">shadowSoftness</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                         <span class="c1">// [0.1, 5] - Falloff</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">shadowOffset</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                           <span class="c1">// [-1, 1] - Offset</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Line at recursion boundaries</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">lineWidth</span> <span class="p">=</span> <span class="m">0.05f</span><span class="p">;</span>                             <span class="c1">// [0, 1] - Line width</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">lineColorBlend</span> <span class="p">=</span> <span class="n">ColorBlends</span><span class="p">.</span><span class="n">Solid</span><span class="p">;</span>            <span class="c1">// Blend mode</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">lineColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">;</span>                       <span class="c1">// Line color</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">lineSoftness</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>                           <span class="c1">// [0.01, 1] - Edge softness</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">lineCount</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>                                 <span class="c1">// [1, 10] - Number of lines</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Color adjustments</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">brightness</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                             <span class="c1">// [-1, 1]</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">contrast</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                               <span class="c1">// [0, 10]</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">gamma</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                                  <span class="c1">// [0.1, 10]</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">hue</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                                    <span class="c1">// [0, 1]</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">saturation</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                             <span class="c1">// [0, 2]</span></span></span></code></pre></div></div><p>Create a tunnel travel effect:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">zoomSpeed</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>  <span class="c1">// Continuous inward travel</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">rotationSpeed</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>  <span class="c1">// Slow rotation</span></span></span></code></pre></div></div><p>Animate the wrap for a morphing transition:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Gradually wrap into the effect</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">wrap</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Lerp</span><span class="p">(</span><span class="m">0f</span><span class="p">,</span> <span class="m">1f</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span></span></span></code></pre></div></div><p>Check if the effect is ready:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">Spiral</span><span class="p">.</span><span class="n">IsInRenderFeatures</span><span class="p">()</span> <span class="p">==</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Safe to use!</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Reset everything to defaults:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Spiral</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">ResetDefaultValues</span><span class="p">();</span></span></span></code></pre></div></div>
 <h1 id="heading-1" class="heading"> <a href="#heading-1" aria-labelledby="heading-1">
 
 
@@ -4246,6 +4656,11 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
       </ul>
     </li>
     <li><a href="#kaleidoscope">🌈 Kaleidoscope</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#spiral">🌀 Spiral</a>
       <ul>
         <li></li>
       </ul>

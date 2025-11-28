@@ -25,6 +25,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Pinch](#pinch), a raymarching-based dynamic pinch distortion.
 * [Doodle](#doodle), a hand-drawn doodle effect.
 * [Kaleidoscope](#kaleidoscope), a symmetrical, rotating patterns.
+* [Spiral](#spiral), a hypnotic droste effect.
 
 <!--
 {{< alert color="dark" >}}
@@ -1023,6 +1024,178 @@ settings.segmentIntensity = 1.0f;              // [0, 1] - Segment line intensit
 settings.segmentColor = Color.black;          // Segment line color
 settings.segmentBlend = ColorBlends.Solid;    // Segment blend mode
 settings.segmentWidth = 0.25f;                // [0, 1] - Segment width
+```
+
+---
+## 🌀 Spiral {#spiral}
+{{< asset-header youtube="yHp39rLtd9E" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-kaleidoscope-346522" demo="https://fronkongames.github.io/demos-weird/spiral/" warn="assets used in video and demo are not included">}}
+
+A mesmerizing Droste effect that warps image-space to recursively appear within itself, creating infinite spiral tunnels and recursive patterns.
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="SpiralInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Wrap
+
+The Droste effect works by mapping the screen into a logarithmic spiral, creating the illusion that the image contains smaller copies of itself that spiral infinitely inward.
+
+- **Wrap** [0-1]: Controls the geometric transition between the original flat image and the warped droste effect. At 0, you see the unmodified image. At 1, full droste warping is applied. Animating this creates a mesmerizing "folding into itself" morphing effect - much more interesting than a simple opacity fade.
+
+- **Shape**: Determines the geometric boundary of each recursion layer:
+  - *Circular*: Classic round droste spiral (respects screen aspect ratio)
+  - *Rectangular*: Square/rectangular layers (stretches to fill)
+  - *Triangular*: 3-sided polygon layers
+  - *Pentagonal*: 5-sided polygon layers  
+  - *Hexagonal*: 6-sided polygon layers (honeycomb-like)
+
+- **Center** [-0.5, 0.5]: Moves the focal point of the spiral. At (0,0) the spiral centers on screen. Offset values shift where the infinite recursion point appears. Keep near zero for best results.
+
+- **Spiral Amount** [0-1]: The "twist" factor. At 0, you get pure concentric rings/shapes with no spiral twist - the image just repeats in shrinking layers. At 1, full logarithmic spiral warping creates the classic Escher-like twisted tunnel effect.
+
+- **Rotation** [0-360]: Rotates the entire effect statically. Useful for orienting polygon shapes or adjusting the spiral's starting angle.
+
+- **Rotation Speed** [-2, 2]: Continuously animates rotation over time. Positive values spin clockwise, negative counter-clockwise. Combined with Zoom Speed, creates hypnotic spinning tunnel effects.
+
+- **Outer Ring Size** [0-1]: Controls how much of the screen edge is used as the "source" texture that gets repeated inward. Lower values create tighter, more compressed recursions. At 1.0, the full screen edge is used.
+
+- **Zoom Speed** [-2, 2]: The tunnel travel animation. Positive values make you appear to fly *into* the spiral (zooming inward). Negative values make you appear to fly *out* (zooming outward). This animates which recursion layer is displayed, creating seamless infinite travel.
+
+- **Frequency** [0.1-5]: How many recursion layers fit in the visible area. Higher values pack more smaller copies together (denser recursion). Lower values create fewer, larger layers. This directly affects how "deep" the spiral appears.
+
+- **Edge Mode**: When the warped UVs sample outside the original image bounds:
+  - *Clamp*: Stretches edge pixels (can show seams)
+  - *Mirror*: Reflects the image at boundaries (seamless, default)
+  - *Repeat*: Tiles the image (can create interesting patterns)
+
+#### Outer Tint
+
+Applies a color effect to the outer recursion layers (the larger, edge copies). Use this to add atmosphere, highlight the "entrance" of the spiral, or create color gradients from outside to inside.
+
+- **Outer Tint** [0-1]: How strongly the tint is applied. At 0, no tint. At 1, full tint color applied to outer layers.
+- **Blend**: How the tint color combines with the image. *Solid* replaces colors, *Additive* brightens, *Multiply* darkens, *Screen* lightens, *Overlay* increases contrast, etc.
+- **Color**: The tint color to apply.
+- **Softness** [0.1-5]: Controls the falloff curve. Values < 1 concentrate the tint at the very outer edge. Value of 1 is linear falloff. Values > 1 spread the tint further inward.
+
+#### Shadow
+
+Applies darkening to the inner recursion layers (the smaller, center copies). Creates a sense of depth as if looking down a tunnel that gets darker. Complements Outer Tint - together they give full control over the depth gradient.
+
+- **Shadow** [0-1]: How dark the inner layers become. At 0, no shadow. Higher values create stronger darkening toward the center.
+- **Blend**: How the shadow combines with the image. *Multiply* is classic darkening. *Burn* creates more intense shadows. Other modes create artistic effects.
+- **Color**: The shadow color (usually black, but colored shadows create interesting effects).
+- **Softness** [0.1-5]: Controls the falloff curve. Values < 1 concentrate shadows at the very center. Value of 1 is linear. Values > 1 spread shadows outward.
+- **Offset** [-1, 1]: Shifts where shadows begin. Negative values push shadows toward outer layers. Positive values delay shadows until deeper in.
+
+#### Line
+
+Draws lines at the boundaries between recursion layers - where one copy of the image meets the next smaller copy. These lines trace the spiral shape and can create neon outlines, subtle separations, or bold graphic effects.
+
+- **Line** [0-1]: Line thickness. At 0, no lines drawn. Higher values create thicker lines. The width is resolution-independent.
+- **Blend**: How line color combines with the image. *Solid* for opaque lines. *Additive* or *Screen* for glowing neon effects. *Multiply* for subtle dark outlines.
+- **Color**: The line color.
+- **Softness** [0.01-1]: Edge falloff of the lines. Low values (0.01-0.2) create hard, crisp edges. High values (0.5-1.0) create soft, blurred, glowing edges.
+- **Count** [1-10]: Number of evenly-spaced lines per recursion interval. At 1, one line per layer boundary. Higher values subdivide each layer with additional lines.
+
+#### Use in Code
+
+Basic usage:
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.Spiral;
+
+// Safe to use?
+if (Spiral.IsInRenderFeatures() == false)
+  return;
+
+// Access the settings
+Spiral.Settings settings = Spiral.Instance.settings;
+
+// Enable the effect
+settings.intensity = 1.0f;
+
+// Disable it
+settings.intensity = 0.0f;
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+var settings = Spiral.Instance.settings;
+
+// Core effect
+settings.intensity = 1.0f;                              // [0, 1] - Master intensity
+
+// Spiral settings
+settings.wrap = 1.0f;                                   // [0, 1] - Wrap/unwrap transition
+settings.shape = ShapeType.Circular;                    // Shape type
+settings.center = Vector2.zero;                         // [-0.5, 0.5] - Center position
+settings.spiralAmount = 1.0f;                           // [0, 1] - Spiral twist amount
+settings.rotation = 0.0f;                               // [0, 360] - Static rotation
+settings.rotationSpeed = 0.0f;                          // [-2, 2] - Rotation animation speed
+settings.outerRing = 1.0f;                              // [0, 1] - Outer ring size
+settings.zoomSpeed = 0.5f;                              // [-2, 2] - Zoom animation speed
+settings.frequency = 1.0f;                              // [0.1, 5] - Recursion frequency
+settings.edgeMode = Spiral.Settings.EdgeMode.Mirror;   // Edge handling mode
+
+// Outer tint (affects outer layers)
+settings.outerTintIntensity = 0.3f;                     // [0, 1] - Tint intensity
+settings.outerTintColorBlend = ColorBlends.Solid;       // Blend mode
+settings.outerTintColor = Color.cyan;                   // Tint color
+settings.outerTintSoftness = 1.0f;                      // [0.1, 5] - Falloff
+
+// Shadow (affects inner layers)
+settings.shadowIntensity = 0.2f;                        // [0, 1] - Shadow intensity
+settings.shadowColorBlend = ColorBlends.Multiply;       // Blend mode
+settings.shadowColor = Color.black;                     // Shadow color
+settings.shadowSoftness = 1.0f;                         // [0.1, 5] - Falloff
+settings.shadowOffset = 0.0f;                           // [-1, 1] - Offset
+
+// Line at recursion boundaries
+settings.lineWidth = 0.05f;                             // [0, 1] - Line width
+settings.lineColorBlend = ColorBlends.Solid;            // Blend mode
+settings.lineColor = Color.white;                       // Line color
+settings.lineSoftness = 0.5f;                           // [0.01, 1] - Edge softness
+settings.lineCount = 1;                                 // [1, 10] - Number of lines
+
+// Color adjustments
+settings.brightness = 0.0f;                             // [-1, 1]
+settings.contrast = 1.0f;                               // [0, 10]
+settings.gamma = 1.0f;                                  // [0.1, 10]
+settings.hue = 0.0f;                                    // [0, 1]
+settings.saturation = 1.0f;                             // [0, 2]
+```
+
+Create a tunnel travel effect:
+
+```csharp
+settings.zoomSpeed = 0.5f;  // Continuous inward travel
+settings.rotationSpeed = 0.1f;  // Slow rotation
+```
+
+Animate the wrap for a morphing transition:
+
+```csharp
+// Gradually wrap into the effect
+settings.wrap = Mathf.Lerp(0f, 1f, t);
+```
+
+Check if the effect is ready:
+
+```csharp
+if (Spiral.IsInRenderFeatures() == true)
+{
+    // Safe to use!
+}
+```
+
+Reset everything to defaults:
+
+```csharp
+Spiral.Instance.settings.ResetDefaultValues();
 ```
 
 #
