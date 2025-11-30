@@ -26,6 +26,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Doodle](#doodle), a hand-drawn doodle effect.
 * [Kaleidoscope](#kaleidoscope), a symmetrical, rotating patterns.
 * [Spiral](#spiral), a hypnotic droste effect.
+* [Dither Fog](#dither-fog), a retro dithering fog.
 
 <!--
 {{< alert color="dark" >}}
@@ -1196,6 +1197,135 @@ Reset everything to defaults:
 
 ```csharp
 Spiral.Instance.settings.ResetDefaultValues();
+```
+
+---
+## ☁️ Dither Fog {#dither-fog}
+{{< asset-header youtube="Aq7KZbOmNk8" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-dither-fog-347718" demo="https://fronkongames.github.io/demos-weird/dither-fog/" warn="assets used in video and demo are not included">}}
+
+A retro-styled post-processing fog effect that mimics the dithered fog from classic games like Doom, using ordered dithering patterns to create pixelated, atmospheric depth.
+
+This effect uses the depth buffer to create distance-based fog. Go to your URP Renderer asset > Rendering > Depth Texture and enable depth buffer.
+
+{{< image src="extruder_1.jpg" wrapper="col-8 mx-auto">}}
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="DitherFogInspector.png" wrapper="col-8 mx-auto">}}
+
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Fog
+
+The fog parameters control the appearance and behavior of the atmospheric depth effect. These work together to create various fog styles from subtle distance cues to thick atmospheric effects.
+
+- **Fog** [0-1]: Overall fog opacity multiplier that scales all fog calculations
+- **Color Mode**: Determines how fog color is calculated - the core of the fog's visual identity:
+  - **Solid**: Uses a single uniform color for all fog (most common for classic fog effects)
+  - **Auto**: Dynamically samples and averages the scene colors for organic, adaptive fog
+  - **Gradient**: Creates depth-based color transitions from near to far distances
+- **Color** (Solid mode): The fog color when using Solid mode - black for mystery, gray for realism
+- **Near/Far** (Gradient mode): Two-color gradient system where alpha channels control opacity per distance layer
+- **Fog Start** [0-1]: Normalized distance (0=camera, 1=far clip) where fog begins accumulating
+- **Curve Start/End** [0-1]: Smoothstep curve range defining fog density falloff - creates smooth transitions
+- **Curved**: Toggles between linear distance falloff vs. curved spherical falloff around camera position
+
+#### Dithering
+
+Dithering parameters control the retro pixelation effect that gives this fog its distinctive classic game aesthetic. The system uses Bayer matrix ordered dithering for consistent, artifact-free patterns.
+
+- **Dithering**: Selection of Bayer matrix patterns for ordered dithering - each provides different visual characteristics:
+  - **None**: Disables dithering for smooth, modern fog appearance
+  - **Bayer4x4**: Smallest pattern (4×4 matrix) with 16 threshold levels - fast but visible grid
+  - **Bayer8x8**: Classic 8×8 matrix with 64 threshold levels - authentic Doom/Wolfenstein look
+  - **Bayer16x16**: Finer 16×16 matrix with 256 levels - subtle pixelation, good performance balance
+  - **Bayer32x32**: Largest 32×32 matrix with 1024 levels - very fine dithering, almost smooth
+- **Scale** [1-8]: Multiplier for dither pattern size - creates larger pixel blocks for exaggerated retro effects
+- **Adaptive**: Enable intelligent dithering that automatically adjusts based on scene content to preserve detail in dark and high-contrast areas
+- **Brightness Threshold** [0-1]: Controls how scene brightness affects adaptive dithering strength (0.5 = balanced adaptation)
+- **Contrast Sensitivity** [0-2]: Controls how local contrast affects dithering (higher values reduce dithering in detailed areas)
+- **Quantize** [0-255]: Color precision reduction simulating limited color palettes (8=8-bit, 16=16-bit, 0=full color)
+
+#### Use in Code
+
+Basic usage:
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.DitherFog;
+
+// Safe to use?
+if (DitherFog.IsInRenderFeatures() == false)
+  return;
+
+// Access the settings
+DitherFog.Settings settings = DitherFog.Instance.settings;
+
+// Enable the effect
+settings.intensity = 1.0f;
+
+// Configure for classic Doom-style fog
+settings.fogOpacity = 0.8f;
+settings.fogColor = new Color(0.2f, 0.2f, 0.2f, 1.0f);
+settings.ditheringMode = DitheringModes.Bayer8x8;
+settings.ditherScale = 2;
+settings.fogStart = 0.3f;
+settings.curvedFog = true;
+
+// Disable it
+settings.intensity = 0.0f;
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+var settings = DitherFog.Instance.settings;
+
+// Core effect
+settings.intensity = 1.0f;                              // [0, 1] - Master intensity
+
+// Fog parameters
+settings.fogOpacity = 1.0f;                             // [0, 1] - Fog opacity multiplier
+settings.fogColorMode = FogColorModes.Solid;            // Color mode (Solid/Auto/Gradient)
+settings.fogColor = Color.black;                         // Fog color (Solid mode)
+settings.fogGradientNear = new Color(0,0,0,0);          // Near color with alpha (Gradient mode)
+settings.fogGradientFar = new Color(0,0,0,1);           // Far color with alpha (Gradient mode)
+settings.fogStart = 0.25f;                               // [0, 1] - Fog center position
+settings.fogCurveStart = 0.1f;                           // [0, 1] - Near fog intensity
+settings.fogCurveEnd = 1.0f;                             // [0, 1] - Far fog intensity
+settings.curvedFog = true;                               // Enable curved fog falloff
+
+// Dithering parameters
+settings.ditheringMode = DitheringModes.Bayer8x8;        // Pattern type
+settings.ditherScale = 1;                                // [1, 8] - Pattern scale
+settings.quantize = 0;                                   // [0, 255] - Color quantization
+
+// Color adjustments
+settings.brightness = 0.0f;                              // [-1, 1] - Brightness
+settings.contrast = 1.0f;                                // [0, 10] - Contrast
+settings.gamma = 1.0f;                                   // [0.1, 10] - Gamma
+settings.hue = 0.0f;                                     // [0, 1] - Hue shift
+settings.saturation = 1.0f;                              // [0, 2] - Saturation
+
+// Advanced
+settings.affectSceneView = false;                        // Apply in scene view
+settings.whenToInsert = RenderPassEvent.BeforeRenderingPostProcessing;
+```
+
+Check if the effect is ready:
+
+```csharp
+if (DitherFog.IsInRenderFeatures() == true)
+{
+    // Safe to use!
+}
+```
+
+Reset everything to defaults:
+
+```csharp
+DitherFog.Instance.settings.ResetDefaultValues();
 ```
 
 #

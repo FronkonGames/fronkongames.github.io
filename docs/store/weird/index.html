@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/weird/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:04+01:00">
-    <meta property="article:modified_time" content="2025-11-28T01:19:56+01:00">
+    <meta property="article:modified_time" content="2025-11-28T01:44:10+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/weird-1280x640.jpg">
 <meta property="og:image:alt" content="Weird">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:04CET",
-      "dateModified": "2025-11-28T01:19:56CET",
+      "dateModified": "2025-11-28T01:44:10CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/weird/#/schema/breadcrumb/1"
       },
@@ -454,6 +454,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#dither-fog">☁️ Dither Fog</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -546,6 +551,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 <li><a href="/store/weird/#doodle">Doodle</a>, a hand-drawn doodle effect.</li>
 <li><a href="/store/weird/#kaleidoscope">Kaleidoscope</a>, a symmetrical, rotating patterns.</li>
 <li><a href="/store/weird/#spiral">Spiral</a>, a hypnotic droste effect.</li>
+<li><a href="/store/weird/#dither-fog">Dither Fog</a>, a retro dithering fog.</li>
 </ul>
 <!--
 
@@ -4157,7 +4163,408 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Safe to use!</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Reset everything to defaults:</p>
-<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Spiral</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">ResetDefaultValues</span><span class="p">();</span></span></span></code></pre></div></div>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Spiral</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">ResetDefaultValues</span><span class="p">();</span></span></span></code></pre></div></div><hr />
+
+<h2 id="dither-fog" class="heading">☁️ Dither Fog <a href="#dither-fog" aria-labelledby="dither-fog">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/Aq7KZbOmNk8?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div><div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="STORE"
+        href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-dither-fog-347718?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">STORE&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+
+    &nbsp;
+</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-weird/dither-fog/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p>A retro-styled post-processing fog effect that mimics the dithered fog from classic games like Doom, using ordered dithering patterns to create pixelated, atmospheric depth.</p>
+<p>This effect uses the depth buffer to create distance-based fog. Go to your URP Renderer asset &gt; Rendering &gt; Depth Texture and enable depth buffer.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/weird/extruder_1-2800x917.jpg"
+            
+            
+            srcset="/store/weird/extruder_1-576x189.webp 576w, /store/weird/extruder_1-768x251.webp 768w, /store/weird/extruder_1-992x325.webp 992w, /store/weird/extruder_1-1200x393.webp 1200w, /store/weird/extruder_1-1400x458.webp 1400w, /store/weird/extruder_1-2800x917.webp 2800w" sizes="100vw"
+            height="917"
+            width="2800"
+            >
+</div><br>
+<p>Once installed, when you select your &lsquo;<em>Universal Renderer Data</em>&rsquo;, you will see something like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/weird/DitherFogInspector-2800x3051.jpg"
+            
+            
+            srcset="/store/weird/DitherFogInspector-576x628.webp 576w, /store/weird/DitherFogInspector-768x837.webp 768w, /store/weird/DitherFogInspector-992x1081.webp 992w, /store/weird/DitherFogInspector-1200x1307.webp 1200w, /store/weird/DitherFogInspector-1400x1525.webp 1400w, /store/weird/DitherFogInspector-2800x3051.webp 2800w" sizes="100vw"
+            height="3051"
+            width="2800"
+            >
+</div><br>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
+
+<h4 id="fog" class="heading">Fog <a href="#fog" aria-labelledby="fog">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The fog parameters control the appearance and behavior of the atmospheric depth effect. These work together to create various fog styles from subtle distance cues to thick atmospheric effects.</p>
+<ul>
+<li><strong>Fog</strong> [0-1]: Overall fog opacity multiplier that scales all fog calculations</li>
+<li><strong>Color Mode</strong>: Determines how fog color is calculated - the core of the fog&rsquo;s visual identity:
+<ul>
+<li><strong>Solid</strong>: Uses a single uniform color for all fog (most common for classic fog effects)</li>
+<li><strong>Auto</strong>: Dynamically samples and averages the scene colors for organic, adaptive fog</li>
+<li><strong>Gradient</strong>: Creates depth-based color transitions from near to far distances</li>
+</ul>
+</li>
+<li><strong>Color</strong> (Solid mode): The fog color when using Solid mode - black for mystery, gray for realism</li>
+<li><strong>Near/Far</strong> (Gradient mode): Two-color gradient system where alpha channels control opacity per distance layer</li>
+<li><strong>Fog Start</strong> [0-1]: Normalized distance (0=camera, 1=far clip) where fog begins accumulating</li>
+<li><strong>Curve Start/End</strong> [0-1]: Smoothstep curve range defining fog density falloff - creates smooth transitions</li>
+<li><strong>Curved</strong>: Toggles between linear distance falloff vs. curved spherical falloff around camera position</li>
+</ul>
+
+<h4 id="dithering" class="heading">Dithering <a href="#dithering" aria-labelledby="dithering">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Dithering parameters control the retro pixelation effect that gives this fog its distinctive classic game aesthetic. The system uses Bayer matrix ordered dithering for consistent, artifact-free patterns.</p>
+<ul>
+<li><strong>Dithering</strong>: Selection of Bayer matrix patterns for ordered dithering - each provides different visual characteristics:
+<ul>
+<li><strong>None</strong>: Disables dithering for smooth, modern fog appearance</li>
+<li><strong>Bayer4x4</strong>: Smallest pattern (4×4 matrix) with 16 threshold levels - fast but visible grid</li>
+<li><strong>Bayer8x8</strong>: Classic 8×8 matrix with 64 threshold levels - authentic Doom/Wolfenstein look</li>
+<li><strong>Bayer16x16</strong>: Finer 16×16 matrix with 256 levels - subtle pixelation, good performance balance</li>
+<li><strong>Bayer32x32</strong>: Largest 32×32 matrix with 1024 levels - very fine dithering, almost smooth</li>
+</ul>
+</li>
+<li><strong>Scale</strong> [1-8]: Multiplier for dither pattern size - creates larger pixel blocks for exaggerated retro effects</li>
+<li><strong>Adaptive</strong>: Enable intelligent dithering that automatically adjusts based on scene content to preserve detail in dark and high-contrast areas</li>
+<li><strong>Brightness Threshold</strong> [0-1]: Controls how scene brightness affects adaptive dithering strength (0.5 = balanced adaptation)</li>
+<li><strong>Contrast Sensitivity</strong> [0-2]: Controls how local contrast affects dithering (higher values reduce dithering in detailed areas)</li>
+<li><strong>Quantize</strong> [0-255]: Color precision reduction simulating limited color palettes (8=8-bit, 16=16-bit, 0=full color)</li>
+</ul>
+
+<h4 id="use-in-code-7" class="heading">Use in Code <a href="#use-in-code-7" aria-labelledby="use-in-code-7">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Basic usage:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Add the namespace</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Weird.DitherFog</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Safe to use?</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">DitherFog</span><span class="p">.</span><span class="n">IsInRenderFeatures</span><span class="p">()</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Access the settings</span>
+</span></span><span class="line"><span class="cl"><span class="n">DitherFog</span><span class="p">.</span><span class="n">Settings</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">DitherFog</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Enable the effect</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Configure for classic Doom-style fog</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogOpacity</span> <span class="p">=</span> <span class="m">0.8f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogColor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="m">0.2f</span><span class="p">,</span> <span class="m">0.2f</span><span class="p">,</span> <span class="m">0.2f</span><span class="p">,</span> <span class="m">1.0f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">ditheringMode</span> <span class="p">=</span> <span class="n">DitheringModes</span><span class="p">.</span><span class="n">Bayer8x8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">ditherScale</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogStart</span> <span class="p">=</span> <span class="m">0.3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">curvedFog</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Disable it</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span></span></span></code></pre></div></div><p>Every parameter is at your fingertips:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">settings</span> <span class="p">=</span> <span class="n">DitherFog</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Core effect</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">intensity</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                              <span class="c1">// [0, 1] - Master intensity</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Fog parameters</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogOpacity</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                             <span class="c1">// [0, 1] - Fog opacity multiplier</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogColorMode</span> <span class="p">=</span> <span class="n">FogColorModes</span><span class="p">.</span><span class="n">Solid</span><span class="p">;</span>            <span class="c1">// Color mode (Solid/Auto/Gradient)</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">;</span>                         <span class="c1">// Fog color (Solid mode)</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogGradientNear</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>          <span class="c1">// Near color with alpha (Gradient mode)</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogGradientFar</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">);</span>           <span class="c1">// Far color with alpha (Gradient mode)</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogStart</span> <span class="p">=</span> <span class="m">0.25f</span><span class="p">;</span>                               <span class="c1">// [0, 1] - Fog center position</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogCurveStart</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>                           <span class="c1">// [0, 1] - Near fog intensity</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">fogCurveEnd</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                             <span class="c1">// [0, 1] - Far fog intensity</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">curvedFog</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>                               <span class="c1">// Enable curved fog falloff</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Dithering parameters</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">ditheringMode</span> <span class="p">=</span> <span class="n">DitheringModes</span><span class="p">.</span><span class="n">Bayer8x8</span><span class="p">;</span>        <span class="c1">// Pattern type</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">ditherScale</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>                                <span class="c1">// [1, 8] - Pattern scale</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">quantize</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>                                   <span class="c1">// [0, 255] - Color quantization</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Color adjustments</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">brightness</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                              <span class="c1">// [-1, 1] - Brightness</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">contrast</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                                <span class="c1">// [0, 10] - Contrast</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">gamma</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                                   <span class="c1">// [0.1, 10] - Gamma</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">hue</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>                                     <span class="c1">// [0, 1] - Hue shift</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">saturation</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>                              <span class="c1">// [0, 2] - Saturation</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Advanced</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">affectSceneView</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>                        <span class="c1">// Apply in scene view</span>
+</span></span><span class="line"><span class="cl"><span class="n">settings</span><span class="p">.</span><span class="n">whenToInsert</span> <span class="p">=</span> <span class="n">RenderPassEvent</span><span class="p">.</span><span class="n">BeforeRenderingPostProcessing</span><span class="p">;</span></span></span></code></pre></div></div><p>Check if the effect is ready:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">DitherFog</span><span class="p">.</span><span class="n">IsInRenderFeatures</span><span class="p">()</span> <span class="p">==</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Safe to use!</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Reset everything to defaults:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">DitherFog</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">ResetDefaultValues</span><span class="p">();</span></span></span></code></pre></div></div>
 <h1 id="heading-1" class="heading"> <a href="#heading-1" aria-labelledby="heading-1">
 
 
@@ -4661,6 +5068,11 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
       </ul>
     </li>
     <li><a href="#spiral">🌀 Spiral</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#dither-fog">☁️ Dither Fog</a>
       <ul>
         <li></li>
       </ul>
