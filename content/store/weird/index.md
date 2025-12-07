@@ -11,12 +11,9 @@ thumbnail:
   url: img/weird.jpg
 ---
 
-**Embrace the weirdness** and make your games truly unique. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.
+[Embrace the weirdness](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff) and make your games truly unique. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.
 
 High-performance, fully customizable, and designed specifically for game developers!
-<!--
-All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/Weird-bundle-272266?aid=1101l9zFC&utm_source=aff)**' will help you to achieve a unique look for your games. It consists of the following effects:
--->
 
 * [Fire Tunnel](#firetunnel), a mesmerizing fire tunnel screen-space effect.
 * [Extruder](#extruder), pixelated voxel effect with customizable camera, lighting.
@@ -29,11 +26,11 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Dither Fog](#dither-fog), a retro dithering fog.
 * [Edges](#edges), edge detection and stylization.
 
-<!--
+
 {{< alert color="dark" >}}
-You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[Weird BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/Weird-bundle-272266?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
+You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[Weird BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
 {{< /alert >}}
--->
+
 
 ## Requirements
 
