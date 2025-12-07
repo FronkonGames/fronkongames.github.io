@@ -27,6 +27,7 @@ All the effects of '**[Weird](https://assetstore.unity.com/packages/vfx/shaders/
 * [Kaleidoscope](#kaleidoscope), a symmetrical, rotating patterns.
 * [Spiral](#spiral), a hypnotic droste effect.
 * [Dither Fog](#dither-fog), a retro dithering fog.
+* [Edges](#edges), edge detection and stylization.
 
 <!--
 {{< alert color="dark" >}}
@@ -1326,6 +1327,161 @@ Reset everything to defaults:
 
 ```csharp
 DitherFog.Instance.settings.ResetDefaultValues();
+```
+
+---
+## 📐 Edges {#edges}
+{{< asset-header youtube="rDZYt95-QWs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-edges-348780" demo="https://fronkongames.github.io/demos-weird/edges/" warn="assets used in video and demo are not included">}}
+
+A sophisticated edge detection and stylization effect that transforms your scene with customizable edge outlines, offering multiple detection algorithms and artistic control over the final appearance.
+
+This effect uses the depth buffer. Go to your URP Renderer asset > Rendering > Depth Texture and enable depth buffer.
+
+{{< image src="extruder_1.jpg" wrapper="col-8 mx-auto">}}
+
+{{< alert color="warning" >}}
+**Transparency note:** Transparent materials usually do not write depth, so depth-based edge detection and post effects cannot see them. If you need them affected, use an opaque material with alpha cutout (when full transparency is not required).
+{{< /alert >}}
+
+Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+
+{{< image src="EdgesInspector.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+
+#### Edges
+
+The edge detection system analyzes your scene to find boundaries and transitions, then applies stylized outlines with full artistic control.
+
+- **Edges** [0-1]: Overall edge detection strength. At 0, no edges are detected. At 1, full edge strength.
+- **Method**: The algorithm used for edge detection:
+  - *Depth Neighbors*: Compares depth against its 8 neighbors and thresholds the strongest jump (fast, crisp silhouettes).
+  - *Sobel*: Sobel kernels over depth; sharper gradient edges, a bit costlier than Depth Neighbors.
+  - *Prewitt*: Prewitt depth gradients; slightly softer than Sobel for gentler outlines.
+  - *Normal-Based*: Approximates normals from depth gradients; finds creases even on flat depth.
+  - *Color-Based*: Runs Sobel on color/luminance so texture/transparent edges appear even without depth.
+  - *Hybrid*: Takes the max of depth edge and color edge to capture both geometry and texture/transparent contrasts.
+- **Width** [1-10]: Edge width multiplier. Lower values create thin, precise edges. Higher values create bold, thick outlines.
+- **Threshold** [0.01-1]: Edge detection sensitivity. Lower values detect more subtle edges. Higher values only show strong contrasts.
+- **Edge Color**: The color mode for detected edges:
+  - *Linear*: Single solid color for all edges
+    - **Color**: The color applied to detected edges. Default white.
+  - *DepthBased*: Edges change color based on distance from camera
+    - **Near Color**: Edge color for objects close to camera. Default cyan.
+    - **Far Color**: Edge color for objects far from camera. Default magenta.
+    - **Near** [0-1]: Depth range start (near). Default 0.
+    - **Far** [0-1]: Depth range end (far). Default 1.
+  - **Blend**: How edge colors combine with the underlying image:
+    - *Solid*: Replaces pixels with edge color
+    - *Additive*: Adds edge color to existing pixels (glowing effects)
+    - *Multiply*: Darkens underlying pixels
+    - *Screen*: Lightens underlying pixels
+    - *Overlay*: Increases contrast
+    - ...and 17 other blend modes
+
+#### Background
+
+When edges are detected, you can choose what appears in the non-edge areas of the image.
+
+- **Color**: The background color applied to non-edge areas. Default black creates a clean, high-contrast look.
+- **Blend**: How the background color combines with the original image in non-edge areas.
+
+#### Skybox
+
+- **Ignore Skybox**: the skybox is not affected by the effect.
+
+#### Use in Code
+
+Basic usage:
+
+```csharp
+// Add the namespace
+using FronkonGames.Weird.Edges;
+
+// Safe to use?
+if (Edges.IsInRenderFeatures() == false)
+  return;
+
+// Access the settings
+Edges.Settings settings = Edges.Instance.settings;
+
+// Enable the effect
+settings.intensity = 1.0f;
+
+// Disable it
+settings.intensity = 0.0f;
+```
+
+Every parameter is at your fingertips:
+
+```csharp
+var settings = Edges.Instance.settings;
+
+// Core effect
+settings.intensity = 1.0f;                              // [0, 1] - Master intensity
+
+// Edges settings
+settings.edges = 1.0f;                                  // [0, 1] - Edge detection strength
+settings.edgeWidth = 2.0f;                              // [0.1, 10] - Edge width multiplier
+settings.edgeThreshold = 0.1f;                          // [0.01, 1] - Detection threshold
+settings.edgeDetectionMethod = EdgeDetectionMethod.DepthNeighbors; // Detection algorithm
+
+// Edge color settings
+settings.edgeColorMode = EdgeColorMode.Linear;          // Linear or DepthBased
+settings.edgesColor = Color.white;                      // Edge color (Linear mode)
+settings.edgesBlend = ColorBlends.Solid;                // Edge blend mode
+
+// Depth-based edge color (when edgeColorMode is DepthBased)
+settings.depthEdgeNearColor = Color.cyan;               // Near color
+settings.depthEdgeFarColor = Color.magenta;             // Far color
+settings.depthEdgeNear = 0.0f;                          // [0, 1] - Near depth
+settings.depthEdgeFar = 1.0f;                           // [0, 1] - Far depth
+
+// Background settings
+settings.backgroundColor = Color.black;                 // Background color
+settings.backgroundBlend = ColorBlends.Solid;           // Background blend mode
+
+// Color settings
+settings.brightness = 0.0f;                             // [-1, 1]
+settings.contrast = 1.0f;                               // [0, 10]
+settings.gamma = 1.0f;                                  // [0.1, 10]
+settings.hue = 0.0f;                                    // [0, 1]
+settings.saturation = 1.0f;                             // [0, 2]
+```
+
+Create animated edge effects:
+
+```csharp
+// Pulse edge width
+settings.edgeWidth = 1.0f + Mathf.Sin(Time.time) * 0.5f;
+
+// Color cycle edges (Linear mode)
+settings.edgeColorMode = EdgeColorMode.Linear;
+settings.edgesColor = Color.HSVToRGB(Time.time % 1.0f, 1.0f, 1.0f);
+```
+
+Neon / Cyberpunk style:
+
+```csharp
+// Create a neon wireframe look
+settings.edgeColorMode = EdgeColorMode.Linear;
+settings.edgesColor = Color.cyan;
+settings.backgroundColor = Color.yellow;
+```
+
+Check if the effect is ready:
+
+```csharp
+if (Edges.IsInRenderFeatures() == true)
+{
+    // Safe to use!
+}
+```
+
+Reset everything to defaults:
+
+```csharp
+Edges.Instance.settings.ResetDefaultValues();
 ```
 
 #
