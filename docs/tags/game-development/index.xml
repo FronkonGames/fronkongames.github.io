@@ -7,15 +7,8 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Sun, 15 Jun 2025 17:27:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 11 Apr 2025 14:34:02 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/game-development/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Kairos</title>
-      <link>https://fronkongames.github.io/projects/kairos/</link>
-      <pubDate>Thu, 01 Jan 1970 01:01:40 +0100</pubDate>
-      <guid>https://fronkongames.github.io/projects/kairos/</guid>
-      <description>Hello Everybody! Making a 3D card in Blender Rendering A Card Drag &amp;amp; Drop Cards Hello Everybody! 🧟 &amp;nbsp; Hi I&amp;rsquo;m Martin Bustos and I&amp;rsquo;ve been developing games for more than two decades for PC, consoles, online, etc (you can check the list in my GitHub profile).</description>
-    </item>
     <item>
       <title>Game:Work Foundation</title>
       <link>https://fronkongames.github.io/projects/gamework-foundation/</link>
@@ -36,6 +29,13 @@
       <pubDate>Thu, 01 Jan 1970 01:00:08 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/awesome-game-development/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Hello Everybody! 🧟</title>
+      <link>https://fronkongames.github.io/projects/kairos/hello/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:00 +0100</pubDate>
+      <guid>https://fronkongames.github.io/projects/kairos/hello/</guid>
+      <description>Hello Everybody! 🧟 &amp;nbsp; Hi I&amp;rsquo;m Martin Bustos and I&amp;rsquo;ve been developing games for more than two decades for PC, consoles, online, etc (you can check the list in my GitHub profile).</description>
     </item>
   </channel>
 </rss>

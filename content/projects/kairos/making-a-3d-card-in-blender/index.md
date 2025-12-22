@@ -2,7 +2,7 @@
 author: Martin Bustos
 title: Making A 3D Card In Blender 🃏
 showTitle: true
-date: 2
+date: 1
 description: The first thing a card game needs is... cards
 tags: ["devblog", "kairos"]
 metadata: none
@@ -20,12 +20,12 @@ And why in 3D? It would be _easier_ to do it in 2D, but to have more options in 
 
 I was going to need a 3D editor, and in my modest opinion [Blender](https://www.blender.org/) is unbeatable in quality / price.
 
-{{< image src="blender.jpg" wrapper="col-8 mx-auto">}}
+{{< image src="blender.jpg" wrapper="col-10 mx-auto">}}
 
 Once installed, in an empty scene, I added a plane using the menu '**Add > Mesh > Plane**'.
 To make it easier to handle, I set the top camera by pressing '**7**' on the numeric pad.
 
-{{< image src="plane.jpg" wrapper="col-8 mx-auto">}}
+{{< image src="plane.jpg" wrapper="col-10 mx-auto">}}
 
 There is no standard size for a card. A Bridge card measures 57.15 x 88.9 mm, while a Poker card measures 62 x 88 mm. This size is known as [B8 in ISO 216](https://formaty.info/en/B8/). Since it is the best known, it is the size I will use.
 

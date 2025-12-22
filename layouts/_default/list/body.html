@@ -10,9 +10,9 @@
             {{ if not .Params.logo }}
               {{ with .Title }}<p id="{{ anchorize . }}" class="display-4 mt-5{{ if and $.IsHome site.Params.home.centerHeadline }} text-center{{ end }}">{{ . }}</p>{{ end }}
             {{ else }}
-              <div align="center">
-              {{ partial "assets/image.html" (dict "url" .Params.logo "wrapper" "col-6" "class" "border-0" "title" .Title "priority" "high") }}
-              </div>
+              <center>
+                {{ partial "assets/image.html" (dict "url" .Params.logo "wrapper" "col-6" "class" "border-0" "title" .Title "priority" "high") }}
+              </center>
             {{ end }}
         {{ end }}
         {{ if (.Params.menu) }}
