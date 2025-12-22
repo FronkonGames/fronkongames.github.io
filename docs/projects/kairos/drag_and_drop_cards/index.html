@@ -972,24 +972,24 @@ hits by proximity to the center of the card, this way we will get the <strong>ID
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">OnDrop</span><span class="p">(</span><span class="n">IDrag</span> <span class="n">drag</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Let&rsquo;s take a look at a successful drag operation.</p>
 <center>
-  <img src="drag_and_drop_cards/dragok.gif" width="100%" height="100%"/>
+  <img src="dragok.gif" width="100%" height="100%"/>
 </center>
 <br>
 <p>And now one that does not, since one of the corners collides with an <strong>IDrag</strong> (another card) and this one is closer to the <strong>IDrop</strong> (the ground).</p>
 <center>
-  <img src="drag_and_drop_cards/dragfail.gif" width="100%" height="100%"/>
+  <img src="dragfail.gif" width="100%" height="100%"/>
 </center>
 <br>
 <p>We already have the basics. Now let&rsquo;s improve it a bit. The first thing we can do is change the way we pick up and drop the cards. Now they do it instantly,<br />
 they <strong>teleport</strong> to the position we tell them to. Instead we can use the velocity formula (velocity = space / time) to move with constant velocity the cards.<br />
 We would have something like this:</p>
 <center>
-  <img src="drag_and_drop_cards/draglinear.gif" width="100%" height="100%"/>
+  <img src="draglinear.gif" width="100%" height="100%"/>
 </center>
 <br>
 <p>Better, but still doesn&rsquo;t give a good feeling. Objects in real life do not reach a speed at instance, they have <a href="https://en.wikipedia.org/wiki/Inertia">inertia</a>. To make it similar in a simple way we can use <a href="https://easings.net/">Easing functions</a>, functions that interpolate values (values, vectors, colors, etc) using different curves.</p>
 <center>
-  <img src="drag_and_drop_cards/easings.gif" width="90%" height="90%"/>
+  <img src="easings.gif" width="90%" height="90%"/>
 </center>
 <br>
 <p>There are many libraries with these functions. You may be interested in using my &lsquo;<a href="https://gist.github.com/FronkonGames/ae3d0d613ac4ea6738e288c0a490c020">Tiny Tween</a>&rsquo;, a simple to use library, very complete and in <strong>one file</strong>.</p>
@@ -1018,7 +1018,7 @@ We would have something like this:</p>
 </span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">Start</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>And this would be the result:</p>
 <center>
-  <img src="drag_and_drop_cards/dragdrop.gif" width="100%" height="100%"/>
+  <img src="dragdrop.gif" width="100%" height="100%"/>
 </center>
 <br>
 <p>Much better! And only adding one file! ;)</p>
@@ -1173,7 +1173,7 @@ We would have something like this:</p>
 </span></span><span class="line"><span class="cl">                                      <span class="n">originalAngles</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                                      <span class="n">originalAngles</span><span class="p">.</span><span class="n">z</span> <span class="p">-</span> <span class="n">rollAngle</span><span class="p">);</span></span></span></code></pre></div></div><p>Let&rsquo;s see the result.</p>
 <center>
-  <img src="drag_and_drop_cards/tilt.gif" width="100%" height="100%"/>
+  <img src="tilt.gif" width="100%" height="100%"/>
 </center>
 <br>
 <p>Nice! That&rsquo;s all for now. In next posts we will see some useful objects for a card game such as: decks, slot, etc. In the meantime you can add some improvements like:</p>

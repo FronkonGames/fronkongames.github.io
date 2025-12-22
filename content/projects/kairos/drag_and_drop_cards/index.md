@@ -463,21 +463,21 @@ public class DroppableFloor : MonoBehaviour, IDrop
 
 Let's take a look at a successful drag operation.
 
-{{< gif src="drag_and_drop_cards/dragok.gif" >}}
+{{< gif src="dragok.gif" >}}
 
 And now one that does not, since one of the corners collides with an __IDrag__ (another card) and this one is closer to the __IDrop__ (the ground).
 
-{{< gif src="drag_and_drop_cards/dragfail.gif" >}}
+{{< gif src="dragfail.gif" >}}
 
 We already have the basics. Now let's improve it a bit. The first thing we can do is change the way we pick up and drop the cards. Now they do it instantly,
 they __teleport__ to the position we tell them to. Instead we can use the velocity formula (velocity = space / time) to move with constant velocity the cards.
 We would have something like this:
 
-{{< gif src="drag_and_drop_cards/draglinear.gif" >}}
+{{< gif src="draglinear.gif" >}}
 
 Better, but still doesn't give a good feeling. Objects in real life do not reach a speed at instance, they have [inertia](https://en.wikipedia.org/wiki/Inertia). To make it similar in a simple way we can use [Easing functions](https://easings.net/), functions that interpolate values (values, vectors, colors, etc) using different curves.
 
-{{< gif src="drag_and_drop_cards/easings.gif" scale="90">}}
+{{< gif src="easings.gif" scale="90">}}
 
 There are many libraries with these functions. You may be interested in using my '[Tiny Tween](https://gist.github.com/FronkonGames/ae3d0d613ac4ea6738e288c0a490c020)', a simple to use library, very complete and in **one file**.
 
@@ -511,7 +511,7 @@ public void OnBeginDrag(Vector3 position)
 
 And this would be the result:
 
-{{< gif src="drag_and_drop_cards/dragdrop.gif" >}}
+{{< gif src="dragdrop.gif" >}}
 
 Much better! And only adding one file! ;)
 
@@ -623,7 +623,7 @@ transform.rotation = Quaternion.Euler(originalAngles.x + pitchAngle,
 
 Let's see the result.
 
-{{< gif src="drag_and_drop_cards/tilt.gif" >}}
+{{< gif src="tilt.gif" >}}
 
 Nice! That's all for now. In next posts we will see some useful objects for a card game such as: decks, slot, etc. In the meantime you can add some improvements like:
 
