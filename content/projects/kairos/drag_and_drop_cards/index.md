@@ -91,7 +91,7 @@ In order to get all this to work on a card, we must first add a '[Collider](http
 
 The second thing to do is to assign the '__layer__' we have selected to the chart. We are now ready to detect a card.
 
-{{< gif src="drag_and_drop_cards/rayhit.gif" >}}
+{{< gif src="rayhit.gif" >}}
 
 Now we can start moving our cards. First we are going to define two interfaces, the first one is **IDrag**, for objects that you can drag.
 
@@ -338,7 +338,7 @@ private IDrop DetectDroppable()
 
 Let's see it in action:
 
-{{< gif src="drag_and_drop_cards/cardhits.gif" >}}
+{{< gif src="cardhits.gif" >}}
 
 We can now proceed to the part where we handle a drag operation:
 
