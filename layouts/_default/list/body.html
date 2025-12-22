@@ -11,7 +11,7 @@
               {{ with .Title }}<p id="{{ anchorize . }}" class="display-4 mt-5{{ if and $.IsHome site.Params.home.centerHeadline }} text-center{{ end }}">{{ . }}</p>{{ end }}
             {{ else }}
               <center>
-                {{ partial "assets/image.html" (dict "url" .Params.logo "wrapper" "col-6" "class" "border-0" "title" .Title "priority" "high") }}
+                {{ partial "assets/image.html" (dict "url" .Params.logo "wrapper" "col-6 mx-auto" "class" "border-0" "title" .Title "priority" "high") }}
               </center>
             {{ end }}
         {{ end }}
