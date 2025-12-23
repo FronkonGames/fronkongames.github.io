@@ -63,8 +63,7 @@ As its name indicates, this tool creates the coordinates by projecting a cube on
 
 It may not be the best option for rounded edges, but it is the easiest one. You can adjust the coordinates by hand using the window on the left.
 
-In the '**Shading**' tab, I created three materials: 'FrontFace', 'BackFace' and 'Border'. I selected the front face and the 'FrontFace
-the 'FrontFace' material, and clicked the '**Assign**' button to associate them.
+In the '**Shading**' tab, I created three materials: 'FrontFace', 'BackFace' and 'Border'. I selected the front face and the 'FrontFace' material, and clicked the '**Assign**' button to associate them.
 
 With '**CONTROL + 7**' I switched to the back view and performed a similar operation.
 
