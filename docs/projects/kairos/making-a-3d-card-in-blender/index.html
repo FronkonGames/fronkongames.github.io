@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/projects/kairos/making-a-3d-card-in-blender/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:01+01:00">
-    <meta property="article:modified_time" content="2025-12-22T17:10:42+01:00">
+    <meta property="article:modified_time" content="2025-12-23T13:05:21+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/kairos/kairos_3d_card.png">
 <meta property="og:image:alt" content="Making A 3D Card In Blender 🃏">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:01CET",
-      "dateModified": "2025-12-22T17:10:42CET",
+      "dateModified": "2025-12-23T13:05:21CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/projects/kairos/making-a-3d-card-in-blender/#/schema/breadcrumb/1"
       },
@@ -438,8 +438,8 @@
             width="2800"
             alt="Making A 3D Card In Blender 🃏">
 </div><br><p>The first thing a card game needs is&hellip; cards.</p>
-<p>And why in 3D? It would be <em>easier</em> to do it in 2D, but to have more options in terms of effects and also to differentiate from the rest I decided that my card game would be 3D.</p>
-<p>I was going to need a 3D editor, and in my modest opinion <a href="https://www.blender.org/">Blender</a> is unbeatable in quality / price.</p>
+<p>And why 3D? While it would be <em>easier</em> to do it in 2D, I decided to go with 3D to have more options for effects and to differentiate my game from others.</p>
+<p>I was going to need a 3D editor, and in my modest opinion, <a href="https://www.blender.org/">Blender</a> is unbeatable in terms of quality versus price.</p>
 
 
 
@@ -513,8 +513,7 @@
             width="2800"
             >
 </div><br>
-<p>Once installed, in an empty scene, I added a plane using the menu &lsquo;<strong>Add &gt; Mesh &gt; Plane</strong>&rsquo;.<br />
-To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</strong>&rsquo; on the numeric pad.</p>
+<p>Once installed, I added a plane in an empty scene using the &lsquo;<strong>Add &gt; Mesh &gt; Plane</strong>&rsquo; menu. To make it easier to handle, I switched to the top-down view by pressing &lsquo;<strong>7</strong>&rsquo; on the numeric keypad.</p>
 
 
 
@@ -588,7 +587,7 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>There is no standard size for a card. A Bridge card measures 57.15 x 88.9 mm, while a Poker card measures 62 x 88 mm. This size is known as <a href="https://formaty.info/en/B8/">B8 in ISO 216</a>. Since it is the best known, it is the size I will use.</p>
+<p>There is no single standard size for a card. A Bridge card measures 57.15 x 88.9 mm, while a Poker card measures 62 x 88 mm. This latter size is known as <a href="https://formaty.info/en/B8/">B8 in ISO 216</a>. Since it is the most well-known, it is the size I will use.</p>
 
 
 
@@ -662,8 +661,8 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>However, I am not really interested in the size itself, but in the ratio between width and height or <em>aspect ratio</em>. In the case case of a Poker card is <strong>0.7</strong> (62 / 88).</p>
-<p>To achieve that <em>aspect ratio</em>, with the plane selected, press &lsquo;<strong>S</strong>&rsquo; and then &lsquo;<strong>X</strong>&rsquo;, and typing &lsquo;<strong>0.7</strong>&rsquo; (62 / 88) will get the <em>aspect ratio</em> I&rsquo;m looking for.</p>
+<p>However, I&rsquo;m not really interested in the size itself, but rather in the width-to-height ratio, or <em>aspect ratio</em>. For a Poker card, this is <strong>0.7</strong> (62 / 88).</p>
+<p>To achieve that <em>aspect ratio</em>, select the plane, press &lsquo;<strong>S</strong>&rsquo; then &lsquo;<strong>X</strong>&rsquo;, and type &lsquo;<strong>0.7</strong>&rsquo;. This will result in the correct proportions.</p>
 
 
 
@@ -737,7 +736,7 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>To round corners I use the &lsquo;<strong>Bevel</strong>&rsquo; modifier.</p>
+<p>To round the corners, I used the &lsquo;<strong>Bevel</strong>&rsquo; modifier.</p>
 
 
 
@@ -811,7 +810,7 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>And to give it a little thickness the modifier &lsquo;<strong>Solidify</strong>&rsquo;.</p>
+<p>To give it some thickness, I added the &lsquo;<strong>Solidify</strong>&rsquo; modifier.</p>
 
 
 
@@ -885,7 +884,7 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>Now I applied all the transformations pressing &lsquo;<strong>Ctrl+A</strong>&rsquo;, so that the scale of the final geometry is 1.</p>
+<p>Next, I applied all transformations by pressing &lsquo;<strong>Ctrl+A</strong>&rsquo;, ensuring the final scale of the geometry is 1.</p>
 
 
 
@@ -959,7 +958,7 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>And the modifiers.</p>
+<p>I then applied the modifiers as well.</p>
 
 
 
@@ -1033,7 +1032,7 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>It was time for the materials. But first I created some UV coordinates in the &lsquo;<strong>UV Editing</strong>&rsquo; tab and selecting a <em>cube projection</em>.</p>
+<p>Then it was time for the materials. But first, I created UV coordinates in the &lsquo;<strong>UV Editing</strong>&rsquo; tab by selecting a <em>cube projection</em>.</p>
 
 
 
@@ -1181,10 +1180,10 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>It may not be the best option for rounded edges, but it is the easiest one. You can adjust the coordinates by hand using the window on the left.</p>
-<p>In the &lsquo;<strong>Shading</strong>&rsquo; tab, I created three materials: &lsquo;FrontFace&rsquo;, &lsquo;BackFace&rsquo; and &lsquo;Border&rsquo;. I selected the front face and the &lsquo;FrontFace&rsquo; material, and clicked the &lsquo;<strong>Assign</strong>&rsquo; button to associate them.</p>
-<p>With &lsquo;<strong>CONTROL + 7</strong>&rsquo; I switched to the back view and performed a similar operation.</p>
-<p>To assign the border material, select the two faces and invert the selection.</p>
+<p>It may not be the best option for rounded edges, but it is certainly the easiest. You can manually adjust the coordinates in the window on the left.</p>
+<p>In the &lsquo;<strong>Shading</strong>&rsquo; tab, I created three materials: &lsquo;FrontFace&rsquo;, &lsquo;BackFace&rsquo;, and &lsquo;Border&rsquo;. I selected the front face, chose the &lsquo;FrontFace&rsquo; material, and clicked the &lsquo;<strong>Assign</strong>&rsquo; button to link them.</p>
+<p>By pressing &lsquo;<strong>Ctrl + 7</strong>&rsquo;, I switched to the rear view and performed a similar operation for the back.</p>
+<p>To assign the border material, simply select the front and back faces and then invert the selection.</p>
 
 
 
@@ -1258,8 +1257,8 @@ To make it easier to handle, I set the top camera by pressing &lsquo;<strong>7</
             width="2800"
             >
 </div><br>
-<p>Now it was only left to export to FBX to the Unity project.</p>
-<p>The only change I made in the export options was in &lsquo;<strong>Apply Scalings</strong>&rsquo;, which I set to &lsquo;<strong>FBX Units Scale</strong>&rsquo; so that in Unity would export the scale correctly.</p>
+<p>Now, all that remained was to export the model as an FBX file for the Unity project.</p>
+<p>The only change I made in the export options was under &lsquo;<strong>Apply Scalings</strong>&rsquo;, which I set to &lsquo;<strong>FBX Units Scale</strong>&rsquo; so that the scale would be handled correctly in Unity.</p>
 
 
 
