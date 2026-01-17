@@ -749,15 +749,15 @@ Discarding the darker range:
 
 The ASCII render was an effect you could see in old [demoscene](https://en.wikipedia.org/wiki/Demoscene). It consists of replacing blocks of pixels with [ASCII](https://en.wikipedia.org/wiki/ASCII) characters according to their luminosity. The higher the luminosity, the 'denser' the character it was replaced with. Now it's back on steroids!
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+Once installed, when you select your 'Universal Renderer Data', you will see something like this:
 
-{{< image src="ascii_0.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="ascii_0.jpg" wrapper="col-8 mx-auto">}}
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
 
-'**ASCII**' needs a texture with characters from a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font). To create one use the '**ASCII Charset Tool**' (by clicking on _9_ or in the menu _Window > Fronkon Games > Retro > ASCII > ASCII Charset Tool_). With this tool you can create the necessary file to set it to '**Charset**' (_2_).
+'**ASCII**' needs a texture with characters from a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font). To create one use the '**ASCII Charset Tool**' (or menu _Window > Fronkon Games > Retro > ASCII > ASCII Charset Tool_). With this tool you can create the necessary file to set it to '**Charset**'.
 
-{{< image src="ascii_1.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="ascii_1.jpg" wrapper="col-8 mx-auto">}}
 
 This tool will show you all the monospaced fonts you have on your system. If you don't have any, install one and click on '**Refresh**'. In addition to selecting the size of the characters in '**Size**', you can select the pattern to be used. As I mentioned before, this effect replaces blocks of pixels with characters according to their luminosity. The brighter the blocks, the more pixels the characters will be. The most common patterns are included in the tool, but you can use your own by selecting '_Custom_'.
 
@@ -765,21 +765,66 @@ This tool will show you all the monospaced fonts you have on your system. If you
 All patterns start from the lowest luminosity, or density, to the highest. For example, a 10-character pattern represents 10 levels of brightness: " .:-=++*#%@".
 {{< /alert >}}
 
-Once you have created the charsets you want and have it set in '**Charsets**' (_2_) we can continue with the following parameters. With '**Zoom**' (_3_) you can change the scale of each text block, the more you zoom the bigger the characters will appear.
+#### Selection Mode
 
-You can multiply with '**Boost**' (_4_) the brightness that is calculated to use one character or another. With very high values, you will see more characters from the end of the pattern used.
+'**Selection mode**' determines how characters are chosen for each cell:
 
-If '**Block colour**' (_5_) is active, each block of each character will have a unique colour (result of pixelating that area). If it is not active, the original colours will be respected. This makes the shapes of the original image more distinguishable.
+- **Luminance** (default): The classic method. Characters are selected based solely on the average brightness of each cell. Fast and compatible with all charsets.
+
+{{< image src="ascii_luminance.jpg" wrapper="col-8 mx-auto">}}
+
+- **Shape Aware**: A revolutionary approach that considers the *spatial distribution* of brightness within each cell, not just overall luminance. Each cell is divided into a 2×3 grid, and the algorithm finds characters whose shape best matches the image content. This produces dramatically sharper edges and better detail preservation.
+
+{{< image src="ascii_shape_aware.jpg" wrapper="col-8 mx-auto">}}
+
+{{< alert color="warning" >}}
+'Shape Aware' mode requires charsets generated with version 3.0 or later. Older charsets will need to be regenerated using the ASCII Charset Tool.
+{{< /alert >}}
+
+When using ShapeAware mode:
+- **Shape weight** [0-1]: Balance between shape matching and density. Higher values (default 0.7) prioritize shape matching for sharper results.
+
+#### Edge Detection
+
+Enable '**Edge detection**' to apply Sobel edge detection for sharper character boundaries. This feature works in both Luminance and ShapeAware modes.
+
+- **Sensitivity** [0-2]: How easily edges are detected. Higher values detect more subtle edges.
+- **Contrast** [0-2]: Edge contrast enhancement strength. Higher values create more dramatic edge enhancement.
+
+{{< image src="ascii_edge_detection.jpg" wrapper="col-8 mx-auto">}}
+
+#### Supersampling
+
+Enable '**Supersampling**' for smoother anti-aliased edges. Instead of taking a single sample per cell, this takes multiple samples and averages them.
+
+- **Quality** [2-4]: The supersampling level:
+  - 2 = 2×2 grid (4 samples per cell)
+  - 3 = 3×3 grid (9 samples per cell)
+  - 4 = 4×4 grid (16 samples per cell)
+
+{{< image src="ascii_super_sampling.jpg" wrapper="col-8 mx-auto">}}
+
+{{< alert type="info" >}}
+Higher supersampling quality produces smoother results but requires more processing power. Level 2 offers a good balance between quality and performance.
+{{< /alert >}}
+
+#### Basic Settings
+
+Once you have created the charsets you want and have it set in '**Charsets**' we can continue with the following parameters. With '**Zoom**' you can change the scale of each text block, the more you zoom the bigger the characters will appear.
+
+You can multiply with '**Boost**' the brightness that is calculated to use one character or another. With very high values, you will see more characters from the end of the pattern used.
+
+If '**Block colour**' is active, each block of each character will have a unique colour (result of pixelating that area). If it is not active, the original colours will be respected. This makes the shapes of the original image more distinguishable.
 
 {{< image src="ascii_2.png" >}}
 
-With '**Font**' (_6_) you can change how the color of each character is _mixed_ with the original pixels. These operations are very similar to the one you can find in _Photoshop_. You can also change their color. The same can be done with the background (_7_).
+With '**Font**' you can change how the color of each character is _mixed_ with the original pixels. These operations are very similar to the one you can find in _Photoshop_. You can also change their color. The same can be done with the background.
 
 {{< alert type="info">}}
-As this effect can generate a lot of black pixels, the final image can be darker than the original. Turn up the brightness of the "**Background**" color (_7_) a bit to avoid this.
+As this effect can generate a lot of black pixels, the final image can be darker than the original. Turn up the brightness of the "**Background**" color a bit to avoid this.
 {{< /alert >}}
 
-By default, there is no color gradient for the final image, but you can select several in '**Color gradient**' (_8_).
+By default, there is no color gradient for the final image, but you can select several in '**Color gradient**'.
 
 ---
 ## Spectrum {#spectrum}

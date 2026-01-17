@@ -438,7 +438,11 @@
       </ul>
     </li>
     <li><a href="#oldcomputers">Old Computers</a></li>
-    <li><a href="#ascii">ASCII</a></li>
+    <li><a href="#ascii">ASCII</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#spectrum">Spectrum</a></li>
     <li><a href="#lcd">LCD</a>
       <ul>
@@ -4883,7 +4887,7 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
 </div><br><br>
 
 <p>The ASCII render was an effect you could see in old <a href="https://en.wikipedia.org/wiki/Demoscene">demoscene</a>. It consists of replacing blocks of pixels with <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> characters according to their luminosity. The higher the luminosity, the &lsquo;denser&rsquo; the character it was replaced with. Now it&rsquo;s back on steroids!</p>
-<p>Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:</p>
+<p>Once installed, when you select your &lsquo;Universal Renderer Data&rsquo;, you will see something like this:</p>
 
 
 
@@ -4948,17 +4952,17 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
 
 
 
-<div class="col-6 mx-auto"><img class="img-fluid "
-            src="/store/retro/ascii_0-2800x2552.jpg"
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/retro/ascii_0-2800x2436.jpg"
             
             
-            srcset="/store/retro/ascii_0-576x525.webp 576w, /store/retro/ascii_0-768x700.webp 768w, /store/retro/ascii_0-992x904.webp 992w, /store/retro/ascii_0-1200x1094.webp 1200w, /store/retro/ascii_0-1400x1276.webp 1400w, /store/retro/ascii_0-2800x2552.webp 2800w" sizes="100vw"
-            height="2552"
+            srcset="/store/retro/ascii_0-576x501.webp 576w, /store/retro/ascii_0-768x668.webp 768w, /store/retro/ascii_0-992x863.webp 992w, /store/retro/ascii_0-1200x1044.webp 1200w, /store/retro/ascii_0-1400x1218.webp 1400w, /store/retro/ascii_0-2800x2436.webp 2800w" sizes="100vw"
+            height="2436"
             width="2800"
             >
 </div><br>
-<p>With &lsquo;<strong>Intensity</strong>&rsquo; (<em>1</em>) you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
-<p>&lsquo;<strong>ASCII</strong>&rsquo; needs a texture with characters from a <a href="https://en.wikipedia.org/wiki/Monospaced_font">monospaced font</a>. To create one use the &lsquo;<strong>ASCII Charset Tool</strong>&rsquo; (by clicking on <em>9</em> or in the menu <em>Window &gt; Fronkon Games &gt; Retro &gt; ASCII &gt; ASCII Charset Tool</em>). With this tool you can create the necessary file to set it to &lsquo;<strong>Charset</strong>&rsquo; (<em>2</em>).</p>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the intensity of the effect. If it is 0, the effect will not be active.</p>
+<p>&lsquo;<strong>ASCII</strong>&rsquo; needs a texture with characters from a <a href="https://en.wikipedia.org/wiki/Monospaced_font">monospaced font</a>. To create one use the &lsquo;<strong>ASCII Charset Tool</strong>&rsquo; (or menu <em>Window &gt; Fronkon Games &gt; Retro &gt; ASCII &gt; ASCII Charset Tool</em>). With this tool you can create the necessary file to set it to &lsquo;<strong>Charset</strong>&rsquo;.</p>
 
 
 
@@ -5023,7 +5027,7 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
 
 
 
-<div class="col-6 mx-auto"><img class="img-fluid "
+<div class="col-8 mx-auto"><img class="img-fluid "
             src="/store/retro/ascii_1-2800x1405.jpg"
             
             
@@ -5070,9 +5074,449 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
             All patterns start from the lowest luminosity, or density, to the highest. For example, a 10-character pattern represents 10 levels of brightness: &quot; .:-=++*#%@&quot;.
         </div>
     </div>
-<p>Once you have created the charsets you want and have it set in &lsquo;<strong>Charsets</strong>&rsquo; (<em>2</em>) we can continue with the following parameters. With &lsquo;<strong>Zoom</strong>&rsquo; (<em>3</em>) you can change the scale of each text block, the more you zoom the bigger the characters will appear.</p>
-<p>You can multiply with &lsquo;<strong>Boost</strong>&rsquo; (<em>4</em>) the brightness that is calculated to use one character or another. With very high values, you will see more characters from the end of the pattern used.</p>
-<p>If &lsquo;<strong>Block colour</strong>&rsquo; (<em>5</em>) is active, each block of each character will have a unique colour (result of pixelating that area). If it is not active, the original colours will be respected. This makes the shapes of the original image more distinguishable.</p>
+
+<h4 id="selection-mode" class="heading">Selection Mode <a href="#selection-mode" aria-labelledby="selection-mode">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>&lsquo;<strong>Selection mode</strong>&rsquo; determines how characters are chosen for each cell:</p>
+<ul>
+<li><strong>Luminance</strong> (default): The classic method. Characters are selected based solely on the average brightness of each cell. Fast and compatible with all charsets.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/retro/ascii_luminance-2800x1621.jpg"
+            
+            
+            srcset="/store/retro/ascii_luminance-576x333.webp 576w, /store/retro/ascii_luminance-768x445.webp 768w, /store/retro/ascii_luminance-992x574.webp 992w, /store/retro/ascii_luminance-1200x695.webp 1200w, /store/retro/ascii_luminance-1400x810.webp 1400w, /store/retro/ascii_luminance-2800x1621.webp 2800w" sizes="100vw"
+            height="1621"
+            width="2800"
+            >
+</div><br>
+<ul>
+<li><strong>Shape Aware</strong>: A revolutionary approach that considers the <em>spatial distribution</em> of brightness within each cell, not just overall luminance. Each cell is divided into a 2×3 grid, and the algorithm finds characters whose shape best matches the image content. This produces dramatically sharper edges and better detail preservation.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/retro/ascii_shape_aware-2800x1621.jpg"
+            
+            
+            srcset="/store/retro/ascii_shape_aware-576x333.webp 576w, /store/retro/ascii_shape_aware-768x445.webp 768w, /store/retro/ascii_shape_aware-992x574.webp 992w, /store/retro/ascii_shape_aware-1200x695.webp 1200w, /store/retro/ascii_shape_aware-1400x810.webp 1400w, /store/retro/ascii_shape_aware-2800x1621.webp 2800w" sizes="100vw"
+            height="1621"
+            width="2800"
+            >
+</div><br>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-warning " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            &lsquo;Shape Aware&rsquo; mode requires charsets generated with version 3.0 or later. Older charsets will need to be regenerated using the ASCII Charset Tool.
+        </div>
+    </div>
+<p>When using ShapeAware mode:</p>
+<ul>
+<li><strong>Shape weight</strong> [0-1]: Balance between shape matching and density. Higher values (default 0.7) prioritize shape matching for sharper results.</li>
+</ul>
+
+<h4 id="edge-detection" class="heading">Edge Detection <a href="#edge-detection" aria-labelledby="edge-detection">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Enable &lsquo;<strong>Edge detection</strong>&rsquo; to apply Sobel edge detection for sharper character boundaries. This feature works in both Luminance and ShapeAware modes.</p>
+<ul>
+<li><strong>Sensitivity</strong> [0-2]: How easily edges are detected. Higher values detect more subtle edges.</li>
+<li><strong>Contrast</strong> [0-2]: Edge contrast enhancement strength. Higher values create more dramatic edge enhancement.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/retro/ascii_edge_detection-2800x1621.jpg"
+            
+            
+            srcset="/store/retro/ascii_edge_detection-576x333.webp 576w, /store/retro/ascii_edge_detection-768x445.webp 768w, /store/retro/ascii_edge_detection-992x574.webp 992w, /store/retro/ascii_edge_detection-1200x695.webp 1200w, /store/retro/ascii_edge_detection-1400x810.webp 1400w, /store/retro/ascii_edge_detection-2800x1621.webp 2800w" sizes="100vw"
+            height="1621"
+            width="2800"
+            >
+</div><br>
+
+<h4 id="supersampling" class="heading">Supersampling <a href="#supersampling" aria-labelledby="supersampling">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Enable &lsquo;<strong>Supersampling</strong>&rsquo; for smoother anti-aliased edges. Instead of taking a single sample per cell, this takes multiple samples and averages them.</p>
+<ul>
+<li><strong>Quality</strong> [2-4]: The supersampling level:
+<ul>
+<li>2 = 2×2 grid (4 samples per cell)</li>
+<li>3 = 3×3 grid (9 samples per cell)</li>
+<li>4 = 4×4 grid (16 samples per cell)</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/retro/ascii_super_sampling-2800x1621.jpg"
+            
+            
+            srcset="/store/retro/ascii_super_sampling-576x333.webp 576w, /store/retro/ascii_super_sampling-768x445.webp 768w, /store/retro/ascii_super_sampling-992x574.webp 992w, /store/retro/ascii_super_sampling-1200x695.webp 1200w, /store/retro/ascii_super_sampling-1400x810.webp 1400w, /store/retro/ascii_super_sampling-2800x1621.webp 2800w" sizes="100vw"
+            height="1621"
+            width="2800"
+            >
+</div><br>
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            Higher supersampling quality produces smoother results but requires more processing power. Level 2 offers a good balance between quality and performance.
+        </div>
+    </div>
+
+<h4 id="basic-settings" class="heading">Basic Settings <a href="#basic-settings" aria-labelledby="basic-settings">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Once you have created the charsets you want and have it set in &lsquo;<strong>Charsets</strong>&rsquo; we can continue with the following parameters. With &lsquo;<strong>Zoom</strong>&rsquo; you can change the scale of each text block, the more you zoom the bigger the characters will appear.</p>
+<p>You can multiply with &lsquo;<strong>Boost</strong>&rsquo; the brightness that is calculated to use one character or another. With very high values, you will see more characters from the end of the pattern used.</p>
+<p>If &lsquo;<strong>Block colour</strong>&rsquo; is active, each block of each character will have a unique colour (result of pixelating that area). If it is not active, the original colours will be respected. This makes the shapes of the original image more distinguishable.</p>
 
 
 
@@ -5146,7 +5590,7 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
             width="2800"
             >
 </div><br>
-<p>With &lsquo;<strong>Font</strong>&rsquo; (<em>6</em>) you can change how the color of each character is <em>mixed</em> with the original pixels. These operations are very similar to the one you can find in <em>Photoshop</em>. You can also change their color. The same can be done with the background (<em>7</em>).</p>
+<p>With &lsquo;<strong>Font</strong>&rsquo; you can change how the color of each character is <em>mixed</em> with the original pixels. These operations are very similar to the one you can find in <em>Photoshop</em>. You can also change their color. The same can be done with the background.</p>
 
 
 
@@ -5181,10 +5625,10 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
     &nbsp;
 </div>
         <div class="flex-grow-1 my-auto">
-            As this effect can generate a lot of black pixels, the final image can be darker than the original. Turn up the brightness of the &ldquo;<strong>Background</strong>&rdquo; color (<em>7</em>) a bit to avoid this.
+            As this effect can generate a lot of black pixels, the final image can be darker than the original. Turn up the brightness of the &ldquo;<strong>Background</strong>&rdquo; color a bit to avoid this.
         </div>
     </div>
-<p>By default, there is no color gradient for the final image, but you can select several in &lsquo;<strong>Color gradient</strong>&rsquo; (<em>8</em>).</p>
+<p>By default, there is no color gradient for the final image, but you can select several in &lsquo;<strong>Color gradient</strong>&rsquo;.</p>
 <hr />
 
 <h2 id="spectrum" class="heading">Spectrum <a href="#spectrum" aria-labelledby="spectrum">
@@ -6774,7 +7218,11 @@ Click &ldquo;Apply Sort&rdquo; after selecting your preferred order.</li>
       </ul>
     </li>
     <li><a href="#oldcomputers">Old Computers</a></li>
-    <li><a href="#ascii">ASCII</a></li>
+    <li><a href="#ascii">ASCII</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#spectrum">Spectrum</a></li>
     <li><a href="#lcd">LCD</a>
       <ul>
