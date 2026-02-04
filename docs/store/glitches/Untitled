@@ -1,0 +1,9 @@
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+These parameters simulate the imperfections of cheap optics. You can adjust the '**Vignette**' to darken or brighten the corners, and use '**Chromatic Aberration**' to add color fringing at the edges. The physical deformation of the image is controlled through '**Radial Distortion**' (curvature) and '**Tangential Distortion**' (misalignment), while '**Zoom**' allows for field of view adjustments.
+
+### 4.2 Sensor Settings
+These settings replicate the limitations of low-end image sensors. Use '**Resolution**' to simulate low pixel counts, and adjust '**Blur Quality**' for the desired aesthetic. You can add static or dynamic grain with '**Pixel Noise**', and control the signal strength before and after noise application using '**Exposure**' and '**Gain**'. Finally, '**Dynamic Range**' modulates the sensor's bit depth for color reproduction.
+
+### 4.3 Processor Settings
+Simulates internal camera image processing. This section includes '**Functions**' for edge detection, sharpening, and pixel size adjustments. You can also fine-tune the '**White Balance**' to shift the overall color temperature of the captured frame.
