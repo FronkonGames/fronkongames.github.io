@@ -265,207 +265,892 @@ Pixelation and chromatic aberration effects require additional texture samples. 
 ## 📡 Interferences {#interferences}
 {{< asset-header youtube="lYrj9jj3U8Y" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-interferences-281861" demo="https://fronkongames.github.io/demos-glitches/interferences/" warn="assets used in video and demo are not included">}}
 
-**Interferences** replicates the visual artifacts of signal degradation, electronic interference, and horizontal scanline noise. Ideal for "lo-fi" aesthetics, malfunctioning monitors, or digital transmission errors.
+Replicates the visual artifacts of signal degradation, electronic interference, and horizontal scanline noise. The effect combines **simplex noise-driven distortion** with **chromatic aberration** and **scanline overlay** to simulate electromagnetic interference, poor antenna reception, or malfunctioning display hardware.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+The core technique uses two layers of simplex noise (`snoise`) evaluated at different frequencies and speeds. The first layer generates broad distortion bands, while the second adds fine-grained amplitude modulation. The squared noise product creates sharp, organic tearing patterns. Chromatic aberration is applied by sampling the red and blue channels at horizontally offset UV coordinates, with the green channel left at the original position, producing the characteristic color fringing of analog signal interference.
+
+{{< alert type="info" >}}
+The scanline effect uses screen-space coordinate modulation rather than texture overlays, ensuring resolution-independent rendering with zero additional memory cost.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Interferences**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Interferences**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Dual-Layer Signal Degradation
+
+The effect implements two independent processing stages — **Distortion** and **Scanlines** — that combine to produce the final interference pattern.
+
+{{< table >}}
+| **Stage** | **Technique** | **Characteristic** | **Typical Use Case** |
+|---|---|---|---|
+| Distortion | Simplex noise UV displacement + chromatic aberration | Horizontal tearing with color fringing | Signal loss, electromagnetic interference |
+| Scanlines | Screen-space coordinate modulation | Horizontal darkening bands | CRT monitors, old displays |
+{{< /table >}}
+
+The distortion stage uses noise-squared amplitude to create sharp, intermittent tearing rather than smooth continuous warping. The scanline stage applies noise-modulated opacity to alternating horizontal lines, creating organic flickering.
+
+#### Parameter Configuration
 
 {{< image src="interferences_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-These parameters control the core signal degradation logic. Use '**Blend**' to define the mathematical operation used to mix interference layers, and adjust '**Offset**' to create chromatic aberration by displacing the color channels in the affected zones.
+##### Signal Parameters
 
-The horizontal image "tearing" is controlled through several distortion parameters: '**Distortion**' sets the maximum displacement, while '**Distortion Speed**' and '**Distortion Density**' define the evolution and vertical scale of the patterns.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Blend** | Enum (23 modes) | Solid | Color blend operation used to mix interference with the original image |
+| **Offset** | 0.0 to 10.0 | 1.0 | Chromatic aberration size — displaces R and B channels horizontally in affected zones |
+{{< /table >}}
 
-You can further refine these with '**Distortion Amplitude**' and '**Distortion Frequency**' for more complex wave-like behaviors.
+##### Distortion Parameters
 
-Finally, the horizontal scanline overlay can be customized using '**Scanlines**' visibility, '**Scanlines Density**' for spacing, and '**Scanlines Opacity**' for the darkening strength.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Distortion** | 0.0 to 2.0 | 0.25 | Maximum horizontal UV displacement. Higher values create wider tearing |
+| **Distortion Speed** | 0.0 to 100.0 | 10.0 | Temporal evolution rate of the noise pattern |
+| **Distortion Density** | 0.0 to 10.0 | 2.0 | Vertical scale of the distortion bands. Higher values produce thinner, more numerous bands |
+| **Distortion Amplitude** | 0.0 to 5.0 | 0.15 | Fine-grained noise modulation strength |
+| **Distortion Frequency** | 0.0 to 10.0 | 0.3 | Vertical frequency of the primary noise layer |
+{{< /table >}}
+
+{{< alert type="info" >}}
+Distortion Speed and Distortion Density interact multiplicatively. High speed with low density creates slow, wide sweeping bands; low speed with high density produces rapid, fine-grained flickering.
+{{< /alert >}}
+
+##### Scanline Parameters
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Scanlines** | 0.0 to 1.0 | 0.75 | Overall visibility of the scanline overlay |
+| **Scanlines Density** | 0.0 to 1.0 | 0.25 | Spacing between scanlines. Higher values produce tighter line patterns |
+| **Scanlines Opacity** | 0.0 to 1.0 | 0.5 | Darkening strength of each scanline. Modulated by the distortion noise for organic variation |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **InterferencesVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.Interferences;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out InterferencesVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure signal parameters
+    volume.blend.value = ColorBlends.Solid;
+    volume.offset.value = 2.0f;
+
+    // Control distortion
+    volume.distortion.value = 0.5f;
+    volume.distortionSpeed.value = 15.0f;
+    volume.distortionDensity.value = 3.0f;
+    volume.distortionAmplitude.value = 0.2f;
+    volume.distortionFrequency.value = 0.5f;
+
+    // Configure scanlines
+    volume.scanlines.value = 0.8f;
+    volume.scanlinesDensity.value = 0.3f;
+    volume.scanlinesOpacity.value = 0.6f;
+
+    // Apply color correction
+    volume.contrast.value = 1.2f;
+    volume.saturation.value = 0.8f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+The effect executes in a single render pass with **O(1)** per-pixel complexity. The simplex noise function uses analytical evaluation without texture lookups.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: Up to 5 per pixel (original + 2 chromatic aberration offsets per branch).
+* Branching: 2 conditional branches using screen-space modulation (scanline check + interference band selection).
+* Memory: No additional textures or compute buffers.
+
+#### Preset Configurations
+
+##### Subtle Static
+
+Suitable for background monitors, old TVs, or environmental storytelling.
+
+```
+Intensity: 0.3, Blend: Solid, Offset: 0.5
+Distortion: 0.1, Distortion Speed: 5.0, Distortion Density: 1.5
+Distortion Amplitude: 0.1, Distortion Frequency: 0.2
+Scanlines: 0.4, Scanlines Density: 0.2, Scanlines Opacity: 0.3
+```
+
+##### Heavy Interference
+
+Creates severe signal degradation for dramatic transitions or horror sequences.
+
+```
+Intensity: 0.8, Blend: Solid, Offset: 3.0
+Distortion: 1.0, Distortion Speed: 30.0, Distortion Density: 4.0
+Distortion Amplitude: 0.4, Distortion Frequency: 0.6
+Scanlines: 0.9, Scanlines Density: 0.4, Scanlines Opacity: 0.8
+```
 
 ---
 ## 📼 VHS {#vhs}
 {{< asset-header youtube="f3W4_dPwZK0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-vhs-282181" demo="https://fronkongames.github.io/demos-glitches/vhs/" warn="assets used in video and demo are not included">}}
 
-**VHS** is a post-processing effect designed to recreate the distinct look and artifacts of analog video tapes. It captures the essence of 80s and 90s home video, featuring magnetic tape noise, tracking errors, and color instability.
+Recreates the distinct look and artifacts of analog video tapes, capturing the essence of 80s and 90s home video. The effect combines **magnetic tape noise** with **tracking error simulation** to produce the characteristic static, color bleeding, and horizontal banding of VHS playback.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+The noise layer uses a **3D noise function** (based on Inigo Quilez's technique) combined with a `Hash42` 4-component hash to generate tape-like static patterns. Three noise octaves at different scales are multiplied together, creating the bursty, non-uniform static characteristic of magnetic tape degradation. The pause layer simulates tracking errors by applying UV jitter and horizontal banding with random color injection, replicating the visual artifacts seen when pausing or rewinding a VHS tape.
+
+{{< alert type="info" >}}
+The noise pattern is quantized to screen-space blocks controlled by Noise Size, producing the chunky static look of real VHS rather than smooth per-pixel noise.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > VHS**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > VHS**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Dual-Layer Tape Simulation
+
+The effect implements two independent artifact layers — **Noise** and **Pause** — each with its own blend mode, color tint, and temporal behavior.
+
+{{< table >}}
+| **Layer** | **Technique** | **Characteristic** | **Typical Use Case** |
+|---|---|---|---|
+| Noise | 3D noise × Hash42, block-quantized | Bursty magnetic tape static | Background tape hiss, recording artifacts |
+| Pause | UV jitter + horizontal banding with random color | Tracking errors and color bleeding | Paused playback, rewinding, damaged tape |
+{{< /table >}}
+
+Both layers operate independently and can be combined for complex VHS degradation. The noise layer is gated by a threshold (values below 0.7 are discarded), creating intermittent bursts rather than constant static.
+
+#### Parameter Configuration
 
 {{< image src="vhs_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-These parameters replicate the artifacts of magnetic tape playback. You can control the appearance of static with '**Noise**', its '**Noise Speed**', and '**Noise Size**'.
+##### Noise Parameters
 
-The color of this noise can be customized with '**Noise Color**' and its integration via '**Noise Blend**'.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Noise** | 0.0 to 1.0 | 0.3 | Intensity of the magnetic tape static pattern |
+| **Noise Speed** | -10.0 to 10.0 | 2.0 | Temporal scroll rate of the noise. Negative values reverse direction |
+| **Noise Size** | 0.0 to 1.0 | 0.2 | Block quantization size. Lower values produce finer static; higher values create chunkier blocks |
+| **Noise Blend** | Enum (23 modes) | Additive | Color blend operation for mixing noise with the image |
+| **Noise Color** | Color | White | Tint applied to the noise pattern before blending |
+{{< /table >}}
 
-Playback tracking errors, such as those seen during a pause, are simulated using the '**Pause**' parameter.
+##### Pause Parameters
 
-You can adjust the intensity of the interference band with '**Pause Band**', the amount of jitter with '**Pause Noise**', and the color/integration with '**Pause Color**' and '**Pause Blend**'.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Pause** | 0.0 to 1.0 | 0.25 | Intensity of the tracking error simulation |
+| **Pause Noise** | 0.0 to 1.0 | 0.1 | Amount of UV jitter applied to simulate tape instability |
+| **Pause Band** | 0.0 to 2.0 | 1.0 | Width and intensity of the horizontal interference band |
+| **Pause Blend** | Enum (23 modes) | Solid | Color blend operation for the pause band overlay |
+| **Pause Color** | Color | White | Tint applied to the pause band artifacts |
+{{< /table >}}
+
+{{< alert type="info" >}}
+Pause Band controls both the width and the probability of the horizontal banding effect. Values above 1.0 create wider, more frequent bands that cover larger portions of the screen.
+{{< /alert >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **VHSVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.VHS;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out VHSVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure noise layer
+    volume.noise.value = 0.4f;
+    volume.noiseSpeed.value = 3.0f;
+    volume.noiseSize.value = 0.15f;
+    volume.noiseBlend.value = ColorBlends.Additive;
+    volume.noiseColor.value = Color.white;
+
+    // Configure pause layer
+    volume.pause.value = 0.3f;
+    volume.pauseNoise.value = 0.15f;
+    volume.pauseBand.value = 1.2f;
+    volume.pauseBlend.value = ColorBlends.Solid;
+    volume.pauseColor.value = Color.white;
+
+    // Apply color correction
+    volume.contrast.value = 1.1f;
+    volume.saturation.value = 0.9f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+The effect executes in a single render pass with **O(1)** per-pixel complexity. The 3D noise function uses analytical evaluation with linear interpolation, and the Hash42 function employs arithmetic operations without texture lookups.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 2 per pixel (original + pause-displaced sample).
+* Branching: 2 conditional branches (noise size check + pause band selection).
+* Memory: No additional textures or compute buffers.
+
+#### Preset Configurations
+
+##### Nostalgic Playback
+
+Suitable for retro aesthetics, flashback sequences, or found-footage style.
+
+```
+Intensity: 0.4, Noise: 0.2, Noise Speed: 1.5, Noise Size: 0.25
+Noise Blend: Additive, Noise Color: White
+Pause: 0.15, Pause Noise: 0.05, Pause Band: 0.8
+Pause Blend: Solid, Pause Color: White
+```
+
+##### Damaged Tape
+
+Creates severe VHS degradation for horror or glitch-art sequences.
+
+```
+Intensity: 0.9, Noise: 0.6, Noise Speed: 4.0, Noise Size: 0.1
+Noise Blend: Additive, Noise Color: White
+Pause: 0.5, Pause Noise: 0.2, Pause Band: 1.5
+Pause Blend: Solid, Pause Color: (0.8, 0.8, 1.0)
+```
 
 ---
 ## 🌀 Distortions {#distortions}
 {{< asset-header youtube="ydWFcmFnSaU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-distortions-282947" demo="https://fronkongames.github.io/demos-glitches/distortions/" warn="assets used in video and demo are not included">}}
 
-**Distortions** includes a variety of tools to warp, twist, and distort your game's visuals. Included effects: Fisheye, Gravity, Inflate, Magnifying, Raining, Scope, Swirl, Tremors, Underwater and Water 2D.
+A collection of **ten independent distortion effects** to warp, twist, and reshape your game's visuals. Each effect is registered as its own Volume override, allowing you to combine multiple distortions simultaneously or use them individually. All effects share a common base with intensity control and color grading parameters.
+
+{{< table >}}
+| **Effect** | **Description** | **Key Parameters** |
+|---|---|---|
+| [Gravity](#gravity) | Black hole / warp | Center, Radius, Strength, Corona, Core |
+| [Water 2D](#water2D) | 2D water reflection | Height, Strength, Frequency, Angle |
+| [Underwater](#under-water) | Submerged simulation | Strength, Speed, Amplitude, Depth tinting |
+| [Raining](#raining) | Rain-streaked window | Strength, Speed, Density |
+| [Magnifying](#magnifying) | Magnifying lens | Center, Magnification, Radius, Distortion |
+| [Swirl](#swirl) | Rotational twist | Angle, Radius, Center, Threshold |
+| [Tremors](#tremors) | Screen shake + blur | Samples, Strength, Speed, Amplitude, Frequency |
+| [Scope](#scope) | Sniper scope / barrel | Center, Radius, Vignette, Radial Distortion |
+| [Inflate](#inflate) | Swell / deflate areas | Strength, Radius, Center |
+| [Fisheye](#fisheye) | Lens distortion | Strength, Center, Blend, Tint |
+{{< /table >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+Each distortion effect must be registered individually in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select the desired distortion from **Fronkon Games > Glitches > Distortions**.
+
+##### Step 2: Configure the Volume
+
+To apply a distortion effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select the desired distortion from **Fronkon Games > Glitches > Distortions**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+{{< alert type="info" >}}
+You can add multiple distortion overrides to the same Volume Profile. Each operates independently with its own intensity control.
+{{< /alert >}}
 
 ### 🕳️ Gravity {#gravity}
 
 {{< video src="/store/glitches/distortions/gravity.mp4" loop="true" autoplay="true">}}
 
-Black hole or warp effect.
+Black hole or warp effect that pulls pixels toward a focal point, with independent color controls for the outer corona and inner core zones.
 
 {{< image src="gravity.jpg" wrapper="col-10 mx-auto">}}
 
-Adjust the '**Center**' and '**Radius**' to define the affected area, and '**Strength**' for the gravitational pull.
-
-It features advanced color controls for both the **Corona** (outer) and **Core** (inner) zones, including independent **Tint** and **Blend** operations.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Center** | Vector2 | (0.5, 0.5) | Position of the gravitational center on screen |
+| **Radius** | 0.0 to 1.0 | 0.25 | Reach of the gravitational pull |
+| **Strength** | 0.0 to 1.0 | 0.4 | Intensity of the pixel displacement toward center |
+| **Corona Strength** | 0.0 to 10.0 | 0.5 | Intensity of the outer glow zone |
+| **Corona Tint** | Color | Green | Color applied to the outer corona zone |
+| **Corona Blend** | Enum (23 modes) | Solid | Blend operation for the corona |
+| **Core Tint** | Color | Black | Color applied to the inner core zone |
+| **Core Blend** | Enum (23 modes) | Solid | Blend operation for the core |
+{{< /table >}}
 
 ### 💧 Water 2D {#water2D}
 
 {{< video src="/store/glitches/distortions/water2D.mp4" loop="true" autoplay="true">}}
 
-Reflection and wave effect optimized for 2D planes.
+Reflection and wave effect optimized for 2D planes. Simulates a water surface at a configurable height with animated wave distortion and vertical reflection.
 
 {{< image src="water2D.jpg" wrapper="col-10 mx-auto">}}
 
-Set the water '**Height**' (surface level), and adjust the wave '**Strength**', '**Frequency**', and reflection '**Angle**'.
-
-Use '**Tint**' and '**Blend**' to define the water's appearance.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Height** | 0.0 to 1.0 | 0.4 | Vertical position of the water surface (0 = bottom, 1 = top) |
+| **Strength** | 0.0 to 10.0 | 2.0 | Amplitude of the wave distortion |
+| **Frequency** | 0.0 to 10.0 | 8.0 | Number of wave oscillations across the surface |
+| **Angle** | 0.0 to 10.0 | 2.0 | Angle of the reflection distortion |
+| **Tint** | Color | (0.1, 0.6, 1.0, 0.4) | Color overlay applied to the water region |
+| **Blend** | Enum (23 modes) | Solid | Color blend operation for the water tint |
+{{< /table >}}
 
 ### 🌊 Under Water {#under-water}
 
 {{< video src="/store/glitches/distortions/underwater.mp4" loop="true" autoplay="true">}}
 
-Simulates being submerged.
+Simulates being submerged with animated wave distortion and depth-based color tinting.
 
 {{< image src="underwater.jpg" wrapper="col-10 mx-auto">}}
 
-Adjust the wave '**Strength**', '**Speed**', and '**Amplitude**'.
-
-It includes a powerful depth-based coloring system: activate '**Use Depth**' to apply different '**Tint**' values for near (**Depth 0**) and far (**Depth 1**) objects, modulated by '**Depth Power**'.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Strength** | Vector2 | (1.0, 1.0) | Wave displacement intensity per axis |
+| **Speed** | Vector2 | (1.0, 1.0) | Wave animation speed per axis |
+| **Amplitude** | 0.0 to 10.0 | 1.0 | Overall wave amplitude multiplier |
+| **Blend** | Enum (23 modes) | Solid | Color blend operation for the water tint |
+| **Tint** | Color | (0.1, 0.6, 1.0) | Base water color overlay |
+| **Use Depth** | Boolean | true | Enables depth-based color gradient |
+| **Tint Depth 0** | Color | (0.1, 0.6, 1.0) | Tint for nearest objects |
+| **Tint Depth 1** | Color | (0.02, 0.12, 0.2) | Tint for farthest objects |
+| **Depth Power** | 0.0 to 10.0 | 2.0 | Depth falloff curve exponent |
+{{< /table >}}
 
 {{< alert color="success" icon="fas circle-info" >}}
-In order to use this feature, you must enable '**Depth Texture**' in your camera or pipeline settings.
+In order to use the depth-based tinting feature, you must enable '**Depth Texture**' in your camera or pipeline settings.
 {{< /alert >}}
 
 ### 🌧️ Raining {#raining}
 
 {{< video src="/store/glitches/distortions/raining.mp4" loop="true" autoplay="true">}}
 
-Simulates vision through a rain-streaked window.
+Simulates vision through a rain-streaked window with animated falling droplets.
 
 {{< image src="raining.jpg" wrapper="col-10 mx-auto">}}
 
-Control the overall '**Strength**', the '**Speed**' of the falling drops [-1.0 - 1.0], and their '**Density**'.
-
-Use '**Tint**' and '**Blend**' to adjust the visual integration.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Strength** | 0.0 to 1.0 | 0.75 | Overall intensity of the rain distortion |
+| **Speed** | -1.0 to 1.0 | 0.1 | Falling speed of the drops. Negative values reverse direction |
+| **Density** | 0.0 to 1.0 | 0.1 | Number and coverage of rain droplets |
+| **Tint** | Color | (0.6, 1.0, 1.0) | Color tint applied to the rain effect |
+| **Blend** | Enum (23 modes) | Solid | Color blend operation for the rain overlay |
+{{< /table >}}
 
 ### 🔍 Magnifying {#magnifying}
 
 {{< video src="/store/glitches/distortions/magnifying.mp4" loop="true" autoplay="true">}}
 
-Simulates a magnifying lens.
+Simulates a magnifying lens with configurable zoom, border, and chromatic aberration.
 
 {{< image src="magnifying.jpg" wrapper="col-10 mx-auto">}}
 
-Adjust the '**Center**', '**Magnification**' (zoom level), and '**Radius**' of the lens.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Center** | Vector2 | (0.5, 0.5) | Position of the lens on screen |
+| **Magnification** | 0.0 to 1.0 | 0.5 | Zoom level inside the lens |
+| **Radius** | 0.0 to 1.0 | 0.25 | Size of the magnifying area |
+| **Tint** | Color | (0.4, 0.9, 0.9) | Color tint applied to the lens area |
+| **Border** | 0.0 to 1.0 | 0.2 | Width of the lens border ring |
+| **Border Tint** | Color | Black | Color of the border ring |
+| **Distortion** | Vector3 | (2.0, -2.0, 4.0) | Per-channel chromatic aberration offset (R, G, B) |
+| **Distortion Power** | 0.0 to 10.0 | 4.0 | Exponent controlling aberration falloff from center |
+{{< /table >}}
 
 {{< alert color="info" icon="fas triangle-exclamation" >}}
 High values of '**Magnification**' can show very pixelated images.
 {{< /alert >}}
 
-You can customize the look with '**Tint**' and '**Border**' settings.
-
-It also includes '**Distortion**' and '**Distortion Power**' to simulate chromatic aberration at the lens edges.
-
 ### 🌪️ Swirl {#swirl}
 
 {{< video src="/store/glitches/distortions/swirl.mp4" loop="true" autoplay="true">}}
 
-Twists the screen around a point.
+Twists the screen around a point with configurable rotation angle and smooth edge falloff.
 
 {{< image src="swirl.jpg" wrapper="col-10 mx-auto">}}
 
-Adjust the '**Angle**' of torsion [-1080.0, 1080.0], the reach with '**Radius**', and the anchor point with '**Center**'.
-
-'**Threshold**' controls the smoothness of the effect transition at the edges.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Angle** | -1080.0 to 1080.0 | 45.0 | Rotation angle in degrees. Positive = clockwise, negative = counter-clockwise |
+| **Radius** | 0.0 to 2.0 | 0.5 | Reach of the swirl effect from center |
+| **Center** | Vector2 | (0.5, 0.5) | Anchor point of the rotation |
+| **Blend** | Enum (23 modes) | Solid | Color blend operation for the swirled region |
+| **Tint** | Color | White | Color tint applied to the swirled area |
+| **Threshold** | 0.0 to 1.0 | 0.25 | Smoothness of the transition at the swirl boundary |
+{{< /table >}}
 
 ### 🫨 Tremors {#tremors}
 
 {{< video src="/store/glitches/distortions/tremors.mp4" loop="true" autoplay="true">}}
 
-Screen shake and blur effect.
+Screen shake and motion blur effect with independent per-axis control and wave modulation.
 
 {{< image src="tremors.jpg" wrapper="col-10 mx-auto">}}
 
-Increase '**Samples**' for higher blur quality [1 - 5].
-
-You can control '**Strength**' and '**Speed**' independently for each axis, and adjust the wave '**Amplitude**' and '**Frequency**' for complex vibrations.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Samples** | 1 to 5 | 2 | Number of blur samples. Higher values produce smoother blur at increased cost |
+| **Strength** | Vector2 | (1.0, 1.0) | Shake intensity per axis (X, Y) |
+| **Speed** | Vector2 | (10.0, 10.0) | Shake animation speed per axis |
+| **Amplitude** | 0.0 to 10.0 | 1.0 | Wave amplitude multiplier for complex vibration patterns |
+| **Frequency** | 0.0 to 100.0 | 1.0 | Wave frequency for vibration modulation |
+| **Blend** | Enum (23 modes) | Solid | Color blend operation for the blurred result |
+| **Tint** | Color | White | Color tint applied to the effect |
+{{< /table >}}
 
 ### 🎯 Scope {#scope}
 
 {{< video src="/store/glitches/distortions/scope.mp4" loop="true" autoplay="true">}}
 
-Sniper scope or barrel distortion.
+Sniper scope or barrel distortion using a radial lens [formula](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#:%7E:text=The%20next%20figures,monotonically%20increasing) with three coefficients (K1, K2, K3).
 
 {{< image src="scope.jpg" wrapper="col-10 mx-auto">}}
 
-Features '**Center**' and '**Radius**' for aiming, a '**Vignette**' for edge darkening, and '**Radial Distortion**' based on a lens [formula](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#:%7E:text=The%20next%20figures,monotonically%20increasing) (K1, K2, K3).
-
-'**Dispersion**' adds chromatic aberration at the edges of the sight.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Center** | Vector2 | (0.5, 0.5) | Aiming position on screen |
+| **Radius** | 0.0 to 1.0 | 0.5 | Size of the scope view area |
+| **Vignette** | 0.0 to 1.0 | 0.2 | Edge darkening intensity within the scope |
+| **Radial Distortion** | Vector3 | (1.2, 1.0, -3.2) | Lens distortion coefficients (K1, K2, K3) |
+| **Tint** | Color | White | Color tint applied to the scope view |
+| **Dispersion** | 0.0 to 1.0 | 0.3 | Chromatic aberration intensity at the scope edges |
+{{< /table >}}
 
 ### 🎈 Inflate {#inflate}
 
 {{< video src="/store/glitches/distortions/inflate.mp4" loop="true" autoplay="true">}}
 
-Swell or deflate specific areas.
+Swell or deflate specific screen areas with a radial deformation field.
 
 {{< image src="inflate.jpg" wrapper="col-10 mx-auto">}}
 
-Use a positive '**Strength**' to inflate and negative to deflate [-1.0, 1.0].
-
-The '**Radius**' and '**Center**' define the focus and reach of the deformation.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Strength** | -1.0 to 1.0 | -1.0 | Positive values inflate, negative values deflate |
+| **Radius** | 0.0 to 2.0 | 0.25 | Reach of the deformation from center |
+| **Center** | Vector2 | (0.5, 0.5) | Focus point of the inflation/deflation |
+{{< /table >}}
 
 ### 🐟 Fisheye {#fisheye}
 
 {{< video src="/store/glitches/distortions/fisheye.mp4" loop="true" autoplay="true">}}
 
-Classic lens distortion.
+Classic barrel/pincushion lens distortion with configurable center point and color blending.
 
 {{< image src="fisheye.jpg" wrapper="col-10 mx-auto">}}
 
-Use '**Strength**' to adjust the intensity: values above 0 for a fisheye effect, and below 0 for anti-fisheye [-0.5, 0.5].
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Strength** | -0.5 to 0.5 | -0.1 | Positive = fisheye (barrel), negative = anti-fisheye (pincushion) |
+| **Center** | Vector2 | (0.5, 0.5) | Center point of the distortion |
+| **Blend** | Enum (23 modes) | Solid | Color blend operation for the distorted region |
+| **Tint** | Color | White | Color tint applied to the effect |
+{{< /table >}}
 
-You can also set the '**Center**' of the distortion, and use '**Blend**' and '**Tint**' to modify the final color.
+#### Runtime Control
+
+All distortion effects integrate with Unity's Volume system. Each effect has its own Volume class within the `FronkonGames.Glitches.Distortions` namespace.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.Distortions;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access any distortion effect — example with Gravity
+if (volumeProfile.TryGet(out GravityVolume gravity))
+{
+    gravity.intensity.value = 1.0f;
+    gravity.center.value = new Vector2(0.5f, 0.5f);
+    gravity.radius.value = 0.3f;
+    gravity.strength.value = 0.5f;
+    gravity.coronaStrength.value = 1.0f;
+    gravity.coronaTint.value = Color.green;
+}
+
+// Example with Underwater
+if (volumeProfile.TryGet(out UnderwaterVolume underwater))
+{
+    underwater.intensity.value = 1.0f;
+    underwater.strength.value = new Vector2(1.5f, 1.5f);
+    underwater.speed.value = new Vector2(0.8f, 0.8f);
+    underwater.amplitude.value = 2.0f;
+    underwater.useDepth.value = true;
+    underwater.depthPower.value = 3.0f;
+}
+
+// Example with Swirl
+if (volumeProfile.TryGet(out SwirlVolume swirl))
+{
+    swirl.intensity.value = 1.0f;
+    swirl.angle.value = 180.0f;
+    swirl.radius.value = 0.6f;
+    swirl.threshold.value = 0.3f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+Each distortion effect executes in a single render pass with **O(1)** per-pixel complexity. All distortions use analytical UV coordinate transformations without texture lookups or compute buffers.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass per active distortion.
+* Texture Samples: 1-3 per pixel depending on the effect (chromatic aberration effects sample per channel).
+* Branching: Minimal — most effects use smooth mathematical functions without conditional logic.
+* Memory: No additional textures or compute buffers (except Tremors which uses N blur samples).
 
 ---
 ## 📷 Cheap Camera {#cheap-camera}
 
 {{< asset-header youtube="GJZYzdBmruM" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-cheap-camera-287563" demo="https://fronkongames.github.io/demos-glitches/cheap-camera/" warn="assets used in video and demo are not included">}}
 
-**Cheap Camera** replicates the visual characteristics of low-quality cameras, including lens distortion, sensor noise, and poor color reproduction.
+Replicates the visual characteristics of low-quality cameras with poor optics, noisy sensors, and limited image processing. The effect implements a **three-stage imaging pipeline** — Lens, Sensor, and Processor — that mirrors the physical signal path of a real cheap camera, from light entering the optics through to the final processed output.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+The lens stage applies a **radial + tangential distortion model** (matching the OpenCV calibration convention) combined with per-zone vignetting and chromatic aberration. The sensor stage quantizes the image to a configurable resolution, injects static and dynamic pixel noise between exposure and gain stages, and truncates color depth via dynamic range reduction. The processor stage performs edge detection, adaptive sharpening/blurring, and white balance correction using multi-sample blur kernels.
+
+{{< alert type="info" >}}
+The three-stage pipeline processes pixels in physical order: lens distortion first, then sensor capture with noise, then digital processing. This produces more realistic results than applying these effects independently.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Cheap Camera**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Cheap Camera**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Three-Stage Imaging Pipeline
+
+The effect processes each pixel through three sequential stages that simulate the complete signal path of a low-quality camera.
+
+{{< table >}}
+| **Stage** | **Operation** | **Simulates** |
+|---|---|---|
+| Lens | Radial/tangential distortion, vignetting, chromatic aberration, zoom | Cheap plastic optics with poor alignment |
+| Sensor | Resolution quantization, pixel noise (static + dynamic), exposure/gain, dynamic range | Low-resolution CMOS sensor with limited bit depth |
+| Processor | Edge detection, sharpening/blur, white balance | Basic on-chip image signal processor |
+{{< /table >}}
+
+#### Parameter Configuration
 
 {{< image src="cheap_camera_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-These parameters simulate the imperfections of cheap optics. You can adjust the '**Vignette**' to darken or brighten the corners, and use '**Chromatic Aberration**' to add color fringing at the edges.
+##### Lens Parameters
 
-The physical deformation of the image is controlled through '**Radial Distortion**' (curvature) and '**Tangential Distortion**' (misalignment), while '**Zoom**' allows for field of view adjustments.
+{{< table >}}
+| **Parameter** | **Sub-Parameter** | **Default** | **Effect** |
+|---|---|---|---|
+| **Vignette** | X (center) | 0.0 | Brightness adjustment at screen center |
+|  | Y (middle) | 0.0 | Brightness adjustment at mid-screen |
+|  | Z (outer) | -0.2 | Brightness adjustment at screen edges. Negative = darkening |
+| **Chromatic Aberration** | X (center) | 0.02 | Color fringing at screen center |
+|  | Y (middle) | 0.0 | Color fringing at mid-screen |
+|  | Z (outer) | 0.0 | Color fringing at screen edges |
+|  | W (noise) | 0.1 | Random variation applied to aberration |
+| **Radial Distortion** | X (center) | -0.1 | Barrel/pincushion at screen center |
+|  | Y (middle) | -0.025 | Barrel/pincushion at mid-screen |
+|  | Z (outer) | 0.0 | Barrel/pincushion at screen edges |
+| **Tangential Distortion** | X, Y | (0.0, 0.0) | Diagonal misalignment of the lens |
+| **Zoom** | 0.0 to 1.0 | 0.9 | Field of view adjustment |
+{{< /table >}}
 
-#### Sensor Settings
-These settings replicate the limitations of low-end image sensors. Use '**Resolution**' to simulate low pixel counts, and adjust '**Blur Quality**' for the desired aesthetic.
+{{< alert type="info" >}}
+Vignette, Chromatic Aberration, and Radial Distortion use a three-zone model (center, middle, outer) based on the squared radial distance from screen center. This allows precise control over how each imperfection varies across the frame.
+{{< /alert >}}
 
-You can add static or dynamic grain with '**Pixel Noise**', and control the signal strength before and after noise application using '**Exposure**' and '**Gain**'.
+##### Sensor Parameters
 
-Finally, '**Dynamic Range**' modulates the sensor's bit depth for color reproduction.
+{{< table >}}
+| **Parameter** | **Range / Sub-Parameter** | **Default** | **Effect** |
+|---|---|---|---|
+| **Resolution** | 0.0 to 1.0 | 0.3 | Simulated pixel count. Lower values produce more pixelation |
+| **Blur Quality** | Low / Medium / High | High | Number of blur samples (2, 3, or 4) |
+| **Pixel Noise** | X (static) | 0.1 | Intensity of fixed-pattern noise |
+|  | Y (dynamic) | 0.05 | Intensity of temporal noise |
+|  | Z (velocity) | 0.5 | Speed of dynamic noise variation |
+| **Exposure** | 0.0 to 10.0 | 1.0 | Signal amplification before noise injection |
+| **Gain** | 0.0 to 10.0 | 1.0 | Signal amplification after noise injection |
+| **Dynamic Range** | 0.0 to 1.0 | 0.3 | Sensor bit depth. Lower values reduce color precision |
+{{< /table >}}
 
-#### Processor Settings
+##### Processor Parameters
 
-Simulates internal camera image processing. This section includes '**Functions**' for edge detection, sharpening, and pixel size adjustments.
+{{< table >}}
+| **Parameter** | **Sub-Parameter** | **Default** | **Effect** |
+|---|---|---|---|
+| **Functions** | X (edges) | 5.0 | Edge detection strength. Higher values enhance edges |
+|  | Y (sharpen) | 0.8 | Sharpening intensity. Blends between sharp and blurred |
+|  | Z (pixel size) | 2.0 | Pixel size multiplier for blur kernel |
+| **White Balance** | R, G, B | (1.0, 1.0, 1.0) | Per-channel color temperature correction |
+{{< /table >}}
 
-You can also fine-tune the '**White Balance**' to shift the overall color temperature of the captured frame.
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **CheapCameraVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.CheapCamera;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out CheapCameraVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure lens
+    volume.lensVignette.value = new Vector3(0.0f, 0.0f, -0.3f);
+    volume.lensChromaticAberration.value = new Vector4(0.03f, 0.0f, 0.0f, 0.15f);
+    volume.lensRadialDistortion.value = new Vector3(-0.15f, -0.03f, 0.0f);
+    volume.lensZoom.value = 0.85f;
+
+    // Configure sensor
+    volume.sensorResolution.value = 0.2f;
+    volume.sensorPixelNoise.value = new Vector3(0.15f, 0.1f, 0.8f);
+    volume.sensorExposure.value = 1.2f;
+    volume.sensorGain.value = 1.1f;
+    volume.sensorDynamicRange.value = 0.2f;
+
+    // Configure processor
+    volume.processorFunctions.value = new Vector3(6.0f, 0.9f, 2.5f);
+    volume.processorWhiteBalance.value = new Vector3(1.0f, 1.0f, 0.9f);
+
+    // Apply color correction
+    volume.contrast.value = 1.2f;
+    volume.saturation.value = 0.8f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+The effect executes in a single render pass. Per-pixel cost depends on the **Blur Quality** setting, which controls the number of sensor samples per pixel.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 3-5 per pixel (1 center + 2-4 blur samples, each running the full lens+sensor pipeline).
+* Branching: Chromatic aberration uses a compile-time keyword branch for 3-channel vs single-channel sampling.
+* Memory: No additional textures or compute buffers.
+
+{{< table >}}
+| **Blur Quality** | **Samples** | **Estimated Cost** |
+|---|---|---|
+| Low | 2 | Lightest — suitable for mobile |
+| Medium | 3 | Balanced |
+| High | 4 | Best quality — recommended for desktop |
+{{< /table >}}
+
+#### Preset Configurations
+
+##### Webcam Quality
+
+Suitable for security cameras, video calls, or low-budget recording devices.
+
+```
+Intensity: 0.5, Vignette: (0, 0, -0.15), Chromatic Aberration: (0.01, 0, 0, 0.05)
+Radial Distortion: (-0.05, -0.01, 0), Zoom: 0.95
+Resolution: 0.4, Blur Quality: Medium, Pixel Noise: (0.08, 0.03, 0.3)
+Exposure: 1.0, Gain: 1.0, Dynamic Range: 0.4
+Functions: (3.0, 0.5, 1.5), White Balance: (1.0, 1.0, 1.0)
+```
+
+##### Toy Camera
+
+Creates the extreme distortion and noise of a very cheap toy camera.
+
+```
+Intensity: 0.9, Vignette: (0, 0, -0.4), Chromatic Aberration: (0.05, 0.02, 0, 0.2)
+Radial Distortion: (-0.2, -0.05, 0), Zoom: 0.8
+Resolution: 0.15, Blur Quality: Low, Pixel Noise: (0.2, 0.15, 1.0)
+Exposure: 1.3, Gain: 1.2, Dynamic Range: 0.15
+Functions: (8.0, 1.0, 3.0), White Balance: (1.1, 1.0, 0.85)
+```
 
 ---
 ## 🔥 Bap GPU {#bad-gpu}
@@ -790,39 +1475,256 @@ Aberration: 0.8, Interleave: 1.0
 ## 💀 Hacked {#hacked}
 {{< asset-header youtube="gjgyrVs8yx0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-hacked-293724" demo="https://fronkongames.github.io/demos-glitches/hacked/" warn="assets used in video and demo are not included">}}
 
-**Hacked** is a high-performance post-processing effect that simulates a variety of digital glitches, frame jumps, and compression artifacts, giving the impression of a hacked or malfunctioning system.
+Simulates a variety of digital glitches, frame jumps, and compression artifacts, giving the impression of a hacked or malfunctioning system. The effect composites **six independent distortion layers** — Frame Jump, Jitter, Blocks, Waves, Scanlines, and Noise — each operating on separate UV coordinate channels (R, G, B) to produce the characteristic RGB splitting of digital interference.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+The shader processes each pixel through all six layers sequentially, accumulating UV offsets independently for the red, green, and blue channels. This per-channel UV separation creates the distinctive chromatic tearing seen in hacked displays. The final pixel is assembled by sampling the texture at three different UV coordinates (one per channel), producing organic color fringing that varies with each layer's contribution.
+
+{{< alert type="info" >}}
+The global Strength parameter acts as a master multiplier for all six layers simultaneously, allowing quick intensity scaling without adjusting individual parameters.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Hacked**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Hacked**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Six-Layer Compositing System
+
+The effect implements six independent distortion layers that are composited sequentially. Each layer contributes UV offsets that accumulate across the R, G, and B channels independently.
+
+{{< table >}}
+| **Layer** | **Technique** | **Characteristic** | **Typical Use Case** |
+|---|---|---|---|
+| Frame Jump | Vertical UV scroll with speed control | Vertical rolling / sync loss | Monitor desynchronization |
+| Jitter | Horizontal tile displacement with density bands | Horizontal slicing with per-band offset | Signal interference, data corruption |
+| Blocks | Random block displacement with per-channel aberration | Blocky RGB splitting with noise | Compression artifacts, data loss |
+| Waves | Simplex noise-driven horizontal displacement | Smooth wave-like RGB separation | Electromagnetic interference |
+| Scanlines | Threshold-gated random horizontal jitter | Sharp horizontal noise lines | Display scanning errors |
+| Noise | Per-channel random color injection with luminance gating | Analog static with color variation | Signal degradation, white noise |
+{{< /table >}}
+
+#### Parameter Configuration
 
 {{< image src="hacked_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-The hacking effect is achieved by combining six different effects. '**Strength**' modulates the intensity of **all** these effects.
+* **Strength** [0.0 to 2.0]: Master multiplier applied to all six layers simultaneously. Default 1.0.
+
+##### Frame Jump
 
 {{< video src="/store/glitches/hacked/hacked_framejump.mp4" loop="true" autoplay="true" title="Frame jump" >}}
 
-The first effect is '**Frame jump**', commonly caused by a synchronization failure between the signal and the monitor. In addition to its intensity, you can adjust its speed.
+Simulates vertical synchronization failure between the signal and the monitor.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Frame Jump** | 0.0 to 1.0 | 0.1 | Intensity of the vertical rolling displacement |
+| **Frame Jump Speed** | 0.0 to 10.0 | 1.0 | Speed of the vertical scroll animation |
+{{< /table >}}
+
+##### Jitter
 
 {{< video src="/store/glitches/hacked/hacked_jitter.mp4" loop="true" autoplay="true" title="Jitter" >}}
 
-'**Jitter**' creates horizontal bands that _slice_ the image. In addition to their intensity and speed, you can modify their density.
+Creates horizontal bands that slice the image with oscillating displacement.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Jitter** | 0.0 to 5.0 | 1.0 | Horizontal displacement intensity of each band |
+| **Jitter Speed** | 0.0 to 10.0 | 0.2 | Oscillation speed of the jitter displacement |
+| **Jitter Density** | 0.0 to 50.0 | 15.0 | Number of horizontal bands across the screen |
+{{< /table >}}
+
+##### Blocks
 
 {{< video src="/store/glitches/hacked/hacked_blocks.mp4" loop="true" autoplay="true" title="Blocks" >}}
 
-'**Blocks**' creates a multitude of blocks that deform the color channels. You can adjust their density, chromatic aberration intensity and noise.
+Creates a multitude of blocks that deform the color channels with independent RGB displacement.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Blocks** | 0.0 to 1.0 | 0.5 | Intensity of block-based channel displacement |
+| **Block Density** | 0.0 to 50.0 | 10.0 | Number of blocks in the grid pattern |
+| **Block Aberration** | Vector2 | (1.0, 1.0) | Per-axis chromatic aberration intensity within blocks |
+| **Block Noise** | Vector2 | (0.5, 0.5) | Random position offset applied to block displacement |
+{{< /table >}}
+
+##### Waves
 
 {{< video src="/store/glitches/hacked/hacked_waves.mp4" loop="true" autoplay="true" title="Waves" >}}
 
-With '**Waves**' you can add a sine wave deformation that alters the color channels, and you can adjust its speed and the intensity of the color channel separation.
+Adds simplex noise-driven sine wave deformation that separates the color channels horizontally.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Waves** | 0.0 to 1.0 | 1.0 | Intensity of the wave displacement |
+| **Wave Speed** | 0.0 to 25.0 | 10.0 | Animation speed of the wave pattern |
+| **Wave RGB Split** | 0.0 to 50.0 | 30.0 | Color channel separation distance within the wave |
+{{< /table >}}
+
+##### Scanlines
 
 {{< video src="/store/glitches/hacked/hacked_scanlines.mp4" loop="true" autoplay="true" title="Scanlines" >}}
 
-'**Scanlines**' adds a horizontal noise.
+Adds threshold-gated horizontal noise lines that create sharp, intermittent displacement.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Scanlines** | 0.0 to 1.0 | 0.2 | Intensity of the scanline displacement |
+| **Scanlines Threshold** | 0.0 to 1.0 | 0.8 | Activation threshold. Higher values produce fewer, sharper lines |
+{{< /table >}}
+
+##### Noise
 
 {{< video src="/store/glitches/hacked/hacked_noise.mp4" loop="true" autoplay="true" title="Noise" >}}
 
-Finally '**Noise**' creates the classic analog noise.
+Creates classic analog noise with per-channel random color injection and occasional luminance desaturation.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Noise** | 0.0 to 1.0 | 0.1 | Intensity of the analog noise overlay |
+| **Noise Speed** | 0.0 to 1.0 | 0.1 | Temporal variation speed of the noise pattern |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **HackedVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.Hacked;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out HackedVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Master strength
+    volume.strength.value = 1.5f;
+
+    // Configure individual layers
+    volume.frameJump.value = 0.2f;
+    volume.frameJumpSpeed.value = 2.0f;
+
+    volume.jitter.value = 1.5f;
+    volume.jitterSpeed.value = 0.5f;
+    volume.jitterDensity.value = 20.0f;
+
+    volume.blocks.value = 0.6f;
+    volume.blockDensity.value = 15.0f;
+    volume.blockAberration.value = new Vector2(1.5f, 1.5f);
+    volume.blockNoise.value = new Vector2(0.7f, 0.7f);
+
+    volume.waves.value = 0.8f;
+    volume.waveSpeed.value = 15.0f;
+    volume.waveRGBSplit.value = 40.0f;
+
+    volume.scanlines.value = 0.3f;
+    volume.scanlinesThreshold.value = 0.7f;
+
+    volume.noise.value = 0.15f;
+    volume.noiseSpeed.value = 0.2f;
+
+    // Apply color correction
+    volume.contrast.value = 1.2f;
+    volume.saturation.value = 0.8f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+The effect executes in a single render pass with **O(1)** per-pixel complexity. All six layers are evaluated sequentially within the same fragment shader, accumulating UV offsets before the final three-channel texture sampling.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 3 per pixel (one per RGB channel at independently displaced UV coordinates).
+* Branching: 2 conditional branches (jitter band selection + noise luminance gating).
+* Memory: No additional textures or compute buffers.
+
+#### Preset Configurations
+
+##### Subtle Intrusion
+
+Suitable for background hacking events, surveillance feeds, or environmental storytelling.
+
+```
+Intensity: 0.3, Strength: 0.5
+Frame Jump: 0.05, Frame Jump Speed: 0.5
+Jitter: 0.3, Jitter Speed: 0.1, Jitter Density: 10.0
+Blocks: 0.2, Block Density: 8.0, Block Aberration: (0.5, 0.5), Block Noise: (0.3, 0.3)
+Waves: 0.3, Wave Speed: 5.0, Wave RGB Split: 15.0
+Scanlines: 0.1, Scanlines Threshold: 0.9
+Noise: 0.05, Noise Speed: 0.05
+```
+
+##### Full System Compromise
+
+Creates severe hacking effects for dramatic sequences or critical story moments.
+
+```
+Intensity: 0.9, Strength: 1.8
+Frame Jump: 0.3, Frame Jump Speed: 3.0
+Jitter: 2.5, Jitter Speed: 0.5, Jitter Density: 25.0
+Blocks: 0.8, Block Density: 20.0, Block Aberration: (2.0, 2.0), Block Noise: (0.8, 0.8)
+Waves: 1.0, Wave Speed: 20.0, Wave RGB Split: 45.0
+Scanlines: 0.4, Scanlines Threshold: 0.6
+Noise: 0.2, Noise Speed: 0.2
+```
 
 ---
 ## 🔨 Broken LCD {#broken-lcd}
@@ -994,47 +1896,174 @@ Blend: Difference, Broken Tint: (1, 0.8, 0.8), Background Tint: (0.7, 0.7, 0.9)
 ## 👁️‍🗨️ Color Blindness {#colorblindness}
 {{< asset-header youtube="f5CiPt9bzBE" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-color-blindness-273126" demo="https://fronkongames.github.io/demos-glitches/colorblindness/" warn="assets used in video and demo are not included">}}
 
-**Color Blindness** accurately replicates how people with different types of color vision deficiency perceive the world, making it an essential tool for accessibility testing and artistic expression.
+Accurately replicates how people with different types of color vision deficiency perceive the world, making it an essential tool for **accessibility testing** and artistic expression. The effect applies a **3×3 color transformation matrix** to each pixel, mathematically remapping the RGB color space to simulate the reduced or absent cone response characteristic of each deficiency type.
+
+The shader computes three dot products (one per output channel) between the input RGB values and the deficiency-specific coefficient vectors. This linear transformation preserves luminance relationships while collapsing the color dimensions that the affected cone type cannot distinguish. The built-in comparator splits the screen with a configurable dividing bar, enabling direct side-by-side comparison between normal and simulated vision.
 
 {{< alert color="danger" icon="fas triangle-exclamation" >}}
 This asset **simulates** a series of vision defects, **NOT** corrects them.
 {{< /alert >}}
 
-Once installed, when you select your '_Volume_', you will see something like this:
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Color Blindness**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Color Blindness**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Supported Deficiency Types
+
+The core of the simulation is the **Deficiency** parameter, which selects from eight scientifically-modeled color vision conditions.
+
+{{< table >}}
+| **Deficiency** | **Type** | **Affected Colors** | **Prevalence** |
+|---|---|---|---|
+| **Protanomaly** | Anomalous trichromacy | Red-green (reduced red sensitivity) | 1% males, 0.03% females |
+| **Deuteranomaly** | Anomalous trichromacy | Red-green (reduced green sensitivity) | 6% males, 0.4% females |
+| **Tritanomaly** | Anomalous trichromacy | Blue-yellow (reduced blue sensitivity) | 0.01% population |
+| **Protanopia** | Dichromacy | Reds greatly reduced | 1% males, 0.02% females |
+| **Deuteranopia** | Dichromacy | Greens greatly reduced | 1% males |
+| **Tritanopia** | Dichromacy | Blues greatly reduced | 0.003% population |
+| **Achromatopsia** | Monochromacy | Total color blindness | 0.001% population |
+| **Achromatomaly** | Partial monochromacy | Partial color blindness | 0.00001% population |
+{{< /table >}}
+
+{{< alert type="info" >}}
+Deuteranomaly is the most common form of color vision deficiency, affecting approximately 6% of males. Testing your game with this deficiency first covers the largest affected audience.
+{{< /alert >}}
+
+#### Parameter Configuration
 
 {{< image src="color_blindness_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-The core of the simulation is the '**Deficiency**' parameter, which allows you to select from a wide range of color vision conditions, including red-green (Protanopia, Deuteranopia), blue-yellow (Tritanopia), and total color blindness (Achromatopsia), as well as their anomalous trichromacy variants.
+##### Simulation Parameters
 
-* **Protanomaly**: red-green vision deficiency, 1% of males, 0.03% of females.
-* **Deuteranomaly**: red-green color blindness, 6% of males, 0.4% of females.
-* **Tritanomaly**: blue-yellow color blindness, 0.01% for males and females.
-* **Protanopia**: reds are greatly reduced, 1% of males, 0.02% of females.
-* **Deuteranopia**: greens are greatly reduced, 1% of males.
-* **Tritanopia**: blues are greatly reduced, 0.003% population.
-* **Achromatopsia**: total color blindness, 0.001% population.
-* **Achromatomaly**: partial color blindness, 0.00001% population.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Deficiency** | Enum (8 types) | Protanomaly | Selects the color vision condition to simulate |
+{{< /table >}}
 
-To facilitate testing and visualization, you can use the '**Comparator**' to split the screen, allowing a direct side-by-side comparison between normal vision and the selected deficiency.
+##### Comparator Parameters
 
-You can further customize this view by adjusting the '**Comparator Size**' and the '**Comparator Color**' of the dividing bar.
+The built-in comparator splits the screen to allow direct side-by-side comparison between normal vision (left) and simulated deficiency (right).
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Comparator** | 0.0 to 1.0 | 0.0 | Screen split position. 0 = full deficiency view, 1 = full normal view |
+| **Comparator Size** | 0 to 20 | 5 | Width of the dividing bar in pixels |
+| **Comparator Color** | Color | (0, 0, 0, 0.75) | Color and opacity of the dividing bar |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **ColorBlindnessVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.ColorBlindness;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out ColorBlindnessVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Select deficiency type
+    volume.deficiency.value = ColorBlindness.Deficiency.Deuteranopia;
+
+    // Configure comparator for testing
+    volume.comparator.value = 0.5f; // Split screen in half
+    volume.comparatorSize.value = 3;
+    volume.comparatorColor.value = new Color(0.0f, 0.0f, 0.0f, 0.9f);
+
+    // Apply color correction
+    volume.contrast.value = 1.0f;
+    volume.saturation.value = 1.0f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+The effect executes in a single render pass with **O(1)** per-pixel complexity. The color transformation uses three dot products (one per channel) with no branching in the main path.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel.
+* Branching: 1 conditional branch (comparator split position check).
+* Memory: No additional textures or compute buffers.
+* ALU: 3 dot products + standard color grading operations.
+
+#### Preset Configurations
+
+##### Accessibility Testing
+
+Use the comparator to quickly verify your game's readability under the most common deficiency.
+
+```
+Intensity: 1.0, Deficiency: Deuteranomaly
+Comparator: 0.5, Comparator Size: 3, Comparator Color: (0, 0, 0, 0.9)
+```
+
+##### Artistic Desaturation
+
+Use Achromatopsia with partial intensity for a stylized desaturated look.
+
+```
+Intensity: 0.6, Deficiency: Achromatopsia
+Comparator: 0.0
+Contrast: 1.3, Gamma: 0.9
+```
 
 #
----
-
-## Misc
-
-All effects have a image grading tools, '**Color**', for aesthetic fine-tuning: **Brightness**, **Contrast**, **Gamma**, **Hue**, and **Saturation**.
-
-{{< image src="color.jpg" wrapper="col-8 mx-auto">}}
-
-They also have an '**Advanced**' panel with these options:
-
-{{< image src="advanced.jpg" wrapper="col-8 mx-auto">}}
-
-Activate '**Affect the Scene View**' if you want the effect to be applied also in the '_Scene_' window of the Editor.
 
 ---
 ## F.A.Q.
