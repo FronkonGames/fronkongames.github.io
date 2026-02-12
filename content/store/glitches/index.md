@@ -11,7 +11,7 @@ thumbnail:
   url: img/glitches.jpg
 ---
 
-'**[Glitches](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-bundle-295977?aid=1101l9zFC&utm_source=aff)**' contains the following assets:
+'**[Glitches](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-bundle-295977?aid=1101l9zFC&utm_source=aff)**' is a collection of cinematic distortion and glitch effects to enhance visual storytelling in games and interactive experiences. Contains the following assets:
 
 * [Corrupt Memory](#corruptmemory), a cyber attack? no, it's just corrupted memory.
 * [Interferences](#interferences), something is interfering with the signal...
@@ -82,67 +82,184 @@ To increase compatibility with VR devices, I recommend that you select '**Stereo
 
 {{< image src="vr.jpg" wrapper="col-8 mx-auto">}}
 
-#### Code
-
-Once you have added the effect in the Editor, the effects can be modified at runtime using the standard [Unity Volume API](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.0/manual/Volumes.html).
-
-First you must add the corresponding namespace. They are all of the style 'FronkonGames.Glitches.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Artifacts**' the code would be:
-
-```csharp
-using FronkonGames.Glitches.Artifacts;
-using UnityEngine.Rendering;
-
-// ...
-
-[SerializeField]
-private VolumeProfile volumeProfile;
-
-// ...
-
-if (volumeProfile.TryGet(out ArtifactsVolume volume))
-{
-  volume.intensity.value = 0.5f;
-  volume.lines.value = -0.2f;
-}
-```
-
-And how can I activate and deactivate the effect? It's as easy as that:
-
-```csharp
-// Switch between active and inactive.
-if (volume.active == true)
-  volume.active = false;
-else
-  volume.active = true;
-```
-
-If you are using an effect other than '**Artifacts**' just change it to its name. Check the source code comments for more information.
-
-
 #
 
 ---
 ## 💾 Corrupt Memory {#corruptmemory}
 {{< asset-header youtube="F4ubH6fGgcA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-corrupt-memory-274730" demo="https://fronkongames.github.io/demos-glitches/corruptmemory/" warn="assets used in video and demo are not included">}}
 
-**Corrupt Memory** replicates the visual noise and distortion patterns often seen in corrupted video memory or during a cyberattack.
+**Corrupt Memory** simulates the visual degradation that occurs during video memory corruption or cyberattack scenarios. By generating patterns of overlapping rectangles with randomized properties, this effect creates zones where pixelation, chromatic aberration, and image displacement are selectively applied, producing realistic digital artifacts that range from subtle data loss to catastrophic hardware failure visualizations.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Corrupt Memory**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Corrupt Memory**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Three-Tier Effect System
+
+The generated corruption pattern serves as a mask for three distinct effect layers, each activated independently based on threshold comparisons against the hash values.
+
+{{< table >}}
+| **Effect Layer** | **Activation Threshold** | **Visual Impact** | **Primary Parameters** |
+|---|---|---|---|
+| **Pixelation** | Corruption Z > Pixelation Threshold | Reduces effective resolution in corruption zones | Pixelation intensity [0-1], Threshold [0-1] |
+| **Aberration**	 | Corruption.rgb > Aberration Threshold | Separates RGB channels at different offsets | Aberration XYZ [0-25], Threshold [0-1] |
+| **Offset** | Corruption Z > Offset Threshold | Shifts texture coordinates radially | Offset [0-1], Scale [0-1], Threshold [0-1] |
+{{< /table >}}
+
+{{< alert type="info" >}}
+The threshold parameters act as density filters. High threshold values (0.9+) limit effects to the most intense corruption zones, while low values (0.1-0.3) spread artifacts across larger screen areas.
+{{< /alert >}}
+
+##### Pixelation
+
+Pixelation reduces sampling resolution by quantizing UV coordinates. The shader calculates a target pixel count between 256 and 8 based on the pixelation parameter, then uses floor division to snap coordinates to grid positions. This creates blocky artifacts visible only in zones where the corruption pattern exceeds the threshold, simulating GPU texture memory degradation.
+
+##### Chromatic Aberration Application
+
+Color channel separation occurs independently per RGB component, each sampling from different UV offsets. The offset magnitude depends on the corresponding channel's hash value exceeding the aberration threshold. This asymmetric channel separation creates rainbow-like fringes characteristic of display connector degradation or GPU memory errors.
+
+##### Image Displacement Mechanism
+
+Spatial displacement applies radial offset to UV coordinates, creating tearing effects. The offset direction derives from trigonometric functions of the hash values, while magnitude scales with the offset parameter and temporal fading. The sine-wave fade creates pulsating displacement intensity, while screen-parameter normalization ensures consistent artifact size across resolutions.
+
+#### Parameter Configuration
 
 {{< image src="corrupt_memory_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-These parameters modify the underlying pattern of overlapping rectangles. The first thing you can adjust is the '**Complexity**' of the pattern and the '**Density**' of the rectangles.
-Then the '**Speed**' with which they vary and their '**Scrolling**' on the screen. Finally, you can also change their '**Zoom**'.
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Complexity** | 0-15 | 5.0 | Number of recursive iterations. Higher values create more intricate patterns at increased GPU cost |
+| **Density** | 0-1 | 0.2 | Probability of corruption zone activation. Lower values create sparse, dramatic artifacts |
+| **Speed** | 0-25 | 10.0 | Temporal evolution rate. Controls how quickly patterns morph and migrate |
+| **Scrolling** | Vector2 | (0, 0) | Manual pattern displacement. Enables directional movement of corruption zones |
+| **Zoom** | Vector2 | (11, 7) | Spatial scaling of pattern generation. Larger values produce smaller, more numerous artifacts |
+{{< /table >}}
 
-If you want to see the pattern more clearly while adjusting these, activate '**Debug view**'.
+{{< alert type="info" >}}
+Complexity beyond 10 iterations rarely yields visible improvements but significantly impacts performance. For mobile platforms, stay within the 3-7 range.
+{{< /alert >}}
 
-#### Effect Zones
-The pattern is used to define the zones where three effects will be applied: **pixelation**, **chromatic aberration**, and **image displacement**.
+{{< table >}}
+| **Parameter** | **Sub-Parameter** | **Range** | **Default** | **Purpose** |
+|---|---|---|---|---|
+| **Pixelation** | Intensity | 0-1 | 0.25 | Amount of resolution reduction (256→8 pixels) |
+|  | Threshold | 0-1 | 0.9 | Minimum corruption intensity to trigger pixelation |
+| **Aberration** | RGB Intensity | 0-25 | (10,10,10) | Channel offset magnitude in texels |
+|  | Threshold | 0-1 | 0.9 | Per-channel activation requirement |
+| **Offset** | Intensity | 0-1 | 0.25 | Maximum UV offset amount |
+|  | Scale | 0-1 | 0.5 | Screen-space normalization factor |
+|  | Threshold | 0-1 | 0.9 | Minimum corruption for displacement |
+{{< /table >}}
 
-In all of them you can adjust the intensity of the effect and the limit at which it is activated ('**Threshold**'). With a very high threshold, it will use very few rectangles of the pattern. With a very low threshold, many.
+##### Color Grading
 
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+##### Runtime Control
+
+Effect control follows the standard Unity Volume API pattern. Access parameters through the Volume component after retrieving it from the active profile:
+
+```csharp
+using FronkonGames.Glitches.CorruptMemory;
+using UnityEngine.Rendering;
+
+[SerializeField] 
+private VolumeProfile volumeProfile;
+
+private CorruptMemoryVolume corruptMemory;
+ 
+private void Awake()
+{
+    // Retrieve the volume component
+    volumeProfile.TryGet(out corruptMemory);
+}
+ 
+private void ApplyCorruptionEffect(float severity)
+{
+    // Scale pattern intensity with event severity
+    corruptMemory.intensity.value = severity;
+    
+    // Increase density for more extensive damage
+    corruptMemory.density.value = Mathf.Lerp(0.1f, 0.8f, severity);
+    
+    // Accelerate pattern evolution during critical events
+    corruptMemory.speed.value = Mathf.Lerp(5.0f, 25.0f, severity);
+    
+    // Enable all three effect layers
+    corruptMemory.pixelation.value = 0.5f * severity;
+    corruptMemory.aberration.value = Vector3.one * (15.0f * severity);
+    corruptMemory.offset.value = 0.6f * severity;
+    
+    // Lower thresholds for broader effect application
+    corruptMemory.pixelationThreshold.value = 1.0f - (0.3f * severity);
+    corruptMemory.aberrationThreshold.value = 1.0f - (0.4f * severity);
+    corruptMemory.offsetThreshold.value = 1.0f - (0.2f * severity);
+}
+```
+
+The effect includes built-in debugging capabilities through the DEBUG_VIEW shader keyword. When enabled via the Debug View parameter, the shader renders the raw corruption pattern luminance instead of applying the three effect layers. This visualization reveals:
+
+* Hash distribution across screen space
+* Pattern complexity and iteration boundaries
+* Density threshold effectiveness
+* Temporal evolution characteristics
+
+Use this mode when tuning pattern parameters to ensure artifact distribution matches intended visual design before enabling the full effect composition.
+
+```csharp
+corruptMemory.debugView.value = true;  // View hash-based pattern only
+corruptMemory.debugView.value = false; // Apply full effect composition
+```
+
+##### Performance Considerations
+
+The algorithmic complexity scales linearly with the complexity parameter. Each iteration incurs hash calculation, conditional branching, and coordinate transformation operations. On mobile hardware (Adreno 640+):
+
+{{< table >}}
+| **Complexity Setting** | **Estimated GPU Cost** | **Recommended Use Case** |
+|---|---|---|
+|1-3 | < 0.5ms | Mobile, heavy scenes |
+|4-7 | 0.5-1.5ms | Desktop, balanced scenes |
+|8-15 | 1.5-4ms | Cinematic, dedicated post-processing |
+{{< /table >}}
+
+Pixelation and chromatic aberration effects require additional texture samples. Minimize these costs by keeping thresholds high (0.85+) when effect intensity is low.
 
 ---
 ## 📡 Interferences {#interferences}
@@ -546,7 +663,7 @@ To apply the effect to your scene:
 3. Click **Add Override** and select **Fronkon Games > Glitches > Artifacts**.
 4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-#### Dual-Layer Artufact
+#### Dual-Layer Artifact
 
 The effect implements two independent artifact layers — **Blocks** and **Lines** — each with its own probability, blend mode, and tint color. This dual-layer approach simulates the distinct corruption patterns found in real degraded video signals.
 
@@ -711,21 +828,167 @@ Finally '**Noise**' creates the classic analog noise.
 ## 🔨 Broken LCD {#broken-lcd}
 {{< asset-header youtube="BgRcZrxu280" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-broken-lcd-294991" demo="https://fronkongames.github.io/demos-glitches/broken-lcd/" warn="assets used in video and demo are not included">}}
 
-**Broken LCD** simulates the visual artifacts of a damaged liquid crystal display, including dead pixels, color bleeding, and screen fractures.
+Simulates the visual artifacts of a physically damaged liquid crystal display, including dead pixel clusters, color bleeding, and screen fractures. The effect produces the distinctive blocky, high-contrast patterns seen when an LCD panel's internal structure is compromised, cracked substrates, severed column drivers, or pressure-damaged cells.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+The core algorithm uses an **iterative hash-based cell fracture** system. Screen coordinates are divided into a configurable grid, and each cell is processed through multiple complexity iterations using a 4-component hash function (`Hash42`). At each iteration, UV coordinates are warped by the hash output, accumulating multiplicative color corruption. A final threshold test separates "broken" regions from intact areas, with blend-mode compositing applied only to damaged zones.
+
+{{< alert type="info" >}}
+The iterative fracture loop produces self-similar patterns at different scales, increasing Complexity adds finer sub-fractures within existing damaged regions, mimicking real LCD crack propagation.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Broken LCD**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Broken LCD**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Facture Generation Pipeline
+
+The effect processes each pixel through a multi-stage pipeline that separates the screen into damaged and intact regions, then composites them independently.
+
+{{< table >}}
+| **Stage** | **Operation** | **Controlled By** |
+|---|---|---|
+| Grid Division | Screen split into cells with aspect-ratio correction | Cells |
+| UV Animation | Cell coordinates offset by time-driven hash | Speed |
+| Iterative Fracture | N iterations of hash-based UV warping and color accumulation | Complexity, Density |
+| Tilt Distortion | Horizontal shear applied to vertical coordinates | Tilt |
+| Threshold Split | Broken vs. intact region classification via luminance length | Threshold |
+| Compositing | Blend-mode mixing with offset sampling for broken areas | Blend, Offset, Broken Tint, Background Tint |
+{{< /table >}}
+
+The iterative loop at the core alternates warp direction each iteration (`s = -s * (1.1 + h.y)`), producing organic zigzag fracture patterns rather than uniform grid distortion.
+
+#### Parameter Configuration
 
 {{< image src="brokenlcd_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-These parameters control the generation of the LCD damage artifacts. The '**Complexity**' defines the granularity of the effect [1 - 10], while '**Density**' and '**Cells**' control the concentration and number of block patterns.
+The core parameters control the generation and appearance of LCD damage artifacts.
 
-You can adjust the frame rate of change with '**Speed**', and use '**Offset**' and '**Tilt**' to scroll or incline the visual interference.
+* **Complexity** [1 to 10]: Number of fracture iterations per pixel. Higher values produce finer, more detailed crack patterns at the cost of additional hash computations. Default 6.
+* **Density** [0.0 to 1.0]: Controls the probability of color corruption at each iteration. Lower values leave more cells intact; higher values produce denser damage. Default 0.5.
+* **Cells** [Vector2Int]: Number of grid divisions on each axis. The X component controls horizontal segmentation, Y controls vertical. Default (1, 8).
+* **Speed** [0.0 to 5.0]: Frame rate of pattern change. Controls how quickly the fracture pattern animates over time. Default 0.3.
+* **Offset** [0.0 to 1.0]: UV displacement applied when sampling the original image in broken regions. Creates the characteristic "shifted content" look of damaged displays. Default 0.1.
+* **Tilt** [0.0 to 1.0]: Horizontal shear applied to the fracture pattern. Simulates angled crack lines across the display. Default 0.2.
+* **Threshold** [0.0 to 1.0]: Activation limit that separates broken from intact regions. Lower values expand the damaged area; higher values restrict it. Default 0.75.
+* **Blend**: Selects from 23 color blend modes (HardMix, Screen, Difference, etc.) for compositing broken regions. Default HardMix.
+* **Broken Tint**: Color multiplier applied to damaged areas. Default White.
+* **Background Tint**: Color multiplier applied to intact areas. Default White.
 
-The '**Threshold**' acts as an activation limit for the effect on the screen.
+##### Color Grading
 
-Finally, you can customize the appearance using '**Blend**' modes, and apply independent color tints to the '**Broken**' (damaged) areas and the '**Background**' (undamaged) zones.
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+##### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **BrokenLCDVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.BrokenLCD;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out BrokenLCDVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure fracture parameters
+    volume.complexity.value = 8;
+    volume.density.value = 0.6f;
+    volume.cells.value = new Vector2Int(2, 10);
+    volume.speed.value = 0.5f;
+    volume.offset.value = 0.15f;
+    volume.tilt.value = 0.3f;
+    volume.threshold.value = 0.7f;
+    volume.blend.value = ColorBlends.HardMix;
+    volume.brokenTint.value = Color.white;
+    volume.backgroundTint.value = new Color(0.9f, 0.9f, 1.0f);
+
+    // Apply color correction
+    volume.contrast.value = 1.2f;
+    volume.saturation.value = 0.8f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+The effect executes in a single render pass. Per-pixel cost scales linearly with the **Complexity** parameter, as each iteration performs one `Hash42` evaluation and UV warp.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 2 per pixel (original + offset-displaced sample in broken regions).
+* Branching: Threshold split and density check use UNITY_BRANCH for coherent warp execution.
+* Memory: No additional textures or compute buffers.
+* Loop Cost: O(Complexity) hash evaluations per pixel (default 6).
+
+#### Preset Configurations
+
+##### Subtle Compression
+
+Suitable for aged electronics, slightly cracked screens, or environmental storytelling.
+
+```
+Intensity: 0.3, Complexity: 4, Density: 0.3, Cells: (1, 6)
+Speed: 0.1, Offset: 0.05, Tilt: 0.1, Threshold: 0.85
+Blend: HardMix, Broken Tint: White, Background Tint: White
+```
+---
+
+##### Shattered Display
+
+Creates severe LCD destruction for dramatic impact or horror sequences.
+
+```
+Intensity: 0.9, Complexity: 10, Density: 0.8, Cells: (3, 12)
+Speed: 0.5, Offset: 0.25, Tilt: 0.4, Threshold: 0.5
+Blend: Difference, Broken Tint: (1, 0.8, 0.8), Background Tint: (0.7, 0.7, 0.9)
+```
 
 ---
 ## 👁️‍🗨️ Color Blindness {#colorblindness}
@@ -775,6 +1038,15 @@ Activate '**Affect the Scene View**' if you want the effect to be applied also i
 
 ---
 ## F.A.Q.
+
+##### _Effect Not appearing_
+
+If the effect doesn't appear in your scene:
+
+1. **Verify Renderer Feature**: Check that the renderer feature is added to your Universal Renderer Data asset.
+2. **Check Volume Profile**: Ensure a Volume component exists in your scene with the effect override enabled.
+3. **Confirm Intensity**: Verify that the Intensity parameter is set to a value greater than 0.0 and enabled.
+4. **Camera Settings**: Check that your camera has Post Processing enabled in the Camera component.
 
 ##### _How to make the effect also affect the UI?_
 
