@@ -387,7 +387,6 @@ To apply the effect to your scene:
 3. Click **Add Override** and select **Fronkon Games > Glitches > Bad GPU**.
 4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-
 #### Parameter Configuration
 
 {{< image src="badgpu_0.jpg" wrapper="col-10 mx-auto">}}
@@ -514,19 +513,161 @@ Glitch 4: Intensity 0.15, Speed 0.1, Threshold 0.9
 ## 📦 Artifacts {#artifacts}
 {{< asset-header youtube="tyg11e6XrQQ" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-artifacts-288952" demo="https://fronkongames.github.io/demos-glitches/artifacts/" warn="assets used in video and demo are not included">}}
 
-**Artifacts** replicates the visual noise and blocking patterns often seen in low-bitrate digital video, poor signal reception, or highly compressed media.
+Replicates the visual noise and blocking patterns characteristic of low-bitrate digital video, poor signal reception, or heavily compressed media. The effect simulates macro-block corruption, horizontal line tearing, chromatic aberration, and RGB sub-pixel interleaving, the hallmarks of degraded digital video signals.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+The core technique uses a **noise texture lookup** driven by time-varying block coordinates. Screen pixels are quantized into configurable grid cells, and the resulting cell index is used to sample a noise texture at animated UV offsets. When the noise value crosses a probability threshold, the pixel undergoes color channel displacement, blend-mode tinting, and sub-pixel masking, all in a single shader pass.
+
+{{< alert type="info" >}}
+Luminance-range filtering allows the effect to target only specific brightness levels, enabling selective corruption of shadows or highlights without affecting the rest of the image.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Artifacts**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Artifacts**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Dual-Layer Artufact
+
+The effect implements two independent artifact layers — **Blocks** and **Lines** — each with its own probability, blend mode, and tint color. This dual-layer approach simulates the distinct corruption patterns found in real degraded video signals.
+
+{{< table >}}
+| **Layer** | **Pattern** | **Characteristic** | **Typical Use Case** |
+|---|---|---|---|
+| Blocks | Grid-aligned macro-blocks | Random rectangular corruption patches | Compression artifacts, data loss |
+| Lines | Horizontal scan-lines | Full-width horizontal tearing | Signal interference, bad reception |
+{{< /table >}}
+
+Both layers share the same noise texture and block-size grid, but sample different noise channels (red for blocks, green/blue for lines). Time-dependent power curves control the probability of each layer activating per frame, creating organic temporal variation.
+
+#### Parameter Configuration
 
 {{< image src="artifacts_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-These parameters control the generation of digital artifacts. The '**Size**' defines the dimensions of the blocks in pixels, while '**Luminance Range**' can be used to restrict the effect to specific brightness levels.
+* **Size** [Vector2Int]: Defines the dimensions of the artifact grid cells in pixels. Default (16, 16). Smaller values produce finer corruption; larger values create chunkier macro-blocks.
+* **Luminance Range** [Vector2]: Restricts the effect to pixels within a specific brightness range. Pixels with luminance outside [min, max] are left untouched. Default (0.0, 1.0).
+* **Blocks** [0.0 to 1.0]: Controls the probability and intensity of macro-block artifacts. Default 0.1.
+* **Block Blend**: Selects from 23 color blend modes (Multiply, Screen, Difference, etc.). Default Multiply.
+* **Block Tint**: Color and alpha applied to block artifacts. Alpha controls the blend strength. Default (0, 1, 0, 0.25).
+* **Lines** [0.0 to 1.0]: Controls the probability and intensity of horizontal line artifacts. Default 0.4.
+* **Line Blend**: Selects from 23 color blend modes. Default Multiply.
+* **Line Tint**: Color and alpha applied to line artifacts. Alpha controls the blend strength. Default (0, 1, 0, 0.5).
+* **Aberration** [0.0 to 1.0]: Chromatic aberration intensity. Displaces R, G, and B channels independently when artifacts are active. Default 0.3.
+* **Interleave** [0.0 to 1.0]: RGB sub-pixel pattern intensity. Simulates CRT-style sub-pixel rendering within corrupted regions. Default 1.0.
 
-You can adjust the probability and intensity of macro-block artifacts with '**Blocks**', and customize their look using '**Block Blend**' and '**Block Tint**'.
+##### Color Grading
 
-Similarly, '**Lines**' controls horizontal line artifacts with its own '**Line Blend**' and '**Line Tint**' settings. Finally, '**Aberration**' adds color channel misalignment, and '**Interleave**' applies an RGB sub-pixel pattern.
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **ArtifactsVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.Artifacts;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out ArtifactsVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure artifact parameters
+    volume.size.value = new Vector2Int(8, 8);
+    volume.luminanceRange.value = new Vector2(0.0f, 1.0f);
+    volume.blocks.value = 0.8f;
+    volume.blockBlend.value = ColorBlends.Difference;
+    volume.blockTint.value = new Color(0.0f, 1.0f, 0.0f, 0.25f);
+    volume.lines.value = 0.4f;
+    volume.lineBlend.value = ColorBlends.Multiply;
+    volume.lineTint.value = new Color(0.0f, 1.0f, 0.0f, 0.5f);
+    volume.aberration.value = 0.3f;
+    volume.interleave.value = 1.0f;
+
+    // Apply color correction
+    volume.contrast.value = 1.2f;
+    volume.saturation.value = 0.8f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Performance Characteristics
+
+The effect executes in a single render pass with **O(1)** per-pixel complexity. Block coordinates are computed via integer division, and noise sampling uses a pre-baked 64×64 texture with linear filtering.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 4 per pixel (original + up to 3 displaced channels) + noise lookups.
+* Branching: Conditional blocks use UNITY_BRANCH for coherent warp execution.
+* Memory: 1 additional noise texture (64×64).
+
+#### Preset Configurations
+
+##### Subtle Compression
+
+Suitable for surveillance cameras, old monitors, or low-quality video feeds.
+
+```
+Intensity: 0.3, Size: (16, 16), Luminance Range: (0.0, 1.0)
+Blocks: 0.05, Block Blend: Multiply, Block Tint: (0, 1, 0, 0.15)
+Lines: 0.2, Line Blend: Multiply, Line Tint: (0, 1, 0, 0.3)
+Aberration: 0.1, Interleave: 0.5
+```
+
+##### Heavy Signal Loss
+
+Creates severe corruption for dramatic transitions or horror sequences.
+
+```
+Intensity: 0.8, Size: (8, 8), Luminance Range: (0.0, 1.0)
+Blocks: 0.6, Block Blend: Difference, Block Tint: (0, 1, 0, 0.5)
+Lines: 0.8, Line Blend: Screen, Line Tint: (1, 0, 0, 0.6)
+Aberration: 0.8, Interleave: 1.0
+```
 
 ---
 ## 💀 Hacked {#hacked}
