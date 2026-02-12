@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/glitches/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:04+01:00">
-    <meta property="article:modified_time" content="2025-10-16T18:23:25+02:00">
+    <meta property="article:modified_time" content="2026-02-04T01:30:48+01:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/glitches-1280x640.jpg">
 <meta property="og:image:alt" content="Glitches">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:04CET",
-      "dateModified": "2025-10-16T18:23:25CET",
+      "dateModified": "2026-02-04T01:30:48CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/glitches/#/schema/breadcrumb/1"
       },
@@ -442,7 +442,11 @@
         <li></li>
       </ul>
     </li>
-    <li><a href="#bad-gpu">🔥 Bap GPU</a></li>
+    <li><a href="#bad-gpu">🔥 Bap GPU</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#artifacts">📦 Artifacts</a></li>
     <li><a href="#hacked">💀 Hacked</a></li>
     <li><a href="#broken-lcd">🔨 Broken LCD</a></li>
@@ -3080,8 +3084,147 @@ Then the &lsquo;<strong>Speed</strong>&rsquo; with which they vary and their &ls
         </div></a>&nbsp;
 </div><br><br>
 
-<p><strong>Bad GPU</strong> replicates the visual glitches, pixel errors, and signal distortions typically associated with failing graphics hardware or extreme digital interference.</p>
-<p>Once installed, when you select your &lsquo;<em>Volume</em>&rsquo;, you will see something like this:</p>
+<p>Simulates the visual artifacts characteristic of failing graphics hardware, including pixel scrambling, memory corruption patterns, and signal degradation. Unlike other glitch effects that simulate external interference, this effect emulates internal GPU malfunction through sophisticated coordinate manipulation and noise generation algorithms.</p>
+<p>The core innovation lies in the use of <strong>Morton/Z-order</strong> curves for pixel coordinate transformation. This space-filling curve algorithm interleaves bits from X and Y coordinates to create a linear index that preserves spatial locality. When noise is applied to this Morton-encoded index and then converted back to UV coordinates, the result creates the characteristic blocky, hardware-corruption appearance rather than smooth gradient distortions.</p>
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            The Morton curve implementation uses O(1) bit manipulation tricks, enabling real-time pixel scrambling without expensive texture lookups or compute shaders.
+        </div>
+    </div>
+
+<h4 id="requisites" class="heading">Requisites <a href="#requisites" aria-labelledby="requisites">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>To ensure optimal performance and compatibility, your project must meet the following requirements:</p>
+<ul>
+<li><strong>Unity:</strong> 6000.0.58f1 or higher.</li>
+<li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
+</ul>
+
+<h4 id="instalation-guide" class="heading">Instalation Guide <a href="#instalation-guide" aria-labelledby="instalation-guide">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+<h5 id="step-1-add-renderer-feature-1" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-1" aria-labelledby="step-1-add-renderer-feature-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>The effect must be registered in your project&rsquo;s URP configuration:</p>
+<ol>
+<li>Locate your <strong>Universal Renderer Data</strong> asset.</li>
+<li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Glitches &gt; Bad GPU</strong>.</li>
+</ol>
+
+<h5 id="step-2-configure-the-volume-1" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-1" aria-labelledby="step-2-configure-the-volume-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>To apply the effect to your scene:</p>
+<ol>
+<li>Create a <strong>Volume</strong> component (Global or Local).</li>
+<li>In the Volume component, create or assign a <strong>Volume Profile</strong>.</li>
+<li>Click <strong>Add Override</strong> and select <strong>Fronkon Games &gt; Glitches &gt; Bad GPU</strong>.</li>
+<li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
+</ol>
+
+<h4 id="parameter-configuration" class="heading">Parameter Configuration <a href="#parameter-configuration" aria-labelledby="parameter-configuration">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
 
 
 
@@ -3156,10 +3299,321 @@ Then the &lsquo;<strong>Speed</strong>&rsquo; with which they vary and their &ls
             >
 </div><br>
 <p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.</p>
-<p>These parameters define the characteristics of the hardware failure. &lsquo;<strong>Balance</strong>&rsquo; allows you to shift the visual weight between the original image and the glitch effect [-1.0, 1.0], while &lsquo;<strong>Booster</strong>&rsquo; enhances both the intensity and brightness of the artifacts [0.0 - 10.0].</p>
-<p>You can customize the color of the distortion using the &lsquo;<strong>Tint</strong>&rsquo; and &lsquo;<strong>Blend</strong>&rsquo; mode operations.</p>
-<p>The system uses four independent glitch layers (<strong>Glitch 1-4</strong>), each providing granular control over its own <strong>Intensity</strong>, <strong>Speed</strong>, and <strong>Threshold</strong>. This allows for the creation of complex, multi-layered patterns that simulate everything from minor bit-errors to total hardware collapse.</p>
-<hr />
+
+<h5 id="signal-parameters" class="heading">Signal Parameters <a href="#signal-parameters" aria-labelledby="signal-parameters">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>The core parameters control the balance between the original image and the corrupted output.</p>
+<ul>
+<li><strong>Balance</strong> [-1.0 to 1.0]: Negative values favor the original image, positive values enhance the glitch effect. At 0.0, mixing depends on pixel difference magnitude.</li>
+<li><strong>Booster</strong> [0.0 to 10.0]: Multiplies the glitch color intensity before blending. Higher values create more severe corruption.</li>
+<li><strong>Blend</strong>: Selects from 23 color blend modes (Solid, Screen, Difference, etc.).</li>
+<li><strong>Tint</strong>: Applies a color filter to the glitch artifacts before blending.</li>
+</ul>
+
+<h5 id="four-layer-glitch-system" class="heading">Four-Layer Glitch System <a href="#four-layer-glitch-system" aria-labelledby="four-layer-glitch-system">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>The effect implements four independent noise layers (Glitch 1-4), each contributing distinct artifact patterns. This multi-layered approach simulates the complex cascading failures that occur in actual GPU hardware problems.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Layer</strong></th>
+<th><strong>Noise Scale</strong></th>
+<th><strong>Characteristic</strong></th>
+<th><strong>Typical Use Case</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glitch 1</td>
+<td>1×10⁻³</td>
+<td>Blocky posterized artifacts with 4 levels</td>
+<td>Main chunk corruption</td>
+</tr>
+<tr>
+<td>Glitch 2</td>
+<td>1×10⁻⁵</td>
+<td>Fine-grained noise with 20 posterization levels</td>
+<td>Bit-level errors</td>
+</tr>
+<tr>
+<td>Glitch 3</td>
+<td>1×10³</td>
+<td>Large-scale displacement with threshold control</td>
+<td>Memory addressing failures</td>
+</tr>
+<tr>
+<td>Glitch 4</td>
+<td>0.01</td>
+<td>Subtle random color injection</td>
+<td>Signal degradation</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+<p>Each layer combines three operations: noise generation scaled by coordinate position, posterization for quantization, and threshold application for selective activation. The noise function uses 1D value noise with linear interpolation, scaled by time-dependent speed parameters.</p>
+
+<h5 id="color-grading" class="heading">Color Grading <a href="#color-grading" aria-labelledby="color-grading">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Standard color correction parameters apply to the final output.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Effect</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brightness</td>
+<td>-1.0 to 1.0</td>
+<td>Additive luminance offset</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0.0 to 10.0</td>
+<td>Mid-tone contrast expansion</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>0.1 to 10.0</td>
+<td>Nonlinear tonal mapping (inverted)</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0 to 1.0</td>
+<td>Color wheel rotation</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0.0 to 2.0</td>
+<td>Color intensity relative to luminance</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+<p>These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.</p>
+
+<h4 id="runtime-control" class="heading">Runtime Control <a href="#runtime-control" aria-labelledby="runtime-control">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The effect integrates with Unity&rsquo;s Volume system for seamless runtime parameter modification. Access the <strong>BadGPUVolume</strong> component through the Volume Profile.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine.Rendering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Glitches.BadGPU</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[SerializedField]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">VolumeProfile</span> <span class="n">volumeProfile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Access the effect</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">volumeProfile</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="k">out</span> <span class="n">BadGPUVolume</span> <span class="n">volume</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Enable/disable effect</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">intensity</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span> <span class="c1">// 0.0 = disabled</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Configure signal parameters</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">balance</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">booster</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">2.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">blend</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">ColorBlends</span><span class="p">.</span><span class="n">Difference</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">tint</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="m">1.0f</span><span class="p">,</span> <span class="m">0.5f</span><span class="p">,</span> <span class="m">0.0f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Control individual glitch layers</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">glitch1</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.2f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">glitch1Speed</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">glitch1Threshold</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.6f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Apply color correction</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">contrast</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.2f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.8f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>For a more detailed example, check the code in the demo scene.</p>
+
+<h5 id="performance-characteristics" class="heading">Performance Characteristics <a href="#performance-characteristics" aria-labelledby="performance-characteristics">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>The effect executes in a single render pass with <strong>O(1)</strong> per-pixel complexity. The Morton curve operations use bitwise manipulation without branching, and noise generation employs analytical functions rather than texture lookups.</p>
+<p>Performance considerations:</p>
+<ul>
+<li>Pass Count: 1 blit pass.</li>
+<li>Texture Samples: 2 per pixel (original and displaced coordinate).</li>
+<li>Branching: Minimal (threshold comparisons use step() intrinsic).</li>
+<li>Memory: No additional textures or compute buffers.</li>
+</ul>
+
+<h4 id="preset-configurations" class="heading">Preset Configurations <a href="#preset-configurations" aria-labelledby="preset-configurations">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+<h5 id="subtle-artifacts" class="heading">Subtle Artifacts <a href="#subtle-artifacts" aria-labelledby="subtle-artifacts">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Suitable for environmental storytelling or failing electronics.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Intensity: 0.15, Balance: -0.3, Booster: 0.8, Blend: Solid
+</span></span><span class="line"><span class="cl">Glitch 1: Intensity 0.05, Speed 0.2, Threshold 0.8
+</span></span><span class="line"><span class="cl">Glitch 2: Intensity 0.03, Speed 2.0, Threshold 0.95</span></span></code></pre></div></div>
+<h5 id="critical-failure" class="heading">Critical Failure <a href="#critical-failure" aria-labelledby="critical-failure">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Creates severe corruption for intense scenes or catastrophic events.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Intensity: 0.8, Balance: 0.4, Booster: 5.0, Blend: Difference, Tint: Orange
+</span></span><span class="line"><span class="cl">Glitch 1: Intensity 0.3, Speed 1.0, Threshold 0.6
+</span></span><span class="line"><span class="cl">Glitch 2: Intensity 0.2, Speed 4.0, Threshold 0.8
+</span></span><span class="line"><span class="cl">Glitch 3: Intensity 0.2, Speed 0.5, Threshold 0.5
+</span></span><span class="line"><span class="cl">Glitch 4: Intensity 0.15, Speed 0.1, Threshold 0.9</span></span></code></pre></div></div><hr />
 
 <h2 id="artifacts" class="heading">📦 Artifacts <a href="#artifacts" aria-labelledby="artifacts">
 
@@ -4504,7 +4958,11 @@ Then the &lsquo;<strong>Speed</strong>&rsquo; with which they vary and their &ls
         <li></li>
       </ul>
     </li>
-    <li><a href="#bad-gpu">🔥 Bap GPU</a></li>
+    <li><a href="#bad-gpu">🔥 Bap GPU</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#artifacts">📦 Artifacts</a></li>
     <li><a href="#hacked">💀 Hacked</a></li>
     <li><a href="#broken-lcd">🔨 Broken LCD</a></li>

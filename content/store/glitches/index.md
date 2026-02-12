@@ -354,19 +354,161 @@ You can also fine-tune the '**White Balance**' to shift the overall color temper
 ## 🔥 Bap GPU {#bad-gpu}
 {{< asset-header youtube="Q86NARQPUJk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/glitches-bad-gpu-288689" demo="https://fronkongames.github.io/demos-glitches/bad-gpu/" warn="assets used in video and demo are not included">}}
 
-**Bad GPU** replicates the visual glitches, pixel errors, and signal distortions typically associated with failing graphics hardware or extreme digital interference.
+Simulates the visual artifacts characteristic of failing graphics hardware, including pixel scrambling, memory corruption patterns, and signal degradation. Unlike other glitch effects that simulate external interference, this effect emulates internal GPU malfunction through sophisticated coordinate manipulation and noise generation algorithms.
 
-Once installed, when you select your '_Volume_', you will see something like this:
+The core innovation lies in the use of **Morton/Z-order** curves for pixel coordinate transformation. This space-filling curve algorithm interleaves bits from X and Y coordinates to create a linear index that preserves spatial locality. When noise is applied to this Morton-encoded index and then converted back to UV coordinates, the result creates the characteristic blocky, hardware-corruption appearance rather than smooth gradient distortions.
+
+{{< alert type="info" >}}
+The Morton curve implementation uses O(1) bit manipulation tricks, enabling real-time pixel scrambling without expensive texture lookups or compute shaders.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Glitches > Bad GPU**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Glitches > Bad GPU**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+
+#### Parameter Configuration
 
 {{< image src="badgpu_0.jpg" wrapper="col-10 mx-auto">}}
 
 With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-These parameters define the characteristics of the hardware failure. '**Balance**' allows you to shift the visual weight between the original image and the glitch effect [-1.0, 1.0], while '**Booster**' enhances both the intensity and brightness of the artifacts [0.0 - 10.0].
+##### Signal Parameters
 
-You can customize the color of the distortion using the '**Tint**' and '**Blend**' mode operations.
+The core parameters control the balance between the original image and the corrupted output.
 
-The system uses four independent glitch layers (**Glitch 1-4**), each providing granular control over its own **Intensity**, **Speed**, and **Threshold**. This allows for the creation of complex, multi-layered patterns that simulate everything from minor bit-errors to total hardware collapse.
+* **Balance** [-1.0 to 1.0]: Negative values favor the original image, positive values enhance the glitch effect. At 0.0, mixing depends on pixel difference magnitude.
+* **Booster** [0.0 to 10.0]: Multiplies the glitch color intensity before blending. Higher values create more severe corruption.
+* **Blend**: Selects from 23 color blend modes (Solid, Screen, Difference, etc.).
+* **Tint**: Applies a color filter to the glitch artifacts before blending.
+
+##### Four-Layer Glitch System
+
+The effect implements four independent noise layers (Glitch 1-4), each contributing distinct artifact patterns. This multi-layered approach simulates the complex cascading failures that occur in actual GPU hardware problems.
+
+{{< table >}}
+| **Layer** | **Noise Scale** | **Characteristic** | **Typical Use Case** |
+|---|---|---|---|
+| Glitch 1 | 1×10⁻³ | Blocky posterized artifacts with 4 levels | Main chunk corruption |
+| Glitch 2 | 1×10⁻⁵ | Fine-grained noise with 20 posterization levels | Bit-level errors |
+| Glitch 3 | 1×10³ | Large-scale displacement with threshold control | Memory addressing failures |
+| Glitch 4 | 0.01 | Subtle random color injection | Signal degradation |
+{{< /table >}}
+
+Each layer combines three operations: noise generation scaled by coordinate position, posterization for quantization, and threshold application for selective activation. The noise function uses 1D value noise with linear interpolation, scaled by time-dependent speed parameters.
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+These operations follow standard image processing order: contrast expansion → hue rotation → gamma correction → saturation adjustment.
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **BadGPUVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Glitches.BadGPU;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out BadGPUVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+    
+    // Configure signal parameters
+    volume.balance.value = 0.3f;
+    volume.booster.value = 2.5f;
+    volume.blend.value = ColorBlends.Difference;
+    volume.tint.value = new Color(1.0f, 0.5f, 0.0f);
+    
+    // Control individual glitch layers
+    volume.glitch1.value = 0.2f;
+    volume.glitch1Speed.value = 0.5f;
+    volume.glitch1Threshold.value = 0.6f;
+    
+    // Apply color correction
+    volume.contrast.value = 1.2f;
+    volume.saturation.value = 0.8f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with **O(1)** per-pixel complexity. The Morton curve operations use bitwise manipulation without branching, and noise generation employs analytical functions rather than texture lookups.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 2 per pixel (original and displaced coordinate).
+* Branching: Minimal (threshold comparisons use step() intrinsic).
+* Memory: No additional textures or compute buffers.
+
+#### Preset Configurations
+
+##### Subtle Artifacts
+
+Suitable for environmental storytelling or failing electronics.
+
+```
+Intensity: 0.15, Balance: -0.3, Booster: 0.8, Blend: Solid
+Glitch 1: Intensity 0.05, Speed 0.2, Threshold 0.8
+Glitch 2: Intensity 0.03, Speed 2.0, Threshold 0.95
+```
+
+##### Critical Failure
+
+Creates severe corruption for intense scenes or catastrophic events.
+
+```
+Intensity: 0.8, Balance: 0.4, Booster: 5.0, Blend: Difference, Tint: Orange
+Glitch 1: Intensity 0.3, Speed 1.0, Threshold 0.6
+Glitch 2: Intensity 0.2, Speed 4.0, Threshold 0.8
+Glitch 3: Intensity 0.2, Speed 0.5, Threshold 0.5
+Glitch 4: Intensity 0.15, Speed 0.1, Threshold 0.9
+```
 
 ---
 ## 📦 Artifacts {#artifacts}
