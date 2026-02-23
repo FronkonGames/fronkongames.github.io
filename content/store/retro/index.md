@@ -11,21 +11,21 @@ thumbnail:
   url: img/retro.jpg
 ---
 
-'**[Retro](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493?aid=1101l9zFC&utm_source=aff)**' is a great collection of retro effects, simple to use and with many configuration options. It consists of the following effects:
+'**[Retro](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493?aid=1101l9zFC&utm_source=aff)**' is a comprehensive collection of **retro-style post-processing effects**, designed to transform modern 3D visuals into nostalgic retro aesthetics. It consists of the following effects:
 
-* [VHS](#vhs), mimic VHS as true as possible.
-* [Pixelator](#pixelator), unleash stunning retro visuals!
-* [Old Films](#oldfilms), the best way to replicate the look of old movies.
-* [CRT TV](#crttv), the most configurable old TV effect you'll ever find.
-* [Lo-Fi](#lofi), stunning retro-style visuals.
-* [NTSC](#ntsc), simulates the analog video artifacts characteristic of the NTSC.
-* [Noir](#noir), a classic, stylized film noir aesthetic.
-* [Old Computers](#oldcomputers), emulates the color palettes of old 8-bit and 16-bit computers.
-* [ASCII](#ascii), the old-school ASCII effect with steroids.
-* [Spectrum](#spectrum), mimics the legendary ZX Spectrum 8-bits computer from 1982.
-* [LCD](#lcd), simulates the visual characteristics of a Liquid Crystal Display (LCD).
-* [Vintage Filters](#vintagefilters), a great collection of vintage filters inspired by Instagram effects.
-* [Handheld 8-Bit](#handheld8bit), imitates the graphics of the 8-bit handheld consoles of the late 1980s.
+* [VHS](#vhs), the warm, magnetic imperfection of 80s home video.
+* [Pixelator](#pixelator), advanced mosaic and dithering for that golden age look.
+* [Old Films](#oldfilms), cinematic aging with scratches, dust, and projector jitter.
+* [CRT TV](#crttv), the ultimate cathode-ray tube simulation with shadow masks and glow.
+* [Lo-Fi](#lofi), aesthetic degradation with palette crushing and quantization.
+* [NTSC](#ntsc), authentic broadcast signal artifacts, color bleeding, and dot crawl.
+* [Noir](#noir), dramatic monochrome styles from dithered ink to classic cinema.
+* [Old Computers](#oldcomputers), faithful color palettes from the C64, CGA, EGA, and more.
+* [ASCII](#ascii), turns your world into living text with shape-aware character rendering.
+* [Spectrum](#spectrum), the distinct color clash and vivid style of the 8-bit legend.
+* [LCD](#lcd), physical grid simulation of early handhelds and digital displays.
+* [Vintage Filters](#vintagefilters), instant cinematic color grading inspired by classic photography.
+* [Handheld 8-Bit](#handheld8bit), the iconic four-shade green aesthetic of portable gaming history.
 
 {{< alert color="light" >}}
 You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[RETRO BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-bundle-245493?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
@@ -33,29 +33,30 @@ You can obtain each effect separately, but if you want multiple effects, you mig
 
 ## Requirements
 
-All '**Retro**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/index.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
+All '**Retro**' effects are developed for '[Universal Render Pipeline](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-introduction.html)' (or URP), which means they will **not work** with Built-In, or HDRP.
 
-#### Unity 6 or higher
+#### Unity 6 or Higher
 
 All effects are compatible with **Unity 6**, and use the new [Render Graph](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/render-graph-introduction.html). You will need to have URP version *17.0.2* or higher installed. In the [official documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/InstallURPIntoAProject.html) you can find the steps to install it correctly.
 
 Make sure that the '_Compatibility Mode_' is **disabled** (_Project Settings > Graphics > Render Graph_).
 
-{{< image src="compatibility_mode.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="compatibility_mode.jpg" wrapper="col-8 mx-auto">}}
 
-#### Unity 2022.3 or higher
+## Installation
 
-You will need to have URP version *12.1.15* or higher installed. If you don't know how to do it, I recommend you to follow this [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/InstallURPIntoAProject.html).
+#### Step 1: Add Renderer Feature
 
-## Using them in the Editor
+The effects must be registered in your project's [URP configuration](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/introduction-landing.html):
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select the desired distortion from **Fronkon Games > Retro**.
 
 Once installed, you have to add the effect you want to use from '**Retro**' as a '[Render Feature](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature.html)'. This [official tutorial](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-renderer-feature-how-to-add.html) tells how to do it.
 
-{{< image src="editor_0.jpg" wrapper="col-6 mx-auto">}}
-
 Remember that the camera you are using must have the '**Post Processing**' option enabled.
 
-{{< image src="editor_1.jpg" wrapper="col-6 mx-auto">}}
+{{< image src="editor_camera.jpg" wrapper="col-8 mx-auto">}}
 
 {{< alert color="info" >}}
 '_Quality_' levels (_Project Settings > Quality_) can have their own active '_Render Pipeline Asset_'.
@@ -65,912 +66,2919 @@ If so, whatever you assign in '_Scriptable Render Pipeline Settings_' in '_Graph
 **Remember to add the effect to the quality levels you want to use.**
 {{< /alert >}}
 
-## VR
+#### Step 2: Configure The Volume
+
+To apply the effects to your scene:
+
+1. Create a **Volume** component (Global or Local) or select one that has already been created.
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select the desired distortion from **Fronkon Games > Retro**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+{{< alert color="info" >}}
+Remember that for a parameter to take effect, you must activate it. Click on '**ALL**' to activate them all.
+{{< /alert >}}
+
+#### VR
 
 To increase compatibility with VR devices, I recommend that you select '**Stereo Rendering Mode**' in '**Multi Pass**' mode:
 
-{{< image src="vr.jpg" wrapper="col-6 mx-auto">}}
-
-## Using them in code
-
-Once you have added the effect in the Editor, you can also handle '**Retro**' effects by code. 
-
-First you must add the corresponding namespace. They are all of the style 'FronkonGames.Retro.XXXX', where XXXX is the name of the effect. For example, if the effect you want to use is '**Spectrum**' the code would be:
-
-```csharp
-using FronkonGames.Retro.Spectrum;
-```
-
-To modify any of the effect parameters, you must first request its __settings__. In the following example we change the intensity of the effect by half.
-
-```csharp
-Spectrum.Settings settings = Spectrum.Instance.settings;
-
-settings.intensity = 0.5f;
-```
-
-And how can I activate and deactivate the effect? It's as easy as that:
-
-```csharp
-Spectrum spectrum = Spectrum.Instance;
-
-// Switch between active and inactive.
-if (spectrum.isActive == true)
-  spectrum.SetActive(false);
-else
-  spectrum.SetActive(true);
-```
-
-{{< alert color="warning" icon="fas triangle-exclamation" >}}
-The Instance function uses [Reflection](https://learn.microsoft.com/en-us/dotnet/fundamentals/reflection/reflection), and is therefore expensive. I recommend that you save the Instance value to use it without affecting performance.
-{{< /alert >}}
-
-If you are using an effect other than '**Spectrum**' just change it to its name. Check the source code comments for more information.
+{{< image src="vr.jpg" wrapper="col-8 mx-auto">}}
 
 #
 ---
-## VHS {#vhs}
+## 📼 VHS {#vhs}
 {{< asset-header youtube="LH9KDnOq0dg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vhs-244944" demo="https://fronkongames.github.io/demos-retro/vhs/" warn="assets used in video and demo are not included">}}
 
-'**VHS**' mimic as true as possible. Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+Immerse players in the analog warmth of the 80s and 90s. '**VHS**' meticulously recreates the tracking errors, color bleeding, tape noise, and magnetic degradation of vintage home video, perfect for found-footage horror, flashbacks, or a cozy retro vibe.
 
-{{< image src="vhs_0.jpg" wrapper="col-6 mx-auto">}}
+#### Requisites
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-The best quality of the effect is obtained with '**Quality**' (_2_) set to '**High Fidelity**', however on older mobile devices the performance may not be optimal. In that case you can select the '**Performant**' mode which is more suitable for older hardware. In the '**High Fidelity**' mode you can adjust the number of '**Samples**' that are used, the lower the number of samples the more optimal.
+*   **Unity:** 6000.0.58f2 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-A VHS/VHS-C tape has a resolution of 240 vertical lines. You can reduce the resolution with '**Resolution**' (_3_). Select '**Same**' to not reduce it.
+#### Installation Guide
 
-Internally, a VHS tape runs in [YIQ color space](https://en.wikipedia.org/wiki/YIQ), in '**YIQ color space**' (_4_) you can modify its components: _luma_, _in-phase_ and _quadrature_.
+##### Step 1: Add Renderer Feature
 
-Due to the chemical components of the ribbons, over time the dark colors could change and tend to purple. With '**Shadow tint**' (_5_) you can simulate this. You can also select the brightness range with '**Color levels**'.
+The effect must be registered in your project's URP configuration:
 
-As a result of mechanical failures in the heads, some noise bands could appear and also modify the color. This effect can be controlled in '**Tape crease**' (_6_) and its parameters.
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > VHS**.
 
-**Color noise**' (_7_) adds a general noise to the color of the image.
+##### Step 2: Configure the Volume
 
-The information for color and luminance on a VHS tape was limited. With '**Chroma band**' (_8_) and '**Luma band**' (_9_) you can emulate this effect.
+To apply the effect to your scene:
 
-With '**Tape noise high**' (_10_) you can add high frequency noise to the image (and with '**Low**' add low frequency noise).
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > VHS**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-Another very common effect due to head alignment failures was bands that modified the brightness of the image. This effect can be emulated with '**AC beat**' (_11_).
+#### Core VHS Artifacts
 
-With '**Bottom warp**' (_12_) you can simulate the noise in the signal that was produced in the lower part of the image due to head tracking failures.
+##### Tape Distortion System
 
-Thanks to '**Vignette**' (_13_) you can adjust the shading effect on old CRT monitors.
-<!--
-You can also apply the effect on objects in the scene using the material found in '**Fronkon Games/Retro/VHS**'.
+The signature VHS appearance emerges from multiple layers of tape-related distortions that simulate physical tape mechanics and signal degradation. The tape wave creates horizontal displacement using both low and high-frequency noise, simulating the mechanical instability of VCR playback heads. This is implemented through UV coordinate perturbations that shift pixel sampling positions horizontally across the screen.
 
-{{< image src="vhs_1.jpg" wrapper="col-6 mx-auto">}}
+Tape creases represent physical damage to the magnetic tape, manifested as vertical bands of distortion that scroll vertically through the image. These creases combine a phase calculation using sine functions with noise-based modulation, creating realistic banding patterns that vary in intensity and position. The crease strength determines how severe these distortions appear, while the count parameter controls the number of bands present simultaneously.
 
-Simply create a '**Fronkon Games/Retro/VHS**' material and apply it to the object you want.
+The bottom warp effect simulates head-switching noise, a characteristic artifact visible at the bottom of VHS recordings where the playback head transitions between tracks. This effect applies displacement and jitter specifically to the lower portion of the screen based on the height parameter, creating the distinctive horizontal tearing pattern at the image bottom.
 
-{{< video src="vhs_2.mp4" loop="true" autoplay="true">}}
+##### Color Space and Bandwidth Reduction
 
-Remember that the object to which you apply the material **must have UV coordinates**. In the example they are like this:
+VHS technology employed a sophisticated color encoding system with significantly reduced bandwidth for chrominance (color) information compared to luminance (brightness). The effect faithfully replicates this by downscaling the chroma channel to 1/16th resolution and luma to 1/2 resolution before blending them back together. This bandwidth reduction causes the characteristic color bleeding and softness inherent to VHS recordings.
 
-{{< image src="tv_uv.jpg" wrapper="col-6 mx-auto">}}
+The implementation processes the image in YIQ color space rather than RGB, allowing for accurate simulation of how VHS encoded color information. YIQ separates luminance from chrominance into in-phase and quadrature components. This enables precise control over the characteristic color shifts and saturation variations typical of aging VHS tapes.
 
-You have an example in the scene '**FronkonGames/Retro/VHS/Demo/VHS_Material_Demo**'.
--->
+#### Parameter Configuration
+
+{{< image src="vhs_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+The effect provides two quality modes that balance computational cost against visual fidelity. Each mode offers different parameter availability suited for target platform capabilities.
+
+{{< table >}}
+| | |
+|---|---|
+| **Quality** | Determines shader complexity and available features |
+| **Samples** | YIQ calculation samples (HighFidelity only) |
+| **Resolution** | Final output resolution scaling |
+{{< /table >}}
+
+{{< alert color="info" >}}
+The Performant mode disables noise texture sampling and advanced color distortion calculations, making it suitable for mobile VR or other performance-sensitive applications while maintaining essential VHS characteristics.
+{{< /alert >}}
+
+The resolution parameter scales the final output, with Quarter (1/4) providing the classic VHS appearance. Lower resolutions increase the apparent pixelation and blur while improving performance, making it possible to achieve different aesthetic results from near-digital to heavily degraded tape looks.
+
+##### YIQ Color Space Parameters
+
+The YIQ color space parameters control color reproduction and bandwidth limitation.
+
+{{< table >}}
+| | |
+|---|---|
+| **YIQ** | YIQ color space (x: luma, y: in-phase, z: quadrature) |
+| **Luma Band** | Luma resolution reduction factor (VHS uses half) |
+| **Color Noise** | Tape noise |
+| **Chroma Band** | Chroma resolution reduction factor (VHS uses 1/16th) |
+{{< /table >}}
+
+The YIQ parameter provides fine-grained control over color reproduction. The luma component (x) affects overall brightness, while in-phase (y) and quadrature (z) components manipulate specific color channels. Increasing these values creates the characteristic oversaturated colors of VHS, while decreasing them produces the faded appearance of aging tapes.
+
+##### Shadow Tint Parameters
+
+Shadow tinting simulates color casts common in VHS recordings due to phosphor decay or tape chemical breakdown. The default purple tint creates a distinctive horror aesthetic, but this can be adjusted to match specific visual requirements.
+
+{{< table >}}
+| | |
+|---|---|
+| **Shadow Tint** | Shadow tint color |
+| **White Level** | Color levels (white) |
+| **Black Level** | Color levels (black) |
+{{< /table >}}
+
+The YIQ parameter provides fine-grained control over color reproduction. The luma component (x) affects overall brightness, while in-phase (y) and quadrature (z) components manipulate specific color channels. Increasing these values creates the characteristic oversaturated colors of VHS, while decreasing them produces the faded appearance of aging tapes.
+
+Shadow tinting simulates color casts common in VHS recordings due to phosphor decay or tape chemical breakdown. The default purple tint creates a distinctive horror aesthetic, but this can be adjusted to match specific visual requirements.
+
+##### Tape Crease Parameters
+
+The physical tape degradation is controlled through multiple parameters that simulate different aspects of VHS signal instability and damage.
+
+{{< table >}}
+| | |
+|---|---|
+| **Tape Crease Strength** | Noise band that also deforms the color |
+| **Tape Crease Noise** | Band noise |
+| **Tape Crease Velocity** | Band speed |
+| **Tape Crease Count** | Number of bands |
+| **Tape Crease Distortion** | Band color distortion (HighFidelity only) |
+{{< /table >}}
+
+The tape parameters work synergistically to create the organic, unpredictable nature of VHS playback. The crease system combines periodic motion with noise modulation, preventing the bands from appearing artificial or repetitive. The velocity parameter can be negative to reverse the scrolling direction or set to zero for stationary bands, useful for creating paused VCR effects.
+
+##### Tape Noise Parameters
+
+The tape noise system simulates high and low frequency mechanical distortions from the tape transport mechanism.
+
+{{< table >}}
+| | |
+|---|---|
+| **Tape Noise High** | Tape distortion (high frequency) |
+| **Tape Noise Low** | Tape distortion (low frequency) |
+{{< /table >}}
+
+##### AC Beat Parameters
+
+AC beat interference simulates electrical hum from power sources affecting the analog signal, creating horizontal bands of brightness variation that scroll through the image. This was particularly common in older consumer VCRs with poor shielding.
+
+{{< table >}}
+| | |
+|---|---|
+| **AC Beat Strength** | Amount of AC interferences |
+| **AC Beat Count** | AC interferences density |
+| **AC Beat Velocity** | AC interferences velocity |
+{{< /table >}}
+
+##### Bottom Warp Parameters
+
+The bottom warp effect simulates head-switching noise, a characteristic artifact visible at the bottom of VHS recordings where the playback head transitions between tracks.
+
+{{< table >}}
+| | |
+|---|---|
+| **Bottom Warp Height** | 'Head-switching' noise height |
+| **Bottom Warp Distortion** | Distortion strength |
+| **Bottom Warp Jitter Extent** | Extra noise |
+{{< /table >}}
+
+##### Display Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Vignette** | Vignette effect strength |
+{{< /table >}}
+
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.VHS;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out VHSVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.quality.value = Quality.HighFidelity;
+    volume.samples.value = 8;
+    volume.resolution.value = Resolution.Half;
+    volume.tapeCreaseStrength.value = 0.8f;
+    volume.colorNoise.value = 0.2f;
+    // ...
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass. Cost varies with quality setting and sample count.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: Multiple samples depending on quality and effects enabled (tape noise, crease, etc.).
+* Memory: No additional textures.
+
+##### Usage Patterns and Presets
+
+###### Clean Recording Look
+
+For a well-maintained VCR recording appearance:
+* Quality: High Fidelity
+* Tape Crease Strength: 0.1-0.3
+* Tape Noise High/Low: 0.05
+* AC Beat Strength: 0.0-0.05
+* Color Noise: 0.05
+* Saturation: 1.2-1.5
+
+###### Heavily Degrade Tape
+
+For maximum degradation and damage simulation:
+* Quality: High Fidelity
+* Tape Crease Strength: 0.8-1.0
+* Tape Crease Count: 15-25
+* Bottom Warp Height: 30-50
+* AC Beat Strength: 0.2-0.4
+* Color Noise: 0.2-0.3
+* White Level: 0.8
+* Black Level: 0.1
+
+###### Horror / Creepy Vibe
+
+For unsettling, atmospheric effects:
+* Quality: High Fidelity
+* YIQ: (1.2, 1.3, 1.8)
+* Shadow Tint: Purple (0.7, 0, 0.9)
+* Tape Crease Velocity: -2.0 to -3.0
+* Contrast: 1.3-1.5
+* Vignette: 0.4-0.6
+* Saturation: 0.7-0.9
 
 ---
-## Pixelator {#pixelator}
+## 🧊 Pixelator {#pixelator}
 {{< asset-header youtube="lLxdmqDiQec" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-pixelator-292731" demo="https://fronkongames.github.io/demos-retro/pixelator/" warn="assets used in video and demo are not included">}}
 
-'**Pixelator**' allows you to create a wide variety of retro-inspired visuals. It offers highly customizable pixelation, advanced color manipulation including posterization and dithering, unique visual effects like beveling and chromatic aberration, and a suite of color filters.
+Unlock the golden age of gaming with '**Pixelator**'. This versatile powerhouse goes beyond simple downsampling, offering advanced pixelation modes (including circular and hexagonal), rich dithering patterns, and authentic color posterization to craft distinctive low-res art styles instantly.
 
-{{< image src="pixelator_0.jpg" wrapper="col-6 mx-auto">}}
+#### Requisites
 
-#### Main control
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-*   **Intensity**: `float` (Range: 0.0 to 1.0, Default: 1.0)
-    Controls the overall intensity of all combined Pixelator effects. An intensity of 0 means the effect is not applied.
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-#### Pixelation
+#### Installation Guide
 
-*   **Pixelation Mode**: `enum` (Default: Rectangle)
-    Determines the shape and algorithm used for pixelation.
-    Available modes:
-    *   `Rectangle`: Classic square/rectangular pixelation.
-    *   `Circle`: Pixels are represented as circles.
-    *   `Triangle`: Pixels are represented as triangles.
-    *   `Diamond`: Pixels are represented as diamonds.
-    *   `Hexagon`: Pixels are represented as hexagons.
-    *   `Leaf`: A leaf-like pattern for pixel cells.
-    *   `LED`: Simulates an LED screen display.
-    *   `Knitted`: Simulates a knitted or cross-stitch pattern.
+##### Step 1: Add Renderer Feature
 
-*   **Pixel Size**: `float` (Range: 0.0 to 1.0, Default: 0.75)
-    Controls the perceived size of the pixels. The exact interpretation can vary slightly per mode.
+The effect must be registered in your project's URP configuration:
 
-##### Mode-Specific Pixelation Parameters:
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Pixelator**.
 
-*   **For `Rectangle`, `Triangle`, `Hexagon`, `Leaf` modes:**
-    *   **Screen Aspect Ratio**: `bool` (Default: true)
-        If true, uses the screen's aspect ratio to calculate pixel scaling. If false, `Custom Aspect Ratio` is used.
-    *   **Custom Aspect Ratio**: `float` (Range: 0.2 to 5.0, Default: 1.0)
-        Only used if `Screen Aspect Ratio` is false. Defines a custom aspect ratio for pixel scaling.
-    *   **Pixel Scale**: `Vector2` (Default: (1,1))
-        Allows non-uniform scaling of pixels along X and Y axes.
+##### Step 2: Configure the Volume
 
-*   **For `Circle`, `LED` modes:**
-    *   **Radius**: `float` (Range: 0.0 to 1.0, Default: 0.5)
-        Controls the radius of the circular or LED elements within each pixel cell.
-    *   **Background**: `Color` (Default: Black)
-        The color shown in the gaps between circular/LED elements if their radius doesn't fill the cell.
+To apply the effect to your scene:
 
-*   **For `Knitted` mode:**
-    *   **Threads**: `int` (Range: 1 to 8, Default: 3)
-        Simulates the number of threads in the knitted pattern.
-    *   **Pixel Scale**: `Vector2` (Default: (1,1))
-        Controls the scale of the knitted pattern.
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Pixelator**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-#### Gradient Mapping
+#### Core Pixelation System
 
-Maps the screen colors to a custom gradient texture.
+##### Advanced Pixelation Modes
 
-*   **Gradient Intensity**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    The intensity of the gradient mapping effect. 0 means disabled.
-*   **Gradient**: `UnityEngine.Gradient` (Default: Grayscale gradient)
-    The gradient to use for color mapping. This is baked into a texture at runtime.
-*   **Luminance Min**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    The minimum input luminance that maps to the start of the gradient (for Luminance mode).
-*   **Luminance Max**: `float` (Range: 0.0 to 1.0, Default: 1.0)
-    The maximum input luminance that maps to the end of the gradient (for Luminance mode).
-*   **Mapping Mode**: `enum` (Default: CIELAB)
-    Determines how colors are mapped to the gradient.
-    *   `Luminance`: Maps based on the input pixel's luminance.
-    *   `CIELAB`: Maps based on perceptual color similarity in the CIELAB color space, finding the closest color in the gradient.
-*   **CIELAB Samples**: `int` (Range: 2 to 64, Default: 16)
-    Number of samples taken along the gradient texture when `Mapping Mode` is `CIELAB`. Higher values are more accurate but slower.
-*   **Apply Luminance**: `bool` (Default: true)
-    If true, the luminance of the original pixel (or mapped luminance for Luminance mode) is multiplied with the final mapped gradient color. This can preserve some of the original brightness characteristics.
+The foundation of Pixelator lies in its diverse pixelation modes that go far beyond simple square blocking. Each mode implements unique UV coordinate transformations and shape-based sampling to create distinct visual styles.
 
-'**Pixelator**' brings a tool to search through more than 6,000 palettes created by artists. Simply click on the `magnifying glass icon`.
+**Rectangle Mode** provides the classic blocky pixelation by dividing the screen into uniform rectangular cells. The pixel size and scale parameters control the coarseness, while the aspect ratio settings ensure proper proportions across different screen resolutions.
 
-{{< image src="pixelator_1.jpg" wrapper="col-6 mx-auto">}}
+**Circle Mode** creates circular pixel clusters with adjustable radius, producing an organic, bubble-like aesthetic. The background color parameter fills the gaps between circles, allowing for creative color combinations and transparency effects.
 
-Select or use the search to find the palette you want to use and click on its name to apply it automatically.
+**Hexagon Mode** implements hexagonal tiling for a honeycomb-like pattern that mimics certain LED displays and artistic styles. The geometry-based sampling creates natural edge transitions between adjacent cells.
 
-{{< image src="pixelator_2.jpg" wrapper="col-6 mx-auto">}}
+**Knitted Mode** simulates woven textile patterns with configurable thread counts. This mode creates interlaced visual effects reminiscent of knitted fabrics or basket-weave patterns, adding tactile texture to digital imagery.
 
-#### Dithering
+**Specialized Modes** including Triangle, Diamond, and Leaf shapes offer additional artistic options for specific aesthetic requirements. Each mode uses custom shader logic to define cell boundaries and sampling regions.
 
-Simulates colors by using patterns of a limited color palette.
+##### Color Reduction and Dithering
 
-*   **Dither Intensity**: `float` (Range: 0.0 to 1.0, Default: 0.5)
-    The strength of the dithering effect.
-*   **Pattern Scale**: `int` (Options: 2, 4, 8, Default: 4)
-    The size of the Bayer matrix used for ordered dithering (2x2, 4x4, or 8x8).
-*   **Threshold Scale**: `float` (Range: 0.0 to 1.0, Default: 0.75)
-    Adjusts the influence of the dither pattern.
-*   **Color Steps**: `int` (Range: 2 to 16, Default: 8)
-    The number of discrete color steps per channel that the dithering will attempt to simulate.
+Pixelator employs sophisticated color processing techniques to achieve authentic retro color limitations. The posterization system quantizes color values to discrete steps, configurable separately for RGB channels, luminance, or HSV color space.
 
-#### Posterization
+The dithering implementation uses ordered Bayer patterns with adjustable pattern scales (2x2, 4x4, or 8x8). The threshold scale and color steps parameters control the intensity and granularity of the dither effect, creating smooth color transitions even with limited palettes.
 
-Reduces the number of distinct colors in the image.
+Gradient mapping via CIELAB color space enables accurate color replacement based on luminance values. The system samples multiple points along the gradient curve to find optimal color matches, with optional luminance preservation for maintaining image depth.
 
-*   **Posterize Intensity**: `float` (Range: 0.0 to 1.0, Default: 0.5)
-    The overall strength of the posterization effect. 0 effectively disables it.
-*   **RGB Steps**: `Vector3Int` (Range: 2 to 256 per channel, Default: (24,24,24))
-    Number of color steps for Red, Green, and Blue channels respectively when RGB posterization is active.
-*   **Luminance Steps**: `int` (Range: 2 to 256, Default: 24)
-    Number of steps for the luminance channel when Luminance posterization is active.
-*   **HSV Steps**: `Vector3Int` (Range H: 2-64, S: 2-32, V: 2-32, Default: (24,24,24))
-    Number of color steps for Hue, Saturation, and Value channels respectively when HSV posterization is active.
-*   **Gamma**: `float` (Range: 0.1 to 3.0, Default: 1.0)
-    Applies gamma correction before posterization and de-correction after. Values other than 1.0 can change perceived brightness and color relationships.
+##### Stylistic Filter System
 
-#### Bevel Effect
+The integrated filter collection provides one-click aesthetic transformations. Filters operate by applying color matrix transformations, overlay blending, and specialized channel manipulations:
 
-Adds a pseudo-3D bevel based on color differences, giving a chiseled look.
+*   **Photographic Filters** (Sepia, Kodachrome, Polaroid) simulate analog film chemistry through color channel mixing and contrast curves.
+*   **Social Media Styles** (Hudson, Hefe, X-Pro, Rise, Toaster) recreate popular app filter aesthetics using gradient overlays and selective color adjustments.
+*   **Specialized Effects** (Thermal, Night Vision, Infrared, Pop Art, Blueprint) implement domain-specific color transformations for thematic visuals.
 
-*   **Bevel**: `float` (Range: 0.0 to 10.0, Default: 1.0)
-    The strength and depth of the bevel effect.
+#### Parameter Configuration
 
-#### Chromatic Aberration
+{{< image src="pixelator_0.jpg" wrapper="col-10 mx-auto">}}
 
-Simulates lens distortion by offsetting color channels.
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-*   **Chromatic Aberration Intensity**: `float` (Range: 0.0 to 10.0, Default: 1.0)
-    The overall strength of the chromatic aberration effect.
-*   **Offset**: `Vector3` (Default: (1.0, 2.0, -1.0))
-    The amount by which the Red, Green, and Blue channels are shifted, respectively.
+##### Pixelation Parameters
 
-#### Color Filters
+The core pixelation behavior is controlled through these parameters that define shape, size, and appearance of the pixel grid.
 
-Applies various stylistic color filters.
+{{< table >}}
+| | |
+|---|---|
+| **Pixelation Mode** | Shape of the pixelation cells |
+| **Pixel Size** | Size of individual pixels |
+| **Screen Aspect Ratio** | Use screen aspect for pixel scaling |
+| **Aspect Ratio** | Custom aspect ratio when not using screen |
+| **Pixel Scale** | Scale multiplier for pixel dimensions |
+| **Radius** | Circle radius (Circle mode only) |
+| **Background** | Fill color for gaps between shapes |
+| **Threads** | Thread count (Knitted mode only) |
+{{< /table >}}
 
-*   **Filters Intensity**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    The global intensity for all active color filters. Lerps between the original color and the filtered color.
+##### Gradient Mapping Parameters
 
-*   **Sepia**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of the sepia tone filter.
-*   **Cool Blue**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a cool blue tint filter.
-*   **Warm**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a warm orange/yellow tint filter.
-*   **Invert Color**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of the color inversion filter.
-*   **Hudson**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a filter emulating the Hudson Instagram effect (cool, vignetted).
-*   **Hefe**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a filter emulating the Hefe Instagram effect (high contrast, warm, vignetted).
-*   **X-Pro**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a filter emulating the X-Pro II Instagram effect (high contrast, saturated, warm cast, vignette).
-*   **Rise**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a filter emulating the Rise Instagram effect (soft, warm, desaturated).
-*   **Toaster**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a filter emulating the Toaster Instagram effect (strong vignette, warm center, burnt edges).
-*   **Infrared**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of an infrared photography simulation filter.
-*   **Thermal**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a thermal camera/heat map style filter.
-*   **Duotone**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of the duotone filter, which maps image luminance between two chosen colors.
-    *   **Color A**: `Color` (Default: Dark Blue)
-        The first color for the duotone effect (typically for darker areas).
-    *   **Color B**: `Color` (Default: Bright Yellow)
-        The second color for the duotone effect (typically for lighter areas).
-*   **Night Vision**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a night vision goggle simulation filter.
-*   **Pop Art**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a Pop Art style filter using a limited, vibrant color palette.
-*   **Blueprint**: `float` (Range: 0.0 to 1.0, Default: 0.0)
-    Intensity of a blueprint-style filter with edge detection.
-    *   **Edge Color**: `Color` (Default: Light Blue)
-        The color for detected edges in blueprint mode.
-    *   **Background Color**: `Color` (Default: Dark Blue)
-        The background color for blueprint mode.
-    *   **Edge Threshold**: `float` (Range: 0.05 to 0.5, Default: 0.1)
-        The threshold for edge detection in blueprint mode.
+These parameters control gradient-based color mapping to achieve limited palette aesthetics.
 
+{{< table >}}
+| | |
+|---|---|
+| **Gradient Intensity** | Strength of gradient color mapping |
+| **Gradient** | Color gradient for mapping |
+| **Apply Luminance** | Preserve original luminance |
+| **Luminance Range** | Min/Max luminance for gradient mapping |
+| **Gradient Mapping Mode** | Color space for gradient matching |
+| **CIELAB Samples** | Sample count for CIELAB mode |
+{{< /table >}}
+
+{{< image src="pixelator_1.jpg" wrapper="col-8 mx-auto">}}
+
+A tool with thousands of palettes is included. Just click on the magnifying glass to find the perfect color palette.
+
+{{< image src="pixelator_2.jpg" wrapper="col-10 mx-auto">}}
+
+##### Chromatic Aberration Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Chromatic Aberration Intensity** | Color channel separation strength |
+| **Chromatic Aberration Offset** | RGB channel offset directions |
+{{< /table >}}
+
+##### Bevel Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Bevel** | 3D bevel effect on pixel edges |
+{{< /table >}}
+
+##### Dithering Parameters
+
+The dithering implementation uses ordered Bayer patterns with adjustable pattern scales (2x2, 4x4, or 8x8).
+
+{{< table >}}
+| | |
+|---|---|
+| **Dither Intensity** | Strength of dither pattern |
+| **Dither Pattern Scale** | Bayer pattern size (2x2, 4x4, 8x8) |
+| **Dither Threshold Scale** | Dither pattern influence |
+| **Dither Color Steps** | Number of color steps for dithering |
+{{< /table >}}
+
+##### Posterization Parameters
+
+The posterization system quantizes color values to discrete steps, configurable separately for RGB channels, luminance, or HSV color space.
+
+{{< table >}}
+| | |
+|---|---|
+| **Posterize Intensity** | Overall posterization strength |
+| **Posterize RGB Steps** | Steps per RGB channel |
+| **Posterize Luminance Steps** | Steps for luminance mode |
+| **Posterize HSV Steps** | Steps for HSV mode |
+| **Posterize Gamma** | Gamma correction for posterization |
+{{< /table >}}
+
+##### Filter Parameters
+
+{{< image src="pixelator_3.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Filters Intensity** | Global filter strength |
+| **Sepia Intensity** | Sepia tone strength |
+| **Cool Blue Intensity** | Cool blue filter strength |
+| **Warm Filter Intensity** | Warm overlay strength |
+| **Invert Color Intensity** | Color inversion strength |
+| **Hudson Intensity** | Hudson filter strength |
+| **Hefe Intensity** | Hefe filter strength |
+| **X-Pro Intensity** | Cross-process strength |
+| **Rise Intensity** | Rise filter strength |
+| **Toaster Intensity** | Toaster filter strength |
+| **IR Filter Intensity** | Infrared filter strength |
+| **Thermal Filter Intensity** | Thermal vision strength |
+| **Duotone Intensity** | Duotone effect strength |
+| **Duotone Color A** | First duotone color |
+| **Duotone Color B** | Second duotone color |
+| **Night Vision Intensity** | Night vision strength |
+| **Pop Art Intensity** | Pop art filter strength |
+| **Blueprint Intensity** | Blueprint/technical drawing style |
+| **Blueprint Edge Color** | Edge highlight color |
+| **Blueprint Background** | Background color |
+| **Blueprint Edge Threshold** | Edge detection sensitivity |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.Pixelator;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out PixelatorVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.pixelationMode.value = Pixelator.PixelationModes.Circle;
+    volume.pixelSize.value = 0.5f;
+    volume.posterizeIntensity.value = 0.8f;
+    volume.posterizeRGBSteps.value = new Vector3Int(4, 4, 4);
+    volume.filtersIntensity.value = 1.0f;
+    volume.thermalFilterIntensity.value = 0.5f;
+    volume.ditherIntensity.value = 0.6f;
+    volume.bevel.value = 2.0f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass. Cost varies with pixelation mode complexity and dithering settings.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + gradient texture if gradient mode enabled.
+* Complexity: O(1) per pixel, with additional cost for ShapeAware and CIELAB modes.
+
+##### Usage Patterns and Presets
+
+###### Classic 8-Bit Gaming Look
+
+For authentic retro gaming aesthetics:
+* Pixelation Mode: Rectangle
+* Pixel Size: 0.6-0.8
+* Posterize Intensity: 0.7-0.9
+* Posterize RGB Steps: (8, 8, 8)
+* Dither Intensity: 0.4-0.6
+* Bevel: 0.5-1.0
+
+###### Artistic Hexagon Mosaic
+
+For stylized artistic presentations:
+* Pixelation Mode: Hexagon
+* Pixel Size: 0.4-0.6
+* Pixel Scale: (1.2, 1.2)
+* Bevel: 2.0-3.0
+* Gradient Intensity: 0.5-0.8
+* Chromatic Aberration: 0.3-0.5
+
+###### Night Vision Tactical
+
+For stealth game aesthetics:
+* Filters Intensity: 1.0
+* Night Vision Intensity: 0.8-1.0
+* Pixelation Mode: Rectangle
+* Pixel Size: 0.3-0.5
+* Scanlines: 0.2-0.4 (if combined with Lo-Fi)
+* Contrast: 1.2-1.5
 
 ---
-## Old Films {#oldfilms}
+## 🎞️ Old Films {#oldfilms}
 {{< asset-header youtube="zBwXR_i6_gw" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-films-241298" demo="https://fronkongames.github.io/demos-retro/oldfilms/" warn="assets used in video and demo are not included">}}
 
-'**Old Films**' is the best way to simulate the look of any old movie.
+Transport your audience back in time with '**Old Films**'. From the silent era to the gritty 70s, this effect authentically simulates film stock characteristics, projector jitter, dust, scratches, and grain, delivering a cinematic experience that feels truly lived-in.
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+#### Requisites
 
-{{< image src="oldfilms_0.jpg" wrapper="col-6 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-'**Old Films**' mimics a multitude of film manufacturers used in old films, such as Kodak, Agfa or Polaroid. To do this, it use '[Color Decision List](https://en.wikipedia.org/wiki/ASC_CDL)'. You can select the manufacturer using '**Manufacturer**' (_2_).
+#### Installation Guide
 
-'**Vignette**' (_3_) adds some shadows on the edges of the screen. **Sepia**' (_4_) imitates the color that certain chemical reactions may produce over time in films and photographs. By default it is disabled.
+##### Step 1: Add Renderer Feature
 
-**Grain**' (_5_) adds noise to the screen, simulating the small metallic particles that occur in films that have received a lot of light.
+The effect must be registered in your project's URP configuration:
 
-The following parameters cause the frame to appear to move. The first, '**Jump frame**' (_6_), causes small random instantaneous jumps. The second, '**Movement**' (_6_) causes it to move constantly.
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Old Films**.
 
-You can also cause the brightness of the film to change with '**Blink strength**' (_7_).
+##### Step 2: Configure the Volume
 
-The next parameter, '**Blotches**' (_8_), simulates spots on the film that are usually caused by dirt.
+To apply the effect to your scene:
 
-Something you can also see in old films are small scratches. You can simulate them with '**Scratches**' (_9_). Something similar happens with '**Lines**' (_10_).
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Old Films**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Film Characteristics Simulation
+
+##### Manufacturer-Based Color Grading
+
+The foundation of Old Films lies in its accurate reproduction of vintage camera color science. The system implements **Color Decision Lists (CDL)** derived from actual historical film stock characteristics. Each manufacturer preset recreates the unique color response curves of specific camera models:
+
+**German Engineering** presets including KineExakta I/II, Leica I, and Leica III recreate the warm yellows and muted cyans characteristic of 1930s-1940s German optical systems. These cameras used specific lens coatings and film processing techniques that created distinct color casts.
+
+**Japanese Innovation** presets like Canon VT and Nikon F capture the sharp contrast and distinct blue shadows of post-war Japanese camera technology. These presets implement film grain patterns specific to Japanese film stock of the era.
+
+**American Consumer** presets for Kodak Retina series cameras reproduce the consumer-grade color processing of 1950s-1960s family photography, with characteristic warm skin tones and slightly oversaturated greens.
+
+Each manufacturer preset automatically configures color temperature, tint, saturation curves, and contrast profiles specific to the camera's optical characteristics.
+
+##### Frame Artifacts and Damage Simulation
+
+Old Films implements multi-layered noise systems to simulate physical film damage:
+
+**Scratches** use procedural noise generation with temporal coherence to create linear damage patterns that evolve realistically over time. The intensity and speed parameters control the visibility and movement rate of scratch artifacts.
+
+**Blotches** simulate chemical damage or dust accumulation through randomized circular mask generation. The noise-based distribution ensures organic placement across the frame.
+
+**Film Frame Movement** introduces subtle temporal instability through per-frame position offset simulation. This mimics the mechanical imperfections of early film transport systems that caused frames to shift slightly during projection.
+
+**Frame Jumping** creates occasional vertical displacement artifacts that simulate sprocket hole wear or projection stuttering. The jump interval and speed control the frequency and magnitude of these disruptions.
+
+##### Film Grain and Texture
+
+The grain system uses blue noise generation for natural, visually pleasing film grain that doesn't produce aliasing patterns. Key characteristics:
+
+*   **ISO Simulation:** Higher grain values simulate high-sensitivity film stock used in low-light conditions.
+*   **Temporal Consistency:** Grain pattern evolves frame-to-frame for authentic organic movement.
+*   **Luminance-Based:** Grain intensity varies with scene luminance, heavier in shadows like real film.
+
+The vignette system simulates lens light falloff characteristic of vintage optics, with configurable shape and intensity.
+
+#### Parameter Configuration
+
+{{< image src="oldfilms_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Camera and Frame Parameters
+
+Select a vintage camera manufacturer and configure frame behavior.
+
+{{< table >}}
+| | |
+|---|---|
+| **Manufacturer** | Vintage camera preset |
+| **Move Frame** | Subtle frame position jitter |
+| **Jump Frame** | Frame jumping intensity |
+| **Vignette** | Corner darkening intensity |
+| **Sepia** | Brownish tint intensity |
+| **Grain** | Film grain intensity |
+{{< /table >}}
+
+##### Blink Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Blink Strength** | Damaged film flicker effect |
+| **Blink Speed** | Blink animation speed |
+{{< /table >}}
+
+##### Blotches Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Blotches** | Chemical/dust damage count |
+| **Blotch Size** | Blotch size |
+{{< /table >}}
+
+##### Scratches and Lines Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Scratches** | Film scratch intensity |
+| **Lines** | Analog noise line count |
+| **Lines Strength** | Noise line intensity |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.OldFilms;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out OldFilmsVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.manufacturer.value = OldFilms.Manufacturers.LeicaI;
+    volume.sepia.value = 0.5f;
+    volume.grain.value = 0.3f;
+    volume.blotches.value = 0.4f;
+    volume.scratches.value = 0.2f;
+    volume.blink.value = 0.1f;
+    volume.vignette.value = 0.4f;
+    volume.jumpFrame.value = true;
+    volume.jumpFrameInterval.value = 15.0f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with procedurally generated noise. Performance cost scales with damage effect intensity due to increased noise sampling.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + noise samples for each enabled effect.
+* Complexity: O(1) per pixel, with additional noise computation for artifacts.
+
+##### Usage Patterns and Presets
+
+###### 1920s Silent Film Aesthetic
+
+For authentic early cinema appearance:
+* Manufacturer: KineExakta I
+* Sepia: 0.8-1.0
+* Grain: 0.4-0.6
+* Blink: 0.3-0.5
+* Blotches: 0.2-0.4
+* Scratches: 0.3-0.5
+* Frame Rate Hint: Consider reducing game to 16-18 FPS with skip frames
+
+###### 1950s Family Photograph
+
+For warm nostalgic memories:
+* Manufacturer: Kodak Retina I or Kodak Retinette
+* Sepia: 0.3-0.5
+* Grain: 0.2-0.4
+* Vignette: 0.2-0.3
+* Blotches: 0.1-0.2
+* Lines: 0.0-0.1
+
+###### Heavily Damaged Archive
+
+For distressed archival footage:
+* Manufacturer: Any vintage camera
+* Blink: 0.5-0.8
+* Blotches: 0.5-0.8
+* Scratches: 0.6-0.9
+* Jump Frame: true
+* Jump Frame Speed: 2.0-5.0
+* Jump Frame Interval: 3.0-8.0
+* Sepia: 0.7-0.9
 
 ---
-## CRT TV {#crttv}
+## 📺 CRT TV {#crttv}
 {{< asset-header youtube="UFFvtpXdUBc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-crt-tv-241411" demo="https://fronkongames.github.io/demos-retro/crttv/" warn="assets used in video and demo are not included">}}
 
-'**CRT TV**' makes your game look like on an old television, those with the [glass tube](https://en.wikipedia.org/wiki/Cathode-ray_tube). With more than 40 parameters, it is possibly the most configurable effect in the store.
+The ultimate cathode-ray tube simulation. '**CRT TV**' delivers a hyper-realistic display experience complete with adjustable shadow masks, phosphor glow, scanlines, barrel distortion, and signal interference. It's not just a filter; it's a virtual monitor for your digital world.
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+#### Requisites
 
-{{< image src="crttv_0.jpg" wrapper="col-6 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-One of the technologies used by the old cathode-ray tube ('_Cathode-ray tube_' or [CRT](https://en.wikipedia.org/wiki/Cathode-ray_tube)) televisions to produce color images uses a metal plate with tiny holes through which rays pass and which, upon impacting a phosphor surface, produce a color. The rays were fired in threes to hit three areas to produce red, green and blue colors. In the distance you would see the mixture of all, giving rise to a 'pixel', but up close you could see something like this:
+#### Installation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > CRT TV**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > CRT TV**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Physical Display Simulation
+
+##### Shadow Mask Technology
+
+The shadow mask was a critical component of color CRT displays, responsible for ensuring each electron beam struck only its designated phosphor color. CRT TV implements multiple shadow mask types:
 
 {{< image src="crttv_1.jpg" wrapper="col-6 mx-auto">}}
 
-This technique is known as '[Shadow mask](https://en.wikipedia.org/wiki/Shadow_mask)' and you can control its intensity with '**Shadowmask**' (_2_). By generating black areas, the final image will be darker than the original. You can adjust with '**Luminosity**'. You can also change the grid scale using '**Scale**'.
+**Aperture Grille** (Sony Trinitron-style) creates vertical phosphor stripes with fine wire grilles separating red, green, and blue channels. This produces a brighter image with sharper horizontal resolution, characteristic of professional video monitors.
 
-Although it doesn't affect the final result of the image too much, you can change the order of the red, green and blue channels of each grid cell. In '**Color offset**' you can move each channel. You can also vary the hardness of the horizontal and vertical spacing of each cell with '**Horizontal hardness**' and '**Vertical hardness**' respectively.
+**In-Line Shadow Mask** represents the traditional delta-gun CRT design with triangular phosphor dot arrangements and a perforated metal mask. This creates the distinctive "slot mask" appearance common in consumer televisions of the 1980s-1990s.
 
-Due to the curvature of the glass screen, the image on older televisions was distorted. In '**Fisheye**' (_3_) you can simulate this effect. Due to the geometry of the tube, the corners of the image are rounded. With '**Vignette smoothness**' (_4_) you can adjust the image deformation. If you want to adjust the borders of the screen, you can do it with '**Borders**' (one for each axis).
+**Dot Triad** simulates early color CRTs with round phosphor dots arranged in triangular patterns. This vintage configuration produces softer images with characteristic moiré patterns at certain resolutions.
 
-With '**Zoom**' you can adjust the screen size on each axis. By changing the values of '**Zoom**' with Tween functions, you can simulate the switching on and off of the TV.
+The shadow mask implementation includes customizable strength (visibility), scale (aperture size), and brightness compensation to maintain image luminosity despite the light-blocking mask structure.
 
-The reflection on the glass screen can be controlled with '**Shine**' (_5_).
+##### Electron Beam Dynamics
 
-To tint the final image, you can use '**Gamma color**' (_6_) and '**Color curves**' (_7_). The first one enhances the brightest areas, while the second one is applied to the whole image. You can use the _alpha_ channel to modulate the intensity.
+The simulation models physical electron beam behavior that defined CRT image quality:
 
-Another common effect on TVs is the offset of the color channels, using '**RGB offset**' (_8_) you can adjust it. Another similar effect is '**Color bleeding**' (_9_).
+**Barrel Distortion** reproduces the spherical curvature of CRT glass tubes. The fisheye strength controls the degree of curvature, while the distortion parameter adds secondary aberrations. Modern flat-screen CRTs (late 1990s) had minimal distortion, while early televisions exhibited pronounced curvature.
 
-By using a horizontally moving ray to draw the image, a line-like pattern is produced on the screen. With '**Scanlines**' (_10_) you can configure them.
+**Scanline Structure** simulates the visible horizontal gaps between electron beam sweeps. The implementation includes adjustable scanline count, intensity, and softness to match different display resolutions and beam focus characteristics.
 
-With '**Signal interference**' (_11_) you can adjust the interference that often occurs at the bottom of old TV sets.
+**Vertical Interlacing** optionally simulates the alternating field display of interlaced video signals. This creates the characteristic flicker and line-crawl of NTSC/PAL broadcasts at 60Hz/50Hz field rates.
 
-It was also frequent to find 'jumps' in the picture on old TV sets, due to defects in the ray tracer circuitry. With '**Frame shaking**' (_12_) and '**Frame movement**' (_13_) you can simulate them.
+**Beam Persistence (Phosphor Glow)** models the afterglow of phosphor coatings when struck by electrons. Longer persistence creates motion blur beneficial for fast-moving content, while short persistence provides crisp static images.
 
-The signal coming to the recorder was analog and could incorporate noise depending on many factors (signal quality, antenna, weather, etc.). The result was an image with '**Grain**' (_14_) and '**Static noise**' (_15_). Some circuit failures used to produce some bands that moved vertically. You can control them in '**Bar effect**' (_16_).
+##### Signal Path Degradation
 
-In '**Flicker**' (_17_) you can adjust another very common defect in TV sets which is the fluctuation of the screen brightness.
-<!--
-You can also apply the effect on objects in the scene using the material found in '**Fronkon Games/Retro/CRT TV**'.
+Analog broadcast signals suffered multiple forms of interference that CRT TV faithfully reproduces:
 
-{{< image src="crttv_2.jpg" wrapper="col-6 mx-auto">}}
+**Ghosting** simulates multi-path signal reception where reflected signals arrive slightly delayed, creating duplicate offset images.
 
-Simply create a '**Fronkon Games/Retro/CRT TV**' material and apply it to the object you want.
+**Signal Noise** generates static interference from weak broadcast reception or electromagnetic interference, with configurable intensity and movement.
 
-{{< video src="/store/retro/crttv_3.mp4" loop="true" autoplay="true" >}}
+**Vertical Hold** instability causes the image to scroll vertically when sync signals are corrupted, controlled by the shake strength and speed parameters.
 
-Remember that the object to which you apply the material **must have UV coordinates**. In the example they are like this:
+**Color Bleeding** models chroma signal distortion causing color fringing at sharp luminance transitions, typical of composite video connections.
 
-{{< image src="tv_uv.jpg" wrapper="col-6 mx-auto">}}
+#### Parameter Configuration
 
-You have an example in the scene '**FronkonGames/Retro/CRTTV/Demo/CRTTV_Material_Demo**'.
--->
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Shadow Mask Parameters
+
+{{< image src="crttv_0.jpg" wrapper="col-10 mx-auto">}}
+
+Core parameters defining the physical CRT display shadow mask characteristics.
+
+{{< table >}}
+| | |
+|---|---|
+| **Shadowmask Strength** | Visibility of RGB phosphor grid |
+| **Shadowmask Luminosity** | Brightness of the shadow mask |
+| **Shadowmask Scale** | Size of shadow mask apertures |
+| **Vertical Gap Hardness** | Vertical gap hardness factor |
+| **Horizontal Gap Hardness** | Horizontal gap hardness factor |
+| **Color Offset** | RGB color offset for phosphor dots |
+{{< /table >}}
+
+##### Fisheye & Distortion Parameters
+
+{{< image src="crttv_2.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Fisheye Strength** | Fisheye distortion amount |
+| **Fisheye Zoom** | Fisheye zoom factor |
+| **Distortion** | Secondary distortion amount |
+| **Distortion Speed** | Animation speed for distortion |
+| **Distortion Amplitude** | Distortion wave amplitude |
+{{< /table >}}
+
+##### Vignette Parameters
+
+{{< image src="crttv_3.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Vignette Smoothness** | Edge darkening falloff rate |
+| **Vignette Rounding** | Rounding of vignette shape |
+| **Vignette Borders** | Horizontal/vertical border size |
+{{< /table >}}
+
+##### Screen Shine Parameters
+
+{{< image src="crttv_4.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Shine Strength** | Glass reflection/glare intensity |
+| **Shine Color** | Reflection color tint |
+| **Shine Position** | Reflection center position |
+{{< /table >}}
+
+##### RGB Offset & Color Bleeding Parameters
+
+{{< image src="crttv_5.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **RGB Offset Strength** | Color channel misalignment |
+| **Color Bleeding Strength** | Chroma smear amount |
+| **Color Bleeding Distance** | Distance of color bleeding |
+| **Color Curves** | Color curve adjustment |
+| **Gamma Color** | Gamma color adjustment |
+{{< /table >}}
+
+##### Scan Lines Parameters
+
+{{< image src="crttv_6.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Scanlines** | Horizontal line visibility |
+| **Scanlines Count** | Number of scanlines |
+| **Scanlines Velocity** | Animation speed (can be negative) |
+{{< /table >}}
+
+##### Glitch Parameters - Interference
+
+{{< image src="crttv_7.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Interference Strength** | Static/snow interference intensity |
+| **Peak Strength** | Peak interference strength |
+| **Peak Position** | Peak position in the image |
+{{< /table >}}
+
+##### Glitch Parameters - Shake & Movement
+
+{{< image src="crttv_8.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Shake Strength** | Vertical instability amplitude |
+| **Shake Rate** | Shake animation rate |
+| **Movement Strength** | Horizontal displacement strength |
+| **Movement Rate** | Movement animation rate |
+| **Movement Speed** | Movement speed factor |
+{{< /table >}}
+
+##### Glitch Parameters - Noise & Artifacts
+
+{{< image src="crttv_9.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Grain** | Film grain intensity |
+| **Static Noise** | Static noise texture amount |
+| **Bar Strength** | Vertical bar distortion strength |
+| **Bar Height** | Bar height relative to screen |
+| **Bar Speed** | Bar animation speed |
+| **Bar Overflow** | Bar overflow amount |
+| **Flicker Strength** | Brightness pulsation intensity |
+| **Flicker Speed** | Flicker animation rate |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.CRTTV;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out CRTTVVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.shadowmaskStrength.value = 0.8f;
+    volume.shadowmaskScale.value = 1.0f;
+    volume.screenCurvature.value = 0.3f;
+    volume.barrelDistortion.value = 0.2f;
+    volume.scanlines.value = 0.9f;
+    volume.interference.value = 0.15f;
+    volume.shakeStrength.value = 0.05f;
+    volume.rgbOffset.value = 0.3f;
+    volume.colorBleeding.value = 0.4f;
+    volume.screenShine.value = 0.1f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with procedurally generated patterns. Performance cost varies with screen resolution due to scanline generation.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + procedural generation for mask/scanlines.
+* Complexity: O(1) per pixel, with additional cost for curvature and distortion calculations.
+
+##### Usage Patterns and Presets
+
+###### 1980s Consumer Television
+
+For authentic home TV experience:
+* Shadowmask Strength: 0.8-1.0
+* Shadowmask Scale: 1.0-1.2
+* Screen Curvature: 0.3-0.5
+* Scanlines: 0.7-0.9
+* Scanline Count: 480-576
+* Vignette: 0.3-0.5
+* Interference: 0.05-0.15
+* Border: true
+* Border Color: Vintage beige/grey plastic
+
+###### Professional Video Monitor
+
+For broadcast/BVM aesthetic:
+* Shadowmask Strength: 0.6-0.8
+* Shadowmask Scale: 0.8-1.0
+* Screen Curvature: 0.1-0.2 (flat Trinitron)
+* Scanlines: 0.5-0.7
+* Scanline Count: 480-525
+* Vignette: 0.2-0.3
+* Interference: 0.0-0.05
+* Color Bleeding: 0.0-0.1
+* Border: false or minimal
+* Contrast: 1.1-1.3
+
+###### Damaged/Abandoned Display
+
+For horror or dystopian aesthetics:
+* Shadowmask Strength: 0.9-1.0
+* Screen Curvature: 0.4-0.6
+* Scanlines: 0.8-1.0
+* Interference: 0.3-0.6
+* Shake Strength: 0.2-0.5
+* Shake Speed: 5.0-20.0
+* Flicker: 0.3-0.7
+* Flicker Speed: 3.0-10.0
+* Ghosting: 0.2-0.4
+* RGB Offset: 0.2-0.5
 
 ---
-## Lo-Fi {#lofi}
+## 🎧 Lo-Fi {#lofi}
 {{< asset-header youtube="51rAf7z0Plg" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-lo-fi-297300" demo="https://fronkongames.github.io/demos-retro/lofi/" warn="assets used in video and demo are not included">}}
 
-Create stunning retro-style visuals with '**Lo-Fi**'. Craft the perfect nostalgic look for your project.
+Embrace the beauty of limitation. '**Lo-Fi**' is a comprehensive toolkit for crafting aesthetic degradation, offering deep control over color palettes, bit-crushing, and dithering. Perfect for creating moody, atmospheric visuals that evoke the spirit of early digital art and experimental indie games.
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+#### Requisites
 
-{{< image src="lofi_0.jpg" wrapper="col-6 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-#### Master Control
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-*   **Intensity:** Think of this as the main volume knob for the entire effect. Slide it down towards zero to gently blend the retro vibe with your original visuals, or push it up to one for the full, unfiltered Lo-Fi experience. If you set it to zero, the effect won't run at all.
+#### Installation Guide
 
-#### Palette: The Heart of Retro Color
+##### Step 1: Add Renderer Feature
 
-Enable this section to transform your scene's colors using classic, limited palettes.
+The effect must be registered in your project's URP configuration:
 
-*   **Enable Palette:** Toggle this on to activate the color conversion process.
-*   **Profile:** This is where you choose your retro color scheme. Click the search icon to open the Palette Browser and select a pre-made profile (like those mimicking old consoles or computers) or even one you've created yourself. Changing the profile tells the effect which specific set of colors to use.
-*   **Mode:** How should the colors in the palette blend?
-    *   `Blend`: Creates smooth transitions between the colors in the palette, like a gradient.
-    *   `Fixed`: Results in sharp, distinct boundaries between colors, closer to how some very old hardware displayed graphics.
-*   **Sample Method:** This determines *how* the effect decides which palette color to use for each pixel in your original scene. Different methods produce distinct looks:
-    *   `Luminance`: Matches colors based purely on the brightness (luminance) of the original pixel. Good for simple, brightness-based color swaps.
-        *   *Luminance Power:* Adjusts the contrast when using the Luminance method. Higher values make the brightness differences more dramatic in the final palette.
-        *   *Remap Luminance:* Fine-tune which brightness range in the original image gets mapped to the palette. Drag the sliders to focus the effect on shadows, highlights, or mid-tones.
-        *   *Invert:* Flips the palette order, useful for creating negative or unique film-like effects.
-    *   `Distance`: Finds the palette color that is mathematically closest to the original pixel's color in standard RGB space (with perceptual weighting). A good all-around choice.
-    *   `HSV`: Compares colors based on Hue, Saturation, and Value. Can be good at preserving the general *feel* of colors even when the palette is very different.
-    *   `Similarity (CIELab)`: Uses a more advanced, perceptually accurate color comparison (CIELab) to find the closest match. Often gives the most visually pleasing results but is slightly more performance-intensive.
-    *   `Dominant`: Looks at a small area around each pixel, finds the most prominent color, and then maps *that* color to the palette. Can create a slightly chunkier, posterized look.
-*   **Color Threshold (for non-Luminance methods):** How strictly should the effect stick to the palette? Lower values mean the chosen palette color must be very close to the original; higher values allow for looser matches.
-*   **Resolution:** Controls the detail level of the internal texture generated from your chosen palette profile. Higher resolutions mean smoother gradients (in `Blend` mode) and potentially more accurate color matching, but use slightly more memory. You'll see a preview of the generated palette texture below if you have a Profile selected.
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Lo-Fi**.
 
-#### Pixelate: Embrace the Blocks
+##### Step 2: Configure the Volume
 
-Turn this on to give your scene that classic, low-resolution pixelated appearance.
+To apply the effect to your scene:
 
-*   **Enable Pixelate:** Activate the pixelation effect.
-*   **Size:** Determines how big the pixel blocks are. Larger values mean chunkier, more abstract pixels, like zooming in on an old game sprite. The value snaps to even numbers.
-*   **Blend:** How does the pixelated image combine with the original? `Solid` replaces the original, while other modes like `Multiply` or `Additive` can create interesting overlay effects.
-*   **Tint:** Apply a color wash over the pixelated result. Use white for no tint, or pick a color to create monochrome or duotone styles. The alpha channel controls the tint's strength.
-*   **Sobel:** Adds an edge-detection effect to the pixel blocks, giving them a subtle, pseudo-3D look.
-    *   *Sobel Power:* Controls the strength of the edge effect.
-    *   *Sobel Light Angle:* Sets the direction the 'light' seems to be coming from for the edge effect, influencing where highlights and shadows appear on the pixel edges.
-    *   *Sobel Light Intensity:* How bright is the light source for the Sobel effect? Affects the contrast of the edges.
-    *   *Sobel Ambient:* Sets a base light level, preventing the shadowed parts of the Sobel effect from becoming completely black.
-*   **Round:** Smooths the corners of the pixel blocks. At 0, they are perfect squares; slide towards 1 to make them increasingly circular.
-    *   *Bevel:* When `Round` is greater than zero, this adds a 3D-like bevel to the rounded pixel edges, enhancing the sense of depth.
-*   **Samples:** Improves the quality of the pixelation by taking multiple samples within each original pixel area before creating the final block color. Higher values give smoother results (less jaggedness) but cost more performance. A value of 1 is the fastest but can look more aliased.
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Lo-Fi**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-#### Scanline: CRT Monitor Vibes
+#### Color Palette Architecture
 
-*   **Scanline Intensity:** Adds horizontal lines across the screen, mimicking the look of old CRT monitors. Slide from 0 (no lines) up to 1 (strong lines).
-*   **Count:** How many scanlines should appear vertically? More lines mean finer, denser scanlines.
-*   **Speed:** Makes the scanlines gently scroll up or down the screen. Use negative values for upward movement, positive for downward. Zero keeps them static.
+##### Palette-Based Color Remapping
 
-#### Screen Effects
+The centerpiece of Lo-Fi is its sophisticated color palette system that transforms modern 24-bit color into limited, stylized palettes. The system supports multiple palette sources:
 
-*   **Vignette:** Darkens the corners and edges of the screen, simulating the natural light falloff on CRT displays. Higher values create a stronger, more focused center.
-*   **Quantization:** Reduces the number of distinct colors visible on screen *after* other effects are applied, forcing the image into a more limited color range for an extra retro feel.
-    *   *Colors:* Sets the target number of colors for the quantization process. Lower values (like 8, 16, or 32) create more noticeable color banding.
-*   **Chromatic Aberration:** Introduces color fringing, especially towards the edges of the screen. This simulates the lens distortions or signal imperfections common in older display technologies.
-*   **Glass Shine:** Adds a subtle, broad highlight, like light reflecting off the curved glass surface of a CRT monitor.
-    *   *Shine Size:* Controls how large and diffuse the glass shine effect is.
-*   **Aperture:** Simulates the physical mask or grille inside a CRT, slightly darkening the edges and creating a softer frame within the screen area. Lower values make the effect more pronounced.
-*   **Curvature:** Bends the entire image outwards, mimicking the physically curved screens of old CRT monitors. Higher values create a more noticeable bulge.
+**Built-in Palettes (+3000)** include historically accurate color sets from classic hardware: Game Boy (4 shades), CGA (16 colors), EGA (64 colors), and various artistic palettes. Each palette is stored as a lookup texture for efficient GPU sampling.
 
-#### Border: Frame Your View
+**Custom Palettes** allow you to define your own color sets using Unity gradient assets. The system converts gradients into optimized lookup textures at load time.
 
-*   **Enable Border:** Adds a solid border around the screen, simulating the plastic bezel of a vintage monitor or TV.
-*   **Color:** Choose the color for the border. The default is a classic beige.
-*   **Smooth:** Controls how soft the transition is between the screen image and the border. Higher values create a more feathered edge.
-*   **Noise:** Adds a subtle noise texture to the border, giving it a slightly aged or textured look.
-*   **Margins:** Adjust the thickness of the border horizontally (x) and vertically (y).
+**Sampling Methods** determine how input colors map to palette entries:
+*   **Distance** measures Euclidean distance in RGB space for closest color matching.
+*   **Luminance** converts colors to grayscale then finds the closest palette match by brightness.
+*   **CIELab** uses perceptually uniform color space for more accurate visual matching.
 
-#### Using the Palette Browser
+**Blend Modes** control how palette colors mix with the original image:
+*   **Blend** smoothly interpolates between original and palette-matched colors.
+*   **Solid** uses pure palette colors only.
+*   **Multiply** darkens using palette colors as a modulating factor.
 
-{{< image src="lofi_1.jpg" wrapper="col-6 mx-auto">}}
+##### Quantization and Bit-Crushing
 
-The Palette Browser is a handy tool designed to help you discover, manage, and apply **+6000** palettes for the Retro Lo-Fi effect directly within the Unity editor.
+Quantization reduces color depth to simulate limited hardware color capabilities:
 
-##### Opening the Browser
+**RGB Quantization** independently reduces red, green, and blue channel precision. Setting all to 8 recreates 8-bit color (256 colors), while 2 creates harsh posterized effects.
 
-You can typically access the Palette Browser by clicking the small search icon next to the **Profile** field in the Lo-Fi effect settings in the Inspector.
+**Luminance Quantization** reduces grayscale levels independently of hue, preserving color relationships while limiting tonal range.
 
-##### Exploring Palettes
+**HSV Quantization** operates in hue-saturation-value space, allowing selective reduction of hue variation while maintaining brightness or saturation.
 
-Once opened, the Palette Browser presents you with a list of available `LoFiProfile` assets found in your project.
+#### Pixel Processing System
 
-###### Finding Your Palette
+##### Block Pixelation
 
-*   **Search Bar:** At the top right, use the search bar to quickly find palettes by typing parts of their **name** or any associated **tags**. Hit Enter or wait a moment for the list to filter. Click "Clear" to remove the search term.
-*   **Sorting:** Next to the search bar, you can choose how to sort the palettes:
-    *   By **Name** (A-Z or Z-A)
-    *   By **Likes** (Most popular first or least popular first - *Note: 'Likes' seem to be a predefined value in the profile asset*)
-    *   By **Color Count** (Fewest colors first or most colors first)
-    Click "Apply Sort" after selecting your preferred order.
-*   **Tag Filters:** Click the "Show Tag Filters" button to reveal a list of tags associated with the palettes. Tags are sorted by how many palettes use them.
-    *   Click on one or more tags to filter the list, showing only palettes that contain *all* the selected tags.
-    *   The button for a selected tag will appear highlighted. Click it again to deselect it.
-    *   Click "Clear All" in the tag filter section to remove all tag selections.
+The pixelation system divides the screen into rectangular blocks and samples a single color per block. Key parameters:
 
-###### Palette List
+**Pixel Size** controls block dimensions in screen pixels. Larger values create more abstract, chunky aesthetics.
 
-The main area displays the filtered and sorted palettes. Each palette entry shows:
+**Pixel Rounding** applies corner rounding to blocks, creating soft organic shapes rather than hard squares.
 
-*   **Title:** The name of the palette profile.
-*   **Likes:** A small heart icon followed by a number, indicating its popularity score.
-*   **Color Preview:** A horizontal strip showcasing the first 16 colors contained within the palette.
-*   **Use Button:** Click this button to instantly apply the selected palette profile to the active Lo-Fi effect settings in your scene's rendering pipeline.
+**Pixel Blend** determines how the pixelated result combines with the original image, allowing partial pixelation effects.
 
-###### Navigation
+**Pixel Sobel** applies edge detection highlighting to block boundaries, creating embossed 3D-like effects on pixel edges.
 
-If there are more palettes than can fit on one screen (typically 5 per page), pagination controls will appear at the bottom:
+**Pixel Bevel** simulates directional lighting on pixel blocks, creating depth and dimension.
 
-*   Use the **"◄ Previous"** and **"Next ►"** buttons to navigate between pages.
-*   The text in the middle shows your current page number and the total number of pages.
+##### CRT Display Features
 
-##### Applying a Palette
+Lo-Fi includes optional CRT simulation features:
 
-When you find a palette you like, simply click the **"Use"** button on its entry. The browser will attempt to find the Lo-Fi effect settings in your project's Universal Render Pipeline asset and update the **Profile** field automatically.
+**Scanlines** create horizontal dark bands between pixel rows. The intensity, count, and speed parameters control visibility and animation.
 
-{{< alert type="info" >}}
-This requires the Lo-Fi effect to be added as a Renderer Feature in your active URP Renderer Data asset. If the effect isn't found, you'll receive a notification.
-{{< /alert >}}
+**Chromatic Aberration** simulates lens distortion by offsetting RGB channels, creating vintage optical effects.
 
-The Palette Browser makes it easy to experiment with different color schemes and find the perfect retro look for your project!
+**Vignette** darkens screen corners to simulate CRT light falloff and focus limitations.
+
+**Screen Shine** adds a reflective overlay simulating glass screen glare.
+
+#### Parameter Configuration
+
+{{< image src="lofi_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Palette Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Palette** | Enable palette color remapping |
+| **Profile** | Palette asset to use |
+| **Mode** | Palette color blending method |
+| **Sample Method** | Color matching algorithm |
+| **Resolution** | Palette texture resolution |
+| **Luminance Pow** | Contrast between brightness areas (Luminance mode) |
+| **Range** | Min/Max luminance for remapping (Luminance mode) |
+| **Invert** | Reverse palette order (Luminance mode) |
+| **Color Threshold** | Maximum allowed color deviation (other modes) |
+{{< /table >}}
+
+{{< image src="lofi_1.jpg" wrapper="col-10 mx-auto">}}
+
+Click on the magnifying glass icon to access the palette search tool and find the colors you are looking for.
+
+##### Pixelation Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Pixelate** | Enable block pixelation |
+| **Pixel Size** | Size of pixel blocks |
+| **Pixel Blend** | Blending with original |
+| **Pixel Tint** | Color overlay on pixels |
+| **Pixel Sobel** | Edge detection on pixels |
+| **Pixel Sobel Power** | Sobel edge intensity |
+| **Pixel Sobel Angle** | Light direction for Sobel |
+| **Pixel Sobel Light** | Light brightness |
+| **Pixel Sobel Ambient** | Base lighting level |
+| **Pixel Round** | Corner rounding amount |
+| **Pixel Bevel** | 3D bevel effect intensity |
+| **Pixel Samples** | Anti-aliasing sample count |
+{{< /table >}}
+
+##### Scanline Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Scanline** | Horizontal line visibility |
+| **Scanline Count** | Number of scanlines |
+| **Scanline Speed** | Animation speed |
+{{< /table >}}
+
+##### Display Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Vignette** | Corner darkening |
+| **Quantization** | Enable color depth reduction |
+| **Colors** | Maximum number of quantized colors |
+| **Chromatic Aberration** | RGB channel separation |
+| **Shine** | Glass reflection |
+| **Shine Size** | Reflection spread |
+| **Aperture** | Screen edge mask |
+| **Curvature** | Screen curvature |
+| **Border** | Show monitor bezel |
+| **Border Color** | Bezel color |
+| **Border Smooth** | Edge softness |
+| **Border Noise** | Bezel texture |
+| **Border Margins** | Bezel width/height |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.LoFi;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out LoFiVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.palette.value = true;
+    volume.mode.value = LoFi.BlendModes.Solid;
+    volume.sampleMethod.value = LoFi.SampleMethod.Luminance;
+    resolution.value = LoFi.PaletteResolutions._16;
+    volume.pixelate.value = true;
+    volume.pixelSize.value = 8;
+    volume.pixelSobel.value = 0.5f;
+    volume.pixelBevel.value = 0.3f;
+    volume.scanline.value = 0.5f;
+    volume.vignette.value = 0.4f;
+    volume.chromaticAberration.value = 0.3f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass. Palette generation is cached when parameters don't change. Performance cost scales with pixelation block count.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + palette lookup.
+* Complexity: O(1) per pixel, with additional cost for Sobel edge detection.
+
+##### Usage Patterns and Presets
+
+###### Game Boy Aesthetic
+
+For authentic 4-shade portable gaming:
+* Palette: Game Boy 4-color
+* Palette Mode: Solid
+* Pixelate: true
+* Pixel Size: 4-6
+* Pixel Samples: 1 (sharp pixels)
+* Scanlines: 0.0 (LCD didn't have scanlines)
+* Contrast: 1.1-1.2
+* Saturation: 0.0 (grayscale)
+
+###### Vaporwave Aesthetic
+
+For 90s digital art vibes:
+* Palette: Custom gradient with pinks, cyans, purples
+* Mode: Blend
+* Pixelate: true
+* Pixel Size: 3-5
+* Pixel Rounding: 0.2-0.4
+* Scanlines: 0.3-0.5
+* Chromatic Aberration: 0.4-0.7
+* Vignette: 0.4-0.6
+
+###### Indie Game Crunch
+
+For stylized low-fi game aesthetic:
+* Quantization: true
+* Colors: 16-32
+* Palette: false (use quantization only)
+* Pixelate: true
+* Pixel Size: 6-10
+* Pixel Sobel: 0.3-0.5
+* Scanlines: 0.2-0.4
+* Vignette: 0.2-0.4
 
 ---
-## NTSC {#ntsc}
+## 📡 NTSC {#ntsc}
 {{< asset-header youtube="MXQ5qz31Cos" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-ntsc-321946" demo="https://fronkongames.github.io/demos-retro/ntsc/" warn="assets used in video and demo are not included">}}
 
-This effect simulates the analog video artifacts characteristic of the [NTSC](https://en.wikipedia.org/wiki/NTSC) (National Television System Committee) broadcast standard, commonly associated with older televisions and VHS tapes in North America and Japan.
+Capture the imperfect charm of broadcast television. '**NTSC**' faithfully emulates the composite signal artifacts of the analog era, including 'rainbow' moiré, dot crawl, and signal bleeding. Essential for vaporwave aesthetics and authentic 80s/90s broadcast simulations.
 
-It aims to replicate visual imperfections such as color bleeding, dot crawl, scanlines (though not explicitly a parameter, it's an emergent property of NTSC emulation), phase errors, and signal noise to achieve a retro aesthetic.
+#### Requisites
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-{{< image src="ntsc_0.jpg" wrapper="col-6 mx-auto">}}
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-#### NTSC Settings
+#### Installation Guide
 
-*   **Intensity**: `float` [0, 1], Default: 1
-    *   Controls the overall strength of the NTSC effect. A value of 0 will bypass the effect.
-*   **Window Radius**: `int` [1, 64], Default: 20
-    *   Controls the size of the sinc filter window used in NTSC signal processing passes. Larger values use more samples, which can improve quality by reducing aliasing and ringing artifacts but will increase computational cost.
-*   **NTSC Scale**: `float` [0.1, 5.0], Default: 1.0
-    *   An overall scaling factor for NTSC artifacts related to the width of pixels. This can affect the prominence of artifacts like color fringing and dot crawl.
-*   **Phase Alternation**: `float` [0.0, ~PI], Default: 0.0
-    *   Simulates the phase alteration per scanline, a characteristic of NTSC signals that can cause hues to shift on alternate lines. A value of 0.0 disables this, while a value close to PI (3.1415927) enables it. This is often related to the "Never The Same Color" moniker of NTSC.
-*   **Noise**: `float` [0.0, 1.0], Default: 0.1
-    *   Controls the amount of random TV static or signal noise added to the image.
-*   **Window Bias**: `float` [-1.0, 1.0], Default: 0.0
-    *   Offsets the shape of the sinc filter window. This can cause artifacts to smear or trail more to one side than the other, affecting the appearance of ringing and other signal-related distortions.
+##### Step 1: Add Renderer Feature
 
-#### Encoder
+The effect must be registered in your project's URP configuration:
 
-These settings control the simulation of the NTSC encoding process, where the original RGB signal is converted into Luminance (Y) and Chrominance (I, Q) components and modulated onto a carrier wave.
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > NTSC**.
 
-*   **AM Carrier**: `float` [0.5, 10.0], Default: 2.0
-    *   Wavelength of the Amplitude Modulation (AM) carrier signal used in the NTSC encoding pass. This influences how the luma and chroma information is combined.
-*   **Wavelengths Low-Pass**:
-    *   **Y LowPass**: `float` [0.1, 10.0], Default: 1.0
-        *   Wavelength for the low-pass filter applied to the luminance (Y) component before encoding. Lower values retain more high-frequency detail in luminance, while higher values soften it. This affects the sharpness and can interact with color fringing.
-    *   **I LowPass**: `float` [1.0, 20.0], Default: 8.0
-        *   Wavelength for the low-pass filter applied to the I (in-phase) chrominance component. NTSC allocates less bandwidth to chroma, so I and Q are typically blurred. Higher values increase color smearing and reduce chroma resolution for the I component (orange-cyan axis).
-    *   **Q LowPass**: `float` [1.0, 20.0], Default: 11.0
-        *   Wavelength for the low-pass filter applied to the Q (quadrature) chrominance component. Similar to I LowPass, but for the Q component (green-magenta axis), which typically has even less bandwidth. Higher values increase color smearing.
-*   **Colorburst**: `float` [1.0, 10.0], Default: 3.0
-    *   Wavelength of the colorburst signal for the NTSC encoder pass. The colorburst is a reference signal used by the decoder to correctly interpret hues.
+##### Step 2: Configure the Volume
 
-#### Decoder
+To apply the effect to your scene:
 
-These settings control the simulation of the NTSC decoding process, where the modulated NTSC signal is converted back into a viewable image, introducing further artifacts.
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > NTSC**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-*   **AM Demodulate**: `float` [0.5, 10.0], Default: 2.0
-    *   Wavelength used for AM signal demodulation in the NTSC decoding pass. This is part of separating the luma and chroma information.
-*   **AM Decode HiPass**: `float` [0.5, 10.0], Default: 2.0
-    *   Wavelength for the high-pass filter used during AM decoding. This helps separate the chroma information from the luma.
-*   **Colorburst**: `float` [1.0, 10.0], Default: 3.0
-    *   Wavelength of the colorburst signal used by the NTSC decoder pass to correctly align and interpret the chrominance information. Mismatches with the encoder can lead to color errors.
-*   **Decode LowPass**: `float` [1.0, 10.0], Default: 4.5
-    *   Wavelength for the low-pass filter applied during the final NTSC decoding stage. This affects the overall blurriness of the decoded signal and can reduce dot crawl and other high-frequency artifacts.
+#### Composite Signal Simulation
+
+##### The NTSC Encoding Process
+
+The NTSC (National Television System Committee) standard encodes color information within a luminance signal for backward compatibility with black-and-white televisions. The NTSC effect simulates this complex analog encoding/decoding pipeline that introduced characteristic artifacts:
+
+**YIQ Color Space** is the foundation of NTSC encoding. The input RGB image is converted to Y (luminance/brightness), I (in-phase chrominance), and Q (quadrature chrominance) components. This separation allows independent bandwidth limitation of color information.
+
+**Bandwidth Limitation** is the source of many NTSC artifacts. The human eye is more sensitive to luminance detail than color detail, so NTSC allocates approximately 4.2MHz bandwidth to luminance (Y) but only 1.5MHz to I and 0.5MHz to Q. The effect simulates these limitations through low-pass filtering with configurable wavelengths.
+
+**Quadrature Amplitude Modulation (QAM)** encodes I and Q chrominance signals onto a 3.58MHz color subcarrier. The AM carrier signal wavelength parameters control how color information is modulated onto the luminance signal.
+
+**Colorburst Signal** provides phase reference for decoding. The colorburst wavelength parameters define the subcarrier reference signal that receivers use to correctly demodulate color information.
+
+##### Artifact Generation
+
+The NTSC encoding process inevitably creates visual artifacts:
+
+**Rainbow Artifacts** (Cross-Color) occur when high-frequency luminance detail is mistaken for chrominance information during decoding. This creates colored "rainbows" along sharp edges like text or striped patterns. Controlled by the NTSC Scale and colorburst wavelength parameters.
+
+**Dot Crawl** appears as moving checkerboard patterns along vertical color transitions, caused by incomplete separation of luminance and chrominance during decoding. Adjusted through the Y/I/Q lowpass wavelengths.
+
+**Color Bleeding** results from limited chrominance bandwidth, causing color to smear horizontally at sharp transitions. Higher I and Q lowpass wavelengths reduce bleeding but may introduce other artifacts.
+
+**Phase Alternation** (PAL-specific, but simulated here) reverses the phase of the color subcarrier on alternate lines to cancel phase errors. Setting this to PI (3.14159) enables PAL-style color error correction.
+
+##### Signal Noise and Degradation
+
+Analog broadcast signals were susceptible to various noise sources:
+
+**Static/Noise** simulates random RF interference creating the characteristic "snow" on weak broadcast signals. The noise strength and window bias parameters control visibility and distribution.
+
+**Window Bias** offsets the sinc filter window shape, creating asymmetric artifacts where smearing occurs more to one side than the other, simulating receiver misalignment.
+
+**Decoding Errors** result from imperfect signal separation. The decode lowpass wavelength controls final filtering that affects how cleanly luminance and chrominance are separated.
+
+#### Parameter Configuration
+
+{{< image src="ntsc_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Signal Parameters
+
+Core NTSC signal configuration parameters.
+
+{{< table >}}
+| | |
+|---|---|
+| **Window radius** | Sinc filter sample window size |
+| **Scale** | Overall artifact scaling factor |
+| **Phase alternation** | PAL-style phase reversal (0 = off, PI = on) |
+{{< /table >}}
+
+##### Noise Parameters
+
+Controls noise and signal degradation simulation.
+
+{{< table >}}
+| | |
+|---|---|
+| **Noise strength** | Static/snow intensity |
+| **Window bias** | Filter window offset (creates asymmetric artifacts) |
+{{< /table >}}
+
+##### Encoder
+
+Controls how the signal is encoded for broadcast transmission.
+
+{{< table >}}
+| | |
+|---|---|
+| **AM carrier Wavelength** | Color subcarrier modulation wavelength |
+| **Y low-pass** | Luminance bandwidth limit |
+| **I low-pass** | I chrominance bandwidth (higher = more color smear) |
+| **Q low-pass** | Q chrominance bandwidth (higher = more color smear) |
+| **Colorburst encoder** | Encoder color reference signal |
+{{< /table >}}
+
+##### Decoder
+
+Controls how the signal is received and decoded.
+
+{{< table >}}
+| | |
+|---|---|
+| **AM demodulate wavelength** | Color demodulation wavelength |
+| **AM decode high-pass** | High-pass filtering in decoder |
+| **Colorburst decoder** | Decoder color reference signal |
+| **Decode low-pass** | Final signal filtering |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.NTSC;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out NTSCVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.ntscNoiseStrength.value = 0.2f;
+    volume.yLowPassWavelength.value = 1.5f;
+    volume.iLowPassWavelength.value = 6.0f;
+    volume.qLowPassWavelength.value = 9.0f;
+    volume.ntscScale.value = 1.2f;
+    volume.ntscPhaseAlternation.value = Mathf.PI; // Enable PAL-style
+    volume.decodeLowPassWavelength.value = 3.5f;
+}
+```
+
+##### Performance Characteristics
+
+The effect uses a multi-pass implementation (Encode -> Decode) with sinc-based convolution filters. Performance scales with the window radius parameter.
+
+* Pass Count: Multi-pass effect (Encode -> Decode).
+* Texture Samples: Multiple samples per pixel for convolution filters.
+* Complexity: Scales with Window Radius and screen resolution.
+
+##### Usage Patterns and Presets
+
+###### Authentic 1980s Broadcast
+
+For genuine VHS/broadcast aesthetic:
+* NTSC Scale: 1.0-1.5
+* Window Radius: 20-30
+* Y LowPass: 1.0-2.0
+* I LowPass: 8.0-12.0
+* Q LowPass: 10.0-15.0
+* Noise Strength: 0.1-0.2
+* Colorbleed: 0.3-0.5 (simulate composite connection)
+* Saturation: 1.1-1.3 (NTSC had vibrant colors)
+
+###### Weak Signal / Static
+
+For broken broadcast reception:
+* NTSC Scale: 0.8-1.2
+* Noise Strength: 0.4-0.8
+* Window Bias: -0.3 to 0.3
+* Y LowPass: 2.0-4.0 (more blur)
+* I/Q LowPass: 15.0-20.0 (heavy color smear)
+* Contrast: 0.8-1.0
+* Decode LowPass: 2.0-3.0
+
+###### Vaporwave Aesthetic
+
+For stylized retro digital art:
+* NTSC Scale: 1.5-2.5 (exaggerated artifacts)
+* Y LowPass: 0.5-1.0 (sharper luminance)
+* I/Q LowPass: 5.0-8.0 (controlled bleeding)
+* Phase Alternation: 3.14159
+* Noise Strength: 0.05-0.15
+* Hue: 0.9-0.95 (slight magenta shift common to vaporwave)
+* Saturation: 1.2-1.5
 
 ---
-## Noir {#noir}
+## 🕵️ Noir {#noir}
 {{< asset-header youtube="U3wnxAc5Cww" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-noir-322864" demo="https://fronkongames.github.io/demos-retro/noir/" warn="assets used in video and demo are not included">}}
 
-A comprehensive post-processing solution designed to give your projects a classic, stylized film noir aesthetic. It combines several configurable visual elements to achieve a range of looks, from subtle desaturation and mood lighting to more pronounced vintage film appearances.
+Paint your world in shadow and light. '**Noir**' provides a sophisticated suite of monochrome rendering techniques, from high-contrast ink styles to subtle halftones and dithering. Create dramatic, mysterious atmospheres worthy of a classic detective thriller.
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+#### Requisites
 
-{{< image src="noir_0.jpg" wrapper="col-6 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-#### Noir
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-The `Noir` parameter transforms the scene into a black and white image, offering four distinct artistic methods to simulate classic printing and display techniques. Each method provides a unique visual style, from granular dithering to structured lines and patterns.
+#### Installation Guide
 
-{{< image src="noir_1.png" wrapper="col-6 mx-auto">}}
+##### Step 1: Add Renderer Feature
 
-- **Dither**: This method uses an 8x8 Bayer matrix to create a dithered black and white image, simulating the look of early digital displays.
-  - `Spread`: Controls the spread of the dither pattern.
-  - `Density`: Adjusts the density of the dither effect.
-  - `Color Blend`: Determines how the dithered pattern blends with the original image.
+The effect must be registered in your project's URP configuration:
 
-{{< image src="noir_2.png" wrapper="col-6 mx-auto">}}
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Noir**.
 
-- **Dot Screen**: Simulates the dot matrix printing technique, creating a grid of dots of varying sizes to represent shades of gray.
-  - `Grid Size`: Sets the size of the dot screen grid.
-  - `Luminance Gain`: Adjusts the luminance gain, affecting the size of the dots.
-  - `Color Blend`: Specifies the blending mode for the dot screen effect.
+##### Step 2: Configure the Volume
 
-{{< image src="noir_3.png" wrapper="col-6 mx-auto">}}
+To apply the effect to your scene:
 
-- **Halftone**: Mimics the halftone printing process, using dots of varying sizes and angles to create tonal variations.
-  - `Size`: Controls the size of the halftone dots.
-  - `Angle`: Sets the angle of the halftone pattern.
-  - `Threshold`: Defines the threshold for the halftone effect.
-  - `Color Blend`: Determines how the halftone pattern is blended.
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Noir**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-{{< image src="noir_4.png" wrapper="col-6 mx-auto">}}
+#### Monochrome Rendering Systems
 
-- **Lines**: This method uses parallel lines of varying thickness to create the black and white image, similar to an engraved or etched illustration.
-  - `Count`: Sets the number of lines.
-  - `Granularity`: Adjusts the granularity of the lines.
-  - `Threshold`: Defines the threshold for line visibility.
-  - `Color Blend`: Specifies the blending mode for the lines.
+##### Pattern-Based Dithering Methods
 
-#### Duo Tone
+Noir implements multiple artistic dithering algorithms for converting continuous-tone images to limited-color representations:
 
-The Duo Tone effect remaps the image's tones to a gradient between two specified colors, creating a stylized, two-color look. This is often used for dramatic and artistic visuals.
+{{< image src="noir_1.png" wrapper="col-10 mx-auto">}}
 
-- `Intensity`: Controls the overall intensity of the Duo Tone effect.
-- `Brightness Color`: Sets the color for the brighter parts of the image.
-- `Darkness Color`: Sets the color for the darker parts of theimage.
-- `Threshold`: Defines the midpoint between the brightness and darkness colors.
-- `Luminance Min Range`: Sets the minimum luminance range for the effect.
-- `Luminance Max Range`: Sets the maximum luminance range for the effect.
-- `Softness`: Controls the smoothness of the transition between the two colors.
-- `Exposure`: Adjusts the overall exposure of the image.
-- `Emboss Dark`: Adds an embossing effect to the dark areas.
-- `Color Blend`: Determines how the duo tone colors blend with the scene.
+**Bayer Dithering** uses ordered threshold matrices to create regular dot patterns that simulate intermediate tones. The 4x4 Bayer matrix produces characteristic cross-hatch patterns. Parameters control dither spread (range of values that produce dots) and density (overall pattern intensity).
 
-#### Sepia
+{{< image src="noir_2.png" wrapper="col-10 mx-auto">}}
 
-The Sepia effect applies a brownish tint to the image, simulating the look of aged photographs from the early days of photography.
+**Dot Screen** simulates traditional printing halftones by converting luminance values into dots of varying size. This creates the distinctive newspaper/magazine aesthetic. The luminance gain parameter boosts brightness to ensure dots remain visible in shadow areas.
 
-- `Intensity`: Controls the strength of the Sepia toning. A value of 0 means no effect, while 1 applies the full effect.
+{{< image src="noir_3.png" wrapper="col-10 mx-auto">}}
 
-#### Chromatic Aberration
+**Halftone** creates angled line patterns that vary in density based on luminance. The classic comic book aesthetic uses 45-degree angles for maximum visual separation from image content. Size controls dot diameter, threshold sets the luminance point where halftoning begins.
 
-Chromatic Aberration simulates the lens artifact where different color channels are not perfectly aligned, resulting in color fringing, especially at the edges of the frame. This can add to the vintage or lo-fi feel of the image.
+{{< image src="noir_4.png" wrapper="col-10 mx-auto">}}
 
-- `Intensity`: Adjusts the amount of color separation. Higher values increase the distance between the color channels.
+**Lines Method** produces linear striations reminiscent of woodcut prints or engraving. Granularity controls line thickness variation, while threshold determines where lines begin appearing.
 
-#### Film Grain
+##### Duo-Tone Color Mapping
 
-This effect adds a layer of simulated film grain to the image, mimicking the texture of traditional photographic film. It can enhance the vintage look and help to reduce color banding.
+The duo-tone system maps luminance to two customizable colors, creating striking limited-palette aesthetics:
 
-- `Intensity`: Controls the visibility of the film grain.
-- `Speed`: Adjusts the animation speed of the grain, creating a dynamic, flickering effect.
+**Luminance Threshold** defines the midpoint between light and dark color mapping. Values below this use the darkness color, above use the brightness color.
 
-#### Vignette
+**Softness** controls the transition sharpness between colors. High softness creates smooth gradients; low softness produces hard posterized edges.
 
-The Vignette effect darkens the corners and edges of the screen, drawing focus to the center of the image. It's a common technique in photography and cinematography to create mood and frame the subject.
+**Luminance Range** (Min/Max) constrains which luminance values participate in the effect, allowing highlights or shadows to remain unprocessed.
 
-- `Intensity`: Controls the overall strength of the vignette.
-- `Size`: Adjusts the size of the clear, unaffected central area.
-- `Color`: Sets the color of the vignette. While typically black, other colors can be used for stylistic purposes.
-- `Smoothness`: Controls the softness of the vignette's falloff, from a hard edge to a smooth gradient.
-- `Time Variation`: Introduces a subtle, time-based fluctuation to the vignette's intensity, adding a dynamic quality.
+**Exposure** adjusts overall brightness before tone mapping, effectively shifting which parts of the image map to each color.
 
-#### Blotches
+**Emboss Dark** adds subtle 3D relief to the darker color region, enhancing the artistic quality.
 
-This effect simulates the appearance of film damage or aging by overlaying animated blotches onto the image. This can significantly enhance the retro and worn-out feel of the visuals.
+##### Vintage Film Characteristics
 
-- `Intensity`: Controls the visibility of the blotches.
-- `Speed`: Adjusts the speed at which the blotches animate and change.
+Noir includes film artifact simulation for authentic period aesthetics:
 
-#### Scratches
+**Film Grain** uses temporal blue noise for organic grain that evolves frame-to-frame without aliasing. Speed controls grain animation rate.
 
-The Scratches effect simulates vertical scratches on the film, another common artifact of old or damaged film reels. It adds to the authenticity of a vintage film look.
+**Scratches** create linear damage patterns using procedural noise with temporal coherence. Suitable for simulating aged film stock.
 
-- `Intensity`: Controls the visibility and frequency of the scratches.
-- `Speed`: Adjusts the animation speed of the scratches, making them flicker and move.
+**Vignette** with time variation adds animated corner darkening that simulates uneven lighting or lens breathing.
 
+**Blotches** creates randomized dirt/dust patterns using noise-driven distribution.
+
+**Chromatic Aberration** adds lens-style color fringing that enhances the vintage optical feel.
+
+#### Parameter Configuration
+
+{{< image src="noir_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Monochrome Method Parameters
+
+Select and configure the artistic dithering technique.
+
+{{< table >}}
+| | |
+|---|---|
+| **Method** | Dithering algorithm type |
+| **Noir Intensity** | Overall effect strength |
+| **Dither Spread** | Threshold range for Bayer dots (Dither method) |
+| **Dither Density** | Overall Bayer pattern intensity (Dither method) |
+| **Dither Color Blend** | How dither mixes with image (Dither method) |
+| **Dot Screen Grid Size** | Dot pattern grid resolution (DotScreen method) |
+| **Dot Screen Luminance Gain** | Brightness boost for dots (DotScreen method) |
+| **Dot Screen Color Blend** | Dot mixing method (DotScreen method) |
+| **Halftone Size** | Halftone dot diameter (Halftone method) |
+| **Halftone Angle** | Pattern rotation angle (Halftone method) |
+| **Halftone Threshold** | Luminance where halftone starts (Halftone method) |
+| **Halftone Color Blend** | Halftone mixing method (Halftone method) |
+| **Lines Count** | Number of line striations (Lines method) |
+| **Lines Granularity** | Line thickness variation (Lines method) |
+| **Lines Threshold** | Luminance for line onset (Lines method) |
+| **Lines Color Blend** | Line mixing method (Lines method) |
+{{< /table >}}
+
+##### Film Artifact Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Sepia Intensity** | Brown vintage tint |
+| **Chromatic Aberration** | RGB channel separation |
+| **Blotches Intensity** | Dust/dirt overlay |
+| **Blotches Speed** | Animation rate |
+| **Vignette Intensity** | Corner darkening |
+| **Vignette Size** | Clear central area size |
+| **Vignette Color** | Vignette tint |
+| **Vignette Smoothness** | Edge falloff rate |
+| **Vignette Time Variation** | Animated vignette |
+| **Film Grain Intensity** | Grain strength |
+| **Film Grain Speed** | Grain animation rate |
+| **Scratches Intensity** | Scratch visibility |
+| **Scratches Speed** | Scratch animation rate |
+{{< /table >}}
+
+##### Duo-Tone Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Duo Tone Intensity** | Duo-tone effect strength |
+| **Duo Tone Brightness Color** | Color for light areas |
+| **Duo Tone Darkness Color** | Color for dark areas |
+| **Duo Tone Threshold** | Light/dark division point |
+| **Duo Tone Softness** | Transition smoothness |
+| **Luminance Min Range** | Minimum luminance to process |
+| **Luminance Max Range** | Maximum luminance to process |
+| **Duo Tone Exposure** | Pre-tone brightness adjustment |
+| **Duo Tone Emboss Dark** | 3D relief on dark color |
+| **Duo Tone Color Blend** | Mixing method |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.Noir;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out NoirVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.method.value = Noir.NoirMethod.Halftone;
+    volume.noirIntensity.value = 1.0f;
+    volume.halftoneSize.value = 3.0f;
+    volume.halftoneAngle.value = 45.0f;
+    volume.duoToneIntensity.value = 0.8f;
+    volume.duoToneBrightnessColor.value = Color.white;
+    volume.duoToneDarknessColor.value = new Color(0.05f, 0.05f, 0.1f);
+    volume.filmGrainIntensity.value = 0.3f;
+    volume.vignetteIntensity.value = 0.6f;
+    volume.sepiaIntensity.value = 0.2f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with procedurally generated patterns.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + procedural pattern generation.
+* Complexity: O(1) per pixel.
+
+##### Usage Patterns and Presets
+
+###### Classic Film Noir
+
+For 1940s-50s detective movie aesthetics:
+* Method: Halftone
+* Halftone Angle: 45.0
+* Halftone Size: 2.0-3.0
+* Duo Tone Intensity: 0.7-1.0
+* Duo Tone Brightness: Light gray/white
+* Duo Tone Darkness: Deep blue-black
+* Contrast: 1.3-1.6
+* Vignette: 0.6-0.9
+* Film Grain: 0.3-0.5
+* Scratches: 0.1-0.3
+
+###### Graphic Novel Style
+
+For comic book aesthetics:
+* Method: Dither
+* Dither Density: 0.8-1.0
+* Noir Intensity: 1.0
+* Duo Tone Intensity: 0.5-0.8
+* Duo Tone Brightness: White
+* Duo Tone Darkness: Black or spot color
+* Contrast: 1.5-2.0
+* Saturation: 0.0
+
+###### Vintage Photograph
+
+For aged photo appearance:
+* Method: Bayer Dither
+* Dither Spread: 0.6-0.8
+* Sepia Intensity: 0.6-1.0
+* Vignette: 0.4-0.6
+* Film Grain: 0.4-0.6
+* Blotches: 0.2-0.4
+* Scratches: 0.1-0.3
+* Contrast: 1.0-1.2
+* Brightness: -0.1 to 0.1
 
 ---
-## Old Computers {#oldcomputers}
+## 💾 Old Computers {#oldcomputers}
 {{< asset-header youtube="_gADYOdLbL4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-old-computers-243911" demo="https://fronkongames.github.io/demos-retro/oldcomputers/" warn="assets used in video and demo are not included">}}
 
-Emulates the color palettes of old 8-bit and 16-bit computers. You can emulate all of these systems:
+Relive the home computing revolution. '**Old Computers**' instantly applies the iconic color palettes and resolution constraints of legendary hardware like the C64, Amstrad CPC, and CGA/EGA adapters. It's a time machine for your rendering pipeline.
 
-* **Apple** ][: the first series of mass-produced microcomputers made by Apple (1977).
-* **CGA**: Color Graphics Adapter, marketed in 1981, was IBM's first color graphics card.
-* **BBC** Micro: affectionately known as the Beeb, was one of the first home computers in the UK (1981).
-* **Commodore** 64: an 8-bit home computer developed by Commodore in August 1982.
-* **MSX**: an 8-bit home microcomputer standard marketed during the 1980s.
-* **Aquarius**: a home computer released by Mattel Electronics in 1983.
-* **Amstrad CPC**: a series of 8-bit personal computers produced by Amstrad during the 1980s.
-* **Atari ST**: a line of home computers introduced by the Atari company, successor to the Atari 8-bit family.
-* **EGA**: stands for Enhanced Graphics Adapter, the IBM PC standard specification for graphics display (1987).
-* **Mac II**: a computer model of the Apple Macintosh series that appeared in 1987.
-* **Game Boy**: is a handheld game console developed Nintendo, first released in Japan and USA in 1989.
+#### Requisites
 
-You can also define the color palette you want to emulate!
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-{{< image src="oldcomputers_0.jpg" wrapper="col-6 mx-auto">}}
+#### Installation Guide
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+##### Step 1: Add Renderer Feature
 
-'**Old Computers**', is very easy to use. Simply select the computer you want to emulate in '**Computer**' (_2_). Some systems have several modes of operation.
+The effect must be registered in your project's URP configuration:
 
-If you want to use your own color palette, select '**Custom**'.
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Old Computers**.
 
-{{< image src="oldcomputers_1.jpg" wrapper="col-6 mx-auto">}}
+##### Step 2: Configure the Volume
 
-You can vary the number of colors you want to use with '**Colors**' (up to a maximum of 16). It doesn't matter in which order you put them, since the algorithm used selects the color in the palette based on the _distance_ from the original color. In this way, and with the default colors, all red tones would be replaced by color number 3.
+To apply the effect to your scene:
 
-By changing '**Pixelation**' (_3_) you can adjust the pixel size and with '**Dithering**' (_4_) you can change the intensity of the '_Bayer 2x2_' pattern used for color dithering.
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Old Computers**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-Some palettes may have very dark colors that cause the final result to have too many black areas. You can correct the color range used with '**Remap colors**' (_5_). By discarding the lower parts, you would ignore the darker areas. With the upper part you would discard the brighter ones. 
+#### Historical Computer Emulation
 
-{{< image src="oldcomputers_2.jpg" wrapper="col-6 mx-auto">}}
+##### System-Specific Color Palettes
 
-Discarding the darker range:
+Old Computers accurately reproduces the color capabilities of classic hardware through faithful palette reproduction:
 
-{{< image src="oldcomputers_3.jpg" wrapper="col-6 mx-auto">}}
+**Commodore 64** implements the VIC-II chip's 16-color palette derived from the YPbPr color space limitations of 1980s composite video. The palette includes characteristic shades like "C64 Brown" and the distinctive cyan/red vibrant pairings.
+
+**CGA (Color Graphics Adapter)** recreates IBM's 1981 4-color palettes with their infamous cyan/magenta/white and red/green/brown alternatives. Composite CGA mode (artifact colors) is available for the "16-color" illusion created on composite monitors.
+
+**EGA (Enhanced Graphics Adapter)** extends to the 64-color palette (from 16 colors at 4 intensities) that defined DOS gaming's golden age.
+
+**Game Boy** implements the 4-shade LCD palette (black, dark gray, light gray, white/transparent) that defined portable gaming in 1989.
+
+**Amstrad CPC** recreates the Gate Array's 27-color palette selected from 4096 possible RGB values.
+
+**MSX, TRS-80 CoCo, Amiga OCS, Acorn Archimedes** each implement their specific hardware color generation quirks and limitations.
+
+##### Pixelation and Dithering
+
+To complete the retro aesthetic, the effect provides:
+
+**Pixelation** reduces effective resolution to match the target system's display resolution. Values represent block size multipliers relative to screen resolution.
+
+**Dithering** applies ordered Bayer patterns to simulate additional colors through optical blending, as artists did on limited hardware. The strength parameter controls pattern visibility.
+
+**Luminance Range** mapping ensures the full input image maps to available palette colors by defining minimum and maximum brightness thresholds.
+
+**Custom Palette** mode allows defining your own 2-16 color palette using individual color parameters when historical accuracy isn't required.
+
+#### Parameter Configuration
+
+{{< image src="oldcomputers_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### System Selection Parameters
+
+Select the target computer system to emulate.
+
+{{< table >}}
+| | |
+|---|---|
+| **Computer** | Target hardware system |
+| **CGA Mode** | CGA-specific display mode |
+| **Commodore 64 Mode** | C64 display variant |
+| **MSX Mode** | MSX-specific mode |
+| **EGA Mode** | EGA display mode |
+| **Game Boy Mode** | Game Boy variant |
+| **TRS-80 CoCo Mode** | Color Computer mode |
+| **Amiga OCS Mode** | Amiga display mode |
+| **Acorn Archimedes Mode** | Archimedes mode |
+{{< /table >}}
+
+##### Image Processing Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Pixelation** | Block size for resolution reduction |
+| **Dithering** | Bayer pattern strength |
+| **Range Min** | Minimum luminance for mapping |
+| **Range Max** | Maximum luminance for mapping |
+{{< /table >}}
+
+##### Custom Palette Parameters
+
+When Computer is set to Custom or for fine-tuning:
+
+{{< image src="oldcomputers_1.jpg" wrapper="col-10 mx-auto">}}
+
+{{< table >}}
+| | |
+|---|---|
+| **Custom Colors Count** | Number of custom palette entries |
+| **Palette 0-15** | Individual palette colors |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.OldComputers;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out OldComputersVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.computer.value = OldComputers.Computers.Commodore64;
+    volume.commodore64Mode.value = OldComputers.Commodore64Modes.Default;
+    volume.pixelation.value = 3;
+    volume.dithering.value = 0.3f;
+    volume.rangeMin.value = 0.1f;
+    volume.rangeMax.value = 0.9f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with palette lookup operations.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + palette lookup.
+* Complexity: O(1) per pixel.
+
+##### Usage Patterns and Presets
+
+###### Commodore 64 Gaming
+
+For authentic 1980s home computer aesthetic:
+* Computer: Commodore 64
+* C64 Mode: Default
+* Pixelation: 2-4
+* Dithering: 0.2-0.4
+* Contrast: 1.1-1.2
+* Saturation: 1.0-1.1
+
+###### DOS Gaming (EGA)
+
+For 16-color adventure/platformer look:
+* Computer: EGA
+* EGA Mode: Mode4Palette1Low or appropriate palette
+* Pixelation: 3-5
+* Dithering: 0.3-0.5
+* Brightness: 0.05-0.1 (EGA was bright)
+* Contrast: 1.0-1.2
+
+###### Authentic Game Boy
+
+For portable 4-shade aesthetic:
+* Computer: Game Boy
+* Game Boy Mode: One (original)
+* Pixelation: 6-8 (160x144 resolution)
+* Dithering: 0.4-0.6
+* Saturation: 0.0 (force grayscale)
+* Contrast: 1.2-1.4
 
 ---
-## ASCII {#ascii}
+## 🔤 ASCII {#ascii}
 {{< asset-header youtube="shQxDDe8Aw4" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-ascii-241924" demo="https://fronkongames.github.io/demos-retro/ascii/" warn="assets used in video and demo are not included">}}
 
-The ASCII render was an effect you could see in old [demoscene](https://en.wikipedia.org/wiki/Demoscene). It consists of replacing blocks of pixels with [ASCII](https://en.wikipedia.org/wiki/ASCII) characters according to their luminosity. The higher the luminosity, the 'denser' the character it was replaced with. Now it's back on steroids!
+Turn your game into living text. '**ASCII**' reinvents the classic terminal aesthetic with modern performance, replacing pixels with dynamic character sets. Whether for a hacking minigame or a stylistic full-screen effect, it offers shape-aware sampling for surprising clarity. This is not simple text overlay—it's an intelligent image reconstruction system that analyzes luminance and shape to select the most appropriate character for each cell.
 
-Once installed, when you select your 'Universal Renderer Data', you will see something like this:
+#### Requisites
 
-{{< image src="ascii_0.jpg" wrapper="col-8 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-With '**Intensity**' you can control the intensity of the effect. If it is 0, the effect will not be active.
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-'**ASCII**' needs a texture with characters from a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font). To create one use the '**ASCII Charset Tool**' (or menu _Window > Fronkon Games > Retro > ASCII > ASCII Charset Tool_). With this tool you can create the necessary file to set it to '**Charset**'.
+#### Installation Guide
 
-{{< image src="ascii_1.jpg" wrapper="col-8 mx-auto">}}
+##### Step 1: Add Renderer Feature
 
-This tool will show you all the monospaced fonts you have on your system. If you don't have any, install one and click on '**Refresh**'. In addition to selecting the size of the characters in '**Size**', you can select the pattern to be used. As I mentioned before, this effect replaces blocks of pixels with characters according to their luminosity. The brighter the blocks, the more pixels the characters will be. The most common patterns are included in the tool, but you can use your own by selecting '_Custom_'.
+The effect must be registered in your project's URP configuration:
 
-{{< alert type="info" >}}
-All patterns start from the lowest luminosity, or density, to the highest. For example, a 10-character pattern represents 10 levels of brightness: " .:-=++*#%@".
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > ASCII**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > ASCII**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Character-Based Image Reconstruction
+
+##### Character Set Architecture
+
+The effect operates by replacing image regions with text characters from a predefined charset texture atlas:
+
+**Charset Texture Atlas** is a specially organized texture containing all available characters in a grid layout. The shader uses this as a lookup table, selecting characters based on computed cell properties. Each character occupies a uniform UV space within the atlas.
+
+**Character Selection Modes** determine how the shader chooses which character represents each image cell:
+
+{{< image src="ascii_luminance.jpg" wrapper="col-10 mx-auto">}}
+
+* **Luminance Mode:** Simple brightness matching. The shader computes average cell luminance and selects characters with similar inherent brightness. Fast and effective for general use.
+
+{{< image src="ascii_shape_aware.jpg" wrapper="col-10 mx-auto">}}
+
+* **Shape-Aware Mode:** Analyzes cell structure including edge detection and contrast gradients to select characters that best match local image features. Produces more detailed reconstructions at higher computational cost.
+
+To create one use the ‘ASCII Charset Tool’ (or menu Window > Fronkon Games > Retro > ASCII > ASCII Charset Tool). With this tool you can create the necessary file to set it to ‘Charset’.
+
+{{< image src="ascii_1.jpg" wrapper="col-10 mx-auto">}}
+
+{{< alert color="info" >}}
+Only [monospaced fonts](https://en.wikipedia.org/wiki/Monospaced_font) that you have installed on your system will be displayed.
 {{< /alert >}}
 
-#### Selection Mode
+##### Grid-Based Processing System
 
-'**Selection mode**' determines how characters are chosen for each cell:
+**Grid Resolution** is determined by the **Zoom** parameter, which controls how many character cells fit on screen. Higher zoom values = larger characters = lower effective resolution.
 
-- **Luminance** (default): The classic method. Characters are selected based solely on the average brightness of each cell. Fast and compatible with all charsets.
+**Cell Processing** occurs in three stages:
+1. **Sample Phase:** The shader samples the source image within each grid cell boundary.
+2. **Analyze Phase:** Computes cell properties (average color, luminance, edge presence, contrast).
+3. **Select Phase:** Chooses appropriate character index based on selection mode criteria.
+4. **Render Phase:** Samples the character from the charset atlas and applies color/background tints.
 
-{{< image src="ascii_luminance.jpg" wrapper="col-8 mx-auto">}}
+##### Edge Enhancement and Detail Preservation
 
-- **Shape Aware**: A revolutionary approach that considers the *spatial distribution* of brightness within each cell, not just overall luminance. Each cell is divided into a 2×3 grid, and the algorithm finds characters whose shape best matches the image content. This produces dramatically sharper edges and better detail preservation.
+**Edge Detection** analyzes neighboring cells to identify discontinuities, applying sharper character transitions at edges to preserve important visual features.
 
-{{< image src="ascii_shape_aware.jpg" wrapper="col-8 mx-auto">}}
+{{< image src="ascii_super_sampling.jpg" wrapper="col-10 mx-auto">}}
 
-{{< alert color="warning" >}}
-'Shape Aware' mode requires charsets generated with version 3.0 or later. Older charsets will need to be regenerated using the ASCII Charset Tool.
-{{< /alert >}}
+**Super Sampling** performs multi-point sampling within each cell for more accurate average color computation, reducing aliasing and producing smoother color transitions.
 
-When using ShapeAware mode:
-- **Shape weight** [0-1]: Balance between shape matching and density. Higher values (default 0.7) prioritize shape matching for sharper results.
+**Boost** amplifies character contrast, making characters "pop" against their backgrounds for improved legibility and visual impact.
 
-#### Edge Detection
+##### Color and Background Control
 
-Enable '**Edge detection**' to apply Sobel edge detection for sharper character boundaries. This feature works in both Luminance and ShapeAware modes.
+**Font Color** applies a global tint to all characters, allowing unified color theming.
 
-- **Sensitivity** [0-2]: How easily edges are detected. Higher values detect more subtle edges.
-- **Contrast** [0-2]: Edge contrast enhancement strength. Higher values create more dramatic edge enhancement.
+{{< image src="ascii_2.png" wrapper="col-10 mx-auto">}}
 
-{{< image src="ascii_edge_detection.jpg" wrapper="col-8 mx-auto">}}
+**Block Color** applies per-cell color variation based on computed cell properties, creating subtle depth and variation within the text mosaic.
 
-#### Supersampling
+**Background** sets the global background color behind all characters.
 
-Enable '**Supersampling**' for smoother anti-aliased edges. Instead of taking a single sample per cell, this takes multiple samples and averages them.
+#### Parameter Configuration
 
-- **Quality** [2-4]: The supersampling level:
-  - 2 = 2×2 grid (4 samples per cell)
-  - 3 = 3×3 grid (9 samples per cell)
-  - 4 = 4×4 grid (16 samples per cell)
+{{< image src="ascii_0.jpg" wrapper="col-10 mx-auto">}}
 
-{{< image src="ascii_super_sampling.jpg" wrapper="col-8 mx-auto">}}
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
 
-{{< alert type="info" >}}
-Higher supersampling quality produces smoother results but requires more processing power. Level 2 offers a good balance between quality and performance.
-{{< /alert >}}
+##### Character Set Parameters
 
-#### Basic Settings
+{{< table >}}
+| | |
+|---|---|
+| **Charset** | Character atlas texture |
+| **Selection Mode** | Character selection algorithm |
+| **Shape Weight** | Weight of shape matching vs luminance (ShapeAware mode) |
+{{< /table >}}
 
-Once you have created the charsets you want and have it set in '**Charsets**' we can continue with the following parameters. With '**Zoom**' you can change the scale of each text block, the more you zoom the bigger the characters will appear.
+##### Enhancement Parameters
 
-You can multiply with '**Boost**' the brightness that is calculated to use one character or another. With very high values, you will see more characters from the end of the pattern used.
+Advanced options for detail preservation and quality.
 
-If '**Block colour**' is active, each block of each character will have a unique colour (result of pixelating that area). If it is not active, the original colours will be respected. This makes the shapes of the original image more distinguishable.
+{{< table >}}
+| | |
+|---|---|
+| **Edge Detection** | Enable edge-aware character selection |
+| **Edge Sensitivity** | Edge detection threshold (when Edge Detection enabled) |
+| **Edge Contrast** | Edge sharpness enhancement (when Edge Detection enabled) |
+| **Super Sampling** | Enable multi-point cell sampling |
+| **Super Sampling Level** | Quality level (when Super Sampling enabled) |
+{{< /table >}}
 
-{{< image src="ascii_2.png" >}}
+##### Grid and Display Parameters
 
-With '**Font**' you can change how the color of each character is _mixed_ with the original pixels. These operations are very similar to the one you can find in _Photoshop_. You can also change their color. The same can be done with the background.
+Configure the character grid and visual presentation.
 
-{{< alert type="info">}}
-As this effect can generate a lot of black pixels, the final image can be darker than the original. Turn up the brightness of the "**Background**" color a bit to avoid this.
-{{< /alert >}}
+{{< table >}}
+| | |
+|---|---|
+| **Zoom** | Character size scaling |
+| **Boost** | Character contrast amplification |
+| **Block Color** | Enable per-cell color variation |
+| **Text Color Blend** | Font color blending method |
+| **Text Color** | Global character tint |
+| **Background Color Blend** | Background color blending method |
+| **Background Color** | Global background color |
+{{< /table >}}
 
-By default, there is no color gradient for the final image, but you can select several in '**Color gradient**'.
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.ASCII;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out ASCIIVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.selectionMode.value = ASCII.CharacterSelectionMode.ShapeAware;
+    volume.zoom.value = 1.5f;
+    volume.boost.value = 1.2f;
+    volume.edgeDetection.value = true;
+    volume.superSampling.value = true;
+    volume.fontColor.value = new Color(0.2f, 1.0f, 0.2f); // Matrix green
+    volume.background.value = Color.black;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single pass with variable computational cost based on mode selection.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per cell (Luminance) or 4-9 per cell (ShapeAware/SuperSampling).
+* Complexity: Luminance mode is O(1), ShapeAware is O(n) based on edge complexity.
+* Performance Note: Enable Edge Detection and Super Sampling only when visual quality demands justify the cost.
+
+##### Usage Patterns and Presets
+
+###### Hacking/Terminal Interface
+
+For authentic computer terminal aesthetic:
+* Selection Mode: Luminance (faster for UI)
+* Zoom: 0.8-1.2
+* Boost: 1.2-1.5
+* Font Color: Green (0.2, 1.0, 0.2) or Amber (1.0, 0.7, 0.0)
+* Background: Near-black
+* Edge Detection: Off
+* Super Sampling: Off
+* Contrast: 1.2-1.4
+
+###### Artistic Shape-Aware Rendering
+
+For detailed image reconstruction with character art:
+* Selection Mode: ShapeAware
+* Zoom: 1.0-2.0
+* Boost: 1.0-1.3
+* Font Color: White or scene-tinted
+* Block Color: Slight tint for depth
+* Edge Detection: On
+* Super Sampling: On
+* Contrast: 1.0-1.2
+
+###### Matrix-Style Digital Rain
+
+For cascading code aesthetic (combine with animation):
+* Selection Mode: Luminance
+* Zoom: 0.5-1.0
+* Boost: 1.5-2.0
+* Font Color: Bright green with alpha variation
+* Background: Black
+* Brightness: -0.1 to 0.1
+* Saturation: 0.0-0.2 (reduce color noise)
 
 ---
-## Spectrum {#spectrum}
+## 🌈 Spectrum {#spectrum}
 {{< asset-header youtube="d66etIztDjs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-spectrum-239827" demo="https://fronkongames.github.io/demos-retro/spectrum/" warn="assets used in video and demo are not included">}}
 
-'**Spectrum**' simulates the graphical style of old games of the mythical 8-bit microcomputer [Sinclair ZX Spectrum](https://en.wikipedia.org/wiki/ZX_Spectrum) from 1982.
+A tribute to the 8-bit legend. '**Spectrum**' accurately recreates the unique 'color clash' attribute limitations and vivid palette of the ZX Spectrum, delivering a distinctively crisp and colorful retro look that screams 1982. This effect is a faithful hardware emulation that replicates the distinctive color constraints that defined a generation of British computing.
 
-Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+#### Requisites
 
-{{< image src="spectrum_0.jpg" wrapper="col-6 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-**Simulation**' (_2_) allows you to use two simulation modes. The first, 'Simple' (default), only simulates the color palette. The second, 'Full', also emulates the screen resolution.
+#### Installation Guide
 
-{{< image src="spectrum_1.jpg" wrapper="col-6 mx-auto">}}
+##### Step 1: Add Renderer Feature
 
-To change the pixel size, use '**Pixel size**' (_3_) and to adjust the pattern size use '**Dither**' (_4_).
+The effect must be registered in your project's URP configuration:
 
-**Spectrum**' uses the image brightness for many calculations, if your scene is too dark (or too bright), you can adjust the brightness range used in '**Brightness levels**' (_5_). You can also modify the initial gamma with '**Adjust gamma**' (_7_).
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Spectrum**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Spectrum**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### ZX Spectrum Hardware Emulation
+
+##### Attribute-Based Color System
+
+The ZX Spectrum (1982) used a unique and restrictive color system that created its distinctive look:
+
+**Attribute Blocks** divided the 256×192 pixel display into 8×8 pixel attribute cells. Each cell could display only two colors simultaneously—one foreground (ink) and one background (paper). This limitation created the famous "attribute clash" or "color clash" where objects of different colors approaching each other would cause color artifacts.
+
+**Color Palette** consisted of 15 colors (8 standard + 7 bright variants). The effect replicates these specific RGB values:
+* Black, Blue, Red, Magenta, Green, Cyan, Yellow, White (standard)
+* Bright Blue, Bright Red, Bright Magenta, Bright Green, Bright Cyan, Bright Yellow, Bright White
+
+**Brightness Attribute** provided two intensity levels per cell. Setting the brightness bit affected all pixels in the 8×8 cell, doubling the effective palette to 15 displayable colors (black was the same in both modes).
+
+{{< image src="spectrum_1.jpg" wrapper="col-10 mx-auto">}}
+
+**Simulation Modes** allow choosing the authenticity level:
+* **Simple:** Basic color palette matching without attribute clash simulation. Uses Spectrum colors but allows unlimited color transitions.
+* **Full:** Complete attribute clash simulation including 8×8 cell color constraints, reproducing the authentic visual artifacts of the original hardware.
+
+##### Pixel Resolution and Layout
+
+**Native Resolution** of 256×192 pixels creates the characteristic blocky appearance when scaled to modern displays.
+
+**Pixel Size** parameter controls how many screen pixels correspond to one Spectrum pixel. Values of 2-4 produce authentic-looking results on 1080p+ displays.
+
+**Dithering** applies ordered Bayer patterns to soften the harsh color banding between attribute cells, simulating how artists worked around color limitations using stippling techniques.
+
+##### Color Attribute Calibration
+
+**Brightness Full** controls the intensity multiplier applied when a cell has the "bright" attribute bit set. This typically doubles the RGB values of bright colors.
+
+**Brightness Half** sets the intensity for normal (non-bright) color attributes, usually at 0.85× of the full value, representing the standard intensity colors.
+
+These parameters allow fine-tuning the contrast between bright and normal color cells, matching the particular display characteristics of 1980s CRT monitors used with the Spectrum.
+
+#### Parameter Configuration
+
+{{< image src="spectrum_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Simulation and Resolution Parameters
+
+Control the authenticity level and display resolution.
+
+{{< table >}}
+| | |
+|---|---|
+| **Simulation** | Attribute clash simulation level |
+| **Pixel Size** | Spectrum pixel to screen pixel ratio |
+| **Dither** | Bayer pattern strength for color transitions |
+| **Brightness Full** | Multiplier for "bright" color attribute |
+| **Brightness Half** | Multiplier for normal color attribute |
+| **Adjust Gamma** | Output gamma correction |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.Spectrum;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out SpectrumVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.simulation.value = Spectrum.Simulation.Full;
+    volume.pixelSize.value = 2;
+    volume.brightnessFull.value = 1.0f;
+    volume.brightnessHalf.value = 0.85f;
+    volume.dither.value = 0.2f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with attribute lookup operations.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + color attribute logic.
+* Complexity: O(1) per pixel. Full simulation has minimal overhead compared to simple mode.
+
+##### Usage Patterns and Presets
+
+###### Authentic ZX Spectrum
+
+For true 1982 hardware emulation:
+* Simulation: Full
+* Pixel Size: 2-4
+* Brightness Full: 1.0
+* Brightness Half: 0.85
+* Dither: 0.0-0.1 (subtle)
+* Contrast: 1.0-1.1
+* Saturation: 1.0-1.1
+
+###### Spectrum-Inspired Color Palette
+
+For modern games with Spectrum colors but without restrictions:
+* Simulation: Simple
+* Pixel Size: 1 (native resolution)
+* Dither: 0.0
+* Saturation: 1.1-1.2 (Spectrum colors were vivid)
+* Contrast: 1.0-1.2
+
+###### Softened Retro Aesthetic
+
+For approachable Spectrum-inspired look:
+* Simulation: Full
+* Pixel Size: 3-4
+* Dither: 0.3-0.5
+* Brightness Full: 0.9-1.0
+* Brightness Half: 0.8-0.9
+* Contrast: 0.9-1.0
+* Gamma: 1.1-1.2 (slightly brighter)
 
 ---
-## LCD {#lcd}
+## 🖥️ LCD {#lcd}
 {{< asset-header youtube="huKT3CiRfRA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-spectrum-239827" demo="https://fronkongames.github.io/demos-retro/lcd/" warn="assets used in video and demo are not included">}}
 
-Simulates the distinct visual characteristics of a [Liquid Crystal Display](https://en.wikipedia.org/wiki/Liquid-crystal_display) (LCD), such as those found on older handheld games, digital watches, or early portable computers.
+Pixel-perfect portability. '**LCD**' simulates the physical grid, pixel ghosting, and sub-pixel structure of early handhelds and digital watches. With adjustable backlight bleed and dead pixels, it adds a tactile layer of realism to any diegetic interface. This effect goes beyond simple pixelation—it models the actual LCD panel hardware at a microscopic level.
 
-Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+#### Requisites
 
-{{< image src="lcd_0.jpg" wrapper="col-6 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-#### General Settings
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-* **Intensity**: `float` [0, 1], Default: 1.0. Controls the overall strength of the entire LCD effect. A value of 0 will effectively bypass the effect.
+#### Installation Guide
 
-#### Grid Settings
+##### Step 1: Add Renderer Feature
 
-* **Grid Intensity**: `float` [0, 1], Default: 0.9. Controls the visibility of the pixel grid.
-* **Grid Color**: `Color`, Default: Black. The RGB color of the physical grid structure. Alpha is not typically used.
-* **Grid Size**: `float` [1, 4], Default: 2.0. The size of the pixels, acting as grid line thickness.
-* **Grid Bevel**: `float` [0, 2], Default: 0.5. Controls the softness of the subpixel dot edges. Higher values create softer, wider transitions, affecting the perceived bevel of the grid.
-* **Subpixel Layout**: `enum` { RGB, BGR }, Default: RGB. The ordering of color components within each pixel: RGB (standard) or BGR (swapped red and blue).
-* **Subpixel Tiling Factor**: `Vector2`, Default: (3.0, 1.0). Controls the horizontal and vertical tiling of subpixels.
-* **Jitter Intensity**: `float` [0, 2], Default: 0.0. Intensity of UV jitter to reduce moiré patterns, may introduce noise.
+The effect must be registered in your project's URP configuration:
 
-#### Blacklight Settings
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > LCD**.
 
-* **Bleed Intensity**: `float` [0, 1], Default: 0.0. Overall strength of the backlight bleed effect.
-* **Bleed Focus**: `float` [0, 1], Default: 0.5. Controls concentration of the bleed: 0 for edges, 1 for center, 0.5 for even.
-* **Bleed Color**: `Color`, Default: (0.1, 0.1, 0.1, 0.0) (Subtle Gray). Color of the backlight bleed.
+##### Step 2: Configure the Volume
 
-#### Dead pixels Settings
+To apply the effect to your scene:
 
-* **Dead Subpixel Density**: `float` [0, 1], Default: 0.0. Density of dead subpixels (0 = none, 1 = very high).
-* **Dead Subpixel Seed**: `int`, Default: 0. Seed for the dead subpixel pattern.
-* **Dead Subpixel Color**: `Color`, Default: Black. Color of a dead subpixel.
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > LCD**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-#### Misc Settings
+#### Physical LCD Panel Simulation
 
-* **Color Correction Intensity**: `float` [0, 1], Default: 1.0. Intensity of the color correction effect.
-* **Color Bands Intensity**: `float` [0, 1], Default: 0.5. Intensity of the color bands effect.
-* **Color Bands Brightness**: `float` [0, 10], Default: 4.0. Brightness of the color bands effect.
+##### LCD Grid Architecture
+
+The effect simulates how liquid crystal displays are physically constructed, creating authentic panel appearance:
+
+**Pixel Grid Structure** divides the display into individual cell compartments separated by dark grid lines. **Grid Intensity** controls the visibility of these cell boundaries (0 = seamless display, 1 = pronounced black grid). **Grid Size** adjusts the thickness and spacing of grid lines relative to pixel size.
+
+**Grid Color** allows tinting the grid lines, simulating different panel types—yellowish grids for passive-matrix displays, darker grids for active-matrix TFT panels.
+
+**Bevel Effect** adds a 3D appearance to grid intersections, creating the impression of physical depth where cell boundaries meet. This simulates the raised bezel structure around individual LCD cells in early panels.
+
+##### Subpixel Structure
+
+Modern LCD screens are composed of RGB subpixels, and this effect models that microscopic level:
+
+**Subpixel Layout** supports both RGB (Red-Green-Blue) and BGR (Blue-Green-Red) arrangements, matching different panel manufacturers. This affects how fine details and color fringing appear.
+
+**Subpixel Rendering** modulates the color output based on subpixel position, creating characteristic color fringing at high-contrast edges—visible as faint red/cyan edges on vertical lines.
+
+**Pixel Gap** simulates the inactive black matrix between subpixels, creating authentic "screen door" appearance at close viewing distances.
+
+##### Display Imperfections and Damage
+
+Real LCD panels suffer from manufacturing defects and aging:
+
+**Dead Pixels** simulates stuck or dead subpixels—individual RGB elements that remain permanently on or off. Creates scattered bright or dark dots across the display surface.
+
+**Backlight Bleed** replicates uneven illumination in LCD panels where light leaks around panel edges, creating bright patches particularly visible in dark scenes. **Bleed Intensity** controls the severity of this effect.
+
+**Ghosting** creates motion blur trails where previous frames persist, simulating slow LCD response times common in early panels. The **Ghosting** parameter controls persistence amount.
+
+**Jitter** adds subtle UV coordinate instability, simulating loose ribbon cables or electrical interference causing the image to "dance" slightly.
+
+**Desync** creates scanline offset effects where portions of the image shift horizontally, mimicking timing synchronization issues in analog LCD interfaces.
+
+#### Parameter Configuration
+
+{{< image src="lcd_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Grid Structure Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Grid Intensity** | Visibility of cell grid lines |
+| **Grid Color** | Color of grid lines |
+| **Grid Size** | Grid line thickness/spacing |
+| **Grid Bevel** | 3D depth at grid intersections |
+{{< /table >}}
+
+##### Subpixel Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Subpixel Layout** | Subpixel color arrangement |
+| **Tiling Factor** | Subpixel tiling multiplier |
+{{< /table >}}
+
+##### Noise and Artifacts Parameters
+
+{{< table >}}
+| | |
+|---|---|
+| **Jitter Intensity** | UV coordinate instability |
+| **Dead Subpixel Density** | Stuck/dead subpixel simulation |
+| **Dead Subpixel Seed** | Random seed for dead pixels |
+| **Dead Subpixel Color** | Tint for dead subpixels |
+| **Bleed Intensity** | Backlight bleed amount |
+| **Bleed Focus** | Bleed effect sharpness |
+| **Bleed Color** | Bleed light tint |
+| **Color Correction Intensity** | Subpixel color correction strength |
+| **Color Bands Intensity** | Color banding simulation |
+| **Color Bands Brightness** | Brightness of color bands |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.LCD;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out LCDVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.gridIntensity.value = 0.7f;
+    volume.gridSize.value = 2.0f;
+    volume.gridColor.value = new Color(0.1f, 0.1f, 0.1f);
+    volume.subpixelLayout.value = LCD.SubpixelLayout.RGB;
+    volume.bleedIntensity.value = 0.3f;
+    volume.ghosting.value = 0.2f;
+    volume.deadPixels.value = 0.05f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with procedural subpixel calculations.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + procedural subpixel generation.
+* Complexity: O(1) per pixel with minimal overhead for grid calculations.
+
+##### Usage Patterns and Presets
+
+###### Early Handheld Gaming (Game Gear, Lynx)
+
+For 1990s portable console aesthetic:
+* Grid Intensity: 0.6-0.8
+* Grid Size: 1.5-2.5
+* Grid Color: Dark blue-gray
+* Bevel: 0.1-0.2
+* Subpixel Layout: RGB
+* Pixel Gap: 0.1-0.2
+* Bleed Intensity: 0.2-0.4
+* Ghosting: 0.1-0.3
+* Contrast: 1.1-1.3
+* Saturation: 0.9-1.0 (slightly muted)
+
+###### Damaged/Defective Display
+
+For horror or industrial sci-fi diegetic screens:
+* Grid Intensity: 0.4-0.6
+* Dead Pixels: 0.1-0.3
+* Jitter: 0.2-0.4
+* Desync: 0.1-0.2
+* Bleed Intensity: 0.3-0.5
+* Ghosting: 0.3-0.5
+* Brightness: -0.1 to 0.0 (dim)
+
+###### Clean Digital Watch Interface
+
+For sharp, tiny LCD aesthetic:
+* Grid Intensity: 0.8-0.95
+* Grid Size: 0.5-1.0
+* Grid Color: Near-black
+* Bevel: 0.0 (flat)
+* Pixel Gap: 0.3-0.5
+* Bleed: 0.0
+* Ghosting: 0.0
+* Contrast: 1.3-1.5 (high contrast)
+* Saturation: 0.0 (monochrome simulation)
 
 ---
-## Vintage Filters {#vintagefilters}
+## 📷 Vintage Filters {#vintagefilters}
 {{< asset-header youtube="YXMNQn7cu8I" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-vintage-filters-242600" demo="https://fronkongames.github.io/demos-retro/vintagefilters/" warn="assets used in video and demo are not included">}}
 
-A great collection of vintage filters inspired by photo Instagram effects:
+Instant nostalgia at your fingertips. '**Vintage Filters**' brings a curated collection of cinematic color grading presets inspired by classic instant film and modern social apps. Add warmth, fade, and character to your scenes with a single click. This effect provides professional-grade color grading through a library of pre-configured filter pipelines that emulate iconic photographic looks.
 
-* **70s**: looks like it's on a old 70's TV.
-* **Aden**: makes games look pastel shades.
-* **Amaro**: adds more light to the centre of the screen and darkens around the edges.
-* **Brannan**: this low-key effect brings out the grays and greens in your game.
-* **Crema**: makes games look creamy and smooth.
-* **Earlybird**: a retro 'Polaroid' feel with soft faded colors and a hint of yellow.
-* **Hefe**: slightly increases saturation and gives a warm fuzzy tone to your game.
-* **Hudson**: emphasizes light and gives your game a bluish, colder feel.
-* **Inkwell**: adds high contrast and also makes black and white.
-* **Juno**: it tints cool tones green, amps up warm tones, and makes whites glow.
-* **Lomofi**: a dreamy, blurry effect and saturated colors.
-* **LordKevin**: a retro look by boosting the earth tones green, brown and orange and adds brightness.
-* **Nashville**: a warm retro fell and adds a soft purple-pink hue.
-* **Reyes**: desaturates your game, brightens it up, and gives it an old-time feel.
-* **Rise**: a nice glow and warmth by adding yellow tones.
-* **Sierra**: makes the game appear softer by adding bluish tones while emphasizing darks and yellows.
-* **Slumber**: desaturate the game and makes them hazy and dreamy look.
-* **Sutro**: gives you Sepia-like tones, with an emphasis on purple and brown.
-* **Toaster**: a burnt, aged look. It also adds a slight texture plus vignetting.
-* **Valencia**: a slight faded, 1980’s touch by adding a light brown and gray tint.
-* **Walden**: washed-out, bluish colors and adds a slight corner vignetting.
-* **XProII**: a warm vintage feeling and saturated tones.
+#### Requisites
 
-Once installed, when you select your ‘Universal Renderer Data’, you will see something like this:
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-{{< image src="vintagefilters_0.jpg" wrapper="col-6 mx-auto">}}
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+#### Installation Guide
 
-**Vintage Filters**', is very easy to use. Simply select the filter you want to use in '**Filter**' (_2_). Although most of them do not have them, in some filters you will see some options (_3_). In _4_ you will see a brief description of the selected filter.
+##### Step 1: Add Renderer Feature
 
-The filters '_70s_', '_Aden_', '_Crema_', '_Juno_', '_Kings_' and '_Slumber_' use [LUT](https://en.wikipedia.org/wiki/Lookup_table) 3D textures. If the device does not support 3D textures, a simplified 2D version is used automatically. **If you don't want to use 3D textures**, disable the '**Use 3D textures**' option in '**Advanced**'.
+The effect must be registered in your project's URP configuration:
 
-{{< image src="vintagefilters_1.jpg" wrapper="col-6 mx-auto">}}
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Vintage Filters**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Vintage Filters**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Cinematic Color Grading System
+
+##### Filter Preset Architecture
+
+Vintage Filters implements a library of curated color grading presets, each representing a distinct photographic or cinematic aesthetic:
+
+**1977** recreates the warm, faded aesthetic of vintage color film from the late 1970s, with characteristic yellow-orange color cast and reduced blue channel response.
+
+**Apollo** simulates NASA mission photography with high contrast, slightly desaturated colors, and emphasis on clarity—perfect for sci-fi and documentary aesthetics.
+
+**Gotham** creates the blue-tinted, high-contrast look popularized by modern urban photography and graphic novels.
+
+**Hudson** reproduces the warm-toned, slightly faded Instagram-inspired aesthetic with enhanced highlights and subtle vignette.
+
+**Kelvin** applies extreme warming with strong orange/yellow cast, simulating tungsten lighting and "golden hour" photography.
+
+**Noir** creates dramatic high-contrast monochrome with deep blacks and bright highlights, inspired by classic film noir cinematography.
+
+**Toaster** simulates the warm, brown-tinted look of early mobile phone cameras with light leak simulation and color fringing.
+
+**X-Pro (Cross-Processing)** recreates the chemical cross-processing technique where slide film is developed in negative chemistry, creating characteristic color shifts—particularly strong magenta/green channel inversion.
+
+##### Dynamic Parameter System
+
+Each filter exposes filter-specific parameters that adjust the characteristics of that particular look:
+
+**Warmth Controls** adjust the color temperature balance—positive values shift toward orange/red, negative toward blue/cyan.
+
+**Contrast and Levels** modify the tone curve shape, controlling shadow depth, mid-tone brightness, and highlight rolloff.
+
+**Overlay and Blend** parameters control how filter textures or light leak overlays integrate with the base image.
+
+**Fade and Haze** introduce atmospheric diffusion and reduced contrast typical of aged film stock or lens fogging.
+
+##### Filter Pipeline
+
+The effect applies color grading through a multi-stage process:
+1. **Color Space Conversion:** RGB to working color space (usually HSV or YUV)
+2. **Curve Application:** Tone curve adjustments (shadow/mid/highlight)
+3. **Color Matrix:** Channel mixing and color balance
+4. **Overlay Application:** Light leaks, vignette, grain textures
+5. **Final Grade:** Brightness, contrast, saturation adjustments
+
+#### Parameter Configuration
+
+{{< image src="vintagefilters_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Filter Selection
+
+Choose the base photographic aesthetic.
+
+{{< table >}}
+| | |
+|---|---|
+| **Filter** | Color grading preset |
+{{< /table >}}
+
+##### Filter-Specific Parameters
+
+Each filter exposes unique parameters that appear conditionally based on the selected filter:
+
+{{< table >}}
+| **Filter** | **Parameters** |
+|---|---|
+| **Amaro** | Overlay |
+| **Hefe** | Edge burn, Gradient, Soft light |
+| **Hudson** | Overlay |
+| **Rise** | Overlay |
+| **Sierra** | Overlay |
+| **Toaster** | Overlay warm |
+| **Sepia** | Intensity |
+| **Kodachrome** | Enhancement, Warmth |
+| **Polaroid** | Overexposure, Softness |
+| **Cross Process** | Color shift, Contrast boost |
+| **Bleach Bypass** | Desaturation, Contrast |
+| **Vintage 80s** | Neon intensity, Color pop |
+| **Film Grain** | Intensity, Size |
+| **Technicolor** | Saturation, Color balance |
+| **Daguerreotype** | Contrast, Silvering |
+| **Cyanotype** | Blue intensity |
+| **Western** | Warmth, Dust |
+| **Night Vision** | Gain, Noise |
+| **Infrared** | Foliage, Bloom |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply after the filter processing.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.VintageFilters;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out VintageFiltersVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.filter.value = VintageFilters.Filters.Toaster;
+    // Filter-specific parameters
+    volume.toasterOverlayWarm.value = 0.5f;
+    volume.toasterContrast.value = 1.2f;
+    volume.toasterFade.value = 0.3f;
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with color matrix operations and LUT-based grading.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel + optional LUT/overlay textures.
+* Complexity: O(1) per pixel regardless of filter complexity.
+
+##### Usage Patterns and Presets
+
+###### Warm Summer Photography (Hudson)
+
+For golden-hour, travel photography aesthetic:
+* Filter: Hudson
+* Intensity: 0.8-1.0
+* Hudson Warmth: 0.3-0.5
+* Hudson Contrast: 1.1-1.3
+* Hudson Overlay: 0.2-0.4
+* Saturation: 1.1-1.3
+
+###### Urban Drama (Gotham)
+
+For high-contrast, moody cityscapes:
+* Filter: Gotham
+* Intensity: 0.9-1.0
+* Gotham Contrast: 1.3-1.5
+* Gotham Vignette: 0.4-0.6
+* Brightness: -0.1 to 0.0
+* Saturation: 0.7-0.9
+
+###### Classic Film Emulation (X-Pro)
+
+For chemical cross-processing look:
+* Filter: X-Pro
+* Intensity: 0.8-1.0
+* X-Pro Contrast: 1.2-1.4
+* X-Pro Fade: 0.1-0.2
+* Saturation: 1.1-1.3 (colors shift dramatically)
+
+###### Vintage Documentary (Apollo)
+
+For NASA/mission photography aesthetic:
+* Filter: Apollo
+* Intensity: 0.7-0.9
+* Apollo Contrast: 1.2-1.4
+* Apollo Clarity: 0.3-0.5
+* Saturation: 0.8-1.0
+* Sharpness: High
 
 ---
-## Handheld 8-bit {#handheld8bit}
-{{< asset-header youtube="muFs-_hRCVc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-handheld-8-bit-239924" demo="https://fronkongames.github.io/demos-retro/handheld8bit/" >}}
+## 🎮 Handheld 8-Bit {#handheld8bit}
+{{< asset-header youtube="muFs-_hRCVc" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/retro-handheld-8-bit-239924" demo="https://fronkongames.github.io/demos-retro/handheld8bit/" warn="assets used in video and demo are not included">}}
 
-With '**Handheld 8-Bit**' you will get the look of the famous handheld console [Nintendo Game Boy](https://en.wikipedia.org/wiki/Game_Boy), introduced in Japan in 1989 and a year later in the rest of the world.
+Pocket-sized nostalgia. '**Handheld 8-Bit**' captures the iconic green-tinted, four-shade aesthetic of the world's most famous portable console: [Game Boy](https://en.wikipedia.org/wiki/Game_Boy). Perfect for flashbacks, minigames, or giving your entire project that beloved dot-matrix feel. This effect authentically replicates the 4-shade monochrome LCD display that defined portable gaming in the late 1980s and early 1990s.
 
-Once installed, when you select your '_Universal Renderer Data_', you will see something like this:
+#### Requisites
 
-{{< image src="handheld8bit_0.jpg" wrapper="col-6 mx-auto">}}
+To ensure optimal performance and compatibility, your project must meet the following requirements:
 
-With '**Intensity**' (_1_) you can control the intensity of the effect. If it is 0, the effect will not be active.
+*   **Unity:** 6000.0.58f1 or higher.
+*   **Universal RP:** 17.0.3 or higher.
 
-**Simulation**' (_2_) allows you to use two simulation modes. The first, '**Full**' (default), emulates the complete look. The second, '**Simple**', uses a dither algorithm to obtain a simplified (but faster than the first) version of the console look.
+#### Installation Guide
 
-{{< image src="handheld8bit_1.jpg" wrapper="col-6 mx-auto">}}
+##### Step 1: Add Renderer Feature
 
-To change the pixel size, use '**Pixel size**' (_3_) and to adjust the luminosity use '**Luminosity**' (_4_). You can also adjust the brightness balance with '**Threshold**' (_5_).
+The effect must be registered in your project's URP configuration:
 
-Although the color palette used by the effect is perfect to emulate the console, you may want to change some (or all) colors. You can do this in '**Palette colors**' (_6_). Note that they should be sorted by luminance, with the darkest colors first and the lightest at the end.
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Retro > Handheld 8-Bit**.
 
-In '**Full**' simulation mode, you can also adjust the grid color with '**Grid color**' (_7_). Use the alpha channel of the color to modulate its intensity.
+##### Step 2: Configure the Volume
 
-#
----
-<br>
+To apply the effect to your scene:
 
-## Misc
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Retro > Handheld 8-Bit**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
-All effects have a panel, '**Color**', in which you can modify the final color of the effect.
+#### Classic LCD Hardware Simulation
 
-{{< image src="color.jpg" wrapper="col-6 mx-auto">}}
+##### The 4-Shade Display System
 
-They also have an '**Advanced**' panel with these options:
+The original handheld console (1989) used a passive-matrix LCD display with unique characteristics that this effect faithfully reproduces:
 
-{{< image src="advanced.jpg" wrapper="col-6 mx-auto">}}
+**Four Gray Shades** - The display could only show four colors (or rather, shades):
+* **Black:** Fully activated pixels
+* **Dark Gray:** Medium activation
+* **Light Gray:** Low activation
+* **White/Transparent:** No activation
 
-Activate '**Affect the Scene View?**' (_1_) if you want the effect to be applied also in the '_Scene_' window of the Editor. With '**Filter mode**' (_2_) you can change the type of filter used.
+The **Palette** parameters allow customizing these four shades. The default is the iconic "Pee-yellow" phosphor look (0x9bbc0f background, 0x8bac0f light, 0x306230 dark, 0x0f380f black), but you can create custom looks like the Game Boy Pocket (silver), Game Boy Light (backlit), or modern IPS mod aesthetics.
 
-Although it is not recommended to change it, with '**RenderPass event**' (_3_) you can modify at which point in the render pipeline the effect is applied. Finally, activate '**Enable profiling**' (_4_) to show in the '_Profiling_' window the metrics of the effect.
+**Luminance Threshold** determines how input image brightness maps to the four output shades. The effect samples input luminance and quantizes it into four discrete levels based on configurable thresholds.
+
+##### Physical LCD Characteristics
+
+**Pixel Grid Structure** mimics the dot-matrix layout where each "pixel" is actually a small liquid crystal cell. **Pixel Size** controls how large each LCD dot appears, while **Pixel Distance** defines the gap between cells—simulating the visible grid lines on early LCD panels.
+
+**Grid Color** sets the color of the inactive space between pixels. For authentic Game Boy, this is slightly greenish-yellow. For Pocket versions, it's more silver/gray.
+
+**Luminosity** simulates the backlight strength or reflectivity of the panel. Higher values create brighter, more visible output—important since original units had no backlight and relied on ambient light reflecting off a rear reflector.
+
+**Shadow Size** creates a subtle drop shadow effect behind pixels, simulating the slight parallax gap between the LCD glass and the reflective backing layer beneath it.
+
+##### Color Grading for Monochrome Aesthetic
+
+The effect includes specific color grading parameters that work together with the palette system. Since the original hardware was monochrome (effectively), the color grading allows stylistic adjustments:
+
+**Brightness and Contrast** work together with **Threshold** to determine how aggressively the image quantizes into the four shades.
+
+**Gamma** at 0.9 (default) creates the slightly elevated black point typical of LCD displays with imperfect contrast ratios.
+
+**Saturation** can be reduced to 0 for pure grayscale, or left at higher values for stylized "what if it was in color" looks.
+
+#### Parameter Configuration
+
+{{< image src="handheld8bit_0.jpg" wrapper="col-10 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Display Structure Parameters
+
+Control the physical LCD grid and pixel layout.
+
+{{< table >}}
+| | |
+|---|---|
+| **Pixel Size** | LCD dot physical size |
+| **Subpixel Size** | Size of individual RGB subpixels |
+| **Pixel Distance** | Gap between LCD cells |
+| **Pixel Offset** | Subpixel arrangement offset |
+| **Shadow Size** | Drop shadow behind pixels |
+| **Shadow Distance** | Shadow offset distance |
+{{< /table >}}
+
+##### 4-Shade Palette Parameters
+
+Define the four luminance levels that create the monochrome look.
+
+{{< table >}}
+| | |
+|---|---|
+| **Color 1** | Darkest shade (black equivalent) |
+| **Color 2** | Dark gray shade |
+| **Color 3** | Light gray shade |
+| **Color 4** | Lightest shade (white equivalent) |
+| **Grid Color** | Color of inactive grid |
+| **Invert** | Invert the palette order |
+| **Luminosity** | Backlight/reflectivity boost |
+| **Threshold** | Luminance quantization threshold |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply before the palette quantization.
+
+{{< table >}}
+| | |
+|---|---|
+| Brightness | Additive luminance offset |
+| Contrast | Mid-tone contrast expansion |
+| Gamma | Nonlinear tonal mapping (inverted) |
+| Hue | Color wheel rotation |
+| Saturation | Color intensity relative to luminance |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Retro.Handheld8Bit;
+
+// ...
+
+[SerializeField]
+private VolumeProfile volumeProfile;
+
+// Access the effect
+if (volumeProfile.TryGet(out Handheld8BitVolume volume))
+{
+    volume.intensity.value = 1.0f;
+    volume.pixelSize.value = 6.0f;
+    volume.pixelDistance.value = 0.15f;
+    volume.gridColor.value = new Color(0.61f, 0.74f, 0.06f); // Classic Game Boy green
+    volume.luminosity.value = 1.3f;
+    volume.threshold.value = 0.25f;
+    // Set the four-shade palette
+    volume.color0.value = new Color(0.06f, 0.22f, 0.06f);  // Black
+    volume.color1.value = new Color(0.19f, 0.38f, 0.19f);  // Dark gray
+    volume.color2.value = new Color(0.55f, 0.67f, 0.06f);  // Light gray
+    volume.color3.value = new Color(0.61f, 0.74f, 0.06f);  // White/background
+}
+```
+
+##### Performance Characteristics
+
+The effect executes in a single render pass with palette quantization.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: 1 per pixel.
+* Complexity: O(1) per pixel with efficient threshold branching.
+
+##### Usage Patterns and Presets
+
+###### Original Game Boy (1989)
+
+For the classic "Pee-yellow" aesthetic:
+* Pixel Size: 4-6
+* Pixel Distance: 0.1-0.2
+* Grid Color: #9bbc0f
+* Luminosity: 1.0-1.2 (no backlight)
+* Threshold: 0.333
+* Color 0: #0f380f (black)
+* Color 1: #306230 (dark gray)
+* Color 2: #8bac0f (light gray)
+* Color 3: #9bbc0f (white/background)
+* Contrast: 1.2-1.4
+* Gamma: 0.9
+* Saturation: 0.0-0.2
+
+###### Game Boy Pocket (1996)
+
+For the sleek silver redesign:
+* Grid Color: #c0c0c0 (silver)
+* Color 0: #000000
+* Color 1: #606060
+* Color 2: #a0a0a0
+* Color 3: #c0c0c0
+* Contrast: 1.3-1.5 (higher contrast screen)
+* Saturation: 0.0
+
+###### Modern "IPS Mod" Style
+
+For backlit, vibrant reinterpretation:
+* Luminosity: 2.0-3.0
+* Grid Color: Pure black
+* Custom palette with more saturated greens
+* Brightness: 0.1-0.2
+* Contrast: 1.2-1.3
+
+###### Monochrome Dreams
+
+For dramatic black and white aesthetic:
+* Threshold: 0.5
+* Color 0: #000000 (black)
+* Color 1: #404040 (near black)
+* Color 2: #c0c0c0 (light gray)
+* Color 3: #ffffff (white)
+* Saturation: 0.0
+* Contrast: 1.5-2.0
 
 ---
 ## F.A.Q.
+
+##### _Effect Not appearing_
+
+If the effect doesn't appear in your scene:
+
+1. **Verify Renderer Feature**: Check that the renderer feature is added to your Universal Renderer Data asset.
+2. **Check Volume Profile**: Ensure a Volume component exists in your scene with the effect override enabled.
+3. **Confirm Intensity**: Verify that the Intensity parameter is set to a value greater than 0.0 and enabled.
+4. **Camera Settings**: Check that your camera has Post Processing enabled in the Camera component.
 
 ##### _How to make the effect also affect the UI?_
 
