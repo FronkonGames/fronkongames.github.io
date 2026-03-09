@@ -52,7 +52,7 @@ Today it was [announced](https://investors.unity.com/news/news-details/2023/Unit
 
 [James Moon Whitehurst](https://en.wikipedia.org/wiki/Jim_Whitehurst) will serve as interim CEO. Whitehurst is a former president of IBM and CEO of Red Hat, and is currently a '_Special Advisor_' at [Silver Lake](https://en.wikipedia.org/wiki/Silver_Lake_(investment_firm)), which owns 10% of Unity.
 
-Let's take a look at the current leadership of Unity:
+Let's 💡 Take a look at the current leadership of Unity:
 
 * [James Moon Whitehurst](https://en.wikipedia.org/wiki/Jim_Whitehurst), interim CEO.
 * [Tomer Bar-Zeev](https://www.linkedin.com/in/tomerbarzeev/), [Marc Whitten](https://www.linkedin.com/in/marcwhitten/): presidents.
