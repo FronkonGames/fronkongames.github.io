@@ -155,6 +155,8 @@ The base damage look is controlled by normalized health feedback and three layer
 
 ##### Impacts Strength
 
+{{< image src="damage_2.jpg" wrapper="col-8 mx-auto">}}
+
 In the custom inspector, the '**Impacts Strength**' block controls the strength, timing, thickness, and softness of flash hits and directional indicators.
 
 {{< table >}}
@@ -167,8 +169,6 @@ In the custom inspector, the '**Impacts Strength**' block controls the strength,
 {{< /table >}}
 
 ##### Color Gradient
-
-{{< image src="damage_2.jpg" wrapper="col-8 mx-auto">}}
 
 This '**Color Gradient**' section in the custom inspector controls how the damage overlay is tinted and blended, including the conditional tint slots shown for multi-color gradients.
 
