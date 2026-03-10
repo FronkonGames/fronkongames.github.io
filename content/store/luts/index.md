@@ -90,6 +90,7 @@ To apply the effects to your scene:
 2. In the Volume component, create or assign a **Volume Profile**.
 3. Click **Add Override** and select the desired LUT from **Fronkon Games > LUTs**.
 4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+5. Assign one of the available profiles by clicking on '**LUT Profiles**'.
 
 {{< alert color="info" >}}
 Remember that for a parameter to take effect, you must activate it. Click on '**ALL**' to activate them all.
