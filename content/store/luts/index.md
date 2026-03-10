@@ -58,7 +58,7 @@ Make sure that '_Compatibility Mode_' is **disabled** in '_Project Settings > Gr
 The effects must be registered in your project's [URP configuration](https://docs.unity3d.com/6000.0/Documentation/Manual/urp/introduction-landing.html):
 
 1. Locate your **Universal Renderer Data** asset.
-2. Click **Add Renderer Feature** and select the desired distortion from **Fronkon Games > Retro**.
+2. Click **Add Renderer Feature** and select the desired distortion from **Fronkon Games > LUTs**.
 
 {{< alert color="info" >}}
 '_Quality_' levels (_Project Settings > Quality_) can have their own active '_Render Pipeline Asset_'.
