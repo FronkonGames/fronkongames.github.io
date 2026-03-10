@@ -88,7 +88,7 @@ To apply the effects to your scene:
 
 1. Create a **Volume** component (Global or Local) or select one that has already been created.
 2. In the Volume component, create or assign a **Volume Profile**.
-3. Click **Add Override** and select the desired distortion from **Fronkon Games > LUTs**.
+3. Click **Add Override** and select the desired LUT from **Fronkon Games > LUTs**.
 4. Enable the '**Intensity**' parameter (and any others you wish to modify).
 
 {{< alert color="info" >}}
