@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fronkongames.github.io/tags/store/</loc>
+    <lastmod>2026-03-10T23:12:19+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/</loc>
+    <lastmod>2026-03-10T23:12:19+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/unity/</loc>
+    <lastmod>2026-03-10T23:12:19+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/store/weird/</loc>
+    <lastmod>2025-12-07T19:48:00+01:00</lastmod>
+  </url><url>
     <loc>https://fronkongames.github.io/tags/devblog/</loc>
     <lastmod>2025-12-23T16:55:43+01:00</lastmod>
   </url><url>
@@ -14,14 +26,8 @@
     <loc>https://fronkongames.github.io/projects/kairos/</loc>
     <lastmod>2025-12-23T16:15:57+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/tags/</loc>
-    <lastmod>2026-03-10T23:10:59+01:00</lastmod>
-  </url><url>
     <loc>https://fronkongames.github.io/projects/gamework-foundation/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/unity/</loc>
-    <lastmod>2026-03-10T23:10:59+01:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/gamework-core/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -48,16 +54,13 @@
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/lut/</loc>
-    <lastmod>2026-03-10T23:10:59+01:00</lastmod>
+    <lastmod>2026-03-10T23:12:19+01:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/luts/</loc>
-    <lastmod>2026-03-10T23:10:59+01:00</lastmod>
+    <lastmod>2026-03-10T23:12:19+01:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/store/luts/</loc>
-    <lastmod>2026-03-10T23:10:59+01:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/store/</loc>
-    <lastmod>2026-03-10T23:10:59+01:00</lastmod>
+    <lastmod>2026-03-10T23:12:19+01:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/tiny-tween/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -76,9 +79,6 @@
   </url><url>
     <loc>https://fronkongames.github.io/tags/hack/</loc>
     <lastmod>2026-02-12T18:00:07+01:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/store/weird/</loc>
-    <lastmod>2025-12-07T19:48:00+01:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/blog/</loc>
     <lastmod>2026-03-09T02:19:18+01:00</lastmod>
