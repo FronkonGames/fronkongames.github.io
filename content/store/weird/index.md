@@ -11,7 +11,7 @@ thumbnail:
   url: img/weird.jpg
 ---
 
-'**[Weird](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)**' is a collection of **10 fullscreen post-processing effects** designed to add surreal, psychedelic, and artistic visual treatments to your games. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.
+'**[Weird](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)**' is a collection of **11 fullscreen post-processing effects** designed to add surreal, psychedelic, and artistic visual treatments to your games. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.
 
 Each effect can be used as a standalone package, but inside the bundle they share the same URP workflow, volume-driven runtime model, and editor conventions.
 
@@ -27,6 +27,7 @@ It consists of the following effects:
 * [🌀 Spiral](#spiral), a hypnotic droste effect.
 * [☁️ Dither Fog](#dither-fog), a retro dithering fog.
 * [📐 Edges](#edges), edge detection and stylization.
+* [🔷 Shapes](#shapes), procedural stamps and halftone-style patterns driven by the image.
 
 {{< alert color="light" >}}
 You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[Weird BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price.
@@ -1511,6 +1512,167 @@ private void SetEdges(bool enabled)
 * Width: 2
 * Threshold: 0.1
 * Blend: Multiply
+
+
+---
+## 🔷 Shapes {#shapes}
+{{< asset-header youtube="FazriZIepPU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-shapes-377008" demo="https://fronkongames.github.io/demos-weird/shapes/" warn="assets used in video and demo are not included">}}
+
+**Shapes** layers a jittered grid of procedural stamps over the frame. Each cell samples the source image to drive size and spawn probability, then draws SDF silhouettes, rings, Gabor patches, and many more **shape kernels** in the spirit of halftone and stipple looks, with control over thickness, smoothness, and color compositing.
+
+#### Requisites
+
+* **Unity:** 6000.0.58f2 or higher.
+* **Universal RP:** 17.0.2 or higher.
+
+#### Installation Guide
+
+##### Step 1: Add Renderer Feature
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Weird > Shapes**.
+
+##### Step 2: Configure the Volume
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Weird > Shapes**.
+4. Enable '**Intensity**' and the shape parameters you want to control.
+
+#### Parameter Configuration
+
+{{< image src="shapes_0.jpg" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Shapes
+
+Controls which stamp is drawn, how the grid searches the neighborhood, and how strongly each stamp contributes. **Neighborhood** is the half-width *L* (each axis tests *2L+1* cells, capped in the shader). **Grid step** *T* is the pixel spacing of candidate centers. **Density** scales stochastic spawn probability. **Sample type** chooses how the buffer is read to drive each stamp (*Texture* / default channel, *SQRT*, or *Length* of RGB). **Thickness** widens the antialiased edge in pixels; **Smoothness** reshapes the falloff curve (higher = softer, lower = crisper).
+
+{{< table >}}
+| | |
+|---|---|
+| **Shapes** | Kernel: Circle, Gabor, Heart, Disc, Diamond, Star, Hexagon, Cross, Squircle, Spiral, Gear, Moon, Flower, Burst, Ripple, Rounded Rect, Triangle, Capsule, Blob, Checker, Wave Band, Lissajous. |
+| **Sample** | Texture, SQRT, or Length; scaled by **Scale** [0.1-4] (default 1.4). |
+| **Strength** [0-1] | Per-stamp amplitude (default 0.75). |
+| **Thickness** [0.1-10] | Edge band in pixels (default 1.5). |
+| **Smoothness** [0.1-4] | Edge response (default 1; higher = gentler falloff). |
+| **Neighborhood** [1-16] | Half-width *L* (default 8). |
+| **Step** [1-64] | Grid spacing *T* in pixels (default 4). |
+| **Density** [0-4] | Spawn density (default 1). |
+| **Size filter** | Min / max normalized radius [0-1]; stamps outside the range are discarded (defaults 0.4 and 1). |
+{{< /table >}}
+
+##### Color
+
+The stamp mask is built from **Tint** and **Background**, each with its own blend mode. Afterward the shared Weird grading block (**Brightness**, **Contrast**, **Gamma**, **Hue**, **Saturation**) runs, then the foreground composite uses **Color Blend** against the scene (same vocabulary as other Weird effects).
+
+{{< table >}}
+| | |
+|---|---|
+| **Tint** | Foreground / stamp tint (default white). |
+| **Color Blend** | How the stamped result composites over the source. |
+| **Background** | Color mixed into the background side of the mask (default black). |
+| **Background Blend** | Blend mode for the background contribution. |
+{{< /table >}}
+
+##### Color adjustments
+
+{{< table >}}
+| | |
+|---|---|
+| **Brightness** [-1, 1] | Luminance offset (default 0). |
+| **Contrast** [0, 10] | Light / dark separation (default 1). |
+| **Gamma** [0.1, 10] | Mid-tone curve (default 1). |
+| **Hue** [0, 1] | Color wheel shift (default 0). |
+| **Saturation** [0, 2] | Color intensity (default 1). |
+{{< /table >}}
+
+##### Advanced
+
+{{< table >}}
+| | |
+|---|---|
+| **Affect Scene View** | When enabled, the effect also runs in the Scene view camera. |
+| **Use Scaled Time** | When enabled, internal time follows `Time.time`; otherwise `Time.unscaledTime` (reserved for future animation hooks). |
+{{< /table >}}
+
+#### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Weird.Shapes;
+
+[SerializeField] private VolumeProfile volumeProfile;
+
+private void SetShapes(bool enabled)
+{
+  if (volumeProfile.TryGet(out ShapesVolume volume))
+  {
+    volume.intensity.overrideState = true;
+    volume.shapesType.overrideState = true;
+    volume.intensity.value = enabled ? 1.0f : 0.0f;
+    volume.shapesType.value = ShapesType.Heart;
+  }
+}
+```
+
+Full stamp and grading control:
+
+```csharp
+if (volumeProfile.TryGet(out ShapesVolume volume))
+{
+  volume.shapesType.value = ShapesType.Heart;
+  volume.sampleType.value = SampleType.Length;
+  volume.neighborhood.value = 8.0f;
+  volume.gridStep.value = 4.0f;
+  volume.density.value = 1.0f;
+  volume.sampleScale.value = 1.4f;
+  volume.shapeStrength.value = 0.75f;
+  volume.shapeThickness.value = 1.5f;
+  volume.shapeSmoothness.value = 1.0f;
+  volume.sizeFilterMin.value = 0.4f;
+  volume.sizeFilterMax.value = 1.0f;
+  volume.tint.value = Color.white;
+  volume.colorBlend.value = ColorBlends.Additive;
+  volume.backgroundColor.value = Color.black;
+  volume.backgroundBlend.value = ColorBlends.Additive;
+  volume.brightness.value = 0.0f;
+  volume.contrast.value = 1.0f;
+  volume.gamma.value = 1.0f;
+  volume.hue.value = 0.0f;
+  volume.saturation.value = 1.0f;
+}
+```
+
+💡 Take a look at the code in the included demo to learn more about how the effect works.
+
+#### Performance Characteristics
+
+* Pass Count: 1 blit pass.
+* Texture Samples: Moderate to high — each pixel evaluates a neighborhood of up to *(2L+1)²* grid cells (with *L* clamped in the shader), sampling the source for placement and masking.
+* Complexity: O(*L*²) per pixel in the worst case; lower **Neighborhood** reduces GPU cost.
+
+#### Usage Patterns and Presets
+
+###### Halftone hearts
+* Shapes: Heart
+* Sample: Length
+* Neighborhood: 8, Step: 4, Density: 1
+* Strength: 0.75, Thickness: 1.5, Smoothness: 1
+* Size filter: 0.4–1, Color blend: Additive
+
+###### Sparse rings
+* Shapes: Circle
+* Sample: Texture
+* Density: 0.4
+* Size filter: 0.3–0.8
+
+###### Soft blobs
+* Shapes: Blob or Disc
+* Smoothness: 2–3
+* Thickness: 2–4
 
 
 ---
