@@ -27,6 +27,7 @@ It consists of the following effects:
 * [🌀 Spiral](#spiral), a hypnotic droste effect.
 * [☁️ Dither Fog](#dither-fog), a retro dithering fog.
 * [📐 Edges](#edges), edge detection and stylization.
+* [💥 Shattered](#shattered), fracture your screen into animated Voronoi shards.
 * [🔷 Shapes](#shapes), procedural stamps and halftone-style patterns driven by the image.
 
 {{< alert color="light" >}}
@@ -58,7 +59,7 @@ Once installed, you have to add the effect you want to use from '**Weird**' as a
 
 Remember that the camera you are using must have the '**Post Processing**' option enabled.
 
-{{< image src="editor_camera.jpg" wrapper="col-8 mx-auto">}}
+{{< image src="editor_camera.jpg" wrapper="col-6 mx-auto">}}
 
 {{< alert color="info" >}}
 '_Quality_' levels (_Project Settings > Quality_) can have their own active '_Render Pipeline Asset_'.
@@ -1513,6 +1514,227 @@ private void SetEdges(bool enabled)
 * Threshold: 0.1
 * Blend: Multiply
 
+
+---
+## 💥 Shattered {#shattered}
+{{< asset-header youtube="Luh6Z1pf0RA" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-shattered-350226" demo="https://fronkongames.github.io/demos-weird/shattered/" warn="assets used in video and demo are not included">}}
+
+Fracture your screen into animated Voronoi shards with per-cell distortion, directional shadows, and dynamic color palettes. Each cell breathes and shifts independently, creating everything from subtle glass refractions to wild chromatic aberration storms.
+
+#### Requisites
+
+* **Unity:** 6000.0.58f2 or higher.
+* **Universal RP:** 17.0.2 or higher.
+
+#### Installation Guide
+
+##### Step 1: Add Renderer Feature
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Weird > Shattered**.
+
+##### Step 2: Configure the Volume
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Weird > Shattered**.
+4. Enable '**Intensity**' and the shattered parameters you want to control.
+
+#### Parameter Configuration
+
+{{< image src="shattered_0.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Shattered
+
+Controls the core Voronoi cell generation and distortion behavior. Adjust cell density for finer or coarser fragmentation, animation speed and oscillation for livelier movement, and edge scale to hide displacement seams. The center radius creates a protected safe zone around the middle of the screen.
+
+{{< table >}}
+| | |
+|---|---|
+| **Cells** [1-20] | Density of the Voronoi cell grid. Higher values create more, smaller shards. Default: 5. |
+| **Distortion Type** | Type of distortion applied per cell: Texture (UV offset), Chromatic Aberration (RGB channel split), Hue (HSV shift), or CMYK (channel separation). |
+| **Speed** [0-5] | Animation speed multiplier for cell movement. Default: 1. |
+| **Distortion** [0-2] | Strength of the UV displacement per cell. Default: 1. |
+| **Animation** [0-1] | How far cell centers oscillate from their grid positions. Default: 0.4. |
+| **Edge Scale** [0-0.2] | Edge magnification factor to hide displacement seams. Default: 0.05. |
+| **Center Radius** [0-1] | Radius of the unaffected center area. 0 = whole screen affected. Default: 0. |
+{{< /table >}}
+
+##### Shadow
+
+Casts directional shadows across Voronoi cell edges, adding depth and dimension to the shattered fragments. The shadow direction controls which edges receive shading, while size determines the thickness of the shadow band.
+
+{{< table >}}
+| | |
+|---|---|
+| **Shadow Color** | Color of the cell edge shadow. Default: black. |
+| **Shadow Direction** [0-360] | Angle controlling which edges cast shadows. Default: 45. |
+| **Shadow Size** [0-0.5] | Thickness of the shadow band at cell edges. Default: 0.05. |
+{{< /table >}}
+
+##### Variation
+
+Randomizes color grading per Voronoi cell for a patchwork, broken-glass look. Each variation slider controls the probability that a cell receives a random offset for that parameter. The variation intensity multiplier scales all offsets together.
+
+{{< table >}}
+| | |
+|---|---|
+| **Variation Intensity** [0-1] | Global multiplier for all variation offsets. Default: 1. |
+| **Brightness Variation** [0-1] | Probability of random brightness changes per cell. Default: 0. |
+| **Contrast Variation** [0-1] | Probability of random contrast changes per cell. Default: 0. |
+| **Hue Variation** [0-1] | Probability of random hue changes per cell. Default: 0. |
+| **Gamma Variation** [0-1] | Probability of random gamma changes per cell. Default: 0. |
+| **Saturation Variation** [0-1] | Probability of random saturation changes per cell. Default: 0. |
+{{< /table >}}
+
+##### Palette
+
+Maps the final image through a procedural color palette based on luminance. Choose from 7 built-in palettes or create your own 5-color gradient. The palette intensity controls how strongly the palette replaces the original colors, while luma power adjusts the luminance curve before palette lookup.
+
+{{< table >}}
+| | |
+|---|---|
+| **Palette** | Palette type: None, Fire, Ice, Matrix, Neon, Gold, Grayscale, or Custom. |
+| **Palette Intensity** [0-1] | How strongly the palette replaces original colors. Default: 1. |
+| **Luma Power** [0-2] | Power of the luminance calculation for palette lookup. Default: 0.5. |
+| **Color #1-#5** | Custom palette colors (only visible when Palette is set to Custom). Defaults to a sepia gradient. |
+{{< /table >}}
+
+{{< alert color="info" >}}
+When **Palette** is set to **Custom**, an **"Open Palette Tool"** button appears in the inspector. Click it to open the Palette Tool window, where you can search, preview, and import color palettes from popular online sources directly into the effect.
+{{< /alert >}}
+
+{{< image src="palette_tool.png" wrapper="col-10 mx-auto">}}
+
+##### Color adjustments
+
+{{< table >}}
+| | |
+|---|---|
+| **Brightness** [-1, 1] | Luminance offset (default 0). |
+| **Contrast** [0, 10] | Light / dark separation (default 1). |
+| **Gamma** [0.1, 10] | Mid-tone curve (default 1). |
+| **Hue** [0, 1] | Color wheel shift (default 0). |
+| **Saturation** [0, 2] | Color intensity (default 1). |
+{{< /table >}}
+
+#### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Weird.Shattered;
+
+[SerializeField] private VolumeProfile volumeProfile;
+
+private void SetShattered(bool enabled)
+{
+  if (volumeProfile.TryGet(out ShatteredVolume volume))
+  {
+    volume.intensity.overrideState = true;
+    volume.cells.overrideState = true;
+    volume.intensity.value = enabled ? 1.0f : 0.0f;
+    volume.cells.value = 5.0f;
+  }
+}
+```
+
+Animate the effect at runtime:
+
+```csharp
+// Smoothly increase cell density
+if (volumeProfile.TryGet(out ShatteredVolume volume))
+{
+  volume.cells.overrideState = true;
+  volume.cells.value = Mathf.Lerp(volume.cells.value, 10.0f, Time.deltaTime * 2.0f);
+}
+```
+
+Complete parameter control:
+
+```csharp
+if (volumeProfile.TryGet(out ShatteredVolume volume))
+{
+  // Shattered
+  volume.distortionType.value = DistortionType.ChromaticAberration;
+  volume.cells.value = 8.0f;
+  volume.speed.value = 1.5f;
+  volume.distortion.value = 1.2f;
+  volume.animation.value = 0.4f;
+  volume.edgeScale.value = 0.05f;
+  volume.centerRadius.value = 0.0f;
+
+  // Shadow
+  volume.shadowColor.value = Color.black;
+  volume.shadowDirection.value = 45.0f;
+  volume.shadowSize.value = 0.05f;
+
+  // Variation
+  volume.variationIntensity.value = 1.0f;
+  volume.brightnessVariation.value = 0.0f;
+  volume.contrastVariation.value = 0.0f;
+  volume.hueVariation.value = 0.5f;
+  volume.gammaVariation.value = 0.0f;
+  volume.saturationVariation.value = 0.0f;
+
+  // Palette
+  volume.paletteType.value = PaletteType.Fire;
+  volume.paletteIntensity.value = 1.0f;
+  volume.lumaPower.value = 0.5f;
+
+  // Color adjustments
+  volume.brightness.value = 0.0f;
+  volume.contrast.value = 1.0f;
+  volume.gamma.value = 1.0f;
+  volume.hue.value = 0.0f;
+  volume.saturation.value = 1.0f;
+}
+```
+
+💡 Take a look at the code in the included demo to learn more about how the effect works.
+
+#### Performance Characteristics
+
+The effect executes in a single full-screen pass with Voronoi cell generation and distortion.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: Low to moderate (depends on Distortion Type).
+* Complexity: O(1) per pixel with a fixed 3x3 neighbor search.
+
+#### Usage Patterns and Presets
+
+###### Shattered Glass
+
+For a broken glass transition:
+* Distortion Type: Texture
+* Cells: 10
+* Speed: 2
+* Distortion: 1.5
+* Animation: 0.4
+* Shadow Size: 0.05
+* Shadow Direction: 45
+
+###### Chromatic Storm
+
+For wild RGB separation:
+* Distortion Type: Chromatic Aberration
+* Cells: 15
+* Speed: 3
+* Distortion: 2
+* Variation Intensity: 1
+* Hue Variation: 0.5
+
+###### Cyberpunk Palette
+
+For neon-drenched fragmentation:
+* Distortion Type: Hue
+* Cells: 8
+* Palette: Neon
+* Palette Intensity: 1
+* Shadow Color: Cyan
+* Shadow Direction: 90
 
 ---
 ## 🔷 Shapes {#shapes}

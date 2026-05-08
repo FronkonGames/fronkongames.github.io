@@ -42,7 +42,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/weird/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="2025-03-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-11T20:38:46+01:00">
+    <meta property="article:modified_time" content="2026-04-29T01:02:41+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/weird-1280x640.jpg">
 <meta property="og:image:alt" content="Weird">
 
@@ -102,7 +102,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "2025-03-11T00:00:00CET",
-      "dateModified": "2026-03-11T20:38:46CET",
+      "dateModified": "2026-04-29T01:02:41CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/weird/#/schema/breadcrumb/1"
       },
@@ -466,6 +466,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#shattered">💥 Shattered</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#shapes">🔷 Shapes</a>
       <ul>
         <li></li>
@@ -559,6 +564,7 @@
 <li><a href="/store/weird/#spiral">🌀 Spiral</a>, a hypnotic droste effect.</li>
 <li><a href="/store/weird/#dither-fog">☁️ Dither Fog</a>, a retro dithering fog.</li>
 <li><a href="/store/weird/#edges">📐 Edges</a>, edge detection and stylization.</li>
+<li><a href="/store/weird/#shattered">💥 Shattered</a>, fracture your screen into animated Voronoi shards.</li>
 <li><a href="/store/weird/#shapes">🔷 Shapes</a>, procedural stamps and halftone-style patterns driven by the image.</li>
 </ul>
 
@@ -793,7 +799,7 @@
 
 
 
-<div class="col-8 mx-auto"><img class="img-fluid "
+<div class="col-6 mx-auto"><img class="img-fluid "
             src="/store/weird/editor_camera-2800x2795.jpg"
             
             
@@ -6694,6 +6700,911 @@
 </ul>
 <hr />
 
+<h2 id="shattered" class="heading">💥 Shattered <a href="#shattered" aria-labelledby="shattered">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/Luh6Z1pf0RA?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div><div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="STORE"
+        href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-shattered-350226?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">STORE&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+
+    &nbsp;
+</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-weird/shattered/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p>Fracture your screen into animated Voronoi shards with per-cell distortion, directional shadows, and dynamic color palettes. Each cell breathes and shifts independently, creating everything from subtle glass refractions to wild chromatic aberration storms.</p>
+
+<h4 id="requisites-10" class="heading">Requisites <a href="#requisites-10" aria-labelledby="requisites-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li><strong>Unity:</strong> 6000.0.58f2 or higher.</li>
+<li><strong>Universal RP:</strong> 17.0.2 or higher.</li>
+</ul>
+
+<h4 id="installation-guide-10" class="heading">Installation Guide <a href="#installation-guide-10" aria-labelledby="installation-guide-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+<h5 id="step-1-add-renderer-feature-11" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-11" aria-labelledby="step-1-add-renderer-feature-11">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ol>
+<li>Locate your <strong>Universal Renderer Data</strong> asset.</li>
+<li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Weird &gt; Shattered</strong>.</li>
+</ol>
+
+<h5 id="step-2-configure-the-volume-11" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-11" aria-labelledby="step-2-configure-the-volume-11">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<ol>
+<li>Create a <strong>Volume</strong> component (Global or Local).</li>
+<li>In the Volume component, create or assign a <strong>Volume Profile</strong>.</li>
+<li>Click <strong>Add Override</strong> and select <strong>Fronkon Games &gt; Weird &gt; Shattered</strong>.</li>
+<li>Enable &lsquo;<strong>Intensity</strong>&rsquo; and the shattered parameters you want to control.</li>
+</ol>
+
+<h4 id="parameter-configuration-10" class="heading">Parameter Configuration <a href="#parameter-configuration-10" aria-labelledby="parameter-configuration-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/weird/shattered_0-2800x2994.jpg"
+            
+            
+            srcset="/store/weird/shattered_0-576x616.webp 576w, /store/weird/shattered_0-768x821.webp 768w, /store/weird/shattered_0-992x1061.webp 992w, /store/weird/shattered_0-1200x1283.webp 1200w, /store/weird/shattered_0-1400x1497.webp 1400w, /store/weird/shattered_0-2800x2994.webp 2800w" sizes="100vw"
+            height="2994"
+            width="2800"
+            >
+</div><br>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.</p>
+
+<h5 id="shattered-1" class="heading">Shattered <a href="#shattered-1" aria-labelledby="shattered-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Controls the core Voronoi cell generation and distortion behavior. Adjust cell density for finer or coarser fragmentation, animation speed and oscillation for livelier movement, and edge scale to hide displacement seams. The center radius creates a protected safe zone around the middle of the screen.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cells</strong> [1-20]</td>
+<td>Density of the Voronoi cell grid. Higher values create more, smaller shards. Default: 5.</td>
+</tr>
+<tr>
+<td><strong>Distortion Type</strong></td>
+<td>Type of distortion applied per cell: Texture (UV offset), Chromatic Aberration (RGB channel split), Hue (HSV shift), or CMYK (channel separation).</td>
+</tr>
+<tr>
+<td><strong>Speed</strong> [0-5]</td>
+<td>Animation speed multiplier for cell movement. Default: 1.</td>
+</tr>
+<tr>
+<td><strong>Distortion</strong> [0-2]</td>
+<td>Strength of the UV displacement per cell. Default: 1.</td>
+</tr>
+<tr>
+<td><strong>Animation</strong> [0-1]</td>
+<td>How far cell centers oscillate from their grid positions. Default: 0.4.</td>
+</tr>
+<tr>
+<td><strong>Edge Scale</strong> [0-0.2]</td>
+<td>Edge magnification factor to hide displacement seams. Default: 0.05.</td>
+</tr>
+<tr>
+<td><strong>Center Radius</strong> [0-1]</td>
+<td>Radius of the unaffected center area. 0 = whole screen affected. Default: 0.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="shadow-1" class="heading">Shadow <a href="#shadow-1" aria-labelledby="shadow-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Casts directional shadows across Voronoi cell edges, adding depth and dimension to the shattered fragments. The shadow direction controls which edges receive shading, while size determines the thickness of the shadow band.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shadow Color</strong></td>
+<td>Color of the cell edge shadow. Default: black.</td>
+</tr>
+<tr>
+<td><strong>Shadow Direction</strong> [0-360]</td>
+<td>Angle controlling which edges cast shadows. Default: 45.</td>
+</tr>
+<tr>
+<td><strong>Shadow Size</strong> [0-0.5]</td>
+<td>Thickness of the shadow band at cell edges. Default: 0.05.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="variation" class="heading">Variation <a href="#variation" aria-labelledby="variation">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Randomizes color grading per Voronoi cell for a patchwork, broken-glass look. Each variation slider controls the probability that a cell receives a random offset for that parameter. The variation intensity multiplier scales all offsets together.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Variation Intensity</strong> [0-1]</td>
+<td>Global multiplier for all variation offsets. Default: 1.</td>
+</tr>
+<tr>
+<td><strong>Brightness Variation</strong> [0-1]</td>
+<td>Probability of random brightness changes per cell. Default: 0.</td>
+</tr>
+<tr>
+<td><strong>Contrast Variation</strong> [0-1]</td>
+<td>Probability of random contrast changes per cell. Default: 0.</td>
+</tr>
+<tr>
+<td><strong>Hue Variation</strong> [0-1]</td>
+<td>Probability of random hue changes per cell. Default: 0.</td>
+</tr>
+<tr>
+<td><strong>Gamma Variation</strong> [0-1]</td>
+<td>Probability of random gamma changes per cell. Default: 0.</td>
+</tr>
+<tr>
+<td><strong>Saturation Variation</strong> [0-1]</td>
+<td>Probability of random saturation changes per cell. Default: 0.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="palette" class="heading">Palette <a href="#palette" aria-labelledby="palette">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Maps the final image through a procedural color palette based on luminance. Choose from 7 built-in palettes or create your own 5-color gradient. The palette intensity controls how strongly the palette replaces the original colors, while luma power adjusts the luminance curve before palette lookup.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Palette</strong></td>
+<td>Palette type: None, Fire, Ice, Matrix, Neon, Gold, Grayscale, or Custom.</td>
+</tr>
+<tr>
+<td><strong>Palette Intensity</strong> [0-1]</td>
+<td>How strongly the palette replaces original colors. Default: 1.</td>
+</tr>
+<tr>
+<td><strong>Luma Power</strong> [0-2]</td>
+<td>Power of the luminance calculation for palette lookup. Default: 0.5.</td>
+</tr>
+<tr>
+<td><strong>Color #1-#5</strong></td>
+<td>Custom palette colors (only visible when Palette is set to Custom). Defaults to a sepia gradient.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-info " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            When <strong>Palette</strong> is set to <strong>Custom</strong>, an <strong>&ldquo;Open Palette Tool&rdquo;</strong> button appears in the inspector. Click it to open the Palette Tool window, where you can search, preview, and import color palettes from popular online sources directly into the effect.
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-10 mx-auto"><img class="img-fluid "
+            src="/store/weird/palette_tool-2800x2280.jpg"
+            
+            
+            srcset="/store/weird/palette_tool-576x469.webp 576w, /store/weird/palette_tool-768x625.webp 768w, /store/weird/palette_tool-992x808.webp 992w, /store/weird/palette_tool-1200x977.webp 1200w, /store/weird/palette_tool-1400x1140.webp 1400w, /store/weird/palette_tool-2800x2280.webp 2800w" sizes="100vw"
+            height="2280"
+            width="2800"
+            >
+</div><br>
+
+<h5 id="color-adjustments" class="heading">Color adjustments <a href="#color-adjustments" aria-labelledby="color-adjustments">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Brightness</strong> [-1, 1]</td>
+<td>Luminance offset (default 0).</td>
+</tr>
+<tr>
+<td><strong>Contrast</strong> [0, 10]</td>
+<td>Light / dark separation (default 1).</td>
+</tr>
+<tr>
+<td><strong>Gamma</strong> [0.1, 10]</td>
+<td>Mid-tone curve (default 1).</td>
+</tr>
+<tr>
+<td><strong>Hue</strong> [0, 1]</td>
+<td>Color wheel shift (default 0).</td>
+</tr>
+<tr>
+<td><strong>Saturation</strong> [0, 2]</td>
+<td>Color intensity (default 1).</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h4 id="runtime-control-10" class="heading">Runtime Control <a href="#runtime-control-10" aria-labelledby="runtime-control-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine.Rendering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Weird.Shattered</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[SerializeField]</span> <span class="kd">private</span> <span class="n">VolumeProfile</span> <span class="n">volumeProfile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">SetShattered</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">volumeProfile</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="k">out</span> <span class="n">ShatteredVolume</span> <span class="n">volume</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">intensity</span><span class="p">.</span><span class="n">overrideState</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="n">overrideState</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">intensity</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">enabled</span> <span class="p">?</span> <span class="m">1.0f</span> <span class="p">:</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">5.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Animate the effect at runtime:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Smoothly increase cell density</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">volumeProfile</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="k">out</span> <span class="n">ShatteredVolume</span> <span class="n">volume</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="n">overrideState</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Lerp</span><span class="p">(</span><span class="n">volume</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="k">value</span><span class="p">,</span> <span class="m">10.0f</span><span class="p">,</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span> <span class="p">*</span> <span class="m">2.0f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Complete parameter control:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">volumeProfile</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="k">out</span> <span class="n">ShatteredVolume</span> <span class="n">volume</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Shattered</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">distortionType</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">DistortionType</span><span class="p">.</span><span class="n">ChromaticAberration</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">cells</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">8.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">speed</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">distortion</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.2f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">animation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.4f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">edgeScale</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.05f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">centerRadius</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Shadow</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">shadowColor</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">shadowDirection</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">45.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">shadowSize</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.05f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Variation</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">variationIntensity</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">brightnessVariation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">contrastVariation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">hueVariation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">gammaVariation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">saturationVariation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Palette</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">paletteType</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">PaletteType</span><span class="p">.</span><span class="n">Fire</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">paletteIntensity</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">lumaPower</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Color adjustments</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">brightness</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">contrast</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">gamma</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">hue</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>💡 Take a look at the code in the included demo to learn more about how the effect works.</p>
+
+<h4 id="performance-characteristics-10" class="heading">Performance Characteristics <a href="#performance-characteristics-10" aria-labelledby="performance-characteristics-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The effect executes in a single full-screen pass with Voronoi cell generation and distortion.</p>
+<ul>
+<li>Pass Count: 1 blit pass.</li>
+<li>Texture Samples: Low to moderate (depends on Distortion Type).</li>
+<li>Complexity: O(1) per pixel with a fixed 3x3 neighbor search.</li>
+</ul>
+
+<h4 id="usage-patterns-and-presets-10" class="heading">Usage Patterns and Presets <a href="#usage-patterns-and-presets-10" aria-labelledby="usage-patterns-and-presets-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+<h6 id="shattered-glass" class="heading">Shattered Glass <a href="#shattered-glass" aria-labelledby="shattered-glass">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h6>
+<p>For a broken glass transition:</p>
+<ul>
+<li>Distortion Type: Texture</li>
+<li>Cells: 10</li>
+<li>Speed: 2</li>
+<li>Distortion: 1.5</li>
+<li>Animation: 0.4</li>
+<li>Shadow Size: 0.05</li>
+<li>Shadow Direction: 45</li>
+</ul>
+
+<h6 id="chromatic-storm" class="heading">Chromatic Storm <a href="#chromatic-storm" aria-labelledby="chromatic-storm">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h6>
+<p>For wild RGB separation:</p>
+<ul>
+<li>Distortion Type: Chromatic Aberration</li>
+<li>Cells: 15</li>
+<li>Speed: 3</li>
+<li>Distortion: 2</li>
+<li>Variation Intensity: 1</li>
+<li>Hue Variation: 0.5</li>
+</ul>
+
+<h6 id="cyberpunk-palette" class="heading">Cyberpunk Palette <a href="#cyberpunk-palette" aria-labelledby="cyberpunk-palette">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h6>
+<p>For neon-drenched fragmentation:</p>
+<ul>
+<li>Distortion Type: Hue</li>
+<li>Cells: 8</li>
+<li>Palette: Neon</li>
+<li>Palette Intensity: 1</li>
+<li>Shadow Color: Cyan</li>
+<li>Shadow Direction: 90</li>
+</ul>
+<hr />
+
 <h2 id="shapes" class="heading">🔷 Shapes <a href="#shapes" aria-labelledby="shapes">
 
 
@@ -6802,7 +7713,7 @@
 
 <p><strong>Shapes</strong> layers a jittered grid of procedural stamps over the frame. Each cell samples the source image to drive size and spawn probability, then draws SDF silhouettes, rings, Gabor patches, and many more <strong>shape kernels</strong> in the spirit of halftone and stipple looks, with control over thickness, smoothness, and color compositing.</p>
 
-<h4 id="requisites-10" class="heading">Requisites <a href="#requisites-10" aria-labelledby="requisites-10">
+<h4 id="requisites-11" class="heading">Requisites <a href="#requisites-11" aria-labelledby="requisites-11">
 
 
 
@@ -6823,7 +7734,7 @@
 <li><strong>Universal RP:</strong> 17.0.2 or higher.</li>
 </ul>
 
-<h4 id="installation-guide-10" class="heading">Installation Guide <a href="#installation-guide-10" aria-labelledby="installation-guide-10">
+<h4 id="installation-guide-11" class="heading">Installation Guide <a href="#installation-guide-11" aria-labelledby="installation-guide-11">
 
 
 
@@ -6840,7 +7751,7 @@
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-11" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-11" aria-labelledby="step-1-add-renderer-feature-11">
+<h5 id="step-1-add-renderer-feature-12" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-12" aria-labelledby="step-1-add-renderer-feature-12">
 
 
 
@@ -6861,7 +7772,7 @@
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Weird &gt; Shapes</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-11" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-11" aria-labelledby="step-2-configure-the-volume-11">
+<h5 id="step-2-configure-the-volume-12" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-12" aria-labelledby="step-2-configure-the-volume-12">
 
 
 
@@ -6884,7 +7795,7 @@
 <li>Enable &lsquo;<strong>Intensity</strong>&rsquo; and the shape parameters you want to control.</li>
 </ol>
 
-<h4 id="parameter-configuration-10" class="heading">Parameter Configuration <a href="#parameter-configuration-10" aria-labelledby="parameter-configuration-10">
+<h4 id="parameter-configuration-11" class="heading">Parameter Configuration <a href="#parameter-configuration-11" aria-labelledby="parameter-configuration-11">
 
 
 
@@ -7123,7 +8034,7 @@
     
 
 
-<h5 id="color-adjustments" class="heading">Color adjustments <a href="#color-adjustments" aria-labelledby="color-adjustments">
+<h5 id="color-adjustments-1" class="heading">Color adjustments <a href="#color-adjustments-1" aria-labelledby="color-adjustments-1">
 
 
 
@@ -7245,7 +8156,7 @@
     
 
 
-<h4 id="runtime-control-10" class="heading">Runtime Control <a href="#runtime-control-10" aria-labelledby="runtime-control-10">
+<h4 id="runtime-control-11" class="heading">Runtime Control <a href="#runtime-control-11" aria-labelledby="runtime-control-11">
 
 
 
@@ -7301,7 +8212,7 @@
 </span></span><span class="line"><span class="cl">  <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>💡 Take a look at the code in the included demo to learn more about how the effect works.</p>
 
-<h4 id="performance-characteristics-10" class="heading">Performance Characteristics <a href="#performance-characteristics-10" aria-labelledby="performance-characteristics-10">
+<h4 id="performance-characteristics-11" class="heading">Performance Characteristics <a href="#performance-characteristics-11" aria-labelledby="performance-characteristics-11">
 
 
 
@@ -7323,7 +8234,7 @@
 <li>Complexity: O(<em>L</em>²) per pixel in the worst case; lower <strong>Neighborhood</strong> reduces GPU cost.</li>
 </ul>
 
-<h4 id="usage-patterns-and-presets-10" class="heading">Usage Patterns and Presets <a href="#usage-patterns-and-presets-10" aria-labelledby="usage-patterns-and-presets-10">
+<h4 id="usage-patterns-and-presets-11" class="heading">Usage Patterns and Presets <a href="#usage-patterns-and-presets-11" aria-labelledby="usage-patterns-and-presets-11">
 
 
 
@@ -7742,6 +8653,11 @@
       </ul>
     </li>
     <li><a href="#edges">📐 Edges</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#shattered">💥 Shattered</a>
       <ul>
         <li></li>
       </ul>
