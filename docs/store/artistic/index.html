@@ -476,6 +476,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#snow">❄️ Snow</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -567,6 +572,7 @@
 <li><a href="/store/artistic/#neon">Neon</a>, synth-wave effect.</li>
 <li><a href="/store/artistic/#spark">Spark</a>, adds bloom and ray-of-light effects.</li>
 <li><a href="/store/artistic/#radialblur">Radial Blur</a>, the need for the speed.</li>
+<li><a href="/store/artistic/#snow">Snow</a>, fully procedural wind-swept snowfall with parallax depth and shape variety.</li>
 </ul>
 
 
@@ -12823,6 +12829,882 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Branching: Minimal, uses smooth mathematical functions.</li>
 <li>Memory: No additional textures or compute buffers.</li>
 </ul>
+<hr />
+
+<h2 id="snow" class="heading">❄️ Snow <a href="#snow" aria-labelledby="snow">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/7LP7RvAftcs?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div><div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="STORE"
+        href="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-snow-379248?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">STORE&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+
+    &nbsp;
+</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-artistic/snow/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p><strong>Snow</strong> adds fully 2D procedural, wind-swept snowfall to your scenes with dynamic GPU particles. The effect supports <strong>six particle shapes</strong> (Circle, Square, Triangle, Diamond, Line, and Image) with optional <strong>tiled texture atlas</strong> randomization, <strong>parallax depth layers</strong>, and gentle alpha oscillation for a living winter landscape. From delicate flurries to raging blizzards, craft cinematic snow with one-click presets and 22+ real-time parameters.</p>
+
+<h4 id="requisites-12" class="heading">Requisites <a href="#requisites-12" aria-labelledby="requisites-12">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>To ensure optimal performance and compatibility, your project must meet the following requirements:</p>
+<ul>
+<li><strong>Unity:</strong> 6000.0.58f2 or higher.</li>
+<li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
+</ul>
+
+<h4 id="installation-guide-1" class="heading">Installation Guide <a href="#installation-guide-1" aria-labelledby="installation-guide-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+<h5 id="step-1-add-renderer-feature-13" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-13" aria-labelledby="step-1-add-renderer-feature-13">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>The effect must be registered in your project&rsquo;s URP configuration:</p>
+<ol>
+<li>Locate your <strong>Universal Renderer Data</strong> asset.</li>
+<li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Snow</strong>.</li>
+</ol>
+
+<h5 id="step-2-configure-the-volume-13" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-13" aria-labelledby="step-2-configure-the-volume-13">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>To apply the effect to your scene:</p>
+<ol>
+<li>Create a <strong>Volume</strong> component (Global or Local).</li>
+<li>In the Volume component, create or assign a <strong>Volume Profile</strong>.</li>
+<li>Click <strong>Add Override</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Snow</strong>.</li>
+<li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
+</ol>
+
+<h4 id="parameter-configuration-12" class="heading">Parameter Configuration <a href="#parameter-configuration-12" aria-labelledby="parameter-configuration-12">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/snow_0-2800x2953.jpg"
+            
+            
+            srcset="/store/artistic/snow_0-576x608.webp 576w, /store/artistic/snow_0-768x810.webp 768w, /store/artistic/snow_0-992x1046.webp 992w, /store/artistic/snow_0-1200x1266.webp 1200w, /store/artistic/snow_0-1400x1477.webp 1400w, /store/artistic/snow_0-2800x2953.webp 2800w" sizes="100vw"
+            height="2953"
+            width="2800"
+            >
+</div><br>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.</p>
+
+<h5 id="particle-parameters" class="heading">Particle Parameters <a href="#particle-parameters" aria-labelledby="particle-parameters">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>These parameters control the fundamental behavior of the snow particles. <strong>Count</strong> sets how many particles are rendered, <strong>Speed</strong> and <strong>Direction</strong> control the falling trajectory, and <strong>Drift</strong> adds horizontal wind sway. <strong>Layers</strong> creates parallax depth where closer particles are larger and faster.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Count</strong></td>
+<td>1 to 500</td>
+<td>120</td>
+<td>Number of snow particles rendered</td>
+</tr>
+<tr>
+<td><strong>Speed</strong></td>
+<td>0.0 to 10.0</td>
+<td>2.5</td>
+<td>Falling speed multiplier</td>
+</tr>
+<tr>
+<td><strong>Direction</strong></td>
+<td>0.0 to 360.0</td>
+<td>20.0</td>
+<td>Falling angle in degrees. 0 = straight down</td>
+</tr>
+<tr>
+<td><strong>Drift</strong></td>
+<td>0.0 to 10.0</td>
+<td>2.0</td>
+<td>Horizontal wind sway amplitude</td>
+</tr>
+<tr>
+<td><strong>X Variance</strong></td>
+<td>0.0 to 50.0</td>
+<td>20.0</td>
+<td>Horizontal position jitter</td>
+</tr>
+<tr>
+<td><strong>Y Variance</strong></td>
+<td>0.0 to 50.0</td>
+<td>20.0</td>
+<td>Vertical position jitter</td>
+</tr>
+<tr>
+<td><strong>Rotation</strong></td>
+<td>0.0 to 5.0</td>
+<td>0.5</td>
+<td>Per-particle rotation speed</td>
+</tr>
+<tr>
+<td><strong>Layers</strong></td>
+<td>1 to 20</td>
+<td>6</td>
+<td>Parallax depth layers. Higher = more depth variation</td>
+</tr>
+<tr>
+<td><strong>Glow</strong></td>
+<td>0.0 to 100.0</td>
+<td>50.0</td>
+<td>Soft edge glow radius in pixels</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="size--alpha" class="heading">Size &amp; Alpha <a href="#size--alpha" aria-labelledby="size--alpha">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Controls the visual appearance of individual particles. <strong>Min/Max Size</strong> creates variation, while <strong>Min/Max Alpha</strong> with <strong>Alpha Speed</strong> produces gentle twinkling.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min Size</strong></td>
+<td>1.0 to 50.0</td>
+<td>3.0</td>
+<td>Minimum particle size in pixels</td>
+</tr>
+<tr>
+<td><strong>Max Size</strong></td>
+<td>1.0 to 50.0</td>
+<td>24.0</td>
+<td>Maximum particle size in pixels</td>
+</tr>
+<tr>
+<td><strong>Min Alpha</strong></td>
+<td>-2.0 to 2.0</td>
+<td>-0.2</td>
+<td>Minimum particle alpha (can go below 0 for partial fade)</td>
+</tr>
+<tr>
+<td><strong>Max Alpha</strong></td>
+<td>-2.0 to 2.0</td>
+<td>2.0</td>
+<td>Maximum particle alpha</td>
+</tr>
+<tr>
+<td><strong>Alpha Speed</strong></td>
+<td>0.0 to 50.0</td>
+<td>2.0</td>
+<td>Speed of alpha oscillation over time</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="shape--texture" class="heading">Shape &amp; Texture <a href="#shape--texture" aria-labelledby="shape--texture">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Choose from six built-in shapes or supply a custom texture. In <strong>Image</strong> mode, the <strong>Texture</strong> slot accepts a sprite, and <strong>Tiles</strong> supports horizontal atlas strips for random variation.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shape</strong></td>
+<td>Circle / Square / Triangle / Diamond / Line / Image</td>
+<td>Circle</td>
+<td>Particle geometry</td>
+</tr>
+<tr>
+<td><strong>Texture</strong></td>
+<td>Texture2D</td>
+<td>None</td>
+<td>Custom sprite for Image shape</td>
+</tr>
+<tr>
+<td><strong>Tiles</strong></td>
+<td>1 to 16</td>
+<td>1</td>
+<td>Horizontal tile count in the texture atlas. 1 = single sprite</td>
+</tr>
+<tr>
+<td><strong>Blend</strong></td>
+<td>Enum (23 modes)</td>
+<td>Screen</td>
+<td>Color blend mode for particles</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            When using <strong>Image</strong> shape with multiple <strong>Tiles</strong>, make sure each tile in your atlas has transparent padding to prevent neighboring tile bleed.
+        </div>
+    </div>
+
+<h5 id="color" class="heading">Color <a href="#color" aria-labelledby="color">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Four configurable colors are randomly distributed across particles for natural variation.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Color 1</strong></td>
+<td>Color</td>
+<td>White</td>
+<td>Primary snow color</td>
+</tr>
+<tr>
+<td><strong>Color 2</strong></td>
+<td>Color</td>
+<td>Light blue (0.914, 0.937, 0.980)</td>
+<td>Secondary snow color</td>
+</tr>
+<tr>
+<td><strong>Color 3</strong></td>
+<td>Color</td>
+<td>Pale blue (0.871, 0.945, 0.980)</td>
+<td>Tertiary snow color</td>
+</tr>
+<tr>
+<td><strong>Color 4</strong></td>
+<td>Color</td>
+<td>Gray-blue (0.698, 0.820, 0.859)</td>
+<td>Quaternary snow color</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="color-grading-12" class="heading">Color Grading <a href="#color-grading-12" aria-labelledby="color-grading-12">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Standard color correction parameters apply to the final output.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Effect</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brightness</td>
+<td>-1.0 to 1.0</td>
+<td>Additive luminance offset</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0.0 to 10.0</td>
+<td>Mid-tone contrast expansion</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>0.1 to 10.0</td>
+<td>Nonlinear tonal mapping (inverted)</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0 to 1.0</td>
+<td>Color wheel rotation</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0.0 to 2.0</td>
+<td>Color intensity relative to luminance</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h4 id="runtime-control-12" class="heading">Runtime Control <a href="#runtime-control-12" aria-labelledby="runtime-control-12">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The effect integrates with Unity&rsquo;s Volume system for seamless runtime parameter modification. Access the <strong>SnowVolume</strong> component through the Volume Profile.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine.Rendering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Artistic.Snow</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[SerializedField]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">VolumeProfile</span> <span class="n">volumeProfile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Access the effect</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">volumeProfile</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="k">out</span> <span class="n">SnowVolume</span> <span class="n">volume</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Enable/disable effect</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">intensity</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span> <span class="c1">// 0.0 = disabled</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Configure particles</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">count</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">200</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">speed</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">3.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">direction</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">110.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">drift</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">2.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Configure size and glow</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">minSize</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">4.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">maxSize</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">28.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">glow</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">60.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Use image atlas with 4 tiles</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">SnowShape</span><span class="p">.</span><span class="n">Image</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">tiles</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Apply color correction</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">contrast</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.1f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.2f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>For a more detailed example, check the code in the demo scene.</p>
+
+<h4 id="preset-configurations-7" class="heading">Preset Configurations <a href="#preset-configurations-7" aria-labelledby="preset-configurations-7">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Preset</strong></th>
+<th><strong>Key Settings</strong></th>
+<th><strong>Look</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Heavy Snow</strong></td>
+<td>Count = 350, Speed = 4.0, Drift = 3.0, Min Size = 4, Max Size = 28, Glow = 60, Layers = 8</td>
+<td>Dense blizzard with strong wind</td>
+</tr>
+<tr>
+<td><strong>Medium Snow</strong></td>
+<td>Count = 150, Speed = 2.5, Drift = 2.0, Min Size = 3, Max Size = 20, Glow = 45, Layers = 6</td>
+<td>Moderate snowfall, default settings</td>
+</tr>
+<tr>
+<td><strong>Light Snow</strong></td>
+<td>Count = 40, Speed = 1.2, Drift = 1.0, Min Size = 2, Max Size = 12, Glow = 30, Layers = 4</td>
+<td>Gentle flurry with sparse particles</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h4 id="performance-characteristics-3" class="heading">Performance Characteristics <a href="#performance-characteristics-3" aria-labelledby="performance-characteristics-3">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The effect executes in a single render pass. Per-pixel cost scales linearly with <strong>Count</strong>.</p>
+<p>Performance considerations:</p>
+<ul>
+<li>Pass Count: 1 blit pass.</li>
+<li>Loop Iterations: Up to 500 per pixel (limited by actual Count value).</li>
+<li>Texture Samples: 1 scene sample + 1 shape texture sample (Image mode only).</li>
+<li>Branching: Minimal, uses hash-based deterministic placement.</li>
+</ul>
 
 <h1 id="heading-1" class="heading"> <a href="#heading-1" aria-labelledby="heading-1">
 
@@ -13205,6 +14087,11 @@ These operators range from simple mathematical functions to sophisticated film e
       </ul>
     </li>
     <li><a href="#radialblur">🌀 Radial Blur</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#snow">❄️ Snow</a>
       <ul>
         <li></li>
       </ul>

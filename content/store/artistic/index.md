@@ -25,6 +25,7 @@ thumbnail:
 * [Neon](#neon), synth-wave effect.
 * [Spark](#spark), adds bloom and ray-of-light effects.
 * [Radial Blur](#radialblur), the need for the speed.
+* [Snow](#snow), fully procedural wind-swept snowfall with parallax depth and shape variety.
 
 {{< alert color="light" >}}
 You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
@@ -2363,6 +2364,185 @@ Performance considerations:
 * Texture Samples: N per pixel (where N = Samples value) + chromatic aberration offsets.
 * Branching: Minimal, uses smooth mathematical functions.
 * Memory: No additional textures or compute buffers.
+
+---
+## ❄️ Snow {#snow}
+{{< asset-header youtube="7LP7RvAftcs" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-snow-379248" demo="https://fronkongames.github.io/demos-artistic/snow/" warn="assets used in video and demo are not included">}}
+
+**Snow** adds fully 2D procedural, wind-swept snowfall to your scenes with dynamic GPU particles. The effect supports **six particle shapes** (Circle, Square, Triangle, Diamond, Line, and Image) with optional **tiled texture atlas** randomization, **parallax depth layers**, and gentle alpha oscillation for a living winter landscape. From delicate flurries to raging blizzards, craft cinematic snow with one-click presets and 22+ real-time parameters.
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f2 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Installation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Artistic > Snow**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Artistic > Snow**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Parameter Configuration
+
+{{< image src="snow_0.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Particle Parameters
+
+These parameters control the fundamental behavior of the snow particles. **Count** sets how many particles are rendered, **Speed** and **Direction** control the falling trajectory, and **Drift** adds horizontal wind sway. **Layers** creates parallax depth where closer particles are larger and faster.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Count** | 1 to 500 | 120 | Number of snow particles rendered |
+| **Speed** | 0.0 to 10.0 | 2.5 | Falling speed multiplier |
+| **Direction** | 0.0 to 360.0 | 20.0 | Falling angle in degrees. 0 = straight down |
+| **Drift** | 0.0 to 10.0 | 2.0 | Horizontal wind sway amplitude |
+| **X Variance** | 0.0 to 50.0 | 20.0 | Horizontal position jitter |
+| **Y Variance** | 0.0 to 50.0 | 20.0 | Vertical position jitter |
+| **Rotation** | 0.0 to 5.0 | 0.5 | Per-particle rotation speed |
+| **Layers** | 1 to 20 | 6 | Parallax depth layers. Higher = more depth variation |
+| **Glow** | 0.0 to 100.0 | 50.0 | Soft edge glow radius in pixels |
+{{< /table >}}
+
+##### Size & Alpha
+
+Controls the visual appearance of individual particles. **Min/Max Size** creates variation, while **Min/Max Alpha** with **Alpha Speed** produces gentle twinkling.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Min Size** | 1.0 to 50.0 | 3.0 | Minimum particle size in pixels |
+| **Max Size** | 1.0 to 50.0 | 24.0 | Maximum particle size in pixels |
+| **Min Alpha** | -2.0 to 2.0 | -0.2 | Minimum particle alpha (can go below 0 for partial fade) |
+| **Max Alpha** | -2.0 to 2.0 | 2.0 | Maximum particle alpha |
+| **Alpha Speed** | 0.0 to 50.0 | 2.0 | Speed of alpha oscillation over time |
+{{< /table >}}
+
+##### Shape & Texture
+
+Choose from six built-in shapes or supply a custom texture. In **Image** mode, the **Texture** slot accepts a sprite, and **Tiles** supports horizontal atlas strips for random variation.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Shape** | Circle / Square / Triangle / Diamond / Line / Image | Circle | Particle geometry |
+| **Texture** | Texture2D | None | Custom sprite for Image shape |
+| **Tiles** | 1 to 16 | 1 | Horizontal tile count in the texture atlas. 1 = single sprite |
+| **Blend** | Enum (23 modes) | Screen | Color blend mode for particles |
+{{< /table >}}
+
+{{< alert type="info" >}}
+When using **Image** shape with multiple **Tiles**, make sure each tile in your atlas has transparent padding to prevent neighboring tile bleed.
+{{< /alert >}}
+
+##### Color
+
+Four configurable colors are randomly distributed across particles for natural variation.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Color 1** | Color | White | Primary snow color |
+| **Color 2** | Color | Light blue (0.914, 0.937, 0.980) | Secondary snow color |
+| **Color 3** | Color | Pale blue (0.871, 0.945, 0.980) | Tertiary snow color |
+| **Color 4** | Color | Gray-blue (0.698, 0.820, 0.859) | Quaternary snow color |
+{{< /table >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **SnowVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Artistic.Snow;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out SnowVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure particles
+    volume.count.value = 200;
+    volume.speed.value = 3.5f;
+    volume.direction.value = 110.0f;
+    volume.drift.value = 2.5f;
+
+    // Configure size and glow
+    volume.minSize.value = 4.0f;
+    volume.maxSize.value = 28.0f;
+    volume.glow.value = 60.0f;
+
+    // Use image atlas with 4 tiles
+    volume.shape.value = SnowShape.Image;
+    volume.tiles.value = 4;
+
+    // Apply color correction
+    volume.contrast.value = 1.1f;
+    volume.saturation.value = 1.2f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Preset Configurations
+
+{{< table >}}
+| **Preset** | **Key Settings** | **Look** |
+|---|---|---|
+| **Heavy Snow** | Count = 350, Speed = 4.0, Drift = 3.0, Min Size = 4, Max Size = 28, Glow = 60, Layers = 8 | Dense blizzard with strong wind |
+| **Medium Snow** | Count = 150, Speed = 2.5, Drift = 2.0, Min Size = 3, Max Size = 20, Glow = 45, Layers = 6 | Moderate snowfall, default settings |
+| **Light Snow** | Count = 40, Speed = 1.2, Drift = 1.0, Min Size = 2, Max Size = 12, Glow = 30, Layers = 4 | Gentle flurry with sparse particles |
+{{< /table >}}
+
+#### Performance Characteristics
+
+The effect executes in a single render pass. Per-pixel cost scales linearly with **Count**.
+
+Performance considerations:
+
+* Pass Count: 1 blit pass.
+* Loop Iterations: Up to 500 per pixel (limited by actual Count value).
+* Texture Samples: 1 scene sample + 1 shape texture sample (Image mode only).
+* Branching: Minimal, uses hash-based deterministic placement.
 
 #
 
