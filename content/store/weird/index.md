@@ -11,7 +11,7 @@ thumbnail:
   url: img/weird.jpg
 ---
 
-'**[Weird](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)**' is a collection of **11 fullscreen post-processing effects** designed to add surreal, psychedelic, and artistic visual treatments to your games. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.
+'**[Weird](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)**' is a collection of **fullscreen post-processing effects** designed to add surreal, psychedelic, and artistic visual treatments to your games. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.
 
 Each effect can be used as a standalone package, but inside the bundle they share the same URP workflow, volume-driven runtime model, and editor conventions.
 
