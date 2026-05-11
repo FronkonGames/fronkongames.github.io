@@ -29,6 +29,7 @@ It consists of the following effects:
 * [📐 Edges](#edges), edge detection and stylization.
 * [💥 Shattered](#shattered), fracture your screen into animated Voronoi shards.
 * [🔷 Shapes](#shapes), procedural stamps and halftone-style patterns driven by the image.
+* [⚪ Chrome](#chrome), liquid metal with fresnel, chromatic aberration and highlights.
 
 {{< alert color="light" >}}
 You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[Weird BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price.
@@ -1895,6 +1896,202 @@ if (volumeProfile.TryGet(out ShapesVolume volume))
 * Shapes: Blob or Disc
 * Smoothness: 2–3
 * Thickness: 2–4
+
+
+---
+## ⚪ Chrome {#chrome}
+{{< asset-header youtube="2t0R0SMgmjM" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-chrome-379674" demo="https://fronkongames.github.io/demos-weird/chrome/" warn="assets used in video and demo are not included">}}
+
+Transform your screen into a shimmering liquid metal surface with **Chrome**. This post-processing effect uses animated Voronoi cells to create bump-mapped refractions, specular lighting, chromatic aberration, and a colored fresnel rim that traces every cell boundary.
+
+#### Requisites
+
+* **Unity:** 6000.0.58f2 or higher.
+* **Universal RP:** 17.0.2 or higher.
+
+#### Installation Guide
+
+##### Step 1: Add Renderer Feature
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Weird > Chrome**.
+
+##### Step 2: Configure the Volume
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Weird > Chrome**.
+4. Enable '**Intensity**' and the chrome parameters you want to control.
+
+#### Parameter Configuration
+
+{{< image src="chrome_0.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Chrome
+
+Controls the core liquid metal surface generation. Adjust the Voronoi scale, per-axis animation speed, pattern softness, and bump intensity to shape the living metallic surface.
+
+{{< table >}}
+| | |
+|---|---|
+| **Scale** [1-20] | Density of the Voronoi cell grid. Higher values create smaller, more numerous cells. Default: 5. |
+| **Speed** | Per-axis animation speed (X, Y). Default: (1, 0). |
+| **Exponent** [1-50] | Voronoi cell edge softness. Lower values create sharper, more defined cells. Default: 20. |
+| **Bump Scale** [0-5] | Height intensity of the bump map. Higher values create stronger surface relief. Default: 2.5. |
+| **Refraction** [0-0.2] | UV distortion strength. Controls how much the underlying scene warps across cell boundaries. Default: 0.05. |
+| **Chromatic Aberration** [0-0.1] | RGB channel separation at refraction edges. 0 = no split, higher = more prismatic. Default: 0. |
+{{< /table >}}
+
+##### Lighting
+
+Configures the 3D light source that illuminates the chrome surface. Position the light anywhere in 3D space, set its color, and control intensity and falloff for dramatic metallic reflections.
+
+{{< table >}}
+| | |
+|---|---|
+| **Light** [0-10] | Light intensity multiplier. Default: 1. |
+| **Falloff** [0-2] | Light distance attenuation. Higher values make light drop off faster. Default: 0.25. |
+| **Position** [-10 to 10] | 3D position of the light source (X, Y, Z). Default: (0, 0, -7). |
+| **Color** | Color of the light source. Default: (0.8, 0.8, 1). |
+| **Shininess** [0-2] | Specular highlight brightness multiplier. Default: 1. |
+{{< /table >}}
+
+##### Fresnel Rim
+
+Adds an edge glow that traces the boundaries of every Voronoi cell.
+
+{{< table >}}
+| | |
+|---|---|
+| **Fresnel** [0-1] | Brightness multiplier for the rim glow. Default: 0.1. |
+| **Power** [0-10] | Controls how wide or tight the rim is. Lower values = wider rim. Default: 2. |
+| **Color** | Color of the rim glow. Default: (0.8, 0.8, 1). |
+{{< /table >}}
+
+##### Color adjustments
+
+{{< table >}}
+| | |
+|---|---|
+| **Brightness** [-1, 1] | Luminance offset (default 0). |
+| **Contrast** [0, 10] | Light / dark separation (default 1). |
+| **Gamma** [0.1, 10] | Mid-tone curve (default 1). |
+| **Hue** [0, 1] | Color wheel shift (default 0). |
+| **Saturation** [0, 2] | Color intensity (default 1). |
+{{< /table >}}
+
+#### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Weird.Chrome;
+
+[SerializeField] private VolumeProfile volumeProfile;
+
+private void SetChrome(bool enabled)
+{
+  if (volumeProfile.TryGet(out ChromeVolume volume))
+  {
+    volume.intensity.overrideState = true;
+    volume.intensity.value = enabled ? 1.0f : 0.0f;
+  }
+}
+```
+
+Animate the chrome surface at runtime:
+
+```csharp
+// Increase cell density over time
+if (volumeProfile.TryGet(out ChromeVolume volume))
+{
+  volume.scale.overrideState = true;
+  volume.scale.value = Mathf.Lerp(volume.scale.value, 10.0f, Time.deltaTime * 2.0f);
+}
+```
+
+Full parameter control for dynamic chrome manipulation:
+
+```csharp
+if (volumeProfile.TryGet(out ChromeVolume volume))
+{
+  // Chrome surface
+  volume.scale.value = 5.0f;
+  volume.speed.value = new Vector2(1.0f, 0.0f);
+  volume.exponent.value = 20.0f;
+  volume.bumpScale.value = 2.5f;
+  volume.refraction.value = 0.05f;
+  volume.chromaticAberration.value = 0.02f;
+  
+  // Lighting
+  volume.lightIntensity.value = 1.0f;
+  volume.falloff.value = 0.25f;
+  volume.lightPosition.value = new Vector3(0.0f, 0.0f, -7.0f);
+  volume.lightColor.value = new Color(0.8f, 0.8f, 1.0f);
+  volume.shininess.value = 1.0f;
+  
+  // Fresnel rim
+  volume.fresnelIntensity.value = 0.1f;
+  volume.fresnelPower.value = 2.0f;
+  volume.fresnelColor.value = new Color(0.8f, 0.8f, 1.0f);
+  
+  // Color adjustments
+  volume.brightness.value = 0.0f;
+  volume.contrast.value = 1.0f;
+  volume.gamma.value = 1.0f;
+  volume.hue.value = 0.0f;
+  volume.saturation.value = 1.0f;
+}
+```
+
+💡 Take a look at the code in the included demo to learn more about how the effect works.
+
+#### Performance Characteristics
+
+The effect executes in a single full-screen pass with Voronoi generation and bump-mapped lighting.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: Low to moderate (3 samples when chromatic aberration is active).
+* Complexity: O(1) per pixel with a fixed 3x3 Voronoi neighbor search.
+
+#### Usage Patterns and Presets
+
+###### Liquid Mercury
+
+For a classic reflective metal look:
+* Scale: 5
+* Speed: (1, 0)
+* Bump Scale: 2.5
+* Refraction: 0.05
+* Light: 1
+* Shininess: 1
+* Fresnel: 0.1
+* Power: 2
+
+###### Prismatic Glass
+
+For strong chromatic distortion:
+* Scale: 8
+* Bump Scale: 1.5
+* Refraction: 0.1
+* Chromatic Aberration: 0.05
+* Light: 2
+* Shininess: 1.5
+* Fresnel: 0.3
+* Power: 1.5
+
+###### Subtle Polish
+
+For a gentle, understated metallic sheen:
+* Scale: 10
+* Exponent: 30
+* Bump Scale: 1.0
+* Refraction: 0.02
+* Light: 0.5
+* Fresnel: 0.05
+* Power: 3
 
 
 ---
