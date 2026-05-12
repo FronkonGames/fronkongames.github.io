@@ -441,6 +441,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#vignette_asset">🖤 Vignette</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#colorisolation">🎯 Color Isolation</a>
       <ul>
         <li></li>
@@ -565,6 +570,7 @@
 <li><a href="/store/artistic/#tiltshift">Tilt Shift</a>, used to simulate a miniature scene.</li>
 <li><a href="/store/artistic/#photo">Photo</a>, recreates the authentic look &amp; feel of professional cameras.</li>
 <li><a href="/store/artistic/#shockwave">Shockwave</a>, stunning shockwave effects with customizable distortion.</li>
+<li><a href="/store/artistic/#vignette_asset">Vignette</a>, the most comprehensive vignette effect with shapes, algorithms, and lens distortion.</li>
 <li><a href="/store/artistic/#colorisolation">Color Isolation</a>, isolates areas by color and applies effects.</li>
 <li><a href="/store/artistic/#sharpen">Sharpen</a>, enhances image details.</li>
 <li><a href="/store/artistic/#tonemapper">Tonemapper</a>, maps HDR into LDR using different algorithms.</li>
@@ -6304,6 +6310,928 @@
 
 <hr />
 
+<h2 id="vignette_asset" class="heading">🖤 Vignette <a href="#vignette_asset" aria-labelledby="vignette_asset">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<div class="youtube-embedded" class="ytp-cued-thumbnail-overlay-image">
+  <iframe src="https://www.youtube-nocookie.com/embed/AlzuUZuoDkk?origin=https%3a%2f%2ffronkongames.github.io%2f" allowfullscreen title="YouTube Video">
+  </iframe>
+</div><div align="left">
+<i><small>assets used in video and demo are not included</small></i><br>
+</div><div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-artistic/vignette/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+
+<p><strong>Vignette</strong> is the most comprehensive vignette effect available for Unity, combining <strong>six distinct shapes</strong>, <strong>three falloff algorithms</strong>, chromatic aberration, and lens distortion into a single powerful post-processing pass. Whether you need subtle edge darkening for cinematic framing, stylized shape masks for creative compositions, or animated organic edges for surreal visuals, this effect delivers complete control over every aspect of the vignette.</p>
+<p>The effect supports procedural shapes (circular, elliptical, square, diamond, horizontal bars, vertical bars), each with configurable roundness, aspect correction, and curvature. Three algorithms provide different falloff characteristics: <strong>Simple</strong> (smoothstep with full radius control), <strong>Natural</strong> (physically inspired optical falloff), and <strong>Gooey</strong> (animated noise-warped organic edges). Additional features include radial chromatic aberration and shape-aware lens distortion that intensifies toward the edges.</p>
+
+<h4 id="requisites-5" class="heading">Requisites <a href="#requisites-5" aria-labelledby="requisites-5">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>To ensure optimal performance and compatibility, your project must meet the following requirements:</p>
+<ul>
+<li><strong>Unity:</strong> 6000.0.58f2 or higher.</li>
+<li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
+</ul>
+
+<h4 id="instalation-guide-4" class="heading">Instalation Guide <a href="#instalation-guide-4" aria-labelledby="instalation-guide-4">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+<h5 id="step-1-add-renderer-feature-6" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-6" aria-labelledby="step-1-add-renderer-feature-6">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>The effect must be registered in your project&rsquo;s URP configuration:</p>
+<ol>
+<li>Locate your <strong>Universal Renderer Data</strong> asset.</li>
+<li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Vignette</strong>.</li>
+</ol>
+
+<h5 id="step-2-configure-the-volume-6" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-6" aria-labelledby="step-2-configure-the-volume-6">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>To apply the effect to your scene:</p>
+<ol>
+<li>Create a <strong>Volume</strong> component (Global or Local).</li>
+<li>In the Volume component, create or assign a <strong>Volume Profile</strong>.</li>
+<li>Click <strong>Add Override</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Vignette</strong>.</li>
+<li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
+</ol>
+
+<h4 id="parameter-configuration-5" class="heading">Parameter Configuration <a href="#parameter-configuration-5" aria-labelledby="parameter-configuration-5">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-8 mx-auto"><img class="img-fluid "
+            src="/store/artistic/vignette_0-2800x2176.jpg"
+            
+            
+            srcset="/store/artistic/vignette_0-576x448.webp 576w, /store/artistic/vignette_0-768x597.webp 768w, /store/artistic/vignette_0-992x771.webp 992w, /store/artistic/vignette_0-1200x932.webp 1200w, /store/artistic/vignette_0-1400x1088.webp 1400w, /store/artistic/vignette_0-2800x2176.webp 2800w" sizes="100vw"
+            height="2176"
+            width="2800"
+            >
+</div><br>
+<p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.</p>
+
+<h5 id="core-parameters-1" class="heading">Core Parameters <a href="#core-parameters-1" aria-labelledby="core-parameters-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>These parameters define the fundamental shape, position, and strength of the vignette.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strength</strong></td>
+<td>0.0 to 1.0</td>
+<td>1.0</td>
+<td>Overall intensity of the vignette darkening</td>
+</tr>
+<tr>
+<td><strong>Shape</strong></td>
+<td>Circular / Elliptical / Square / Diamond / Horizontal / Vertical</td>
+<td>Circular</td>
+<td>Geometric shape of the vignette mask</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Simple / Natural / Gooey</td>
+<td>Simple</td>
+<td>Falloff algorithm used to compute the vignette gradient</td>
+</tr>
+<tr>
+<td><strong>Center</strong></td>
+<td>Vector2 [0-1]</td>
+<td>(0.5, 0.5)</td>
+<td>Center point of the vignette in normalized screen coordinates</td>
+</tr>
+<tr>
+<td><strong>Smoothness</strong></td>
+<td>0.01 to 1.0</td>
+<td>0.5</td>
+<td>Softness of the vignette falloff edge. Lower = sharper transition</td>
+</tr>
+<tr>
+<td><strong>Roundness</strong></td>
+<td>0.0 to 1.0</td>
+<td>0.5</td>
+<td>Morphs the shape between squarish (0) and circular (1). Not available in Natural mode</td>
+</tr>
+<tr>
+<td><strong>Inner Radius</strong></td>
+<td>0.0 to 1.0</td>
+<td>0.0</td>
+<td>Distance where darkening begins</td>
+</tr>
+<tr>
+<td><strong>Outer Radius</strong></td>
+<td>0.0 to 1.0</td>
+<td>0.4</td>
+<td>Distance where full darkening is reached</td>
+</tr>
+<tr>
+<td><strong>Curvature</strong></td>
+<td>0.0 to 1.0</td>
+<td>0.5</td>
+<td>Controls the square shape&rsquo;s corner sharpness. Only active when Shape = Square</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="shape-details" class="heading">Shape Details <a href="#shape-details" aria-labelledby="shape-details">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Each shape offers a different aesthetic for framing your scene:</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Shape</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Best For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Circular</strong></td>
+<td>Classic radial distance from center</td>
+<td>Universal cinematic framing</td>
+</tr>
+<tr>
+<td><strong>Elliptical</strong></td>
+<td>Aspect-ratio corrected circle</td>
+<td>Wide-screen films, consistent roundness on all resolutions</td>
+</tr>
+<tr>
+<td><strong>Square</strong></td>
+<td>Configurable super-ellipse (diamond to square to circle via Curvature)</td>
+<td>Retro UI framing, stylized compositions</td>
+</tr>
+<tr>
+<td><strong>Diamond</strong></td>
+<td>Manhattan distance rhombus</td>
+<td>Art deco, geometric stylization</td>
+</tr>
+<tr>
+<td><strong>Horizontal</strong></td>
+<td>Top-and-bottom linear fade</td>
+<td>Cinematic letterbox bars, widescreen framing</td>
+</tr>
+<tr>
+<td><strong>Vertical</strong></td>
+<td>Left-and-right linear fade</td>
+<td>Portrait framing, split-screen aesthetics</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="algorithm-details" class="heading">Algorithm Details <a href="#algorithm-details" aria-labelledby="algorithm-details">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Three falloff algorithms provide different mathematical approaches to edge darkening:</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Algorithm</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Key Characteristics</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simple</strong></td>
+<td>Smoothstep between inner and outer radius</td>
+<td>Full control over radius bounds and smoothness curve. Most flexible</td>
+</tr>
+<tr>
+<td><strong>Natural</strong></td>
+<td>Physically inspired optical lens falloff</td>
+<td>Mimics real camera vignetting using Keijiro Takahashi&rsquo;s <code>1/(rf²+1)²</code> curve. Ignores Roundness for physical accuracy</td>
+</tr>
+<tr>
+<td><strong>Gooey</strong></td>
+<td>Animated noise-warped organic edges</td>
+<td>Two-octave simplex noise distorts the distance field, creating living, breathing edges. Respects Smoothness and Roundness</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            <strong>Natural</strong> algorithm ignores the <strong>Roundness</strong> parameter to preserve physical accuracy — real lenses don&rsquo;t have a roundness knob. <strong>Gooey</strong> respects both <strong>Roundness</strong> and <strong>Smoothness</strong> for full artistic control over the organic edge shape.
+        </div>
+    </div>
+
+<h5 id="colors--blending" class="heading">Colors &amp; Blending <a href="#colors--blending" aria-labelledby="colors--blending">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Configure the colors applied by the vignette and how they blend with the original image.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inner Color</strong></td>
+<td>Color</td>
+<td>White</td>
+<td>Color at the center of the vignette (where mask = 1.0)</td>
+</tr>
+<tr>
+<td><strong>Outer Color</strong></td>
+<td>Color</td>
+<td>Black</td>
+<td>Color at the edges of the vignette (where mask = 0.0)</td>
+</tr>
+<tr>
+<td><strong>Color Blend</strong></td>
+<td>Enum (23 modes)</td>
+<td>Multiply</td>
+<td>Blend operation used to composite the vignette color with the source image</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+<p>The vignette creates a smooth gradient from <strong>Inner Color</strong> (center) to <strong>Outer Color</strong> (edges), then blends the result with the source image using the selected blend mode. Setting Inner Color to white and Outer Color to black produces classic darkening; inverting these creates a spotlight/halo effect.</p>
+
+<h5 id="lens-effects" class="heading">Lens Effects <a href="#lens-effects" aria-labelledby="lens-effects">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Additional optical imperfections for enhanced realism and style.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chromatic Aberration</strong></td>
+<td>0.0 to 1.0</td>
+<td>0.0</td>
+<td>Radial RGB channel split. Red shifts outward, blue inward, scaled by vignette intensity</td>
+</tr>
+<tr>
+<td><strong>Distortion</strong></td>
+<td>-1.0 to 1.0</td>
+<td>0.0</td>
+<td>Lens distortion applied to edges. Negative = pincushion, Positive = barrel. Strength follows vignette mask</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg>
+
+    &nbsp;
+</div>
+        <div class="flex-grow-1 my-auto">
+            <strong>Distortion</strong> is shape-aware: it uses the vignette center and scales proportionally with the vignette mask (zero distortion at center, full distortion at edges). This mimics real optical behavior where lens distortion is strongest at the periphery.
+        </div>
+    </div>
+
+<h5 id="color-grading-5" class="heading">Color Grading <a href="#color-grading-5" aria-labelledby="color-grading-5">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>Standard color correction parameters apply to the final output.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Effect</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brightness</td>
+<td>-1.0 to 1.0</td>
+<td>Additive luminance offset</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0.0 to 2.0</td>
+<td>Mid-tone contrast expansion</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>0.1 to 10.0</td>
+<td>Nonlinear tonal mapping (inverted)</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0 to 1.0</td>
+<td>Color wheel rotation</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0.0 to 2.0</td>
+<td>Color intensity relative to luminance</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h4 id="runtime-control-5" class="heading">Runtime Control <a href="#runtime-control-5" aria-labelledby="runtime-control-5">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The effect integrates with Unity&rsquo;s Volume system for seamless runtime parameter modification. Access the <strong>VignetteVolume</strong> component through the Volume Profile.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">UnityEngine.Rendering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.Artistic.Vignette</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[SerializedField]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">VolumeProfile</span> <span class="n">volumeProfile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Access the effect</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">volumeProfile</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="k">out</span> <span class="n">VignetteVolume</span> <span class="n">volume</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Enable/disable effect</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">intensity</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span> <span class="c1">// 0.0 = disabled</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Configure shape and algorithm</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">VignetteShape</span><span class="p">.</span><span class="n">Elliptical</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">type</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">VignetteAlgorithm</span><span class="p">.</span><span class="n">Simple</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">center</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector2</span><span class="p">(</span><span class="m">0.5f</span><span class="p">,</span> <span class="m">0.5f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Adjust falloff</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">strength</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.8f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">smoothness</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">roundness</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">innerRadius</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">outerRadius</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.4f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Set colors</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">innerColor</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">outerColor</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">colorBlend</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">ColorBlends</span><span class="p">.</span><span class="n">Multiply</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Add lens effects</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">chromaticAberration</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">distortion</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.15f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Apply color correction</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">contrast</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.1f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">0.9f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>For a more detailed example, check the code in the demo scene.</p>
+
+<h4 id="preset-configurations-4" class="heading">Preset Configurations <a href="#preset-configurations-4" aria-labelledby="preset-configurations-4">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th><strong>Preset</strong></th>
+<th><strong>Key Settings</strong></th>
+<th><strong>Look</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Default values</td>
+<td>Subtle elliptical darkening with smooth falloff</td>
+</tr>
+<tr>
+<td><strong>Cinematic</strong></td>
+<td>Shape = Elliptical, Strength = 0.9, Smoothness = 0.7, Outer Color = Black, Saturation = 0.8</td>
+<td>Soft cinematic edge darkening with slight desaturation</td>
+</tr>
+<tr>
+<td><strong>Heavy Vignette</strong></td>
+<td>Shape = Circular, Strength = 1.0, Inner Radius = 0.2, Outer Radius = 0.6, Roundness = 0.8</td>
+<td>Strong circular darkening with defined inner boundary</td>
+</tr>
+<tr>
+<td><strong>Organic</strong></td>
+<td>Shape = Circular, Type = Gooey, Strength = 0.85, Smoothness = 0.4</td>
+<td>Living, animated organic edge with noise-warped falloff</td>
+</tr>
+<tr>
+<td><strong>Lens Distortion</strong></td>
+<td>Shape = Circular, Type = Natural, Strength = 0.75, Distortion = 0.3, Chromatic Aberration = 0.4</td>
+<td>Physically accurate optical vignette with barrel distortion and CA</td>
+</tr>
+<tr>
+<td><strong>Horror</strong></td>
+<td>Shape = Diamond, Strength = 1.0, Inner Color = Dark Red, Outer Color = Black, Blend = Multiply, Contrast = 1.3</td>
+<td>Dark red diamond vignette for tense, claustrophobic framing</td>
+</tr>
+<tr>
+<td><strong>Widescreen Bars</strong></td>
+<td>Shape = Horizontal, Strength = 1.0, Inner Radius = 0.0, Outer Radius = 0.15, Roundness = 1.0</td>
+<td>Clean cinematic letterbox bars</td>
+</tr>
+<tr>
+<td><strong>Vertical Spotlight</strong></td>
+<td>Shape = Vertical, Strength = 0.8, Inner Color = White, Outer Color = Dark Blue, Blend = Overlay</td>
+<td>Narrow vertical spotlight with blue edge tint</td>
+</tr>
+<tr>
+<td><strong>Vintage Photo</strong></td>
+<td>Shape = Circular, Type = Natural, Strength = 0.6, Outer Color = Sepia, Blend = Multiply, Grain = 0.3</td>
+<td>Warm sepia natural vignette reminiscent of old photographs</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+<hr />
+
 <h2 id="colorisolation" class="heading">🎯 Color Isolation <a href="#colorisolation" aria-labelledby="colorisolation">
 
 
@@ -6413,7 +7341,7 @@
 <p><strong>Color Isolation</strong> selectively isolates areas of the image by color and applies independent visual effects to the isolated and non-isolated zones. The effect converts the image to the <a href="https://en.wikipedia.org/wiki/CIELAB_color_space">CIELAB color space</a> for perceptually accurate color differentiation, then applies configurable blend modes, tinting, and color grading to each zone independently.</p>
 <p>The core technique computes the perceptual distance between each pixel&rsquo;s color and the target isolation color in CIELAB space, using three weighted axes: L* (luminosity), a* (green-magenta), and b* (blue-yellow). Pixels within the threshold distance are classified as &ldquo;isolated&rdquo; and receive one set of effects, while the remaining pixels receive another.</p>
 
-<h4 id="requisites-5" class="heading">Requisites <a href="#requisites-5" aria-labelledby="requisites-5">
+<h4 id="requisites-6" class="heading">Requisites <a href="#requisites-6" aria-labelledby="requisites-6">
 
 
 
@@ -6435,7 +7363,7 @@
 <li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
 </ul>
 
-<h4 id="instalation-guide-4" class="heading">Instalation Guide <a href="#instalation-guide-4" aria-labelledby="instalation-guide-4">
+<h4 id="instalation-guide-5" class="heading">Instalation Guide <a href="#instalation-guide-5" aria-labelledby="instalation-guide-5">
 
 
 
@@ -6452,7 +7380,7 @@
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-6" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-6" aria-labelledby="step-1-add-renderer-feature-6">
+<h5 id="step-1-add-renderer-feature-7" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-7" aria-labelledby="step-1-add-renderer-feature-7">
 
 
 
@@ -6474,7 +7402,7 @@
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Color Isolation</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-6" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-6" aria-labelledby="step-2-configure-the-volume-6">
+<h5 id="step-2-configure-the-volume-7" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-7" aria-labelledby="step-2-configure-the-volume-7">
 
 
 
@@ -6498,7 +7426,7 @@
 <li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
 </ol>
 
-<h4 id="parameter-configuration-5" class="heading">Parameter Configuration <a href="#parameter-configuration-5" aria-labelledby="parameter-configuration-5">
+<h4 id="parameter-configuration-6" class="heading">Parameter Configuration <a href="#parameter-configuration-6" aria-labelledby="parameter-configuration-6">
 
 
 
@@ -6902,7 +7830,7 @@
     
 
 
-<h5 id="color-grading-5" class="heading">Color Grading <a href="#color-grading-5" aria-labelledby="color-grading-5">
+<h5 id="color-grading-6" class="heading">Color Grading <a href="#color-grading-6" aria-labelledby="color-grading-6">
 
 
 
@@ -6982,7 +7910,7 @@
     
 
 
-<h4 id="runtime-control-5" class="heading">Runtime Control <a href="#runtime-control-5" aria-labelledby="runtime-control-5">
+<h4 id="runtime-control-6" class="heading">Runtime Control <a href="#runtime-control-6" aria-labelledby="runtime-control-6">
 
 
 
@@ -7138,7 +8066,7 @@
 
 <p><strong>Sharpen</strong> enhances image details using <strong>13 distinct sharpening algorithms</strong>, each with unique characteristics for different use cases. From simple luma-based unsharp masking to advanced multi-scale Laplacian pyramid sharpening, the effect provides precise control over image clarity with minimal artifact generation.</p>
 
-<h4 id="requisites-6" class="heading">Requisites <a href="#requisites-6" aria-labelledby="requisites-6">
+<h4 id="requisites-7" class="heading">Requisites <a href="#requisites-7" aria-labelledby="requisites-7">
 
 
 
@@ -7160,7 +8088,7 @@
 <li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
 </ul>
 
-<h4 id="instalation-guide-5" class="heading">Instalation Guide <a href="#instalation-guide-5" aria-labelledby="instalation-guide-5">
+<h4 id="instalation-guide-6" class="heading">Instalation Guide <a href="#instalation-guide-6" aria-labelledby="instalation-guide-6">
 
 
 
@@ -7177,7 +8105,7 @@
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-7" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-7" aria-labelledby="step-1-add-renderer-feature-7">
+<h5 id="step-1-add-renderer-feature-8" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-8" aria-labelledby="step-1-add-renderer-feature-8">
 
 
 
@@ -7199,7 +8127,7 @@
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Sharpen</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-7" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-7" aria-labelledby="step-2-configure-the-volume-7">
+<h5 id="step-2-configure-the-volume-8" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-8" aria-labelledby="step-2-configure-the-volume-8">
 
 
 
@@ -7351,7 +8279,7 @@
     
 
 
-<h4 id="parameter-configuration-6" class="heading">Parameter Configuration <a href="#parameter-configuration-6" aria-labelledby="parameter-configuration-6">
+<h4 id="parameter-configuration-7" class="heading">Parameter Configuration <a href="#parameter-configuration-7" aria-labelledby="parameter-configuration-7">
 
 
 
@@ -7442,7 +8370,7 @@
 </div><br>
 <p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.</p>
 
-<h5 id="core-parameters-1" class="heading">Core Parameters <a href="#core-parameters-1" aria-labelledby="core-parameters-1">
+<h5 id="core-parameters-2" class="heading">Core Parameters <a href="#core-parameters-2" aria-labelledby="core-parameters-2">
 
 
 
@@ -7821,7 +8749,7 @@
     
 
 
-<h5 id="color-grading-6" class="heading">Color Grading <a href="#color-grading-6" aria-labelledby="color-grading-6">
+<h5 id="color-grading-7" class="heading">Color Grading <a href="#color-grading-7" aria-labelledby="color-grading-7">
 
 
 
@@ -7901,7 +8829,7 @@
     
 
 
-<h4 id="runtime-control-6" class="heading">Runtime Control <a href="#runtime-control-6" aria-labelledby="runtime-control-6">
+<h4 id="runtime-control-7" class="heading">Runtime Control <a href="#runtime-control-7" aria-labelledby="runtime-control-7">
 
 
 
@@ -8062,7 +8990,7 @@
 <p>Tonemapping is a critical component in modern rendering pipelines, bridging the gap between high-dynamic-range (HDR) content and low-dynamic-range (LDR) displays. The package provides <strong>52 distinct tonemapping operators</strong>, each offering unique characteristics for different artistic and technical requirements.<br />
 These operators range from simple mathematical functions to sophisticated film emulation curves, giving developers unprecedented control over their final image quality.</p>
 
-<h4 id="requisites-7" class="heading">Requisites <a href="#requisites-7" aria-labelledby="requisites-7">
+<h4 id="requisites-8" class="heading">Requisites <a href="#requisites-8" aria-labelledby="requisites-8">
 
 
 
@@ -8084,7 +9012,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
 </ul>
 
-<h4 id="instalation-guide-6" class="heading">Instalation Guide <a href="#instalation-guide-6" aria-labelledby="instalation-guide-6">
+<h4 id="instalation-guide-7" class="heading">Instalation Guide <a href="#instalation-guide-7" aria-labelledby="instalation-guide-7">
 
 
 
@@ -8101,7 +9029,7 @@ These operators range from simple mathematical functions to sophisticated film e
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-8" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-8" aria-labelledby="step-1-add-renderer-feature-8">
+<h5 id="step-1-add-renderer-feature-9" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-9" aria-labelledby="step-1-add-renderer-feature-9">
 
 
 
@@ -8123,7 +9051,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Tonemapper</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-8" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-8" aria-labelledby="step-2-configure-the-volume-8">
+<h5 id="step-2-configure-the-volume-9" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-9" aria-labelledby="step-2-configure-the-volume-9">
 
 
 
@@ -8346,7 +9274,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <p><strong>Technicolor</strong>, three-strip Technicolor simulation for classic Hollywood look with vibrant, saturated colors.</p>
 <p><strong>Sepia</strong>, warm brown monochrome for old photograph appearance.</p>
 
-<h4 id="parameter-configuration-7" class="heading">Parameter Configuration <a href="#parameter-configuration-7" aria-labelledby="parameter-configuration-7">
+<h4 id="parameter-configuration-8" class="heading">Parameter Configuration <a href="#parameter-configuration-8" aria-labelledby="parameter-configuration-8">
 
 
 
@@ -9723,7 +10651,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h5 id="color-grading-7" class="heading">Color Grading <a href="#color-grading-7" aria-labelledby="color-grading-7">
+<h5 id="color-grading-8" class="heading">Color Grading <a href="#color-grading-8" aria-labelledby="color-grading-8">
 
 
 
@@ -9796,7 +10724,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h4 id="runtime-control-7" class="heading">Runtime Control <a href="#runtime-control-7" aria-labelledby="runtime-control-7">
+<h4 id="runtime-control-8" class="heading">Runtime Control <a href="#runtime-control-8" aria-labelledby="runtime-control-8">
 
 
 
@@ -9968,7 +10896,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <p><strong>Comic</strong> simulates the <a href="https://en.wikipedia.org/wiki/Halftone">halftone</a> printing technique used in comics and newspapers. The effect converts the image into a pattern of colored dots at configurable angles for each CMYK channel, combined with edge detection to produce ink-stroke outlines characteristic of comic book art.</p>
 <p>The shader converts each pixel to CMYK color space, then renders each channel as a rotated dot pattern at the specified angle. The dot size varies with the channel&rsquo;s intensity, producing the classic halftone gradient effect. Edge detection is applied separately using a Sobel-like operator to generate the characteristic bold outlines.</p>
 
-<h4 id="requisites-8" class="heading">Requisites <a href="#requisites-8" aria-labelledby="requisites-8">
+<h4 id="requisites-9" class="heading">Requisites <a href="#requisites-9" aria-labelledby="requisites-9">
 
 
 
@@ -9990,7 +10918,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
 </ul>
 
-<h4 id="instalation-guide-7" class="heading">Instalation Guide <a href="#instalation-guide-7" aria-labelledby="instalation-guide-7">
+<h4 id="instalation-guide-8" class="heading">Instalation Guide <a href="#instalation-guide-8" aria-labelledby="instalation-guide-8">
 
 
 
@@ -10007,7 +10935,7 @@ These operators range from simple mathematical functions to sophisticated film e
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-9" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-9" aria-labelledby="step-1-add-renderer-feature-9">
+<h5 id="step-1-add-renderer-feature-10" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-10" aria-labelledby="step-1-add-renderer-feature-10">
 
 
 
@@ -10029,7 +10957,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Comic</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-9" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-9" aria-labelledby="step-2-configure-the-volume-9">
+<h5 id="step-2-configure-the-volume-10" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-10" aria-labelledby="step-2-configure-the-volume-10">
 
 
 
@@ -10053,7 +10981,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
 </ol>
 
-<h4 id="parameter-configuration-8" class="heading">Parameter Configuration <a href="#parameter-configuration-8" aria-labelledby="parameter-configuration-8">
+<h4 id="parameter-configuration-9" class="heading">Parameter Configuration <a href="#parameter-configuration-9" aria-labelledby="parameter-configuration-9">
 
 
 
@@ -10266,7 +11194,7 @@ These operators range from simple mathematical functions to sophisticated film e
         </div>
     </div>
 
-<h5 id="color-grading-8" class="heading">Color Grading <a href="#color-grading-8" aria-labelledby="color-grading-8">
+<h5 id="color-grading-9" class="heading">Color Grading <a href="#color-grading-9" aria-labelledby="color-grading-9">
 
 
 
@@ -10346,7 +11274,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h4 id="runtime-control-8" class="heading">Runtime Control <a href="#runtime-control-8" aria-labelledby="runtime-control-8">
+<h4 id="runtime-control-9" class="heading">Runtime Control <a href="#runtime-control-9" aria-labelledby="runtime-control-9">
 
 
 
@@ -10397,7 +11325,7 @@ These operators range from simple mathematical functions to sophisticated film e
 </span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.2f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>For a more detailed example, check the code in the demo scene.</p>
 
-<h4 id="preset-configurations-4" class="heading">Preset Configurations <a href="#preset-configurations-4" aria-labelledby="preset-configurations-4">
+<h4 id="preset-configurations-5" class="heading">Preset Configurations <a href="#preset-configurations-5" aria-labelledby="preset-configurations-5">
 
 
 
@@ -10574,7 +11502,7 @@ These operators range from simple mathematical functions to sophisticated film e
 
 <p><strong>Neon</strong> creates a synthwave-inspired effect that highlights image edges with animated cycling colors. The effect applies edge detection with configurable thickness and strength, then colorizes the detected edges with a time-animated hue rotation, producing the characteristic glowing neon aesthetic. Optional fisheye distortion and depth-based attenuation provide additional creative control.</p>
 
-<h4 id="requisites-9" class="heading">Requisites <a href="#requisites-9" aria-labelledby="requisites-9">
+<h4 id="requisites-10" class="heading">Requisites <a href="#requisites-10" aria-labelledby="requisites-10">
 
 
 
@@ -10596,7 +11524,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
 </ul>
 
-<h4 id="instalation-guide-8" class="heading">Instalation Guide <a href="#instalation-guide-8" aria-labelledby="instalation-guide-8">
+<h4 id="instalation-guide-9" class="heading">Instalation Guide <a href="#instalation-guide-9" aria-labelledby="instalation-guide-9">
 
 
 
@@ -10613,7 +11541,7 @@ These operators range from simple mathematical functions to sophisticated film e
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-10" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-10" aria-labelledby="step-1-add-renderer-feature-10">
+<h5 id="step-1-add-renderer-feature-11" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-11" aria-labelledby="step-1-add-renderer-feature-11">
 
 
 
@@ -10635,7 +11563,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Neon</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-10" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-10" aria-labelledby="step-2-configure-the-volume-10">
+<h5 id="step-2-configure-the-volume-11" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-11" aria-labelledby="step-2-configure-the-volume-11">
 
 
 
@@ -10659,7 +11587,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
 </ol>
 
-<h4 id="parameter-configuration-9" class="heading">Parameter Configuration <a href="#parameter-configuration-9" aria-labelledby="parameter-configuration-9">
+<h4 id="parameter-configuration-10" class="heading">Parameter Configuration <a href="#parameter-configuration-10" aria-labelledby="parameter-configuration-10">
 
 
 
@@ -10932,7 +11860,7 @@ These operators range from simple mathematical functions to sophisticated film e
         </div>
     </div>
 
-<h5 id="color-grading-9" class="heading">Color Grading <a href="#color-grading-9" aria-labelledby="color-grading-9">
+<h5 id="color-grading-10" class="heading">Color Grading <a href="#color-grading-10" aria-labelledby="color-grading-10">
 
 
 
@@ -11012,7 +11940,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h4 id="runtime-control-9" class="heading">Runtime Control <a href="#runtime-control-9" aria-labelledby="runtime-control-9">
+<h4 id="runtime-control-10" class="heading">Runtime Control <a href="#runtime-control-10" aria-labelledby="runtime-control-10">
 
 
 
@@ -11065,7 +11993,7 @@ These operators range from simple mathematical functions to sophisticated film e
 </span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.3f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>For a more detailed example, check the code in the demo scene.</p>
 
-<h4 id="preset-configurations-5" class="heading">Preset Configurations <a href="#preset-configurations-5" aria-labelledby="preset-configurations-5">
+<h4 id="preset-configurations-6" class="heading">Preset Configurations <a href="#preset-configurations-6" aria-labelledby="preset-configurations-6">
 
 
 
@@ -11242,7 +12170,7 @@ These operators range from simple mathematical functions to sophisticated film e
 
 <p><strong>Spark</strong> adds bloom and ray-of-light effects to the brightest areas of the image. The effect generates configurable star-shaped light rays with chromatic dispersion, barrel distortion, and noise, producing cinematic lens flare and glint effects. A brightness threshold controls which pixels generate rays, while downsampling options allow performance tuning.</p>
 
-<h4 id="requisites-10" class="heading">Requisites <a href="#requisites-10" aria-labelledby="requisites-10">
+<h4 id="requisites-11" class="heading">Requisites <a href="#requisites-11" aria-labelledby="requisites-11">
 
 
 
@@ -11264,7 +12192,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
 </ul>
 
-<h4 id="instalation-guide-9" class="heading">Instalation Guide <a href="#instalation-guide-9" aria-labelledby="instalation-guide-9">
+<h4 id="instalation-guide-10" class="heading">Instalation Guide <a href="#instalation-guide-10" aria-labelledby="instalation-guide-10">
 
 
 
@@ -11281,7 +12209,7 @@ These operators range from simple mathematical functions to sophisticated film e
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-11" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-11" aria-labelledby="step-1-add-renderer-feature-11">
+<h5 id="step-1-add-renderer-feature-12" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-12" aria-labelledby="step-1-add-renderer-feature-12">
 
 
 
@@ -11303,7 +12231,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Spark</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-11" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-11" aria-labelledby="step-2-configure-the-volume-11">
+<h5 id="step-2-configure-the-volume-12" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-12" aria-labelledby="step-2-configure-the-volume-12">
 
 
 
@@ -11327,7 +12255,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
 </ol>
 
-<h4 id="parameter-configuration-10" class="heading">Parameter Configuration <a href="#parameter-configuration-10" aria-labelledby="parameter-configuration-10">
+<h4 id="parameter-configuration-11" class="heading">Parameter Configuration <a href="#parameter-configuration-11" aria-labelledby="parameter-configuration-11">
 
 
 
@@ -11815,7 +12743,7 @@ These operators range from simple mathematical functions to sophisticated film e
         </div>
     </div>
 
-<h5 id="color-grading-10" class="heading">Color Grading <a href="#color-grading-10" aria-labelledby="color-grading-10">
+<h5 id="color-grading-11" class="heading">Color Grading <a href="#color-grading-11" aria-labelledby="color-grading-11">
 
 
 
@@ -11895,7 +12823,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h4 id="runtime-control-10" class="heading">Runtime Control <a href="#runtime-control-10" aria-labelledby="runtime-control-10">
+<h4 id="runtime-control-11" class="heading">Runtime Control <a href="#runtime-control-11" aria-labelledby="runtime-control-11">
 
 
 
@@ -12063,7 +12991,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <p><strong>Radial Blur</strong> increases the feeling of speed and adrenaline by applying a directional blur that radiates from a configurable center point. The effect combines <strong>multi-sample radial blur</strong> with <strong>radial chromatic aberration</strong> and <strong>fisheye distortion</strong>, plus independent color grading for the inner (less blurred) and outer (more blurred) zones.</p>
 <p>The shader samples the image multiple times along the radial direction from each pixel toward the center point, averaging the results to produce smooth motion blur. A power-curve gradient controls the transition between the inner and outer zones, while per-channel UV offsets create the characteristic chromatic aberration of high-speed motion.</p>
 
-<h4 id="requisites-11" class="heading">Requisites <a href="#requisites-11" aria-labelledby="requisites-11">
+<h4 id="requisites-12" class="heading">Requisites <a href="#requisites-12" aria-labelledby="requisites-12">
 
 
 
@@ -12085,7 +13013,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li><strong>Universal RP:</strong> 17.0.3 or higher.</li>
 </ul>
 
-<h4 id="instalation-guide-10" class="heading">Instalation Guide <a href="#instalation-guide-10" aria-labelledby="instalation-guide-10">
+<h4 id="instalation-guide-11" class="heading">Instalation Guide <a href="#instalation-guide-11" aria-labelledby="instalation-guide-11">
 
 
 
@@ -12102,7 +13030,7 @@ These operators range from simple mathematical functions to sophisticated film e
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-12" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-12" aria-labelledby="step-1-add-renderer-feature-12">
+<h5 id="step-1-add-renderer-feature-13" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-13" aria-labelledby="step-1-add-renderer-feature-13">
 
 
 
@@ -12124,7 +13052,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Radial Blur</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-12" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-12" aria-labelledby="step-2-configure-the-volume-12">
+<h5 id="step-2-configure-the-volume-13" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-13" aria-labelledby="step-2-configure-the-volume-13">
 
 
 
@@ -12148,7 +13076,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
 </ol>
 
-<h4 id="parameter-configuration-11" class="heading">Parameter Configuration <a href="#parameter-configuration-11" aria-labelledby="parameter-configuration-11">
+<h4 id="parameter-configuration-12" class="heading">Parameter Configuration <a href="#parameter-configuration-12" aria-labelledby="parameter-configuration-12">
 
 
 
@@ -12239,7 +13167,7 @@ These operators range from simple mathematical functions to sophisticated film e
 </div><br>
 <p>With &lsquo;<strong>Intensity</strong>&rsquo; you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.</p>
 
-<h5 id="core-parameters-2" class="heading">Core Parameters <a href="#core-parameters-2" aria-labelledby="core-parameters-2">
+<h5 id="core-parameters-3" class="heading">Core Parameters <a href="#core-parameters-3" aria-labelledby="core-parameters-3">
 
 
 
@@ -12602,7 +13530,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h5 id="color-grading-11" class="heading">Color Grading <a href="#color-grading-11" aria-labelledby="color-grading-11">
+<h5 id="color-grading-12" class="heading">Color Grading <a href="#color-grading-12" aria-labelledby="color-grading-12">
 
 
 
@@ -12682,7 +13610,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h4 id="runtime-control-11" class="heading">Runtime Control <a href="#runtime-control-11" aria-labelledby="runtime-control-11">
+<h4 id="runtime-control-12" class="heading">Runtime Control <a href="#runtime-control-12" aria-labelledby="runtime-control-12">
 
 
 
@@ -12742,7 +13670,7 @@ These operators range from simple mathematical functions to sophisticated film e
 </span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.0f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>For a more detailed example, check the code in the demo scene.</p>
 
-<h4 id="preset-configurations-6" class="heading">Preset Configurations <a href="#preset-configurations-6" aria-labelledby="preset-configurations-6">
+<h4 id="preset-configurations-7" class="heading">Preset Configurations <a href="#preset-configurations-7" aria-labelledby="preset-configurations-7">
 
 
 
@@ -12939,7 +13867,7 @@ These operators range from simple mathematical functions to sophisticated film e
 
 <p><strong>Snow</strong> adds fully 2D procedural, wind-swept snowfall to your scenes with dynamic GPU particles. The effect supports <strong>six particle shapes</strong> (Circle, Square, Triangle, Diamond, Line, and Image) with optional <strong>tiled texture atlas</strong> randomization, <strong>parallax depth layers</strong>, and gentle alpha oscillation for a living winter landscape. From delicate flurries to raging blizzards, craft cinematic snow with one-click presets and 22+ real-time parameters.</p>
 
-<h4 id="requisites-12" class="heading">Requisites <a href="#requisites-12" aria-labelledby="requisites-12">
+<h4 id="requisites-13" class="heading">Requisites <a href="#requisites-13" aria-labelledby="requisites-13">
 
 
 
@@ -12978,7 +13906,7 @@ These operators range from simple mathematical functions to sophisticated film e
     &nbsp;
 </a></h4>
 
-<h5 id="step-1-add-renderer-feature-13" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-13" aria-labelledby="step-1-add-renderer-feature-13">
+<h5 id="step-1-add-renderer-feature-14" class="heading">Step 1: Add Renderer Feature <a href="#step-1-add-renderer-feature-14" aria-labelledby="step-1-add-renderer-feature-14">
 
 
 
@@ -13000,7 +13928,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Click <strong>Add Renderer Feature</strong> and select <strong>Fronkon Games &gt; Artistic &gt; Snow</strong>.</li>
 </ol>
 
-<h5 id="step-2-configure-the-volume-13" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-13" aria-labelledby="step-2-configure-the-volume-13">
+<h5 id="step-2-configure-the-volume-14" class="heading">Step 2: Configure the Volume <a href="#step-2-configure-the-volume-14" aria-labelledby="step-2-configure-the-volume-14">
 
 
 
@@ -13024,7 +13952,7 @@ These operators range from simple mathematical functions to sophisticated film e
 <li>Enable the &lsquo;<strong>Intensity</strong>&rsquo; parameter (and any others you wish to modify).</li>
 </ol>
 
-<h4 id="parameter-configuration-12" class="heading">Parameter Configuration <a href="#parameter-configuration-12" aria-labelledby="parameter-configuration-12">
+<h4 id="parameter-configuration-13" class="heading">Parameter Configuration <a href="#parameter-configuration-13" aria-labelledby="parameter-configuration-13">
 
 
 
@@ -13484,7 +14412,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h5 id="color-grading-12" class="heading">Color Grading <a href="#color-grading-12" aria-labelledby="color-grading-12">
+<h5 id="color-grading-13" class="heading">Color Grading <a href="#color-grading-13" aria-labelledby="color-grading-13">
 
 
 
@@ -13564,7 +14492,7 @@ These operators range from simple mathematical functions to sophisticated film e
     
 
 
-<h4 id="runtime-control-12" class="heading">Runtime Control <a href="#runtime-control-12" aria-labelledby="runtime-control-12">
+<h4 id="runtime-control-13" class="heading">Runtime Control <a href="#runtime-control-13" aria-labelledby="runtime-control-13">
 
 
 
@@ -13618,7 +14546,7 @@ These operators range from simple mathematical functions to sophisticated film e
 </span></span><span class="line"><span class="cl">    <span class="n">volume</span><span class="p">.</span><span class="n">saturation</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="m">1.2f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>For a more detailed example, check the code in the demo scene.</p>
 
-<h4 id="preset-configurations-7" class="heading">Preset Configurations <a href="#preset-configurations-7" aria-labelledby="preset-configurations-7">
+<h4 id="preset-configurations-8" class="heading">Preset Configurations <a href="#preset-configurations-8" aria-labelledby="preset-configurations-8">
 
 
 
@@ -14052,6 +14980,11 @@ These operators range from simple mathematical functions to sophisticated film e
       </ul>
     </li>
     <li><a href="#shockwave">💥 Shockwave</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#vignette_asset">🖤 Vignette</a>
       <ul>
         <li></li>
       </ul>

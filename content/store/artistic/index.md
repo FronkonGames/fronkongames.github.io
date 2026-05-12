@@ -18,6 +18,7 @@ thumbnail:
 * [Tilt Shift](#tiltshift), used to simulate a miniature scene.
 * [Photo](#photo), recreates the authentic look & feel of professional cameras.
 * [Shockwave](#shockwave), stunning shockwave effects with customizable distortion.
+* [Vignette](#vignette_asset), the most comprehensive vignette effect with shapes, algorithms, and lens distortion.
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
 * [Sharpen](#sharpen), enhances image details.
 * [Tonemapper](#tonemapper), maps HDR into LDR using different algorithms.
@@ -1085,6 +1086,204 @@ For a more detailed example, check the code in the demo scene.
 | **Energy Blast** | Strength = 2.0, Width = 0.2, Ring Inner = 0.4, Ring Outer = 0.6, Sharpness = 16, Flares = 1.0, Edge = 1.0, Edge Color = Magenta | Sharp magenta energy pulse with strong flares |
 | **Impact Wave** | Strength = 3.5, Width = 0.4, Ring Inner = 0.6, Ring Outer = 0.4, Sharpness = 4, Skew = -0.2, Noise = 0.5, Edge = 0.9, Edge Color = Green | Wide green impact with soft sharpness |
 | **Mystic Ripple** | Strength = 1.8, Width = 0.3, Ring Inner = 0.7, Ring Outer = 0.3, Sharpness = 10, Flares Frequency = 16, Noise = 0.7, Noise Speed = 0.5, Edge = 0.7 | Ethereal blue ripple with slow noise |
+{{< /table >}}
+
+---
+## 🖤 Vignette {#vignette_asset}
+{{< asset-header youtube="AlzuUZuoDkk" store="" demo="https://fronkongames.github.io/demos-artistic/vignette/" warn="assets used in video and demo are not included">}}
+
+**Vignette** is the most comprehensive vignette effect available for Unity, combining **six distinct shapes**, **three falloff algorithms**, chromatic aberration, and lens distortion into a single powerful post-processing pass. Whether you need subtle edge darkening for cinematic framing, stylized shape masks for creative compositions, or animated organic edges for surreal visuals, this effect delivers complete control over every aspect of the vignette.
+
+The effect supports procedural shapes (circular, elliptical, square, diamond, horizontal bars, vertical bars), each with configurable roundness, aspect correction, and curvature. Three algorithms provide different falloff characteristics: **Simple** (smoothstep with full radius control), **Natural** (physically inspired optical falloff), and **Gooey** (animated noise-warped organic edges). Additional features include radial chromatic aberration and shape-aware lens distortion that intensifies toward the edges.
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f2 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Artistic > Vignette**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Artistic > Vignette**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Parameter Configuration
+
+{{< image src="vignette_0.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Core Parameters
+
+These parameters define the fundamental shape, position, and strength of the vignette.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Strength** | 0.0 to 1.0 | 1.0 | Overall intensity of the vignette darkening |
+| **Shape** | Circular / Elliptical / Square / Diamond / Horizontal / Vertical | Circular | Geometric shape of the vignette mask |
+| **Type** | Simple / Natural / Gooey | Simple | Falloff algorithm used to compute the vignette gradient |
+| **Center** | Vector2 [0-1] | (0.5, 0.5) | Center point of the vignette in normalized screen coordinates |
+| **Smoothness** | 0.01 to 1.0 | 0.5 | Softness of the vignette falloff edge. Lower = sharper transition |
+| **Roundness** | 0.0 to 1.0 | 0.5 | Morphs the shape between squarish (0) and circular (1). Not available in Natural mode |
+| **Inner Radius** | 0.0 to 1.0 | 0.0 | Distance where darkening begins |
+| **Outer Radius** | 0.0 to 1.0 | 0.4 | Distance where full darkening is reached |
+| **Curvature** | 0.0 to 1.0 | 0.5 | Controls the square shape's corner sharpness. Only active when Shape = Square |
+{{< /table >}}
+
+##### Shape Details
+
+Each shape offers a different aesthetic for framing your scene:
+
+{{< table >}}
+| **Shape** | **Description** | **Best For** |
+|---|---|---|
+| **Circular** | Classic radial distance from center | Universal cinematic framing |
+| **Elliptical** | Aspect-ratio corrected circle | Wide-screen films, consistent roundness on all resolutions |
+| **Square** | Configurable super-ellipse (diamond to square to circle via Curvature) | Retro UI framing, stylized compositions |
+| **Diamond** | Manhattan distance rhombus | Art deco, geometric stylization |
+| **Horizontal** | Top-and-bottom linear fade | Cinematic letterbox bars, widescreen framing |
+| **Vertical** | Left-and-right linear fade | Portrait framing, split-screen aesthetics |
+{{< /table >}}
+
+##### Algorithm Details
+
+Three falloff algorithms provide different mathematical approaches to edge darkening:
+
+{{< table >}}
+| **Algorithm** | **Description** | **Key Characteristics** |
+|---|---|---|
+| **Simple** | Smoothstep between inner and outer radius | Full control over radius bounds and smoothness curve. Most flexible |
+| **Natural** | Physically inspired optical lens falloff | Mimics real camera vignetting using Keijiro Takahashi's `1/(rf²+1)²` curve. Ignores Roundness for physical accuracy |
+| **Gooey** | Animated noise-warped organic edges | Two-octave simplex noise distorts the distance field, creating living, breathing edges. Respects Smoothness and Roundness |
+{{< /table >}}
+
+{{< alert type="info" >}}
+**Natural** algorithm ignores the **Roundness** parameter to preserve physical accuracy — real lenses don't have a roundness knob. **Gooey** respects both **Roundness** and **Smoothness** for full artistic control over the organic edge shape.
+{{< /alert >}}
+
+##### Colors & Blending
+
+Configure the colors applied by the vignette and how they blend with the original image.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Inner Color** | Color | White | Color at the center of the vignette (where mask = 1.0) |
+| **Outer Color** | Color | Black | Color at the edges of the vignette (where mask = 0.0) |
+| **Color Blend** | Enum (23 modes) | Multiply | Blend operation used to composite the vignette color with the source image |
+{{< /table >}}
+
+The vignette creates a smooth gradient from **Inner Color** (center) to **Outer Color** (edges), then blends the result with the source image using the selected blend mode. Setting Inner Color to white and Outer Color to black produces classic darkening; inverting these creates a spotlight/halo effect.
+
+##### Lens Effects
+
+Additional optical imperfections for enhanced realism and style.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Chromatic Aberration** | 0.0 to 1.0 | 0.0 | Radial RGB channel split. Red shifts outward, blue inward, scaled by vignette intensity |
+| **Distortion** | -1.0 to 1.0 | 0.0 | Lens distortion applied to edges. Negative = pincushion, Positive = barrel. Strength follows vignette mask |
+{{< /table >}}
+
+{{< alert type="info" >}}
+**Distortion** is shape-aware: it uses the vignette center and scales proportionally with the vignette mask (zero distortion at center, full distortion at edges). This mimics real optical behavior where lens distortion is strongest at the periphery.
+{{< /alert >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 2.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **VignetteVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Artistic.Vignette;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out VignetteVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure shape and algorithm
+    volume.shape.value = VignetteShape.Elliptical;
+    volume.type.value = VignetteAlgorithm.Simple;
+    volume.center.value = new Vector2(0.5f, 0.5f);
+
+    // Adjust falloff
+    volume.strength.value = 0.8f;
+    volume.smoothness.value = 0.5f;
+    volume.roundness.value = 0.5f;
+    volume.innerRadius.value = 0.0f;
+    volume.outerRadius.value = 0.4f;
+
+    // Set colors
+    volume.innerColor.value = Color.white;
+    volume.outerColor.value = Color.black;
+    volume.colorBlend.value = ColorBlends.Multiply;
+
+    // Add lens effects
+    volume.chromaticAberration.value = 0.3f;
+    volume.distortion.value = 0.15f;
+
+    // Apply color correction
+    volume.contrast.value = 1.1f;
+    volume.saturation.value = 0.9f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Preset Configurations
+
+{{< table >}}
+| **Preset** | **Key Settings** | **Look** |
+|---|---|---|
+| **Default** | Default values | Subtle elliptical darkening with smooth falloff |
+| **Cinematic** | Shape = Elliptical, Strength = 0.9, Smoothness = 0.7, Outer Color = Black, Saturation = 0.8 | Soft cinematic edge darkening with slight desaturation |
+| **Heavy Vignette** | Shape = Circular, Strength = 1.0, Inner Radius = 0.2, Outer Radius = 0.6, Roundness = 0.8 | Strong circular darkening with defined inner boundary |
+| **Organic** | Shape = Circular, Type = Gooey, Strength = 0.85, Smoothness = 0.4 | Living, animated organic edge with noise-warped falloff |
+| **Lens Distortion** | Shape = Circular, Type = Natural, Strength = 0.75, Distortion = 0.3, Chromatic Aberration = 0.4 | Physically accurate optical vignette with barrel distortion and CA |
+| **Horror** | Shape = Diamond, Strength = 1.0, Inner Color = Dark Red, Outer Color = Black, Blend = Multiply, Contrast = 1.3 | Dark red diamond vignette for tense, claustrophobic framing |
+| **Widescreen Bars** | Shape = Horizontal, Strength = 1.0, Inner Radius = 0.0, Outer Radius = 0.15, Roundness = 1.0 | Clean cinematic letterbox bars |
+| **Vertical Spotlight** | Shape = Vertical, Strength = 0.8, Inner Color = White, Outer Color = Dark Blue, Blend = Overlay | Narrow vertical spotlight with blue edge tint |
+| **Vintage Photo** | Shape = Circular, Type = Natural, Strength = 0.6, Outer Color = Sepia, Blend = Multiply, Grain = 0.3 | Warm sepia natural vignette reminiscent of old photographs |
 {{< /table >}}
 
 ---
