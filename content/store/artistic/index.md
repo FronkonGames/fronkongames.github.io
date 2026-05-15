@@ -1090,7 +1090,7 @@ For a more detailed example, check the code in the demo scene.
 
 ---
 ## 🖤 Vignette {#vignette_asset}
-{{< asset-header youtube="AlzuUZuoDkk" store="" demo="https://fronkongames.github.io/demos-artistic/vignette/" warn="assets used in video and demo are not included">}}
+{{< asset-header youtube="AlzuUZuoDkk" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-vignette-379926" demo="https://fronkongames.github.io/demos-artistic/vignette/" warn="assets used in video and demo are not included">}}
 
 **Vignette** is the most comprehensive vignette effect available for Unity, combining **six distinct shapes**, **three falloff algorithms**, chromatic aberration, and lens distortion into a single powerful post-processing pass. Whether you need subtle edge darkening for cinematic framing, stylized shape masks for creative compositions, or animated organic edges for surreal visuals, this effect delivers complete control over every aspect of the vignette.
 
