@@ -3,6 +3,7 @@
     {{ $desc := .Page.Description | default (.Page.Content | safeHTML | truncate 150) -}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="facebook-domain-verification" content="hvhinuv5fauzwpfr84xb27vbob29xv">
     {{ hugo.Generator }}
     <meta name="theme" content="{{ printf "Hinode %s" $version }}">
     {{ partialCached "head/stylesheet-core.html" . -}}
