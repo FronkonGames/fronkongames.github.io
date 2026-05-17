@@ -11,7 +11,7 @@ thumbnail:
   url: img/spiceup.jpg
 ---
 
-'**[Spice Up](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333?aid=1101l9zFC&utm_source=aff)**' is a collection of **18 fullscreen post-processing effects** designed to add impact, distortion, feedback, and stylized camera treatment to first-person and VR games. Each effect can be used as a standalone package, but inside the bundle they share the same URP workflow, volume-driven runtime model, and editor conventions.
+'**[Spice Up](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333?aid=1101l9zFC&utm_source=aff)**' is a collection of **fullscreen post-processing effects** designed to add impact, distortion, feedback, and stylized camera treatment to first-person and VR games. Each effect can be used as a standalone package, but inside the bundle they share the same URP workflow, volume-driven runtime model, and editor conventions.
 
 It consists of the following effects:
 
@@ -19,6 +19,7 @@ It consists of the following effects:
 * [🍺 Drunk](#drunk), unstable vision with oscillation, blinking, and chromatic distortion.
 * [🌈 Stoned](#stoned), psychedelic color deformation with YIQ-based controls.
 * [🧊 Frozen](#frozen), layered frost, distortion, and cold-screen tinting.
+* [⚔️ Slash](#slash), a cinematic screen-split with glow, smoke, and distortion.
 * [💨 Speed Lines](#speedlines), anime-inspired radial velocity streaks.
 * [👀 Double Vision](#doublevision), oscillating image separation and color offsets.
 * [🌧️ Rain](#rain), animated droplets, trails, and layered wet-screen effects.
@@ -726,6 +727,191 @@ For critical cold damage:
 * Blend Layers: 0.4 - 0.6
 * Bump: 1.0 - 2.0
 * Volume: 0.4 - 0.8
+
+---
+## ⚔️ Slash {#slash}
+{{< asset-header youtube="GlGGW0EeYm0" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-slash-380758" demo="https://fronkongames.github.io/demos-spiceup/slash/" warn="assets used in video and demo are not included">}}
+
+'**Slash**' is a cinematic screen-split effect that simulates a slashing blade cutting across the view. It combines image separation, edge glow, layered smoke, and color grading for dramatic combat or death transitions.
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+* **Unity:** 6000.0.58f2 or higher.
+* **Universal RP:** 17.0.3 or higher.
+
+#### Installation Guide
+
+##### Step 1: Add Renderer Feature
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Spice Up > Slash**.
+
+##### Step 2: Configure the Volume
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Spice Up > Slash**.
+4. Enable '**Intensity**' and the slash parameters you want to control.
+
+#### Parameter Configuration
+
+{{< image src="slash_0.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Slash
+
+The main '**Slash**' block in the custom inspector defines the cut progression, angle, and screen split behavior.
+
+{{< table >}}
+| | |
+|---|---|
+| **Slash** | Progress of the slash from 0 to 1 |
+| **Angle** | Angle of the slash in degrees |
+| **Split** | Maximum distance the screen halves separate |
+| **Distort** | Refraction strength at the split edge |
+| **Fade** | Point at which the slash itself fades out |
+| **Width** | Thickness of the core slash line |
+{{< /table >}}
+
+##### Glow
+
+The '**Glow**' block in the custom inspector controls the light bloom along the slash edge.
+
+{{< table >}}
+| | |
+|---|---|
+| **Glow** | Color of the edge glow |
+| **Blend** | Blend mode used for the glow |
+| **Spread** | Glow spread and softness |
+{{< /table >}}
+
+##### Smoke #1
+
+The first '**Smoke #1**' block in the custom inspector defines the bright smoke layer that trails the slash.
+
+{{< table >}}
+| | |
+|---|---|
+| **Smoke #1** | Size of the white smoke layer |
+| **Blend** | Blend mode for the white smoke |
+| **Color** | White smoke color |
+| **Expand** | Smoke expansion outward from the slash |
+| **Fade** | Point at which the white smoke fades out |
+{{< /table >}}
+
+##### Smoke #2
+
+The '**Smoke #2**' block in the custom inspector defines the dark smoke layer beneath the bright one.
+
+{{< table >}}
+| | |
+|---|---|
+| **Smoke #2** | Size of the dark smoke layer |
+| **Blend** | Blend mode for the dark smoke |
+| **Color** | Dark smoke color |
+| **Expand** | Smoke expansion outward from the slash |
+| **Fade** | Point at which the dark smoke fades out |
+{{< /table >}}
+
+##### Background
+
+This standalone '**Background**' control appears after the smoke blocks in the custom inspector and sets the color used to hide screen-edge clamping when the image splits.
+
+{{< table >}}
+| | |
+|---|---|
+| **Background** | Fill color revealed behind the split halves |
+{{< /table >}}
+
+##### Color
+
+Open the '**Color**' foldout in the custom inspector to adjust the final grading applied to the effect.
+
+{{< table >}}
+| | |
+|---|---|
+| **Brightness** | Overall brightness |
+| **Contrast** | Overall contrast |
+| **Gamma** | Overall gamma |
+| **Hue** | Global hue shift |
+| **Saturation** | Global saturation |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.SpiceUp.Slash;
+
+[SerializeField] private VolumeProfile volumeProfile;
+
+private IEnumerator PlaySlash(float duration)
+{
+  if (volumeProfile.TryGet(out SlashVolume volume))
+  {
+    volume.intensity.overrideState = true;
+    volume.progress.overrideState = true;
+    volume.progress.value = 0.0f;
+    volume.intensity.value = 1.0f;
+
+    float time = 0.0f;
+    while (time < duration)
+    {
+      volume.progress.value = time / duration;
+      time += volume.useScaledTime.value ? Time.deltaTime : Time.unscaledDeltaTime;
+      yield return null;
+    }
+
+    volume.progress.value = 1.0f;
+    volume.intensity.value = 0.0f;
+  }
+}
+```
+
+💡 Take a look at the code in the included demo to learn more about how the effect works.
+
+##### Slash Controller
+
+`SlashController` is an optional helper component that animates the slash over time via a coroutine.
+
+* **Duration**: total time of the slash animation in seconds.
+* **VolumeProfile**: must contain the `SlashVolume` used by the controller.
+* **Play()**: starts the slash from progress 0 and animates it to 1.
+* **Stop()**: cancels the animation and resets progress to 0.
+* **OnStart / OnProgress / OnStop**: Unity events fired during playback.
+
+##### Performance Characteristics
+
+The effect executes in a single full-screen render pass.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: Low.
+* Complexity: O(1) per pixel.
+
+##### Usage Patterns and Presets
+
+###### Sword Strike
+
+For a sharp melee impact:
+* Slash: animate 0.0 -> 1.0
+* Angle: 149
+* Split: 0.05 - 0.15
+* Distort: 0.05 - 0.15
+* Glow Spread: 30 - 50
+
+###### Cinematic Kill
+
+For a dramatic finishing blow:
+* Slash: animate 0.0 -> 1.0
+* Split: 0.2 - 0.4
+* Smoke #1 Expand: 0.4 - 0.6
+* Smoke #2 Expand: 0.5 - 0.8
+* Background: black
 
 ---
 ## 💨 Speed Lines {#speedlines}
