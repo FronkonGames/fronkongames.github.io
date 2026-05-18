@@ -1606,7 +1606,7 @@ For a more detailed example, check the code in the demo scene.
 ## 🌈 Tonemapper {#tonemapper}
 {{< asset-header youtube="XcLXlvqG5yU" store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-tonemapper-267617" demo="https://fronkongames.github.io/demos-artistic/tonemapper/" warn="assets used in video and demo are not included">}}
 
-Tonemapping is a critical component in modern rendering pipelines, bridging the gap between high-dynamic-range (HDR) content and low-dynamic-range (LDR) displays. The package provides **52 distinct tonemapping operators**, each offering unique characteristics for different artistic and technical requirements.
+Tonemapping is a critical component in modern rendering pipelines, bridging the gap between high-dynamic-range (HDR) content and low-dynamic-range (LDR) displays. The package provides **54 distinct tonemapping operators**, each offering unique characteristics for different artistic and technical requirements.
 These operators range from simple mathematical functions to sophisticated film emulation curves, giving developers unprecedented control over their final image quality.
 
 #### Requisites
@@ -1636,7 +1636,7 @@ To apply the effect to your scene:
 
 #### Operator Categories
 
-The 52 operators can be organized into distinct families based on their mathematical foundations and intended use cases:
+The 54 operators can be organized into distinct families based on their mathematical foundations and intended use cases:
 
 ##### Classical Mathematical Operators
 
@@ -1677,6 +1677,10 @@ The 52 operators can be organized into distinct families based on their mathemat
 **ACESHill**, ACES curve fit by Stephen Hill (@self_shadow). Optimized approximation maintaining ACES characteristics.
 
 **ACES Narkowicz**, another ACES approximation by Krzysztof Narkowicz. Slightly different parameterization offering variant highlight handling.
+
+**ACES ODT**, full ACES 1.2 pipeline with Rec.709/sRGB Output Device Transform. Implements complete ACES workflow: sRGB linear → ACEScg input transform → ACES tone mapping → Rec.709/sRGB output transform with gamma correction. Provides the most accurate ACES implementation for professional color workflows.
+
+**UE5 ACES**, Unreal Engine 5's modified ACES implementation with adjusted shoulder compression, brighter midtones, and midtone saturation boost optimized for game rendering aesthetics.
 
 **ACES Extended**, extended ACES with contrast/saturation controls for additional artistic flexibility.
 
@@ -1754,7 +1758,7 @@ With '**Intensity**' you can control the overall strength of the effect [0.0 - 1
 
 {{< image src="tonemapper_1.jpg" wrapper="col-4 mx-auto">}}
 
-Choose from **52 different tonemapping algorithms**, each with unique characteristics. The operators are organized into families based on their mathematical foundations:
+Choose from **54 different tonemapping algorithms**, each with unique characteristics. The operators are organized into families based on their mathematical foundations:
 
 {{< table >}}
 | **Family** | **Operators** |
@@ -1762,7 +1766,7 @@ Choose from **52 different tonemapping algorithms**, each with unique characteri
 | **Classical** | Linear, Logarithmic, Exponential, Clamping |
 | **Reinhard** | Simple Reinhard, Luma Reinhard, Luma Inverted Reinhard, White Luma Reinhard, Reinhard Extended |
 | **Filmic** | Filmic, Filmic Aldridge, Hejl 2015, Uncharted 2, Watch Dogs, Piece Wise |
-| **ACES** | ACES, ACES Oscars, ACES Hill, ACES Narkowicz, ACES Extended |
+| **ACES** | ACES, ACES Oscars, ACES Hill, ACES Narkowicz, ACES ODT, UE5 ACES, ACES Extended |
 | **Game Industry** | Lottes, Uchimura, Unreal, RomBinDaHouse, CryEngine, Frostbite, Call of Duty |
 | **Modern** | Oklab, Max 3, Max 3 Inverted, PBR Neutral, Schlick, Drago, AGX, Custom S-Curve |
 | **Academic** | Tumblin-Rushmeier, Ward, Naka-Rushton, Weber-Fechner, Michaelis-Menten |

@@ -9037,7 +9037,7 @@
         </div></a>&nbsp;
 </div><br><br>
 
-<p>Tonemapping is a critical component in modern rendering pipelines, bridging the gap between high-dynamic-range (HDR) content and low-dynamic-range (LDR) displays. The package provides <strong>52 distinct tonemapping operators</strong>, each offering unique characteristics for different artistic and technical requirements.<br />
+<p>Tonemapping is a critical component in modern rendering pipelines, bridging the gap between high-dynamic-range (HDR) content and low-dynamic-range (LDR) displays. The package provides <strong>54 distinct tonemapping operators</strong>, each offering unique characteristics for different artistic and technical requirements.<br />
 These operators range from simple mathematical functions to sophisticated film emulation curves, giving developers unprecedented control over their final image quality.</p>
 
 <h4 id="requisites-8" class="heading">Requisites <a href="#requisites-8" aria-labelledby="requisites-8">
@@ -9141,7 +9141,7 @@ These operators range from simple mathematical functions to sophisticated film e
 
     &nbsp;
 </a></h4>
-<p>The 52 operators can be organized into distinct families based on their mathematical foundations and intended use cases:</p>
+<p>The 54 operators can be organized into distinct families based on their mathematical foundations and intended use cases:</p>
 
 <h5 id="classical-mathematical-operators" class="heading">Classical Mathematical Operators <a href="#classical-mathematical-operators" aria-labelledby="classical-mathematical-operators">
 
@@ -9226,6 +9226,8 @@ These operators range from simple mathematical functions to sophisticated film e
 <p><strong>ACES Oscars</strong>, official ACES Oscars implementation with full color space transforms (AP0 to AP1). Includes pastel hue function designed for pleasing albedo representation.</p>
 <p><strong>ACESHill</strong>, ACES curve fit by Stephen Hill (@self_shadow). Optimized approximation maintaining ACES characteristics.</p>
 <p><strong>ACES Narkowicz</strong>, another ACES approximation by Krzysztof Narkowicz. Slightly different parameterization offering variant highlight handling.</p>
+<p><strong>ACES ODT</strong>, full ACES 1.2 pipeline with Rec.709/sRGB Output Device Transform. Implements complete ACES workflow: sRGB linear → ACEScg input transform → ACES tone mapping → Rec.709/sRGB output transform with gamma correction. Provides the most accurate ACES implementation for professional color workflows.</p>
+<p><strong>UE5 ACES</strong>, Unreal Engine 5&rsquo;s modified ACES implementation with adjusted shoulder compression, brighter midtones, and midtone saturation boost optimized for game rendering aesthetics.</p>
 <p><strong>ACES Extended</strong>, extended ACES with contrast/saturation controls for additional artistic flexibility.</p>
 
 <h5 id="game-industry" class="heading">Game Industry <a href="#game-industry" aria-labelledby="game-industry">
@@ -9504,7 +9506,7 @@ These operators range from simple mathematical functions to sophisticated film e
             width="2800"
             >
 </div><br>
-<p>Choose from <strong>52 different tonemapping algorithms</strong>, each with unique characteristics. The operators are organized into families based on their mathematical foundations:</p>
+<p>Choose from <strong>54 different tonemapping algorithms</strong>, each with unique characteristics. The operators are organized into families based on their mathematical foundations:</p>
 
 
 
@@ -9543,7 +9545,7 @@ These operators range from simple mathematical functions to sophisticated film e
 </tr>
 <tr>
 <td><strong>ACES</strong></td>
-<td>ACES, ACES Oscars, ACES Hill, ACES Narkowicz, ACES Extended</td>
+<td>ACES, ACES Oscars, ACES Hill, ACES Narkowicz, ACES ODT, UE5 ACES, ACES Extended</td>
 </tr>
 <tr>
 <td><strong>Game Industry</strong></td>
