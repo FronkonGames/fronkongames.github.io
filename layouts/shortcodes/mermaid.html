@@ -1,0 +1,16 @@
+{{- $size := .Get "size" | default "" -}}
+{{- $class := "mermaid" -}}
+{{- $style := "" -}}
+
+{{- if $size -}}
+    {{- $validSizes := dict "small" "mermaid-size-small" "medium" "mermaid-size-medium" "large" "mermaid-size-large" "full" "mermaid-size-full" -}}
+    {{- if isset $validSizes $size -}}
+        {{- $class = printf "%s %s" $class (index $validSizes $size) -}}
+    {{- else -}}
+        {{- $style = printf "style=\"max-width: %s; margin: 0 auto;\"" $size -}}
+    {{- end -}}
+{{- end -}}
+
+<pre class="{{ $class }}" {{ $style | safeHTMLAttr }}>
+    {{- .Inner | safeHTML -}}
+</pre>

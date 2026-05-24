@@ -64,6 +64,7 @@
                 {{ end -}}
             {{ end }}
             
+            {{- partial "footer/optional-scripts.html" . -}}
             <!-- Add custom JS for animations and effects -->
             <script src="{{ "js/custom-effects.js" | relURL }}"></script>
         </div>

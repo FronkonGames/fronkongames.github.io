@@ -136,6 +136,8 @@ home = ["HTML", "RSS", "REDIR"]
   [[module.imports]]
     path = "github.com/gethinode/mod-lottie"
   [[module.imports]]
+    path = "github.com/gethinode/mod-mermaid"
+  [[module.imports]]
     path = "github.com/gethinode/mod-utils/v2"
   [[module.imports]]
     path = "github.com/myrthos/mod-mgallery"

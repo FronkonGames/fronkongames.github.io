@@ -1,0 +1,224 @@
+/*
+ * Custom Mermaid theme overrides for Fronkon Games
+ * Forces visible colors on dark backgrounds
+ */
+
+[data-mermaid-theme="light"] {
+    --mermaid-theme: default;
+}
+
+[data-mermaid-theme="dark"] {
+    --mermaid-theme: dark;
+}
+
+/* Base mermaid styling - centers content */
+.mermaid {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Size variants - constrain the pre block and center it */
+.mermaid-size-small {
+    max-width: 300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mermaid-size-medium {
+    max-width: 500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mermaid-size-large {
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mermaid-size-full {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ===== NODE BACKGROUNDS (prevent black boxes) ===== */
+.mermaid svg .node rect,
+.mermaid svg .node circle,
+.mermaid svg .node ellipse,
+.mermaid svg .node polygon,
+.mermaid svg .node .label-container rect,
+.mermaid svg .node .basic rect,
+.mermaid svg .node .label rect,
+.mermaid svg .nodeLabel rect,
+.mermaid svg .actor,
+.mermaid svg .labelBox,
+.mermaid svg .loopLine,
+.mermaid svg .note,
+.mermaid svg .activation0,
+.mermaid svg .activation1,
+.mermaid svg .activation2,
+.mermaid svg .section0,
+.mermaid svg .section1,
+.mermaid svg .section2,
+.mermaid svg .section3 {
+    fill: #343a40 !important;
+    stroke: #adb5bd !important;
+}
+
+/* ===== TEXT (force white) ===== */
+.mermaid svg .node .label,
+.mermaid svg .nodeLabel,
+.mermaid svg text,
+.mermaid svg .messageText,
+.mermaid svg .loopText,
+.mermaid svg .noteText,
+.mermaid svg .actor text,
+.mermaid svg .labelText,
+.mermaid svg .titleText,
+.mermaid svg .entityLabel,
+.mermaid svg .relationshipLabel,
+.mermaid svg .nodeLabel foreignObject,
+.mermaid svg .label foreignObject {
+    fill: #f8f9fa !important;
+    color: #f8f9fa !important;
+}
+
+/* ===== LINES & EDGES ===== */
+.mermaid svg .edgePath .path,
+.mermaid svg .edge-thickness-normal,
+.mermaid svg .relation,
+.mermaid svg .line,
+.mermaid svg .messageLine0,
+.mermaid svg .messageLine1,
+.mermaid svg .loopLine,
+.mermaid svg .flowchart-link {
+    stroke: #adb5bd !important;
+}
+
+/* ===== ARROWHEADS ===== */
+.mermaid svg .arrowheadPath,
+.mermaid svg marker path,
+.mermaid svg .arrowMarkerPath,
+.mermaid svg defs marker path,
+.mermaid svg [class*="arrow"] path,
+.mermaid svg .arrowhead- {
+    fill: #adb5bd !important;
+    stroke: #adb5bd !important;
+}
+
+.mermaid svg marker *[fill="#000000"],
+.mermaid svg marker *[fill="black"],
+.mermaid svg marker *[fill="#000"],
+.mermaid svg marker *[stroke="#000000"],
+.mermaid svg marker *[stroke="black"],
+.mermaid svg marker *[stroke="#000"] {
+    fill: #adb5bd !important;
+    stroke: #adb5bd !important;
+}
+
+/* ===== EDGE LABELS ===== */
+.mermaid svg .edgeLabel rect,
+.mermaid svg .edgeLabel .label,
+.mermaid svg .edgeLabel .label rect,
+.mermaid svg .edge-label rect,
+.mermaid svg .edgeLabel span {
+    fill: #495057 !important;
+    background-color: #495057 !important;
+    color: #f8f9fa !important;
+}
+
+.mermaid svg .edgeLabel text,
+.mermaid svg .edge-label text {
+    fill: #f8f9fa !important;
+}
+
+/* ===== CLUSTERS / SUBGRAPHS ===== */
+.mermaid svg .cluster rect,
+.mermaid svg .cluster .label rect,
+.mermaid svg .cluster-label rect {
+    fill: #212529 !important;
+    stroke: #6c757d !important;
+}
+
+.mermaid svg .cluster text,
+.mermaid svg .cluster-label text {
+    fill: #f8f9fa !important;
+}
+
+/* ===== REMOVE DROP SHADOWS ===== */
+.mermaid svg [style*="filter"],
+.mermaid svg [filter],
+.mermaid svg .drop-shadow,
+.mermaid svg .shadow {
+    filter: none !important;
+}
+
+/* ===== GLOBAL BLACK OVERRIDE (catch-all) ===== */
+/* Any element with explicit black fill/stroke */
+.mermaid svg [stroke="#000000"],
+.mermaid svg [stroke="black"],
+.mermaid svg [stroke="#000"],
+.mermaid svg [stroke="rgb(0,0,0)"],
+.mermaid svg [stroke="rgba(0,0,0"],
+.mermaid svg [fill="#000000"],
+.mermaid svg [fill="black"],
+.mermaid svg [fill="#000"],
+.mermaid svg [fill="rgb(0,0,0)"],
+.mermaid svg [fill="rgba(0,0,0"] {
+    stroke: #adb5bd !important;
+    fill: #343a40 !important;
+}
+
+/* But never override text that should be white */
+.mermaid svg text[fill="#000000"],
+.mermaid svg text[fill="black"],
+.mermaid svg text[fill="#000"],
+.mermaid svg text[fill="rgb(0,0,0)"] {
+    fill: #f8f9fa !important;
+}
+
+/* ===== REMOVE ALL SHADOWS/FILTERS (aggressive) ===== */
+.mermaid svg *,
+.mermaid svg *::before,
+.mermaid svg *::after {
+    filter: none !important;
+    -webkit-filter: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* Target specific Mermaid v11 edge/arrow shadow classes */
+.mermaid svg .edgePath,
+.mermaid svg .edge-thickness-normal,
+.mermaid svg .flowchart-link,
+.mermaid svg .transition,
+.mermaid svg .messageLine0,
+.mermaid svg .messageLine1,
+.mermaid svg .loopLine,
+.mermaid svg .relation,
+.mermaid svg [class*="edge"],
+.mermaid svg [class*="arrow"],
+.mermaid svg [class*="path"] {
+    filter: none !important;
+    -webkit-filter: none !important;
+    stroke-opacity: 1 !important;
+}
+
+/* ===== FOREIGN OBJECTS (HTML labels) ===== */
+.mermaid svg foreignObject {
+    color: #f8f9fa !important;
+}
+
+.mermaid svg foreignObject div,
+.mermaid svg foreignObject span {
+    background-color: transparent !important;
+    color: #f8f9fa !important;
+}

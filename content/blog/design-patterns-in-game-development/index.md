@@ -9,6 +9,7 @@ giscus: true
 showImage: true
 thumbnail:
   url: img/design-patterns-in-game-development.jpg
+modules: ["mermaid"] 
 ---
 
 The solution is reusable and can be used to solve similar problems. In this article we are going to focus on design patterns focused on video game programming.
@@ -92,6 +93,17 @@ The patterns we will see can be classified according to their purpose or level o
 ## Builders
 
 ### Singleton
+
+
+{{< mermaid size="medium" >}}
+graph TD
+    Client1[Client 1] -->|requests| Instance[Singleton Instance]
+    Client2[Client 2] -->|requests| Instance
+    Client3[Client 3] -->|requests| Instance
+    Instance -.->|creates if null| Instance
+{{< /mermaid >}}
+
+
 
 The first design pattern we are going to see is possibly the most controversial and most/misused of all. Its simplicity when implementing it and its ease of use make it the design pattern that is usually learned first and, in some cases, the only pattern that many programmers know.
 
@@ -284,6 +296,17 @@ AudioManager.Instance.PlaySound("explosion");
 
 ### Builder
 
+
+{{< mermaid size="large" >}}
+graph LR
+    Director[Director] -->|constructs| Builder[Builder]
+    Builder -->|step 1| Product[Product]
+    Builder -->|step 2| Product
+    Builder -->|step 3| Product
+{{< /mermaid >}}
+
+
+
 The Builder pattern is a design pattern used to create complex objects step by step instead of passing many values into a long constructor. It separates the object creation process from the object itself, making the code easier to read and manage.
 
 The Builder pattern can be summarized as:
@@ -432,6 +455,17 @@ public class EnemySpawner : MonoBehaviour
 
 ### Factory
 
+
+{{< mermaid size="medium" >}}
+graph TD
+    Client[Client] -->|requests| Factory[Factory]
+    Factory -->|creates| ProductA[Product A]
+    Factory -->|creates| ProductB[Product B]
+    Factory -->|creates| ProductC[Product C]
+{{< /mermaid >}}
+
+
+
 The Factory pattern is a creational design pattern that moves the responsibility of creating objects away from the main code and into a separate factory class or method. Instead of scattering `new Goblin()` or `Instantiate(zombiePrefab)` across the codebase, the code simply asks the factory for the object it needs.
 
 The Factory pattern can be summarized as:
@@ -547,6 +581,16 @@ public class GameManager : MonoBehaviour
 
 ### Prototype
 
+
+{{< mermaid size="medium" >}}
+graph TD
+    Prototype[Prototype] -->|Clone| Copy1[Copy 1]
+    Prototype -->|Clone| Copy2[Copy 2]
+    Prototype -->|Clone| Copy3[Copy 3]
+{{< /mermaid >}}
+
+
+
 The Prototype pattern lets you create new objects by cloning an existing template instead of building everything from scratch. Prepare one well-configured object, then clone it whenever you need a new version.
 
 The Prototype pattern can be summarized as:
@@ -641,6 +685,15 @@ public class EnemySpawner : MonoBehaviour
 ## Structural
 
 ### Adapter
+
+
+{{< mermaid size="large" >}}
+graph LR
+    Client[Client] -->|Target Interface| Adapter[Adapter]
+    Adapter -->|Adaptee Interface| Adaptee[Adaptee]
+{{< /mermaid >}}
+
+
 
 The Adapter pattern is a structural design pattern that allows two incompatible interfaces to work together. Like a power adapter that lets a foreign plug fit a local socket, the software adapter sits between your code and an incompatible API, translating calls so neither side needs to change.
 
@@ -749,6 +802,17 @@ public class GameManager : MonoBehaviour
 <br><br>
 
 ### Composite
+
+
+{{< mermaid size="small" >}}
+graph TD
+    Root[Composite] -->|operation| Leaf1[Leaf]
+    Root -->|operation| Child1[Composite]
+    Child1 -->|operation| Leaf2[Leaf]
+    Child1 -->|operation| Leaf3[Leaf]
+{{< /mermaid >}}
+
+
 
 The Composite pattern is a structural design pattern that lets you treat single objects and groups of objects in the same way. It hides the difference between one object and many objects from the code that uses them.
 
@@ -862,6 +926,17 @@ public class GameController : MonoBehaviour
 <br><br>
 
 ### Decorator
+
+
+{{< mermaid size="medium" >}}
+graph LR
+    Component[Component] --> ConcreteComponent[ConcreteComponent]
+    Component --> Decorator[Decorator]
+    Decorator --> ConcreteDecoratorA[Fire Enchantment]
+    Decorator --> ConcreteDecoratorB[Poison Enchantment]
+{{< /mermaid >}}
+
+
 
 The Decorator is one of those patterns I genuinely love. It is elegant, flexible and solves a real problem: how to add behavior without creating an explosion of subclasses. Once you grasp it, you start seeing `FirePoisonCriticalSword` class names as the nightmare they are.
 
@@ -998,6 +1073,17 @@ Basic Sword + Fire + Critical deals 30 damage
 
 ### Facade
 
+
+{{< mermaid size="medium" >}}
+graph TD
+    Client[Client] -->|simple call| Facade[Facade]
+    Facade -->|coordinates| Subsystem1[Subsystem 1]
+    Facade -->|coordinates| Subsystem2[Subsystem 2]
+    Facade -->|coordinates| Subsystem3[Subsystem 3]
+{{< /mermaid >}}
+
+
+
 The Facade pattern provides a simple, unified interface in front of a complex subsystem. Instead of forcing the rest of the code to deal with many different classes, the Facade offers a clean and controlled access point.
 
 The Facade pattern can be summarized as:
@@ -1130,6 +1216,15 @@ public class Player : MonoBehaviour
 
 ### Proxy
 
+
+{{< mermaid size="medium" >}}
+graph LR
+    Client[Client] -->|uses| Proxy[Proxy]
+    Proxy -->|delegates| RealSubject[Real Subject]
+{{< /mermaid >}}
+
+
+
 Proxy is another one of my favorites. It is deceptively simple: an object that stands in for another object, controlling how and when the real one gets used. The elegance is in how much power you get without the client ever knowing the difference.
 
 The Proxy pattern can be summarized as:
@@ -1242,6 +1337,18 @@ public class GameManager : MonoBehaviour
 
 ### Flyweight
 
+
+{{< mermaid size="medium" >}}
+graph TD
+    Client1[Client 1] -->|requests| Factory[Flyweight Factory]
+    Client2[Client 2] -->|requests| Factory
+    Factory -->|reuses| Shared[Shared Flyweight]
+    Factory -->|creates| Unique1[Unique State 1]
+    Factory -->|creates| Unique2[Unique State 2]
+{{< /mermaid >}}
+
+
+
 The Flyweight pattern shares common, immutable data across many objects to save memory. Instead of each object storing all its data, the shared data is extracted into a flyweight object that many instances reference.
 
 The pattern can be summarized as:
@@ -1338,6 +1445,17 @@ public class EnemySpawner : MonoBehaviour
 <br><br>
 
 ### Bridge
+
+
+{{< mermaid size="medium" >}}
+graph LR
+    Abstraction[Abstraction] --> Implementation[Implementation]
+    RefinedAbstraction[RefinedAbstraction] --> Implementation
+    Implementation --> ConcreteImplA[ConcreteImplA]
+    Implementation --> ConcreteImplB[ConcreteImplB]
+{{< /mermaid >}}
+
+
 
 The Bridge pattern separates an abstraction from its implementation so that both can evolve independently. Instead of having one monolithic class that handles everything, you split it into two hierarchies connected by a bridge, usually a reference to an interface.
 
@@ -1452,6 +1570,16 @@ public class PlayerController : MonoBehaviour
 ## Behavior
 
 ### Command
+
+
+{{< mermaid size="small" >}}
+graph TD
+    Invoker[Invoker] -->|stores/executes| Command[Command]
+    Command -->|calls| Receiver[Receiver]
+    Client[Client] -->|creates| Command
+{{< /mermaid >}}
+
+
 
 The Command pattern is a behavioral design pattern that turns a request or action into a separate object instead of executing it directly. Instead of calling something like `player.MoveForward()` directly, the "move forward" action becomes a `MoveCommand` object, triggered by calling `Execute()` on it.
 
@@ -1585,6 +1713,19 @@ public class InputHandler : MonoBehaviour
 <br><br>
 
 ### Mediator
+
+
+{{< mermaid size="small" >}}
+graph TD
+    Colleague1[Colleague 1] -->|communicates| Mediator[Mediator]
+    Colleague2[Colleague 2] -->|communicates| Mediator
+    Colleague3[Colleague 3] -->|communicates| Mediator
+    Mediator -->|relays| Colleague1
+    Mediator -->|relays| Colleague2
+    Mediator -->|relays| Colleague3
+{{< /mermaid >}}
+
+
 
 The Mediator pattern is a behavioral design pattern that manages communication between objects through a central intermediary instead of letting them talk to each other directly. Its main purpose is to prevent classes from becoming tightly connected to one another.
 
@@ -1730,6 +1871,16 @@ public class Player : MonoBehaviour
 
 ### Memento
 
+
+{{< mermaid size="medium" >}}
+graph LR
+    Originator[Originator] -->|creates| Memento[Memento]
+    Caretaker[Caretaker] -->|stores| Memento
+    Originator -->|restores from| Memento
+{{< /mermaid >}}
+
+
+
 The Memento pattern is a behavioral design pattern that allows an object's current state to be saved without exposing its internal structure, and restored later when needed.
 
 The Memento pattern can be summarized as:
@@ -1868,6 +2019,16 @@ public class GameController : MonoBehaviour
 
 ### Observer
 
+
+{{< mermaid size="medium" >}}
+graph TD
+    Subject[Subject] -->|notifies| Observer1[Observer 1]
+    Subject -->|notifies| Observer2[Observer 2]
+    Subject -->|notifies| Observer3[Observer 3]
+{{< /mermaid >}}
+
+
+
 The Observer pattern is, without a doubt, one of my favorite patterns. It is everywhere , C# events, UnityEvents, delegates, Actions , and once you internalize it, you start seeing opportunities to decouple code everywhere. It is the backbone of event-driven architecture in Unity.
 
 The Observer pattern can be summarized as:
@@ -2001,6 +2162,18 @@ public class AudioManager : MonoBehaviour
 <br><br>
 
 ### State
+
+
+{{< mermaid size="small" >}}
+graph TD
+    Context[Context] -->|delegates| State[State]
+    State --> ConcreteStateA[ConcreteStateA]
+    State --> ConcreteStateB[ConcreteStateB]
+    ConcreteStateA -->|transition| ConcreteStateB
+    ConcreteStateB -->|transition| ConcreteStateA
+{{< /mermaid >}}
+
+
 
 The State pattern is a behavioral design pattern that allows an object to change its behavior depending on its current internal state. The object stays the same, but it behaves differently in different situations.
 
@@ -2193,6 +2366,17 @@ public class Enemy : MonoBehaviour
 
 ### Strategy
 
+
+{{< mermaid size="medium" >}}
+graph TD
+    Context[Context] -->|uses| Strategy[Strategy]
+    Strategy --> StrategyA[Strategy A]
+    Strategy --> StrategyB[Strategy B]
+    Strategy --> StrategyC[Strategy C]
+{{< /mermaid >}}
+
+
+
 The Strategy pattern is a behavioral design pattern that lets you define a family of algorithms in separate classes and switch between them at runtime. The main class, called the Context, only knows the common interface; it does not need to understand how each strategy works internally.
 
 The Strategy pattern can be summarized as:
@@ -2329,6 +2513,16 @@ public class PlayerCombat : MonoBehaviour
 <br><br>
 
 ### Chain of Responsibility
+
+
+{{< mermaid size="large" >}}
+graph LR
+    Handler1[Handler 1] -->|can't handle| Handler2[Handler 2]
+    Handler2 -->|can't handle| Handler3[Handler 3]
+    Handler3 -->|handles| Request[Request]
+{{< /mermaid >}}
+
+
 
 Chain of Responsibility passes a request through a chain of handlers until one of them processes it. Each handler decides whether to handle the request or pass it to the next handler in the chain.
 
@@ -2467,6 +2661,16 @@ public class CombatSystem : MonoBehaviour
 
 ### Visitor
 
+
+{{< mermaid size="small" >}}
+graph TD
+    Visitor[Visitor] -->|visits| ElementA[Element A]
+    Visitor -->|visits| ElementB[Element B]
+    Client[Client] -->|accepts| Visitor
+{{< /mermaid >}}
+
+
+
 The Visitor pattern separates an algorithm from the object structure it operates on. Instead of adding a method to every class in a hierarchy each time you need a new operation, you write a single Visitor class that handles all types.
 
 I love this one. Its power is subtle, it takes a moment to click, but once it does you see the elegance. Adding a new operation across a whole hierarchy without touching a single existing class feels like cheating.
@@ -2595,6 +2799,16 @@ public class CombatManager : MonoBehaviour
 
 ### Dependency Injection
 
+
+{{< mermaid size="small" >}}
+graph TD
+    DIContainer[DI Container] -->|provides| ServiceA[Service A]
+    DIContainer -->|provides| ServiceB[Service B]
+    Client[Client] -->|requests dependencies| DIContainer
+{{< /mermaid >}}
+
+
+
 Dependency Injection is the dragon slayer of coupled code. It does one simple thing, a class receives its dependencies from the outside instead of creating them internally, and in doing so it dismantles the tangled web of references that makes projects rigid and untestable.
 
 The Dependency Injection principle can be summarized as:
@@ -2704,6 +2918,17 @@ public class GameInstaller : MonoBehaviour
 <br><br>
 
 ### MVP
+
+
+{{< mermaid size="small" >}}
+graph TD
+    View[View] -->|user input| Presenter[Presenter]
+    Presenter -->|updates| Model[Model]
+    Model -->|notifies| Presenter
+    Presenter -->|updates UI| View
+{{< /mermaid >}}
+
+
 
 I am not the biggest fan of MVP in Unity, but I cannot deny it has its place. If your UI is complex enough and you need to test it without opening a scene, MVP delivers. For simpler projects, though, the extra boilerplate can feel like ceremony without reward.
 
@@ -2832,6 +3057,17 @@ public class CoinScreen : MonoBehaviour
 
 ### Service Locator
 
+
+{{< mermaid size="small" >}}
+graph TD
+    Client1[Client 1] -->|requests| Locator[Service Locator]
+    Client2[Client 2] -->|requests| Locator
+    Locator -->|returns| ServiceA[Service A]
+    Locator -->|returns| ServiceB[Service B]
+{{< /mermaid >}}
+
+
+
 I really love this one. It is simple, practical and hits a sweet spot between the rigidity of Singletons and the ceremony of full DI frameworks. A central registry where services register themselves and clients request them by interface, nothing more, nothing less.
 
 The Service Locator pattern can be summarized as:
@@ -2955,6 +3191,17 @@ public class Player : MonoBehaviour
 
 ### ECS
 
+
+{{< mermaid size="medium" >}}
+graph TD
+    Entity[Entity] -->|has| Component1[Component 1]
+    Entity -->|has| Component2[Component 2]
+    System1[System 1] -->|queries| Component1
+    System2[System 2] -->|queries| Component2
+{{< /mermaid >}}
+
+
+
 ECS, or Entity Component System, is an architectural pattern that structures code around data rather than objects. It flips the traditional MonoBehaviour approach on its head: instead of each object owning its behavior, data lives in components, behavior lives in systems, and entities are just IDs that group components together.
 
 The pattern can be summarized as:
@@ -3049,6 +3296,17 @@ public class HealthSystem
 
 ### Game Loop
 
+
+{{< mermaid size="small" >}}
+graph TD
+    A[Process Input] --> B[Update Game State]
+    B --> C[Render Frame]
+    C --> D[Wait for next frame]
+    D --> A
+{{< /mermaid >}}
+
+
+
 The Game Loop is the heartbeat of every real-time game. It decouples the passage of game time from user input and rendering speed, ensuring the simulation runs at a consistent rate regardless of frame rate.
 
 The pattern can be summarized as:
@@ -3139,6 +3397,17 @@ The practical rule in Unity is: put physics and anything that needs deterministi
 ## Optimization
 
 ### Dirty Flag
+
+
+{{< mermaid size="small" >}}
+graph TD
+    Data[Data changes] -->|sets| Flag[Dirty Flag]
+    System[System] -->|checks| Flag
+    Flag -->|if dirty| Recalculate[Recalculate]
+    Recalculate -->|clears| Flag
+{{< /mermaid >}}
+
+
 
 Dirty Flag is a simple optimization pattern that tracks whether data has changed, so you can skip redundant expensive calculations. If the data has not changed, there is no need to recalculate.
 
@@ -3270,6 +3539,18 @@ public class GameController : MonoBehaviour
 <br><br>
 
 ### Object Pooling
+
+
+{{< mermaid size="medium" >}}
+graph TD
+    Client[Client] -->|requests| Pool[Object Pool]
+    Pool -->|returns existing| Object1[Object]
+    Pool -->|creates new| Object2[Object]
+    Client -->|returns| Object1
+    Object1 --> Pool
+{{< /mermaid >}}
+
+
 
 Object Pooling is a pattern where objects that are expensive to create and destroy are prepared in advance and stored in a pool. When an object is needed, it is taken from the pool instead of being newly created. When done, it is returned to the pool instead of being destroyed. The idea is simple: stop throwing objects away and reuse them.
 
@@ -3410,6 +3691,19 @@ public class Gun : MonoBehaviour
 <br><br>
 
 ### Spatial Partition
+
+
+{{< mermaid size="medium" >}}
+graph TD
+    World[World] -->|divides into| Grid[Grid / Quadtree]
+    Grid --> Cell1[Cell 1]
+    Grid --> Cell2[Cell 2]
+    Grid --> Cell3[Cell 3]
+    Entity1[Entity] --> Cell1
+    Entity2[Entity] --> Cell2
+{{< /mermaid >}}
+
+
 
 Spatial Partition is an optimization technique that organizes objects in a game world based on their physical position. Instead of checking every object against every other object, the world is divided into smaller regions. This is not just a nice idea, it is essential knowledge for game development. Without it, games with hundreds or thousands of objects would grind to a halt. Every open-world game, every RTS with unit selection, every collision-heavy action game relies on some form of spatial partitioning to stay performant.
 

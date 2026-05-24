@@ -12,6 +12,7 @@ require (
 	github.com/gethinode/mod-katex v1.1.0 // indirect
 	github.com/gethinode/mod-leaflet v1.1.0 // indirect
 	github.com/gethinode/mod-lottie v1.5.1 // indirect
+	github.com/gethinode/mod-mermaid v1.1.23 // indirect
 	github.com/gethinode/mod-utils/v2 v2.3.4 // indirect
 	github.com/hugomods/giscus v0.1.1 // indirect
 	github.com/mfg92/hugo-shortcode-gallery v1.1.1 // indirect
