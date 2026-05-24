@@ -61,6 +61,8 @@ The patterns we will see can be classified according to their purpose or level o
   - **[Decorator](#decorator)**, dynamically adds responsibilities to objects without modifying their code.
   - **[Facade](#facade)**, provides a simplified interface to a complex subsystem.
   - **[Proxy](#proxy)**, controls access to an object through a placeholder or surrogate.
+  - **[Flyweight](#flyweight)**, shares common state across many objects to reduce memory usage.
+  - **[Bridge](#bridge)**, separates an abstraction from its implementation so both can vary independently.
 - **Behavior**, define interactions and responsibilities between classes and objects.
    - **[Command](#command)**, encapsulates a request as an object, allowing parameterization, queueing, logging and undo of requests.
    - **[Mediator](#mediator)**, centralizes communication between objects, preventing direct coupling between them.
@@ -68,10 +70,14 @@ The patterns we will see can be classified according to their purpose or level o
    - **[Observer](#observer)**, defines a one-to-many dependency so that when one object changes, all dependents are notified.
    - **[State](#state)**, allows an object to alter its behavior when its internal state changes.
   - **[Strategy](#strategy)**, defines a family of interchangeable algorithms and lets them vary independently.
+  - **[Chain of Responsibility](#chain-of-responsibility)**, passes a request through a chain of handlers until one processes it.
+  - **[Visitor](#visitor)**, separates an algorithm from the object structure it operates on.
 - **Architectural**, patterns that improve project structure and maintainability.
   - **[Dependency Injection](#dependency-injection)**, provides dependencies from the outside instead of creating them internally.
   - **[MVP](#mvp)**, separates UI into Model, View and Presenter for cleaner and more testable interfaces.
   - **[Service Locator](#service-locator)**, manages and provides services from a central registry.
+  - **[ECS](#ecs)**, structures code around data-oriented entities, components and systems.
+  - **[Game Loop](#game-loop)**, decouples the passage of game time from user input and rendering.
 - **Optimization**, patterns focused on performance and efficiency.
   - **[Dirty Flag](#dirty-flag)**, avoids redundant calculations by tracking when data has changed.
   - **[Object Pooling](#object-pooling)**, reuses objects instead of constantly creating and destroying them.
@@ -1230,6 +1236,213 @@ public class GameManager : MonoBehaviour
 - With lazy loading, avoid creating heavy objects at sudden gameplay moments. Warm them up before the critical moment to prevent frame drops.
 - In multiplayer projects, tools like Mirror or Netcode for GameObjects already use similar ideas. Thinking of remote players as proxies makes RPC calls and local-versus-remote logic easier to design.
 
+### Flyweight
+
+The Flyweight pattern shares common, immutable data across many objects to save memory. Instead of each object storing all its data, the shared data is extracted into a flyweight object that many instances reference.
+
+The pattern can be summarized as:
+
+> Share **common state** across many objects to **reduce memory usage**, separating **intrinsic** data from **extrinsic** data.
+
+Intrinsic state is what does not change across instances, like the mesh, material, texture, or shared stats of an enemy type. Extrinsic state is what varies per instance, like position, rotation, current health or color tint. In Unity, the intrinsic data often lives in a prefab or a `ScriptableObject`, and only the extrinsic data stays on each instance.
+
+#### When to use it
+
+Flyweight shines when you have thousands of objects that share most of their data. Think a forest where every tree shares the same mesh and material, with only position and scale being unique. Or a bullet hell shooter where hundreds of bullets share the same prefab and behavior.
+
+The pattern is also used heavily in UI systems, tilemaps and particle systems, where Unity internally shares materials, textures and mesh data.
+
+However, if objects are few or each one is truly unique, Flyweight adds unnecessary complexity.
+
+#### Flyweight in Unity
+
+Unity's prefab system already embodies Flyweight principles. A `ScriptableObject` makes the pattern explicit:
+
+```csharp
+[CreateAssetMenu(menuName = "Patterns/Flyweight/EnemyType")]
+public class EnemyType : ScriptableObject
+{
+    public string enemyName;
+    public float maxHealth;
+    public float speed;
+    public float attackDamage;
+    public Mesh mesh;
+    public Material material;
+    public Color tint;
+}
+```
+
+Each instance only stores what varies:
+
+```csharp
+public class Enemy : MonoBehaviour
+{
+    [SerializeField] private EnemyType type;
+
+    private float currentHealth;
+    private Vector3 velocity;
+
+    private void Start()
+    {
+        currentHealth = type.maxHealth;
+        GetComponent<MeshFilter>().mesh = type.mesh;
+        GetComponent<MeshRenderer>().material = type.material;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+    }
+}
+```
+
+```csharp
+public class EnemySpawner : MonoBehaviour
+{
+    [SerializeField] private Enemy prefab;
+    [SerializeField] private List<EnemyType> types;
+
+    private void SpawnEnemy(EnemyType type, Vector3 position)
+    {
+        var enemy = Instantiate(prefab, position, Quaternion.identity);
+        enemy.GetComponent<Enemy>().type = type;
+    }
+}
+```
+
+#### Advantages and disadvantages
+
+**Advantages:**
+
+- Dramatically reduces memory usage when objects share common data.
+- Centralizes shared configuration, making it easy to tweak values globally.
+- Separates what changes from what stays the same.
+
+**Disadvantages:**
+
+- Adds indirection, making the code slightly harder to follow.
+- Shared data must be truly immutable at runtime or bugs become hard to trace.
+- Not useful if every object needs unique data.
+
+#### Tips for Unity
+
+- Use `ScriptableObject`s as flyweight containers. They hold the shared data and can be assigned via the Inspector.
+- Prefab variants already follow flyweight logic internally. Use them when the variation is static.
+- Avoid modifying shared flyweight data at runtime. If you need per-instance overrides, copy the flyweight values to instance fields at initialization.
+- For GPU-heavy scenarios like rendering thousands of trees, look into GPU Instancing and DrawMeshInstanced, which are hardware-level flyweight implementations.
+
+<br><br>
+
+### Bridge
+
+The Bridge pattern separates an abstraction from its implementation so that both can evolve independently. Instead of having one monolithic class that handles everything, you split it into two hierarchies connected by a bridge, usually a reference to an interface.
+
+The pattern can be summarized as:
+
+> **Decouple an abstraction** from its **implementation** so that the two can **vary independently**.
+
+In Unity, this is useful when you have a single concept that needs to work with multiple platforms, input devices, rendering backends or data sources. The abstraction defines what to do, the implementation handles how to do it.
+
+#### When to use it
+
+Bridge is useful when both the abstraction and the implementation are likely to change over time. For example, a character controller might need to support keyboard, gamepad and touch input. Instead of writing three separate controllers, one abstraction uses different input implementations.
+
+It is also useful for cross-platform support, rendering backends, save systems with different storage backends, or any place where you have a clear "what" vs "how" split.
+
+#### Bridge in Unity
+
+A character controller abstraction with swappable input implementations:
+
+```csharp
+public interface IInputDevice
+{
+    Vector3 GetMovementDirection();
+    bool IsJumpPressed();
+}
+```
+
+Different input implementations:
+
+```csharp
+public class KeyboardInput : IInputDevice
+{
+    public Vector3 GetMovementDirection()
+    {
+        var direction = new Vector3(
+            Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        return direction.normalized;
+    }
+
+    public bool IsJumpPressed() => Input.GetButtonDown("Jump");
+}
+
+public class GamepadInput : IInputDevice
+{
+    public Vector3 GetMovementDirection()
+    {
+        var direction = new Vector3(
+            Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        return direction.normalized;
+    }
+
+    public bool IsJumpPressed() => Input.GetButtonDown("Jump");
+}
+```
+
+The abstraction uses the bridge:
+
+```csharp
+public class PlayerController : MonoBehaviour
+{
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpForce = 10f;
+
+    private IInputDevice input;
+    private Rigidbody rb;
+
+    public void SetInput(IInputDevice device)
+    {
+        input = device;
+    }
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        SetInput(new KeyboardInput());
+    }
+
+    private void Update()
+    {
+        var movement = input.GetMovementDirection() * speed;
+        rb.linearVelocity = new Vector3(movement.x, rb.linearVelocity.y, movement.z);
+
+        if (input.IsJumpPressed())
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+}
+```
+
+#### Advantages and disadvantages
+
+**Advantages:**
+
+- Abstraction and implementation can evolve independently.
+- Switching implementations at runtime is trivial.
+- Adding new implementations does not require changing the abstraction.
+
+**Disadvantages:**
+
+- Adds an extra layer of indirection.
+- Overkill for simple systems with a single, stable implementation.
+- Requires careful interface design to avoid leaking implementation details.
+
+#### Tips for Unity
+
+- Use Bridge when you expect multiple implementations to exist, not "just in case" one might appear later.
+- For input systems, Unity's Input System package already uses this pattern internally with its Input Action assets.
+- Bridge pairs well with Factory: a factory can choose the correct implementation based on the platform or player settings at startup.
+- Avoid exposing implementation-specific details in the abstraction's interface. The abstraction should only declare what it needs, not how.
+
 <br><br>
 
 ## Behavior
@@ -2111,6 +2324,269 @@ public class PlayerCombat : MonoBehaviour
 
 <br><br>
 
+### Chain of Responsibility
+
+Chain of Responsibility passes a request through a chain of handlers until one of them processes it. Each handler decides whether to handle the request or pass it to the next handler in the chain.
+
+The pattern can be summarized as:
+
+> **Avoid coupling the sender** of a request to its receiver by giving **multiple objects a chance to handle** the request.
+
+In Unity, this is useful for input systems where UI should consume clicks before the game world does, for damage pipelines where armor absorbs damage before health is reduced, or for achievement systems that chain-check conditions.
+
+#### When to use it
+
+Chain of Responsibility is useful when multiple objects might handle a request and the handler is not known at compile time. It is common in:
+
+- **Input handling**: UI buttons consume a click first, then the game world, then nothing.
+- **Damage modifiers**: dodge chance, armor reduction, shield absorption, health deduction.
+- **Achievement systems**: check conditions in sequence, stop when one fails.
+- **Logging pipelines**: debug log, warning log, error log, each handling its level.
+
+If the set of handlers is fixed and known, a simple list or array with a loop is often simpler.
+
+#### Chain of Responsibility in Unity
+
+A damage pipeline where each handler can intercept damage:
+
+```csharp
+public abstract class DamageHandler
+{
+    protected DamageHandler next;
+
+    public DamageHandler SetNext(DamageHandler handler)
+    {
+        next = handler;
+        return handler;
+    }
+
+    public virtual void Handle(DamageData data)
+    {
+        next?.Handle(data);
+    }
+}
+
+public class DamageData
+{
+    public int amount;
+    public bool consumed;
+}
+```
+
+Concrete handlers in the chain:
+
+```csharp
+public class DodgeHandler : DamageHandler
+{
+    public override void Handle(DamageData data)
+    {
+        if (Random.value < 0.2f)
+        {
+            Debug.Log("Dodged!");
+            data.consumed = true;
+            return;
+        }
+        next?.Handle(data);
+    }
+}
+
+public class ArmorHandler : DamageHandler
+{
+    public override void Handle(DamageData data)
+    {
+        int absorbed = Mathf.Min(data.amount, 5);
+        data.amount -= absorbed;
+        Debug.Log($"Armor absorbed {absorbed} damage");
+        next?.Handle(data);
+    }
+}
+
+public class HealthHandler : DamageHandler
+{
+    [SerializeField] private int health = 100;
+
+    public override void Handle(DamageData data)
+    {
+        health -= data.amount;
+        Debug.Log($"Health reduced to {health}");
+    }
+}
+```
+
+Building and using the chain:
+
+```csharp
+public class CombatSystem : MonoBehaviour
+{
+    private DamageHandler pipeline;
+
+    private void Awake()
+    {
+        var dodge = new DodgeHandler();
+        var armor = new ArmorHandler();
+        var health = new HealthHandler();
+
+        dodge.SetNext(armor).SetNext(health);
+        pipeline = dodge;
+    }
+
+    public void ApplyDamage(int amount)
+    {
+        pipeline.Handle(new DamageData { amount = amount });
+    }
+}
+```
+
+#### Advantages and disadvantages
+
+**Advantages:**
+
+- Decouples the sender from the receivers; handlers can be added or reordered easily.
+- Each handler has a single responsibility, making the system modular.
+- The chain can be reconfigured at runtime.
+
+**Disadvantages:**
+
+- A request can fall through the entire chain unhandled if not designed carefully.
+- Long chains can be hard to debug and may add performance overhead.
+- Not suitable when the handler must be known deterministically.
+
+#### Tips for Unity
+
+- Each handler should be a plain C# class. This keeps the chain lightweight and independent from the scene.
+- Give every handler a `SetNext` method that returns the next handler, enabling fluent chain construction.
+- Always ensure the chain ends with a handler that guarantees the request is consumed, to avoid unexpected unhandled cases.
+- For input systems specifically, Unity's new Input System already supports similar concepts with its processor and interaction chains.
+- If the chain becomes too long or the order changes frequently, consider a priority queue or a list of handlers instead of a linked chain.
+
+<br><br>
+
+### Visitor
+
+The Visitor pattern separates an algorithm from the object structure it operates on. Instead of adding a method to every class in a hierarchy each time you need a new operation, you write a single Visitor class that handles all types.
+
+I love this one. Its power is subtle, it takes a moment to click, but once it does you see the elegance. Adding a new operation across a whole hierarchy without touching a single existing class feels like cheating.
+
+The pattern can be summarized as:
+
+> **Separate an algorithm** from the **object structure** it operates on, allowing you to **add new operations** without modifying the classes.
+
+#### When to use it
+
+Visitor is useful when you have a stable object hierarchy but frequently need to add new operations across all types. Common examples include applying effects to different enemy types, serializing a complex object graph, calculating damage based on weapon-vs-armor type combinations, or generating reports from a data model.
+
+It becomes especially powerful when the alternative would be a cascade of `if (enemy is Goblin)` type checks scattered across the codebase, or adding a method to every type every time a new feature is needed.
+
+#### Visitor in Unity
+
+An enemy hierarchy that accepts visitors:
+
+```csharp
+public interface IEnemyVisitor
+{
+    void Visit(Goblin goblin);
+    void Visit(Orc orc);
+    void Visit(Dragon dragon);
+}
+
+public abstract class Enemy : MonoBehaviour
+{
+    public abstract void Accept(IEnemyVisitor visitor);
+}
+
+public class Goblin : Enemy
+{
+    public override void Accept(IEnemyVisitor visitor) => visitor.Visit(this);
+    public int StolenGold = 5;
+}
+
+public class Orc : Enemy
+{
+    public override void Accept(IEnemyVisitor visitor) => visitor.Visit(this);
+    public int Rage = 100;
+}
+
+public class Dragon : Enemy
+{
+    public override void Accept(IEnemyVisitor visitor) => visitor.Visit(this);
+    public bool CanBreatheFire = true;
+}
+```
+
+Visitors that add operations without touching the enemy classes:
+
+```csharp
+public class DamageCalculator : IEnemyVisitor
+{
+    public int Result { get; private set; }
+
+    public void Visit(Goblin goblin) => Result = 10 + goblin.StolenGold;
+    public void Visit(Orc orc) => Result = 20 + orc.Rage / 10;
+    public void Visit(Dragon dragon) => Result = 50 + (dragon.CanBreatheFire ? 30 : 0);
+}
+
+public class LootGenerator : IEnemyVisitor
+{
+    public List<string> Result { get; private set; }
+
+    public void Visit(Goblin goblin)
+    {
+        Result = new List<string> { "Gold Coin", "Rusty Dagger" };
+    }
+
+    public void Visit(Orc orc)
+    {
+        Result = new List<string> { "Orcish Axe", "Leather Armor" };
+    }
+
+    public void Visit(Dragon dragon)
+    {
+        Result = new List<string> { "Dragon Scale", "Fire Essence", "Legendary Sword" };
+    }
+}
+```
+
+Using the visitor:
+
+```csharp
+public class CombatManager : MonoBehaviour
+{
+    public void CalculateAndLoot(Enemy enemy)
+    {
+        var damageCalc = new DamageCalculator();
+        enemy.Accept(damageCalc);
+        Debug.Log($"Damage dealt: {damageCalc.Result}");
+
+        var lootGen = new LootGenerator();
+        enemy.Accept(lootGen);
+        Debug.Log($"Loot: {string.Join(", ", lootGen.Result)}");
+    }
+}
+```
+
+#### Advantages and disadvantages
+
+**Advantages:**
+
+- Adding new operations across a whole hierarchy requires zero changes to the existing classes.
+- Related behavior for all types lives in one place, making it easy to understand.
+- Each visitor has a single, clear responsibility.
+
+**Disadvantages:**
+
+- Adding a new type to the hierarchy forces changes to every visitor.
+- The Visitor interface must know about every concrete type, creating a dependency from visitor to visited.
+- Overkill for small hierarchies or when operations change less often than types.
+
+#### Tips for Unity
+
+- Use Visitor when you have a stable set of types (enemies, items, abilities) and frequently need new cross-cutting operations.
+- If you find yourself adding new types more often than new operations, Visitor becomes a liability. In that case, keep the behavior inside each class or use a different pattern.
+- The `Accept` method is just double dispatch. It calls `visitor.Visit(this)`, which invokes the correct overload based on the concrete type at compile time.
+- For large hierarchies, consider the default Visitor pattern where an abstract visitor provides default implementations and concrete visitors override only what they need.
+
+<br><br>
+
 ## Architectural
 
 ### Dependency Injection
@@ -2472,6 +2948,187 @@ public class Player : MonoBehaviour
 - Always unregister in `OnDestroy()`. Otherwise, the locator may hold references to destroyed objects, causing `NullReferenceException`s on scene changes.
 - Avoid calling `ServiceLocator.Get<T>()` every frame. Retrieve the service once in `Start()` and store it in a field.
 - Service Locator is not for everything. For small, scene-specific dependencies, Inspector references or constructor injection are cleaner. Use it for truly shared systems like audio, save, input and telemetry.
+
+### ECS
+
+ECS, or Entity Component System, is an architectural pattern that structures code around data rather than objects. It flips the traditional MonoBehaviour approach on its head: instead of each object owning its behavior, data lives in components, behavior lives in systems, and entities are just IDs that group components together.
+
+The pattern can be summarized as:
+
+> Structure code as **data-oriented entities** composed of **components**, processed by **systems** that operate on **all matching entities at once**.
+
+Unity has its own high-performance ECS implementation: **Unity DOTS** (Data-Oriented Technology Stack). It includes the Entities package, the Job System, and the Burst Compiler. However, DOTS is not a replacement for MonoBehaviour, it is a specialized tool for CPU-bound scenarios with thousands of entities.
+
+#### When to use it
+
+ECS shines when you need to process thousands of similar entities efficiently. Common use cases include large-scale simulations, crowd systems, bullet hell patterns, destructible environments, and any scenario where MonoBehaviours with individual `Update()` calls become a bottleneck.
+
+For typical games with dozens or hundreds of objects, MonoBehaviour is simpler and more than sufficient. ECS adds significant complexity to the project structure and workflow.
+
+#### ECS in Unity
+
+A lightweight ECS-like structure without DOTS, just the mental model:
+
+```csharp
+public struct HealthComponent
+{
+    public int current;
+    public int max;
+}
+
+public struct MovementComponent
+{
+    public Vector3 velocity;
+    public float speed;
+}
+```
+
+Systems process entities that have the right components:
+
+```csharp
+public class MovementSystem
+{
+    public void Update(List<int> entities,
+        Dictionary<int, MovementComponent> movements,
+        Dictionary<int, Transform> transforms,
+        float deltaTime)
+    {
+        foreach (var id in entities)
+        {
+            if (!movements.ContainsKey(id) || !transforms.ContainsKey(id))
+                continue;
+
+            var move = movements[id];
+            var tf = transforms[id];
+            tf.position += move.velocity * move.speed * deltaTime;
+        }
+    }
+}
+
+public class HealthSystem
+{
+    public void Update(List<int> entities,
+        Dictionary<int, HealthComponent> healths)
+    {
+        foreach (var id in entities)
+        {
+            if (!healths.ContainsKey(id)) continue;
+
+            var health = healths[id];
+            if (health.current <= 0)
+                Debug.Log($"Entity {id} died");
+        }
+    }
+}
+```
+
+#### Advantages and disadvantages
+
+**Advantages:**
+
+- Excellent cache utilization: data for all entities is stored contiguously.
+- Systems can run in parallel when they operate on different components.
+- Behavior is completely separated from data, making the architecture flexible.
+
+**Disadvantages:**
+
+- Steep learning curve and a completely different mental model.
+- Overkill for most projects; MonoBehaviour handles the vast majority of games well.
+- Debugging is harder because entities are just IDs with no class to inspect.
+
+#### Tips for Unity
+
+- Do not jump into DOTS just because it sounds fast. Profile first. MonoBehaviour with good optimization is enough for most games.
+- If you need DOTS, start with the Unity Entities Graphics package and the official samples. The API is still evolving.
+- For a middle ground, consider the mental model of ECS without DOTS: keep data in plain structs, separate logic from MonoBehaviours, and batch operations where possible.
+- Burst-compiled jobs can replace heavy MonoBehaviour logic even without the full Entities package, giving you a performance boost with less architectural change.
+
+### Game Loop
+
+The Game Loop is the heartbeat of every real-time game. It decouples the passage of game time from user input and rendering speed, ensuring the simulation runs at a consistent rate regardless of frame rate.
+
+The pattern can be summarized as:
+
+> **Decouple the progression of game time** from **user input and frame rate**, ensuring a **stable and deterministic simulation**.
+
+In Unity, you do not write the game loop yourself, the engine provides it through `Update`, `FixedUpdate` and `LateUpdate`. Understanding how it works under the hood, however, is essential for building games that feel smooth and behave consistently.
+
+#### When to use it
+
+If you are using Unity, the game loop is already there. You only need to implement your own when building an engine from scratch or when you need custom timing behavior that Unity's built-in loop does not provide.
+
+Understanding the game loop matters when you need to decide between `Update` (runs every rendered frame, variable delta time) and `FixedUpdate` (runs at a fixed timestep independent of frame rate). Physics goes in `FixedUpdate`, input and rendering-dependent logic go in `Update`.
+
+#### How the Game Loop works
+
+The classic game loop decouples simulation from rendering using a fixed timestep with an accumulator, as described by Glenn Fiedler in his essential article [Fix Your Timestep](https://gafferongames.com/post/fix_your_timestep/):
+
+```csharp
+double t = 0.0;
+double dt = 0.01;
+double currentTime = Time.realtimeSinceStartupAsDouble;
+double accumulator = 0.0;
+
+while (running)
+{
+    double newTime = Time.realtimeSinceStartupAsDouble;
+    double frameTime = newTime - currentTime;
+    currentTime = newTime;
+
+    accumulator += frameTime;
+
+    while (accumulator >= dt)
+    {
+        Integrate(state, t, dt);
+        accumulator -= dt;
+        t += dt;
+    }
+
+    double alpha = accumulator / dt;
+    state = Interpolate(previousState, currentState, alpha);
+    Render(state);
+}
+```
+
+The key ideas are:
+
+- **Fixed timestep**: the simulation always advances by `dt`, never more, never less. This guarantees deterministic, stable physics regardless of frame rate.
+- **Accumulator**: leftover time carries over to the next frame. Nothing is wasted.
+- **Interpolation**: when rendering, the display state is interpolated between the previous and current simulation state using `alpha`, the fraction of `dt` remaining in the accumulator. This produces smooth visuals even when the render rate and simulation rate do not align.
+
+Without this decoupling, a variable frame rate causes the simulation to behave differently every time it runs, fast machines and slow machines get different results, and physics can explode or objects can tunnel through walls.
+
+#### Game Loop in Unity
+
+Unity already implements a variant of this pattern:
+
+- `FixedUpdate` runs the physics at a fixed timestep, configurable in `Edit > Project Settings > Time > Fixed Timestep` (default 0.02s, 50Hz).
+- `Update` runs every rendered frame at variable delta time, available via `Time.deltaTime`.
+- `LateUpdate` runs after all `Update` calls, useful for camera follow and post-processing logic.
+- Unity internally interpolates rigidbody positions for smooth rendering using the accumulator approach described above.
+
+The practical rule in Unity is: put physics and anything that needs deterministic behavior in `FixedUpdate`; put input, rendering-dependent logic and anything that benefits from variable frame rate in `Update`.
+
+#### Advantages and disadvantages
+
+**Advantages:**
+
+- Decouples simulation speed from rendering speed.
+- Makes physics deterministic and reproducible.
+- Smooth rendering even at inconsistent frame rates via interpolation.
+
+**Disadvantages:**
+
+- Adds complexity when implementing from scratch.
+- Fixed timestep can cause the "spiral of death" if the simulation is too heavy.
+- Interpolation adds one frame of latency to the rendered output.
+
+#### Tips for Unity
+
+- You rarely need to implement the game loop yourself in Unity. Focus on using `Update` vs `FixedUpdate` correctly.
+- Set the fixed timestep based on your target physics fidelity. 0.02s (50Hz) is the default; increase to 0.01s (100Hz) for competitive games needing more precise physics.
+- Use `Time.deltaTime` in `Update` and `Time.fixedDeltaTime` in `FixedUpdate` for frame-independent calculations.
+- For custom deterministic simulations, use `Time.fixedDeltaTime` in a loop inside `Update` with your own accumulator, following the pattern from the article above.
 
 <br><br>
 
@@ -2987,3 +3644,5 @@ Choosing the right structure depends on your game's needs. Uniform grids shine w
 - For moving objects, avoid updating the grid every frame if the object is still inside the same cell. Only re-register when the object crosses a cell boundary.
 - For heavier systems, combine with Unity's Job System and Burst Compiler using `NativeArray` and `NativeMultiHashMap` for efficient multi-threaded processing.
 - Visualize the grid while debugging. Use `OnDrawGizmos` with `Gizmos.DrawWireCube` to see if cells are covering the world correctly.
+
+<br><br>

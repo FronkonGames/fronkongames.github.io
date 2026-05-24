@@ -43,7 +43,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/blog/design-patterns-in-game-development/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:02+01:00">
-    <meta property="article:modified_time" content="2024-06-05T13:03:34+02:00">
+    <meta property="article:modified_time" content="2026-05-24T16:31:42+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/design-patterns-in-game-development-1280x640.jpg">
 <meta property="og:image:alt" content="Design Patterns In Game Development">
 
@@ -103,7 +103,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:02CET",
-      "dateModified": "2024-06-05T13:03:34CET",
+      "dateModified": "2026-05-24T16:31:42CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/blog/design-patterns-in-game-development/#/schema/breadcrumb/1"
       },
@@ -161,7 +161,7 @@
             "@id": "https://fronkongames.github.io/blog/design-patterns-in-game-development/"
           },
           "datePublished": "1970-01-01T01:00:02CET",
-          "dateModified": "2024-06-05T13:03:34CET",
+          "dateModified": "2026-05-24T16:31:42CET",
           "author": {
             "@id": "https://fronkongames.github.io/#/schema/person/2"
           },
@@ -462,6 +462,8 @@
         <li><a href="#decorator">Decorator</a></li>
         <li><a href="#facade">Facade</a></li>
         <li><a href="#proxy">Proxy</a></li>
+        <li><a href="#flyweight">Flyweight</a></li>
+        <li><a href="#bridge">Bridge</a></li>
       </ul>
     </li>
     <li><a href="#behavior">Behavior</a>
@@ -472,6 +474,8 @@
         <li><a href="#observer">Observer</a></li>
         <li><a href="#state">State</a></li>
         <li><a href="#strategy">Strategy</a></li>
+        <li><a href="#chain-of-responsibility">Chain of Responsibility</a></li>
+        <li><a href="#visitor">Visitor</a></li>
       </ul>
     </li>
     <li><a href="#architectural">Architectural</a>
@@ -479,6 +483,8 @@
         <li><a href="#dependency-injection">Dependency Injection</a></li>
         <li><a href="#mvp">MVP</a></li>
         <li><a href="#service-locator">Service Locator</a></li>
+        <li><a href="#ecs">ECS</a></li>
+        <li><a href="#game-loop">Game Loop</a></li>
       </ul>
     </li>
     <li><a href="#optimization">Optimization</a>
@@ -714,6 +720,8 @@ Its principles are still used as building code in many cities.</p>
 <li><strong><a href="/blog/design-patterns-in-game-development/#decorator">Decorator</a></strong>, dynamically adds responsibilities to objects without modifying their code.</li>
 <li><strong><a href="/blog/design-patterns-in-game-development/#facade">Facade</a></strong>, provides a simplified interface to a complex subsystem.</li>
 <li><strong><a href="/blog/design-patterns-in-game-development/#proxy">Proxy</a></strong>, controls access to an object through a placeholder or surrogate.</li>
+<li><strong><a href="/blog/design-patterns-in-game-development/#flyweight">Flyweight</a></strong>, shares common state across many objects to reduce memory usage.</li>
+<li><strong><a href="/blog/design-patterns-in-game-development/#bridge">Bridge</a></strong>, separates an abstraction from its implementation so both can vary independently.</li>
 </ul>
 </li>
 <li><strong>Behavior</strong>, define interactions and responsibilities between classes and objects.
@@ -724,6 +732,8 @@ Its principles are still used as building code in many cities.</p>
 <li><strong><a href="/blog/design-patterns-in-game-development/#observer">Observer</a></strong>, defines a one-to-many dependency so that when one object changes, all dependents are notified.</li>
 <li><strong><a href="/blog/design-patterns-in-game-development/#state">State</a></strong>, allows an object to alter its behavior when its internal state changes.</li>
 <li><strong><a href="/blog/design-patterns-in-game-development/#strategy">Strategy</a></strong>, defines a family of interchangeable algorithms and lets them vary independently.</li>
+<li><strong><a href="/blog/design-patterns-in-game-development/#chain-of-responsibility">Chain of Responsibility</a></strong>, passes a request through a chain of handlers until one processes it.</li>
+<li><strong><a href="/blog/design-patterns-in-game-development/#visitor">Visitor</a></strong>, separates an algorithm from the object structure it operates on.</li>
 </ul>
 </li>
 <li><strong>Architectural</strong>, patterns that improve project structure and maintainability.
@@ -731,6 +741,8 @@ Its principles are still used as building code in many cities.</p>
 <li><strong><a href="/blog/design-patterns-in-game-development/#dependency-injection">Dependency Injection</a></strong>, provides dependencies from the outside instead of creating them internally.</li>
 <li><strong><a href="/blog/design-patterns-in-game-development/#mvp">MVP</a></strong>, separates UI into Model, View and Presenter for cleaner and more testable interfaces.</li>
 <li><strong><a href="/blog/design-patterns-in-game-development/#service-locator">Service Locator</a></strong>, manages and provides services from a central registry.</li>
+<li><strong><a href="/blog/design-patterns-in-game-development/#ecs">ECS</a></strong>, structures code around data-oriented entities, components and systems.</li>
+<li><strong><a href="/blog/design-patterns-in-game-development/#game-loop">Game Loop</a></strong>, decouples the passage of game time from user input and rendering.</li>
 </ul>
 </li>
 <li><strong>Optimization</strong>, patterns focused on performance and efficiency.
@@ -2380,6 +2392,326 @@ Its principles are still used as building code in many cities.</p>
 <li>With lazy loading, avoid creating heavy objects at sudden gameplay moments. Warm them up before the critical moment to prevent frame drops.</li>
 <li>In multiplayer projects, tools like Mirror or Netcode for GameObjects already use similar ideas. Thinking of remote players as proxies makes RPC calls and local-versus-remote logic easier to design.</li>
 </ul>
+
+<h3 id="flyweight" class="heading">Flyweight <a href="#flyweight" aria-labelledby="flyweight">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>The Flyweight pattern shares common, immutable data across many objects to save memory. Instead of each object storing all its data, the shared data is extracted into a flyweight object that many instances reference.</p>
+<p>The pattern can be summarized as:</p>
+<blockquote>
+<p>Share <strong>common state</strong> across many objects to <strong>reduce memory usage</strong>, separating <strong>intrinsic</strong> data from <strong>extrinsic</strong> data.</p>
+</blockquote>
+<p>Intrinsic state is what does not change across instances, like the mesh, material, texture, or shared stats of an enemy type. Extrinsic state is what varies per instance, like position, rotation, current health or color tint. In Unity, the intrinsic data often lives in a prefab or a <code>ScriptableObject</code>, and only the extrinsic data stays on each instance.</p>
+
+<h4 id="when-to-use-it-9" class="heading">When to use it <a href="#when-to-use-it-9" aria-labelledby="when-to-use-it-9">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Flyweight shines when you have thousands of objects that share most of their data. Think a forest where every tree shares the same mesh and material, with only position and scale being unique. Or a bullet hell shooter where hundreds of bullets share the same prefab and behavior.</p>
+<p>The pattern is also used heavily in UI systems, tilemaps and particle systems, where Unity internally shares materials, textures and mesh data.</p>
+<p>However, if objects are few or each one is truly unique, Flyweight adds unnecessary complexity.</p>
+
+<h4 id="flyweight-in-unity" class="heading">Flyweight in Unity <a href="#flyweight-in-unity" aria-labelledby="flyweight-in-unity">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Unity&rsquo;s prefab system already embodies Flyweight principles. A <code>ScriptableObject</code> makes the pattern explicit:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="na">[CreateAssetMenu(menuName = &#34;Patterns/Flyweight/EnemyType&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">EnemyType</span> <span class="p">:</span> <span class="n">ScriptableObject</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">enemyName</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">maxHealth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">attackDamage</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Mesh</span> <span class="n">mesh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Material</span> <span class="n">material</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Color</span> <span class="n">tint</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Each instance only stores what varies:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Enemy</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">EnemyType</span> <span class="n">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">float</span> <span class="n">currentHealth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Vector3</span> <span class="n">velocity</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">currentHealth</span> <span class="p">=</span> <span class="n">type</span><span class="p">.</span><span class="n">maxHealth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">MeshFilter</span><span class="p">&gt;().</span><span class="n">mesh</span> <span class="p">=</span> <span class="n">type</span><span class="p">.</span><span class="n">mesh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">MeshRenderer</span><span class="p">&gt;().</span><span class="n">material</span> <span class="p">=</span> <span class="n">type</span><span class="p">.</span><span class="n">material</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">TakeDamage</span><span class="p">(</span><span class="kt">float</span> <span class="n">damage</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">currentHealth</span> <span class="p">-=</span> <span class="n">damage</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">EnemySpawner</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Enemy</span> <span class="n">prefab</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">EnemyType</span><span class="p">&gt;</span> <span class="n">types</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">SpawnEnemy</span><span class="p">(</span><span class="n">EnemyType</span> <span class="n">type</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">position</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">enemy</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">prefab</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">enemy</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Enemy</span><span class="p">&gt;().</span><span class="n">type</span> <span class="p">=</span> <span class="n">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="advantages-and-disadvantages-9" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-9" aria-labelledby="advantages-and-disadvantages-9">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Dramatically reduces memory usage when objects share common data.</li>
+<li>Centralizes shared configuration, making it easy to tweak values globally.</li>
+<li>Separates what changes from what stays the same.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Adds indirection, making the code slightly harder to follow.</li>
+<li>Shared data must be truly immutable at runtime or bugs become hard to trace.</li>
+<li>Not useful if every object needs unique data.</li>
+</ul>
+
+<h4 id="tips-for-unity-9" class="heading">Tips for Unity <a href="#tips-for-unity-9" aria-labelledby="tips-for-unity-9">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li>Use <code>ScriptableObject</code>s as flyweight containers. They hold the shared data and can be assigned via the Inspector.</li>
+<li>Prefab variants already follow flyweight logic internally. Use them when the variation is static.</li>
+<li>Avoid modifying shared flyweight data at runtime. If you need per-instance overrides, copy the flyweight values to instance fields at initialization.</li>
+<li>For GPU-heavy scenarios like rendering thousands of trees, look into GPU Instancing and DrawMeshInstanced, which are hardware-level flyweight implementations.</li>
+</ul>
+<p><br><br></p>
+
+<h3 id="bridge" class="heading">Bridge <a href="#bridge" aria-labelledby="bridge">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>The Bridge pattern separates an abstraction from its implementation so that both can evolve independently. Instead of having one monolithic class that handles everything, you split it into two hierarchies connected by a bridge, usually a reference to an interface.</p>
+<p>The pattern can be summarized as:</p>
+<blockquote>
+<p><strong>Decouple an abstraction</strong> from its <strong>implementation</strong> so that the two can <strong>vary independently</strong>.</p>
+</blockquote>
+<p>In Unity, this is useful when you have a single concept that needs to work with multiple platforms, input devices, rendering backends or data sources. The abstraction defines what to do, the implementation handles how to do it.</p>
+
+<h4 id="when-to-use-it-10" class="heading">When to use it <a href="#when-to-use-it-10" aria-labelledby="when-to-use-it-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Bridge is useful when both the abstraction and the implementation are likely to change over time. For example, a character controller might need to support keyboard, gamepad and touch input. Instead of writing three separate controllers, one abstraction uses different input implementations.</p>
+<p>It is also useful for cross-platform support, rendering backends, save systems with different storage backends, or any place where you have a clear &ldquo;what&rdquo; vs &ldquo;how&rdquo; split.</p>
+
+<h4 id="bridge-in-unity" class="heading">Bridge in Unity <a href="#bridge-in-unity" aria-labelledby="bridge-in-unity">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>A character controller abstraction with swappable input implementations:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IInputDevice</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector3</span> <span class="n">GetMovementDirection</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">IsJumpPressed</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Different input implementations:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">KeyboardInput</span> <span class="p">:</span> <span class="n">IInputDevice</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Vector3</span> <span class="n">GetMovementDirection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">direction</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Input</span><span class="p">.</span><span class="n">GetAxis</span><span class="p">(</span><span class="s">&#34;Horizontal&#34;</span><span class="p">),</span> <span class="m">0</span><span class="p">,</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetAxis</span><span class="p">(</span><span class="s">&#34;Vertical&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">direction</span><span class="p">.</span><span class="n">normalized</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">IsJumpPressed</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetButtonDown</span><span class="p">(</span><span class="s">&#34;Jump&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">GamepadInput</span> <span class="p">:</span> <span class="n">IInputDevice</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Vector3</span> <span class="n">GetMovementDirection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">direction</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Input</span><span class="p">.</span><span class="n">GetAxis</span><span class="p">(</span><span class="s">&#34;Horizontal&#34;</span><span class="p">),</span> <span class="m">0</span><span class="p">,</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetAxis</span><span class="p">(</span><span class="s">&#34;Vertical&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">direction</span><span class="p">.</span><span class="n">normalized</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">IsJumpPressed</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetButtonDown</span><span class="p">(</span><span class="s">&#34;Jump&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>The abstraction uses the bridge:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">PlayerController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">speed</span> <span class="p">=</span> <span class="m">5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">jumpForce</span> <span class="p">=</span> <span class="m">10f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">IInputDevice</span> <span class="n">input</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Rigidbody</span> <span class="n">rb</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">SetInput</span><span class="p">(</span><span class="n">IInputDevice</span> <span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">input</span> <span class="p">=</span> <span class="n">device</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SetInput</span><span class="p">(</span><span class="k">new</span> <span class="n">KeyboardInput</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">movement</span> <span class="p">=</span> <span class="n">input</span><span class="p">.</span><span class="n">GetMovementDirection</span><span class="p">()</span> <span class="p">*</span> <span class="n">speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rb</span><span class="p">.</span><span class="n">linearVelocity</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">movement</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">rb</span><span class="p">.</span><span class="n">linearVelocity</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">movement</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">IsJumpPressed</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="n">rb</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(</span><span class="n">Vector3</span><span class="p">.</span><span class="n">up</span> <span class="p">*</span> <span class="n">jumpForce</span><span class="p">,</span> <span class="n">ForceMode</span><span class="p">.</span><span class="n">Impulse</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="advantages-and-disadvantages-10" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-10" aria-labelledby="advantages-and-disadvantages-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Abstraction and implementation can evolve independently.</li>
+<li>Switching implementations at runtime is trivial.</li>
+<li>Adding new implementations does not require changing the abstraction.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Adds an extra layer of indirection.</li>
+<li>Overkill for simple systems with a single, stable implementation.</li>
+<li>Requires careful interface design to avoid leaking implementation details.</li>
+</ul>
+
+<h4 id="tips-for-unity-10" class="heading">Tips for Unity <a href="#tips-for-unity-10" aria-labelledby="tips-for-unity-10">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li>Use Bridge when you expect multiple implementations to exist, not &ldquo;just in case&rdquo; one might appear later.</li>
+<li>For input systems, Unity&rsquo;s Input System package already uses this pattern internally with its Input Action assets.</li>
+<li>Bridge pairs well with Factory: a factory can choose the correct implementation based on the platform or player settings at startup.</li>
+<li>Avoid exposing implementation-specific details in the abstraction&rsquo;s interface. The abstraction should only declare what it needs, not how.</li>
+</ul>
 <p><br><br></p>
 
 <h2 id="behavior" class="heading">Behavior <a href="#behavior" aria-labelledby="behavior">
@@ -2423,7 +2755,7 @@ Its principles are still used as building code in many cities.</p>
 <p>The main purpose is to separate the code that <em>triggers</em> an action from the code that <em>performs</em> it. For example, an <code>InputHandler</code> does not move the character directly. Instead, it creates the related command and sends it to a <code>CommandInvoker</code>. The command itself contains what should happen, who it should affect, and, if needed, how the action can be undone.</p>
 <p>This makes commands easier to store, queue, delay, replay, log, or undo.</p>
 
-<h4 id="when-to-use-it-9" class="heading">When to use it <a href="#when-to-use-it-9" aria-labelledby="when-to-use-it-9">
+<h4 id="when-to-use-it-11" class="heading">When to use it <a href="#when-to-use-it-11" aria-labelledby="when-to-use-it-11">
 
 
 
@@ -2527,7 +2859,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">            <span class="n">invoker</span><span class="p">.</span><span class="n">UndoLastCommand</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-9" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-9" aria-labelledby="advantages-and-disadvantages-9">
+<h4 id="advantages-and-disadvantages-11" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-11" aria-labelledby="advantages-and-disadvantages-11">
 
 
 
@@ -2556,7 +2888,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Too many command classes can become hard to organize as the project grows.</li>
 </ul>
 
-<h4 id="tips-for-unity-9" class="heading">Tips for Unity <a href="#tips-for-unity-9" aria-labelledby="tips-for-unity-9">
+<h4 id="tips-for-unity-11" class="heading">Tips for Unity <a href="#tips-for-unity-11" aria-labelledby="tips-for-unity-11">
 
 
 
@@ -2604,7 +2936,7 @@ Its principles are still used as building code in many cities.</p>
 <p>Normally, one object directly calls another. As the project grows, this can create too many references, complicated dependencies, and code flow that becomes hard to follow. With Mediator, objects do not need to know each other; they only know the mediator. Communication happens through this central structure.</p>
 <p>In Unity, this is often seen through systems like <code>UIMediator</code>, <code>CombatMediator</code>, <code>GameFlowMediator</code>, or carefully designed manager classes. For example, when an enemy dies, the <code>Enemy</code> class does not directly call the score system, audio system, UI system and achievement system. Instead, it notifies the mediator, which then decides which systems should be updated and what actions should happen.</p>
 
-<h4 id="when-to-use-it-10" class="heading">When to use it <a href="#when-to-use-it-10" aria-labelledby="when-to-use-it-10">
+<h4 id="when-to-use-it-12" class="heading">When to use it <a href="#when-to-use-it-12" aria-labelledby="when-to-use-it-12">
 
 
 
@@ -2715,7 +3047,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">            <span class="n">mediator</span><span class="p">.</span><span class="n">NotifyGameOver</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-10" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-10" aria-labelledby="advantages-and-disadvantages-10">
+<h4 id="advantages-and-disadvantages-12" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-12" aria-labelledby="advantages-and-disadvantages-12">
 
 
 
@@ -2746,7 +3078,7 @@ Its principles are still used as building code in many cities.</p>
 <li>If too many unrelated systems are handled by the same mediator, readability decreases.</li>
 </ul>
 
-<h4 id="tips-for-unity-10" class="heading">Tips for Unity <a href="#tips-for-unity-10" aria-labelledby="tips-for-unity-10">
+<h4 id="tips-for-unity-12" class="heading">Tips for Unity <a href="#tips-for-unity-12" aria-labelledby="tips-for-unity-12">
 
 
 
@@ -2795,7 +3127,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>There are three main roles in this pattern. The <strong>Originator</strong> is the actual object whose state will be saved; it creates its own snapshot and restores itself from that snapshot. The <strong>Memento</strong> is the container that holds this saved state; its contents are not modified or directly accessed from the outside. The <strong>Caretaker</strong> is the structure that stores these snapshots; it does not need to know what is inside them, it only keeps them and gives them back when necessary.</p>
 
-<h4 id="when-to-use-it-11" class="heading">When to use it <a href="#when-to-use-it-11" aria-labelledby="when-to-use-it-11">
+<h4 id="when-to-use-it-13" class="heading">When to use it <a href="#when-to-use-it-13" aria-labelledby="when-to-use-it-13">
 
 
 
@@ -2905,7 +3237,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-11" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-11" aria-labelledby="advantages-and-disadvantages-11">
+<h4 id="advantages-and-disadvantages-13" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-13" aria-labelledby="advantages-and-disadvantages-13">
 
 
 
@@ -2934,7 +3266,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Keeping an unlimited undo stack can cause memory problems over time.</li>
 </ul>
 
-<h4 id="tips-for-unity-11" class="heading">Tips for Unity <a href="#tips-for-unity-11" aria-labelledby="tips-for-unity-11">
+<h4 id="tips-for-unity-13" class="heading">Tips for Unity <a href="#tips-for-unity-13" aria-labelledby="tips-for-unity-13">
 
 
 
@@ -2982,7 +3314,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>There are two sides in this structure: the <strong>Subject</strong> holds the data or triggers the event, and the <strong>Observers</strong> listen for that change and react when it happens. The Subject does not need to know exactly who is listening; it just publishes, and whoever cares reacts.</p>
 
-<h4 id="when-to-use-it-12" class="heading">When to use it <a href="#when-to-use-it-12" aria-labelledby="when-to-use-it-12">
+<h4 id="when-to-use-it-14" class="heading">When to use it <a href="#when-to-use-it-14" aria-labelledby="when-to-use-it-14">
 
 
 
@@ -3093,7 +3425,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;Playing death sound&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-12" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-12" aria-labelledby="advantages-and-disadvantages-12">
+<h4 id="advantages-and-disadvantages-14" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-14" aria-labelledby="advantages-and-disadvantages-14">
 
 
 
@@ -3122,7 +3454,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Relying on observer notification order too much can create fragile logic.</li>
 </ul>
 
-<h4 id="tips-for-unity-12" class="heading">Tips for Unity <a href="#tips-for-unity-12" aria-labelledby="tips-for-unity-12">
+<h4 id="tips-for-unity-14" class="heading">Tips for Unity <a href="#tips-for-unity-14" aria-labelledby="tips-for-unity-14">
 
 
 
@@ -3170,7 +3502,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>In this pattern, each state is a separate class. The main object, called the <strong>Context</strong>, keeps track of the active state and delegates behavior to that state object. This avoids long <code>if-else</code> or <code>switch</code> blocks and creates a cleaner, more readable structure that respects the Open/Closed principle.</p>
 
-<h4 id="when-to-use-it-13" class="heading">When to use it <a href="#when-to-use-it-13" aria-labelledby="when-to-use-it-13">
+<h4 id="when-to-use-it-15" class="heading">When to use it <a href="#when-to-use-it-15" aria-labelledby="when-to-use-it-15">
 
 
 
@@ -3328,7 +3660,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">        <span class="n">currentState</span><span class="p">.</span><span class="n">Enter</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-13" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-13" aria-labelledby="advantages-and-disadvantages-13">
+<h4 id="advantages-and-disadvantages-15" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-15" aria-labelledby="advantages-and-disadvantages-15">
 
 
 
@@ -3357,7 +3689,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Too much shared data can make the Context grow over time.</li>
 </ul>
 
-<h4 id="tips-for-unity-13" class="heading">Tips for Unity <a href="#tips-for-unity-13" aria-labelledby="tips-for-unity-13">
+<h4 id="tips-for-unity-15" class="heading">Tips for Unity <a href="#tips-for-unity-15" aria-labelledby="tips-for-unity-15">
 
 
 
@@ -3406,7 +3738,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>For example, a character&rsquo;s attack type can change: sword attack, bow attack or magic attack. The character itself stays the same; only the attack strategy changes. When you want to add a new behavior, you simply create a new strategy class instead of modifying the existing system.</p>
 
-<h4 id="when-to-use-it-14" class="heading">When to use it <a href="#when-to-use-it-14" aria-labelledby="when-to-use-it-14">
+<h4 id="when-to-use-it-16" class="heading">When to use it <a href="#when-to-use-it-16" aria-labelledby="when-to-use-it-16">
 
 
 
@@ -3521,7 +3853,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">            <span class="n">SetStrategy</span><span class="p">(</span><span class="n">magicAttack</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-14" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-14" aria-labelledby="advantages-and-disadvantages-14">
+<h4 id="advantages-and-disadvantages-16" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-16" aria-labelledby="advantages-and-disadvantages-16">
 
 
 
@@ -3550,7 +3882,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Sharing too much data between strategies can complicate the interface design.</li>
 </ul>
 
-<h4 id="tips-for-unity-14" class="heading">Tips for Unity <a href="#tips-for-unity-14" aria-labelledby="tips-for-unity-14">
+<h4 id="tips-for-unity-16" class="heading">Tips for Unity <a href="#tips-for-unity-16" aria-labelledby="tips-for-unity-16">
 
 
 
@@ -3572,6 +3904,382 @@ Its principles are still used as building code in many cities.</p>
 <li>When switching strategies, handle the exit logic of the old strategy and the entry logic of the new one properly to avoid unexpected bugs.</li>
 <li>Provide a default or null-object strategy to prevent null reference errors when no strategy is assigned.</li>
 <li>Create strategies beforehand and reuse them. Avoid instantiating new strategy objects every frame.</li>
+</ul>
+<p><br><br></p>
+
+<h3 id="chain-of-responsibility" class="heading">Chain of Responsibility <a href="#chain-of-responsibility" aria-labelledby="chain-of-responsibility">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Chain of Responsibility passes a request through a chain of handlers until one of them processes it. Each handler decides whether to handle the request or pass it to the next handler in the chain.</p>
+<p>The pattern can be summarized as:</p>
+<blockquote>
+<p><strong>Avoid coupling the sender</strong> of a request to its receiver by giving <strong>multiple objects a chance to handle</strong> the request.</p>
+</blockquote>
+<p>In Unity, this is useful for input systems where UI should consume clicks before the game world does, for damage pipelines where armor absorbs damage before health is reduced, or for achievement systems that chain-check conditions.</p>
+
+<h4 id="when-to-use-it-17" class="heading">When to use it <a href="#when-to-use-it-17" aria-labelledby="when-to-use-it-17">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Chain of Responsibility is useful when multiple objects might handle a request and the handler is not known at compile time. It is common in:</p>
+<ul>
+<li><strong>Input handling</strong>: UI buttons consume a click first, then the game world, then nothing.</li>
+<li><strong>Damage modifiers</strong>: dodge chance, armor reduction, shield absorption, health deduction.</li>
+<li><strong>Achievement systems</strong>: check conditions in sequence, stop when one fails.</li>
+<li><strong>Logging pipelines</strong>: debug log, warning log, error log, each handling its level.</li>
+</ul>
+<p>If the set of handlers is fixed and known, a simple list or array with a loop is often simpler.</p>
+
+<h4 id="chain-of-responsibility-in-unity" class="heading">Chain of Responsibility in Unity <a href="#chain-of-responsibility-in-unity" aria-labelledby="chain-of-responsibility-in-unity">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>A damage pipeline where each handler can intercept damage:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">DamageHandler</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="n">DamageHandler</span> <span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DamageHandler</span> <span class="n">SetNext</span><span class="p">(</span><span class="n">DamageHandler</span> <span class="n">handler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">next</span> <span class="p">=</span> <span class="n">handler</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">handler</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">Handle</span><span class="p">(</span><span class="n">DamageData</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">next</span><span class="p">?.</span><span class="n">Handle</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DamageData</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">consumed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Concrete handlers in the chain:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DodgeHandler</span> <span class="p">:</span> <span class="n">DamageHandler</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Handle</span><span class="p">(</span><span class="n">DamageData</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="k">value</span> <span class="p">&lt;</span> <span class="m">0.2f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;Dodged!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span><span class="p">.</span><span class="n">consumed</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">next</span><span class="p">?.</span><span class="n">Handle</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ArmorHandler</span> <span class="p">:</span> <span class="n">DamageHandler</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Handle</span><span class="p">(</span><span class="n">DamageData</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">absorbed</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Min</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">amount</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data</span><span class="p">.</span><span class="n">amount</span> <span class="p">-=</span> <span class="n">absorbed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;Armor absorbed {absorbed} damage&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">next</span><span class="p">?.</span><span class="n">Handle</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">HealthHandler</span> <span class="p">:</span> <span class="n">DamageHandler</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">int</span> <span class="n">health</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Handle</span><span class="p">(</span><span class="n">DamageData</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">health</span> <span class="p">-=</span> <span class="n">data</span><span class="p">.</span><span class="n">amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;Health reduced to {health}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Building and using the chain:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">CombatSystem</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">DamageHandler</span> <span class="n">pipeline</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">dodge</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DodgeHandler</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">armor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ArmorHandler</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">health</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HealthHandler</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">dodge</span><span class="p">.</span><span class="n">SetNext</span><span class="p">(</span><span class="n">armor</span><span class="p">).</span><span class="n">SetNext</span><span class="p">(</span><span class="n">health</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pipeline</span> <span class="p">=</span> <span class="n">dodge</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">ApplyDamage</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pipeline</span><span class="p">.</span><span class="n">Handle</span><span class="p">(</span><span class="k">new</span> <span class="n">DamageData</span> <span class="p">{</span> <span class="n">amount</span> <span class="p">=</span> <span class="n">amount</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="advantages-and-disadvantages-17" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-17" aria-labelledby="advantages-and-disadvantages-17">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Decouples the sender from the receivers; handlers can be added or reordered easily.</li>
+<li>Each handler has a single responsibility, making the system modular.</li>
+<li>The chain can be reconfigured at runtime.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>A request can fall through the entire chain unhandled if not designed carefully.</li>
+<li>Long chains can be hard to debug and may add performance overhead.</li>
+<li>Not suitable when the handler must be known deterministically.</li>
+</ul>
+
+<h4 id="tips-for-unity-17" class="heading">Tips for Unity <a href="#tips-for-unity-17" aria-labelledby="tips-for-unity-17">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li>Each handler should be a plain C# class. This keeps the chain lightweight and independent from the scene.</li>
+<li>Give every handler a <code>SetNext</code> method that returns the next handler, enabling fluent chain construction.</li>
+<li>Always ensure the chain ends with a handler that guarantees the request is consumed, to avoid unexpected unhandled cases.</li>
+<li>For input systems specifically, Unity&rsquo;s new Input System already supports similar concepts with its processor and interaction chains.</li>
+<li>If the chain becomes too long or the order changes frequently, consider a priority queue or a list of handlers instead of a linked chain.</li>
+</ul>
+<p><br><br></p>
+
+<h3 id="visitor" class="heading">Visitor <a href="#visitor" aria-labelledby="visitor">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>The Visitor pattern separates an algorithm from the object structure it operates on. Instead of adding a method to every class in a hierarchy each time you need a new operation, you write a single Visitor class that handles all types.</p>
+<p>I love this one. Its power is subtle, it takes a moment to click, but once it does you see the elegance. Adding a new operation across a whole hierarchy without touching a single existing class feels like cheating.</p>
+<p>The pattern can be summarized as:</p>
+<blockquote>
+<p><strong>Separate an algorithm</strong> from the <strong>object structure</strong> it operates on, allowing you to <strong>add new operations</strong> without modifying the classes.</p>
+</blockquote>
+
+<h4 id="when-to-use-it-18" class="heading">When to use it <a href="#when-to-use-it-18" aria-labelledby="when-to-use-it-18">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Visitor is useful when you have a stable object hierarchy but frequently need to add new operations across all types. Common examples include applying effects to different enemy types, serializing a complex object graph, calculating damage based on weapon-vs-armor type combinations, or generating reports from a data model.</p>
+<p>It becomes especially powerful when the alternative would be a cascade of <code>if (enemy is Goblin)</code> type checks scattered across the codebase, or adding a method to every type every time a new feature is needed.</p>
+
+<h4 id="visitor-in-unity" class="heading">Visitor in Unity <a href="#visitor-in-unity" aria-labelledby="visitor-in-unity">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>An enemy hierarchy that accepts visitors:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IEnemyVisitor</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Goblin</span> <span class="n">goblin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Orc</span> <span class="n">orc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Dragon</span> <span class="n">dragon</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">Enemy</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">Accept</span><span class="p">(</span><span class="n">IEnemyVisitor</span> <span class="n">visitor</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Goblin</span> <span class="p">:</span> <span class="n">Enemy</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Accept</span><span class="p">(</span><span class="n">IEnemyVisitor</span> <span class="n">visitor</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">visitor</span><span class="p">.</span><span class="n">Visit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">StolenGold</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Orc</span> <span class="p">:</span> <span class="n">Enemy</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Accept</span><span class="p">(</span><span class="n">IEnemyVisitor</span> <span class="n">visitor</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">visitor</span><span class="p">.</span><span class="n">Visit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Rage</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Dragon</span> <span class="p">:</span> <span class="n">Enemy</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Accept</span><span class="p">(</span><span class="n">IEnemyVisitor</span> <span class="n">visitor</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">visitor</span><span class="p">.</span><span class="n">Visit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">CanBreatheFire</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Visitors that add operations without touching the enemy classes:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DamageCalculator</span> <span class="p">:</span> <span class="n">IEnemyVisitor</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Result</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Goblin</span> <span class="n">goblin</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Result</span> <span class="p">=</span> <span class="m">10</span> <span class="p">+</span> <span class="n">goblin</span><span class="p">.</span><span class="n">StolenGold</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Orc</span> <span class="n">orc</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Result</span> <span class="p">=</span> <span class="m">20</span> <span class="p">+</span> <span class="n">orc</span><span class="p">.</span><span class="n">Rage</span> <span class="p">/</span> <span class="m">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Dragon</span> <span class="n">dragon</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Result</span> <span class="p">=</span> <span class="m">50</span> <span class="p">+</span> <span class="p">(</span><span class="n">dragon</span><span class="p">.</span><span class="n">CanBreatheFire</span> <span class="p">?</span> <span class="m">30</span> <span class="p">:</span> <span class="m">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">LootGenerator</span> <span class="p">:</span> <span class="n">IEnemyVisitor</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Result</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Goblin</span> <span class="n">goblin</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;Gold Coin&#34;</span><span class="p">,</span> <span class="s">&#34;Rusty Dagger&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Orc</span> <span class="n">orc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;Orcish Axe&#34;</span><span class="p">,</span> <span class="s">&#34;Leather Armor&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Visit</span><span class="p">(</span><span class="n">Dragon</span> <span class="n">dragon</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;Dragon Scale&#34;</span><span class="p">,</span> <span class="s">&#34;Fire Essence&#34;</span><span class="p">,</span> <span class="s">&#34;Legendary Sword&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Using the visitor:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">CombatManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">CalculateAndLoot</span><span class="p">(</span><span class="n">Enemy</span> <span class="n">enemy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">damageCalc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DamageCalculator</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">enemy</span><span class="p">.</span><span class="n">Accept</span><span class="p">(</span><span class="n">damageCalc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;Damage dealt: {damageCalc.Result}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">lootGen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">LootGenerator</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">enemy</span><span class="p">.</span><span class="n">Accept</span><span class="p">(</span><span class="n">lootGen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;Loot: {string.Join(&#34;</span><span class="p">,</span> <span class="s">&#34;, lootGen.Result)}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="advantages-and-disadvantages-18" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-18" aria-labelledby="advantages-and-disadvantages-18">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Adding new operations across a whole hierarchy requires zero changes to the existing classes.</li>
+<li>Related behavior for all types lives in one place, making it easy to understand.</li>
+<li>Each visitor has a single, clear responsibility.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Adding a new type to the hierarchy forces changes to every visitor.</li>
+<li>The Visitor interface must know about every concrete type, creating a dependency from visitor to visited.</li>
+<li>Overkill for small hierarchies or when operations change less often than types.</li>
+</ul>
+
+<h4 id="tips-for-unity-18" class="heading">Tips for Unity <a href="#tips-for-unity-18" aria-labelledby="tips-for-unity-18">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li>Use Visitor when you have a stable set of types (enemies, items, abilities) and frequently need new cross-cutting operations.</li>
+<li>If you find yourself adding new types more often than new operations, Visitor becomes a liability. In that case, keep the behavior inside each class or use a different pattern.</li>
+<li>The <code>Accept</code> method is just double dispatch. It calls <code>visitor.Visit(this)</code>, which invokes the correct overload based on the concrete type at compile time.</li>
+<li>For large hierarchies, consider the default Visitor pattern where an abstract visitor provides default implementations and concrete visitors override only what they need.</li>
 </ul>
 <p><br><br></p>
 
@@ -3615,7 +4323,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>A class should not need to know how the systems it uses are created. It should only use the dependency given to it. This keeps systems like <code>PlayerController</code>, <code>AudioManager</code>, <code>SaveSystem</code> and <code>InputService</code> loosely connected. The responsibility of creating and wiring objects moves outside the class, a concept known as Inversion of Control.</p>
 
-<h4 id="when-to-use-it-15" class="heading">When to use it <a href="#when-to-use-it-15" aria-labelledby="when-to-use-it-15">
+<h4 id="when-to-use-it-19" class="heading">When to use it <a href="#when-to-use-it-19" aria-labelledby="when-to-use-it-19">
 
 
 
@@ -3695,7 +4403,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">        <span class="n">player</span><span class="p">.</span><span class="n">TakeDamage</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-15" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-15" aria-labelledby="advantages-and-disadvantages-15">
+<h4 id="advantages-and-disadvantages-19" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-19" aria-labelledby="advantages-and-disadvantages-19">
 
 
 
@@ -3724,7 +4432,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Using a DI framework can make the project dependent on that tool.</li>
 </ul>
 
-<h4 id="tips-for-unity-15" class="heading">Tips for Unity <a href="#tips-for-unity-15" aria-labelledby="tips-for-unity-15">
+<h4 id="tips-for-unity-19" class="heading">Tips for Unity <a href="#tips-for-unity-19" aria-labelledby="tips-for-unity-19">
 
 
 
@@ -3778,7 +4486,7 @@ Its principles are still used as building code in many cities.</p>
 <p>Separate the UI into <strong>Model</strong>, <strong>View</strong> and <strong>Presenter</strong>, so the <strong>UI logic</strong> can be developed and <strong>tested independently</strong> from Unity.</p>
 </blockquote>
 
-<h4 id="when-to-use-it-16" class="heading">When to use it <a href="#when-to-use-it-16" aria-labelledby="when-to-use-it-16">
+<h4 id="when-to-use-it-20" class="heading">When to use it <a href="#when-to-use-it-20" aria-labelledby="when-to-use-it-20">
 
 
 
@@ -3875,7 +4583,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">        <span class="n">presenter</span><span class="p">?.</span><span class="n">Dispose</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-16" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-16" aria-labelledby="advantages-and-disadvantages-16">
+<h4 id="advantages-and-disadvantages-20" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-20" aria-labelledby="advantages-and-disadvantages-20">
 
 
 
@@ -3904,7 +4612,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Event management needs care, especially during scene transitions.</li>
 </ul>
 
-<h4 id="tips-for-unity-16" class="heading">Tips for Unity <a href="#tips-for-unity-16" aria-labelledby="tips-for-unity-16">
+<h4 id="tips-for-unity-20" class="heading">Tips for Unity <a href="#tips-for-unity-20" aria-labelledby="tips-for-unity-20">
 
 
 
@@ -3952,7 +4660,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>At first it may look similar to Singleton, but the key difference is that Singleton creates a direct dependency on a concrete class, while Service Locator keeps the dependency flexible through interfaces. In Unity projects where scene management, object lifetimes and testing matter, that difference is huge.</p>
 
-<h4 id="when-to-use-it-17" class="heading">When to use it <a href="#when-to-use-it-17" aria-labelledby="when-to-use-it-17">
+<h4 id="when-to-use-it-21" class="heading">When to use it <a href="#when-to-use-it-21" aria-labelledby="when-to-use-it-21">
 
 
 
@@ -4054,7 +4762,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">            <span class="n">audio</span><span class="p">.</span><span class="n">PlaySfx</span><span class="p">(</span><span class="s">&#34;jump&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-17" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-17" aria-labelledby="advantages-and-disadvantages-17">
+<h4 id="advantages-and-disadvantages-21" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-21" aria-labelledby="advantages-and-disadvantages-21">
 
 
 
@@ -4083,7 +4791,7 @@ Its principles are still used as building code in many cities.</p>
 <li>If overused, it can turn into a global state container.</li>
 </ul>
 
-<h4 id="tips-for-unity-17" class="heading">Tips for Unity <a href="#tips-for-unity-17" aria-labelledby="tips-for-unity-17">
+<h4 id="tips-for-unity-21" class="heading">Tips for Unity <a href="#tips-for-unity-21" aria-labelledby="tips-for-unity-21">
 
 
 
@@ -4106,6 +4814,329 @@ Its principles are still used as building code in many cities.</p>
 <li>Always unregister in <code>OnDestroy()</code>. Otherwise, the locator may hold references to destroyed objects, causing <code>NullReferenceException</code>s on scene changes.</li>
 <li>Avoid calling <code>ServiceLocator.Get&lt;T&gt;()</code> every frame. Retrieve the service once in <code>Start()</code> and store it in a field.</li>
 <li>Service Locator is not for everything. For small, scene-specific dependencies, Inspector references or constructor injection are cleaner. Use it for truly shared systems like audio, save, input and telemetry.</li>
+</ul>
+
+<h3 id="ecs" class="heading">ECS <a href="#ecs" aria-labelledby="ecs">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>ECS, or Entity Component System, is an architectural pattern that structures code around data rather than objects. It flips the traditional MonoBehaviour approach on its head: instead of each object owning its behavior, data lives in components, behavior lives in systems, and entities are just IDs that group components together.</p>
+<p>The pattern can be summarized as:</p>
+<blockquote>
+<p>Structure code as <strong>data-oriented entities</strong> composed of <strong>components</strong>, processed by <strong>systems</strong> that operate on <strong>all matching entities at once</strong>.</p>
+</blockquote>
+<p>Unity has its own high-performance ECS implementation: <strong>Unity DOTS</strong> (Data-Oriented Technology Stack). It includes the Entities package, the Job System, and the Burst Compiler. However, DOTS is not a replacement for MonoBehaviour, it is a specialized tool for CPU-bound scenarios with thousands of entities.</p>
+
+<h4 id="when-to-use-it-22" class="heading">When to use it <a href="#when-to-use-it-22" aria-labelledby="when-to-use-it-22">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>ECS shines when you need to process thousands of similar entities efficiently. Common use cases include large-scale simulations, crowd systems, bullet hell patterns, destructible environments, and any scenario where MonoBehaviours with individual <code>Update()</code> calls become a bottleneck.</p>
+<p>For typical games with dozens or hundreds of objects, MonoBehaviour is simpler and more than sufficient. ECS adds significant complexity to the project structure and workflow.</p>
+
+<h4 id="ecs-in-unity" class="heading">ECS in Unity <a href="#ecs-in-unity" aria-labelledby="ecs-in-unity">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>A lightweight ECS-like structure without DOTS, just the mental model:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">struct</span> <span class="nc">HealthComponent</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">current</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">max</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">struct</span> <span class="nc">MovementComponent</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Vector3</span> <span class="n">velocity</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">speed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Systems process entities that have the right components:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MovementSystem</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Update</span><span class="p">(</span><span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">entities</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">MovementComponent</span><span class="p">&gt;</span> <span class="n">movements</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">Transform</span><span class="p">&gt;</span> <span class="n">transforms</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">deltaTime</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">id</span> <span class="k">in</span> <span class="n">entities</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(!</span><span class="n">movements</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="p">||</span> <span class="p">!</span><span class="n">transforms</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">id</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">move</span> <span class="p">=</span> <span class="n">movements</span><span class="p">[</span><span class="n">id</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">tf</span> <span class="p">=</span> <span class="n">transforms</span><span class="p">[</span><span class="n">id</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tf</span><span class="p">.</span><span class="n">position</span> <span class="p">+=</span> <span class="n">move</span><span class="p">.</span><span class="n">velocity</span> <span class="p">*</span> <span class="n">move</span><span class="p">.</span><span class="n">speed</span> <span class="p">*</span> <span class="n">deltaTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">HealthSystem</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Update</span><span class="p">(</span><span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">entities</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">HealthComponent</span><span class="p">&gt;</span> <span class="n">healths</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">id</span> <span class="k">in</span> <span class="n">entities</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(!</span><span class="n">healths</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">id</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">health</span> <span class="p">=</span> <span class="n">healths</span><span class="p">[</span><span class="n">id</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">health</span><span class="p">.</span><span class="n">current</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;Entity {id} died&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="advantages-and-disadvantages-22" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-22" aria-labelledby="advantages-and-disadvantages-22">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Excellent cache utilization: data for all entities is stored contiguously.</li>
+<li>Systems can run in parallel when they operate on different components.</li>
+<li>Behavior is completely separated from data, making the architecture flexible.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Steep learning curve and a completely different mental model.</li>
+<li>Overkill for most projects; MonoBehaviour handles the vast majority of games well.</li>
+<li>Debugging is harder because entities are just IDs with no class to inspect.</li>
+</ul>
+
+<h4 id="tips-for-unity-22" class="heading">Tips for Unity <a href="#tips-for-unity-22" aria-labelledby="tips-for-unity-22">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li>Do not jump into DOTS just because it sounds fast. Profile first. MonoBehaviour with good optimization is enough for most games.</li>
+<li>If you need DOTS, start with the Unity Entities Graphics package and the official samples. The API is still evolving.</li>
+<li>For a middle ground, consider the mental model of ECS without DOTS: keep data in plain structs, separate logic from MonoBehaviours, and batch operations where possible.</li>
+<li>Burst-compiled jobs can replace heavy MonoBehaviour logic even without the full Entities package, giving you a performance boost with less architectural change.</li>
+</ul>
+
+<h3 id="game-loop" class="heading">Game Loop <a href="#game-loop" aria-labelledby="game-loop">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>The Game Loop is the heartbeat of every real-time game. It decouples the passage of game time from user input and rendering speed, ensuring the simulation runs at a consistent rate regardless of frame rate.</p>
+<p>The pattern can be summarized as:</p>
+<blockquote>
+<p><strong>Decouple the progression of game time</strong> from <strong>user input and frame rate</strong>, ensuring a <strong>stable and deterministic simulation</strong>.</p>
+</blockquote>
+<p>In Unity, you do not write the game loop yourself, the engine provides it through <code>Update</code>, <code>FixedUpdate</code> and <code>LateUpdate</code>. Understanding how it works under the hood, however, is essential for building games that feel smooth and behave consistently.</p>
+
+<h4 id="when-to-use-it-23" class="heading">When to use it <a href="#when-to-use-it-23" aria-labelledby="when-to-use-it-23">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>If you are using Unity, the game loop is already there. You only need to implement your own when building an engine from scratch or when you need custom timing behavior that Unity&rsquo;s built-in loop does not provide.</p>
+<p>Understanding the game loop matters when you need to decide between <code>Update</code> (runs every rendered frame, variable delta time) and <code>FixedUpdate</code> (runs at a fixed timestep independent of frame rate). Physics goes in <code>FixedUpdate</code>, input and rendering-dependent logic go in <code>Update</code>.</p>
+
+<h4 id="how-the-game-loop-works" class="heading">How the Game Loop works <a href="#how-the-game-loop-works" aria-labelledby="how-the-game-loop-works">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>The classic game loop decouples simulation from rendering using a fixed timestep with an accumulator, as described by Glenn Fiedler in his essential article <a href="https://gafferongames.com/post/fix_your_timestep/">Fix Your Timestep</a>:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">t</span> <span class="p">=</span> <span class="m">0.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">dt</span> <span class="p">=</span> <span class="m">0.01</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">currentTime</span> <span class="p">=</span> <span class="n">Time</span><span class="p">.</span><span class="n">realtimeSinceStartupAsDouble</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">accumulator</span> <span class="p">=</span> <span class="m">0.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">running</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">newTime</span> <span class="p">=</span> <span class="n">Time</span><span class="p">.</span><span class="n">realtimeSinceStartupAsDouble</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">frameTime</span> <span class="p">=</span> <span class="n">newTime</span> <span class="p">-</span> <span class="n">currentTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">currentTime</span> <span class="p">=</span> <span class="n">newTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">accumulator</span> <span class="p">+=</span> <span class="n">frameTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">accumulator</span> <span class="p">&gt;=</span> <span class="n">dt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Integrate</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">dt</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">accumulator</span> <span class="p">-=</span> <span class="n">dt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t</span> <span class="p">+=</span> <span class="n">dt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">alpha</span> <span class="p">=</span> <span class="n">accumulator</span> <span class="p">/</span> <span class="n">dt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">state</span> <span class="p">=</span> <span class="n">Interpolate</span><span class="p">(</span><span class="n">previousState</span><span class="p">,</span> <span class="n">currentState</span><span class="p">,</span> <span class="n">alpha</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Render</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>The key ideas are:</p>
+<ul>
+<li><strong>Fixed timestep</strong>: the simulation always advances by <code>dt</code>, never more, never less. This guarantees deterministic, stable physics regardless of frame rate.</li>
+<li><strong>Accumulator</strong>: leftover time carries over to the next frame. Nothing is wasted.</li>
+<li><strong>Interpolation</strong>: when rendering, the display state is interpolated between the previous and current simulation state using <code>alpha</code>, the fraction of <code>dt</code> remaining in the accumulator. This produces smooth visuals even when the render rate and simulation rate do not align.</li>
+</ul>
+<p>Without this decoupling, a variable frame rate causes the simulation to behave differently every time it runs, fast machines and slow machines get different results, and physics can explode or objects can tunnel through walls.</p>
+
+<h4 id="game-loop-in-unity" class="heading">Game Loop in Unity <a href="#game-loop-in-unity" aria-labelledby="game-loop-in-unity">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Unity already implements a variant of this pattern:</p>
+<ul>
+<li><code>FixedUpdate</code> runs the physics at a fixed timestep, configurable in <code>Edit &gt; Project Settings &gt; Time &gt; Fixed Timestep</code> (default 0.02s, 50Hz).</li>
+<li><code>Update</code> runs every rendered frame at variable delta time, available via <code>Time.deltaTime</code>.</li>
+<li><code>LateUpdate</code> runs after all <code>Update</code> calls, useful for camera follow and post-processing logic.</li>
+<li>Unity internally interpolates rigidbody positions for smooth rendering using the accumulator approach described above.</li>
+</ul>
+<p>The practical rule in Unity is: put physics and anything that needs deterministic behavior in <code>FixedUpdate</code>; put input, rendering-dependent logic and anything that benefits from variable frame rate in <code>Update</code>.</p>
+
+<h4 id="advantages-and-disadvantages-23" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-23" aria-labelledby="advantages-and-disadvantages-23">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Decouples simulation speed from rendering speed.</li>
+<li>Makes physics deterministic and reproducible.</li>
+<li>Smooth rendering even at inconsistent frame rates via interpolation.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Adds complexity when implementing from scratch.</li>
+<li>Fixed timestep can cause the &ldquo;spiral of death&rdquo; if the simulation is too heavy.</li>
+<li>Interpolation adds one frame of latency to the rendered output.</li>
+</ul>
+
+<h4 id="tips-for-unity-23" class="heading">Tips for Unity <a href="#tips-for-unity-23" aria-labelledby="tips-for-unity-23">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li>You rarely need to implement the game loop yourself in Unity. Focus on using <code>Update</code> vs <code>FixedUpdate</code> correctly.</li>
+<li>Set the fixed timestep based on your target physics fidelity. 0.02s (50Hz) is the default; increase to 0.01s (100Hz) for competitive games needing more precise physics.</li>
+<li>Use <code>Time.deltaTime</code> in <code>Update</code> and <code>Time.fixedDeltaTime</code> in <code>FixedUpdate</code> for frame-independent calculations.</li>
+<li>For custom deterministic simulations, use <code>Time.fixedDeltaTime</code> in a loop inside <code>Update</code> with your own accumulator, following the pattern from the article above.</li>
 </ul>
 <p><br><br></p>
 
@@ -4149,7 +5180,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>When the data changes, the flag becomes <code>true</code>. When the result is requested, the flag is checked: if dirty, the value is recalculated and cached, and the flag is reset. If clean, the cached value is returned immediately.</p>
 
-<h4 id="when-to-use-it-18" class="heading">When to use it <a href="#when-to-use-it-18" aria-labelledby="when-to-use-it-18">
+<h4 id="when-to-use-it-24" class="heading">When to use it <a href="#when-to-use-it-24" aria-labelledby="when-to-use-it-24">
 
 
 
@@ -4265,7 +5296,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">            <span class="n">player</span><span class="p">.</span><span class="n">Agility</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-18" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-18" aria-labelledby="advantages-and-disadvantages-18">
+<h4 id="advantages-and-disadvantages-24" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-24" aria-labelledby="advantages-and-disadvantages-24">
 
 
 
@@ -4294,7 +5325,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Managing multiple dirty flags can become complicated in larger systems.</li>
 </ul>
 
-<h4 id="tips-for-unity-18" class="heading">Tips for Unity <a href="#tips-for-unity-18" aria-labelledby="tips-for-unity-18">
+<h4 id="tips-for-unity-24" class="heading">Tips for Unity <a href="#tips-for-unity-24" aria-labelledby="tips-for-unity-24">
 
 
 
@@ -4342,7 +5373,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>Unity has its own built-in pool system since 2021: <code>UnityEngine.Pool.ObjectPool&lt;T&gt;</code>. If you are using a recent version, you can use it directly instead of writing a custom one.</p>
 
-<h4 id="when-to-use-it-19" class="heading">When to use it <a href="#when-to-use-it-19" aria-labelledby="when-to-use-it-19">
+<h4 id="when-to-use-it-25" class="heading">When to use it <a href="#when-to-use-it-25" aria-labelledby="when-to-use-it-25">
 
 
 
@@ -4458,7 +5489,7 @@ Its principles are still used as building code in many cities.</p>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="advantages-and-disadvantages-19" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-19" aria-labelledby="advantages-and-disadvantages-19">
+<h4 id="advantages-and-disadvantages-25" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-25" aria-labelledby="advantages-and-disadvantages-25">
 
 
 
@@ -4490,7 +5521,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Scene changes and object references need extra attention.</li>
 </ul>
 
-<h4 id="tips-for-unity-19" class="heading">Tips for Unity <a href="#tips-for-unity-19" aria-labelledby="tips-for-unity-19">
+<h4 id="tips-for-unity-25" class="heading">Tips for Unity <a href="#tips-for-unity-25" aria-labelledby="tips-for-unity-25">
 
 
 
@@ -4539,7 +5570,7 @@ Its principles are still used as building code in many cities.</p>
 </blockquote>
 <p>When something happens in one area, the game only checks the objects near that area. Collision checks, distance checks, visibility checks and &ldquo;who is near me?&rdquo; searches become vastly cheaper, especially in scenes with many objects.</p>
 
-<h4 id="when-to-use-it-20" class="heading">When to use it <a href="#when-to-use-it-20" aria-labelledby="when-to-use-it-20">
+<h4 id="when-to-use-it-26" class="heading">When to use it <a href="#when-to-use-it-26" aria-labelledby="when-to-use-it-26">
 
 
 
@@ -4771,7 +5802,7 @@ Its principles are still used as building code in many cities.</p>
 <p><strong>Bounding Volume Hierarchies (BVHs)</strong> take a different approach. Instead of partitioning space itself, BVHs organize objects into a tree of bounding volumes. Each node stores a volume that encloses all its children. BVHs do not care about empty space, which makes them excellent for ray tracing, frustum culling of dynamic objects, and physics broad-phase detection. When objects move, only the bounding volumes need updating, not the entire spatial structure.</p>
 <p>Choosing the right structure depends on your game&rsquo;s needs. Uniform grids shine when objects are evenly distributed and queries are local. Quadtrees and Octrees excel when object density varies wildly across the world. BVHs dominate when you have many moving objects and need to rebuild or update the tree frequently. Many modern game engines combine multiple structures: a uniform grid for static world geometry, an octree for dynamic entities, and a BVH for the rendering pipeline.</p>
 
-<h4 id="advantages-and-disadvantages-20" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-20" aria-labelledby="advantages-and-disadvantages-20">
+<h4 id="advantages-and-disadvantages-26" class="heading">Advantages and disadvantages <a href="#advantages-and-disadvantages-26" aria-labelledby="advantages-and-disadvantages-26">
 
 
 
@@ -4800,7 +5831,7 @@ Its principles are still used as building code in many cities.</p>
 <li>Adds extra management complexity to the project.</li>
 </ul>
 
-<h4 id="tips-for-unity-20" class="heading">Tips for Unity <a href="#tips-for-unity-20" aria-labelledby="tips-for-unity-20">
+<h4 id="tips-for-unity-26" class="heading">Tips for Unity <a href="#tips-for-unity-26" aria-labelledby="tips-for-unity-26">
 
 
 
@@ -4823,6 +5854,7 @@ Its principles are still used as building code in many cities.</p>
 <li>For heavier systems, combine with Unity&rsquo;s Job System and Burst Compiler using <code>NativeArray</code> and <code>NativeMultiHashMap</code> for efficient multi-threaded processing.</li>
 <li>Visualize the grid while debugging. Use <code>OnDrawGizmos</code> with <code>Gizmos.DrawWireCube</code> to see if cells are covering the world correctly.</li>
 </ul>
+<p><br><br></p>
 
 
 
@@ -4931,6 +5963,8 @@ Its principles are still used as building code in many cities.</p>
         <li><a href="#decorator">Decorator</a></li>
         <li><a href="#facade">Facade</a></li>
         <li><a href="#proxy">Proxy</a></li>
+        <li><a href="#flyweight">Flyweight</a></li>
+        <li><a href="#bridge">Bridge</a></li>
       </ul>
     </li>
     <li><a href="#behavior">Behavior</a>
@@ -4941,6 +5975,8 @@ Its principles are still used as building code in many cities.</p>
         <li><a href="#observer">Observer</a></li>
         <li><a href="#state">State</a></li>
         <li><a href="#strategy">Strategy</a></li>
+        <li><a href="#chain-of-responsibility">Chain of Responsibility</a></li>
+        <li><a href="#visitor">Visitor</a></li>
       </ul>
     </li>
     <li><a href="#architectural">Architectural</a>
@@ -4948,6 +5984,8 @@ Its principles are still used as building code in many cities.</p>
         <li><a href="#dependency-injection">Dependency Injection</a></li>
         <li><a href="#mvp">MVP</a></li>
         <li><a href="#service-locator">Service Locator</a></li>
+        <li><a href="#ecs">ECS</a></li>
+        <li><a href="#game-loop">Game Loop</a></li>
       </ul>
     </li>
     <li><a href="#optimization">Optimization</a>
