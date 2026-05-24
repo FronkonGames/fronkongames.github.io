@@ -43,7 +43,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/blog/design-patterns-in-game-development/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:02+01:00">
-    <meta property="article:modified_time" content="2026-05-24T16:31:42+02:00">
+    <meta property="article:modified_time" content="2026-05-24T16:48:32+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/design-patterns-in-game-development-1280x640.jpg">
 <meta property="og:image:alt" content="Design Patterns In Game Development">
 
@@ -103,7 +103,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:02CET",
-      "dateModified": "2026-05-24T16:31:42CET",
+      "dateModified": "2026-05-24T16:48:32CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/blog/design-patterns-in-game-development/#/schema/breadcrumb/1"
       },
@@ -161,7 +161,7 @@
             "@id": "https://fronkongames.github.io/blog/design-patterns-in-game-development/"
           },
           "datePublished": "1970-01-01T01:00:02CET",
-          "dateModified": "2026-05-24T16:31:42CET",
+          "dateModified": "2026-05-24T16:48:32CET",
           "author": {
             "@id": "https://fronkongames.github.io/#/schema/person/2"
           },
@@ -590,6 +590,8 @@ Its principles are still used as building code in many cities.</p>
 <p>The leap into the programming world occurred in 1987 when <a href="https://en.wikipedia.org/wiki/Ward_Cunningham">Ward Cunningham</a> and <a href="https://en.wikipedia.org/wiki/Kent_Beck">Kent Beck</a> found parallels in Alexander&rsquo;s work and what a good architecture based on <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented</a> should be. They developed five patterns and published a paper at the <a href="https://en.wikipedia.org/wiki/OOPSLA">OOPSLA</a> conference in the same year under the name &lsquo;<a href="http://c2.com/doc/oopsla87.html">Using Pattern Languages for OO Programs</a>&rsquo;.</p>
 <p>But it was not until 1994 with the publication of the famous &lsquo;<a href="https://en.wikipedia.org/wiki/Design_Patterns">Design Patterns: Elements of Reusable Object-Oriented Software</a>&rsquo; by the group called &lsquo;<a href="http://wiki.c2.com/?GangOfFour">Gang of Four</a>&rsquo; (or simply &lsquo;<em>GoF</em>&rsquo;) that the term and its use became popular. It sold over 500,000 copies in English and was translated into 13 other languages.</p>
 <p>In the book the authors lay the foundations of what we understand today as a design pattern and compile the first 23 patterns. Since then their number has continued to grow.</p>
+<p>The game development community has both adopted and expanded the concept. Many GoF patterns translate naturally to games, while others like Game Loop, Update Method, Component or Spatial Partition were born from the specific challenges of real-time simulations. In 2014, <a href="https://gameprogrammingpatterns.com/">Robert Nystrom</a> published &lsquo;<em><a href="https://gameprogrammingpatterns.com/">Game Programming Patterns</a></em>&rsquo;, the definitive book that bridges classic design patterns with the realities of game engines, and it is available for free on his website.</p>
+<p>If you look at Unity itself, you will see patterns everywhere. The entire engine is built on the <a href="https://gameprogrammingpatterns.com/component.html">Component pattern</a>: <code>GameObject</code>s are containers for <code>MonoBehaviour</code> components. <code>Update</code>, <code>FixedUpdate</code> and <code>LateUpdate</code> implement the Game Loop pattern. <code>ScriptableObject</code>s enable the Type Object pattern. The Input System uses the Observer and Bridge patterns. Once you start recognizing them, you cannot unsee them.</p>
 
 <h2 id="why-use-them" class="heading">Why use them? <a href="#why-use-them" aria-labelledby="why-use-them">
 

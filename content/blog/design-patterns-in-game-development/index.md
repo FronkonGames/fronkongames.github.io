@@ -30,6 +30,10 @@ But it was not until 1994 with the publication of the famous '[Design Patterns: 
 
 In the book the authors lay the foundations of what we understand today as a design pattern and compile the first 23 patterns. Since then their number has continued to grow.
 
+The game development community has both adopted and expanded the concept. Many GoF patterns translate naturally to games, while others like Game Loop, Update Method, Component or Spatial Partition were born from the specific challenges of real-time simulations. In 2014, [Robert Nystrom](https://gameprogrammingpatterns.com/) published '*[Game Programming Patterns](https://gameprogrammingpatterns.com/)*', the definitive book that bridges classic design patterns with the realities of game engines, and it is available for free on his website.
+
+If you look at Unity itself, you will see patterns everywhere. The entire engine is built on the [Component pattern](https://gameprogrammingpatterns.com/component.html): `GameObject`s are containers for `MonoBehaviour` components. `Update`, `FixedUpdate` and `LateUpdate` implement the Game Loop pattern. `ScriptableObject`s enable the Type Object pattern. The Input System uses the Observer and Bridge patterns. Once you start recognizing them, you cannot unsee them.
+
 ## Why use them?
 
 Because they can help us create robust software that is easy to understand and modify. In addition, it can provide you with a common vocabulary for planning or solving problems with other programmers.
