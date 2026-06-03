@@ -18,6 +18,7 @@ thumbnail:
 * [Tilt Shift](#tiltshift), used to simulate a miniature scene.
 * [Photo](#photo), recreates the authentic look & feel of professional cameras.
 * [Shockwave](#shockwave), stunning shockwave effects with customizable distortion.
+* [Mosaic](#mosaic), voronoi tile mosaic with grout, relief, reflection, and specular lighting.
 * [Vignette](#vignette_asset), the most comprehensive vignette effect with shapes, algorithms, and lens distortion.
 * [Color Isolation](#colorisolation), isolates areas by color and applies effects.
 * [Sharpen](#sharpen), enhances image details.
@@ -1086,6 +1087,197 @@ For a more detailed example, check the code in the demo scene.
 | **Energy Blast** | Strength = 2.0, Width = 0.2, Ring Inner = 0.4, Ring Outer = 0.6, Sharpness = 16, Flares = 1.0, Edge = 1.0, Edge Color = Magenta | Sharp magenta energy pulse with strong flares |
 | **Impact Wave** | Strength = 3.5, Width = 0.4, Ring Inner = 0.6, Ring Outer = 0.4, Sharpness = 4, Skew = -0.2, Noise = 0.5, Edge = 0.9, Edge Color = Green | Wide green impact with soft sharpness |
 | **Mystic Ripple** | Strength = 1.8, Width = 0.3, Ring Inner = 0.7, Ring Outer = 0.3, Sharpness = 10, Flares Frequency = 16, Noise = 0.7, Noise Speed = 0.5, Edge = 0.7 | Ethereal blue ripple with slow noise |
+{{< /table >}}
+
+---
+## 🧩 Mosaic {#mosaic}
+{{< asset-header store="https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-mosaic-382112" youtube="t9f1krP1Dlg" demo="https://fronkongames.github.io/demos-artistic/mosaic/" warn="assets used in video and demo are not included">}}
+
+**Mosaic** transforms the image into a [Voronoi](https://en.wikipedia.org/wiki/Voronoi_diagram) tile pattern where each cell renders a flat color sample, producing the look of ceramic tiles, stained glass, or censored pixel blocks. Grout lines, directional border highlighting, convex/concave relief, per-cell reflections, and a configurable specular light add depth and material variation. Your game, but someone installed the bathroom floor ;)
+
+The shader builds a procedural Voronoi map in screen space, assigns each cell a uniform color (via **Sample** mode), and composites grout borders with independent tint and blend modes. **Tile Contrast** controls how punchy each flat sample is. Tile normals derived from the Voronoi distance field drive relief shading, optional environment-style reflections, and Blinn-Phong specular highlights from **Light Horizontal** and **Light Vertical** angles. Border **Highlight** uses the same light direction and is applied only at inner cell edges, not across entire tiles.
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+*   **Unity:** 6000.0.58f2 or higher.
+*   **Universal RP:** 17.0.3 or higher.
+
+#### Instalation Guide
+
+##### Step 1: Add Renderer Feature
+
+The effect must be registered in your project's URP configuration:
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Artistic > Mosaic**.
+
+##### Step 2: Configure the Volume
+
+To apply the effect to your scene:
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Artistic > Mosaic**.
+4. Enable the '**Intensity**' parameter (and any others you wish to modify).
+
+#### Parameter Configuration
+
+{{< image src="mosaic_0.png" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Mosaic Parameters
+
+These parameters control the core tile pattern. **Size** sets the cell density across the screen. **Sample** chooses how each cell gets its flat color. **Tile Contrast** lerps between a linear sample and a squared sample (independent from the Color foldout **Contrast**). **Highlight** adds directional derivative brightening on inner cell borders; its direction follows the specular light angles. **Highlight Intensity** scales the edge glow; **Highlight Smoothness** widens and softens it. **Relief** flips tile normals between convex (domed) and concave (inset) shading.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Size** | 1.0 to 128.0 | 15.0 | Mosaic cell density. Higher values produce smaller tiles |
+| **Sample** | Hash / Centroid / Indexed | Indexed | Cell color source (see below) |
+| **Tile Contrast** | 0.0 to 1.0 | 1.0 | Per-cell sample contrast. 0 = linear, 1 = squared (classic mosaic punch) |
+| **Mosaic Tint** | Color | White | Color tint applied to tile areas |
+| **Mosaic Color Blend** | Enum (23 modes) | Multiply | Blend mode for the mosaic tint. White + Multiply = no change |
+| **Highlight** | On / Off | On | Directional derivative border highlighting on inner cell edges |
+| **Highlight Intensity** | 0.0 to 1.0 | 1.0 | Strength of the border highlight. 0 = off |
+| **Highlight Smoothness** | 0.0 to 1.0 | 0.0 | Softens highlight edges. 0 = sharp, 1 = wide and gentle |
+| **Relief** | Convex / Concave | Convex | Tile surface direction for lighting and reflections |
+{{< /table >}}
+
+{{< alert type="info" >}}
+**Sample** modes:
+
+* **Hash** — stable pseudo-random color per cell from its Voronoi ID. Good for abstract or stained-glass palette looks without UV clamping artifacts.
+* **Centroid** — samples the scene at each cell's Voronoi center in screen space. Best for classic mosaics and privacy-block effects that preserve underlying image content.
+* **Indexed** — legacy ID-to-UV mapping. Kept for compatibility with earlier looks.
+{{< /alert >}}
+
+##### Border (Grout)
+
+Controls the grout lines between tiles. **Border Width** is expressed as a fraction of cell size, so it scales consistently with **Size**. The border tint and blend mode apply only to the grout area, independent of the tile color.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Border Width** | 0.0 to 0.5 | 0.05 | Grout thickness as a fraction of cell size. 0 = no visible grout |
+| **Border Color** | Color | Black | Tint color for grout lines |
+| **Border Color Blend** | Enum (23 modes) | Solid | Blend mode for grout tint |
+{{< /table >}}
+
+##### Lighting
+
+Adds a directional specular light across tile surfaces. The light direction is controlled by **Horizontal** and **Vertical** angles, and the same direction drives border **Highlight** when enabled. Tile normals from the Voronoi relief shape the specular highlights, making tiles read as glossy or matte depending on **Specular Power** and **Specular Intensity**.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Light Intensity** | 0.0 to 5.0 | 0.1 | Overall specular light contribution |
+| **Specular Color** | Color | White | Color of the specular highlight |
+| **Specular Color Blend** | Enum (23 modes) | Additive | Blend mode for specular light |
+| **Specular Power** | 1.0 to 128.0 | 25.0 | Shininess. Higher = tighter, sharper highlights |
+| **Specular Intensity** | 0.0 to 5.0 | 0.05 | Brightness multiplier of the specular term |
+| **Light Horizontal Angle** | -180.0 to 180.0 | -45.0 | Light azimuth in degrees |
+| **Light Vertical Angle** | -89.0 to 89.0 | 45.0 | Light elevation in degrees |
+{{< /table >}}
+
+##### Reflection
+
+Per-cell reflections sample the scene along the reflected view direction on each tile surface. The reflection pass uses the same **Tile Contrast** treatment as flat cell colors so glossy tiles stay visually consistent. **Reflection Distance** controls both the UV offset scale and the falloff from tile center toward grout, concentrating reflections toward tile interiors.
+
+{{< table >}}
+| **Parameter** | **Range** | **Default** | **Effect** |
+|---|---|---|---|
+| **Reflection Intensity** | 0.0 to 1.0 | 0.0 | Strength of per-cell reflections. 0 = disabled |
+| **Reflection Tint** | Color | White | Tint applied to reflection samples |
+| **Reflection Color Blend** | Enum (23 modes) | Multiply | Blend mode for reflection tint |
+| **Reflection Distance** | 0.0 to 0.5 | 0.25 | UV offset and falloff as a fraction of cell size |
+{{< /table >}}
+
+{{< alert type="info" >}}
+**Mosaic Tint** uses Multiply by default so white leaves tile colors unchanged. **Border Color Blend** defaults to Solid so black grout replaces the border area directly. All four tint/blend pairs support the full set of 23 blend modes (Additive, Multiply, Screen, Overlay, Solid, and others).
+{{< /alert >}}
+
+##### Color Grading
+
+Standard color correction parameters apply to the final output.
+
+{{< table >}}
+| **Parameter** | **Range** | **Effect** | **Default** |
+|---|---|---|---|
+| Brightness | -1.0 to 1.0 | Additive luminance offset | 0.0 |
+| Contrast | 0.0 to 10.0 | Mid-tone contrast expansion | 1.0 |
+| Gamma | 0.1 to 10.0 | Nonlinear tonal mapping (inverted) | 1.0 |
+| Hue | 0.0 to 1.0 | Color wheel rotation | 0.0 |
+| Saturation | 0.0 to 2.0 | Color intensity relative to luminance | 1.0
+{{< /table >}}
+
+#### Runtime Control
+
+The effect integrates with Unity's Volume system for seamless runtime parameter modification. Access the **MosaicVolume** component through the Volume Profile.
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.Artistic.Mosaic;
+
+// ...
+
+[SerializedField]
+private VolumeProfile volumeProfile;
+
+// ...
+
+// Access the effect
+if (volumeProfile.TryGet(out MosaicVolume volume))
+{
+    // Enable/disable effect
+    volume.intensity.value = 1.0f; // 0.0 = disabled
+
+    // Configure tiles
+    volume.size.value = 20.0f;
+    volume.cellSampleMode.value = CellSampleMode.Centroid;
+    volume.tileContrast.value = 1.0f;
+    volume.highlight.value = true;
+    volume.highlightIntensity.value = 0.8f;
+    volume.highlightSmoothness.value = 0.4f;
+    volume.reliefMode.value = ReliefMode.Convex;
+
+    // Grout
+    volume.borderWidth.value = 0.08f;
+    volume.borderColor.value = Color.black;
+    volume.borderColorBlend.value = ColorBlends.Solid;
+
+    // Specular light
+    volume.lightIntensity.value = 0.3f;
+    volume.specularPower.value = 40.0f;
+    volume.lightHorizontalAngle.value = -30.0f;
+    volume.lightVerticalAngle.value = 60.0f;
+
+    // Reflections
+    volume.reflectionIntensity.value = 0.35f;
+    volume.reflectionDistance.value = 0.2f;
+
+    // Color correction
+    volume.contrast.value = 1.2f;
+    volume.saturation.value = 1.1f;
+}
+```
+
+For a more detailed example, check the code in the demo scene.
+
+#### Preset Configurations
+
+{{< table >}}
+| **Preset** | **Key Settings** | **Look** |
+|---|---|---|
+| **Classic Tiles** | Sample = Indexed, Tile Contrast = 1, default grout/highlight | Clean mosaic with dark grout and subtle edge highlight |
+| **Soft Grout** | Size = 12, Highlight Smoothness = 0.6, Highlight Intensity = 0.6, Border Width = 0.1 | Large tiles with wide, soft border glow |
+| **Glossy Ceramic** | Sample = Centroid, Reflection Intensity = 0.4, Light Intensity = 0.35, Specular Power = 50 | Shiny bathroom tiles with visible reflections |
+| **Stained Glass** | Sample = Centroid, Mosaic Tint = Cyan, Blend = Screen, Border Color = Dark Blue, Reflection Intensity = 0.25 | Colorful translucent glass panels over the scene |
+| **Privacy Block** | Sample = Centroid, Size = 48, Highlight = Off, Border Width = 0, Tile Contrast = 0.3, Light Intensity = 0 | Large soft blocks without decorative shading |
+| **Roman Relief** | Sample = Centroid, Relief = Convex, Highlight Intensity = 1, Light Intensity = 0.5, Specular Intensity = 0.15, Contrast = 1.4 | Domed tiles with strong directional lighting |
 {{< /table >}}
 
 ---

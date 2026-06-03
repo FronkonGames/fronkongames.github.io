@@ -40,15 +40,13 @@
   margin-left: auto !important;
   margin-right: auto !important; }
 
-/* ===== NODE BACKGROUNDS (prevent black boxes) ===== */
+/* ===== NODE SHAPES ===== */
 .mermaid svg .node rect,
 .mermaid svg .node circle,
 .mermaid svg .node ellipse,
 .mermaid svg .node polygon,
 .mermaid svg .node .label-container rect,
 .mermaid svg .node .basic rect,
-.mermaid svg .node .label rect,
-.mermaid svg .nodeLabel rect,
 .mermaid svg .actor,
 .mermaid svg .labelBox,
 .mermaid svg .loopLine,
@@ -62,6 +60,16 @@
 .mermaid svg .section3 {
   fill: #343a40 !important;
   stroke: #adb5bd !important; }
+
+/* ===== REMOVE TEXT BACKGROUNDS ===== */
+.mermaid svg .node .label rect,
+.mermaid svg .nodeLabel rect,
+.mermaid svg .labelBkg,
+.mermaid svg .textBackground,
+.mermaid svg .classGroup .title,
+.mermaid svg .title-background {
+  fill: none !important;
+  stroke: none !important; }
 
 /* ===== TEXT (force white) ===== */
 .mermaid svg .node .label,
@@ -112,12 +120,15 @@
 
 /* ===== EDGE LABELS ===== */
 .mermaid svg .edgeLabel rect,
-.mermaid svg .edgeLabel .label,
 .mermaid svg .edgeLabel .label rect,
-.mermaid svg .edge-label rect,
+.mermaid svg .edge-label rect {
+  fill: none !important;
+  stroke: none !important;
+  background-color: transparent !important; }
+
+.mermaid svg .edgeLabel .label,
 .mermaid svg .edgeLabel span {
-  fill: #495057 !important;
-  background-color: #495057 !important;
+  background-color: transparent !important;
   color: #f8f9fa !important; }
 
 .mermaid svg .edgeLabel text,
