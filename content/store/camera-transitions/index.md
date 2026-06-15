@@ -107,6 +107,61 @@ TransitionBounce.Start(cameraA, cameraB, 1.5f, bounces: 5.0f, shadowColor: Color
 
 ---
 
+### Break
+
+<center><video controls loop="true" src="/store/camera-transitions/Break.webm"></video></center>
+
+A shattered glass effect. The current camera breaks into fragments that scatter to reveal the new camera.
+
+**Parameters:**
+
+*   `points`: `int` (optional) - Number of break points or fragments the screen is shattered into. Range `[1, 200]`. Default is `50`.
+
+**Example Usage:**
+
+```csharp
+// Uses default number of fragments.
+TransitionBreak.Start(cameraA, cameraB, 1.0f);
+
+// A finer shatter with more fragments.
+TransitionBreak.Start(cameraA, cameraB, 1.0f, points: 120);
+```
+
+---
+
+### Burn
+
+<center><video controls loop="true" src="/store/camera-transitions/Burn.webm"></video></center>
+
+A fire and burn effect that consumes the source camera and reveals the destination with ember-like particles.
+
+**Parameters:**
+
+*   `animationSpeed`: `float` (optional) - Animation speed of the fire particles. Default is `1.5f`.
+*   `movementSpeed`: `float` (optional) - Movement speed of the fire particles. Default is `1.0f`.
+*   `movementDirection`: `Vector2` (optional) - Direction of the fire particle movement. Default is `(0.7, -1.6)`.
+*   `inColor`: `Color` (optional) - Inner color of the burn (orange/yellow tones). Default is `(8.0, 3.2, 0.0, 1.0)`.
+*   `outColor`: `Color` (optional) - Outer color of the burn (red tones). Default is `(1.0, 0.1, 0.0, 1.0)`.
+*   `burnNoise`: `float` (optional) - Noise scale for the burn pattern. Default is `0.25f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default fire and burn parameters.
+TransitionBurn.Start(cameraA, cameraB, 1.5f);
+
+// Custom parameters for a faster, blue burn moving upwards.
+TransitionBurn.Start(cameraA, cameraB, 1.5f,
+                     animationSpeed: 3.0f,
+                     movementSpeed: 2.0f,
+                     movementDirection: new Vector2(0.0f, 1.6f),
+                     inColor: new Color(0.0f, 4.0f, 8.0f, 1.0f),
+                     outColor: new Color(0.0f, 0.1f, 1.0f, 1.0f),
+                     burnNoise: 0.5f);
+```
+
+---
+
 ### Bars
 
 <center><video controls loop="true" src="/store/camera-transitions/Bars.webm"></video></center>
@@ -218,6 +273,35 @@ TransitionCube.Start(cameraA, cameraB, 1.5f, perspective: 0.9f, zoom: 0.2f, refl
 
 ---
 
+### Curtain
+
+<center><video controls loop="true" src="/store/camera-transitions/Curtain.webm"></video></center>
+
+A theatrical curtain opening effect with pleats and shadows that parts to reveal the destination camera.
+
+**Parameters:**
+
+*   `numPleats`: `float` (optional) - Number of pleats in the curtain. Default is `20.0f`.
+*   `maxShadow`: `float` (optional) - Maximum shadow depth on the pleats. Default is `0.3f`.
+*   `pleatHeight`: `float` (optional) - Height of the pleats in pixels. Default is `4.0f`.
+*   `grabAmount`: `float` (optional) - Amount of the grab distortion. Default is `0.5f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default curtain parameters.
+TransitionCurtain.Start(cameraA, cameraB, 1.5f);
+
+// Custom parameters for a more dramatic curtain with deeper pleats.
+TransitionCurtain.Start(cameraA, cameraB, 1.5f,
+                        numPleats: 30.0f,
+                        maxShadow: 0.5f,
+                        pleatHeight: 8.0f,
+                        grabAmount: 0.8f);
+```
+
+---
+
 ### Doom
 
 <center><video controls loop="true" src="/store/camera-transitions/Doom.webm"></video></center>
@@ -239,6 +323,51 @@ TransitionDoom.Start(cameraA, cameraB, 1.2f);
 
 // Uses custom parameters for a more pronounced effect.
 TransitionDoom.Start(cameraA, cameraB, 1.2f, barWidth: 30, amplitude: 5.0f, noise: 0.3f, frequency: 2.0f);
+```
+
+---
+
+### Dither
+
+<center><video controls loop="true" src="/store/camera-transitions/Dither.webm"></video></center>
+
+A dithered cross-fade effect. The transition is driven by a dither pattern that progressively reveals the new camera.
+
+**Parameters:**
+
+*   `scale`: `int` (optional) - Scale of the dither pattern. Higher values produce finer patterns. Range `[1, 50]`. Default is `20`.
+*   `width`: `float` (optional) - Width of the dither pattern. Range `[0.0, 1.0]`. Default is `1.0f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default dither parameters.
+TransitionDither.Start(cameraA, cameraB, 1.0f);
+
+// Custom parameters for a coarser, narrower dither pattern.
+TransitionDither.Start(cameraA, cameraB, 1.0f, scale: 8, width: 0.6f);
+```
+
+---
+
+### Drain
+
+<center><video controls loop="true" src="/store/camera-transitions/Drain.webm"></video></center>
+
+A drain effect. The current camera appears to be pulled towards a configurable center point, revealing the new camera behind it.
+
+**Parameters:**
+
+*   `center`: `Vector2` (optional) - Center point for the drain effect, in normalized screen coordinates. Range `[(-1,-1), (1,1)]`. Default is `(0.5, 0.5)`.
+
+**Example Usage:**
+
+```csharp
+// Uses the default center point.
+TransitionDrain.Start(cameraA, cameraB, 1.0f);
+
+// Drains towards the top-left corner.
+TransitionDrain.Start(cameraA, cameraB, 1.0f, center: new Vector2(-0.5f, 0.5f));
 ```
 
 ---
@@ -284,6 +413,35 @@ TransitionFadeToGrayscale.Start(cameraA, cameraB, 1.0f);
 
 // Fades to grayscale with a stronger effect.
 TransitionFadeToGrayscale.Start(cameraA, cameraB, 1.0f, strength: 0.9f);
+```
+
+---
+
+### Falling Bricks
+
+<center><video controls loop="true" src="/store/camera-transitions/FallingBricks.webm"></video></center>
+
+The image is divided into blocks that fall from the top of the screen and land in their grid positions, with a screen shake on impact.
+
+**Parameters:**
+
+*   `blocksX`: `float` (optional) - Number of horizontal blocks. Default is `4.0f`.
+*   `blocksY`: `float` (optional) - Number of vertical blocks. Default is `4.0f`.
+*   `dropSpeed`: `float` (optional) - Speed at which the blocks fall. Default is `8.0f`.
+*   `shakeIntensity`: `float` (optional) - Intensity of the screen shake when the blocks land. Default is `0.02f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default falling bricks parameters.
+TransitionFallingBricks.Start(cameraA, cameraB, 1.5f);
+
+// A larger grid of faster blocks with more pronounced shake.
+TransitionFallingBricks.Start(cameraA, cameraB, 1.5f,
+                              blocksX: 8.0f,
+                              blocksY: 6.0f,
+                              dropSpeed: 12.0f,
+                              shakeIntensity: 0.05f);
 ```
 
 ---
@@ -356,6 +514,35 @@ TransitionFold.Start(cameraA, cameraB, 1.0f);
 
 // Uses a horizontal fold without compression.
 TransitionFold.Start(cameraA, cameraB, 1.0f, mode: TransitionAxis.Horizontal, compress: false);
+```
+
+---
+
+### Frame Shake
+
+<center><video controls loop="true" src="/store/camera-transitions/FrameShake.webm"></video></center>
+
+Shakes, rotates and blurs the frame during the transition, settling into the destination camera.
+
+**Parameters:**
+
+*   `shakeSpeed`: `float` (optional) - Speed of the shake oscillation. Default is `20.0f`.
+*   `shakePower`: `float` (optional) - Amplitude of the vertical shake. Default is `0.7f`.
+*   `rotationPower`: `float` (optional) - Maximum rotation (in radians) during the shake. Default is `0.3f`.
+*   `blurStrength`: `float` (optional) - Maximum blur radius (in pixels) at peak shake. Default is `5.0f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default frame shake parameters.
+TransitionFrameShake.Start(cameraA, cameraB, 1.0f);
+
+// A more violent shake with a stronger blur and rotation.
+TransitionFrameShake.Start(cameraA, cameraB, 1.0f,
+                           shakeSpeed: 35.0f,
+                           shakePower: 1.2f,
+                           rotationPower: 0.6f,
+                           blurStrength: 10.0f);
 ```
 
 ---
@@ -654,10 +841,43 @@ Melts the camera based on its luminance (brightness) values, revealing the new c
 TransitionLuminanceMelt.Start(cameraA, cameraB, 1.5f);
 
 // Brighter pixels melt upwards, with a lower luminance threshold.
-TransitionLuminanceMelt.Start(cameraA, cameraB, 1.5f, 
-                              meltDownwards: false, 
-                              luminanceThreshold: 0.5f, 
+TransitionLuminanceMelt.Start(cameraA, cameraB, 1.5f,
+                              meltDownwards: false,
+                              luminanceThreshold: 0.5f,
                               checkAboveThreshold: true);
+```
+
+---
+
+### Magic
+
+<center><video controls loop="true" src="/store/camera-transitions/Magic.webm"></video></center>
+
+A magical pixelated cell reveal effect with rainbow colors and multiple layers that reveals the destination camera.
+
+**Parameters:**
+
+*   `mode`: `int` (optional) - Direction mode: `0` = Left-to-right, `1` = Top-to-bottom, `2` = Radial. Default is `0`.
+*   `layers`: `float` (optional) - Number of layers (grid density). Default is `5.0f`.
+*   `speed`: `float` (optional) - Speed of the magical reveal. Default is `1.0f`.
+*   `delay`: `float` (optional) - Delay before the effect starts. Default is `0.0f`.
+*   `width`: `float` (optional) - Width of the transition wavefront. Default is `0.05f`.
+*   `direction`: `float` (optional) - Direction of the transition: `1.0` for forward, `-1.0` for reverse. Default is `1.0f`.
+
+**Example Usage:**
+
+```csharp
+// Default: left-to-right magic reveal.
+TransitionMagic.Start(cameraA, cameraB, 1.5f);
+
+// A radial magic reveal with more layers and a forward wavefront.
+TransitionMagic.Start(cameraA, cameraB, 1.5f,
+                      mode: 2,
+                      layers: 8.0f,
+                      speed: 1.5f,
+                      delay: 0.1f,
+                      width: 0.08f,
+                      direction: 1.0f);
 ```
 
 ---
@@ -681,6 +901,57 @@ TransitionMosaic.Start(cameraA, cameraB, 1.0f);
 
 // Custom steps for a different mosaic pattern, with cell rotation enabled.
 TransitionMosaic.Start(cameraA, cameraB, 1.0f, steps: new Vector2(2, -1), rotate: true);
+```
+
+---
+
+### Morph
+
+<center><video controls loop="true" src="/store/camera-transitions/Morph.webm"></video></center>
+
+Creates a warping effect based on image content to morph between cameras.
+
+**Parameters:**
+
+*   `strength`: `float` (optional) - Strength of the morphing distortion. Range `[0.0, 1.0]`. Default is `0.1f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default morph strength.
+TransitionMorph.Start(cameraA, cameraB, 1.2f);
+
+// A more pronounced morph effect.
+TransitionMorph.Start(cameraA, cameraB, 1.2f, strength: 0.5f);
+```
+
+---
+
+### Mosaic Zoom
+
+<center><video controls loop="true" src="/store/camera-transitions/MosaicZoom.webm"></video></center>
+
+Tiles zoom in and out from their centers, creating a mosaic pulse effect between the two cameras.
+
+**Parameters:**
+
+*   `speed`: `float` (optional) - Sharpness of the crossfade between cameras. Default is `3.0f`.
+*   `side`: `float` (optional) - Tile size as a fraction of the screen width. Default is `0.19f`.
+*   `zoomRatio`: `float` (optional) - Zoom multiplier applied to the tiles. Default is `2.0f`.
+*   `move`: `Vector2` (optional) - Tile grid offset. Default is `(-0.12, 0.1)`.
+
+**Example Usage:**
+
+```csharp
+// Uses default mosaic zoom parameters.
+TransitionMosaicZoom.Start(cameraA, cameraB, 1.5f);
+
+// Larger tiles with a stronger zoom and a different grid offset.
+TransitionMosaicZoom.Start(cameraA, cameraB, 1.5f,
+                           speed: 4.0f,
+                           side: 0.3f,
+                           zoomRatio: 3.0f,
+                           move: new Vector2(0.1f, -0.05f));
 ```
 
 ---
@@ -759,6 +1030,97 @@ TransitionPolkaDots.Start(cameraA, cameraB, 1.0f);
 
 // Custom parameters for fewer, larger dots, originating from the top-left.
 TransitionPolkaDots.Start(cameraA, cameraB, 1.0f, dots: 8.0f, center: new Vector2(-1.0f, 1.0f));
+```
+
+---
+
+### Portal
+
+<center><video controls loop="true" src="/store/camera-transitions/Portal.webm"></video></center>
+
+An organic portal reveal with FBM noise, chromatic aberration, gravitational warping, and filament hotspots.
+
+**Parameters:**
+
+*   `strength`: `float` (optional) - Warping strength of the gravitational lens. Default is `0.3f`.
+*   `feather`: `float` (optional) - Softness of the transition edge. Default is `0.12f`.
+*   `speed`: `float` (optional) - Speed multiplier for the transition. Default is `1.0f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default portal parameters.
+TransitionPortal.Start(cameraA, cameraB, 1.5f);
+
+// A more dramatic portal with stronger warping and a softer edge.
+TransitionPortal.Start(cameraA, cameraB, 1.5f,
+                       strength: 0.6f,
+                       feather: 0.2f,
+                       speed: 1.2f);
+```
+
+---
+
+### Quantum
+
+<center><video controls loop="true" src="/store/camera-transitions/Quantum.webm"></video></center>
+
+An elastic sheet distortion with glass refraction, chromatic aberration, and a shockwave reveal that snaps the source camera into the destination.
+
+**Parameters:**
+
+*   `snapTime`: `float` (optional) - Time (as a fraction of the transition) when the elastic snap begins. Default is `0.6f`.
+*   `strength`: `float` (optional) - Maximum displacement strength. Default is `1.8f`.
+*   `frequency`: `float` (optional) - Oscillation frequency during the snap. Default is `15.0f`.
+*   `decay`: `float` (optional) - Decay rate of the snap oscillation. Default is `4.0f`.
+*   `waveStrength`: `float` (optional) - Glass refraction strength. Default is `0.3f`.
+*   `waveAberration`: `float` (optional) - Chromatic aberration offset. Default is `0.05f`.
+*   `waveWidth`: `float` (optional) - Width of the glass wave. Default is `0.18f`.
+*   `glassShine`: `float` (optional) - Specular highlight intensity. Default is `0.7f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default quantum parameters.
+TransitionQuantum.Start(cameraA, cameraB, 1.2f);
+
+// A slower, more elastic snap with stronger glass refraction.
+TransitionQuantum.Start(cameraA, cameraB, 1.2f,
+                        snapTime: 0.4f,
+                        strength: 2.5f,
+                        frequency: 20.0f,
+                        decay: 5.0f,
+                        waveStrength: 0.5f,
+                        waveAberration: 0.08f,
+                        waveWidth: 0.25f,
+                        glassShine: 1.0f);
+```
+
+---
+
+### Random Grid
+
+<center><video controls loop="true" src="/store/camera-transitions/RandomGrid.webm"></video></center>
+
+The screen is divided into a grid of rectangles that appear in random order to reveal the new camera.
+
+**Parameters:**
+
+*   `rows`: `int` (optional) - Number of rows in the grid. Default is `10`.
+*   `columns`: `int` (optional) - Number of columns in the grid. Default is `10`.
+*   `smoothness`: `float` (optional) - Smoothness of the transition between rectangles. Range `[0.0, 1.0]`. Default is `0.5f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default random grid parameters.
+TransitionRandomGrid.Start(cameraA, cameraB, 1.2f);
+
+// A finer grid with sharper rectangles.
+TransitionRandomGrid.Start(cameraA, cameraB, 1.2f,
+                           rows: 20,
+                           columns: 20,
+                           smoothness: 0.1f);
 ```
 
 ---
@@ -856,6 +1218,35 @@ TransitionSchwifty.Start(cameraA, cameraB, 1.0f);
 
 // Custom parameters for a more intense and amplified schwifty effect.
 TransitionSchwifty.Start(cameraA, cameraB, 1.0f, intensity: 0.8f, amplitude: 15.0f);
+```
+
+---
+
+### Shockwave
+
+<center><video controls loop="true" src="/store/camera-transitions/Shockwave.webm"></video></center>
+
+Creates an expanding circular shockwave that distorts the scene and reveals the destination camera.
+
+**Parameters:**
+
+*   `strength`: `float` (optional) - Displacement strength of the shockwave. Default is `0.25f`.
+*   `width`: `float` (optional) - Width of the shockwave ring. Default is `0.1f`.
+*   `innerDistance`: `float` (optional) - Relative size of the inner ring (`0` = none, `1` = full width). Default is `0.5f`.
+*   `noiseStrength`: `float` (optional) - Amount of noise applied to the ring edges, creating a more organic look. Default is `0.025f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default shockwave parameters.
+TransitionShockwave.Start(cameraA, cameraB, 1.0f);
+
+// A wider, noisier shockwave that travels further.
+TransitionShockwave.Start(cameraA, cameraB, 1.0f,
+                          strength: 0.5f,
+                          width: 0.2f,
+                          innerDistance: 0.7f,
+                          noiseStrength: 0.1f);
 ```
 
 ---
@@ -973,6 +1364,64 @@ TransitionSmoothLine.Start(cameraA, cameraB, 1.0f, angle: 90.0f, smoothness: 0.1
 
 ---
 
+### Spin Box
+
+<center><video controls loop="true" src="/store/camera-transitions/SpinBox.webm"></video></center>
+
+The screen is divided into boxes that spin around their centers, with a scene swap and a motion blur that peaks at the middle of the transition.
+
+**Parameters:**
+
+*   `rotationCount`: `float` (optional) - Number of full rotations during the transition. Default is `3.0f`.
+*   `speed`: `float` (optional) - Speed of the scene swap oscillation. Default is `3.0f`.
+*   `side`: `float` (optional) - Tile size as a fraction of the screen width. Default is `0.19f`.
+*   `move`: `Vector2` (optional) - Tile grid offset. Default is `(-0.02, 0.1)`.
+
+**Example Usage:**
+
+```csharp
+// Uses default spin box parameters.
+TransitionSpinBox.Start(cameraA, cameraB, 1.5f);
+
+// More rotations, larger tiles and a different grid offset.
+TransitionSpinBox.Start(cameraA, cameraB, 1.5f,
+                        rotationCount: 5.0f,
+                        speed: 4.0f,
+                        side: 0.3f,
+                        move: new Vector2(0.05f, -0.1f));
+```
+
+---
+
+### Spin Circle
+
+<center><video controls loop="true" src="/store/camera-transitions/SpinCircle.webm"></video></center>
+
+Rotates the frame around a pulsing circle in the center, with reversed rotation inside the circle, a spinning blur, and desaturation outside the circle.
+
+**Parameters:**
+
+*   `rotationCount`: `float` (optional) - Number of full rotations during the transition. Default is `3.0f`.
+*   `speed`: `float` (optional) - Sharpness of the crossfade between cameras. Default is `3.0f`.
+*   `diameter`: `float` (optional) - Base circle diameter. Default is `0.2f`.
+*   `diameterAmplitude`: `float` (optional) - How much the circle pulses during the transition. Default is `0.07f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default spin circle parameters.
+TransitionSpinCircle.Start(cameraA, cameraB, 1.5f);
+
+// A larger pulsing circle with more rotations.
+TransitionSpinCircle.Start(cameraA, cameraB, 1.5f,
+                           rotationCount: 5.0f,
+                           speed: 4.0f,
+                           diameter: 0.4f,
+                           diameterAmplitude: 0.15f);
+```
+
+---
+
 ### Swap
 
 <center><video controls loop="true" src="/store/camera-transitions/Swap.webm"></video></center>
@@ -996,6 +1445,28 @@ TransitionSwap.Start(cameraA, cameraB, 1.0f, perspective: 0.5f, depth: 5.0f);
 
 // With a noticeable reflection.
 TransitionSwap.Start(cameraA, cameraB, 1.0f, reflection: 0.6f);
+```
+
+---
+
+### Swirl
+
+<center><video controls loop="true" src="/store/camera-transitions/Swirl.webm"></video></center>
+
+A swirling distortion effect. The image is twisted around the center of the screen to reveal the new camera.
+
+**Parameters:**
+
+*   `swirlStrength`: `float` (optional) - Strength of the swirl. Range `[0.0, 50.0]`. Default is `8.0 * PI` (approximately `25.13`).
+
+**Example Usage:**
+
+```csharp
+// Uses default swirl strength.
+TransitionSwirl.Start(cameraA, cameraB, 1.0f);
+
+// A more subtle swirl effect.
+TransitionSwirl.Start(cameraA, cameraB, 1.0f, swirlStrength: 5.0f);
 ```
 
 ---
@@ -1041,6 +1512,33 @@ TransitionVortex.Start(cameraA, cameraB, 1.0f);
 
 // A more intense vortex.
 TransitionVortex.Start(cameraA, cameraB, 1.0f, distortion: 0.7f);
+```
+
+---
+
+### Voronoi
+
+<center><video controls loop="true" src="/store/camera-transitions/Voronoi.webm"></video></center>
+
+A Voronoi cell pattern reveal where cells expand from their centers with a glowing edge effect to reveal the new camera.
+
+**Parameters:**
+
+*   `voronoiCount`: `float` (optional) - Number of Voronoi cells. Default is `15.0f`.
+*   `speed`: `float` (optional) - Speed of the cell expansion. Default is `1.0f`.
+*   `glow`: `float` (optional) - Glow intensity on the cell edges. Default is `0.2f`.
+
+**Example Usage:**
+
+```csharp
+// Uses default voronoi parameters.
+TransitionVoronoi.Start(cameraA, cameraB, 1.5f);
+
+// A finer pattern with a faster expansion and stronger glow.
+TransitionVoronoi.Start(cameraA, cameraB, 1.5f,
+                        voronoiCount: 30.0f,
+                        speed: 1.5f,
+                        glow: 0.5f);
 ```
 
 ---
