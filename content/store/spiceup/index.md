@@ -35,9 +35,8 @@ It consists of the following effects:
 * [✨ Lens Flare](#lensflare), cinematic flare generation for bright scenes.
 * [🌫️ Blurry](#blurry), blurred vision built from frame history.
 
-{{< alert color="light" >}}
-You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[SPICE UP BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price.
-{{< /alert >}}
+{{< badge title="You can obtain each effect separately, but if you want more effects, you might be interested in **'[SPICE UP BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/spice-up-bundle-262333?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!" color="secondary">}}
+{.h3}
 
 ## Bundle Requirements
 

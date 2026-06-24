@@ -19,6 +19,6 @@
 
 <!-- Main code -->
 {{- if not $error }}
-    <span class="badge text-bg-{{ $color }}{{ with $class }} {{ . }}{{ end }}">{{ $title | plainify }}</span>
+    <span class="badge text-wrap text-start lh-base mw-100 text-bg-{{ $color }}{{ with $class }} {{ . }}{{ end }}">{{ $title | .Page.RenderString | safeHTML }}</span>
     <br><br>
 {{ end -}}

@@ -29,9 +29,8 @@ thumbnail:
 * [Radial Blur](#radialblur), the need for the speed.
 * [Snow](#snow), fully procedural wind-swept snowfall with parallax depth and shape variety.
 
-{{< alert color="light" >}}
-You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!
-{{< /alert >}}
+{{< badge title="You can obtain each effect separately, but if you want more effects, you might be interested in **'[ARTISTIC BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/artistic-bundle-272266?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!" color="secondary">}}
+{.h3}
 
 ## Requirements
 

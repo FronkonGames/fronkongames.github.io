@@ -31,9 +31,8 @@ It consists of the following effects:
 * [🔷 Shapes](#shapes), procedural stamps and halftone-style patterns driven by the image.
 * [⚪ Chrome](#chrome), liquid metal with fresnel, chromatic aberration and highlights.
 
-{{< alert color="light" >}}
-You can obtain each effect separately, but if you want multiple effects, you might be interested in **'[Weird BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price.
-{{< /alert >}}
+{{< badge title="You can obtain each effect separately, but if you want more effects, you might be interested in **'[WEIRD BUNDLE](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/weird-bundle-349038?aid=1101l9zFC&utm_source=aff)'** where you can find them all at a special price!" color="secondary">}}
+{.h3}
 
 ## Requirements
 
