@@ -50,7 +50,7 @@
     [home.feature]
         orientation = "horizontal"
         color = "primary"
-        width = 5
+        width = 7
         align = "start"
 # toml-docs-end home
 

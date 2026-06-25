@@ -1,0 +1,5 @@
+{{- $class := .Get "class" | default "" -}}
+{{- $wrapper := .Get "wrapper" | default "" -}}
+{{ partial "assets/crt-screen-start.html" (dict "class" (printf "%s %s crt-screen--text" $wrapper $class)) }}
+        {{ .Inner }}
+{{ partial "assets/crt-screen-end.html" . }}

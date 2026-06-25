@@ -1,0 +1,11 @@
+{{ partial "assets/crt-screen-start.html" . }}
+        {{ partial "assets/image.html" (dict
+            "url" .url
+            "ratio" .ratio
+            "sizes" .sizes
+            "wrapper" ""
+            "class" .imgClass
+            "title" .title
+            "priority" .priority
+        ) }}
+{{ partial "assets/crt-screen-end.html" . }}

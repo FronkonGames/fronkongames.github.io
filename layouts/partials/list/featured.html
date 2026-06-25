@@ -82,7 +82,10 @@
     {{ end }}
 {{- end -}}
 
-<div class="container-fluid p-0 {{ with site.Params.home.feature.color }} bg-{{ . }} bg-opacity-{{ site.Params.style.themeOpacity | default "25" | safeHTML }}{{ end }}">
+<div class="container-fluid p-0{{ if $page.Params.crt }} crt-screen crt-screen--hero{{ else }}{{ with site.Params.home.feature.color }} bg-{{ . }} bg-opacity-{{ site.Params.style.themeOpacity | default "25" | safeHTML }}{{ end }}{{ end }}">
+    {{- if $page.Params.crt -}}
+    <div class="crt-screen__output">
+    {{- end -}}
     <div class="container-xxl p-4 px-xxl-0 {{ if site.Params.home.fullCover }} fullcover{{ end }} d-flex flex-column">
         {{ if $breadcrumb }}
             <div>{{ partial "assets/breadcrumb.html" (dict "page" $page) }}</div>
@@ -116,4 +119,8 @@
             </div>
         {{ end }}
     </div>
+    {{- if $page.Params.crt -}}
+    </div>
+    {{ partial "assets/crt-screen-overlays.html" . }}
+    {{- end -}}
 </div>
