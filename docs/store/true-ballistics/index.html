@@ -430,6 +430,7 @@
         <li><a href="#customs-systems">Customs Systems</a></li>
       </ul>
     </li>
+    <li><a href="#utilities">Utilities</a></li>
     <li><a href="#simple-fps">Simple FPS</a></li>
     <li><a href="#support">Support</a></li>
   </ul>
@@ -545,13 +546,13 @@
 
 <p>A comprehensive, <strong>physically-accurate</strong> ballistics simulation system for Unity that provides <strong>realistic trajectories</strong>, <strong>ricochets</strong>, <strong>penetration</strong> mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.</p>
 <ul>
-<li><strong>Physically Accurate</strong>: Implements real-world ballistics physics including gravity, air resistance, drag models (G1, G2, G5, G6, G7, G8), and environmental effects.</li>
+<li><strong>Physically Accurate</strong>: Implements real-world ballistics physics including gravity, air resistance, the full G1–G8 drag model set, advanced spin drift, Coriolis effect, and environmental effects.</li>
 <li><strong>High Performance</strong>: Built on a custom lightweight Entity Component System (ECS) architecture with Unity Jobs and Burst compilation for optimal performance, capable of handling hundreds of simultaneous projectiles.</li>
 <li><strong>Realistic Ricochets</strong>: Physically-based bullet deflection with angle-dependent probability and energy retention based on material properties.</li>
 <li><strong>Advanced Penetration Mechanics</strong>: Energy-based projectile penetration through materials with realistic entry/exit behavior and stuck projectile handling.</li>
 <li><strong>Comprehensive Material System</strong>: Extensive surface interaction properties with material-specific ballistic characteristics for different surfaces.</li>
-<li><strong>Advanced Effects</strong>: Coriolis effect, spin drift, weather simulation, and atmospheric conditions.</li>
-<li><strong>Visual Feedback</strong>: Built-in tracer system and comprehensive debug visualization tools.</li>
+<li><strong>Advanced Effects</strong>: Coriolis effect, Litz-based spin drift (with bullet-type coefficients, McCoy&rsquo;s aerodynamic jump, transonic correction, yaw damping), headwind/crosswind decomposition, and the full 7-layer ICAO atmosphere up to 84 km.</li>
+<li><strong>Visual Feedback</strong>: Built-in tracer system (Built-in, URP, and HDRP shaders) and comprehensive debug visualization tools.</li>
 <li><strong>Extensive Weapons Database</strong>: 380+ real-world weapons with authentic ballistic data including pistols, rifles, shotguns, machine guns, and sniper rifles.</li>
 <li><strong>Educational FPS Demo</strong>: Complete SimpleFPS demo system showcasing all features with clean, documented code.</li>
 </ul>
@@ -624,6 +625,7 @@
 <p>Installation:</p>
 <ol>
 <li>Download and import the <code>True Ballistics</code> asset from the Unity Asset Store into your Unity project.</li>
+<li>The asset ships with <code>Built-in</code>, <code>URP</code>, and <code>HDRP</code> versions of the <code>Tracer</code> shader. The correct one is selected automatically based on the active render pipeline.</li>
 <li>No additional setup is required. The asset is ready to use out of the box!</li>
 </ol>
 
@@ -820,7 +822,7 @@
 <div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Get the manager instance</span>
 </span></span><span class="line"><span class="cl"><span class="n">BallisticsManager</span> <span class="n">manager</span> <span class="p">=</span> <span class="n">FindFirstObjectByType</span><span class="p">&lt;</span><span class="n">BallisticsManager</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Spawn a projectile</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Spawn a projectile (flat ground, or as part of a guided weapon system)</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">projectileEntity</span> <span class="p">=</span> <span class="n">manager</span><span class="p">.</span><span class="n">SpawnProjectile</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">weaponData</span><span class="p">,</span>          <span class="c1">// WeaponData ScriptableObject</span>
 </span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span>  <span class="c1">// Spawn position</span>
@@ -830,12 +832,32 @@
 </span></span><span class="line"><span class="cl">    <span class="m">1.0f</span>                 <span class="c1">// Velocity multiplier</span>
 </span></span><span class="line"><span class="cl"><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Spawn a projectile at an incline (e.g. shooting uphill or downhill). The angle</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// is added to the spawn rotation in the local pitch plane (positive = nose up).</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// PhysicsSystem folds gravity into the bore frame so the bullet drops less going</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// uphill and more going downhill, matching real-world behaviour.</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">uphillEntity</span> <span class="p">=</span> <span class="n">manager</span><span class="p">.</span><span class="n">SpawnProjectile</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">weaponData</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dispersionMultiplier</span><span class="p">:</span> <span class="m">1.0f</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">canJam</span><span class="p">:</span>               <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">initialVelMultiplier</span><span class="p">:</span> <span class="m">1.0f</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">shootingAngleDeg</span><span class="p">:</span>     <span class="m">30.0f</span>   <span class="c1">// 30° uphill</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Spawn pellets (for shotguns)</span>
 </span></span><span class="line"><span class="cl"><span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">pellets</span> <span class="p">=</span> <span class="n">manager</span><span class="p">.</span><span class="n">SpawnPellets</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">weaponData</span><span class="p">,</span>          <span class="c1">// WeaponData ScriptableObject</span>
 </span></span><span class="line"><span class="cl">    <span class="n">shellData</span><span class="p">,</span>           <span class="c1">// ShellData ScriptableObject</span>
 </span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span>  <span class="c1">// Spawn position</span>
-</span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">rotation</span>   <span class="c1">// Spawn rotation</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="p">,</span>  <span class="c1">// Spawn rotation</span>
+</span></span><span class="line"><span class="cl">    <span class="m">1.0f</span><span class="p">,</span>                <span class="c1">// Dispersion multiplier</span>
+</span></span><span class="line"><span class="cl">    <span class="kc">true</span><span class="p">,</span>                <span class="c1">// Can jam</span>
+</span></span><span class="line"><span class="cl">    <span class="m">1.0f</span><span class="p">,</span>                <span class="c1">// Velocity multiplier</span>
+</span></span><span class="line"><span class="cl">    <span class="m">1.0f</span><span class="p">,</span>                <span class="c1">// Spread coefficient</span>
+</span></span><span class="line"><span class="cl">    <span class="m">1.0f</span><span class="p">,</span>                <span class="c1">// Velocity multiplier</span>
+</span></span><span class="line"><span class="cl">    <span class="m">0.0f</span>                 <span class="c1">// Shooting angle (uphill/downhill)</span>
 </span></span><span class="line"><span class="cl"><span class="p">);</span></span></span></code></pre></div></div><p><code>weaponData</code> is another ScriptableObject (a file) with all the relevant data of a weapon model. You have more than 380 in the <code>FronkonGames/TrueBallistics/Data/Weapons</code> folder.</p>
 
 
@@ -1051,11 +1073,11 @@
 
 
 <div class="col-9 mx-auto"><img class="img-fluid "
-            src="/store/true-ballistics/weapondata_0-2800x3386.jpg"
+            src="/store/true-ballistics/weapondata_0-2800x4483.jpg"
             
             
-            srcset="/store/true-ballistics/weapondata_0-576x696.webp 576w, /store/true-ballistics/weapondata_0-768x929.webp 768w, /store/true-ballistics/weapondata_0-992x1199.webp 992w, /store/true-ballistics/weapondata_0-1200x1451.webp 1200w, /store/true-ballistics/weapondata_0-1400x1693.webp 1400w, /store/true-ballistics/weapondata_0-2800x3386.webp 2800w" sizes="100vw"
-            height="3386"
+            srcset="/store/true-ballistics/weapondata_0-576x922.webp 576w, /store/true-ballistics/weapondata_0-768x1230.webp 768w, /store/true-ballistics/weapondata_0-992x1588.webp 992w, /store/true-ballistics/weapondata_0-1200x1921.webp 1200w, /store/true-ballistics/weapondata_0-1400x2242.webp 1400w, /store/true-ballistics/weapondata_0-2800x4483.webp 2800w" sizes="100vw"
+            height="4483"
             width="2800"
             >
 </div><br>
@@ -1078,9 +1100,18 @@
 <li><code>Ammo</code>: The name of the ammo.</li>
 <li><code>Ammo Mass</code>: The mass of the ammo in kilograms.</li>
 <li><code>Ammo Diameter</code>: The diameter of the ammo in meters.</li>
-<li><code>Drag Model</code>: The drag model of the ammo.</li>
+<li><code>Drag Model</code>: The drag model of the ammo. One of <code>G1</code>, <code>G2</code>, <code>G3</code>, <code>G4</code>, <code>G5</code>, <code>G6</code>, <code>G7</code>, <code>G8</code>. <code>G1</code> and <code>G7</code> are the most common (G7 is preferred for modern boat-tail match bullets). <code>G3</code> covers flat-base lead bullets, <code>G4</code> is a theoretical/long-streamlined reference. The drag model is used together with the ballistic coefficient to compute drag in the physics step.</li>
 <li><code>Ammo Ballistic Coefficient</code>: The ballistic coefficient of the ammo.</li>
+<li><code>Bullet Model</code>: Optional bullet name (e.g. &ldquo;Sierra MatchKing BT&rdquo;, &ldquo;Hornady ELD Match&rdquo;). If set, used to resolve the projectile shape by substring match (&ldquo;boat&rdquo;/&ldquo;bt&rdquo; → BoatTail, &ldquo;round&rdquo;/&ldquo;rn&rdquo; → RoundNose, &ldquo;flat&rdquo;/&ldquo;fb&rdquo; → FlatBase). Falls back to the explicit <code>Shape</code> field if no match.</li>
+<li><code>Shape</code>: Projectile shape. <code>Spitzer</code> (default, sharp pointed), <code>RoundNose</code> (blunt), <code>FlatBase</code> (wadcutter/cast), <code>BoatTail</code> (modern match). Affects the transonic drag correction (critical Mach, drag-rise shape, wave drag factor) in <code>PhysicsSystem</code>. When <code>Bullet Model</code> is non-empty, the resolved shape wins.</li>
+<li><code>Use Transonic Correction</code>: If true, <code>PhysicsSystem</code> applies a physics-based transonic drag correction based on <code>Shape</code>. Disable if the G-table alone is known to be accurate enough for this bullet (rare).</li>
+<li><code>Bullet Type</code>: Bullet type for the advanced spin-drift model. One of <code>Default</code>, <code>Match</code> (Sierra MatchKing, etc.), <code>VLD</code> (very-low-drag sleek), <code>Hybrid</code> (hybrid ogive), <code>FlatBase</code>. Affects the Litz coefficient, McCoy&rsquo;s aerodynamic-jump factor, transonic correction, and yaw damping in <code>SpinDriftSystem</code>. <code>Default</code> uses the Match coefficients.</li>
+<li><code>Miller Stability Factor</code>: Miller SG (≥ 1.0 is stable). Set to 0 to disable the advanced spin-drift model and use the legacy force-based version. Typical 1.0–1.5 for rifle bullets. Can be computed from the bullet specs with <code>MillerStabilityUtility.Calculate</code>.</li>
+<li><code>Use Advanced Spin Drift</code>: If true (default), <code>SpinDriftSystem</code> uses the Litz-based advanced model. Disable to use the legacy force model.</li>
+<li><code>Bullet Length Calibers</code>: Bullet length in calibers (dimensionless). Used by <code>MillerStabilityUtility</code> to compute SG if the user doesn&rsquo;t set it directly. Typical 1.0–1.5 for rifle bullets.</li>
+<li><code>Miller Stability Constant</code>: Per-design factor for the Miller SG formula (C in the McCoy-style relation). 1.0 for standard projectiles, 1.5 for high-BC boat-tails that need less stability margin.</li>
 </ul>
+<p>When <code>Use Advanced Spin Drift</code> is true and <code>Miller Stability Factor</code> &gt; 0, the spawn pipeline also caches the air density (from <code>WeatherSystem</code>) and the bullet type into the runtime <code>SpinDriftComponent</code> so the hot path doesn&rsquo;t look them up.</p>
 
 <h2 id="systems" class="heading">Systems <a href="#systems" aria-labelledby="systems">
 
@@ -1186,21 +1217,24 @@
 
 
 <div class="col-9 mx-auto"><img class="img-fluid "
-            src="/store/true-ballistics/inspector_4-2800x1278.jpg"
+            src="/store/true-ballistics/inspector_4-2800x1734.jpg"
             
             
-            srcset="/store/true-ballistics/inspector_4-576x263.webp 576w, /store/true-ballistics/inspector_4-768x351.webp 768w, /store/true-ballistics/inspector_4-992x453.webp 992w, /store/true-ballistics/inspector_4-1200x548.webp 1200w, /store/true-ballistics/inspector_4-1400x639.webp 1400w, /store/true-ballistics/inspector_4-2800x1278.webp 2800w" sizes="100vw"
-            height="1278"
+            srcset="/store/true-ballistics/inspector_4-576x357.webp 576w, /store/true-ballistics/inspector_4-768x476.webp 768w, /store/true-ballistics/inspector_4-992x614.webp 992w, /store/true-ballistics/inspector_4-1200x743.webp 1200w, /store/true-ballistics/inspector_4-1400x867.webp 1400w, /store/true-ballistics/inspector_4-2800x1734.webp 2800w" sizes="100vw"
+            height="1734"
             width="2800"
             >
 </div><br>
-<p>The engine room of <code>True Ballistics</code>. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag and wind, then integrating the motion. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles <strong>would not move</strong>.</p>
+<p>The engine room of <code>True Ballistics</code>. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag (with full G1–G8 drag tables and the shape-aware transonic correction), wind, and per-bullet spin drift and Coriolis deflection; then integrates the motion with adaptive sub-stepping. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles <strong>would not move</strong>.</p>
 <p><strong>Features</strong>:</p>
 <ul>
 <li>Configurable gravity vector (supports other planets).</li>
-<li>Air density simulation with altitude effects.</li>
-<li>Multiple drag models (G1, G2, G5, G6, G7, G8).</li>
-<li>Wind effects and atmospheric conditions.</li>
+<li>Air density simulation with altitude effects, humidity, and barometric pressure (from <code>WeatherSystem</code> or the full 7-layer ICAO standard atmosphere).</li>
+<li>Drag models <strong>G1, G2, G3, G4, G5, G6, G7, G8</strong>.</li>
+<li>Shape-aware transonic drag correction: on top of the G-table drag, applies a Prandtl-Glauert compressibility factor, a transonic rise (1.0 at Mach 0.8 → per-shape factor at Mach 1.2), and a Whitcomb-style wave drag, all modulated by <code>WeaponData.Shape</code> (Spitzer / RoundNose / FlatBase / BoatTail). Use <code>WeatherSystem</code> or call <code>AtmosphericCorrection.Correct</code> to fold altitude/pressure/humidity into the BC itself.</li>
+<li>Uphill / downhill gravity projection: per-bullet <code>shootingAngle</code> in the bore frame, so the bullet drops less going uphill and more going downhill (matches real-world behaviour).</li>
+<li>Adaptive sub-stepping: integration subdivides the per-frame step when a projectile would otherwise travel further than <code>Max Step Size</code> (default 0.5 m), preventing velocity overshoot at the terminal phase, after ricochets, and for transonic high-BC rounds.</li>
+<li>Wind effects and atmospheric conditions from the active <code>WeatherSystem</code>.</li>
 <li>Burst-compiled jobs for performance.</li>
 </ul>
 <p><strong>Configuration</strong>:</p>
@@ -1223,7 +1257,7 @@
 <li>Callisto: 1.235 m/s².</li>
 </ul>
 </li>
-<li><code>Air Density</code>: Air density in kg/m³ (default value is 1.225 kg/m³ at sea level).
+<li><code>Air Density</code>: Air density in kg/m³ (default value is 1.225 kg/m³ at sea level). If a <code>WeatherSystem</code> is registered and active, this value is overridden by its computed air density.
 <ul>
 <li>0.001225 kg/m³ at 10,000 meters.</li>
 <li>0.0001225 kg/m³ at 20,000 meters.</li>
@@ -1232,7 +1266,7 @@
 <li>0.0000001225 kg/m³ at 50,000 meters.</li>
 </ul>
 </li>
-<li><code>Speed Of Sound</code>: Speed of sound for <a href="https://en.wikipedia.org/wiki/Mach_number">Mach</a> calculations (default value is 343 m/s at sea level).
+<li><code>Speed Of Sound</code>: Speed of sound for <a href="https://en.wikipedia.org/wiki/Mach_number">Mach</a> calculations (default value is 343 m/s at sea level). If a <code>WeatherSystem</code> is registered and active, this value is overridden by its computed speed of sound.
 <ul>
 <li>295 m/s at 10,000 meters.</li>
 <li>235 m/s at 20,000 meters.</li>
@@ -1242,6 +1276,8 @@
 </ul>
 </li>
 <li><code>Max Speed</code>: Maximum projectile velocity in m/s (default value is 299,792,458 m/s, the speed of light in vacuum).</li>
+<li><code>Max Step Size</code>: Maximum integration step in metres. The integrator subdivides the per-frame step when a projectile would travel further than this in <code>Time.deltaTime</code>, preventing velocity overshoot at the terminal phase, after ricochets, and for transonic high-BC rounds. 0 disables sub-stepping. Default 0.5 m.</li>
+<li><code>Transonic Correction</code>: Master switch for the shape-aware transonic drag correction. If false, <code>PhysicsSystem</code> skips the per-bullet transonic correction and uses the raw G-table value. Per-bullet override via <code>WeaponData.Use Transonic Correction</code>. Default on.</li>
 </ul>
 <p>If you add <code>Debug System</code> to the system list, you will be able to see the trajectories of the projectiles in the <code>Scene</code> window.</p>
 
@@ -2752,26 +2788,31 @@
 
 
 <div class="col-9 mx-auto"><img class="img-fluid "
-            src="/store/true-ballistics/inspector_10-2800x1599.jpg"
+            src="/store/true-ballistics/inspector_10-2800x1915.jpg"
             
             
-            srcset="/store/true-ballistics/inspector_10-576x329.webp 576w, /store/true-ballistics/inspector_10-768x439.webp 768w, /store/true-ballistics/inspector_10-992x567.webp 992w, /store/true-ballistics/inspector_10-1200x685.webp 1200w, /store/true-ballistics/inspector_10-1400x800.webp 1400w, /store/true-ballistics/inspector_10-2800x1599.webp 2800w" sizes="100vw"
-            height="1599"
+            srcset="/store/true-ballistics/inspector_10-576x394.webp 576w, /store/true-ballistics/inspector_10-768x525.webp 768w, /store/true-ballistics/inspector_10-992x678.webp 992w, /store/true-ballistics/inspector_10-1200x821.webp 1200w, /store/true-ballistics/inspector_10-1400x957.webp 1400w, /store/true-ballistics/inspector_10-2800x1915.webp 2800w" sizes="100vw"
+            height="1915"
             width="2800"
             >
 </div><br>
-<p>The atmosphere-tuner of <code>True Ballistics</code>. Each frame it recalculates air density from altitude and temperature, spices it with a precipitation factor, and exposes a scene-wide wind vector. The rest of the pipeline then uses those values to adjust drag, drop, and drift, making shots feel different on a misty mountain peak than on a hot, windless desert range. Without this system every map would behave like a calm sea-level firing line.</p>
+<p>The atmosphere-tuner of <code>True Ballistics</code>. Each frame it computes the full atmospheric profile: temperature, pressure, density, and speed of sound, using the <strong>7-layer ICAO Standard Atmosphere</strong> (Troposphere, Tropopause, Stratosphere 1 &amp; 2, Stratopause, Mesosphere 1 &amp; 2, valid from sea level to 84 km).</p>
+<p>The <code>temperature</code> and <code>barometerInHg</code> fields are treated as explicit station readings only when they differ from the ICAO sea-level defaults (15 °C, 29.53 inHg); otherwise the values are derived from <code>altitude</code> via the standard lapse rates. Humidity is folded in via the IAPWS-IF97 saturation-vapour-pressure formula with the IAPWS enhancement factor, the ideal-gas mixture law (separate dry-air and water-vapour densities), and the moist-air speed-of-sound correction. The rest of the pipeline then uses the computed density and speed of sound to adjust drag (via <code>WeaponData.Ammo Ballistic Coefficient</code> × <code>AtmosphericCorrection.Correct</code> if used), drop, and drift, making shots feel different on a misty mountain peak than on a hot, windless desert range. Without this system every map would behave like a calm sea-level firing line.</p>
 <p><strong>Features</strong>:</p>
 <ul>
-<li>Altitude-based air density.</li>
-<li>Temperature effects.</li>
+<li>Full 7-layer ICAO atmosphere (sea level to 84 km) with proper hydrostatic pressure integration between layer bases.</li>
+<li>Automatic override semantics for <code>temperature</code> and <code>barometerInHg</code> (they&rsquo;re used as station readings only if they differ from the ICAO defaults).</li>
+<li>Humidity-aware air density and speed of sound.</li>
 <li>Wind simulation.</li>
-<li>Precipitation effects.</li>
+<li>Precipitation effects (multiplies density by 1 + 0.1·precipitation, simulating a denser wet air).</li>
+<li>The cached air density and speed of sound are read by the advanced spin-drift model (used for the <code>sqrt(1.225/ρ)</code> normalisation in the Litz formula) and by the transonic drag correction (used for the Mach number).</li>
 </ul>
 <p><strong>Configuration</strong>:</p>
 <ul>
 <li><code>Altitude</code>: Altitude in meters.</li>
-<li><code>Temperature</code>: Temperature in Celsius.</li>
+<li><code>Temperature</code>: Temperature in Celsius. If left at 15.0 (the ICAO sea-level default), the temperature is derived from <code>altitude</code> via the ICAO lapse rates (-6.5 K/km troposphere, isothermal tropopause, +1 K/km stratosphere 1, +2.8 K/km stratosphere 2, &hellip;). Any other value is used as an explicit station reading.</li>
+<li><code>Barometer InHg</code>: Barometric pressure in inches of mercury. If left at 29.53 (the ICAO sea-level default), the pressure is derived from <code>altitude</code> via the hydrostatic equation. Any other value is used as an explicit station reading.</li>
+<li><code>Humidity</code>: Relative humidity as a fraction (0..1). Default 0.78 (ICAO standard).</li>
 <li><code>Wind</code>: Wind vector in m/s.
 <ul>
 <li>Smoke rises vertically: 0-0.5 m/s</li>
@@ -3009,7 +3050,7 @@
             width="2800"
             >
 </div><br>
-<p>The gyroscopic nudger of <code>True Ballistics</code>. After each physics step it estimates the <a href="https://en.wikipedia.org/wiki/Magnus_effect">Magnus-type side force</a> produced by a bullet’s spin (based on twist rate, caliber, barrel length and current speed), then nudges velocity and position to mimic real-world spin drift—those subtle inches of right/left drift you spot on long-range targets. Without this system rotated projectiles would fly straight, robbing marksmen of that final layer of authenticity.</p>
+<p>The gyroscopic nudger of <code>True Ballistics</code>. By default it uses the <strong>Litz empirical spin-drift model</strong> with bullet-type-specific coefficients, McCoy&rsquo;s aerodynamic jump correction, Courtney-style transonic correction, yaw damping, velocity-decay correction, and air-density normalisation to compute the cumulative lateral drift of each spinning bullet as a function of its flight time, Miller stability factor (SG), and bullet type. The system then applies the per-frame delta as a position offset. The legacy simple Magnus force model remains available as a fallback for when the advanced model is disabled (set <code>WeaponData.Miller Stability Factor</code> to 0 or <code>WeaponData.Use Advanced Spin Drift</code> to false). Without this system rotated projectiles would fly straight, robbing marksmen of that final layer of authenticity.</p>
 
 
 
@@ -3029,9 +3070,12 @@
     </div>
 <p><strong>Features</strong>:</p>
 <ul>
-<li>Magnus effect calculation.</li>
-<li>Twist rate considerations.</li>
-<li>Barrel length effects.</li>
+<li><strong>Advanced Litz model</strong> (default): <code>Drift = sign · (k·(SG+1.2)·TOF^1.83 · transonic · yaw · (v/v₀)^0.3 + jump) · sqrt(1.225/ρ)</code> with per-bullet-type coefficients (<code>Match</code> / <code>VLD</code> / <code>Hybrid</code> / <code>FlatBase</code>) for the Litz coefficient (1.15–1.35), McCoy jump factor (0.78–0.95), transonic factor (0.68–0.85), and yaw damping (0.88–0.95).</li>
+<li><strong>Legacy Magnus force model</strong> (fallback when <code>Miller Stability Factor</code> ≤ 0 or <code>Use Advanced Spin Drift</code> is off): force per frame proportional to spin rate, caliber, barrel length, and current speed, applied to both velocity and position.</li>
+<li>Twist rate considerations (twist in inches per turn).</li>
+<li>Barrel length effects (advanced model is independent of barrel length; legacy model includes a <code>(1 + L/100)</code> empirical factor).</li>
+<li>Air-density normalisation (advanced model), bullets drift more in thinner air.</li>
+<li>Transonic correction (advanced model), drift flattens through the transonic region per bullet type.</li>
 </ul>
 <p><strong>Configuration</strong>:</p>
 <ul>
@@ -3628,35 +3672,35 @@
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// Execution order (lower = earlier)</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="kt">int</span> <span class="n">ExecutionOrder</span> <span class="p">=&gt;</span> <span class="m">1500</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// System initialization</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Initialize</span><span class="p">(</span><span class="n">BallisticsManager</span> <span class="n">manager</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">base</span><span class="p">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">manager</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// Setup system resources</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// Called before physics update</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">PreTick</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaTime</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(!</span><span class="n">active</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// Pre-physics logic</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// Main system update</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Tick</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaTime</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(!</span><span class="n">active</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// Main system logic</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// Called after physics update</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">PostTick</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaTime</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(!</span><span class="n">active</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">      <span class="c1">// Post-physics logic</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// System cleanup</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">DeInitialize</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
@@ -3718,6 +3762,71 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="utilities" class="heading">Utilities <a href="#utilities" aria-labelledby="utilities">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p><code>True Ballistics</code> ships a set of small, dependency-free static utility classes under <code>Runtime/Utils/</code>. They&rsquo;re useful both at runtime (HUDs, debug visualisers, ballistic calculators) and as building blocks for custom systems.</p>
+<table>
+<thead>
+<tr>
+<th>Utility</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AtmosphericCorrection.Correct(bc, altitude, barometerInHg, temperatureC, humidity)</code></td>
+<td>Folds altitude, pressure, temperature, and humidity into a corrected BC using the IAPWS-IF97 model. Call this once when configuring a bullet to get the right BC for the current atmospheric conditions; <code>PhysicsSystem</code> will then apply the G-table drag on top.</td>
+</tr>
+<tr>
+<td><code>WindUtility.Decompose(worldWind, fireDirection, out headwind, out crosswind)</code></td>
+<td>Resolves a world-frame wind vector into the headwind and crosswind components experienced by a bullet fired in the given direction.</td>
+</tr>
+<tr>
+<td><code>WindUtility.ToWorldWind(speed, angle, fireDirection)</code></td>
+<td>Inverse: takes a (wind speed, wind angle) pair and a fire direction, returns a world-frame wind vector suitable for <code>WeatherSystem.wind</code>. Angle convention: 0° headwind, 90° right-to-left crosswind, 180° tailwind, 270° left-to-right.</td>
+</tr>
+<tr>
+<td><code>ZeroAngleUtility.Compute(dragModel, bc, mv, sightHeight, zeroRange, yIntercept, ...)</code></td>
+<td>Successive-approximation solver for the bore-elevation angle that places the bullet at the given intercept height at the given zero range.</td>
+</tr>
+<tr>
+<td><code>PBRUtility.Compute(dragModel, bc, mv, sightHeight, vitalSize, ...)</code></td>
+<td>Point-blank range solver: finds the bore-elevation angle placing the trajectory vertex at half the vital-zone size, then reports the min/max engagement range and the scope-in height at 100 m.</td>
+</tr>
+<tr>
+<td><code>AdvancedSpinDriftUtility.Compute(sg, timeOfFlight, velocity, mv, spinRate, ...)</code></td>
+<td>Cumulative lateral spin drift (Litz empirical model with bullet-type-specific coefficients, McCoy jump, transonic correction, yaw damping, velocity decay, density normalisation). Returned in metres.</td>
+</tr>
+<tr>
+<td><code>MillerStabilityUtility.Calculate(massGrains, mvFps, caliberInches, lengthCalibers, twistInchesPerTurn, designConstant)</code></td>
+<td>Computes the Miller SG (stability factor) for a bullet from its physical specs. Returns ≥ 1.0 for stable, &lt; 1.0 for unstable. <code>CalculateSI</code> is the SI-input overload.</td>
+</tr>
+<tr>
+<td><code>IcaoAtmosphere.Calculate(altitudeM, humidityFraction, tempOverrideC, pressOverrideHpa)</code></td>
+<td>Full 7-layer ICAO atmosphere: temperature K, pressure Pa, density kg/m³, speed of sound m/s.</td>
+</tr>
+<tr>
+<td><code>ProjectileShapeUtility.Resolve(bulletName, caliberInches, massGrains, dragModel)</code></td>
+<td>Resolves a <code>ProjectileShape</code> from an optional bullet name (substring match) and the drag model / calibre / mass heuristic.</td>
+</tr>
+</tbody>
+</table>
+<p>All utilities are <code>public static class</code> with <code>public static</code> methods; no instantiation required. They are pure functions, no side effects, no state.</p>
+
 <h2 id="simple-fps" class="heading">Simple FPS <a href="#simple-fps" aria-labelledby="simple-fps">
 
 
@@ -3954,6 +4063,7 @@
         <li><a href="#customs-systems">Customs Systems</a></li>
       </ul>
     </li>
+    <li><a href="#utilities">Utilities</a></li>
     <li><a href="#simple-fps">Simple FPS</a></li>
     <li><a href="#support">Support</a></li>
   </ul>

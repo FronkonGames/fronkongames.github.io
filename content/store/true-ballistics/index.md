@@ -14,13 +14,13 @@ thumbnail:
 
 A comprehensive, **physically-accurate** ballistics simulation system for Unity that provides **realistic trajectories**, **ricochets**, **penetration** mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.
 
-- **Physically Accurate**: Implements real-world ballistics physics including gravity, air resistance, drag models (G1, G2, G5, G6, G7, G8), and environmental effects.
+- **Physically Accurate**: Implements real-world ballistics physics including gravity, air resistance, the full G1–G8 drag model set, advanced spin drift, Coriolis effect, and environmental effects.
 - **High Performance**: Built on a custom lightweight Entity Component System (ECS) architecture with Unity Jobs and Burst compilation for optimal performance, capable of handling hundreds of simultaneous projectiles.
 - **Realistic Ricochets**: Physically-based bullet deflection with angle-dependent probability and energy retention based on material properties.
 - **Advanced Penetration Mechanics**: Energy-based projectile penetration through materials with realistic entry/exit behavior and stuck projectile handling.
 - **Comprehensive Material System**: Extensive surface interaction properties with material-specific ballistic characteristics for different surfaces.
-- **Advanced Effects**: Coriolis effect, spin drift, weather simulation, and atmospheric conditions.
-- **Visual Feedback**: Built-in tracer system and comprehensive debug visualization tools.
+- **Advanced Effects**: Coriolis effect, Litz-based spin drift (with bullet-type coefficients, McCoy's aerodynamic jump, transonic correction, yaw damping), headwind/crosswind decomposition, and the full 7-layer ICAO atmosphere up to 84 km.
+- **Visual Feedback**: Built-in tracer system (Built-in, URP, and HDRP shaders) and comprehensive debug visualization tools.
 - **Extensive Weapons Database**: 380+ real-world weapons with authentic ballistic data including pistols, rifles, shotguns, machine guns, and sniper rifles.
 - **Educational FPS Demo**: Complete SimpleFPS demo system showcasing all features with clean, documented code.
 
@@ -50,6 +50,7 @@ Requirements:
 Installation:
 
 1. Download and import the `True Ballistics` asset from the Unity Asset Store into your Unity project.
+2. The asset ships with `Built-in`, `URP`, and `HDRP` versions of the `Tracer` shader. The correct one is selected automatically based on the active render pipeline.
 3. No additional setup is required. The asset is ready to use out of the box!
 
 ## How to Use
@@ -80,7 +81,7 @@ Once these three systems are added, you can fire a projectile in this way:
 // Get the manager instance
 BallisticsManager manager = FindFirstObjectByType<BallisticsManager>();
 
-// Spawn a projectile
+// Spawn a projectile (flat ground, or as part of a guided weapon system)
 int projectileEntity = manager.SpawnProjectile(
     weaponData,          // WeaponData ScriptableObject
     transform.position,  // Spawn position
@@ -90,12 +91,32 @@ int projectileEntity = manager.SpawnProjectile(
     1.0f                 // Velocity multiplier
 );
 
+// Spawn a projectile at an incline (e.g. shooting uphill or downhill). The angle
+// is added to the spawn rotation in the local pitch plane (positive = nose up).
+// PhysicsSystem folds gravity into the bore frame so the bullet drops less going
+// uphill and more going downhill, matching real-world behaviour.
+int uphillEntity = manager.SpawnProjectile(
+    weaponData,
+    transform.position,
+    transform.rotation,
+    dispersionMultiplier: 1.0f,
+    canJam:               true,
+    initialVelMultiplier: 1.0f,
+    shootingAngleDeg:     30.0f   // 30° uphill
+);
+
 // Spawn pellets (for shotguns)
 List<int> pellets = manager.SpawnPellets(
     weaponData,          // WeaponData ScriptableObject
     shellData,           // ShellData ScriptableObject
     transform.position,  // Spawn position
-    transform.rotation   // Spawn rotation
+    transform.rotation,  // Spawn rotation
+    1.0f,                // Dispersion multiplier
+    true,                // Can jam
+    1.0f,                // Velocity multiplier
+    1.0f,                // Spread coefficient
+    1.0f,                // Velocity multiplier
+    0.0f                 // Shooting angle (uphill/downhill)
 );
 ```
 
@@ -131,8 +152,18 @@ This is an example of the weapons included:
 - `Ammo`: The name of the ammo.
 - `Ammo Mass`: The mass of the ammo in kilograms.
 - `Ammo Diameter`: The diameter of the ammo in meters.
-- `Drag Model`: The drag model of the ammo.
+- `Drag Model`: The drag model of the ammo. One of `G1`, `G2`, `G3`, `G4`, `G5`, `G6`, `G7`, `G8`. `G1` and `G7` are the most common (G7 is preferred for modern boat-tail match bullets). `G3` covers flat-base lead bullets, `G4` is a theoretical/long-streamlined reference. The drag model is used together with the ballistic coefficient to compute drag in the physics step.
 - `Ammo Ballistic Coefficient`: The ballistic coefficient of the ammo.
+- `Bullet Model`: Optional bullet name (e.g. "Sierra MatchKing BT", "Hornady ELD Match"). If set, used to resolve the projectile shape by substring match ("boat"/"bt" → BoatTail, "round"/"rn" → RoundNose, "flat"/"fb" → FlatBase). Falls back to the explicit `Shape` field if no match.
+- `Shape`: Projectile shape. `Spitzer` (default, sharp pointed), `RoundNose` (blunt), `FlatBase` (wadcutter/cast), `BoatTail` (modern match). Affects the transonic drag correction (critical Mach, drag-rise shape, wave drag factor) in `PhysicsSystem`. When `Bullet Model` is non-empty, the resolved shape wins.
+- `Use Transonic Correction`: If true, `PhysicsSystem` applies a physics-based transonic drag correction based on `Shape`. Disable if the G-table alone is known to be accurate enough for this bullet (rare).
+- `Bullet Type`: Bullet type for the advanced spin-drift model. One of `Default`, `Match` (Sierra MatchKing, etc.), `VLD` (very-low-drag sleek), `Hybrid` (hybrid ogive), `FlatBase`. Affects the Litz coefficient, McCoy's aerodynamic-jump factor, transonic correction, and yaw damping in `SpinDriftSystem`. `Default` uses the Match coefficients.
+- `Miller Stability Factor`: Miller SG (≥ 1.0 is stable). Set to 0 to disable the advanced spin-drift model and use the legacy force-based version. Typical 1.0–1.5 for rifle bullets. Can be computed from the bullet specs with `MillerStabilityUtility.Calculate`.
+- `Use Advanced Spin Drift`: If true (default), `SpinDriftSystem` uses the Litz-based advanced model. Disable to use the legacy force model.
+- `Bullet Length Calibers`: Bullet length in calibers (dimensionless). Used by `MillerStabilityUtility` to compute SG if the user doesn't set it directly. Typical 1.0–1.5 for rifle bullets.
+- `Miller Stability Constant`: Per-design factor for the Miller SG formula (C in the McCoy-style relation). 1.0 for standard projectiles, 1.5 for high-BC boat-tails that need less stability margin.
+
+When `Use Advanced Spin Drift` is true and `Miller Stability Factor` > 0, the spawn pipeline also caches the air density (from `WeatherSystem`) and the bullet type into the runtime `SpinDriftComponent` so the hot path doesn't look them up.
 
 ## Systems
 
@@ -146,13 +177,16 @@ This is an example of the weapons included:
 
 {{< image src="inspector_4.jpg" wrapper="col-9 mx-auto">}}
 
-The engine room of `True Ballistics`. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag and wind, then integrating the motion. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles **would not move**.
+The engine room of `True Ballistics`. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag (with full G1–G8 drag tables and the shape-aware transonic correction), wind, and per-bullet spin drift and Coriolis deflection; then integrates the motion with adaptive sub-stepping. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles **would not move**.
 
 **Features**:
 - Configurable gravity vector (supports other planets).
-- Air density simulation with altitude effects.
-- Multiple drag models (G1, G2, G5, G6, G7, G8).
-- Wind effects and atmospheric conditions.
+- Air density simulation with altitude effects, humidity, and barometric pressure (from `WeatherSystem` or the full 7-layer ICAO standard atmosphere).
+- Drag models **G1, G2, G3, G4, G5, G6, G7, G8**.
+- Shape-aware transonic drag correction: on top of the G-table drag, applies a Prandtl-Glauert compressibility factor, a transonic rise (1.0 at Mach 0.8 → per-shape factor at Mach 1.2), and a Whitcomb-style wave drag, all modulated by `WeaponData.Shape` (Spitzer / RoundNose / FlatBase / BoatTail). Use `WeatherSystem` or call `AtmosphericCorrection.Correct` to fold altitude/pressure/humidity into the BC itself.
+- Uphill / downhill gravity projection: per-bullet `shootingAngle` in the bore frame, so the bullet drops less going uphill and more going downhill (matches real-world behaviour).
+- Adaptive sub-stepping: integration subdivides the per-frame step when a projectile would otherwise travel further than `Max Step Size` (default 0.5 m), preventing velocity overshoot at the terminal phase, after ricochets, and for transonic high-BC rounds.
+- Wind effects and atmospheric conditions from the active `WeatherSystem`.
 - Burst-compiled jobs for performance.
 
 **Configuration**:
@@ -171,19 +205,21 @@ The engine room of `True Ballistics`. Every frame it gives each projectile a new
   - Europa: 1.315 m/s².
   - Ganymede: 1.428 m/s².
   - Callisto: 1.235 m/s².
-- `Air Density`: Air density in kg/m³ (default value is 1.225 kg/m³ at sea level).
+- `Air Density`: Air density in kg/m³ (default value is 1.225 kg/m³ at sea level). If a `WeatherSystem` is registered and active, this value is overridden by its computed air density.
   - 0.001225 kg/m³ at 10,000 meters.
   - 0.0001225 kg/m³ at 20,000 meters.
   - 0.00001225 kg/m³ at 30,000 meters.
   - 0.000001225 kg/m³ at 40,000 meters.
   - 0.0000001225 kg/m³ at 50,000 meters.
-- `Speed Of Sound`: Speed of sound for [Mach](https://en.wikipedia.org/wiki/Mach_number) calculations (default value is 343 m/s at sea level).
+- `Speed Of Sound`: Speed of sound for [Mach](https://en.wikipedia.org/wiki/Mach_number) calculations (default value is 343 m/s at sea level). If a `WeatherSystem` is registered and active, this value is overridden by its computed speed of sound.
   - 295 m/s at 10,000 meters.
   - 235 m/s at 20,000 meters.
   - 196 m/s at 30,000 meters.
   - 167 m/s at 40,000 meters.
   - 145 m/s at 50,000 meters.
 - `Max Speed`: Maximum projectile velocity in m/s (default value is 299,792,458 m/s, the speed of light in vacuum).
+- `Max Step Size`: Maximum integration step in metres. The integrator subdivides the per-frame step when a projectile would travel further than this in `Time.deltaTime`, preventing velocity overshoot at the terminal phase, after ricochets, and for transonic high-BC rounds. 0 disables sub-stepping. Default 0.5 m.
+- `Transonic Correction`: Master switch for the shape-aware transonic drag correction. If false, `PhysicsSystem` skips the per-bullet transonic correction and uses the raw G-table value. Per-bullet override via `WeaponData.Use Transonic Correction`. Default on.
 
 If you add `Debug System` to the system list, you will be able to see the trajectories of the projectiles in the `Scene` window.
 
@@ -454,17 +490,23 @@ Try to make the right side of the tail texture the same size as the head texture
 
 {{< image src="inspector_10.jpg" wrapper="col-9 mx-auto">}}
 
-The atmosphere-tuner of `True Ballistics`. Each frame it recalculates air density from altitude and temperature, spices it with a precipitation factor, and exposes a scene-wide wind vector. The rest of the pipeline then uses those values to adjust drag, drop, and drift, making shots feel different on a misty mountain peak than on a hot, windless desert range. Without this system every map would behave like a calm sea-level firing line.
+The atmosphere-tuner of `True Ballistics`. Each frame it computes the full atmospheric profile: temperature, pressure, density, and speed of sound, using the **7-layer ICAO Standard Atmosphere** (Troposphere, Tropopause, Stratosphere 1 & 2, Stratopause, Mesosphere 1 & 2, valid from sea level to 84 km).
+
+The `temperature` and `barometerInHg` fields are treated as explicit station readings only when they differ from the ICAO sea-level defaults (15 °C, 29.53 inHg); otherwise the values are derived from `altitude` via the standard lapse rates. Humidity is folded in via the IAPWS-IF97 saturation-vapour-pressure formula with the IAPWS enhancement factor, the ideal-gas mixture law (separate dry-air and water-vapour densities), and the moist-air speed-of-sound correction. The rest of the pipeline then uses the computed density and speed of sound to adjust drag (via `WeaponData.Ammo Ballistic Coefficient` × `AtmosphericCorrection.Correct` if used), drop, and drift, making shots feel different on a misty mountain peak than on a hot, windless desert range. Without this system every map would behave like a calm sea-level firing line.
 
 **Features**:
-- Altitude-based air density.
-- Temperature effects.
+- Full 7-layer ICAO atmosphere (sea level to 84 km) with proper hydrostatic pressure integration between layer bases.
+- Automatic override semantics for `temperature` and `barometerInHg` (they're used as station readings only if they differ from the ICAO defaults).
+- Humidity-aware air density and speed of sound.
 - Wind simulation.
-- Precipitation effects.
+- Precipitation effects (multiplies density by 1 + 0.1·precipitation, simulating a denser wet air).
+- The cached air density and speed of sound are read by the advanced spin-drift model (used for the `sqrt(1.225/ρ)` normalisation in the Litz formula) and by the transonic drag correction (used for the Mach number).
 
 **Configuration**:
 - `Altitude`: Altitude in meters.
-- `Temperature`: Temperature in Celsius.
+- `Temperature`: Temperature in Celsius. If left at 15.0 (the ICAO sea-level default), the temperature is derived from `altitude` via the ICAO lapse rates (-6.5 K/km troposphere, isothermal tropopause, +1 K/km stratosphere 1, +2.8 K/km stratosphere 2, ...). Any other value is used as an explicit station reading.
+- `Barometer InHg`: Barometric pressure in inches of mercury. If left at 29.53 (the ICAO sea-level default), the pressure is derived from `altitude` via the hydrostatic equation. Any other value is used as an explicit station reading.
+- `Humidity`: Relative humidity as a fraction (0..1). Default 0.78 (ICAO standard).
 - `Wind`: Wind vector in m/s.
   - Smoke rises vertically: 0-0.5 m/s
   - Smoke drifts slightly: 0.5-1.5 m/s
@@ -510,16 +552,19 @@ This system is only noticeable in **long distance shots**. If your project does 
 
 {{< image src="inspector_12.jpg" wrapper="col-9 mx-auto">}}
 
-The gyroscopic nudger of `True Ballistics`. After each physics step it estimates the [Magnus-type side force](https://en.wikipedia.org/wiki/Magnus_effect) produced by a bullet’s spin (based on twist rate, caliber, barrel length and current speed), then nudges velocity and position to mimic real-world spin drift—those subtle inches of right/left drift you spot on long-range targets. Without this system rotated projectiles would fly straight, robbing marksmen of that final layer of authenticity.
+The gyroscopic nudger of `True Ballistics`. By default it uses the **Litz empirical spin-drift model** with bullet-type-specific coefficients, McCoy's aerodynamic jump correction, Courtney-style transonic correction, yaw damping, velocity-decay correction, and air-density normalisation to compute the cumulative lateral drift of each spinning bullet as a function of its flight time, Miller stability factor (SG), and bullet type. The system then applies the per-frame delta as a position offset. The legacy simple Magnus force model remains available as a fallback for when the advanced model is disabled (set `WeaponData.Miller Stability Factor` to 0 or `WeaponData.Use Advanced Spin Drift` to false). Without this system rotated projectiles would fly straight, robbing marksmen of that final layer of authenticity.
 
 {{< alert color="light" >}}
 This system is only noticeable in **long distance shots**. If your project does not use them, **you can ignore it**.
-{{< /alert >}}
+{{</ alert >}}
 
 **Features**:
-- Magnus effect calculation.
-- Twist rate considerations.
-- Barrel length effects.
+- **Advanced Litz model** (default): `Drift = sign · (k·(SG+1.2)·TOF^1.83 · transonic · yaw · (v/v₀)^0.3 + jump) · sqrt(1.225/ρ)` with per-bullet-type coefficients (`Match` / `VLD` / `Hybrid` / `FlatBase`) for the Litz coefficient (1.15–1.35), McCoy jump factor (0.78–0.95), transonic factor (0.68–0.85), and yaw damping (0.88–0.95).
+- **Legacy Magnus force model** (fallback when `Miller Stability Factor` ≤ 0 or `Use Advanced Spin Drift` is off): force per frame proportional to spin rate, caliber, barrel length, and current speed, applied to both velocity and position.
+- Twist rate considerations (twist in inches per turn).
+- Barrel length effects (advanced model is independent of barrel length; legacy model includes a `(1 + L/100)` empirical factor).
+- Air-density normalisation (advanced model), bullets drift more in thinner air.
+- Transonic correction (advanced model), drift flattens through the transonic region per bullet type.
 
 **Configuration**:
 - `Drift Factor`: Overall drift scaling.
@@ -619,35 +664,35 @@ public class CustomSystem : SystemBase
 {
   // Execution order (lower = earlier)
   public override int ExecutionOrder => 1500;
-    
+
   // System initialization
   public override void Initialize(BallisticsManager manager)
   {
       base.Initialize(manager);
       // Setup system resources
   }
-    
+
   // Called before physics update
   public override void PreTick(float deltaTime)
   {
       if (!active) return;
       // Pre-physics logic
   }
-    
+
   // Main system update
   public override void Tick(float deltaTime)
   {
       if (!active) return;
       // Main system logic
   }
-    
+
   // Called after physics update
   public override void PostTick(float deltaTime)
   {
       if (!active) return;
       // Post-physics logic
   }
-    
+
   // System cleanup
   public override void DeInitialize()
   {
@@ -716,6 +761,24 @@ public class GravityWellSystem : SystemBase
 }
 ```
 
+## Utilities
+
+`True Ballistics` ships a set of small, dependency-free static utility classes under `Runtime/Utils/`. They're useful both at runtime (HUDs, debug visualisers, ballistic calculators) and as building blocks for custom systems.
+
+| Utility | What it does |
+|---|---|
+| `AtmosphericCorrection.Correct(bc, altitude, barometerInHg, temperatureC, humidity)` | Folds altitude, pressure, temperature, and humidity into a corrected BC using the IAPWS-IF97 model. Call this once when configuring a bullet to get the right BC for the current atmospheric conditions; `PhysicsSystem` will then apply the G-table drag on top. |
+| `WindUtility.Decompose(worldWind, fireDirection, out headwind, out crosswind)` | Resolves a world-frame wind vector into the headwind and crosswind components experienced by a bullet fired in the given direction. |
+| `WindUtility.ToWorldWind(speed, angle, fireDirection)` | Inverse: takes a (wind speed, wind angle) pair and a fire direction, returns a world-frame wind vector suitable for `WeatherSystem.wind`. Angle convention: 0° headwind, 90° right-to-left crosswind, 180° tailwind, 270° left-to-right. |
+| `ZeroAngleUtility.Compute(dragModel, bc, mv, sightHeight, zeroRange, yIntercept, ...)` | Successive-approximation solver for the bore-elevation angle that places the bullet at the given intercept height at the given zero range. |
+| `PBRUtility.Compute(dragModel, bc, mv, sightHeight, vitalSize, ...)` | Point-blank range solver: finds the bore-elevation angle placing the trajectory vertex at half the vital-zone size, then reports the min/max engagement range and the scope-in height at 100 m. |
+| `AdvancedSpinDriftUtility.Compute(sg, timeOfFlight, velocity, mv, spinRate, ...)` | Cumulative lateral spin drift (Litz empirical model with bullet-type-specific coefficients, McCoy jump, transonic correction, yaw damping, velocity decay, density normalisation). Returned in metres. |
+| `MillerStabilityUtility.Calculate(massGrains, mvFps, caliberInches, lengthCalibers, twistInchesPerTurn, designConstant)` | Computes the Miller SG (stability factor) for a bullet from its physical specs. Returns ≥ 1.0 for stable, < 1.0 for unstable. `CalculateSI` is the SI-input overload. |
+| `IcaoAtmosphere.Calculate(altitudeM, humidityFraction, tempOverrideC, pressOverrideHpa)` | Full 7-layer ICAO atmosphere: temperature K, pressure Pa, density kg/m³, speed of sound m/s. |
+| `ProjectileShapeUtility.Resolve(bulletName, caliberInches, massGrains, dragModel)` | Resolves a `ProjectileShape` from an optional bullet name (substring match) and the drag model / calibre / mass heuristic. |
+
+All utilities are `public static class` with `public static` methods; no instantiation required. They are pure functions, no side effects, no state.
+
 ## Simple FPS
 
 {{< image src="simplefps_0.jpg" wrapper="col-9 mx-auto">}}
@@ -730,9 +793,10 @@ Because each piece of behaviour lives in its own MonoBehaviour (input, movement,
 Although the package is fully functional, it deliberately avoids sophisticated gameplay systems; **its goal is to be a clean**, minimal reference you can dissect, copy into prototypes or use to validate weapon settings before integrating `True Ballistics` into your own project.
 
 **No official support is offered beyond this educational purpose**.
-{{< /alert >}}
+{{</ alert >}}
 
 ---
+
 ## Support
 
 Do you have any problem or any suggestions? Send me an email to **fronkongames@gmail.com** and I'll be happy to help you.
