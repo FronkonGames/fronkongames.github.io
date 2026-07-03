@@ -1,7 +1,7 @@
 ---
 author: Martin Bustos
 title: Design Patterns In Game Development
-date: 2
+date: 1
 description: A design pattern proposes a solution to a problem, that is reusable and can be used for other similar problems
 tags: ["blog", "gamedev", "design", "pattern"]
 metadata: none

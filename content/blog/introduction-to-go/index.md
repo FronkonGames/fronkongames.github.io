@@ -1,7 +1,7 @@
 ---
 author: Martin Bustos
 title: Introduction To Go
-date: 3
+date: 2
 description: The oldest board game still played today
 tags: ["blog", "go"]
 metadata: none

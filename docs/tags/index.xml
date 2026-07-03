@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Wed, 24 Jun 2026 22:56:13 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 03:00:50 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Store</title>
@@ -21,6 +21,48 @@
       <link>https://fronkongames.github.io/tags/unity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/unity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Burst</title>
+      <link>https://fronkongames.github.io/tags/burst/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/burst/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Oriented</title>
+      <link>https://fronkongames.github.io/tags/data-oriented/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/data-oriented/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DOTS</title>
+      <link>https://fronkongames.github.io/tags/dots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/dots/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ECS</title>
+      <link>https://fronkongames.github.io/tags/ecs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/ecs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Parallel</title>
+      <link>https://fronkongames.github.io/tags/parallel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/parallel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>URP</title>
+      <link>https://fronkongames.github.io/tags/urp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/urp/</guid>
       <description></description>
     </item>
     <item>
@@ -66,6 +108,13 @@
       <description></description>
     </item>
     <item>
+      <title>Blog</title>
+      <link>https://fronkongames.github.io/tags/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>C#</title>
       <link>https://fronkongames.github.io/tags/c%23/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -94,6 +143,20 @@
       <description></description>
     </item>
     <item>
+      <title>Ai</title>
+      <link>https://fronkongames.github.io/tags/ai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Films</title>
+      <link>https://fronkongames.github.io/tags/films/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/films/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Glitch</title>
       <link>https://fronkongames.github.io/tags/glitch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -108,10 +171,24 @@
       <description></description>
     </item>
     <item>
-      <title>Blog</title>
-      <link>https://fronkongames.github.io/tags/blog/</link>
+      <title>Letterboxd</title>
+      <link>https://fronkongames.github.io/tags/letterboxd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/blog/</guid>
+      <guid>https://fronkongames.github.io/tags/letterboxd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Submarine</title>
+      <link>https://fronkongames.github.io/tags/submarine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/submarine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Submarines</title>
+      <link>https://fronkongames.github.io/tags/submarines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/submarines/</guid>
       <description></description>
     </item>
     <item>
@@ -154,13 +231,6 @@
       <link>https://fronkongames.github.io/tags/film/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/film/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Go</title>
-      <link>https://fronkongames.github.io/tags/go/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/go/</guid>
       <description></description>
     </item>
     <item>
@@ -213,10 +283,10 @@
       <description></description>
     </item>
     <item>
-      <title>Design</title>
-      <link>https://fronkongames.github.io/tags/design/</link>
+      <title>Go</title>
+      <link>https://fronkongames.github.io/tags/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/design/</guid>
+      <guid>https://fronkongames.github.io/tags/go/</guid>
       <description></description>
     </item>
     <item>
@@ -224,6 +294,13 @@
       <link>https://fronkongames.github.io/tags/palette/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/palette/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design</title>
+      <link>https://fronkongames.github.io/tags/design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/design/</guid>
       <description></description>
     </item>
     <item>

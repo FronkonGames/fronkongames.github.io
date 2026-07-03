@@ -1,0 +1,1559 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="facebook-domain-verification" content="hvhinuv5fauzwpfr84xb27vbob29xv">
+    <meta name="generator" content="Hugo 0.128.0">
+    <meta name="theme" content="Hinode 0.24.0-beta3">
+    
+
+
+
+
+
+    
+    
+<link rel="stylesheet" href="/css/main.min.f412b77e222d0a021b3642d8343c28bf87dd3898cfe93a422a9718a0be45c640.css" integrity="sha256-9BK3fiItCgIbNkLYNDwov4fdOJjP6TpCKpcYoL5FxkA=" crossorigin="anonymous">
+    
+        
+    
+
+
+
+    
+    
+<link rel="stylesheet" href="/css/mermaid.min.d36e12bdd04ebd4e990673c46b3f80a10bf359f461c1b5fb6ad02805afbc3fac.css" integrity="sha256-024SvdBOvU6ZBnPEaz+AoQvzWfRhwbX7atAoBa+8P6w=" crossorigin="anonymous">
+        
+        <link rel="preload" href="/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+
+
+
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Fronkon Games - APECS</title>
+    <meta name="description" content="A ECS with archetype chunk storage, type-safe queries, deferred command buffers and transient events">
+
+<link rel="canonical" href="https://fronkongames.github.io/projects/apecs/">
+
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="website">
+<meta property="og:title" content="APECS">
+<meta property="og:description" content="A ECS with archetype chunk storage, type-safe queries, deferred command buffers and transient events">
+<meta property="og:url" content="https://fronkongames.github.io/projects/apecs/">
+<meta property="og:site_name" content="Fronkon Games">
+<meta property="og:updated_time" content="1970-01-01T01:01:50+01:00">
+    <meta property="og:image" content="https://fronkongames.github.io/img/apecs/apecs.png">
+<meta property="og:image:alt" content="APECS">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:title" content="APECS">
+<meta name="twitter:description" content="A ECS with archetype chunk storage, type-safe queries, deferred command buffers and transient events">
+<meta name="twitter:image" content="https://fronkongames.github.io/img/apecs/apecs.png">
+<meta name="twitter:image:alt" content="APECS">
+<link rel="alternate" type="application/rss&#43;xml" href="https://fronkongames.github.io/projects/apecs/index.xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://fronkongames.github.io/#/schema/organization/1",
+      "name": "Fronkon Games",
+      "url": "https://fronkongames.github.io/",
+      "sameAs": [
+        "https://x.com/fronkongames"
+        , "https://www.linkedin.com/in/martinbr"
+        , "https://github.com/FronkonGames"
+        ],
+      "image": {
+          "@type": "ImageObject",
+          "@id": "https://fronkongames.github.io/#/schema/image/1",
+          "url": "https://fronkongames.github.io/\u003cnil\u003e",
+          "width": null ,
+          "height": null ,
+          "caption": "Fronkon Games"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://fronkongames.github.io/#/schema/website/1",
+      "url": "https://fronkongames.github.io/",
+      "name": "Fronkon Games",
+      "description": "Hi! I\u0027m Martin Bustos, an indie game developer and asset store publisher",
+      "publisher": {
+          "@id": "https://fronkongames.github.io/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://fronkongames.github.io/projects/apecs/",
+      "url": "https://fronkongames.github.io/projects/apecs/",
+      "name": "APECS",
+      "description": "A ECS with archetype chunk storage, type-safe queries, deferred command buffers and transient events",
+      "isPartOf": {
+        "@id": "https://fronkongames.github.io/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://fronkongames.github.io/#/schema/organization/1"
+        },
+      "datePublished": "1970-01-01T01:01:50CET",
+      "dateModified": "1970-01-01T01:01:50CET",
+      "breadcrumb": {
+        "@id": "https://fronkongames.github.io/projects/apecs/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://fronkongames.github.io/projects/apecs/#/schema/image/2"
+      },
+      "inLanguage": "es-ES",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://fronkongames.github.io/projects/apecs/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fronkongames.github.io/projects/apecs/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://fronkongames.github.io/",
+          "url": "https://fronkongames.github.io/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://fronkongames.github.io/projects/",
+          "url": "https://fronkongames.github.io/projects/",
+          "name": "Projects"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@id": "https://fronkongames.github.io/projects/apecs/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://fronkongames.github.io/projects/apecs/#/schema/image/2",
+          "url": "https://fronkongames.github.io/img/apecs/apecs.png",
+          "contentUrl": "https://fronkongames.github.io/img/apecs/apecs.png",
+          "caption": "APECS"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_16x16_resize_catmullrom_3.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_32x32_resize_catmullrom_3.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_48x48_resize_catmullrom_3.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_hu6d8cf4f9ec6d53de5a2189901820c862_195725_180x0_resize_catmullrom_3.png">
+    
+
+
+        <link rel="stylesheet" href="/css/custom-effects.css">
+    </head>
+
+    <body>
+<script src="/js/critical.bundle.min.57fd662a1eb64879c3dcc7ac7c5f7b312c030b3939273e3b14b385d824f9458c.js" integrity="sha256-V/1mKh62SHnD3MesfF97MSwDCzk5Jz47FLOF2CT5RYw=" crossorigin="anonymous"></script>
+      <script data-goatcounter="https://fronkongames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><div class="d-flex flex-column min-vh-100">
+            <div class="d-flex flex-column ">
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid fixed-top p-0">
+
+
+
+
+
+
+<nav class="navbar p-4 bg-body navbar-fixed-top navbar-expand-md"
+        
+        
+        >
+        <div class="container-xxl p-0">
+            <div class="d-flex navbar-container justify-content-center">
+                
+                <div class="d-flex align-items-center">
+                        <button class="navbar-toggler collapsed p-0 mx-auto invisible fw-30" type="button">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-ellipsis fa-fw"></i> --><svg class="svg-inline--fa fas fa-ellipsis fa-fw" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
+
+    
+</button></div>
+        
+                
+                <div class="mx-auto">
+                    <a class="navbar-brand" href="/" aria-label="Home">
+                            <img src="/img/logo_icon.png" alt="Fronkon Games" height="40"></a>
+                </div>
+        
+                
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler main-nav-toggler collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-0-collapse"
+                        aria-controls="navbar-0" aria-expanded="false" aria-label="Toggle main navigation">
+                        <span class="toggler-icon top-bar emphasis"></span>
+                        <span class="toggler-icon middle-bar emphasis"></span>
+                        <span class="toggler-icon bottom-bar emphasis"></span>
+                    </button>
+                </div>
+            </div>
+    
+            <div class="navbar-collapse collapse" id="navbar-0-collapse">
+                <div class="d-flex flex-fill ms-md-3">
+    <form class="search flex-fill position-relative me-auto">
+        <input class="search-input form-control is-search" type="search" placeholder="Search this site" aria-label="Search this site" autocomplete="off">
+        <div class="search-suggestions shadow bg-body rounded d-none" data-no-results="No results for"></div>
+    </form>
+</div>
+
+                <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link" 
+        
+        data-nav="main" data-nav-main="store" 
+        href="/store/" ><strong><span >STORE</span></strong>&nbsp;</a>
+</li>
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link active" 
+        
+        data-nav="main" data-nav-main="projects" 
+        href="/projects/" ><strong><span  class="active">PROJECTS</span></strong>&nbsp;</a>
+</li>
+
+                        <li class="nav-item">
+
+
+
+
+
+
+
+
+    <a class="nav-link" 
+        
+        data-nav="main" data-nav-main="blog" 
+        href="/blog/" ><strong><span >BLOG</span></strong>&nbsp;</a>
+</li>
+                    
+
+                    </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="main-content">
+                    
+    
+
+
+
+</div>
+
+                
+            </div>
+            
+                <div class="container-xxl p-0 px-xxl-0">
+                <div>
+
+
+
+
+
+
+
+
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                
+                    <li class="breadcrumb-item"><a href="/projects/">Projects</a></li>
+                <li class="breadcrumb-item active" aria-current="page">APECS</li>
+        </ol>
+    </nav>
+</div>
+            <div class="row row-cols-1 row-cols-md-2">
+    <div class="col-12 col-md-9">
+        
+            
+              <center>
+                
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-6 mx-auto"><img class="img-fluid border-0"
+            src="/img/apecs/apecs-2800x1105.jpg"
+            
+            fetchpriority="high"
+            srcset="/img/apecs/apecs-576x227.webp 576w, /img/apecs/apecs-768x303.webp 768w, /img/apecs/apecs-992x391.webp 992w, /img/apecs/apecs-1200x473.webp 1200w, /img/apecs/apecs-1400x552.webp 1400w, /img/apecs/apecs-2800x1105.webp 2800w" sizes="100vw"
+            height="1105"
+            width="2800"
+            alt="APECS">
+</div><br>
+              </center>
+            
+        
+        <p>A <strong>Entity Component System</strong> (ECS) for Unity 6.3 that gives you <strong>archetype storage</strong>, <strong>chunked components</strong>, <strong>type-safe queries</strong>, <strong>deferred command buffers</strong>, <strong>transient events</strong> and a <strong>Burst-friendly system scheduler</strong>, all <strong>without</strong> the DOTS dependency.</p>
+<ul>
+<li><strong>Archetype chunk storage</strong>: Each unique <code>ComponentMask</code> is a chunk of <code>NativeArray&lt;Entity&gt;</code> and one <code>NativeList&lt;T&gt;</code> per component type. The spec is followed precisely (Bevy-like). Memory is allocated once per archetype and reused as entities move between archetypes.</li>
+<li><strong>256 component types max</strong>: <code>ComponentMask</code> is a single <code>fixed ulong[4]</code> (a <code>readonly struct</code> with <code>[StructLayout(LayoutKind.Sequential)]</code>), the 256-bit cap matches the spec exactly and keeps the mask check branchless.</li>
+<li><strong>Type-safe queries</strong>: <code>QueryBuilder.With&lt;T&gt;().Without&lt;U&gt;().WithAny&lt;A,B&gt;().Build&lt;T...&gt;()</code> returns a <code>ref struct QueryIterator&lt;T...&gt;</code> that walks archetypes, chunks, then rows. <code>ref</code> access into components (no defensive copies) and a <code>Count</code> / <code>MatchingArchetypeCount</code> snapshot — all with structural-version checks that throw on mutations during iteration.</li>
+<li><strong>Deferred command buffers</strong>: <code>CommandBuffer</code> records <code>CreateEntity</code> / <code>AddComponent</code> / <code>RemoveComponent</code> / <code>SetComponent</code> / <code>DestroyEntity</code> / <code>DestroyEntitiesWith&lt;T&gt;</code> and is played back by a <code>CommandBufferSystem</code> at the end of <code>Phase.PostUpdate</code>. Provisional entities (created in the same buffer, used in subsequent commands within the buffer) use the high bit of <code>Entity.Index</code> as a marker and are resolved to real entities on <code>Playback</code>.</li>
+<li><strong>Transient events</strong>: <code>EventQueue&lt;T&gt;</code> is double-buffered. <code>EventWriter&lt;T&gt;.Send</code> is one-frame-latent; <code>SendImmediate</code> is the same-frame escape hatch. Readers drain via <code>EventReader&lt;T&gt;</code> (foreach, <code>AsNativeArray</code> for jobs, <code>Count</code>, <code>MoveNext</code> / <code>Current</code>).</li>
+<li><strong>Reflection is startup-only</strong>: system discovery, attribute reads (<code>[UpdateInPhase]</code>, <code>[UpdateAfter]</code>, <code>[UpdateBefore]</code>, <code>[DisableByDefault]</code>), and <code>ComponentRegistry.IdOf&lt;T&gt;()</code> all run during <code>SystemScheduler.Initialize</code> and <code>WorldBootstrap.Awake</code>. The hot path reads only cached lists/dicts. No reflection in <code>Tick</code> or <code>Update</code> or <code>MoveNext</code>.</li>
+<li><strong>Burst + Jobs + URP</strong>: jobs (<code>IJobParallelFor</code>, <code>IJob</code>) for the heavy lifting; <code>Graphics.DrawMeshInstanced</code> for the rendering sample; <code>RenderPipelineManager.beginContextRendering</code> for the URP-native PreRender hook.</li>
+<li><strong>85 EditMode tests pass</strong> (7 phases: Foundations, Single-Archetype Storage, Multi-Archetype + Queries, System Scheduler, Command Buffer, Events, Integration Benchmarks).</li>
+</ul>
+
+<h4 id="what-is-an-ecs" class="heading">What Is an ECS? <a href="#what-is-an-ecs" aria-labelledby="what-is-an-ecs">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>An <strong>Entity Component System</strong> (ECS) separates <em>what exists</em> (entities), <em>what data it carries</em> (components), and <em>what logic runs on that data</em> (systems). Instead of deep inheritance trees or fat <code>MonoBehaviour</code> classes that mix transform, health, AI, and rendering in one object, an ECS stores each concern as a small <strong>unmanaged struct</strong> and runs <strong>systems</strong> that iterate matching entities in tight loops.</p>
+<p>That layout is <strong>data-oriented</strong>: components of the same type live contiguously in memory (Structure of Arrays), so a system that updates 50,000 velocities reads a sequential buffer, friendly to CPU caches and easy to hand off to <strong>Burst</strong> jobs. Gameplay code becomes &ldquo;for every entity that has <code>Position</code> and <code>Velocity</code>, update position&rdquo; rather than &ldquo;for every <code>EnemyController</code>, call <code>Update()</code>.&rdquo;</p>
+<p><strong>Core concepts in APECS:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>World</strong></td>
+<td>Root container: entities, archetypes, resources, events, command buffers.</td>
+</tr>
+<tr>
+<td><strong>Entity</strong></td>
+<td>Lightweight handle (<code>index + generation</code>). Not an object, just an ID into storage.</td>
+</tr>
+<tr>
+<td><strong>Component</strong></td>
+<td>Plain <code>unmanaged struct</code> (e.g. <code>Position</code>, <code>Health</code>). No behaviour, only data.</td>
+</tr>
+<tr>
+<td><strong>Archetype</strong></td>
+<td>All entities with the <em>same</em> set of component types share one archetype and one memory layout.</td>
+</tr>
+<tr>
+<td><strong>Chunk</strong></td>
+<td>Fixed-size block (128 entities) inside an archetype; components are stored as <code>NativeList&lt;T&gt;</code> slices.</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>Logic that runs each frame (or fixed step) on a subset of entities, usually via a <strong>query</strong>.</td>
+</tr>
+<tr>
+<td><strong>Query</strong></td>
+<td>Filter + iterator: &ldquo;all entities with <code>A</code> and <code>B</code> but not <code>C</code>.&rdquo;</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid">flowchart TB
+  subgraph World
+    SS[SparseSet<br/>entity → location]
+    AS[ArchetypeStorage]
+  end
+
+  subgraph Archetype["Archetype (Position + Velocity)"]
+    C0[Chunk 0<br/>128 entities max]
+    C1[Chunk 1]
+    PS[ComponentStore Position]
+    VS[ComponentStore Velocity]
+  end
+
+  E1[Entity 42] --> SS
+  SS --> C0
+  C0 --> PS
+  C0 --> VS
+
+  SYS[MovementSystem] -->|Query With Position, Velocity| AS
+  AS --> Archetype</pre>
+<p><strong>Why not classic Unity components?</strong> A <code>MonoBehaviour</code> per object allocates managed memory, scatters fields across the heap, and virtualizes <code>Update()</code> per instance. At scale (tens of thousands of agents or particles), that cost dominates. ECS inverts the loop: one system, one hot path, thousands of entities processed with predictable memory access. APECS still <strong>coexists</strong> with MonoBehaviours, <code>WorldBootstrap</code> is a normal component that ticks systems from Unity&rsquo;s game loop; you choose how much of the project lives in ECS vs traditional scripts.</p>
+
+<h4 id="what-sets-apecs-apart" class="heading">What Sets APECS Apart? <a href="#what-sets-apecs-apart" aria-labelledby="what-sets-apecs-apart">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><strong>APECS</strong> stands for <strong>A</strong>rchetypal <strong>P</strong>arallel <strong>E</strong>ntity <strong>C</strong>omponent <strong>S</strong>ystem. Compared to other ECS approaches you might know:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>APECS</strong></th>
+<th><strong>Unity DOTS / Entities</strong></th>
+<th><strong>Entitas / LeoECS (C#)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dependency</strong></td>
+<td><code>Burst</code>, <code>Collections</code>, <code>Jobs</code> only</td>
+<td>Full <code>com.unity.entities</code> stack</td>
+<td>Pure C#, no Unity native deps</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>Archetype chunks, <code>NativeList&lt;T&gt;</code> per type</td>
+<td>Archetype chunks, blob/baking pipeline</td>
+<td>Custom sparse sets / indexes</td>
+</tr>
+<tr>
+<td><strong>Bootstrap</strong></td>
+<td><code>WorldBootstrap</code> <code>MonoBehaviour</code></td>
+<td>Subscenes, baking, default worlds</td>
+<td>Your own host loop</td>
+</tr>
+<tr>
+<td><strong>Queries</strong></td>
+<td><code>ref struct QueryIterator</code>, up to 8 components</td>
+<td><code>SystemAPI.Query</code>, source generators</td>
+<td>Generated matchers / filters</td>
+</tr>
+<tr>
+<td><strong>Structural changes</strong></td>
+<td><code>CommandBuffer</code> + end-of-phase flush</td>
+<td><code>EntityCommandBuffer</code>, system ordering</td>
+<td>Framework-specific buffers</td>
+</tr>
+<tr>
+<td><strong>Learning curve</strong></td>
+<td>Single asmdef, ~30 runtime files</td>
+<td>Large package, many concepts</td>
+<td>Varies by port</td>
+</tr>
+</tbody>
+</table>
+<p>What is distinctive about APECS specifically:</p>
+<ul>
+<li><strong>Fixed 256-type cap</strong>: <code>ComponentMask</code> is four <code>ulong</code>s (<code>fixed ulong[4]</code>). Mask tests are branchless; no dynamic bitsets on the hot path.</li>
+<li><strong>Generational entities</strong>: destroying an entity bumps its generation; stale handles fail <code>IsAlive</code> without touching freed memory.</li>
+<li><strong>Structural version guard</strong>: query iterators snapshot <code>World.StructuralVersion</code> and throw if the world mutates mid-iteration, pushing you toward deferred <code>CommandBuffer</code> usage.</li>
+<li><strong>Provisional entities</strong>: commands recorded in the same buffer can reference entities not yet created; <code>Playback</code> resolves them in order.</li>
+<li><strong>Transient double-buffered events</strong>: <code>EventWriter</code> / <code>EventReader</code> with one-frame latency by default; <code>SendImmediate</code> for same-frame escape hatches.</li>
+<li><strong>Reflection only at startup</strong>: system discovery, attribute ordering, and <code>ComponentRegistry.IdOf&lt;T&gt;()</code> run once in <code>Initialize</code>; <code>Tick</code> and query iteration use cached lists only.</li>
+</ul>
+<pre class="mermaid">flowchart LR
+  subgraph UnityLoop["Unity game loop"]
+    WB[WorldBootstrap]
+    WB --> Pre[PreUpdate]
+    WB --> Up[Update]
+    WB --> Post[PostUpdate]
+    WB --> Fix[FixedUpdate]
+    WB --> Late[LateUpdate]
+    WB --> PR[PreRender URP]
+  end
+
+  subgraph APECS["APECS runtime"]
+    SS[SystemScheduler]
+    CB[CommandBufferSystem]
+    W[World]
+  end
+
+  Pre --> SS
+  Up --> SS
+  Post --> SS
+  Post --> CB
+  Fix --> SS
+  Late --> SS
+  PR --> SS
+  SS --> W
+  CB -->|Playback| W</pre>
+<p>The design goal is a <strong>small, readable codebase</strong> you can read in an afternoon.</p>
+
+<h4 id="why-not-use-unity-dots" class="heading">Why Not Use Unity DOTS? <a href="#why-not-use-unity-dots" aria-labelledby="why-not-use-unity-dots">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Unity <strong>DOTS</strong> (Data-Oriented Technology Stack) centers on the <strong><code>com.unity.entities</code></strong> package: baked subscenes, entity hierarchies, blob assets, netcode ghosts, source-generated systems, and deep integration with the Entities editor workflow. It is the right choice when you are building a <strong>DOTS-first</strong> project and want Unity&rsquo;s long-term data-oriented roadmap (NetCode, ECS authoring, conversion pipelines).</p>
+<p><strong>APECS deliberately does not depend on Entities</strong>. It targets a different trade-off:</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Unity DOTS / Entities</th>
+<th>APECS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Package surface</strong></td>
+<td><code>entities</code>, <code>entities.graphics</code>, baking, etc.</td>
+<td>One asmdef: <code>FronkonGames.APECS</code></td>
+</tr>
+<tr>
+<td><strong>Authoring</strong></td>
+<td>Subscenes, bakers, <code>IComponentData</code> authoring components</td>
+<td>Code-first: <code>RegisterStoreFactory&lt;T&gt;()</code>, masks at bootstrap</td>
+</tr>
+<tr>
+<td><strong>World lifetime</strong></td>
+<td>Default injection worlds, <code>WorldFlags</code>, conversion</td>
+<td>Explicit <code>World</code> + optional <code>WorldBootstrap</code> in scene</td>
+</tr>
+<tr>
+<td><strong>Queries</strong></td>
+<td><code>SystemAPI</code>, <code>IJobEntity</code>, codegen</td>
+<td>Hand-written <code>QueryBuilder</code> → <code>ref struct</code> iterator</td>
+</tr>
+<tr>
+<td><strong>Rendering</strong></td>
+<td>Entities Graphics, batching, material meshes</td>
+<td>Bring your own (<code>Graphics.DrawMeshInstanced</code>, URP hooks)</td>
+</tr>
+<tr>
+<td><strong>Networking</strong></td>
+<td>NetCode for Entities</td>
+<td>Not included (local simulation only)</td>
+</tr>
+<tr>
+<td><strong>Migration cost</strong></td>
+<td>High if project is MonoBehaviour-heavy</td>
+<td>Low: add package, one bootstrap object, migrate hot paths incrementally</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choose Unity DOTS when</strong> you need official baking/subscenes, Entities Graphics, NetCode or you are committing to Unity&rsquo;s ECS authoring tools for the whole project.</p>
+<p><strong>Choose APECS when</strong> you want archetype storage and Burst-friendly iteration <strong>without</strong> pulling in <code>com.unity.entities</code>, when you prefer a <strong>transparent, short implementation</strong> you can extend or fork or when you need ECS for <strong>one subsystem</strong> (particles, crowds, simulation) inside an otherwise classic Unity project.</p>
+<p>Both can use <strong>Burst</strong>, <strong>Jobs</strong> and <strong><code>NativeArray</code></strong>. APECS is not &ldquo;anti-performance&rdquo;; it is <strong>anti-lock-in</strong> to the full Entities ecosystem. You keep Unity&rsquo;s familiar <code>Update</code> / <code>FixedUpdate</code> / URP render callbacks. APECS systems plug into those phases via <code>[UpdateInPhase]</code> instead of replacing Unity&rsquo;s player loop entirely.</p>
+
+<h4 id="what-can-be-used-for" class="heading">What Can Be Used For <a href="#what-can-be-used-for" aria-labelledby="what-can-be-used-for">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li><strong>Data-oriented game architecture</strong> for Unity projects that need ECS without committing to DOTS / Entities package.</li>
+<li><strong>High-throughput simulations</strong> — particles, agents, boids — running into the hundreds of thousands on mid-range hardware thanks to chunked archetypes and Burst-compiled jobs.</li>
+<li><strong>Custom engines inside an existing Unity project</strong> — APECS ships as a single asmdef (<code>FronkonGames.APECS</code>) and doesn&rsquo;t replace the standard MonoBehaviour loop; <code>WorldBootstrap</code> is a regular <code>MonoBehaviour</code> that ticks systems from the Unity game loop.</li>
+<li><strong>URP / Built-in / HDRP compatible</strong> — the package is render-pipeline agnostic; sample code in <code>Samples~/ParticleSimulation/</code> uses <code>Graphics.DrawMeshInstanced</code> for one-draw-call rendering.</li>
+<li><strong>Teaching / learning ECS</strong> — the codebase is short, fully tested, and the design follows the public spec (<code>DEVELOPMENT.md</code>) closely. Easy to read top-to-bottom.</li>
+</ul>
+
+<h4 id="what-is-not" class="heading">What Is NOT <a href="#what-is-not" aria-labelledby="what-is-not">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ul>
+<li><strong>DOTS / <code>com.unity.entities</code></strong>. The <code>Packages/manifest.json</code> deliberately does not include <code>com.unity.entities</code>. Everything is <code>Unity.Collections</code> / <code>Unity.Mathematics</code> / <code>Unity.Jobs</code> / <code>Unity.Burst</code> only. If you want Entities&rsquo; archetypes, jobs, baking, or scene conversion, use Entities.</li>
+<li><strong>A job system library</strong> — APECS uses Unity&rsquo;s <code>Unity.Jobs</code> (<code>IJob</code>, <code>IJobParallelFor</code>, <code>IJobParallelForBatch</code>) but doesn&rsquo;t abstract them. If you want a more sophisticated job graph, look at <code>com.unity.jobs</code> or Entities&rsquo; system update group.</li>
+<li><strong>A scene baking / subscene pipeline</strong>. There is no Editor-side baking; archetypes are created lazily on the first <code>world.CreateEntity(mask)</code> call. The user defines masks manually (typically at bootstrap time).</li>
+<li><strong>A networking solution</strong>. Single-process only — there is no serialisation, no RPCs, no ghost replication. The system intentionally stops at &ldquo;fast deterministic local simulation&rdquo;.</li>
+<li><strong>A visual / editor / inspector framework</strong>. No custom inspector, no scene gizmos, no Entity Debugger. The two <code>Samples~/</code> projects show how to render (URP <code>DrawMeshInstanced</code>) and to spawn agents, but rendering is your responsibility.</li>
+</ul>
+
+<h2 id="installation" class="heading">Installation <a href="#installation" aria-labelledby="installation">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>Requirements:</p>
+<ul>
+<li>Unity 6000.3 LTS or newer.</li>
+<li>The <code>FronkonGames.APECS</code> package already includes the URP render pipeline integration. The package works with the URP, Built-in, and HDRP render pipelines (no render-pipeline-specific code in the runtime).</li>
+</ul>
+<p>Installation (as a local package in this repo):</p>
+<ol>
+<li>Open this repository as a Unity project.</li>
+<li>The <code>Assets/FronkonGames/APECS/</code> folder is the runtime source. The asmdef (<code>FronkonGames.APECS.asmdef</code>) is already configured with <code>allowUnsafeCode: true</code> (needed for the <code>fixed ulong Mask[4]</code>), and the <code>Tests/</code> folder has a separate <code>APECS.Tests.asmdef</code> that&rsquo;s only included in test mode.</li>
+<li>To consume APECS from a <em>different</em> Unity project, add the line below to that project&rsquo;s <code>Packages/manifest.json</code> and Unity will pick it up on the next refresh:
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;com.fronkongames.apecs&#34;</span><span class="err">:</span> <span class="s2">&#34;file:../../path/to/APECS&#34;</span></span></span></code></pre></div></div></li>
+<li>No additional setup is required — the package is ready to use out of the box.</li>
+</ol>
+
+<h2 id="how-to-use" class="heading">How To Use <a href="#how-to-use" aria-labelledby="how-to-use">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>The <code>WorldBootstrap</code> component is the central entry point. It owns the <code>World</code>, the <code>SystemScheduler</code>, the <code>CommandBufferSystem</code>, the <code>WorldTime</code> resource, and a <code>Resources</code> container; it hooks into the Unity game loop and the URP render loop to tick systems on the right phase.</p>
+<p>Create an empty GameObject and add the <code>WorldBootstrap</code> component (Fronkon Games  APECS  World Bootstrap).</p>
+
+<h3 id="world" class="heading">World <a href="#world" aria-labelledby="world">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>A <strong><code>World</code></strong> is the top-level ECS container for one simulation. It holds every live entity, every archetype and chunk, shared resources, event queues, and the link to the command-buffer flush system.</p>
+<p>You typically create one world per game session (or one per logical simulation). <code>WorldBootstrap</code> creates it for you in a scene, or you can construct it manually.</p>
+<p>Use the world to <strong>register component types</strong>, <strong>spawn and destroy entities</strong>, <strong>read and write components</strong>, <strong>run queries</strong>, and <strong>coordinate systems</strong>. Nothing in APECS stores entity data outside a world, if you need two independent simulations (e.g. main game + replay), use two worlds.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Unity.Mathematics</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">World</span> <span class="n">world</span> <span class="p">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">(</span><span class="s">&#34;MyGame&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Register a component factory once, at bootstrap. Required for every T that</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// will appear in any archetype mask, the storage subsystem uses these to</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// materialise a fresh IComponentStore for a new archetype.</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">RegisterStoreFactory</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">RegisterStoreFactory</span><span class="p">&lt;</span><span class="n">Velocity</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">RegisterStoreFactory</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;();</span></span></span></code></pre></div></div>
+<h2 id="systems" class="heading">Systems <a href="#systems" aria-labelledby="systems">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>In ECS, a <strong>system</strong> is a unit of behaviour: code that runs once per tick and operates on entities matching a query. Systems do not own entity data, they read and write <strong>components</strong> stored in the <strong>world</strong>. APECS systems implement <strong><code>ISystem</code></strong> or inherit <strong><code>SystemBase</code></strong>, are tagged with <strong><code>[UpdateInPhase]</code></strong>, and are ticked by <strong><code>SystemScheduler</code></strong> (via <strong><code>WorldBootstrap</code></strong>) on Unity&rsquo;s update loop.</p>
+<p>The subsections below walk through what systems use every frame: creating entities, reading and writing components, iterating with <strong>queries</strong>, deferring <strong>structural changes</strong>, and passing <strong>events</strong>. Further down you will find the full <strong>runtime API reference</strong> for each type (<code>World</code>, <code>Entity</code>, <code>ComponentMask</code>, and the rest).</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Unity.Mathematics</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Discovered automatically when [UpdateInPhase] is present and autoDiscoverSystems = true.</span>
+</span></span><span class="line"><span class="cl"><span class="na">[UpdateInPhase(Phase.Update)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">MovementSystem</span> <span class="p">:</span> <span class="n">SystemBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Query all entities with Position + Velocity; mutate components in place.</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">iter</span> <span class="p">=</span> <span class="n">Query</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="n">With</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="n">With</span><span class="p">&lt;</span><span class="n">Velocity</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="n">Build</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">ref</span> <span class="n">Position</span> <span class="n">p</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">ref</span> <span class="n">Velocity</span> <span class="n">v</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">p</span><span class="p">.</span><span class="n">Value</span> <span class="p">+=</span> <span class="n">v</span><span class="p">.</span><span class="n">Value</span> <span class="p">*</span> <span class="n">DeltaTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Do not DestroyEntity or AddComponent here while iter may still be open.</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Record structural work into Commands — flushed at Phase.PostUpdate.</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Commands.DestroyEntity(dead);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="entities" class="heading">Entities <a href="#entities" aria-labelledby="entities">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>An <strong>entity</strong> is a lightweight ID (<code>index + generation</code>), not a class instance. Creating one allocates a slot in the world&rsquo;s <code>SparseSet</code> and places it in the <strong>archetype</strong> that matches the <strong>component mask</strong> you pass in, the set of component types that entity will have. The mask defines the memory layout, all entities with the same mask share one archetype and are stored together in chunks for cache-friendly iteration.</p>
+<p>Call <code>world.CreateEntity(mask)</code> when you need a new object in the simulation. The first use of a mask <strong>lazily creates</strong> the archetype and its component stores (which is why you must <code>RegisterStoreFactory&lt;T&gt;()</code> for every type in the mask beforehand).</p>
+<p>To remove an entity, call <code>world.DestroyEntity(e)</code>, the handle becomes stale immediately because the generation bumps.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Create an entity in a specific archetype. Lazily materialises the archetype</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// (and its component stores) on first use.</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">e</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Or, with an existing mask:</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">moving</span> <span class="p">=</span> <span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">,</span> <span class="n">Health</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">e2</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">moving</span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="add-and-read-components" class="heading">Add And Read Components <a href="#add-and-read-components" aria-labelledby="add-and-read-components">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong>Components</strong> are plain <code>unmanaged struct</code>s, data only, no behaviour. Each entity carries the component types defined by its archetype mask; you can read and write them through the world as long as the entity is alive and actually has that type.</p>
+<p>Use <strong><code>SetComponent</code></strong> to write a value, <strong><code>GetComponent</code></strong> to read a copy, and <strong><code>GetComponentRef</code></strong> when you want to mutate in place without allocating or copying (the usual choice in hot loops).</p>
+<p><strong><code>HasComponent</code></strong> checks membership without throwing. <strong><code>IsAlive</code></strong> validates the entity handle first.</p>
+<p>Writing a component the entity does not have throws, add it with <strong><code>AddComponent</code></strong> (a structural change that migrates the entity to a new archetype) instead of <code>SetComponent</code>.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">SetComponent</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="k">new</span> <span class="n">Position</span> <span class="p">{</span> <span class="n">Value</span> <span class="p">=</span> <span class="k">new</span> <span class="n">float3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">SetComponent</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="k">new</span> <span class="n">Velocity</span> <span class="p">{</span> <span class="n">Value</span> <span class="p">=</span> <span class="k">new</span> <span class="n">float3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// GetComponent returns a copy. For read-only access through a ref, use GetComponentRef.</span>
+</span></span><span class="line"><span class="cl"><span class="k">ref</span> <span class="n">Position</span> <span class="n">p</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">world</span><span class="p">.</span><span class="n">GetComponentRef</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;(</span><span class="n">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="p">.</span><span class="n">Value</span> <span class="p">+=</span> <span class="n">float3</span><span class="p">.</span><span class="n">zero</span><span class="p">;</span> <span class="c1">// mutate in place, no copy</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Multi-component batched read on the same entity.</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">alive</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">IsAlive</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">has</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">HasComponent</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;(</span><span class="n">e</span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="query-entities" class="heading">Query Entities <a href="#query-entities" aria-labelledby="query-entities">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong>Queries</strong> are how systems process many entities at once. Instead of tracking entity lists yourself, you describe a <strong>filter</strong> (<code>With</code>, <code>Without</code>, <code>WithAny</code>) and APECS walks every matching <strong>archetype</strong> and <strong>chunk</strong>, yielding each live row with direct <code>ref</code> access to its components, no boxing, no per-entity dictionary lookups.</p>
+<p>Start from <code>world.Query()</code>, chain filter rules, then call <code>Build&lt;T...&gt;()</code> with the component types you want to read or mutate (up to eight). The returned <code>QueryIterator</code> is a <strong><code>ref struct</code></strong>: stack-only, zero allocation, and safe to use in tight loops or to feed Burst jobs via <code>GetComponentArray</code>. Do not create or destroy entities, or add/remove components, while iterating, the iterator checks <code>StructuralVersion</code> and throws if the world changed mid-walk. Defer those changes to a <code>CommandBuffer</code> instead.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Build a query that matches archetypes containing Position + Velocity but not Health.</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">iter</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">Query</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">With</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">With</span><span class="p">&lt;</span><span class="n">Velocity</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">Without</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">Build</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// foreach via the ref-struct enumerator. entry.t is `ref Position`, entry.u is `ref Velocity`.</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">ref</span> <span class="kt">var</span> <span class="n">p</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">ref</span> <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">p</span><span class="p">.</span><span class="n">Value</span> <span class="p">+=</span> <span class="n">v</span><span class="p">.</span><span class="n">Value</span> <span class="p">*</span> <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p><code>QueryEntry&lt;T...&gt;</code> exposes each requested component as a <code>ref</code>-typed property (<code>t</code>, <code>u</code>, <code>v</code>, <code>w</code>, <code>x</code>, <code>y</code>, <code>z</code>, <code>a</code> for 1-8 components respectively). Use these directly in the inner loop body — no copy, no array indexing.</p>
+
+<h3 id="defer-structural-changes" class="heading">Defer Structural Changes <a href="#defer-structural-changes" aria-labelledby="defer-structural-changes">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong>Structural changes</strong> alter the shape of the world: creating or destroying entities, or adding/removing component types (which moves an entity to a different archetype). Each one bumps <code>StructuralVersion</code> and can invalidate open query iterators. Mutating structure <strong>while</strong> iterating is therefore unsafe — record the work instead and apply it later.</p>
+<p>A <strong><code>CommandBuffer</code></strong> queues those mutations as ordered commands. Systems obtain their own buffer via <code>CommandBufferSystem.GetBuffer(this)</code> (or <code>Commands</code> on <code>SystemBase</code>). Commands recorded in the same buffer can reference <strong>provisional entities</strong> created earlier in that buffer; <code>Playback</code> resolves them to real handles before applying the rest. By default, <strong><code>CommandBufferSystem</code></strong> flushes every buffer at the end of <strong><code>Phase.PostUpdate</code></strong>, so gameplay systems can iterate safely all frame and structural edits land in one consistent batch.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Systems that mutate structure during iteration should record into their Commands</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// buffer, not the world directly. The CommandBufferSystem plays every buffer back</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// at the end of Phase.PostUpdate.</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">buffer</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CommandBufferSystem</span><span class="p">.</span><span class="n">GetBuffer</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">buffer</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl"><span class="n">buffer</span><span class="p">.</span><span class="n">DestroyEntity</span><span class="p">(</span><span class="n">e</span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="send-and-read-events" class="heading">Send And Read Events <a href="#send-and-read-events" aria-labelledby="send-and-read-events">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong>Events</strong> are transient, typed messages between systems, spawn requests, damage notifications, input pulses, not long-lived component data. Each event type gets a double-buffered <strong><code>EventQueue&lt;T&gt;</code></strong> on the world.</p>
+<p>Writers append to one side, at the start of the next <strong><code>Update</code></strong>, <strong><code>FixedUpdate</code></strong>, or <strong><code>LateUpdate</code></strong> tick the scheduler <strong>swaps</strong> buffers so readers drain what was sent last phase.</p>
+<p>From a <strong><code>SystemBase</code></strong> subclass, use <strong><code>GetEventWriter&lt;T&gt;()</code></strong> to publish and <strong><code>GetEventReader&lt;T&gt;()</code></strong> to consume.</p>
+<p><strong><code>Send</code></strong> is the default: one frame of latency, safe when producer and consumer run in the same phase group.</p>
+<p><strong><code>SendImmediate</code></strong> writes straight to the readable buffer for same-frame delivery when you accept tighter coupling. Events are <strong>not</strong> stored on entities, if something must persist, use a component or a world resource instead.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Writer. Send is one-frame-latent (visible to next-phase readers). SendImmediate</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// bypasses the buffer for same-frame use.</span>
+</span></span><span class="line"><span class="cl"><span class="n">GetEventWriter</span><span class="p">&lt;</span><span class="n">DamageEvent</span><span class="p">&gt;().</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span> <span class="n">DamageEvent</span> <span class="p">{</span> <span class="n">Amount</span> <span class="p">=</span> <span class="m">10</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">GetEventWriter</span><span class="p">&lt;</span><span class="n">DamageEvent</span><span class="p">&gt;().</span><span class="n">SendImmediate</span><span class="p">(</span><span class="k">new</span> <span class="n">DamageEvent</span> <span class="p">{</span> <span class="n">Amount</span> <span class="p">=</span> <span class="m">99</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Reader (one frame later in the next Update/FixedUpdate/LateUpdate tick, after</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// the scheduler has called SwapAllEventQueues).</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="n">GetEventReader</span><span class="p">&lt;</span><span class="n">DamageEvent</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">DamageEvent</span> <span class="n">evt</span> <span class="p">=</span> <span class="n">reader</span><span class="p">.</span><span class="n">Current</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;damage: {evt.Amount}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="snapshot-the-world" class="heading">Snapshot The World <a href="#snapshot-the-world" aria-labelledby="snapshot-the-world">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Sometimes you need a <strong>read-only picture</strong> of the simulation (for debug UI, tests or logging) without walking a typed query. The world exposes a few cheap counters and introspection hooks for that.</p>
+<p><strong><code>EntityCount</code></strong> is the number of live handles. <strong><code>StructuralVersion</code></strong> increments on every structural change, query iterators snapshot it at creation time and compare on each <code>MoveNext</code>, which is why this value is useful when debugging &ldquo;iterator invalidated&rdquo; errors.</p>
+<p><strong><code>ArchetypeStorage</code></strong> lists every materialised archetype with its mask, entity count, and chunk count — handy to verify that masks are splitting entities the way you expect. These APIs are for diagnostics and tooling; gameplay systems should prefer <strong><code>Query</code></strong> for iteration.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// EntityCount / StructuralVersion are useful for sanity checks and for the</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// &#34;structural mutation during iteration&#34; guard.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;alive={world.EntityCount} version={world.StructuralVersion}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Iterate every archetype:</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">a</span> <span class="p">&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">ArchetypeStorage</span><span class="p">.</span><span class="n">ArchetypeCount</span><span class="p">;</span> <span class="n">a</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">var</span> <span class="n">arch</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">ArchetypeStorage</span><span class="p">.</span><span class="n">All</span><span class="p">[</span><span class="n">a</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;archetype {a}: mask={arch.Mask} entities={arch.EntityCount} chunks={arch.ChunkCount}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="componentmask" class="heading">ComponentMask <a href="#componentmask" aria-labelledby="componentmask">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>A <strong><code>ComponentMask</code></strong> describes <strong>which component types an entity has</strong>. It is a 256-bit bitset (<code>fixed ulong[4]</code>), one bit per registered component type, stored as a small unmanaged struct. Every entity belongs to exactly one <strong>archetype</strong> per mask; entities that share the same mask are stored together in the same chunks.</p>
+<p>You use masks when <strong>creating entities</strong> (<code>CreateEntity(mask)</code>), <strong>building queries</strong> (filters compare against archetype masks), and <strong>recording command-buffer commands</strong>. Factory helpers like <code>ComponentMask.Of&lt;Position, Velocity&gt;()</code> register types in <strong><code>ComponentRegistry</code></strong> on first use and set the corresponding bits. <strong><code>HasAll</code></strong>, <strong><code>HasAny</code></strong>, and <strong><code>HasNone</code></strong> compare masks in branchless word operations, useful inside query filters and custom matching logic. When you <strong><code>AddComponent</code></strong> or <strong><code>RemoveComponent</code></strong>, the world derives a new mask from the old one (<code>Set</code> / <code>Unset</code>) and migrates the entity to the matching archetype.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Build from component types (registers each type in ComponentRegistry on first use).</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">moving</span> <span class="p">=</span> <span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">combat</span>  <span class="p">=</span> <span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">,</span> <span class="n">Health</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Or assemble manually from stable IDs.</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">custom</span> <span class="p">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">custom</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ComponentRegistry</span><span class="p">.</span><span class="n">IdOf</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl"><span class="n">custom</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ComponentRegistry</span><span class="p">.</span><span class="n">IdOf</span><span class="p">&lt;</span><span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Membership tests between masks.</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">required</span> <span class="p">=</span> <span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">excluded</span> <span class="p">=</span> <span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">matches</span> <span class="p">=</span> <span class="n">moving</span><span class="p">.</span><span class="n">HasAll</span><span class="p">(</span><span class="n">required</span><span class="p">);</span>   <span class="c1">// true — moving includes Position</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">blocked</span> <span class="p">=</span> <span class="n">moving</span><span class="p">.</span><span class="n">HasAny</span><span class="p">(</span><span class="n">excluded</span><span class="p">);</span>   <span class="c1">// false — moving has no Health</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">clean</span>   <span class="p">=</span> <span class="n">moving</span><span class="p">.</span><span class="n">HasNone</span><span class="p">(</span><span class="n">excluded</span><span class="p">);</span>  <span class="c1">// true — no excluded types present</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Use when creating entities or recording commands.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">e</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Derive a new mask (e.g. before AddComponent / RemoveComponent internally).</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">withHealth</span> <span class="p">=</span> <span class="n">moving</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">withHealth</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ComponentRegistry</span><span class="p">.</span><span class="n">IdOf</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">withoutVel</span> <span class="p">=</span> <span class="n">moving</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">withoutVel</span><span class="p">.</span><span class="n">Unset</span><span class="p">(</span><span class="n">ComponentRegistry</span><span class="p">.</span><span class="n">IdOf</span><span class="p">&lt;</span><span class="n">Velocity</span><span class="p">&gt;());</span></span></span></code></pre></div></div>
+<h3 id="sparseset" class="heading">SparseSet <a href="#sparseset" aria-labelledby="sparseset">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>The <strong><code>SparseSet</code></strong> is the world&rsquo;s <strong>entity table</strong>. It maps each live entity index to a <strong>generation</strong> (for stale-handle detection) and an <strong><code>EntityRecord</code></strong> (archetype id, chunk index, row). When you call <code>world.CreateEntity</code>, the world allocates an ID from the sparse set and registers where that entity lives in archetype storage; every <code>GetComponentRef</code> lookup goes through this map first.</p>
+<p>You rarely touch <code>SparseSet</code> directly in gameplay code, <code>World.IsAlive</code>, <code>CreateEntity</code>, and <code>DestroyEntity</code> wrap it. It is useful to understand for debugging, tests, and custom tooling. <strong><code>Create</code></strong> hands out reusable indices from a free list; <strong><code>Destroy</code></strong> bumps the generation so old handles fail <strong><code>IsAlive</code></strong> without freeing memory unsafely. Index <strong>0</strong> is reserved for <strong><code>Entity.Null</code></strong>.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">SparseSet</span> <span class="k">set</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SparseSet</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Liveness: allocate an ID (generation starts at 1 for a fresh index).</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">e</span> <span class="p">=</span> <span class="k">set</span><span class="p">.</span><span class="n">Create</span><span class="p">();</span>                    <span class="c1">// e.g. Entity(idx:1 gen:1)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="k">set</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>                       <span class="c1">// 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Location: where the entity lives inside its archetype (written by World).</span>
+</span></span><span class="line"><span class="cl"><span class="k">set</span><span class="p">.</span><span class="n">Set</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="k">new</span> <span class="n">EntityRecord</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ArchetypeId</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ChunkIndex</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Row</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="k">set</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="k">out</span> <span class="n">EntityRecord</span> <span class="n">loc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;archetype={loc.ArchetypeId} chunk={loc.ChunkIndex} row={loc.Row}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Destroy: generation bumps; stale copies of e no longer pass IsAlive.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">stale</span> <span class="p">=</span> <span class="n">e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">set</span><span class="p">.</span><span class="n">Destroy</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="k">set</span><span class="p">.</span><span class="n">IsAlive</span><span class="p">(</span><span class="n">stale</span><span class="p">));</span> <span class="c1">// false</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="k">set</span><span class="p">.</span><span class="n">IsAlive</span><span class="p">(</span><span class="n">e</span><span class="p">));</span>     <span class="c1">// false</span></span></span></code></pre></div></div>
+<h3 id="archetype--archetypechunk" class="heading">Archetype + ArchetypeChunk <a href="#archetype--archetypechunk" aria-labelledby="archetype--archetypechunk">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>An <strong>archetype</strong> is the storage bucket for all entities that share the same <strong>component mask</strong>. It owns one <strong><code>ComponentStore&lt;T&gt;</code></strong> per component type and a list of <strong><code>ArchetypeChunk</code></strong> blocks. An <strong><code>ArchetypeChunk</code></strong> is a fixed slab of up to <strong>128</strong> entities (<code>ArchetypeChunk.Capacity</code>), each row storing an <strong><code>Entity</code></strong> handle; matching component data for that row lives at the same index in each store (Structure of Arrays).</p>
+<p>When the last chunk fills up, the archetype allocates another chunk and grows the stores. <strong><code>Add</code></strong> appends to the tail chunk; <strong><code>Remove</code></strong> uses <strong>swap-back</strong> (the last live row moves into the vacated slot) so arrays stay dense. You normally reach archetypes through <strong><code>world.ArchetypeStorage</code></strong> after <strong><code>CreateEntity</code></strong>, queries iterate them automatically; direct access is for debugging, jobs, or custom tooling.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Two entities with the same mask share one archetype.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">a</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">b</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Archetype</span> <span class="n">arch</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">ArchetypeStorage</span><span class="p">.</span><span class="n">All</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;mask={arch.Mask} entities={arch.EntityCount} chunks={arch.ChunkCount}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Each chunk tracks dense entity rows [0..count).</span>
+</span></span><span class="line"><span class="cl"><span class="n">ArchetypeChunk</span> <span class="n">chunk</span> <span class="p">=</span> <span class="n">arch</span><span class="p">.</span><span class="n">Chunks</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;chunk occupancy={chunk.count}/{ArchetypeChunk.Capacity} full={chunk.IsFull}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Component data for row r lives at (chunkIndex, row) in each store.</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">posId</span> <span class="p">=</span> <span class="n">ComponentRegistry</span><span class="p">.</span><span class="n">IdOf</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">posStore</span> <span class="p">=</span> <span class="p">(</span><span class="n">ComponentStore</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;)</span><span class="n">arch</span><span class="p">.</span><span class="n">GetStore</span><span class="p">(</span><span class="n">posId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">ref</span> <span class="n">Position</span> <span class="n">p</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">posStore</span><span class="p">.</span><span class="n">GetRef</span><span class="p">(</span><span class="n">chunkIndex</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">row</span><span class="p">:</span> <span class="m">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="p">.</span><span class="n">Value</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">float3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="archetypestorage" class="heading">ArchetypeStorage <a href="#archetypestorage" aria-labelledby="archetypestorage">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong><code>ArchetypeStorage</code></strong> is the world&rsquo;s <strong>registry of archetypes</strong>. It maps each distinct <strong><code>ComponentMask</code></strong> to one <strong><code>Archetype</code></strong> instance and assigns stable numeric IDs. Archetypes are <strong>materialised lazily</strong>: the first time a mask is used (via <code>world.CreateEntity</code> or <code>GetOrCreate</code>), storage creates the archetype and builds a <strong><code>ComponentStore&lt;T&gt;</code></strong> for every bit set in the mask using the factories you registered with <strong><code>RegisterStoreFactory&lt;T&gt;()</code></strong>.</p>
+<p>Gameplay code usually goes through <strong><code>World</code></strong>, but <code>world.ArchetypeStorage</code> is the right entry point for introspection, custom iterators, and tests. <strong><code>GetOrCreate(mask)</code></strong> returns an existing bucket or allocates a new one. <strong><code>All</code></strong> lists every archetype in creation order; <strong><code>GetById</code></strong> resolves the ID stored in each entity&rsquo;s <strong><code>EntityRecord</code></strong>. As masks proliferate (many component combinations), archetype count grows, that is normal and expected.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Creating entities implicitly calls GetOrCreate for each new mask.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">mover</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">static_</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ArchetypeStorage</span> <span class="n">storage</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">ArchetypeStorage</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&#34;archetypes={storage.ArchetypeCount}&#34;</span><span class="p">);</span>   <span class="c1">// 2 distinct masks</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Lookup by mask (same instance on repeated calls).</span>
+</span></span><span class="line"><span class="cl"><span class="n">ComponentMask</span> <span class="n">moving</span> <span class="p">=</span> <span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Archetype</span> <span class="n">arch</span> <span class="p">=</span> <span class="n">storage</span><span class="p">.</span><span class="n">GetOrCreate</span><span class="p">(</span><span class="n">moving</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">arch</span><span class="p">.</span><span class="n">EntityCount</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Lookup by stable id (from EntityRecord after CreateEntity).</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">world</span><span class="p">.</span><span class="n">SparseSet</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="n">mover</span><span class="p">,</span> <span class="k">out</span> <span class="n">EntityRecord</span> <span class="n">rec</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Archetype</span> <span class="n">byId</span> <span class="p">=</span> <span class="n">storage</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">rec</span><span class="p">.</span><span class="n">ArchetypeId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">byId</span><span class="p">.</span><span class="n">Mask</span><span class="p">.</span><span class="n">HasAll</span><span class="p">(</span><span class="n">moving</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Walk everything (debug / benchmarks).</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">storage</span><span class="p">.</span><span class="n">ArchetypeCount</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">storage</span><span class="p">.</span><span class="n">All</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">EntityCount</span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="icomponentstore--componentstoret" class="heading">IComponentStore + ComponentStore<T> <a href="#icomponentstore--componentstoret" aria-labelledby="icomponentstore--componentstoret">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>Each component type inside an archetype is backed by a <strong><code>ComponentStore&lt;T&gt;</code></strong>: a <strong><code>NativeList&lt;T&gt;</code></strong> laid out in <strong>chunk-major order</strong>. Row <code>j</code> in chunk <code>i</code> lives at index <code>i * ArchetypeChunk.Capacity + j</code>, so all <code>Position</code> values for a chunk sit contiguously in memory (Structure of Arrays). <strong><code>IComponentStore</code></strong> is the non-generic interface the archetype uses for <strong><code>GrowChunk</code></strong>, swap-back <strong><code>RemoveAt</code></strong>, and <strong><code>MoveToChunk</code></strong> during entity migration.</p>
+<p>Normal gameplay goes through <strong><code>world.SetComponent</code></strong> / <strong><code>GetComponentRef</code></strong>, which resolve <code>(chunk, row)</code> via the sparse set. Reach stores directly when writing <strong>Burst jobs</strong> (<code>GetChunkArray</code> returns a <code>NativeArray&lt;T&gt;</code> slice sized to live rows), custom iterators, or archetype introspection. One store exists <strong>per component type per archetype</strong>, not per entity.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Unity.Mathematics</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Unity.Collections</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">e</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">SetComponent</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="k">new</span> <span class="n">Position</span> <span class="p">{</span> <span class="n">Value</span> <span class="p">=</span> <span class="n">float3</span><span class="p">.</span><span class="n">zero</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Resolve store from the entity&#39;s archetype.</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">SparseSet</span><span class="p">.</span><span class="n">TryGet</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="k">out</span> <span class="n">EntityRecord</span> <span class="n">rec</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Archetype</span> <span class="n">arch</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">ArchetypeStorage</span><span class="p">.</span><span class="n">GetById</span><span class="p">(</span><span class="n">rec</span><span class="p">.</span><span class="n">ArchetypeId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">posStore</span> <span class="p">=</span> <span class="p">(</span><span class="n">ComponentStore</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;)</span><span class="n">arch</span><span class="p">.</span><span class="n">GetStore</span><span class="p">(</span><span class="n">ComponentRegistry</span><span class="p">.</span><span class="n">IdOf</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Random access by (chunk, row).</span>
+</span></span><span class="line"><span class="cl"><span class="k">ref</span> <span class="n">Position</span> <span class="n">p</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">posStore</span><span class="p">.</span><span class="n">GetRef</span><span class="p">(</span><span class="n">rec</span><span class="p">.</span><span class="n">ChunkIndex</span><span class="p">,</span> <span class="n">rec</span><span class="p">.</span><span class="n">Row</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">x</span> <span class="p">+=</span> <span class="m">1f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Dense slice for jobs: only live rows [0..chunk.count).</span>
+</span></span><span class="line"><span class="cl"><span class="n">ArchetypeChunk</span> <span class="n">chunk</span> <span class="p">=</span> <span class="n">arch</span><span class="p">.</span><span class="n">Chunks</span><span class="p">[</span><span class="n">rec</span><span class="p">.</span><span class="n">ChunkIndex</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">NativeArray</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;</span> <span class="n">slice</span> <span class="p">=</span> <span class="n">posStore</span><span class="p">.</span><span class="n">GetChunkArray</span><span class="p">(</span><span class="n">rec</span><span class="p">.</span><span class="n">ChunkIndex</span><span class="p">,</span> <span class="n">chunk</span><span class="p">.</span><span class="n">count</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// pass slice to IJobParallelFor, then dispose job dependencies as usual</span></span></span></code></pre></div></div>
+<h3 id="querybuilder--queryfilter--queryiteratort" class="heading">QueryBuilder + QueryFilter + QueryIterator&lt;T&hellip;&gt; <a href="#querybuilder--queryfilter--queryiteratort" aria-labelledby="querybuilder--queryfilter--queryiteratort">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong>Queries</strong> are how systems find entities without hand-rolling archetype walks. <strong><code>QueryBuilder</code></strong> is a fluent struct that accumulates a <strong><code>QueryFilter</code></strong> (<code>With</code>, <code>Without</code>, <code>WithAny</code>, …). <strong><code>Build&lt;T...&gt;()</code></strong> returns a <strong><code>ref struct QueryIterator&lt;T...&gt;</code></strong> (1–8 component types) that walks every matching archetype and chunk in O(archetypes × chunks).</p>
+<p>Each <strong><code>MoveNext()</code></strong> advances to the next entity; multi-component iterators expose one <strong><code>ref</code></strong> accessor per type parameter (<code>t</code>, <code>u</code>, <code>v</code>, …). <strong><code>MoveNext</code></strong> throws if <strong><code>StructuralVersion</code></strong> changed since the iterator was built — record structural work in a <strong><code>CommandBuffer</code></strong> instead of mutating the world mid-iteration.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">iter</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">Query</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">With</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">With</span><span class="p">&lt;</span><span class="n">Velocity</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">Without</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">WithAny</span><span class="p">&lt;</span><span class="n">SteeringTag</span><span class="p">,</span> <span class="n">Wander</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="n">Build</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">ref</span> <span class="n">Position</span> <span class="n">p</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">ref</span> <span class="n">Velocity</span> <span class="n">v</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// mutate in place</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">count</span> <span class="p">=</span> <span class="n">iter</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>            <span class="c1">// live count, re-walks the world</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">archetypes</span> <span class="p">=</span> <span class="n">iter</span><span class="p">.</span><span class="n">MatchingArchetypeCount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">NativeArray</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;</span> <span class="n">arr</span> <span class="p">=</span> <span class="n">iter</span><span class="p">.</span><span class="n">GetComponentArray</span><span class="p">(</span><span class="n">archetypeIdx</span><span class="p">,</span> <span class="n">chunkIdx</span><span class="p">);</span>  <span class="c1">// sized to Count, not Capacity</span></span></span></code></pre></div></div><p>The multi-component iterator exposes one <code>ref</code>-typed accessor per generic parameter: <code>t</code>, <code>u</code>, <code>v</code>, <code>w</code>, <code>x</code>, <code>y</code>, <code>z</code>, <code>a</code>. <code>QueryEntry&lt;T...&gt;</code> is a <code>ref struct</code> that wraps these for <code>foreach</code>.</p>
+<p><code>QueryIterator.MoveNext</code> throws <code>InvalidOperationException</code> if the world <code>StructuralVersion</code> changed since iterator construction. This is the guard against mutations during iteration. Use a <code>CommandBuffer</code> if you need to mutate.</p>
+
+<h3 id="commandbuffer--commandbuffersystem" class="heading">CommandBuffer + CommandBufferSystem <a href="#commandbuffer--commandbuffersystem" aria-labelledby="commandbuffer--commandbuffersystem">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p>A <strong><code>CommandBuffer</code></strong> records <strong>deferred structural mutations</strong>: create/destroy entities, add/remove components, set components, and bulk destroy by type. Commands are stored in order and applied later during <strong><code>Playback</code></strong>, which bumps <strong><code>StructuralVersion</code></strong> once at the end. That lets systems iterate queries safely and apply all spawns/despawns in one consistent batch.</p>
+<p><strong><code>CreateEntity</code></strong> returns a <strong>provisional</strong> handle (high bit set on <code>Entity.Index</code>). Later commands in the <strong>same buffer</strong> can reference it; playback resolves provisionals to real entities before running subsequent commands. From <strong><code>SystemBase</code></strong>, use the <strong><code>Commands</code></strong> property; each system gets its own buffer via <strong><code>CommandBufferSystem.GetBuffer(this)</code></strong>.</p>
+<p><strong><code>CommandBufferSystem</code></strong> is a normal system (default <strong><code>Phase.PostUpdate</code></strong>) that calls <strong><code>Playback</code></strong> on every registered buffer, then clears them. Assign it on the world (<code>world.CommandBufferSystem = ...</code>) before systems record commands, <code>WorldBootstrap</code> typically registers one for you.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.APECS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Unity.Mathematics</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[UpdateInPhase(Phase.Update)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">SpawnSystem</span> <span class="p">:</span> <span class="n">SystemBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">iter</span> <span class="p">=</span> <span class="n">Query</span><span class="p">().</span><span class="n">With</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;().</span><span class="n">Build</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">ref</span> <span class="n">Health</span> <span class="n">h</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Component</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="n">Value</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Commands</span><span class="p">.</span><span class="n">DestroyEntity</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">entity</span><span class="p">);</span>  <span class="c1">// deferred, not world.DestroyEntity</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Provisional entity: usable in subsequent commands in this buffer.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Entity</span> <span class="n">bullet</span> <span class="p">=</span> <span class="n">Commands</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Commands</span><span class="p">.</span><span class="n">SetComponent</span><span class="p">(</span><span class="n">bullet</span><span class="p">,</span> <span class="k">new</span> <span class="n">Position</span> <span class="p">{</span> <span class="n">Value</span> <span class="p">=</span> <span class="n">float3</span><span class="p">.</span><span class="n">zero</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Commands</span><span class="p">.</span><span class="n">SetComponent</span><span class="p">(</span><span class="n">bullet</span><span class="p">,</span> <span class="k">new</span> <span class="n">Velocity</span> <span class="p">{</span> <span class="n">Value</span> <span class="p">=</span> <span class="k">new</span> <span class="n">float3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// CommandBufferSystem (Phase.PostUpdate) runs after Update systems:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//   Playback(world) for each buffer → real entities created → buffers cleared.</span></span></span></code></pre></div></div><p>Manual playback (tests/tools):</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">CommandBuffer</span> <span class="n">buf</span> <span class="p">=</span> <span class="k">new</span> <span class="n">CommandBuffer</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">provisional</span> <span class="p">=</span> <span class="n">buf</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl"><span class="n">buf</span><span class="p">.</span><span class="n">SetComponent</span><span class="p">(</span><span class="n">provisional</span><span class="p">,</span> <span class="k">new</span> <span class="n">Position</span> <span class="p">{</span> <span class="n">Value</span> <span class="p">=</span> <span class="n">float3</span><span class="p">.</span><span class="n">zero</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">buf</span><span class="p">.</span><span class="n">Playback</span><span class="p">(</span><span class="n">world</span><span class="p">);</span>   <span class="c1">// applies to world, bumps StructuralVersion once</span></span></span></code></pre></div></div>
+<h3 id="eventqueue--eventwriter--eventreader" class="heading">EventQueue + EventWriter + EventReader <a href="#eventqueue--eventwriter--eventreader" aria-labelledby="eventqueue--eventwriter--eventreader">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong>Events</strong> are short-lived, typed messages — spawn requests, damage pulses, input edges — not long-lived component data. Each event type <strong><code>T</code></strong> gets a double-buffered <strong><code>EventQueue&lt;T&gt;</code></strong> on the world (two <strong><code>NativeList&lt;T&gt;</code></strong> sides). <strong><code>EventWriter&lt;T&gt;</code></strong> appends to the write side; <strong><code>EventReader&lt;T&gt;</code></strong> drains the readable side.</p>
+<p>From <strong><code>SystemBase</code></strong>, use <strong><code>GetEventWriter&lt;T&gt;()</code></strong> to publish and <strong><code>GetEventReader&lt;T&gt;()</code></strong> to consume. <strong><code>Send</code></strong> is the default: events stay in the write buffer until the next <strong><code>Swap</code></strong>, so readers typically see last phase&rsquo;s traffic. <strong><code>SendImmediate</code></strong> writes straight to the readable buffer for same-frame delivery when you accept tighter coupling.</p>
+<p>The scheduler calls <strong><code>world.SwapAllEventQueues()</code></strong> at the start of <strong><code>Update</code></strong>, <strong><code>FixedUpdate</code></strong>, and <strong><code>LateUpdate</code></strong> only. <strong><code>PreUpdate</code></strong>, <strong><code>PostUpdate</code></strong>, <strong><code>PreRender</code></strong>, <strong><code>Initialization</code></strong>, and <strong><code>Teardown</code></strong> do not swap. Readers are stack-only <strong><code>ref struct</code></strong> iterators: use <strong><code>MoveNext()</code></strong> / <strong><code>Current</code></strong>, <strong><code>foreach</code></strong>, or <strong><code>AsNativeArray()</code></strong> for jobs. <strong><code>Current</code></strong> returns <strong><code>T</code></strong> by value — events are read-only once sent.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">struct</span> <span class="nc">DamageEvent</span> <span class="p">{</span> <span class="kd">public</span> <span class="n">Entity</span> <span class="n">Target</span><span class="p">;</span> <span class="kd">public</span> <span class="kt">float</span> <span class="n">Amount</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[UpdateInPhase(Phase.Update)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">CombatSystem</span> <span class="p">:</span> <span class="n">SystemBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">GetEventWriter</span><span class="p">&lt;</span><span class="n">DamageEvent</span><span class="p">&gt;().</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span> <span class="n">DamageEvent</span> <span class="p">{</span> <span class="n">Target</span> <span class="p">=</span> <span class="n">enemy</span><span class="p">,</span> <span class="n">Amount</span> <span class="p">=</span> <span class="m">25</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[UpdateInPhase(Phase.Update)]</span>
+</span></span><span class="line"><span class="cl"><span class="na">[UpdateAfter(typeof(CombatSystem))]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">HealthSystem</span> <span class="p">:</span> <span class="n">SystemBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="n">GetEventReader</span><span class="p">&lt;</span><span class="n">DamageEvent</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">DamageEvent</span> <span class="n">evt</span> <span class="p">=</span> <span class="n">reader</span><span class="p">.</span><span class="n">Current</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">ref</span> <span class="n">Health</span> <span class="n">h</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">World</span><span class="p">.</span><span class="n">GetComponentRef</span><span class="p">&lt;</span><span class="n">Health</span><span class="p">&gt;(</span><span class="n">evt</span><span class="p">.</span><span class="n">Target</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">h</span><span class="p">.</span><span class="n">Value</span> <span class="p">-=</span> <span class="n">evt</span><span class="p">.</span><span class="n">Amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><p>Direct queue access (tests, custom hosts):</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">EventQueue</span><span class="p">&lt;</span><span class="n">DamageEvent</span><span class="p">&gt;</span> <span class="n">queue</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">GetEventQueue</span><span class="p">&lt;</span><span class="n">DamageEvent</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">queue</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span> <span class="n">DamageEvent</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">queue</span><span class="p">.</span><span class="n">Swap</span><span class="p">();</span>   <span class="c1">// normally done by SystemScheduler at phase start</span></span></span></code></pre></div></div>
+<h3 id="systemscheduler--systembase--isystem" class="heading">SystemScheduler + SystemBase + ISystem <a href="#systemscheduler--systembase--isystem" aria-labelledby="systemscheduler--systembase--isystem">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong><code>SystemBase</code></strong> is the usual starting point: it wires <strong><code>World</code></strong>, <strong><code>Query()</code></strong>, <strong><code>Commands</code></strong>, event accessors, and per-tick <strong><code>DeltaTime</code></strong> / <strong><code>FixedDeltaTime</code></strong>. Subclasses override <strong><code>Update()</code></strong> (and optionally <strong><code>OnInitialize()</code></strong> / <strong><code>OnShutdown()</code></strong>). <strong><code>ISystem</code></strong> is the minimal interface (<code>OnCreate</code>, <code>OnUpdate</code>, <code>OnDestroy</code>, <strong><code>Enabled</code></strong>) for types that should not inherit — struct systems, thin adapters, tests.</p>
+<p><strong><code>SystemScheduler</code></strong> registers systems and ticks them by <strong><code>Phase</code></strong>. With <strong><code>autoDiscover = true</code></strong>, it reflects loaded assemblies for <strong><code>[UpdateInPhase]</code></strong> types, reads <strong><code>[UpdateAfter]</code></strong> / <strong><code>[UpdateBefore]</code></strong> edges, topologically sorts with Kahn&rsquo;s algorithm, and invokes <strong><code>OnUpdate</code></strong> in order. Use <strong><code>Register&lt;T&gt;()</code></strong> / <strong><code>Register(ISystem)</code></strong> when discovery is off. Throws <strong><code>CircularDependencyException</code></strong> on dependency cycles.</p>
+<p>Register <strong><code>CommandBufferSystem</code></strong> and assign <strong><code>world.CommandBufferSystem</code></strong> before any system uses <strong><code>Commands</code></strong> (auto-discovery picks it up like any other <code>[UpdateInPhase]</code> system).</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Auto-discovered when WorldBootstrap.autoDiscoverSystems = true:</span>
+</span></span><span class="line"><span class="cl"><span class="na">[UpdateInPhase(Phase.Update)]</span>
+</span></span><span class="line"><span class="cl"><span class="na">[UpdateAfter(typeof(MovementSystem))]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">RenderPrepSystem</span> <span class="p">:</span> <span class="n">SystemBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">OnInitialize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// World is assigned; register caches, subscribe to resources, etc.</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* runs each Update tick */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Manual host (tests, headless tools):</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">world</span> <span class="p">=</span> <span class="k">new</span> <span class="n">World</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">scheduler</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SystemScheduler</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">scheduler</span><span class="p">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">world</span><span class="p">,</span> <span class="n">autoDiscover</span><span class="p">:</span> <span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">scheduler</span><span class="p">.</span><span class="n">Register</span><span class="p">&lt;</span><span class="n">CommandBufferSystem</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">CommandBufferSystem</span> <span class="p">=</span> <span class="n">scheduler</span><span class="p">.</span><span class="n">GetSystem</span><span class="p">&lt;</span><span class="n">CommandBufferSystem</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">scheduler</span><span class="p">.</span><span class="n">Register</span><span class="p">&lt;</span><span class="n">MovementSystem</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">scheduler</span><span class="p">.</span><span class="n">Tick</span><span class="p">(</span><span class="n">Phase</span><span class="p">.</span><span class="n">Update</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">scheduler</span><span class="p">.</span><span class="n">Shutdown</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">scheduler</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span></span></span></code></pre></div></div><p>Public scheduler surface:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">SystemScheduler</span> <span class="p">:</span> <span class="n">IDisposable</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">Initialize</span><span class="p">(</span><span class="n">World</span> <span class="n">world</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">autoDiscover</span> <span class="p">=</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">Register</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">ISystem</span><span class="p">,</span> <span class="k">new</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">Register</span><span class="p">(</span><span class="n">ISystem</span> <span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">Unregister</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">ISystem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="n">T</span> <span class="n">GetSystem</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">ISystem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">Tick</span><span class="p">(</span><span class="n">Phase</span> <span class="n">phase</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">Shutdown</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="k">void</span> <span class="n">Dispose</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="worldbootstrap-urp-aware" class="heading">WorldBootstrap (URP-aware) <a href="#worldbootstrap-urp-aware" aria-labelledby="worldbootstrap-urp-aware">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h3>
+<p><strong><code>WorldBootstrap</code></strong> is a <strong><code>MonoBehaviour</code></strong> entry point that owns one <strong><code>World</code></strong> and one <strong><code>SystemScheduler</code></strong> for a scene. On <strong><code>Awake</code></strong> it creates the world, sets <strong><code>World.Default</code></strong>, optionally registers <strong><code>WorldTime</code></strong> as a resource, and initializes the scheduler. Unity callbacks drive phases: <strong><code>Update</code></strong> ticks <strong><code>PreUpdate</code></strong> → <strong><code>Update</code></strong> → <strong><code>PostUpdate</code></strong>, <strong><code>FixedUpdate</code></strong> ticks <strong><code>FixedUpdate</code></strong>, <strong><code>LateUpdate</code></strong> ticks <strong><code>LateUpdate</code></strong>, and URP&rsquo;s <strong><code>RenderPipelineManager.beginContextRendering</code></strong> ticks <strong><code>PreRender</code></strong> once per frame before any camera renders.</p>
+<p>Add the component to a GameObject in your scene (execution order <strong>-1000</strong> so it runs early). Leave <strong><code>autoDiscoverSystems</code></strong> enabled to pick up every <strong><code>[UpdateInPhase]</code></strong> system in loaded assemblies, or disable it and <strong><code>Register</code></strong> systems yourself. <strong><code>registerWorldTime</code></strong> (default <strong>on</strong>) keeps <strong><code>SystemBase.DeltaTime</code></strong> in sync with Unity&rsquo;s clock.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Inspector: worldName = &#34;Default&#34;, autoDiscoverSystems = true, registerWorldTime = true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">WorldBootstrap</span> <span class="n">bootstrap</span> <span class="p">=</span> <span class="n">FindFirstObjectByType</span><span class="p">&lt;</span><span class="n">WorldBootstrap</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">World</span> <span class="n">world</span> <span class="p">=</span> <span class="n">bootstrap</span><span class="p">.</span><span class="n">World</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">SystemScheduler</span> <span class="n">scheduler</span> <span class="p">=</span> <span class="n">bootstrap</span><span class="p">.</span><span class="n">Scheduler</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Safe from Start/Awake on other components after bootstrap Awake:</span>
+</span></span><span class="line"><span class="cl"><span class="n">Entity</span> <span class="n">player</span> <span class="p">=</span> <span class="n">world</span><span class="p">.</span><span class="n">CreateEntity</span><span class="p">(</span><span class="n">ComponentMask</span><span class="p">.</span><span class="n">Of</span><span class="p">&lt;</span><span class="n">Position</span><span class="p">,</span> <span class="n">Velocity</span><span class="p">&gt;());</span>
+</span></span><span class="line"><span class="cl"><span class="n">world</span><span class="p">.</span><span class="n">SetComponent</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="k">new</span> <span class="n">Position</span> <span class="p">{</span> <span class="n">Value</span> <span class="p">=</span> <span class="n">float3</span><span class="p">.</span><span class="n">zero</span> <span class="p">});</span></span></span></code></pre></div></div><p><strong><code>OnDestroy</code></strong> shuts down the scheduler and disposes the world. If this bootstrap owned <strong><code>World.Default</code></strong>, it clears that static on teardown.</p>
+
+<h2 id="samples" class="heading">Samples <a href="#samples" aria-labelledby="samples">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+
+<h2 id="utilities" class="heading">Utilities <a href="#utilities" aria-labelledby="utilities">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p><code>APECS</code> ships a small set of focused, dependency-free helpers:</p>
+<table>
+<thead>
+<tr>
+<th>Helper</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>World</code> lookup helpers (<code>Entity.Null</code>, <code>world.SwapAllEventQueues</code>, <code>world.BumpStructuralVersion</code>)</td>
+<td>The central API for cross-system coordination.</td>
+</tr>
+<tr>
+<td><code>ComponentRegistry.IdOf&lt;T&gt;()</code></td>
+<td>Cached type-id lookup. Reflection runs once at startup.</td>
+</tr>
+<tr>
+<td><code>ComponentMask.Of&lt;T&gt;()</code> / <code>Of&lt;T,U&gt;()</code> / &hellip;</td>
+<td>Mask builder. Use this when you need to pass a mask to a system.</td>
+</tr>
+<tr>
+<td><code>ArchetypeStorage.GetById</code> / <code>All</code></td>
+<td>Used by the test infrastructure. Don&rsquo;t reach for it from gameplay code; the query API is what you want.</td>
+</tr>
+<tr>
+<td><code>CommandBufferSystem.GetBuffer(this)</code></td>
+<td>The standard way to record structural changes from inside a system.</td>
+</tr>
+</tbody>
+</table>
+<p>These are part of the public API; no instantiation, no extra package dependencies.</p>
+<hr />
+
+<h2 id="support" class="heading">Support <a href="#support" aria-labelledby="support">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>Do you have any problem or any suggestions? Send an email to <strong><a href="mailto:fronkongames@gmail.com">fronkongames@gmail.com</a></strong> and I&rsquo;ll be happy to help you.</p>
+<p>Remember that if you want to inform me of an error, it would help me if you sent to me the <a href="https://docs.unity3d.com/Manual/LogFiles.html">log file</a>.</p>
+
+
+<br><center><h4>
+
+
+
+</center></h4>
+
+
+    </div>
+    
+</div>    
+
+
+        
+
+    </div>
+
+    
+    
+        
+    
+
+    
+    <div class="container-fluid flex-fill"></div>
+
+    
+
+
+
+
+<script src="/js/mermaid.bundle.min.296f416ef194d6c6e9b63fa2d1cb218477aefe5ce78067454cf86f7c5b9c197e.js" integrity="sha256-KW9BbvGU1sbptj&#43;i0cshhHeu/lzngGdFTPhvfFucGX4=" crossorigin="anonymous" defer></script>
+      <script data-goatcounter="https://fronkongames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+            <script src="/js/custom-effects.js"></script>
+        </div>
+    </body>
+</html>
