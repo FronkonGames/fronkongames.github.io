@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Sat, 27 Jun 2026 03:00:50 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 00:44:51 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Store</title>
@@ -147,6 +147,13 @@
       <link>https://fronkongames.github.io/tags/ai/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>https://fronkongames.github.io/tags/artificial-intelligence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/artificial-intelligence/</guid>
       <description></description>
     </item>
     <item>

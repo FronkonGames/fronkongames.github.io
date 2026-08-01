@@ -24,6 +24,7 @@ It consists of the following effects:
 * [👀 Double Vision](#doublevision), oscillating image separation and color offsets.
 * [🌧️ Rain](#rain), animated droplets, trails, and layered wet-screen effects.
 * [👻 Ghost Vision](#ghostvision), creature-like tunnel vision with animated noise.
+* [😱 Nightmare](#nightmare), surreal warping with distortion modes, color shift, and vignette.
 * [📺 Scanner](#scanner), CCTV, monitor, and robotic-display artifacts.
 * [☠️ Death Screen](#deathscreen), a blood wipe for death or defeat states.
 * [🌙 Purkinje](#purkinje), low-light adaptation inspired by human night perception.
@@ -1378,6 +1379,175 @@ For supernatural sensing:
 * Strength: 0.3 - 0.6
 * Inner Tint: pale or spectral
 * Debug View: temporarily enabled while tuning
+
+---
+## 😱 Nightmare {#nightmare}
+{{< asset-header youtube="u56E0bF-UnM" store="https://assetstore.unity.com/packages/slug/397134" demo="https://fronkongames.github.io/demos-spiceup/nightmare/" warn="assets used in video and demo are not included">}}
+
+'**Nightmare**' warps reality into a shifting, surreal nightmare. It combines animated UV distortion modes, multi-pass accumulation, chromatic color shift, tunnel-vision vignette, and tint gradients. Ideal for horror, fever dreams, panic attacks, and psychedelic sequences.
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+* **Unity:** 6000.0.76f1 or higher.
+* **Universal RP:** 17.0.3 or higher.
+
+#### Installation Guide
+
+##### Step 1: Add Renderer Feature
+
+1. Locate your **Universal Renderer Data** asset.
+2. Click **Add Renderer Feature** and select **Fronkon Games > Spice Up > Nightmare**.
+
+##### Step 2: Configure the Volume
+
+1. Create a **Volume** component (Global or Local).
+2. In the Volume component, create or assign a **Volume Profile**.
+3. Click **Add Override** and select **Fronkon Games > Spice Up > Nightmare**.
+4. Enable '**Intensity**' and the distortion/color parameters you want to control.
+
+#### Parameter Configuration
+
+{{< image src="nightmare_0.jpg" wrapper="col-8 mx-auto">}}
+
+With '**Intensity**' you can control the overall strength of the effect [0.0 - 1.0]. If it is 0, the effect will not be active.
+
+##### Distortion
+
+The custom inspector starts with the warp controls: mode selection, multi-pass accumulation, strength, focus, and optional depth attenuation.
+
+{{< table >}}
+| | |
+|---|---|
+| **Mode** | Distortion algorithm: `UV`, `Color Channel`, `Swirl`, `Ripple`, `Noise`, or `Kaleidoscope` |
+| **Passes** | Number of time-offset samples averaged together [1, 5] |
+| **Distortion** | Warp strength [0, 1] |
+| **Speed** | Distortion animation speed |
+| **Center** | Focus point of the warp in UV space |
+| **Depth** | How strongly near-field geometry reduces distortion [0, 1] |
+{{< /table >}}
+
+{{< alert type="info" >}}
+Higher **Passes** values thicken the nightmare look by averaging time-offset warps, but increase shader cost roughly linearly.
+{{< /alert >}}
+
+##### Vignette
+
+The '**Vignette**' block in the custom inspector darkens the edges around the focus point for tunnel-vision pressure.
+
+{{< table >}}
+| | |
+|---|---|
+| **Vignette** | Edge darkness / tunnel vision [0, 1] |
+| **Power** | Falloff sharpness of the vignette |
+{{< /table >}}
+
+##### Color Shift
+
+Inside the custom inspector, '**Color Shift**' drives the animated RGB channel scaling that gives Nightmare its unstable color feel.
+
+{{< table >}}
+| | |
+|---|---|
+| **Color Shift** | Strength of the animated channel shift [0, 1] |
+| **Speed** | Color animation speed |
+| **Offset** | Color bias added after the channel shift |
+{{< /table >}}
+
+##### Blend / Gradient
+
+The custom inspector ends the Nightmare block with blend and tint controls, including conditional tint slots for multi-color gradients.
+
+{{< table >}}
+| | |
+|---|---|
+| **Blend** | Blend mode used to composite the nightmare over the source image |
+| **Gradient** | Tint gradient mode: `Solid`, `Horizontal`, `Vertical`, or `Circular` |
+| **Tint / Tint #0 / Tint #1** | Available color fields depending on the selected gradient mode |
+{{< /table >}}
+
+##### Color
+
+Open the '**Color**' foldout in the custom inspector to adjust the final grading applied after the nightmare warp.
+
+{{< table >}}
+| | |
+|---|---|
+| **Brightness** | Overall brightness |
+| **Contrast** | Overall contrast |
+| **Gamma** | Overall gamma |
+| **Hue** | Global hue shift |
+| **Saturation** | Global saturation |
+{{< /table >}}
+
+##### Runtime Control
+
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using FronkonGames.SpiceUp.Nightmare;
+
+[SerializeField] private VolumeProfile volumeProfile;
+
+private void SetNightmare(float intensity, float distortion)
+{
+  if (volumeProfile.TryGet(out NightmareVolume volume))
+  {
+    volume.intensity.overrideState = true;
+    volume.distortion.overrideState = true;
+    volume.intensity.value = Mathf.Clamp01(intensity);
+    volume.distortion.value = Mathf.Clamp01(distortion);
+  }
+}
+```
+
+You can also animate intensity for a quick attack → hold → release burst, or move the warp focus at runtime:
+
+```csharp
+volume.intensity.overrideState = true;
+volume.center.overrideState = true;
+volume.center.value = new Vector2(0.25f, 0.5f);
+```
+
+💡 Take a look at the code in the included demo to learn more about how the effect works. The demo includes ready presets such as Mild Dream, Panic Attack, Acid Trip, Sleep Paralysis, and Fever Vision.
+
+##### Performance Characteristics
+
+The effect executes in a single full-screen pass, but cost scales with the number of nightmare passes.
+
+* Pass Count: 1 blit pass.
+* Texture Samples: Low to moderate, multiplied by **Passes**.
+* Complexity: O(n) with respect to **Passes** (each pass re-samples and warps the image).
+
+##### Usage Patterns and Presets
+
+###### Mild Dream
+
+For a readable but uneasy screen:
+* Mode: UV
+* Distortion: 0.3 - 0.4
+* Vignette: 0.2 - 0.3
+* Color Shift: 0.15 - 0.25
+* Tint: cool purple
+
+###### Panic Attack
+
+For aggressive horror feedback:
+* Mode: Swirl
+* Distortion: 0.7 - 0.9
+* Vignette: 0.7 - 0.85
+* Color Shift: 0.5 - 0.6
+* Gradient: Circular, dark red
+
+###### Acid Trip
+
+For strong psychedelic overload:
+* Mode: Kaleidoscope
+* Distortion: 0.8 - 1.0
+* Color Shift: 0.7 - 0.9
+* Gradient: Horizontal, high-contrast tints
+* Passes: 2 - 4
 
 ---
 ## 📺 Scanner {#scanner}
