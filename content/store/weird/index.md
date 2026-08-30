@@ -2,7 +2,7 @@
 author: Martin Bustos
 title: Weird
 showTitle: false
-date: 2025-03-11
+date: 5
 description: Embrace the weirdness and make your games truly unique
 tags: ["unity", "store"]
 metadata: none

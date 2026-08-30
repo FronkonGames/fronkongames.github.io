@@ -7,22 +7,8 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Sat, 04 Jul 2026 00:44:51 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 02:48:40 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Store</title>
-      <link>https://fronkongames.github.io/tags/store/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/store/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Unity</title>
-      <link>https://fronkongames.github.io/tags/unity/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/unity/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Burst</title>
       <link>https://fronkongames.github.io/tags/burst/</link>
@@ -59,6 +45,13 @@
       <description></description>
     </item>
     <item>
+      <title>Unity</title>
+      <link>https://fronkongames.github.io/tags/unity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/unity/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>URP</title>
       <link>https://fronkongames.github.io/tags/urp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -87,6 +80,62 @@
       <description></description>
     </item>
     <item>
+      <title>Lut</title>
+      <link>https://fronkongames.github.io/tags/lut/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/lut/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Luts</title>
+      <link>https://fronkongames.github.io/tags/luts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/luts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Store</title>
+      <link>https://fronkongames.github.io/tags/store/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/store/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Camera</title>
+      <link>https://fronkongames.github.io/tags/camera/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/camera/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cinema</title>
+      <link>https://fronkongames.github.io/tags/cinema/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/cinema/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cinematic</title>
+      <link>https://fronkongames.github.io/tags/cinematic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/cinematic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fade</title>
+      <link>https://fronkongames.github.io/tags/fade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/fade/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Film</title>
+      <link>https://fronkongames.github.io/tags/film/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/film/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Gamejam</title>
       <link>https://fronkongames.github.io/tags/gamejam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -101,10 +150,108 @@
       <description></description>
     </item>
     <item>
+      <title>Realtime</title>
+      <link>https://fronkongames.github.io/tags/realtime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/realtime/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transition</title>
+      <link>https://fronkongames.github.io/tags/transition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/transition/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transitions</title>
+      <link>https://fronkongames.github.io/tags/transitions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/transitions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ai</title>
+      <link>https://fronkongames.github.io/tags/ai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>https://fronkongames.github.io/tags/artificial-intelligence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/artificial-intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ballistic</title>
+      <link>https://fronkongames.github.io/tags/ballistic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/ballistic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bullet</title>
+      <link>https://fronkongames.github.io/tags/bullet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/bullet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bullets</title>
+      <link>https://fronkongames.github.io/tags/bullets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/bullets/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>First Person</title>
+      <link>https://fronkongames.github.io/tags/first-person/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/first-person/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FPS</title>
+      <link>https://fronkongames.github.io/tags/fps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/fps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Music</title>
+      <link>https://fronkongames.github.io/tags/music/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/music/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Physics</title>
+      <link>https://fronkongames.github.io/tags/physics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/physics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shooter</title>
+      <link>https://fronkongames.github.io/tags/shooter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/shooter/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Steam</title>
       <link>https://fronkongames.github.io/tags/steam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/steam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weapon</title>
+      <link>https://fronkongames.github.io/tags/weapon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/weapon/</guid>
       <description></description>
     </item>
     <item>
@@ -122,38 +269,10 @@
       <description></description>
     </item>
     <item>
-      <title>Lut</title>
-      <link>https://fronkongames.github.io/tags/lut/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/lut/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Luts</title>
-      <link>https://fronkongames.github.io/tags/luts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/luts/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Tween</title>
       <link>https://fronkongames.github.io/tags/tween/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/tween/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ai</title>
-      <link>https://fronkongames.github.io/tags/ai/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Artificial Intelligence</title>
-      <link>https://fronkongames.github.io/tags/artificial-intelligence/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/artificial-intelligence/</guid>
       <description></description>
     </item>
     <item>
@@ -199,27 +318,6 @@
       <description></description>
     </item>
     <item>
-      <title>Camera</title>
-      <link>https://fronkongames.github.io/tags/camera/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/camera/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cinema</title>
-      <link>https://fronkongames.github.io/tags/cinema/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/cinema/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cinematic</title>
-      <link>https://fronkongames.github.io/tags/cinematic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/cinematic/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Code</title>
       <link>https://fronkongames.github.io/tags/code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -227,31 +325,10 @@
       <description></description>
     </item>
     <item>
-      <title>Fade</title>
-      <link>https://fronkongames.github.io/tags/fade/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/fade/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Film</title>
-      <link>https://fronkongames.github.io/tags/film/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/film/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Kairos</title>
       <link>https://fronkongames.github.io/tags/kairos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/kairos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Realtime</title>
-      <link>https://fronkongames.github.io/tags/realtime/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/realtime/</guid>
       <description></description>
     </item>
     <item>
@@ -266,20 +343,6 @@
       <link>https://fronkongames.github.io/tags/templates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/templates/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Transition</title>
-      <link>https://fronkongames.github.io/tags/transition/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/transition/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Transitions</title>
-      <link>https://fronkongames.github.io/tags/transitions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/transitions/</guid>
       <description></description>
     </item>
     <item>
@@ -322,62 +385,6 @@
       <link>https://fronkongames.github.io/tags/tailwind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/tailwind/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ballistic</title>
-      <link>https://fronkongames.github.io/tags/ballistic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/ballistic/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bullet</title>
-      <link>https://fronkongames.github.io/tags/bullet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/bullet/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bullets</title>
-      <link>https://fronkongames.github.io/tags/bullets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/bullets/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>First Person</title>
-      <link>https://fronkongames.github.io/tags/first-person/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/first-person/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>FPS</title>
-      <link>https://fronkongames.github.io/tags/fps/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/fps/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Physics</title>
-      <link>https://fronkongames.github.io/tags/physics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/physics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Shooter</title>
-      <link>https://fronkongames.github.io/tags/shooter/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/shooter/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Weapon</title>
-      <link>https://fronkongames.github.io/tags/weapon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/weapon/</guid>
       <description></description>
     </item>
   </channel>

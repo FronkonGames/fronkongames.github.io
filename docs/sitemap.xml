@@ -2,18 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fronkongames.github.io/tags/store/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/</loc>
-    <lastmod>2026-07-04T00:44:51+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/unity/</loc>
-    <lastmod>2026-07-04T00:37:22+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/store/weird/</loc>
-    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
-  </url><url>
     <loc>https://fronkongames.github.io/projects/apecs/</loc>
     <lastmod>2026-07-04T00:37:22+02:00</lastmod>
   </url><url>
@@ -31,6 +19,12 @@
   </url><url>
     <loc>https://fronkongames.github.io/tags/parallel/</loc>
     <lastmod>2026-07-04T00:37:22+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/</loc>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/unity/</loc>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/urp/</loc>
     <lastmod>2026-07-04T00:37:22+02:00</lastmod>
@@ -56,6 +50,36 @@
     <loc>https://fronkongames.github.io/projects/awesome-game-development/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
+    <loc>https://fronkongames.github.io/tags/lut/</loc>
+    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/luts/</loc>
+    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/store/luts/</loc>
+    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/store/</loc>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/camera/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/store/camera-transitions/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/cinema/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/cinematic/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/fade/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/film/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
     <loc>https://fronkongames.github.io/tags/gamejam/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
@@ -65,26 +89,65 @@
     <loc>https://fronkongames.github.io/tags/python/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
+    <loc>https://fronkongames.github.io/tags/realtime/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/transition/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/transitions/</loc>
+    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/ai/</loc>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/artificial-intelligence/</loc>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/ballistic/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/bullet/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/bullets/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/first-person/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/fps/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/store/local-ai/</loc>
+    <lastmod>1970-01-01T01:00:06+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/music/</loc>
+    <lastmod>1970-01-01T01:00:06+01:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/physics/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/shooter/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
     <loc>https://fronkongames.github.io/tags/steam/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/global-gamejam-dataset/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
+    <loc>https://fronkongames.github.io/store/true-ballistics/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
+    <loc>https://fronkongames.github.io/tags/weapon/</loc>
+    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
+  </url><url>
     <loc>https://fronkongames.github.io/tags/blog/</loc>
-    <lastmod>2026-07-04T00:44:51+02:00</lastmod>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/c%23/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/lut/</loc>
-    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/luts/</loc>
-    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/store/luts/</loc>
-    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/tiny-tween/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -95,20 +158,17 @@
     <loc>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</loc>
     <lastmod>2026-07-04T00:37:22+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/tags/ai/</loc>
-    <lastmod>2026-07-04T00:44:51+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/artificial-intelligence/</loc>
-    <lastmod>2026-07-04T00:44:51+02:00</lastmod>
+    <loc>https://fronkongames.github.io/store/weird/</loc>
+    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/blog/artificial-intelligence/</loc>
-    <lastmod>2026-07-04T00:44:51+02:00</lastmod>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/projects/build-history/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/films/</loc>
-    <lastmod>2026-07-04T00:44:51+02:00</lastmod>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/glitch/</loc>
     <lastmod>2026-06-24T22:56:13+02:00</lastmod>
@@ -123,25 +183,13 @@
     <lastmod>2026-06-24T22:56:13+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/letterboxd/</loc>
-    <lastmod>2026-07-04T00:44:51+02:00</lastmod>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/submarine/</loc>
     <lastmod>2026-07-04T00:37:22+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/submarines/</loc>
     <lastmod>2026-07-04T00:37:22+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/camera/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/store/camera-transitions/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/cinema/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/cinematic/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/code/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -152,17 +200,8 @@
     <loc>https://fronkongames.github.io/projects/kairos/drag-and-drop-cards/</loc>
     <lastmod>2025-12-23T16:55:43+01:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/tags/fade/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/film/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
-  </url><url>
     <loc>https://fronkongames.github.io/tags/kairos/</loc>
     <lastmod>2025-12-23T16:55:43+01:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/realtime/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/retro/</loc>
     <lastmod>2026-06-24T22:56:13+02:00</lastmod>
@@ -172,12 +211,6 @@
   </url><url>
     <loc>https://fronkongames.github.io/tags/templates/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/transition/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/transitions/</loc>
-    <lastmod>2026-06-15T16:28:15+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/tags/color/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
@@ -198,7 +231,7 @@
     <lastmod>2025-12-23T16:15:57+01:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/store/spiceup/</loc>
-    <lastmod>2026-06-24T22:56:13+02:00</lastmod>
+    <lastmod>2026-08-01T02:48:40+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/store/artistic/</loc>
     <lastmod>2026-06-24T22:56:13+02:00</lastmod>
@@ -221,35 +254,8 @@
     <loc>https://fronkongames.github.io/projects/tailwind-colors/</loc>
     <lastmod>2025-04-11T14:34:02+02:00</lastmod>
   </url><url>
-    <loc>https://fronkongames.github.io/tags/ballistic/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/bullet/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/bullets/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/first-person/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/fps/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
     <loc>https://fronkongames.github.io/projects/kairos/hello/</loc>
     <lastmod>2025-12-23T16:45:58+01:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/physics/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/shooter/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/store/true-ballistics/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
-  </url><url>
-    <loc>https://fronkongames.github.io/tags/weapon/</loc>
-    <lastmod>2026-06-27T03:00:50+02:00</lastmod>
   </url><url>
     <loc>https://fronkongames.github.io/browserconfig.xml</loc>
     <lastmod>2024-06-05T13:03:34+02:00</lastmod>

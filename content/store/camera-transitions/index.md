@@ -2,7 +2,7 @@
 author: Martin Bustos
 title: Camera Transitions
 showTitle: false
-date: 3
+date: 7
 description: Cinematic, realtime and easy-to-use transitions between cameras in a camera
 tags: ["unity", "store", "camera", "transitions", "transition", "fade", "realtime", "cinematic", "cinema", "film"]
 metadata: none

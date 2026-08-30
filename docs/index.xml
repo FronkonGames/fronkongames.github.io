@@ -9,13 +9,6 @@
     <copyright>Copyright © 2024 Fronkon Games</copyright>
     <atom:link href="https://fronkongames.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Weird</title>
-      <link>https://fronkongames.github.io/store/weird/</link>
-      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/store/weird/</guid>
-      <description>&amp;lsquo;Weird&amp;rsquo; is a collection of fullscreen post-processing effects designed to add surreal, psychedelic, and artistic visual treatments to your games. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.</description>
-    </item>
-    <item>
       <title>Game:Work Foundation</title>
       <link>https://fronkongames.github.io/projects/gamework-foundation/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:10 +0100</pubDate>
@@ -37,11 +30,32 @@
       <description></description>
     </item>
     <item>
+      <title>LUTs</title>
+      <link>https://fronkongames.github.io/store/luts/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:08 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/luts/</guid>
+      <description>Thanks to LUTs you can completely transform the look of your games, making them more coherent with your artistic preferences.</description>
+    </item>
+    <item>
+      <title>Camera Transitions</title>
+      <link>https://fronkongames.github.io/store/camera-transitions/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/camera-transitions/</guid>
+      <description>assets used in video and demo are not included&#xA;STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO &amp;nbsp;&#xD;This asset provides a collection of cinematic, realtime and easy-to-use camera transition effects to enhance your games.</description>
+    </item>
+    <item>
       <title>Global GameJam Dataset</title>
       <link>https://fronkongames.github.io/projects/steam-games-dataset/</link>
       <pubDate>Thu, 01 Jan 1970 01:00:07 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/steam-games-dataset/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Local AI</title>
+      <link>https://fronkongames.github.io/store/local-ai/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/local-ai/</guid>
+      <description>&amp;lsquo;Local AI&amp;rsquo; is a collection of generative AI tools that run entirely on your computer.&#xA;There is no cloud account, no subscription, no usage fees, and no per-prompt limits.</description>
     </item>
     <item>
       <title>Steam Games Dataset</title>
@@ -51,11 +65,11 @@
       <description></description>
     </item>
     <item>
-      <title>LUTs</title>
-      <link>https://fronkongames.github.io/store/luts/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/luts/</guid>
-      <description>Thanks to LUTs you can completely transform the look of your games, making them more coherent with your artistic preferences.</description>
+      <title>True Ballistics</title>
+      <link>https://fronkongames.github.io/store/true-ballistics/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:06 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/true-ballistics/</guid>
+      <description>STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;A comprehensive, physically-accurate ballistics simulation system for Unity that provides realistic trajectories, ricochets, penetration mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.</description>
     </item>
     <item>
       <title>Tiny Tween</title>
@@ -70,6 +84,13 @@
       <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
       <guid>https://fronkongames.github.io/blog/unity-is-a-harsh-mistress/</guid>
       <description>&amp;nbsp; UPDATE (12/09/2024)&#xA;Although the damage is done, Unity finally cancels the controversial Runtime Free.&#xA;&amp;nbsp; UPDATE (01/04/2024)&#xA;Unity appoints Matthew Bromberg as new CEO.</description>
+    </item>
+    <item>
+      <title>Weird</title>
+      <link>https://fronkongames.github.io/store/weird/</link>
+      <pubDate>Thu, 01 Jan 1970 01:00:05 +0100</pubDate>
+      <guid>https://fronkongames.github.io/store/weird/</guid>
+      <description>&amp;lsquo;Weird&amp;rsquo; is a collection of fullscreen post-processing effects designed to add surreal, psychedelic, and artistic visual treatments to your games. From hypnotic fire tunnels to reality-warping distortions and ethereal auras, give your projects that extra edge in horror, magic, and psychedelic experiences.</description>
     </item>
     <item>
       <title>Artificial Intelligence Movies</title>
@@ -98,13 +119,6 @@
       <pubDate>Thu, 01 Jan 1970 01:00:04 +0100</pubDate>
       <guid>https://fronkongames.github.io/blog/submarines/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>Camera Transitions</title>
-      <link>https://fronkongames.github.io/store/camera-transitions/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:03 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/camera-transitions/</guid>
-      <description>assets used in video and demo are not included&#xA;STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO &amp;nbsp;&#xD;This asset provides a collection of cinematic, realtime and easy-to-use camera transition effects to enhance your games.</description>
     </item>
     <item>
       <title>Code Wizard</title>
@@ -189,13 +203,6 @@
       <pubDate>Thu, 01 Jan 1970 01:00:00 +0100</pubDate>
       <guid>https://fronkongames.github.io/projects/kairos/hello/</guid>
       <description>Hello Everybody! 🧟 &amp;nbsp; Hi, I&amp;rsquo;m Martin Bustos, and I&amp;rsquo;ve been developing games for more than two decades for PC, consoles, online, etc.</description>
-    </item>
-    <item>
-      <title>True Ballistics</title>
-      <link>https://fronkongames.github.io/store/true-ballistics/</link>
-      <pubDate>Thu, 01 Jan 1970 01:00:00 +0100</pubDate>
-      <guid>https://fronkongames.github.io/store/true-ballistics/</guid>
-      <description>STORE&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;DEMO&amp;nbsp; &amp;nbsp; &amp;nbsp;&#xD;A comprehensive, physically-accurate ballistics simulation system for Unity that provides realistic trajectories, ricochets, penetration mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.</description>
     </item>
     <item>
       <title></title>
