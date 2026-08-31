@@ -142,7 +142,7 @@ The model has been trained on hundreds of hours of music featuring singers, so i
 {{< /table >}}
 
 {{< alert color="info" >}}
-Lyrics can be written in any language, but the model is trained and documented primarily on **English**. Non-English lyrics may work but are **not guaranteed** — quality depends on the language and how clearly the **Style** describes the vocal character (for example, genre and timbre). There is no separate language control.
+Lyrics can be written in any language, but the model is trained and documented primarily on **English**. Non-English lyrics may work but are **not guaranteed**. Quality depends on the language and how clearly the **Style** describes the vocal character (for example, genre and timbre). There is no separate language control.
 {{< /alert >}}
 
 ##### Multiple voices (experimental)
