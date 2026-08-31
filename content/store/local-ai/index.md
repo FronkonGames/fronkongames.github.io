@@ -43,7 +43,7 @@ GGUF model weights are large. Keep them out of git. I recommend using a folder o
 #
 ---
 ## 🎵 Music {#music}
-{{< asset-header store="" youtube="mEzHKkLCFN8" >}}
+{{< asset-header store="https://assetstore.unity.com/packages/tools/audio/local-ai-music-401726" youtube="mEzHKkLCFN8" >}}
 
 '**Local AI: Music**' generates songs **offline** inside the Unity Editor. Describe style and arrangement, optionally write sectioned lyrics, then render a WAV on your machine.
 
@@ -51,6 +51,7 @@ GGUF model weights are large. Keep them out of git. I recommend using a folder o
 * **Editor-only.** Tools live under **Window → Fronkon Games → Local AI → Music**. Nothing is added to a player build unless you import the generated audio yourself.
 * **Hundreds of styles.** Genre presets ship in the package, including instrumental variants. Duplicate and edit them, or create your own.
 * **Optional lyrics.** Assign a lyric asset for a sung track. Leave lyrics empty (or use a style that describes no singer) and generation is treated as **instrumental** without rewriting the style asset.
+* **WAV output.** Stereo, **44.1 kHz**, **16-bit PCM**. Length **5–300 s**.
 * **Game-ready loops.** Enable **Seamless loop** to search for a natural wrap in the WAV and mark the imported AudioClip as loopable.
 * **CUDA, then Vulkan, then CPU.** A GPU is not required. CUDA is used when a compatible NVIDIA GPU is present.
 
@@ -140,6 +141,43 @@ The model has been trained on hundreds of hours of music featuring singers, so i
 | **Preview** | Opens a window with the tagged lyric sheet sent to the model (`[Verse]`, `[Chorus]`, and so on). |
 {{< /table >}}
 
+{{< alert color="info" >}}
+Lyrics can be written in any language, but the model is trained and documented primarily on **English**. Non-English lyrics may work but are **not guaranteed** — quality depends on the language and how clearly the **Style** describes the vocal character (for example, genre and timbre). There is no separate language control.
+{{< /alert >}}
+
+##### Multiple voices (experimental)
+
+To assign different singers to different sections (for example, a duet) describe **both** voices in **Style → Vocal Details** (gender, timbre, and who sings which part).
+
+Add **short** voice tags on their own lines inside the section text: `[male vocal]`, `[female vocal]`, or `[duet]`.
+
+Caption-only instructions are usually not enough, tags in the lyrics matter too. Keep each tag to one or two words, longer tags may be sung aloud.
+
+```
+[Verse]
+[male vocal]
+I walked alone through midnight rain
+Every street remembers your name
+
+[Verse]
+[female vocal]
+You left a letter by the door
+Said you weren't coming back no more
+
+[Chorus]
+[duet]
+We were fire, we were flame
+Nothing left but ash and shame
+```
+
+In the Style, name both singers and state who opens, for example, a deep male baritone on the first verse, a bright female soprano on the second, both joining the chorus, with no choir or doubled backing vocals. 
+
+Section-level switching works best; line-by-line alternation usually fails. Casting is not deterministic, try different seeds and check the first few seconds; if the wrong voice opens, generate again.
+
+{{< alert color="warning" >}}
+Multi-voice experimental, not an official feature. Expect to re-roll several times for a usable take.
+{{< /alert >}}
+
 ##### Generator
 
 {{< image src="music_generator.png" wrapper="col-12 mx-auto">}}
@@ -174,11 +212,11 @@ Assign a style, optionally lyrics, then **Generate**. Native backends are tried 
 | **Keep models loaded** | If enabled, GGUF weights stay in memory between runs (faster repeats, more RAM/VRAM). |
 | **Preset** | The `MusicPreset` (style) to generate from. **New** creates an asset; **Edit** opens Style. |
 | **Lyrics** | Optional `MusicLyric`. **New** creates an asset; **Edit** opens Lyrics. |
-| **Duration** [5-300 s] | Length of the WAV. Default: 60. |
+| **Duration** [5-300 s] | Length of the WAV. Default: 60. Output is always stereo **44.1 kHz** **16-bit PCM**. |
 | **DiT steps** [8-50] | Diffusion transformer steps. Higher is slower and can be cleaner. Default: 30. |
 | **Seamless loop** | After generate, search for a loopable wrap and mark the imported AudioClip as loopable. |
 | **Models** | Folder that contains the five GGUF files. **Download** fetches them. |
-| **Output** | Destination `.wav` path. **Pin** highlights the clip in the Project window if it is inside the project. |
+| **Output** | Destination `.wav` path (stereo, 44.1 kHz, 16-bit PCM). **Pin** highlights the clip in the Project window if it is inside the project. |
 | **Generate** | Starts generation. Disabled until a style is assigned and the model files are valid. |
 {{< /table >}}
 
