@@ -1,5 +1,10 @@
 // Placeholder to quickly add your own styles
 // The file is included last in the build pipeline
+
+:root {
+  --bs-code-color: var(--bs-primary);
+}
+
 blockquote {
   margin-left: 0rem;
   border-left: 5px solid $secondary;

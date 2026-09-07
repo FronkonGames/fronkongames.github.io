@@ -11943,6 +11943,9 @@ h6, .h6 {
   src: url("../fonts/inter-v12-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/inter-v12-latin-600.woff2") format("woff2"), url("../fonts/inter-v12-latin-600.woff") format("woff"), url("../fonts/inter-v12-latin-600.ttf") format("truetype"), url("../fonts/inter-v12-latin-600.svg#Inter") format("svg");
   /* Legacy iOS */ }
 
+:root {
+  --bs-code-color: var(--bs-primary); }
+
 blockquote {
   margin-left: 0rem;
   border-left: 5px solid #6c757d;

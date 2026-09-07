@@ -141,7 +141,7 @@ You can create new weapons (and shells) from the `Project` window (Fronkon Games
 - `Pellet Count` / `Pellet Diameter` / `Pellet Mass` / `Pellet Ballistic Coefficient`: Per-pellet physical properties.
 - `Pellet Drag Model`: Drag table for pellets. Defaults to `Sphere` (GS), recommended for buckshot / spherical shot. Can also use G1–G8.
 - `Spread Coefficient`: Radial spread rate in metres per metre of travel (tan of the pellet-cone half-angle).
-- `Spread Pattern`: `Uniform` (even disk) or `Gaussian` (denser near the centre — typical real patterns). Default `Gaussian`.
+- `Spread Pattern`: `Uniform` (even disk) or `Gaussian` (denser near the centre ,  typical real patterns). Default `Gaussian`.
 - `Choke`: Named choke preset (`Cylinder`, `Skeet`, `ImprovedCylinder`, `ImprovedSkeet`, `Modified`, `ImprovedModified`, `LightFull`, `Full`, `ExtraFull`) or `Custom`. Named presets set the relative pattern diameter vs cylinder (Cylinder = 1.00 … Extra Full ≈ 0.40).
 - `Choke Factor`: Used when `Choke` is `Custom` (1 = open cylinder; ~0.5 ≈ full choke).
 - `Size Aware Spread`: When on, smaller pellets (birdshot) get a wider angular spread than buck-sized shot (scale clamped 1–2.5× vs ~00 buck reference). Default on.
@@ -196,7 +196,7 @@ When `Use Advanced Spin Drift` is true and `Miller Stability Factor` > 0, the sp
 
 {{< image src="inspector_4.jpg" wrapper="col-9 mx-auto">}}
 
-The engine room of `True Ballistics`. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag (with G1–G8 and Sphere tables — Approximate or optional McCoy/JBM — plus the shape-aware transonic correction), wind, and per-bullet spin drift and Coriolis deflection; then integrates the motion with adaptive sub-stepping and optional per-sub-step drag recalculation. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles **would not move**.
+The engine room of `True Ballistics`. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag (with G1–G8 and Sphere tables ,  Approximate or optional McCoy/JBM ,  plus the shape-aware transonic correction), wind, and per-bullet spin drift and Coriolis deflection; then integrates the motion with adaptive sub-stepping and optional per-sub-step drag recalculation. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles **would not move**.
 
 **Features**:
 - Configurable gravity vector (supports other planets).
@@ -325,7 +325,7 @@ When the entity pool is full (5000 by default), despawn the oldest active projec
 
 {{< image src="inspector_6.jpg" wrapper="col-9 mx-auto">}}
 
-The gate-keeper of `True Ballistics`. Checks each projectile’s path and decides whether it has struck something—using precise [RayCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.Raycast.html) for hypersonic rounds and efficient batched [SphereCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.SphereCast.html) for everyone else—then fires events that let ricochet, penetration, VFX and damage systems do their work. In short, it turns flying bullets into meaningful impacts your game can react to. Without this system the projectiles **would pass straight through every surface**.
+The gate-keeper of `True Ballistics`. Checks each projectile’s path and decides whether it has struck something, using precise [RayCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.Raycast.html) for hypersonic rounds and efficient batched [SphereCasts](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Physics.SphereCast.html) for everyone else, then fires events that let ricochet, penetration, VFX and damage systems do their work. In short, it turns flying bullets into meaningful impacts your game can react to. Without this system the projectiles **would pass straight through every surface**.
 
 {{< alert color="light" >}}
 Remember that for a projectile to collide with an object on the stage, this object must have some kind of [Collider](https://docs.unity3d.com/Manual/collision-section.html).
@@ -343,7 +343,7 @@ Remember that for a projectile to collide with an object on the stage, this obje
 
 Once added to the systems, you can subscribe to the `OnProjectileHit` events to receive information on each impact.
 
-`CollisionInfo` includes `entity`, `point`, `normal`, `collider`, `impactEnergy`, and — since 1.2.0 — snapshotted projectile **`mass`** and **`velocity`** at hit time. Prefer those fields over reading `PhysicsComponent` after the event: another subscriber (e.g. Lifecycle **One Collision**) may already have despawned the entity.
+`CollisionInfo` includes `entity`, `point`, `normal`, `collider`, `impactEnergy`, and ,  since 1.2.0 ,  snapshotted projectile **`mass`** and **`velocity`** at hit time. Prefer those fields over reading `PhysicsComponent` after the event: another subscriber (e.g. Lifecycle **One Collision**) may already have despawned the entity.
 
 ```csharp
 // Cache all colliders on this object and its children for efficient hit detection
@@ -389,7 +389,7 @@ If you add `Debug System` to the system list, you will be able to see the impact
 {{< image src="collision_0.jpg" wrapper="col-9 mx-auto">}}
 
 {{< alert color="light" >}}
-Objects with Colliders and physics ([RigidBody](https://docs.unity3d.com/Manual/rigidbody-physics-section.html)) **do not receive any physical impulse** when hitting a projectile (it is not the goal of this library). However you can consult the `RigidBodyManager` class to see an example of how to do it — it uses the mass/velocity carried on `CollisionInfo`, so it still works if Lifecycle **One Collision** despawns the entity first.
+Objects with Colliders and physics ([RigidBody](https://docs.unity3d.com/Manual/rigidbody-physics-section.html)) **do not receive any physical impulse** when hitting a projectile (it is not the goal of this library). However you can consult the `RigidBodyManager` class to see an example of how to do it ,  it uses the mass/velocity carried on `CollisionInfo`, so it still works if Lifecycle **One Collision** despawns the entity first.
 {{< /alert >}}
 
 {{< alert color="light" >}}
@@ -422,7 +422,7 @@ If you add `Debug System` to the system list, you will be able to see the ricoch
 
 {{< image src="inspector_8.jpg" wrapper="col-9 mx-auto">}}
 
-The wall-breaker of `True Ballistics`. When a projectile strikes and doesn’t ricochet, this system decides whether it bores straight through, deflects inside the material, or grinds to a halt. It measures the round’s kinetic energy against the surface’s yield strength and density, calculates how much power is lost tearing an entry plug and ploughing through the medium, and ray-traces ahead to locate a plausible exit point. Each frame it advances the slug through the obstacle, subtracts drag and fracture work, and updates velocity until it either bursts out the far side (firing “penetration enter” and “exit” events) or becomes embedded (“stuck” event). Without this system the projectiles **would stop at the first hit—no through-walls, no over-penetration thrills**.
+The wall-breaker of `True Ballistics`. When a projectile strikes and doesn’t ricochet, this system decides whether it bores straight through, deflects inside the material, or grinds to a halt. It measures the round’s kinetic energy against the surface’s yield strength and density, calculates how much power is lost tearing an entry plug and ploughing through the medium, and ray-traces ahead to locate a plausible exit point. Each frame it advances the slug through the obstacle, subtracts drag and fracture work, and updates velocity until it either bursts out the far side (firing “penetration enter” and “exit” events) or becomes embedded (“stuck” event). Without this system the projectiles **would stop at the first hit, no through-walls, no over-penetration thrills**.
 
 **Features**:
 - Entry/exit point calculation.
@@ -482,7 +482,7 @@ Some considerations:
 
 {{< image src="inspector_9.jpg" wrapper="col-9 mx-auto">}}
 
-The show-stopper of `True Ballistics`. For every projectile that carries a TracerComponent it whips up glowing streaks completely on the GPU: a compute shader extrudes two tiny quads (tail + head), scales them to weapon-specific length/width, and modulates brightness by speed so supersonic rounds blaze while slow pellets barely glow. The system keeps per-weapon settings, batches all tracers each frame, and renders them once per camera—so you get cinematic bullet trails that cost virtually nothing on the CPU. Without this system the projectiles **would be invisible bolts of math**.
+The show-stopper of `True Ballistics`. For every projectile that carries a TracerComponent it whips up glowing streaks completely on the GPU: a compute shader extrudes two tiny quads (tail + head), scales them to weapon-specific length/width, and modulates brightness by speed so supersonic rounds blaze while slow pellets barely glow. The system keeps per-weapon settings, batches all tracers each frame, and renders them once per camera, so you get cinematic bullet trails that cost virtually nothing on the CPU. Without this system the projectiles **would be invisible bolts of math**.
 
 ✅ **Runs entirely on the GPU**, so hundreds of tracers cost virtually nothing on the CPU.
 ✅ **Brightness scales with speed**, weapon presets let you tweak length/width per gun, and head/tail materials create a convincing muzzle-flash “dot” with a fading tail.
@@ -566,7 +566,7 @@ The `temperature` and `barometerInHg` fields are treated as explicit station rea
 
 {{< image src="inspector_11.jpg" wrapper="col-9 mx-auto">}}
 
-The planet-spinner of `True Ballistics`. Computes the [Coriolis acceleration](https://en.wikipedia.org/wiki/Coriolis_force) from the planet’s rotation and current latitude, then adds that deflection to every in-flight projectile—giving long-range shots the subtle sideways (and slight vertical) drift sharpshooters expect. Without this system the world would feel motionless and high-precision sniping would miss that authentic curve.
+The planet-spinner of `True Ballistics`. Computes the [Coriolis acceleration](https://en.wikipedia.org/wiki/Coriolis_force) from the planet’s rotation and current latitude, then adds that deflection to every in-flight projectile, giving long-range shots the subtle sideways (and slight vertical) drift sharpshooters expect. Without this system the world would feel motionless and high-precision sniping would miss that authentic curve.
 
 {{< alert color="light" >}}
 This system is only noticeable in **long distance shots**. If your project does not use them, **you can ignore it**.
@@ -606,7 +606,7 @@ This system is only noticeable in **long distance shots**. If your project does 
 
 {{< image src="inspector_13.jpg" wrapper="col-9 mx-auto">}}
 
-The x-ray goggles of `True Ballistics`. In the Unity Editor it samples every active projectile, stores positions, forces, impacts and ricochet/penetration data, then draws colour-coded gizmos: flight paths fade from red to gray with speed loss, force vectors sprout from the tracer, and icons mark hits, bounces and stuck rounds. Despawned trajectories linger for a set time so you can pause, inspect and fine-tune your settings. Disabled in builds, it’s pure dev tooling—turn it on when you need answers, off when you ship.
+The x-ray goggles of `True Ballistics`. In the Unity Editor it samples every active projectile, stores positions, forces, impacts and ricochet/penetration data, then draws colour-coded gizmos: flight paths fade from red to gray with speed loss, force vectors sprout from the tracer, and icons mark hits, bounces and stuck rounds. Despawned trajectories linger for a set time so you can pause, inspect and fine-tune your settings. Disabled in builds, it’s pure dev tooling, turn it on when you need answers, off when you ship.
 
 {{< alert color="warning" >}}
 This system uses Debug.DrawLine and can affect performance **only** in the Editor (in builds it has no effect).
@@ -814,28 +814,11 @@ public class GravityWellSystem : SystemBase
 
 All utilities are `public static class` with `public static` methods; no instantiation required. They are pure functions, no side effects, no state.
 
-## Changelog (1.2.0)
-
-Highlights of version **1.2.0**:
-
-**Added**
-- Lifecycle **Recycle Oldest When Full** rule for shotgun / high-count stress.
-- Optional **McCoy / JBM** drag tables and **Sphere (GS)** pellet drag model.
-- Shotgun chokes, Gaussian patterns, size-aware spread, longitudinal stringing, per-pellet Δv.
-- Per-sub-step drag recalculation; `BallisticsManager.maxDeltaTime` hitch clamp.
-
-**Fixed**
-- Shotgun Perlin streak patterns → independent disk / Gaussian sampling.
-- Demo `SpawnPellets` argument order.
-- `CollisionInfo.mass` / `velocity` so hit listeners survive early despawn (e.g. One Collision + RigidBodyManager).
-
-See the package `Changelog.md` for the full list.
-
 ## Simple FPS
 
 {{< image src="simplefps_0.jpg" wrapper="col-9 mx-auto">}}
 
-Simple FPS is a self-contained first-person-shooter sandbox that ships with `True Ballistics` to show—rather than just tell—how the library plugs into a game loop.
+Simple FPS is a self-contained first-person-shooter sandbox that ships with `True Ballistics` to show, rather than just tell, how the library plugs into a game loop.
 
 At its core it is an event-driven micro-framework: every time the player moves, fires, changes weapons or collides with the world, a strongly-typed event is raised and routed through a lightweight dependency container that “auto-wires” the correct listeners.
 

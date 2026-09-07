@@ -4,7 +4,7 @@ title: Local AI
 showTitle: false
 date: 6
 description: Generative AI entirely on your computer. No cloud, no subscription, no usage fees. Yours, private, forever
-tags: ["unity", "store", "ai", "artificial intelligence", "music"]
+tags: ["unity", "store", "ai", "artificial intelligence", "music", "soundfx"]
 metadata: none
 showImage: true
 thumbnail:
@@ -20,6 +20,7 @@ Your prompts and results stay on your machine.
 It consists of the following assets:
 
 * [🎵 Music](#music), generate songs offline from a style preset and optional lyrics.
+* [🔊 Sound FX](#soundfx), generate sound effects offline from a text prompt.
 * _and more to come..._
 
 ## Requirements
@@ -37,7 +38,7 @@ If you don’t know how to install Unity 6, follow this [official tutorial](http
 3. Download the model files when the asset asks for them, or point it at a folder you already have.
 
 {{< alert color="info" >}}
-GGUF model weights are large. Keep them out of git. I recommend using a folder outside the project or adding `*.gguf` and `*.gguf.part` to your `.gitignore` file.
+Model files are large. Keep them out of git. I recommend using a folder outside the project or adding `*.gguf` and `*.gguf.part` to your `.gitignore` file.
 {{< /alert >}}
 
 #
@@ -223,6 +224,62 @@ Assign a style, optionally lyrics, then **Generate**. Native backends are tried 
 </br>
 
 Powered by [MiniMax Music 3](https://huggingface.co/MiniMaxAI/MiniMax-Music3).
+
+#
+---
+## 🔊 Sound FX {#soundfx}
+
+'**Local AI: SoundFX**' generates sound effects **offline** inside the Unity Editor. Describe the sound in a prompt, then render a WAV on your machine. There is no style preset and no lyrics sheet — only the generator.
+
+* **WAV output.** Mono, **48 kHz**, **16-bit PCM**. Length **1–30 s** (default 10).
+* **Private and local.** Prompts and the WAV never leave your computer.
+* **Editor-only.** Tools live under **Window → Fronkon Games → Local AI → Sound FX**. Nothing is added to a player build unless you import the generated audio yourself.
+* **Prompt in, WAV out.** Optional negative prompt, seed, CFG, steps, and duration.
+* **CUDA, then Vulkan, then CPU.** A GPU is not required. CUDA is used when a compatible NVIDIA GPU is present.
+
+The DiT always denoises **30 s** of latent, then the waveform is cropped to the requested duration. Shorter clips are **not** faster.
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+* **Unity:** 6000.0 or higher.
+* **Editor:** Windows x86_64.
+* **GPU:** not required. CUDA is used when a compatible NVIDIA GPU is present, then Vulkan, then CPU. A GPU is strongly recommended.
+* **VRAM:** a **12 GB** card is comfortable (~6 GB of BF16 weights plus DiT graphs).
+* **Free space:** at least **8 GB** of free space.
+
+#### Installation Guide
+
+1. Import **Local AI: SoundFX**.
+2. Open **Window → Fronkon Games → Local AI → Sound FX → Generator**.
+3. Set the **Models** folder and click **Download**, or select a folder that already contains `Encoder.gguf` and `TransformerVAE.gguf`.
+4. Write a prompt (for example `a distant thunderclap rolling over a field`).
+5. Click `Generate`.
+
+#### Generator
+
+Assign a prompt, then **Generate**. Native backends are tried in order: **CUDA → Vulkan → CPU**.
+
+{{< table >}}
+| | |
+|---|---|
+| **Prompt** | Description of the sound effect. Required. |
+| **Seed** | Noise seed. **-1** picks a random seed. **0** is a valid seed. |
+| **Duration** [1-30 s] | Length of the WAV after crop. Default: 10. Output is always mono **48 kHz** **16-bit PCM**. |
+| **Steps** [8-200] | Flow-matching solver steps. Default: 100. Each step is two DiT forwards unless CFG is 1. |
+| **CFG** [1.0-8.0] | Classifier-free guidance. **1.0** skips the unconditional branch. Default: 4.0. |
+| **Keep models loaded** | If enabled, GGUF weights stay in memory between runs (faster repeats, more RAM/VRAM). |
+| **Sigma shift** | Flow-match schedule shift. Default: 5.0. |
+| **Negative prompt** | Optional. Empty uses a zero unconditional context. |
+| **Models** | Folder that contains `Encoder.gguf` (text encoder) and `TransformerVAE.gguf` (DiT + VAE). **Download** fetches them. |
+| **Output** | Destination `.wav` path (mono, 48 kHz, 16-bit PCM). **Pin** highlights the clip in the Project window if it is inside the project. |
+| **Generate** | Starts generation. Disabled until a prompt is set and the model files are valid. |
+{{< /table >}}
+
+</br>
+
+Powered by [MOSS-SoundEffect-v2.0](https://huggingface.co/OpenMOSS-Team/MOSS-SoundEffect-v2.0) via [openmoss](https://github.com/pwilkin/openmoss). Model license: Apache-2.0. **Do not quantize** the backbone GGUF.
 
 #
 ---
