@@ -14,12 +14,13 @@ thumbnail:
 
 A comprehensive, **physically-accurate** ballistics simulation system for Unity that provides **realistic trajectories**, **ricochets**, **penetration** mechanics, and advanced ballistic effects for games requiring authentic projectile behavior.
 
-- **Physically Accurate**: Implements real-world ballistics physics including gravity, air resistance, the full G1–G8 drag model set, advanced spin drift, Coriolis effect, and environmental effects.
+- **Physically Accurate**: Implements real-world ballistics physics including gravity, air resistance, the full G1–G8 and Sphere (GS) drag models (Approximate or optional McCoy/JBM tables), advanced spin drift, Coriolis effect, and environmental effects.
 - **High Performance**: Built on a custom lightweight Entity Component System (ECS) architecture with Unity Jobs and Burst compilation for optimal performance, capable of handling hundreds of simultaneous projectiles.
 - **Realistic Ricochets**: Physically-based bullet deflection with angle-dependent probability and energy retention based on material properties.
 - **Advanced Penetration Mechanics**: Energy-based projectile penetration through materials with realistic entry/exit behavior and stuck projectile handling.
 - **Comprehensive Material System**: Extensive surface interaction properties with material-specific ballistic characteristics for different surfaces.
 - **Advanced Effects**: Coriolis effect, Litz-based spin drift (with bullet-type coefficients, McCoy's aerodynamic jump, transonic correction, yaw damping), headwind/crosswind decomposition, and the full 7-layer ICAO atmosphere up to 84 km.
+- **Realistic Shotguns**: Named choke presets, Gaussian / choke-weighted patterns, size-aware birdshot spread, shot-column stringing, and per-pellet muzzle-velocity variation.
 - **Visual Feedback**: Built-in tracer system (Built-in, URP, and HDRP shaders) and comprehensive debug visualization tools.
 - **Extensive Weapons Database**: 380+ real-world weapons with authentic ballistic data including pistols, rifles, shotguns, machine guns, and sniper rifles.
 - **Educational FPS Demo**: Complete SimpleFPS demo system showcasing all features with clean, documented code.
@@ -60,6 +61,12 @@ The `BallisticsManager` component is the central hub of the ballistics system. I
 Create an empty GameObject and add the `BallisticsManager` component (Fronkon Games → True Ballistics → Ballistics Manager)
 
 {{< image src="inspector_0.jpg" wrapper="col-9 mx-auto">}}
+
+**Ballistics Manager configuration**:
+- `Default Material`: Fallback `MaterialData` when a hit surface has no `BallisticMaterial` / tag mapping.
+- `Use Material Cache`: Caches resolved materials for performance (materials cannot change at runtime if enabled).
+- `Use Atmospheric Correction`: Corrects published BCs for the active `WeatherSystem` atmosphere (altitude, barometer, temperature, humidity). Default on.
+- `Max Delta Time`: Caps the per-frame simulation step taken from `Time.deltaTime` (default 0.05 s). Hitch frames are clamped so frozen-force / large-Δt integration cannot reverse fast projectiles (especially shotgun pellets). Set to 0 to disable.
 
 ### Add systems
 
@@ -106,17 +113,17 @@ int uphillEntity = manager.SpawnProjectile(
 );
 
 // Spawn pellets (for shotguns)
-List<int> pellets = manager.SpawnPellets(
+manager.SpawnPellets(
     weaponData,          // WeaponData ScriptableObject
     shellData,           // ShellData ScriptableObject
     transform.position,  // Spawn position
     transform.rotation,  // Spawn rotation
-    1.0f,                // Dispersion multiplier
+    1.0f,                // Dispersion multiplier (weapon MOA)
     true,                // Can jam
-    1.0f,                // Velocity multiplier
-    1.0f,                // Spread coefficient
-    1.0f,                // Velocity multiplier
-    0.0f                 // Shooting angle (uphill/downhill)
+    1.0f,                // Spread coefficient multiplier (0 disables pellet spread)
+    1.0f,                // Initial velocity multiplier
+    null,                // Optional List<int> to receive pellet entity ids
+    float.NaN            // Shooting angle (NaN = use WeaponData.shootingAngle)
 );
 ```
 
@@ -129,6 +136,18 @@ In the case of shotguns, in addition to the corresponding `weaponData`, you must
 You can create new weapons (and shells) from the `Project` window (Fronkon Games → True Ballistics → Weapon Data / Fronkon Games → True Ballistics → Shell Data).
 
 {{< image src="inspector_3.jpg" wrapper="col-9 mx-auto">}}
+
+**Shell Data configuration** (shotguns):
+- `Pellet Count` / `Pellet Diameter` / `Pellet Mass` / `Pellet Ballistic Coefficient`: Per-pellet physical properties.
+- `Pellet Drag Model`: Drag table for pellets. Defaults to `Sphere` (GS), recommended for buckshot / spherical shot. Can also use G1–G8.
+- `Spread Coefficient`: Radial spread rate in metres per metre of travel (tan of the pellet-cone half-angle).
+- `Spread Pattern`: `Uniform` (even disk) or `Gaussian` (denser near the centre — typical real patterns). Default `Gaussian`.
+- `Choke`: Named choke preset (`Cylinder`, `Skeet`, `ImprovedCylinder`, `ImprovedSkeet`, `Modified`, `ImprovedModified`, `LightFull`, `Full`, `ExtraFull`) or `Custom`. Named presets set the relative pattern diameter vs cylinder (Cylinder = 1.00 … Extra Full ≈ 0.40).
+- `Choke Factor`: Used when `Choke` is `Custom` (1 = open cylinder; ~0.5 ≈ full choke).
+- `Size Aware Spread`: When on, smaller pellets (birdshot) get a wider angular spread than buck-sized shot (scale clamped 1–2.5× vs ~00 buck reference). Default on.
+- `Longitudinal Stringing`: Extra forward-velocity σ as a fraction of muzzle velocity (shot-column lengthening). Default 0.01 (1%). 0 disables.
+- `Longitudinal Stringing Meters`: Muzzle column-length σ in metres (pellets offset along the fire axis). Default 0.05 m. 0 disables.
+- `Muzzle Velocity Variation`: Per-pellet fractional muzzle-velocity jitter (e.g. 0.02 = ±2%). Default 0.02.
 
 This is an example of the weapons included:
 
@@ -152,7 +171,7 @@ This is an example of the weapons included:
 - `Ammo`: The name of the ammo.
 - `Ammo Mass`: The mass of the ammo in kilograms.
 - `Ammo Diameter`: The diameter of the ammo in meters.
-- `Drag Model`: The drag model of the ammo. One of `G1`, `G2`, `G3`, `G4`, `G5`, `G6`, `G7`, `G8`. `G1` and `G7` are the most common (G7 is preferred for modern boat-tail match bullets). `G3` covers flat-base lead bullets, `G4` is a theoretical/long-streamlined reference. The drag model is used together with the ballistic coefficient to compute drag in the physics step.
+- `Drag Model`: The drag model of the ammo. One of `G1`, `G2`, `G3`, `G4`, `G5`, `G6`, `G7`, `G8`, or `Sphere` (GS, for spherical shot). `G1` and `G7` are the most common for bullets (G7 is preferred for modern boat-tail match bullets). `G3` covers flat-base lead bullets, `G4` is a theoretical/long-streamlined reference. The drag model is used together with the ballistic coefficient to compute drag in the physics step. Table density is selected on `PhysicsSystem` (`Approximate` or `McCoy`).
 - `Ammo Ballistic Coefficient`: The ballistic coefficient of the ammo.
 - `Bullet Model`: Optional bullet name (e.g. "Sierra MatchKing BT", "Hornady ELD Match"). If set, used to resolve the projectile shape by substring match ("boat"/"bt" → BoatTail, "round"/"rn" → RoundNose, "flat"/"fb" → FlatBase). Falls back to the explicit `Shape` field if no match.
 - `Shape`: Projectile shape. `Spitzer` (default, sharp pointed), `RoundNose` (blunt), `FlatBase` (wadcutter/cast), `BoatTail` (modern match). Affects the transonic drag correction (critical Mach, drag-rise shape, wave drag factor) in `PhysicsSystem`. When `Bullet Model` is non-empty, the resolved shape wins.
@@ -177,15 +196,17 @@ When `Use Advanced Spin Drift` is true and `Miller Stability Factor` > 0, the sp
 
 {{< image src="inspector_4.jpg" wrapper="col-9 mx-auto">}}
 
-The engine room of `True Ballistics`. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag (with full G1–G8 drag tables and the shape-aware transonic correction), wind, and per-bullet spin drift and Coriolis deflection; then integrates the motion with adaptive sub-stepping. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles **would not move**.
+The engine room of `True Ballistics`. Every frame it gives each projectile a new, physically-plausible position and velocity by applying gravity, aerodynamic drag (with G1–G8 and Sphere tables — Approximate or optional McCoy/JBM — plus the shape-aware transonic correction), wind, and per-bullet spin drift and Coriolis deflection; then integrates the motion with adaptive sub-stepping and optional per-sub-step drag recalculation. In essence, it turns the static “bullet stats” you configure into the curved, wind-pushed flight paths you see in-game. Without this system the projectiles **would not move**.
 
 **Features**:
 - Configurable gravity vector (supports other planets).
 - Air density simulation with altitude effects, humidity, and barometric pressure (from `WeatherSystem` or the full 7-layer ICAO standard atmosphere).
-- Drag models **G1, G2, G3, G4, G5, G6, G7, G8**.
+- Drag models **G1, G2, G3, G4, G5, G6, G7, G8**, and **Sphere** (GS).
+- Optional **McCoy / JBM** dense Cd-vs-Mach tables (`Drag Table Source = McCoy`) for training / validation; `Approximate` keeps the faster coarse game tables. G3 and G4 always use Approximate (no McCoy set published for those forms).
 - Shape-aware transonic drag correction: on top of the G-table drag, applies a Prandtl-Glauert compressibility factor, a transonic rise (1.0 at Mach 0.8 → per-shape factor at Mach 1.2), and a Whitcomb-style wave drag, all modulated by `WeaponData.Shape` (Spitzer / RoundNose / FlatBase / BoatTail). Use `WeatherSystem` or call `AtmosphericCorrection.Correct` to fold altitude/pressure/humidity into the BC itself.
 - Uphill / downhill gravity projection: per-bullet `shootingAngle` in the bore frame, so the bullet drops less going uphill and more going downhill (matches real-world behaviour).
 - Adaptive sub-stepping: integration subdivides the per-frame step when a projectile would otherwise travel further than `Max Step Size` (default 0.5 m), preventing velocity overshoot at the terminal phase, after ricochets, and for transonic high-BC rounds.
+- **Recalculate Drag Per Sub-Step** (default on): drag is recomputed from the current velocity on every integration sub-step, avoiding hitch / large-Δt velocity reversal with frozen-force Euler. Disable for a small speedup (previous behaviour).
 - Wind effects and atmospheric conditions from the active `WeatherSystem`.
 - Burst-compiled jobs for performance.
 
@@ -219,6 +240,8 @@ The engine room of `True Ballistics`. Every frame it gives each projectile a new
   - 145 m/s at 50,000 meters.
 - `Max Speed`: Maximum projectile velocity in m/s (default value is 299,792,458 m/s, the speed of light in vacuum).
 - `Max Step Size`: Maximum integration step in metres. The integrator subdivides the per-frame step when a projectile would travel further than this in `Time.deltaTime`, preventing velocity overshoot at the terminal phase, after ricochets, and for transonic high-BC rounds. 0 disables sub-stepping. Default 0.5 m.
+- `Recalculate Drag Per Sub-Step`: Recompute drag from current velocity on every integration sub-step. Safer for large timesteps; slightly more expensive. Default on.
+- `Drag Table Source`: `Approximate` (coarse game tables, default) or `McCoy` (dense JBM/McCoy tables). Change requires re-initialising the system (exit/enter Play Mode). G3/G4 stay Approximate under McCoy.
 - `Transonic Correction`: Master switch for the shape-aware transonic drag correction. If false, `PhysicsSystem` skips the per-bullet transonic correction and uses the raw G-table value. Per-bullet override via `WeaponData.Use Transonic Correction`. Default on.
 
 If you add `Debug System` to the system list, you will be able to see the trajectories of the projectiles in the `Scene` window.
@@ -294,6 +317,10 @@ Deactivates the projectile if a ricochet occurred with an angle lower than a cer
 
 If true, projectiles are deactivated upon any impact that does not result in a ricochet. This overrides `One Collision Rule` if both are true.
 
+#### Recycle Oldest When Full Rule
+
+When the entity pool is full (5000 by default), despawn the oldest active projectile (by `LifecycleComponent.spawnTime`) and reuse its slot instead of failing to spawn. Useful for high pellet counts under stress (e.g. rapid shotgun fire). The system must be active and registered; `CreateEntity` asks `LifecycleSystem.TryRecycleOldest()` when the free list is empty. Default off.
+
 ### Collision System
 
 {{< image src="inspector_6.jpg" wrapper="col-9 mx-auto">}}
@@ -316,6 +343,8 @@ Remember that for a projectile to collide with an object on the stage, this obje
 
 Once added to the systems, you can subscribe to the `OnProjectileHit` events to receive information on each impact.
 
+`CollisionInfo` includes `entity`, `point`, `normal`, `collider`, `impactEnergy`, and — since 1.2.0 — snapshotted projectile **`mass`** and **`velocity`** at hit time. Prefer those fields over reading `PhysicsComponent` after the event: another subscriber (e.g. Lifecycle **One Collision**) may already have despawned the entity.
+
 ```csharp
 // Cache all colliders on this object and its children for efficient hit detection
 colliders = this.GetComponentsInChildren<Collider>();
@@ -334,6 +363,9 @@ private void OnProjectileHitHandler(CollisionInfo info)
   if (info.collider == null)
     return;
 
+  // Momentum is available even if the entity was already despawned by another listener
+  Vector3 momentum = info.mass * info.velocity;
+
   // Check if the hit collider belongs to this object (or any of its children)
   foreach (Collider c in colliders)
   {
@@ -350,13 +382,14 @@ Check these classes in `FronkonGames/TrueBallistics/Demos/Scripts` for more exam
 * **Coin**: A coin that oscillates and disappears upon impact.
 * **DestroyOnHit**: The object is destroyed on impact.
 * **NonKinematicOnHit**: Changes a Kinematic object to Non Kinematic on impact.
+* **RigidBodyManager**: Applies a momentum impulse to non-kinematic Rigidbodies using `CollisionInfo.mass` / `velocity`.
 
 If you add `Debug System` to the system list, you will be able to see the impacts of the projectiles (a circle with a diagonal cross) in the `Scene` window.
 
 {{< image src="collision_0.jpg" wrapper="col-9 mx-auto">}}
 
 {{< alert color="light" >}}
-Objects with Colliders and physics ([RigidBody](https://docs.unity3d.com/Manual/rigidbody-physics-section.html)) **do not receive any physical impulse** when hitting a projectile (it is not the goal of this library). However you can consult the `RigidBodyManager` class to see an example of how to do it.
+Objects with Colliders and physics ([RigidBody](https://docs.unity3d.com/Manual/rigidbody-physics-section.html)) **do not receive any physical impulse** when hitting a projectile (it is not the goal of this library). However you can consult the `RigidBodyManager` class to see an example of how to do it — it uses the mass/velocity carried on `CollisionInfo`, so it still works if Lifecycle **One Collision** despawns the entity first.
 {{< /alert >}}
 
 {{< alert color="light" >}}
@@ -776,8 +809,27 @@ public class GravityWellSystem : SystemBase
 | `MillerStabilityUtility.Calculate(massGrains, mvFps, caliberInches, lengthCalibers, twistInchesPerTurn, designConstant)` | Computes the Miller SG (stability factor) for a bullet from its physical specs. Returns ≥ 1.0 for stable, < 1.0 for unstable. `CalculateSI` is the SI-input overload. |
 | `IcaoAtmosphere.Calculate(altitudeM, humidityFraction, tempOverrideC, pressOverrideHpa)` | Full 7-layer ICAO atmosphere: temperature K, pressure Pa, density kg/m³, speed of sound m/s. |
 | `ProjectileShapeUtility.Resolve(bulletName, caliberInches, massGrains, dragModel)` | Resolves a `ProjectileShape` from an optional bullet name (substring match) and the drag model / calibre / mass heuristic. |
+| `ShotgunPatternUtility.ResolvePelletConeRadius(shell, spreadMul)` / `ToFactor(choke)` / `SampleUniformDisk` / `SampleGaussianDisk` | Shotgun pattern helpers: named choke factors, size-aware cone radius, uniform / Gaussian disk sampling. |
+| `DragModels.TryGetTable(model, source, out keys, out values)` | Resolves Cd-vs-Mach arrays for a drag model and table source (`Approximate` or `McCoy`). |
 
 All utilities are `public static class` with `public static` methods; no instantiation required. They are pure functions, no side effects, no state.
+
+## Changelog (1.2.0)
+
+Highlights of version **1.2.0**:
+
+**Added**
+- Lifecycle **Recycle Oldest When Full** rule for shotgun / high-count stress.
+- Optional **McCoy / JBM** drag tables and **Sphere (GS)** pellet drag model.
+- Shotgun chokes, Gaussian patterns, size-aware spread, longitudinal stringing, per-pellet Δv.
+- Per-sub-step drag recalculation; `BallisticsManager.maxDeltaTime` hitch clamp.
+
+**Fixed**
+- Shotgun Perlin streak patterns → independent disk / Gaussian sampling.
+- Demo `SpawnPellets` argument order.
+- `CollisionInfo.mass` / `velocity` so hit listeners survive early despawn (e.g. One Collision + RigidBodyManager).
+
+See the package `Changelog.md` for the full list.
 
 ## Simple FPS
 
