@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright © 2024 Fronkon Games</copyright>
-    <lastBuildDate>Mon, 07 Sep 2026 18:00:19 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 18:08:55 +0200</lastBuildDate>
     <atom:link href="https://fronkongames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Burst</title>
@@ -241,17 +241,17 @@
       <description></description>
     </item>
     <item>
-      <title>Soundfx</title>
-      <link>https://fronkongames.github.io/tags/soundfx/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fronkongames.github.io/tags/soundfx/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Steam</title>
       <link>https://fronkongames.github.io/tags/steam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fronkongames.github.io/tags/steam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Voice</title>
+      <link>https://fronkongames.github.io/tags/voice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fronkongames.github.io/tags/voice/</guid>
       <description></description>
     </item>
     <item>
