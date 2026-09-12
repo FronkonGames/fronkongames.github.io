@@ -233,9 +233,10 @@ Powered by [MiniMax Music 3](https://huggingface.co/MiniMaxAI/MiniMax-Music3).
 
 * **Private and local.** Prompts, clips, and the WAV never leave your computer.
 * **Editor-only.** Tools live under **Window → Fronkon Games → Local AI → Voice**. Nothing is added to a player build unless you import the generated audio yourself.
-* **Voice Preset.** **Instruction** invents a speaker from gender and a description. **Clone** copies a reference clip and its transcript (CFG **1**). Generate bakes a dry 24 kHz take onto the asset.
-* **Voice Generator.** Always clones that baked speaker. Tag emotion per block. Segments are spoken separately and concatenated.
+* **Voice Preset.** **Instruction** invents a speaker from gender and a description. **Clone** copies a reference clip and its transcript. Generate bakes a dry 24 kHz take onto the asset.
+* **Voice Generator.** Always clones that baked speaker. Tag emotion per block.
 * **WAV output.** Mono, **24 kHz**, **16-bit PCM**.
+* **Only English supported**. Support for Chinese is experimental.
 * **Post-FX.** Optional mix, space, polish, and stylized effects live on the preset. **Play** in Voice Preset and **Generate** in Voice Generator apply them. The bake stays dry so the clone reference is unchanged.
 * **CUDA, then Vulkan, then CPU.** A GPU is not required. CUDA is used when a compatible NVIDIA GPU is present.
 
@@ -264,7 +265,7 @@ To ensure optimal performance and compatibility, your project must meet the foll
 
 {{< image src="voice_preset.png" wrapper="col-12 mx-auto">}}
 
-A **Voice Preset** is a `VoicePreset` asset: the speaker definition plus baked 24 kHz samples. Create one with **New**, or pick an existing asset in the object field. Changes are saved on the asset when you edit it.
+A **Voice Preset** is a `VoicePreset` asset: the speaker definition plus baked 24 kHz samples. Create one with **New**, or pick an existing asset in the object field (**+150**). Changes are saved on the asset when you edit it.
 
 Generate speaks a fixed test line and stores the dry samples on the preset. **Play** previews those samples **with** the preset’s post-FX. The stored bake stays dry for cloning.
 
@@ -302,10 +303,10 @@ How the bake samples the speaker. **Stable take** (temperature **0**, depth temp
 {{< table >}}
 | | |
 |---|---|
-| **Keep models loaded** | If enabled, GGUF weights stay in memory between runs (faster repeats, more RAM/VRAM). |
+| **Keep models loaded** | If enabled, model files stay in memory between runs (faster repeats, more RAM/VRAM). |
 | **Models** | Folder that contains `Voice.gguf`. **Download** fetches it. |
 | **Bake voice preset** | Speaks a fixed test line and stores mono **24 kHz** samples on this preset. Does **not** apply post-FX. |
-| **Play** | Previews the baked voice **with** this preset’s post-FX. |
+| **Play** | Previews the baked neutral voice **with** this preset’s post-FX. |
 {{< /table >}}
 
 ##### Audio effects
@@ -367,7 +368,7 @@ Optional post-FX stored on the Voice Preset. Voice Generator applies them after 
 
 {{< image src="voice_generator.png" wrapper="col-12 mx-auto">}}
 
-Assign a baked Voice Preset, write the spoken text, then **Generate voice**. Emotion tags are applied per block. Unknown names and unclosed tags are errors. Tags are **not nested**.
+Assign a baked Voice Preset, write the spoken text, then **Generate voice**. Emotion tags are applied per block. Unknown names and unclosed tags are errors. Tags are **not nested**. These are the supported tags:
 
 {{< table >}}
 | | | | |
@@ -388,7 +389,7 @@ Assign a baked Voice Preset, write the spoken text, then **Generate voice**. Emo
 | `cold` | `detached` | `suspicious` | `triumphant` |
 {{< /table >}}
 
-Insert a pause with `<silence>1</silence>` (greater than **0**, up to **5** seconds).
+Insert a pause with `<silence>1</silence>` (greater than **0**, up to **5** seconds). Example:
 
 ```
 Welcome to the keep.
