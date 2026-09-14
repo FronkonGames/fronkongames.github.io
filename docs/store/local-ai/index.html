@@ -43,7 +43,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/local-ai/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:06+01:00">
-    <meta property="article:modified_time" content="2026-09-11T23:03:23+02:00">
+    <meta property="article:modified_time" content="2026-09-12T02:12:41+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/localai-1280x640.jpg">
 <meta property="og:image:alt" content="Local AI">
 
@@ -103,7 +103,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:06CET",
-      "dateModified": "2026-09-11T23:03:23CET",
+      "dateModified": "2026-09-12T02:12:41CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/local-ai/#/schema/breadcrumb/1"
       },
@@ -419,6 +419,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#moderator">🛡️ Moderator</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -496,13 +501,14 @@
             height="1200"
             width="2800"
             alt="Local AI">
-</div><br><p>&lsquo;<strong>Local AI</strong>&rsquo; is a collection of <strong>generative AI tools</strong> that run entirely on your computer.</p>
+</div><br><p>&lsquo;<strong>Local AI</strong>&rsquo; is a collection of <strong>AI tools</strong> that run entirely on your computer.</p>
 <p>There is no cloud account, no subscription, no usage fees, and no per-prompt limits.</p>
 <p>Your prompts and results stay on your machine.</p>
 <p>It consists of the following assets:</p>
 <ul>
-<li><a href="/store/local-ai/#music">🎵 Music</a>, generate songs offline from a style preset and optional lyrics.</li>
+<li><a href="/store/local-ai/#music">🎵 Music</a>, compose songs offline from a style preset and optional lyrics.</li>
 <li><a href="/store/local-ai/#voice">🗣️ Voice</a>, generate speech offline from a Voice Preset, with optional emotion tags.</li>
+<li><a href="/store/local-ai/#moderator">🛡️ Moderator</a>, moderates chats in more than 23 languages.</li>
 <li><em>and more to come&hellip;</em></li>
 </ul>
 
@@ -522,8 +528,10 @@
 
     &nbsp;
 </a></h2>
-<p>All &lsquo;<strong>Local AI</strong>&rsquo; assets are developed for <strong>Unity 6</strong> (version <strong>6000.0</strong> or higher) and the <strong>Windows</strong> x86_64 Editor. They run in the Editor, and they are not intended as a runtime player package unless a specific asset says otherwise.</p>
-<p>Generation can run on the CPU, but a <strong>GPU is recommend</strong>: it is much faster.</p>
+<p>All &lsquo;<strong>Local AI</strong>&rsquo; assets are developed for <strong>Unity 6</strong> (version <strong>6000.0</strong> or higher).</p>
+<p><strong>Music</strong> and <strong>Voice</strong> run in the <strong>Windows</strong> x86_64 Editor. They are not added to a player build unless you import the generated audio yourself.</p>
+<p><strong>Moderator</strong> is a runtime component: it runs in play mode and in player builds (including WebGL).</p>
+<p>A <strong>GPU is recommended</strong>. It is much faster than CPU.</p>
 <p>If you don’t know how to install Unity 6, follow this <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/GettingStartedInstallingHub.html">official tutorial</a>.</p>
 
 <h2 id="installation" class="heading">Installation <a href="#installation" aria-labelledby="installation">
@@ -544,8 +552,8 @@
 </a></h2>
 <ol>
 <li>Import the assets into your Unity project. If you&rsquo;ve purchased the bundle, you&rsquo;ll be able to download all the assets from the store at no charge.</li>
-<li>Open the tools from <strong>Window → Fronkon Games → Local AI</strong>.</li>
-<li>Download the model files when the asset asks for them, or point it at a folder you already have.</li>
+<li>Open editor tools from <strong>Window → Fronkon Games → Local AI</strong>, or add a runtime component such as <strong>Moderator</strong>.</li>
+<li>Download extra model files when the asset asks for them (Music, Voice). Moderator includes its Sentis model in the package.</li>
 </ol>
 
 
@@ -2818,6 +2826,823 @@
 
 </br>
 <p>Powered by a LORA of <a href="https://huggingface.co/openbmb/VoxCPM2">Vox CPM 2</a>.</p>
+<hr />
+
+<h2 id="moderator" class="heading">🛡️ Moderator <a href="#moderator" aria-labelledby="moderator">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-12 mx-auto"><img class="img-fluid "
+            src="/store/local-ai/moderator-2800x1470.jpg"
+            
+            
+            srcset="/store/local-ai/moderator-576x302.webp 576w, /store/local-ai/moderator-768x403.webp 768w, /store/local-ai/moderator-992x521.webp 992w, /store/local-ai/moderator-1200x630.webp 1200w, /store/local-ai/moderator-1400x735.webp 1400w, /store/local-ai/moderator-2800x1470.webp 2800w" sizes="100vw"
+            height="1470"
+            width="2800"
+            >
+</div><br><br />
+<div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="STORE"
+        href="https://assetstore.unity.com/packages/slug/408160?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">STORE&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+
+    &nbsp;
+</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="DEMO"
+        href="https://fronkongames.github.io/demos-local-ai/moderator/" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">DEMO</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-gamepad "></i> --><svg class="svg-inline--fa fas fa-gamepad " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+</p>
+<p>&lsquo;<strong>Local AI: Moderator</strong>&rsquo; classifies chat text <strong>on-device</strong> in runtime. Drop a <strong>Moderator</strong> component on a GameObject, then call <code>Evaluate</code>, <code>IsFlagged</code>, or <code>Filter</code> to score <strong>hateful</strong>, <strong>abusive</strong>, and <strong>threat</strong> content plus the protected group it appears to target.</p>
+<ul>
+<li><strong>Private and local.</strong> Messages never leave the player&rsquo;s machine. No cloud account and no API keys.</li>
+<li><strong>Runtime.</strong> This asset is meant for play mode and player builds.</li>
+<li><strong>~15 ms</strong> per message on desktop <strong>GPUCompute</strong>. CPU is supported. WebGL falls back to GPUPixel, then CPU, and is much slower (several seconds).</li>
+<li><strong>23 languages</strong>: English, German, French, Dutch, Portuguese, Spanish, Italian, Polish, Danish, Swedish, Finnish, Hungarian, Czech, Slovak, Slovenian, Croatian, Bulgarian, Greek, Romanian, Lithuanian, Latvian, Estonian, Irish.</li>
+<li><strong>HateCheck F1 0.87</strong> (recall 0.96) on 29,797 cases. English HateCheck F1 <strong>0.86</strong>.</li>
+<li><strong>Three content scores</strong>: hateful, abusive, threat. <strong>Ten target groups</strong>: race, colour, religion, descent, national/ethnic origin, sexual orientation, gender, disability, age.</li>
+<li><strong>About 160 MB</strong> on disk for the included quantized <code>.sentis</code> model and <code>tokenizer.json</code>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex alert alert-warning " role="alert">
+        
+        <div class="flex-grow-1 my-auto">
+            This is a classifier, not a legal or human moderator. Thresholds, language, and phrasing all change the result. Tune the sliders for your game and treat <code>Flagged</code> as a hint, not a guarantee.
+        </div>
+    </div>
+
+<h4 id="requisites-2" class="heading">Requisites <a href="#requisites-2" aria-labelledby="requisites-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>To ensure optimal performance and compatibility, your project must meet the following requirements:</p>
+<ul>
+<li><strong>Unity:</strong> 6000.0 or higher.</li>
+<li><strong>Unity Inference Engine</strong> 2.6.1 (<code>com.unity.ai.inference</code>). The package pulls this in as a dependency.</li>
+<li><strong>GPU:</strong> recommended. Default backend is <strong>GPUCompute</strong>. CPU works. <strong>WebGL</strong> cannot run GPUCompute (no compute shaders). It tries GPUPixel, then CPU.</li>
+<li><strong>Disk:</strong> about <strong>160 MB</strong> for the model and tokenizer (includes a more accurate, non-quantized model).</li>
+</ul>
+
+<h4 id="installation-guide-2" class="heading">Installation Guide <a href="#installation-guide-2" aria-labelledby="installation-guide-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ol>
+<li>Import <strong>Local AI: Moderator</strong>.</li>
+<li>Add <strong>Fronkon Games → Local AI → Moderator</strong> to a GameObject. Empty model and tokenizer fields are filled from the package when possible.</li>
+<li>Open the demo scene at <code>Assets/FronkonGames/LocalAI/Moderator/Demo/Moderator_demo.unity</code>, or try the <a href="https://fronkongames.github.io/demos-local-ai/moderator/">WebGL demo</a>.</li>
+</ol>
+<p>Default thresholds are <strong>0.40</strong> (hateful / target) and <strong>0.50</strong> (abusive / threat). Input is truncated at <strong>128</strong> tokens.</p>
+
+<h4 id="component" class="heading">Component <a href="#component" aria-labelledby="component">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-12 mx-auto"><img class="img-fluid "
+            src="/store/local-ai/moderator_0-2800x1827.jpg"
+            
+            
+            srcset="/store/local-ai/moderator_0-576x376.webp 576w, /store/local-ai/moderator_0-768x501.webp 768w, /store/local-ai/moderator_0-992x647.webp 992w, /store/local-ai/moderator_0-1200x783.webp 1200w, /store/local-ai/moderator_0-1400x914.webp 1400w, /store/local-ai/moderator_0-2800x1827.webp 2800w" sizes="100vw"
+            height="1827"
+            width="2800"
+            >
+</div><br>
+
+<h5 id="model" class="heading">Model <a href="#model" aria-labelledby="model">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sentis model</strong></td>
+<td>Quantized <code>Moderator</code> <code>.sentis</code> asset.</td>
+</tr>
+<tr>
+<td><strong>Tokenizer</strong></td>
+<td><code>tokenizer.json</code> as a TextAsset.</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td><strong>GPU Compute</strong> is recommended on desktop. <strong>CPU</strong> always works. On WebGL, GPUCompute is not used.</td>
+</tr>
+<tr>
+<td><strong>Load on awake</strong></td>
+<td>Loads the model when the component wakes up. Disable this if you want to call <code>Load()</code> yourself.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="thresholds" class="heading">Thresholds <a href="#thresholds" aria-labelledby="thresholds">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>A category is flagged when its score is at or above the slider. <code>Flagged</code> is true when <strong>any</strong> content score (hateful, abusive, or threat) is over its limit.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hateful</strong></td>
+<td>Hate directed at a protected group. Default: <strong>0.40</strong>.</td>
+</tr>
+<tr>
+<td><strong>Abusive</strong></td>
+<td>Insults and abuse. Default: <strong>0.50</strong>.</td>
+</tr>
+<tr>
+<td><strong>Threat</strong></td>
+<td>Threats of violence. Default: <strong>0.50</strong>.</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>Used when you query a target group (<code>Contains</code> / <code>GetScore</code> with <code>ModeratorTarget</code>). Default: <strong>0.40</strong>.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="debug" class="heading">Debug <a href="#debug" aria-labelledby="debug">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Log results</strong></td>
+<td>Writes each evaluation to the Console.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+<p>The <strong>documentation</strong> link at the bottom of the inspector opens this page.</p>
+
+<h4 id="api" class="heading">API <a href="#api" aria-labelledby="api">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Namespace: <code>FronkonGames.LocalAI.Moderator</code>.</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">FronkonGames.LocalAI.Moderator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Moderator</span> <span class="n">moderator</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Moderator</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">moderator</span><span class="p">.</span><span class="n">IsReady</span> <span class="p">==</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">moderator</span><span class="p">.</span><span class="n">Load</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">moderator</span><span class="p">.</span><span class="n">IsFlagged</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">==</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Drop, mute, or replace the line.</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ModeratorResult</span> <span class="n">result</span> <span class="p">=</span> <span class="n">moderator</span><span class="p">.</span><span class="n">Evaluate</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Flagged</span> <span class="p">==</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">hate</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">GetScore</span><span class="p">(</span><span class="n">ModeratorContent</span><span class="p">.</span><span class="n">Hateful</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ModeratorTarget</span> <span class="n">target</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">TopTarget</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">shown</span> <span class="p">=</span> <span class="n">moderator</span><span class="p">.</span><span class="n">Filter</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="s">&#34;[blocked]&#34;</span><span class="p">);</span></span></span></code></pre></div></div><p>Non-blocking (yields one frame so UI can show a busy state):</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">ModeratorResult</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">moderator</span><span class="p">.</span><span class="n">EvaluateAsync</span><span class="p">(</span><span class="n">message</span><span class="p">);</span></span></span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Evaluate</strong></td>
+<td>Runs inference and returns a <code>ModeratorResult</code> (scores, <code>Flagged</code>, strongest content and target).</td>
+</tr>
+<tr>
+<td><strong>EvaluateAsync</strong></td>
+<td>Same result, without stalling the current frame before the run.</td>
+</tr>
+<tr>
+<td><strong>IsFlagged</strong> / <strong>IsSafe</strong></td>
+<td>Convenience over <code>Evaluate</code>. Each call still runs inference.</td>
+</tr>
+<tr>
+<td><strong>Filter</strong> / <strong>TryFilter</strong></td>
+<td>Returns the original text when safe, otherwise a replacement (empty string hides the message).</td>
+</tr>
+<tr>
+<td><strong>Contains</strong> / <strong>GetScore</strong></td>
+<td>Query one content category or one target group. Prefer <strong>Evaluate</strong> if you need several scores.</td>
+</tr>
+<tr>
+<td><strong>Load</strong> / <strong>Unload</strong></td>
+<td>Load or release the Sentis worker. Safe to call <code>Load</code> more than once.</td>
+</tr>
+<tr>
+<td><strong>ActiveBackend</strong></td>
+<td>Backend the worker is actually using (may differ from <strong>Backend</strong> on WebGL).</td>
+</tr>
+<tr>
+<td><strong>Evaluated</strong></td>
+<td>Event raised after every successful evaluation.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+<p><code>IsBusy</code> is true while an evaluation is running. A second call at the same time throws.</p>
+
+<h4 id="how-the-demo-flags-messages" class="heading">How the demo flags messages <a href="#how-the-demo-flags-messages" aria-labelledby="how-the-demo-flags-messages">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p><code>Moderator.Evaluate</code> returns <strong>scores</strong>. <code>result.Flagged</code> is only one policy: any content head (hateful, abusive, threat) at or above its threshold.</p>
+<p>The included demo does <strong>not</strong> stop there. It applies a small extra rule on top of those scores (if a content score is close to its limit, or a target group is very high, it boosts the strongest content score using how many target heads also fire). That is <strong>demo-only</strong>. It is not used by <code>IsFlagged</code>, <code>Filter</code>, or <code>result.Flagged</code> on the component.</p>
+<p>There is <strong>no perfect way</strong> to turn scores into a yes/no. Chat, lobbies, kids’ games, and competitive servers all need different trade-offs (catch more hate vs. fewer false positives). Use the scores, thresholds, and target heads to write <strong>your own</strong> algorithm for that environment. The demo is an example, not a recommendation for shipping.</p>
+
+<h4 id="languages" class="heading">Languages <a href="#languages" aria-labelledby="languages">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>Trained for <strong>23</strong> languages. The demo and HateCheck eval cover <strong>English, German, French, Dutch, Portuguese, Spanish, Italian, and Polish</strong>. Other listed languages can work but are not scored in that suite.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td>German</td>
+<td>French</td>
+<td>Dutch</td>
+</tr>
+<tr>
+<td>Portuguese</td>
+<td>Spanish</td>
+<td>Italian</td>
+<td>Polish</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Swedish</td>
+<td>Finnish</td>
+<td>Hungarian</td>
+</tr>
+<tr>
+<td>Czech</td>
+<td>Slovak</td>
+<td>Slovenian</td>
+<td>Croatian</td>
+</tr>
+<tr>
+<td>Bulgarian</td>
+<td>Greek</td>
+<td>Romanian</td>
+<td>Lithuanian</td>
+</tr>
+<tr>
+<td>Latvian</td>
+<td>Estonian</td>
+<td>Irish</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-12 mx-auto"><img class="img-fluid "
+            src="/store/local-ai/moderator_quality-2800x1535.jpg"
+            
+            
+            srcset="/store/local-ai/moderator_quality-576x316.webp 576w, /store/local-ai/moderator_quality-768x421.webp 768w, /store/local-ai/moderator_quality-992x544.webp 992w, /store/local-ai/moderator_quality-1200x658.webp 1200w, /store/local-ai/moderator_quality-1400x768.webp 1400w, /store/local-ai/moderator_quality-2800x1535.webp 2800w" sizes="100vw"
+            height="1535"
+            width="2800"
+            >
+</div><br>
+
+<h4 id="webgl" class="heading">WebGL <a href="#webgl" aria-labelledby="webgl">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>WebGL cannot create a <strong>GPUCompute</strong> worker. The component tries <strong>GPUPixel</strong>, then <strong>CPU</strong>. Expect <strong>several seconds</strong> per message in the browser. On desktop GPUCompute it is about <strong>15 ms</strong>.</p>
 
 <h1 id="heading-1" class="heading"> <a href="#heading-1" aria-labelledby="heading-1">
 
@@ -2853,6 +3678,42 @@
 
     &nbsp;
 </a></h2>
+
+<h5 id="_does-moderator-need-an-internet-connection_" class="heading"><em>Does Moderator need an internet connection?</em> <a href="#_does-moderator-need-an-internet-connection_" aria-labelledby="_does-moderator-need-an-internet-connection_">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p><strong>No.</strong> Inference runs on the device with Unity Inference Engine. Nothing is sent to a server.</p>
+
+<h5 id="_why-is-the-webgl-demo-slow_" class="heading"><em>Why is the WebGL demo slow?</em> <a href="#_why-is-the-webgl-demo-slow_" aria-labelledby="_why-is-the-webgl-demo-slow_">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>WebGL has no compute shaders, so <strong>GPUCompute</strong> is not used. The demo falls back to GPUPixel or CPU. Expect <strong>several seconds</strong> per message in the browser. On a desktop GPU it is about <strong>150 ms</strong>.</p>
 
 <h5 id="_will-i-run-into-any-copyright-issues_" class="heading"><em>Will I run into any copyright issues?</em> <a href="#_will-i-run-into-any-copyright-issues_" aria-labelledby="_will-i-run-into-any-copyright-issues_">
 
@@ -3020,6 +3881,11 @@
       </ul>
     </li>
     <li><a href="#voice">🗣️ Voice</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#moderator">🛡️ Moderator</a>
       <ul>
         <li></li>
       </ul>

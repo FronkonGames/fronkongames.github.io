@@ -4,14 +4,14 @@ title: Local AI
 showTitle: false
 date: 6
 description: Generative AI entirely on your computer. No cloud, no subscription, no usage fees. Yours, private, forever
-tags: ["unity", "store", "ai", "artificial intelligence", "music", "voice"]
+tags: ["unity", "store", "ai", "artificial intelligence", "music", "voice", "moderator", "chat", "moderation"]
 metadata: none
 showImage: true
 thumbnail:
   url: img/localai.jpg
 ---
 
-'**Local AI**' is a collection of **generative AI tools** that run entirely on your computer.
+'**Local AI**' is a collection of **AI tools** that run entirely on your computer.
 
 There is no cloud account, no subscription, no usage fees, and no per-prompt limits.
 
@@ -19,23 +19,28 @@ Your prompts and results stay on your machine.
 
 It consists of the following assets:
 
-* [🎵 Music](#music), generate songs offline from a style preset and optional lyrics.
+* [🎵 Music](#music), compose songs offline from a style preset and optional lyrics.
 * [🗣️ Voice](#voice), generate speech offline from a Voice Preset, with optional emotion tags.
+* [🛡️ Moderator](#moderator), moderates chats in more than 23 languages.
 * _and more to come..._
 
 ## Requirements
 
-All '**Local AI**' assets are developed for **Unity 6** (version **6000.0** or higher) and the **Windows** x86_64 Editor. They run in the Editor, and they are not intended as a runtime player package unless a specific asset says otherwise.
+All '**Local AI**' assets are developed for **Unity 6** (version **6000.0** or higher).
 
-Generation can run on the CPU, but a **GPU is recommend**: it is much faster.
+**Music** and **Voice** run in the **Windows** x86_64 Editor. They are not added to a player build unless you import the generated audio yourself.
+
+**Moderator** is a runtime component: it runs in play mode and in player builds (including WebGL).
+
+A **GPU is recommended**. It is much faster than CPU.
 
 If you don’t know how to install Unity 6, follow this [official tutorial](https://docs.unity3d.com/6000.0/Documentation/Manual/GettingStartedInstallingHub.html).
 
 ## Installation
 
 1. Import the assets into your Unity project. If you've purchased the bundle, you'll be able to download all the assets from the store at no charge.
-2. Open the tools from **Window → Fronkon Games → Local AI**.
-3. Download the model files when the asset asks for them, or point it at a folder you already have.
+2. Open editor tools from **Window → Fronkon Games → Local AI**, or add a runtime component such as **Moderator**.
+3. Download extra model files when the asset asks for them (Music, Voice). Moderator includes its Sentis model in the package.
 
 {{< alert color="info" >}}
 Model files are large. Keep them out of git. I recommend using a folder outside the project or adding `*.gguf` and `*.gguf.part` to your `.gitignore` file.
@@ -413,9 +418,168 @@ Welcome to the keep.
 
 Powered by a LORA of [Vox CPM 2](https://huggingface.co/openbmb/VoxCPM2).
 
+---
+## 🛡️ Moderator {#moderator}
+{{< image src="moderator.png" wrapper="col-12 mx-auto">}}
+{{< asset-header store="https://assetstore.unity.com/packages/slug/408160" demo="https://fronkongames.github.io/demos-local-ai/moderator/" >}}
+
+'**Local AI: Moderator**' classifies chat text **on-device** in runtime. Drop a **Moderator** component on a GameObject, then call `Evaluate`, `IsFlagged`, or `Filter` to score **hateful**, **abusive**, and **threat** content plus the protected group it appears to target.
+
+* **Private and local.** Messages never leave the player's machine. No cloud account and no API keys.
+* **Runtime.** This asset is meant for play mode and player builds.
+* **~15 ms** per message on desktop **GPUCompute**. CPU is supported. WebGL falls back to GPUPixel, then CPU, and is much slower (several seconds).
+* **23 languages**: English, German, French, Dutch, Portuguese, Spanish, Italian, Polish, Danish, Swedish, Finnish, Hungarian, Czech, Slovak, Slovenian, Croatian, Bulgarian, Greek, Romanian, Lithuanian, Latvian, Estonian, Irish.
+* **HateCheck F1 0.87** (recall 0.96) on 29,797 cases. English HateCheck F1 **0.86**.
+* **Three content scores**: hateful, abusive, threat. **Ten target groups**: race, colour, religion, descent, national/ethnic origin, sexual orientation, gender, disability, age.
+* **About 160 MB** on disk for the included quantized `.sentis` model and `tokenizer.json`.
+
+{{< alert color="warning" >}}
+This is a classifier, not a legal or human moderator. Thresholds, language, and phrasing all change the result. Tune the sliders for your game and treat `Flagged` as a hint, not a guarantee.
+{{< /alert >}}
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+* **Unity:** 6000.0 or higher.
+* **Unity Inference Engine** 2.6.1 (`com.unity.ai.inference`). The package pulls this in as a dependency.
+* **GPU:** recommended. Default backend is **GPUCompute**. CPU works. **WebGL** cannot run GPUCompute (no compute shaders). It tries GPUPixel, then CPU.
+* **Disk:** about **160 MB** for the model and tokenizer (includes a more accurate, non-quantized model).
+
+#### Installation Guide
+
+1. Import **Local AI: Moderator**.
+2. Add **Fronkon Games → Local AI → Moderator** to a GameObject. Empty model and tokenizer fields are filled from the package when possible.
+3. Open the demo scene at `Assets/FronkonGames/LocalAI/Moderator/Demo/Moderator_demo.unity`, or try the [WebGL demo](https://fronkongames.github.io/demos-local-ai/moderator/).
+
+Default thresholds are **0.40** (hateful / target) and **0.50** (abusive / threat). Input is truncated at **128** tokens.
+
+#### Component
+
+{{< image src="moderator_0.png" wrapper="col-12 mx-auto">}}
+
+##### Model
+
+{{< table >}}
+| | |
+|---|---|
+| **Sentis model** | Quantized `Moderator` `.sentis` asset. |
+| **Tokenizer** | `tokenizer.json` as a TextAsset. |
+| **Backend** | **GPU Compute** is recommended on desktop. **CPU** always works. On WebGL, GPUCompute is not used. |
+| **Load on awake** | Loads the model when the component wakes up. Disable this if you want to call `Load()` yourself. |
+{{< /table >}}
+
+##### Thresholds
+
+A category is flagged when its score is at or above the slider. `Flagged` is true when **any** content score (hateful, abusive, or threat) is over its limit.
+
+{{< table >}}
+| | |
+|---|---|
+| **Hateful** | Hate directed at a protected group. Default: **0.40**. |
+| **Abusive** | Insults and abuse. Default: **0.50**. |
+| **Threat** | Threats of violence. Default: **0.50**. |
+| **Target** | Used when you query a target group (`Contains` / `GetScore` with `ModeratorTarget`). Default: **0.40**. |
+{{< /table >}}
+
+##### Debug
+
+{{< table >}}
+| | |
+|---|---|
+| **Log results** | Writes each evaluation to the Console. |
+{{< /table >}}
+
+The **documentation** link at the bottom of the inspector opens this page.
+
+#### API
+
+Namespace: `FronkonGames.LocalAI.Moderator`.
+
+```csharp
+using FronkonGames.LocalAI.Moderator;
+
+Moderator moderator = GetComponent<Moderator>();
+
+if (moderator.IsReady == false)
+  moderator.Load();
+
+if (moderator.IsFlagged(message) == true)
+{
+  // Drop, mute, or replace the line.
+}
+
+ModeratorResult result = moderator.Evaluate(message);
+if (result.Flagged == true)
+{
+  float hate = result.GetScore(ModeratorContent.Hateful);
+  ModeratorTarget target = result.TopTarget;
+}
+
+string shown = moderator.Filter(message, "[blocked]");
+```
+
+Non-blocking (yields one frame so UI can show a busy state):
+
+```csharp
+ModeratorResult result = await moderator.EvaluateAsync(message);
+```
+
+{{< table >}}
+| | |
+|---|---|
+| **Evaluate** | Runs inference and returns a `ModeratorResult` (scores, `Flagged`, strongest content and target). |
+| **EvaluateAsync** | Same result, without stalling the current frame before the run. |
+| **IsFlagged** / **IsSafe** | Convenience over `Evaluate`. Each call still runs inference. |
+| **Filter** / **TryFilter** | Returns the original text when safe, otherwise a replacement (empty string hides the message). |
+| **Contains** / **GetScore** | Query one content category or one target group. Prefer **Evaluate** if you need several scores. |
+| **Load** / **Unload** | Load or release the Sentis worker. Safe to call `Load` more than once. |
+| **ActiveBackend** | Backend the worker is actually using (may differ from **Backend** on WebGL). |
+| **Evaluated** | Event raised after every successful evaluation. |
+{{< /table >}}
+
+`IsBusy` is true while an evaluation is running. A second call at the same time throws.
+
+#### How the demo flags messages
+
+`Moderator.Evaluate` returns **scores**. `result.Flagged` is only one policy: any content head (hateful, abusive, threat) at or above its threshold.
+
+The included demo does **not** stop there. It applies a small extra rule on top of those scores (if a content score is close to its limit, or a target group is very high, it boosts the strongest content score using how many target heads also fire). That is **demo-only**. It is not used by `IsFlagged`, `Filter`, or `result.Flagged` on the component.
+
+There is **no perfect way** to turn scores into a yes/no. Chat, lobbies, kids’ games, and competitive servers all need different trade-offs (catch more hate vs. fewer false positives). Use the scores, thresholds, and target heads to write **your own** algorithm for that environment. The demo is an example, not a recommendation for shipping.
+
+#### Languages
+
+Trained for **23** languages. The demo and HateCheck eval cover **English, German, French, Dutch, Portuguese, Spanish, Italian, and Polish**. Other listed languages can work but are not scored in that suite.
+
+{{< table >}}
+| | | | |
+|---|---|---|---|
+| English | German | French | Dutch |
+| Portuguese | Spanish | Italian | Polish |
+| Danish | Swedish | Finnish | Hungarian |
+| Czech | Slovak | Slovenian | Croatian |
+| Bulgarian | Greek | Romanian | Lithuanian |
+| Latvian | Estonian | Irish | |
+{{< /table >}}
+
+{{< image src="moderator_quality.png" wrapper="col-12 mx-auto">}}
+
+#### WebGL
+
+WebGL cannot create a **GPUCompute** worker. The component tries **GPUPixel**, then **CPU**. Expect **several seconds** per message in the browser. On desktop GPUCompute it is about **15 ms**.
+
 #
 ---
 ## F.A.Q.
+
+##### _Does Moderator need an internet connection?_
+
+**No.** Inference runs on the device with Unity Inference Engine. Nothing is sent to a server.
+
+##### _Why is the WebGL demo slow?_
+
+WebGL has no compute shaders, so **GPUCompute** is not used. The demo falls back to GPUPixel or CPU. Expect **several seconds** per message in the browser. On a desktop GPU it is about **150 ms**.
 
 ##### _Will I run into any copyright issues?_
 
