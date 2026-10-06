@@ -43,7 +43,7 @@
 <meta property="og:url" content="https://fronkongames.github.io/store/local-ai/">
 <meta property="og:site_name" content="Fronkon Games">
 <meta property="article:published_time" content="1970-01-01T01:00:06+01:00">
-    <meta property="article:modified_time" content="2026-09-12T02:12:41+02:00">
+    <meta property="article:modified_time" content="2026-09-14T22:29:00+02:00">
     <meta property="og:image" content="https://fronkongames.github.io/img/localai-1280x640.jpg">
 <meta property="og:image:alt" content="Local AI">
 
@@ -103,7 +103,7 @@
           "@id": "https://fronkongames.github.io/#/schema/organization/1"
         },
       "datePublished": "1970-01-01T01:00:06CET",
-      "dateModified": "2026-09-12T02:12:41CET",
+      "dateModified": "2026-09-14T22:29:00CET",
       "breadcrumb": {
         "@id": "https://fronkongames.github.io/store/local-ai/#/schema/breadcrumb/1"
       },
@@ -424,6 +424,11 @@
         <li></li>
       </ul>
     </li>
+    <li><a href="#translator">🌐 Translator</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -509,6 +514,7 @@
 <li><a href="/store/local-ai/#music">🎵 Music</a>, compose songs offline from a style preset and optional lyrics.</li>
 <li><a href="/store/local-ai/#voice">🗣️ Voice</a>, generate speech offline from a Voice Preset, with optional emotion tags.</li>
 <li><a href="/store/local-ai/#moderator">🛡️ Moderator</a>, moderates chats in more than 23 languages.</li>
+<li><a href="/store/local-ai/#translator">🌐 Translator</a>, translate game text offline from a CSV or a pasted block.</li>
 <li><em>and more to come&hellip;</em></li>
 </ul>
 
@@ -529,7 +535,7 @@
     &nbsp;
 </a></h2>
 <p>All &lsquo;<strong>Local AI</strong>&rsquo; assets are developed for <strong>Unity 6</strong> (version <strong>6000.0</strong> or higher).</p>
-<p><strong>Music</strong> and <strong>Voice</strong> run in the <strong>Windows</strong> x86_64 Editor. They are not added to a player build unless you import the generated audio yourself.</p>
+<p><strong>Music</strong>, <strong>Voice</strong>, and <strong>Translator</strong> run in the <strong>Windows</strong> x86_64 Editor. They are not added to a player build unless you import the generated files yourself.</p>
 <p><strong>Moderator</strong> is a runtime component: it runs in play mode and in player builds (including WebGL).</p>
 <p>A <strong>GPU is recommended</strong>. It is much faster than CPU.</p>
 <p>If you don’t know how to install Unity 6, follow this <a href="https://docs.unity3d.com/6000.0/Documentation/Manual/GettingStartedInstallingHub.html">official tutorial</a>.</p>
@@ -553,7 +559,7 @@
 <ol>
 <li>Import the assets into your Unity project. If you&rsquo;ve purchased the bundle, you&rsquo;ll be able to download all the assets from the store at no charge.</li>
 <li>Open editor tools from <strong>Window → Fronkon Games → Local AI</strong>, or add a runtime component such as <strong>Moderator</strong>.</li>
-<li>Download extra model files when the asset asks for them (Music, Voice). Moderator includes its Sentis model in the package.</li>
+<li>Download extra model files when the asset asks for them (Music, Voice, Translator). Moderator includes its Sentis model in the package.</li>
 </ol>
 
 
@@ -1653,10 +1659,12 @@
 <ul>
 <li><strong>Unity:</strong> 6000.0 or higher.</li>
 <li><strong>Editor:</strong> Windows x86_64.</li>
-<li><strong>GPU:</strong> not required. CUDA is used when a compatible NVIDIA GPU is present, then Vulkan, then CPU. A GPU is strongly recommended.</li>
-<li><strong>VRAM:</strong> about <strong>8 GB</strong>. A <strong>12 GB</strong> card is the minimum recommended configuration.</li>
+<li><strong>GPU:</strong> not required. CUDA is used when a compatible NVIDIA GPU is present, then Vulkan, then CPU. A GPU is strongly recommended (NVIDIA or AMD).</li>
+<li><strong>VRAM:</strong> about <strong>8 GB</strong>. A <strong>12 GB</strong> card is the minimum recommended configuration. <strong>16 GB</strong> is more comfortable for longer takes.</li>
+<li><strong>RAM:</strong> <strong>32 GB</strong> system RAM is recommended. Generation can pin the CPU at 100% while a take is running.</li>
 <li><strong>Disk:</strong> about <strong>8 GB</strong> for model files. At least <strong>10 GB</strong> of free space.</li>
 </ul>
+<p>Short lines generate in a reasonable time. <strong>Dialogue and storytelling</strong> (long paragraphs) take much longer. Prefer several short generations over one long script.</p>
 
 <h4 id="installation-guide-1" class="heading">Installation Guide <a href="#installation-guide-1" aria-labelledby="installation-guide-1">
 
@@ -2649,7 +2657,8 @@
             width="2800"
             >
 </div><br>
-<p>Assign a baked Voice Preset, write the spoken text, then <strong>Generate voice</strong>. Emotion tags are applied per block. Unknown names and unclosed tags are errors. Tags are <strong>not nested</strong>. These are the supported tags:</p>
+<p>Assign a baked Voice Preset, write the spoken text, then <strong>Generate voice</strong>. Emotion tags are applied per block. Unknown names and unclosed tags are errors. Tags are <strong>not nested</strong>. Keep each generate to a <strong>short line or a few sentences</strong>; long dialogue or a full story in one go is much slower and will keep the machine busy.</p>
+<p>These are the supported tags:</p>
 
 
 
@@ -3644,6 +3653,929 @@
 </a></h4>
 <p>WebGL cannot create a <strong>GPUCompute</strong> worker. The component tries <strong>GPUPixel</strong>, then <strong>CPU</strong>. Expect <strong>several seconds</strong> per message in the browser. On desktop GPUCompute it is about <strong>15 ms</strong>.</p>
 
+<h2 id="translator" class="heading">🌐 Translator <a href="#translator" aria-labelledby="translator">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-12 mx-auto"><img class="img-fluid "
+            src="/store/local-ai/translator-2800x1470.jpg"
+            
+            
+            srcset="/store/local-ai/translator-576x302.webp 576w, /store/local-ai/translator-768x403.webp 768w, /store/local-ai/translator-992x521.webp 992w, /store/local-ai/translator-1200x630.webp 1200w, /store/local-ai/translator-1400x735.webp 1400w, /store/local-ai/translator-2800x1470.webp 2800w" sizes="100vw"
+            height="1470"
+            width="2800"
+            >
+</div><br><br />
+<div align="right">
+
+
+
+
+
+
+
+
+
+    
+
+    <a aria-label="STORE"
+        href="https://assetstore.unity.com/packages/slug/414536?aid=1101l9zFC&amp;utm_source=aff" target="_blank" rel="noopener noreferrer" class="btn btn-success  position-relative  "
+        role="button"
+        >
+        <div class="d-flex justify-content-center">
+            <div class="my-auto">STORE&nbsp;
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-up-right-from-square fa-2xs"></i> --><svg class="svg-inline--fa fas fa-up-right-from-square fa-2xs" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+
+    &nbsp;
+</div><div class="align-self-center order-first pe-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fab fa-unity "></i> --><svg class="svg-inline--fa fab fa-unity " fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 448 512"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>
+
+    
+</div>
+        </div></a>&nbsp;
+</div><br><br>
+</p>
+<p>&lsquo;<strong>Local AI: Translator</strong>&rsquo; translates game text <strong>offline</strong> inside the Unity Editor. Load a <strong>CSV</strong> of your strings, or paste a larger block, and translate it to <strong>34 languages</strong> on your machine.</p>
+<ul>
+<li><strong>Private and local.</strong> Source text and translations never leave your computer. No cloud account and no API keys.</li>
+<li><strong>Editor-only.</strong> Tools live under <strong>Window → Fronkon Games → Local AI → Translator</strong>. Nothing is added to a player build.</li>
+<li><strong>CSV spreadsheet.</strong> Open a localization table, edit cells, add language columns, then translate a cell, a column, or the whole file.</li>
+<li><strong>Translator Block.</strong> Paste a quest description, README, or chunk of dialogue and translate it to a list of languages.</li>
+<li><strong>Placeholders.</strong> Tokens such as <code>{PLAYER_NAME}</code>, <code>{ITEM_ID}</code>, and <code>%d</code> stay in the translation so your runtime substitution still works.</li>
+<li><strong>34 languages</strong>, including English, Chinese, Japanese, Korean, German, French, Spanish, and more.</li>
+<li><strong>CUDA, then Vulkan, then CPU.</strong> A GPU is not required. CUDA is used when a compatible NVIDIA GPU is present.</li>
+</ul>
+
+<h4 id="requisites-3" class="heading">Requisites <a href="#requisites-3" aria-labelledby="requisites-3">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<p>To ensure optimal performance and compatibility, your project must meet the following requirements:</p>
+<ul>
+<li><strong>Unity:</strong> 6000.0 or higher.</li>
+<li><strong>Editor:</strong> Windows x86_64.</li>
+<li><strong>GPU:</strong> not required. CUDA is used when a compatible NVIDIA GPU is present, then Vulkan, then CPU. A GPU is strongly recommended.</li>
+<li><strong>VRAM:</strong> about <strong>10 GB</strong>. An <strong>8 GB</strong> card can run the quantized model; <strong>12 GB</strong> is more comfortable.</li>
+<li><strong>Disk:</strong> at least <strong>10 GB</strong> of free space.</li>
+</ul>
+
+<h4 id="installation-guide-3" class="heading">Installation Guide <a href="#installation-guide-3" aria-labelledby="installation-guide-3">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+<ol>
+<li>Import <strong>Local AI: Translator</strong>.</li>
+<li>Open <strong>Window → Fronkon Games → Local AI → Translator → Translator</strong>.</li>
+<li>Set the <strong>Models</strong> folder and click <strong>Download</strong>, or select a folder.</li>
+<li>Open a <code>.csv</code> file (a sample is at <code>Assets/FronkonGames/LocalAI/Translator/Editor/Templates/demo.csv</code>).</li>
+<li>Click <strong>Translate</strong>, or <strong>Translate column</strong> / <strong>Translate cell</strong>, then <strong>Save</strong>.</li>
+</ol>
+<p>For a pasted block instead of a file, use <strong>Window → Fronkon Games → Local AI → Translator → Translator Block</strong>.</p>
+
+<h4 id="tools-2" class="heading">Tools <a href="#tools-2" aria-labelledby="tools-2">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h4>
+
+<h5 id="translator-1" class="heading">Translator <a href="#translator-1" aria-labelledby="translator-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-12 mx-auto"><img class="img-fluid "
+            src="/store/local-ai/translator_0-2800x1982.jpg"
+            
+            
+            srcset="/store/local-ai/translator_0-576x408.webp 576w, /store/local-ai/translator_0-768x544.webp 768w, /store/local-ai/translator_0-992x702.webp 992w, /store/local-ai/translator_0-1200x849.webp 1200w, /store/local-ai/translator_0-1400x991.webp 1400w, /store/local-ai/translator_0-2800x1982.webp 2800w" sizes="100vw"
+            height="1982"
+            width="2800"
+            >
+</div><br>
+<p>The CSV tool starts empty. Use <strong>&hellip;</strong> next to <strong>Document</strong> to open a file. Until a CSV is loaded, the viewer shows <em>Open a CSV file to view and translate it</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-12 mx-auto"><img class="img-fluid "
+            src="/store/local-ai/translator_1-2800x1924.jpg"
+            
+            
+            srcset="/store/local-ai/translator_1-576x396.webp 576w, /store/local-ai/translator_1-768x528.webp 768w, /store/local-ai/translator_1-992x682.webp 992w, /store/local-ai/translator_1-1200x825.webp 1200w, /store/local-ai/translator_1-1400x962.webp 1400w, /store/local-ai/translator_1-2800x1924.webp 2800w" sizes="100vw"
+            height="1924"
+            width="2800"
+            >
+</div><br>
+<p>With a CSV loaded, the window is a spreadsheet: header row, editable cells, and translate buttons per column and per language cell. Native backends are tried in order: <strong>CUDA → Vulkan → CPU</strong>.</p>
+
+<h5 id="file" class="heading">File <a href="#file" aria-labelledby="file">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>UTF-8 CSV, RFC 4180 (quoted fields, commas, newlines). The first row is the header.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document</strong></td>
+<td>Path of the <code>.csv</code> file. <strong>&hellip;</strong> opens one. The folder icon reveals it in Explorer.</td>
+</tr>
+<tr>
+<td><strong>Save</strong></td>
+<td>Writes the table back. Asks for confirmation. The label becomes <strong>Save</strong>* while there are unsaved edits.</td>
+</tr>
+<tr>
+<td><strong>Save As</strong></td>
+<td>Writes a new <code>.csv</code> file.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+<p>Column layout:</p>
+<ul>
+<li><strong>Column 1</strong> is the <strong>ID</strong>. It is never translated. The header is a text field (default <code>ID</code>).</li>
+<li><strong>Column 2</strong> is the <strong>source language</strong>. Pick it from the language dropdown (default <code>English</code>). Translate reads this column.</li>
+<li><strong>Remaining columns</strong> are <strong>target languages</strong>. Each header is a language dropdown. <strong>Translate column</strong> fills empty (or all) cells from the source. The trash icon removes that column.</li>
+</ul>
+<p>A Unity Localization-style header such as <code>Id,English,Spanish</code> loads as ID, English source, Spanish target. Headers match case-insensitively. A name with a locale in parentheses, such as <code>English (en)</code>, still matches <strong>English</strong>. Unsupported headers stay in the file but those cells cannot be translated until you pick a supported language.</p>
+
+<h5 id="spreadsheet" class="heading">Spreadsheet <a href="#spreadsheet" aria-labelledby="spreadsheet">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Filter</strong></td>
+<td>Shows rows that contain this text (any column, case-insensitive).</td>
+</tr>
+<tr>
+<td><strong>Add column</strong></td>
+<td>Menu of the 34 supported languages. Languages already in the table are disabled.</td>
+</tr>
+<tr>
+<td><strong>Add row</strong></td>
+<td>Appends an empty row.</td>
+</tr>
+<tr>
+<td><strong>Row trash</strong></td>
+<td>Removes that row after confirmation.</td>
+</tr>
+<tr>
+<td><strong>Translate cell</strong></td>
+<td>Translates one language cell from the source column. Always overwrites that cell.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="placeholders" class="heading">Placeholders <a href="#placeholders" aria-labelledby="placeholders">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>This tool is trained to translate the surrounding sentence and <strong>leave variable placeholders unchanged</strong>: names inside <code>{ }</code>, printf tokens such as <code>%d</code> / <code>%s</code>, and forms like <code>${HP}</code>. Do not wrap the token in extra wording that the model might treat as part of the name.</p>
+<p>The included <code>demo.csv</code> uses this style. Examples:</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Hello {PLAYER_NAME}! Welcome back.
+</span></span><span class="line"><span class="cl">You found {ITEM_ID}. Add it to your inventory?
+</span></span><span class="line"><span class="cl">Collect {COUNT} crystals before the timer expires.
+</span></span><span class="line"><span class="cl">Type /warp {LOCATION} to travel to the marked region.
+</span></span><span class="line"><span class="cl">{QUEST_TITLE} is now active. Speak to {NPC_NAME} for details.
+</span></span><span class="line"><span class="cl">Your score: {SCORE} / {TARGET_SCORE}
+</span></span><span class="line"><span class="cl">Use {KEY_ITEM} to unlock the door. Press E to interact.
+</span></span><span class="line"><span class="cl">Server returned: ERR_{ERROR_CODE}. Try again later.
+</span></span><span class="line"><span class="cl">You have %d lives remaining.</span></span></code></pre></div></div><p>After translation, <code>{PLAYER_NAME}</code> should still be <code>{PLAYER_NAME}</code> in Spanish, Japanese, or any other target. Same for <code>{COUNT}</code>, <code>{NPC_NAME}</code>, <code>%d</code>, and the rest.</p>
+
+<h5 id="models" class="heading">Models <a href="#models" aria-labelledby="models">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Keep models loaded</strong></td>
+<td>If enabled, GGUF weights stay in memory between batches (faster repeats, more RAM/VRAM). Unchecked, the model unloads when the batch ends.</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>Folder that contains <code>HY-MT2-7B-Q8_0.gguf</code>. <strong>&hellip;</strong> picks a folder. The folder icon opens it. <strong>Download</strong> fetches the GGUF.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="translate" class="heading">Translate <a href="#translate" aria-labelledby="translate">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Skip existing</strong></td>
+<td>Leave cells that already have text untouched. Applies to <strong>Translate</strong> and <strong>Translate column</strong>.</td>
+</tr>
+<tr>
+<td><strong>Translate</strong></td>
+<td>Translates every supported target column in the loaded CSV.</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>Stops the current batch. Shown while a translation is running.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="languages-1" class="heading">Languages <a href="#languages-1" aria-labelledby="languages-1">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>These 34 languages can be used as source or target.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td>Chinese</td>
+<td>Japanese</td>
+<td>Korean</td>
+</tr>
+<tr>
+<td>German</td>
+<td>French</td>
+<td>Spanish</td>
+<td>Russian</td>
+</tr>
+<tr>
+<td>Portuguese</td>
+<td>Italian</td>
+<td>Polish</td>
+<td>Turkish</td>
+</tr>
+<tr>
+<td>Traditional Chinese</td>
+<td>Arabic</td>
+<td>Indonesian</td>
+<td>Thai</td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td>Ukrainian</td>
+<td>Dutch</td>
+<td>Czech</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td>Malay</td>
+<td>Filipino</td>
+<td>Bengali</td>
+</tr>
+<tr>
+<td>Urdu</td>
+<td>Tamil</td>
+<td>Telugu</td>
+<td>Marathi</td>
+</tr>
+<tr>
+<td>Gujarati</td>
+<td>Hebrew</td>
+<td>Persian</td>
+<td>Cantonese</td>
+</tr>
+<tr>
+<td>Kazakh</td>
+<td>Uyghur</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+
+<h5 id="translator-block" class="heading">Translator Block <a href="#translator-block" aria-labelledby="translator-block">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+        
+        
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+
+    
+    
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+<div class="col-12 mx-auto"><img class="img-fluid "
+            src="/store/local-ai/translator_2-2800x2665.jpg"
+            
+            
+            srcset="/store/local-ai/translator_2-576x548.webp 576w, /store/local-ai/translator_2-768x731.webp 768w, /store/local-ai/translator_2-992x944.webp 992w, /store/local-ai/translator_2-1200x1142.webp 1200w, /store/local-ai/translator_2-1400x1332.webp 1400w, /store/local-ai/translator_2-2800x2665.webp 2800w" sizes="100vw"
+            height="2665"
+            width="2800"
+            >
+</div><br>
+<p>Paste a large block of game text (a quest, a README, a stretch of dialogue), pick the source language, check the targets, then <strong>Translate</strong>. <strong>Show</strong> on a language row displays that result. <strong>Copy</strong> and <strong>Save as</strong> export it.</p>
+<p>Long text is split into segments that fit the model (paragraphs, then sentences, then byte-sized pieces when there are no breakers) and glued back with the original separators, so paragraph structure survives. A hash of the source is stored with the results: if you edit the block, the tool marks the results <strong>outdated</strong> until you translate again.</p>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        <div class="table-responsive">
+        <table class="table ">
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source language</strong></td>
+<td>Language of the pasted text. <strong>auto</strong> lets the model detect it.</td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td>The block to translate. The <strong>Translate</strong> button shows the character count.</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>Stops the current batch.</td>
+</tr>
+<tr>
+<td><strong>Target languages</strong></td>
+<td>Checked languages are translated. <strong>All</strong> / <strong>None</strong> toggles the list (<strong>34</strong> languages).</td>
+</tr>
+<tr>
+<td><strong>Show</strong></td>
+<td>Displays the translated block for that language in the result pane.</td>
+</tr>
+<tr>
+<td><strong>Save as</strong></td>
+<td>Writes the selected result to a <code>.txt</code> file.</td>
+</tr>
+<tr>
+<td><strong>Copy</strong></td>
+<td>Copies the selected result to the clipboard.</td>
+</tr>
+<tr>
+<td><strong>Keep models loaded</strong></td>
+<td>Same as in Translator: leave weights in memory between batches.</td>
+</tr>
+<tr>
+<td><strong>Models</strong></td>
+<td>Folder that contains <code>HY-MT2-7B-Q8_0.gguf</code>. <strong>Download</strong> fetches it.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    
+
+</br>
+<p>Powered by <a href="https://github.com/Tencent-Hunyuan/Hy-MT2">Hy-MT2</a>.</p>
+
 <h1 id="heading-1" class="heading"> <a href="#heading-1" aria-labelledby="heading-1">
 
 
@@ -3679,7 +4611,7 @@
     &nbsp;
 </a></h2>
 
-<h5 id="_does-moderator-need-an-internet-connection_" class="heading"><em>Does Moderator need an internet connection?</em> <a href="#_does-moderator-need-an-internet-connection_" aria-labelledby="_does-moderator-need-an-internet-connection_">
+<h5 id="_why-is-voice-generation-so-slow-on-long-text_" class="heading"><em>Why is Voice generation so slow on long text?</em> <a href="#_why-is-voice-generation-so-slow-on-long-text_" aria-labelledby="_why-is-voice-generation-so-slow-on-long-text_">
 
 
 
@@ -3695,7 +4627,43 @@
 
     &nbsp;
 </a></h5>
-<p><strong>No.</strong> Inference runs on the device with Unity Inference Engine. Nothing is sent to a server.</p>
+<p><strong>Short sentences are the intended workflow.</strong> A line or a short block is fine. Dialogue, narration, or a full story in one generate can take a long time and will often run the CPU at 100%. Give the machine plenty of <strong>RAM</strong> (32 GB recommended) and <strong>GPU</strong> memory (12 GB minimum, 16 GB more comfortable). NVIDIA uses CUDA when available; AMD cards use Vulkan, then CPU.</p>
+
+<h5 id="_why-is-translator-slow-or-why-does-it-fall-back-to-cpu_" class="heading"><em>Why is Translator slow, or why does it fall back to CPU?</em> <a href="#_why-is-translator-slow-or-why-does-it-fall-back-to-cpu_" aria-labelledby="_why-is-translator-slow-or-why-does-it-fall-back-to-cpu_">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p>A GPU is strongly recommended. Native backends are tried in order: <strong>CUDA → Vulkan → CPU</strong>. CUDA needs a compatible NVIDIA driver; otherwise Vulkan is used, then CPU. CPU translation of a large CSV or a long block can take a long time. Keep <strong>Skip existing</strong> on so filled cells are not translated again.</p>
+
+<h5 id="_does-moderator-or-translator-need-an-internet-connection_" class="heading"><em>Does Moderator or Translator need an internet connection?</em> <a href="#_does-moderator-or-translator-need-an-internet-connection_" aria-labelledby="_does-moderator-or-translator-need-an-internet-connection_">
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden="true" role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+
+    &nbsp;
+</a></h5>
+<p><strong>No.</strong> Inference runs on the device. Nothing is sent to a server. <strong>Download</strong> is the only step that uses the network, to fetch model files.</p>
 
 <h5 id="_why-is-the-webgl-demo-slow_" class="heading"><em>Why is the WebGL demo slow?</em> <a href="#_why-is-the-webgl-demo-slow_" aria-labelledby="_why-is-the-webgl-demo-slow_">
 
@@ -3886,6 +4854,11 @@
       </ul>
     </li>
     <li><a href="#moderator">🛡️ Moderator</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#translator">🌐 Translator</a>
       <ul>
         <li></li>
       </ul>

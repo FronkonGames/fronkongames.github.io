@@ -4,7 +4,7 @@ title: Local AI
 showTitle: false
 date: 6
 description: Generative AI entirely on your computer. No cloud, no subscription, no usage fees. Yours, private, forever
-tags: ["unity", "store", "ai", "artificial intelligence", "music", "voice", "moderator", "chat", "moderation"]
+tags: ["unity", "store", "ai", "artificial intelligence", "music", "voice", "moderator", "chat", "moderation", "translator", "translation", "localization"]
 metadata: none
 showImage: true
 thumbnail:
@@ -22,13 +22,14 @@ It consists of the following assets:
 * [🎵 Music](#music), compose songs offline from a style preset and optional lyrics.
 * [🗣️ Voice](#voice), generate speech offline from a Voice Preset, with optional emotion tags.
 * [🛡️ Moderator](#moderator), moderates chats in more than 23 languages.
+* [🌐 Translator](#translator), translate game text offline from a CSV or a pasted block.
 * _and more to come..._
 
 ## Requirements
 
 All '**Local AI**' assets are developed for **Unity 6** (version **6000.0** or higher).
 
-**Music** and **Voice** run in the **Windows** x86_64 Editor. They are not added to a player build unless you import the generated audio yourself.
+**Music**, **Voice**, and **Translator** run in the **Windows** x86_64 Editor. They are not added to a player build unless you import the generated files yourself.
 
 **Moderator** is a runtime component: it runs in play mode and in player builds (including WebGL).
 
@@ -40,7 +41,7 @@ If you don’t know how to install Unity 6, follow this [official tutorial](http
 
 1. Import the assets into your Unity project. If you've purchased the bundle, you'll be able to download all the assets from the store at no charge.
 2. Open editor tools from **Window → Fronkon Games → Local AI**, or add a runtime component such as **Moderator**.
-3. Download extra model files when the asset asks for them (Music, Voice). Moderator includes its Sentis model in the package.
+3. Download extra model files when the asset asks for them (Music, Voice, Translator). Moderator includes its Sentis model in the package.
 
 {{< alert color="info" >}}
 Model files are large. Keep them out of git. I recommend using a folder outside the project or adding `*.gguf` and `*.gguf.part` to your `.gitignore` file.
@@ -251,9 +252,12 @@ To ensure optimal performance and compatibility, your project must meet the foll
 
 * **Unity:** 6000.0 or higher.
 * **Editor:** Windows x86_64.
-* **GPU:** not required. CUDA is used when a compatible NVIDIA GPU is present, then Vulkan, then CPU. A GPU is strongly recommended.
-* **VRAM:** about **8 GB**. A **12 GB** card is the minimum recommended configuration.
+* **GPU:** not required. CUDA is used when a compatible NVIDIA GPU is present, then Vulkan, then CPU. A GPU is strongly recommended (NVIDIA or AMD).
+* **VRAM:** about **8 GB**. A **12 GB** card is the minimum recommended configuration. **16 GB** is more comfortable for longer takes.
+* **RAM:** **32 GB** system RAM is recommended. Generation can pin the CPU at 100% while a take is running.
 * **Disk:** about **8 GB** for model files. At least **10 GB** of free space.
+
+Short lines generate in a reasonable time. **Dialogue and storytelling** (long paragraphs) take much longer. Prefer several short generations over one long script.
 
 #### Installation Guide
 
@@ -373,7 +377,9 @@ Optional post-FX stored on the Voice Preset. Voice Generator applies them after 
 
 {{< image src="voice_generator.png" wrapper="col-12 mx-auto">}}
 
-Assign a baked Voice Preset, write the spoken text, then **Generate voice**. Emotion tags are applied per block. Unknown names and unclosed tags are errors. Tags are **not nested**. These are the supported tags:
+Assign a baked Voice Preset, write the spoken text, then **Generate voice**. Emotion tags are applied per block. Unknown names and unclosed tags are errors. Tags are **not nested**. Keep each generate to a **short line or a few sentences**; long dialogue or a full story in one go is much slower and will keep the machine busy.
+
+These are the supported tags:
 
 {{< table >}}
 | | | | |
@@ -569,13 +575,182 @@ Trained for **23** languages. The demo and HateCheck eval cover **English, Germa
 
 WebGL cannot create a **GPUCompute** worker. The component tries **GPUPixel**, then **CPU**. Expect **several seconds** per message in the browser. On desktop GPUCompute it is about **15 ms**.
 
+## 🌐 Translator {#translator}
+{{< image src="translator.png" wrapper="col-12 mx-auto">}}
+{{< asset-header store="https://assetstore.unity.com/packages/slug/414536" >}}
+
+'**Local AI: Translator**' translates game text **offline** inside the Unity Editor. Load a **CSV** of your strings, or paste a larger block, and translate it to **34 languages** on your machine.
+
+* **Private and local.** Source text and translations never leave your computer. No cloud account and no API keys.
+* **Editor-only.** Tools live under **Window → Fronkon Games → Local AI → Translator**. Nothing is added to a player build.
+* **CSV spreadsheet.** Open a localization table, edit cells, add language columns, then translate a cell, a column, or the whole file.
+* **Translator Block.** Paste a quest description, README, or chunk of dialogue and translate it to a list of languages.
+* **Placeholders.** Tokens such as `{PLAYER_NAME}`, `{ITEM_ID}`, and `%d` stay in the translation so your runtime substitution still works.
+* **34 languages**, including English, Chinese, Japanese, Korean, German, French, Spanish, and more.
+* **CUDA, then Vulkan, then CPU.** A GPU is not required. CUDA is used when a compatible NVIDIA GPU is present.
+
+#### Requisites
+
+To ensure optimal performance and compatibility, your project must meet the following requirements:
+
+* **Unity:** 6000.0 or higher.
+* **Editor:** Windows x86_64.
+* **GPU:** not required. CUDA is used when a compatible NVIDIA GPU is present, then Vulkan, then CPU. A GPU is strongly recommended.
+* **VRAM:** about **10 GB**. An **8 GB** card can run the quantized model; **12 GB** is more comfortable.
+* **Disk:** at least **10 GB** of free space.
+
+#### Installation Guide
+
+1. Import **Local AI: Translator**.
+2. Open **Window → Fronkon Games → Local AI → Translator → Translator**.
+3. Set the **Models** folder and click **Download**, or select a folder.
+4. Open a `.csv` file (a sample is at `Assets/FronkonGames/LocalAI/Translator/Editor/Templates/demo.csv`).
+5. Click **Translate**, or **Translate column** / **Translate cell**, then **Save**.
+
+For a pasted block instead of a file, use **Window → Fronkon Games → Local AI → Translator → Translator Block**.
+
+#### Tools
+
+##### Translator
+
+{{< image src="translator_0.png" wrapper="col-12 mx-auto">}}
+
+The CSV tool starts empty. Use **...** next to **Document** to open a file. Until a CSV is loaded, the viewer shows *Open a CSV file to view and translate it*.
+
+{{< image src="translator_1.png" wrapper="col-12 mx-auto">}}
+
+With a CSV loaded, the window is a spreadsheet: header row, editable cells, and translate buttons per column and per language cell. Native backends are tried in order: **CUDA → Vulkan → CPU**.
+
+##### File
+
+UTF-8 CSV, RFC 4180 (quoted fields, commas, newlines). The first row is the header.
+
+{{< table >}}
+| | |
+|---|---|
+| **Document** | Path of the `.csv` file. **...** opens one. The folder icon reveals it in Explorer. |
+| **Save** | Writes the table back. Asks for confirmation. The label becomes **Save*** while there are unsaved edits. |
+| **Save As** | Writes a new `.csv` file. |
+{{< /table >}}
+
+Column layout:
+
+* **Column 1** is the **ID**. It is never translated. The header is a text field (default `ID`).
+* **Column 2** is the **source language**. Pick it from the language dropdown (default `English`). Translate reads this column.
+* **Remaining columns** are **target languages**. Each header is a language dropdown. **Translate column** fills empty (or all) cells from the source. The trash icon removes that column.
+
+A Unity Localization-style header such as `Id,English,Spanish` loads as ID, English source, Spanish target. Headers match case-insensitively. A name with a locale in parentheses, such as `English (en)`, still matches **English**. Unsupported headers stay in the file but those cells cannot be translated until you pick a supported language.
+
+##### Spreadsheet
+
+{{< table >}}
+| | |
+|---|---|
+| **Filter** | Shows rows that contain this text (any column, case-insensitive). |
+| **Add column** | Menu of the 34 supported languages. Languages already in the table are disabled. |
+| **Add row** | Appends an empty row. |
+| **Row trash** | Removes that row after confirmation. |
+| **Translate cell** | Translates one language cell from the source column. Always overwrites that cell. |
+{{< /table >}}
+
+##### Placeholders
+
+This tool is trained to translate the surrounding sentence and **leave variable placeholders unchanged**: names inside `{ }`, printf tokens such as `%d` / `%s`, and forms like `${HP}`. Do not wrap the token in extra wording that the model might treat as part of the name.
+
+The included `demo.csv` uses this style. Examples:
+
+```
+Hello {PLAYER_NAME}! Welcome back.
+You found {ITEM_ID}. Add it to your inventory?
+Collect {COUNT} crystals before the timer expires.
+Type /warp {LOCATION} to travel to the marked region.
+{QUEST_TITLE} is now active. Speak to {NPC_NAME} for details.
+Your score: {SCORE} / {TARGET_SCORE}
+Use {KEY_ITEM} to unlock the door. Press E to interact.
+Server returned: ERR_{ERROR_CODE}. Try again later.
+You have %d lives remaining.
+```
+
+After translation, `{PLAYER_NAME}` should still be `{PLAYER_NAME}` in Spanish, Japanese, or any other target. Same for `{COUNT}`, `{NPC_NAME}`, `%d`, and the rest.
+
+##### Models
+
+{{< table >}}
+| | |
+|---|---|
+| **Keep models loaded** | If enabled, GGUF weights stay in memory between batches (faster repeats, more RAM/VRAM). Unchecked, the model unloads when the batch ends. |
+| **Models** | Folder that contains `HY-MT2-7B-Q8_0.gguf`. **...** picks a folder. The folder icon opens it. **Download** fetches the GGUF. |
+{{< /table >}}
+
+##### Translate
+
+{{< table >}}
+| | |
+|---|---|
+| **Skip existing** | Leave cells that already have text untouched. Applies to **Translate** and **Translate column**. |
+| **Translate** | Translates every supported target column in the loaded CSV. |
+| **Cancel** | Stops the current batch. Shown while a translation is running. |
+{{< /table >}}
+
+##### Languages
+
+These 34 languages can be used as source or target.
+
+{{< table >}}
+| | | | |
+|---|---|---|---|
+| English | Chinese | Japanese | Korean |
+| German | French | Spanish | Russian |
+| Portuguese | Italian | Polish | Turkish |
+| Traditional Chinese | Arabic | Indonesian | Thai |
+| Vietnamese | Ukrainian | Dutch | Czech |
+| Hindi | Malay | Filipino | Bengali |
+| Urdu | Tamil | Telugu | Marathi |
+| Gujarati | Hebrew | Persian | Cantonese |
+| Kazakh | Uyghur | | |
+{{< /table >}}
+
+##### Translator Block
+
+{{< image src="translator_2.png" wrapper="col-12 mx-auto">}}
+
+Paste a large block of game text (a quest, a README, a stretch of dialogue), pick the source language, check the targets, then **Translate**. **Show** on a language row displays that result. **Copy** and **Save as** export it.
+
+Long text is split into segments that fit the model (paragraphs, then sentences, then byte-sized pieces when there are no breakers) and glued back with the original separators, so paragraph structure survives. A hash of the source is stored with the results: if you edit the block, the tool marks the results **outdated** until you translate again.
+
+{{< table >}}
+| | |
+|---|---|
+| **Source language** | Language of the pasted text. **auto** lets the model detect it. |
+| **Text** | The block to translate. The **Translate** button shows the character count. |
+| **Cancel** | Stops the current batch. |
+| **Target languages** | Checked languages are translated. **All** / **None** toggles the list (**34** languages). |
+| **Show** | Displays the translated block for that language in the result pane. |
+| **Save as** | Writes the selected result to a `.txt` file. |
+| **Copy** | Copies the selected result to the clipboard. |
+| **Keep models loaded** | Same as in Translator: leave weights in memory between batches. |
+| **Models** | Folder that contains `HY-MT2-7B-Q8_0.gguf`. **Download** fetches it. |
+{{< /table >}}
+
+</br>
+
+Powered by [Hy-MT2](https://github.com/Tencent-Hunyuan/Hy-MT2).
+
 #
 ---
 ## F.A.Q.
 
-##### _Does Moderator need an internet connection?_
+##### _Why is Voice generation so slow on long text?_
 
-**No.** Inference runs on the device with Unity Inference Engine. Nothing is sent to a server.
+**Short sentences are the intended workflow.** A line or a short block is fine. Dialogue, narration, or a full story in one generate can take a long time and will often run the CPU at 100%. Give the machine plenty of **RAM** (32 GB recommended) and **GPU** memory (12 GB minimum, 16 GB more comfortable). NVIDIA uses CUDA when available; AMD cards use Vulkan, then CPU.
+
+##### _Why is Translator slow, or why does it fall back to CPU?_
+
+A GPU is strongly recommended. Native backends are tried in order: **CUDA → Vulkan → CPU**. CUDA needs a compatible NVIDIA driver; otherwise Vulkan is used, then CPU. CPU translation of a large CSV or a long block can take a long time. Keep **Skip existing** on so filled cells are not translated again.
+
+##### _Does Moderator or Translator need an internet connection?_
+
+**No.** Inference runs on the device. Nothing is sent to a server. **Download** is the only step that uses the network, to fetch model files.
 
 ##### _Why is the WebGL demo slow?_
 
